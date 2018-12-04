@@ -24,732 +24,6 @@ ElvCharacterDB = {
 	},
 	["ChatHistoryLog"] = {
 		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1756, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439191,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [1]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1771, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439193,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [2]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1789, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439194,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [3]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1803, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439196,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [4]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1818, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439197,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [5]
-		{
-			"PS Died: Seor > 105k, |cff71d5ff|Hspell:274577:0|h[Malignant Growth]|h|r (O: 31k) [G'huun] (Shadowstorm (Plague))", -- [1]
-			"Tigerozy-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Tigerozy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1828, -- [11]
-			"Player-2073-05CDA347", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aTigerozy|r",
-			[51] = 1543439204,
-			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [6]
-		{
-			"MIDDLE", -- [1]
-			"Buffww-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Buffww", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1833, -- [11]
-			"Player-2073-060FB5B5", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Buffww|r",
-			[51] = 1543439207,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [7]
-		{
-			"MIDDLE", -- [1]
-			"Buffww-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Buffww", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1834, -- [11]
-			"Player-2073-060FB5B5", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Buffww|r",
-			[51] = 1543439209,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [8]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1835, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439211,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [9]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1849, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439212,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [10]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1864, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439214,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [11]
-		{
-			"Casting |cff71d5ff|Hspell:20484:0|h[Rebirth]|h|r on Seor!", -- [1]
-			"Tigerozy-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Tigerozy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1878, -- [11]
-			"Player-2073-05CDA347", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aTigerozy|r",
-			[51] = 1543439214,
-			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [12]
-		{
-			"Successfully resurrected Seor!", -- [1]
-			"Tigerozy-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Tigerozy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1879, -- [11]
-			"Player-2073-05CDA347", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aTigerozy|r",
-			[51] = 1543439214,
-			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [13]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1881, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439215,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [14]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1895, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439217,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [15]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1909, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439218,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [16]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1937, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439234,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [17]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1949, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439235,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [18]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1959, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439237,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [19]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1974, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439238,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [20]
-		{
-			"Explosive Corruption on Dumii", -- [1]
-			"Dumii-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Dumii", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1977, -- [11]
-			"Player-2073-065D079A", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aDumii|r",
-			[51] = 1543439239,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [21]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1984, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439240,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [22]
-		{
-			"3", -- [1]
-			"Dumii-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Dumii", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1989, -- [11]
-			"Player-2073-065D079A", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aDumii|r",
-			[51] = 1543439240,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [23]
-		{
-			"SOAKING", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1996, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439241,
-			[50] = "CHAT_MSG_YELL",
-		}, -- [24]
-		{
-			"{square} RIGHT {square}", -- [1]
-			"Boomtastíc-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Boomtastíc", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2008, -- [11]
-			"Player-2073-068758E8", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edBoomtastíc|r",
-			[51] = 1543439251,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [25]
-		{
-			"{square} RIGHT {square}", -- [1]
-			"Boomtastíc-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Boomtastíc", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2009, -- [11]
-			"Player-2073-068758E8", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edBoomtastíc|r",
-			[51] = 1543439253,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [26]
-		{
-			"CAN'T SOAK", -- [1]
-			"Hudzz-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Hudzz", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2017, -- [11]
-			"Player-2073-065F6CAF", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aHudzz|r",
-			[51] = 1543439254,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [27]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2020, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439254,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [28]
-		{
-			"CAN'T SOAK", -- [1]
-			"Hudzz-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Hudzz", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2030, -- [11]
-			"Player-2073-065F6CAF", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aHudzz|r",
-			[51] = 1543439256,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [29]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2036, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439256,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [30]
-		{
-			"CAN'T SOAK", -- [1]
-			"Hudzz-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Hudzz", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2042, -- [11]
-			"Player-2073-065F6CAF", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aHudzz|r",
-			[51] = 1543439257,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [31]
-		{
-			"CAN'T SOAK", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2048, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1543439257,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [32]
-		{
-			"{square} RIGHT {square}", -- [1]
-			"Boomtastíc-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Boomtastíc", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			2053, -- [11]
-			"Player-2073-068758E8", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edBoomtastíc|r",
-			[51] = 1543439258,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [33]
-		{
 			"CAN'T SOAK", -- [1]
 			"Nâte-Stormscale", -- [2]
 			"Orcish", -- [3]
@@ -770,7 +44,7 @@ ElvCharacterDB = {
 			[52] = "|cff3fc6eaNâte|r",
 			[51] = 1543439259,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [34]
+		}, -- [1]
 		{
 			"CAN'T SOAK", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -792,7 +66,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439259,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [35]
+		}, -- [2]
 		{
 			"CAN'T SOAK", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -814,7 +88,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439259,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [36]
+		}, -- [3]
 		{
 			"{square} RIGHT {square}", -- [1]
 			"Boomtastíc-Stormscale", -- [2]
@@ -836,7 +110,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edBoomtastíc|r",
 			[51] = 1543439260,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [37]
+		}, -- [4]
 		{
 			"CAN'T SOAK", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -858,7 +132,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439260,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [38]
+		}, -- [5]
 		{
 			"CAN'T SOAK", -- [1]
 			"Nâte-Stormscale", -- [2]
@@ -880,7 +154,7 @@ ElvCharacterDB = {
 			[52] = "|cff3fc6eaNâte|r",
 			[51] = 1543439260,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [39]
+		}, -- [6]
 		{
 			"CAN'T SOAK", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -902,7 +176,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439260,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [40]
+		}, -- [7]
 		{
 			"CAN'T SOAK", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -924,7 +198,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439262,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [41]
+		}, -- [8]
 		{
 			"CAN'T SOAK", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -946,7 +220,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439262,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [42]
+		}, -- [9]
 		{
 			"SOAKING", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -968,7 +242,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439274,
 			[50] = "CHAT_MSG_YELL",
-		}, -- [43]
+		}, -- [10]
 		{
 			"SOAKING", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -990,7 +264,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439276,
 			[50] = "CHAT_MSG_YELL",
-		}, -- [44]
+		}, -- [11]
 		{
 			"SOAKING", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -1012,7 +286,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439278,
 			[50] = "CHAT_MSG_YELL",
-		}, -- [45]
+		}, -- [12]
 		{
 			"SOAKING", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -1034,7 +308,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439279,
 			[50] = "CHAT_MSG_YELL",
-		}, -- [46]
+		}, -- [13]
 		{
 			"SOAKING", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -1056,7 +330,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439281,
 			[50] = "CHAT_MSG_YELL",
-		}, -- [47]
+		}, -- [14]
 		{
 			"SOAKING", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -1078,7 +352,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439282,
 			[50] = "CHAT_MSG_YELL",
-		}, -- [48]
+		}, -- [15]
 		{
 			"PS Died: Spazpriest > 119k, |cff71d5ff|Hspell:274577:0|h[Malignant Growth]|h|r [G'huun] (absorbed by |cff71d5ff|Hspell:27827:0|h[Spirit of Redemption]|h|r)", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1100,7 +374,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1543439294,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [49]
+		}, -- [16]
 		{
 			"BDLC: Please loot the boss to start any potential sessions.", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1122,7 +396,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1543439295,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [50]
+		}, -- [17]
 		{
 			"Does anyone want a lvl 1 |cff0070dd|Hbattlepet:1575:25:3:1302:322:273:BattlePet-0-00000860E81B|h[Sky Fry]|h|r? Alliance only but bought it by mistake", -- [1]
 			"Ozyelfbourne-Stormscale", -- [2]
@@ -1144,7 +418,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dOzyelfbourne|r",
 			[51] = 1543439355,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [51]
+		}, -- [18]
 		{
 			"any1 |cffa335ee|Hitem:160646::::::::120:267::6:3:4800:1507:4786:::|h[Band of Certain Annihilation]|h|r?", -- [1]
 			"Seor-Stormscale", -- [2]
@@ -1166,7 +440,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edSeor|r",
 			[51] = 1543439396,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [52]
+		}, -- [19]
 		{
 			"weekly 10 chaps?", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -1188,7 +462,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439540,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [53]
+		}, -- [20]
 		{
 			"!keys", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -1210,7 +484,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [54]
+		}, -- [21]
 		{
 			"|cffa335ee|Hkeystone:158923:246:10:10:8:4:16|h[Keystone: Tol Dagor (10)]|h|r", -- [1]
 			"Hyperiá-Stormscale", -- [2]
@@ -1232,7 +506,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Hyperiá|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [55]
+		}, -- [22]
 		{
 			"|cffa335ee|Hkeystone:158923:245:11:10:8:4:16|h[Keystone: Freehold (11)]|h|r", -- [1]
 			"Buffww-Stormscale", -- [2]
@@ -1254,7 +528,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Buffww|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [56]
+		}, -- [23]
 		{
 			"|cffa335ee|Hkeystone:158923:246:9:10:8:4:0|h[Keystone: Tol Dagor (9)]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1276,7 +550,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [57]
+		}, -- [24]
 		{
 			"|cffa335ee|Hkeystone:158923:245:11:10:8:4:16|h[Keystone: Freehold (11)]|h|r", -- [1]
 			"Seor-Stormscale", -- [2]
@@ -1298,7 +572,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edSeor|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [58]
+		}, -- [25]
 		{
 			"|cffa335ee|Hkeystone:158923:246:11:10:8:4:16|h[Keystone: Tol Dagor (11)]|h|r", -- [1]
 			"Fluke-Stormscale", -- [2]
@@ -1320,7 +594,7 @@ ElvCharacterDB = {
 			[52] = "|cffa330c9Fluke|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [59]
+		}, -- [26]
 		{
 			"|cffa335ee|Hkeystone:158923:250:10:10:8:4:16|h[Keystone: Temple of Sethraliss (10)]|h|r", -- [1]
 			"Khunee-Stormscale", -- [2]
@@ -1342,7 +616,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaKhunee|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [60]
+		}, -- [27]
 		{
 			"|cffa335ee|Hkeystone:158923:249:9:10:8:4:0|h[Keystone: Kings' Rest (9)]|h|r", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -1364,7 +638,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [61]
+		}, -- [28]
 		{
 			"|cffa335ee|Hkeystone:158923:247:9:10:8:4:0|h[Keystone: The MOTHERLODE!! (9)]|h|r", -- [1]
 			"Ozyelfbourne-Stormscale", -- [2]
@@ -1386,7 +660,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dOzyelfbourne|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [62]
+		}, -- [29]
 		{
 			"|cffa335ee|Hkeystone:158923:248:12:10:8:4:16|h[Keystone: Waycrest Manor (12)]|h|r", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -1408,7 +682,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [63]
+		}, -- [30]
 		{
 			"|cffa335ee|Hkeystone:158923:246:14:10:8:4:16|h[Keystone: Tol Dagor (14)]|h|r", -- [1]
 			"Calekk-Stormscale", -- [2]
@@ -1430,7 +704,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aCalekk|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [64]
+		}, -- [31]
 		{
 			"|cffa335ee|Hkeystone:158923:251:12:10:8:4:16|h[Keystone: The Underrot (12)]|h|r", -- [1]
 			"Ginsu-Stormscale", -- [2]
@@ -1452,7 +726,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edGinsu|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [65]
+		}, -- [32]
 		{
 			"|cffa335ee|Hkeystone:158923:244:11:10:8:4:16|h[Keystone: Atal'dazar (11)]|h|r", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -1474,7 +748,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [66]
+		}, -- [33]
 		{
 			"|cffa335ee|Hkeystone:158923:250:10:10:8:4:16|h[Keystone: Temple of Sethraliss (10)]|h|r", -- [1]
 			"Zuto-Stormscale", -- [2]
@@ -1496,7 +770,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dZuto|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [67]
+		}, -- [34]
 		{
 			"|cffa335ee|Hkeystone:158923:248:13:10:8:4:16|h[Keystone: Waycrest Manor (13)]|h|r", -- [1]
 			"Lyllot-Stormscale", -- [2]
@@ -1518,7 +792,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Lyllot|r",
 			[51] = 1543439545,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [68]
+		}, -- [35]
 		{
 			"yeye", -- [1]
 			"Khunee-Stormscale", -- [2]
@@ -1540,7 +814,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaKhunee|r",
 			[51] = 1543439546,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [69]
+		}, -- [36]
 		{
 			"i can do a 10", -- [1]
 			"Buffww-Stormscale", -- [2]
@@ -1562,7 +836,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Buffww|r",
 			[51] = 1543439553,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [70]
+		}, -- [37]
 		{
 			"ill do a weekly 10 ", -- [1]
 			"Naalii-Stormscale", -- [2]
@@ -1584,7 +858,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNaalii|r",
 			[51] = 1543439553,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [71]
+		}, -- [38]
 		{
 			"yaes", -- [1]
 			"Buffww-Stormscale", -- [2]
@@ -1606,7 +880,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Buffww|r",
 			[51] = 1543439554,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [72]
+		}, -- [39]
 		{
 			"inv again", -- [1]
 			"Khunee-Stormscale", -- [2]
@@ -1628,7 +902,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaKhunee|r",
 			[51] = 1543439571,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [73]
+		}, -- [40]
 		{
 			"still need a weekly on my lovely priest", -- [1]
 			"Ginsu-Stormscale", -- [2]
@@ -1650,7 +924,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edGinsu|r",
 			[51] = 1543439572,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [74]
+		}, -- [41]
 		{
 			"need 1 tank", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -1672,7 +946,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439583,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [75]
+		}, -- [42]
 		{
 			"up if u need", -- [1]
 			"Lyllot-Stormscale", -- [2]
@@ -1694,7 +968,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Lyllot|r",
 			[51] = 1543439588,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [76]
+		}, -- [43]
 		{
 			"hella not tanking ", -- [1]
 			"Lyllot-Stormscale", -- [2]
@@ -1716,7 +990,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Lyllot|r",
 			[51] = 1543439595,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [77]
+		}, -- [44]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:12740:Player-2073-063CB1BF:1:11:28:18:4294967295:4294967295:4294967295:4294967295|h[Full of Scrap!]|h|r!", -- [1]
 			"Ginsu-Stormscale", -- [2]
@@ -1738,7 +1012,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edGinsu|r",
 			[51] = 1543439637,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [78]
+		}, -- [45]
 		{
 			"Down for any key", -- [1]
 			"Ozyelfbourne-Stormscale", -- [2]
@@ -1760,7 +1034,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dOzyelfbourne|r",
 			[51] = 1543439717,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [79]
+		}, -- [46]
 		{
 			"+", -- [1]
 			"Dumii-Stormscale", -- [2]
@@ -1782,7 +1056,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aDumii|r",
 			[51] = 1543439772,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [80]
+		}, -- [47]
 		{
 			"doing another after", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -1804,7 +1078,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543439779,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [81]
+		}, -- [48]
 		{
 			"need 5 in total so", -- [1]
 			"Khunee-Stormscale", -- [2]
@@ -1826,7 +1100,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaKhunee|r",
 			[51] = 1543439827,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [82]
+		}, -- [49]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:11710:Player-2073-042EAE5B:1:11:29:18:4294967295:4294967295:4294967295:4294967295|h[Lethal Looks]|h|r!", -- [1]
 			"Zeddx-Stormscale", -- [2]
@@ -1848,7 +1122,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaZeddx|r",
 			[51] = 1543504069,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [83]
+		}, -- [50]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:11712:Player-2073-042EAE5B:1:11:29:18:4294967295:4294967295:4294967295:4294967295|h[Relentlessly Good Looking]|h|r!", -- [1]
 			"Zeddx-Stormscale", -- [2]
@@ -1870,7 +1144,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaZeddx|r",
 			[51] = 1543504078,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [84]
+		}, -- [51]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:11713:Player-2073-042EAE5B:1:11:29:18:4294967295:4294967295:4294967295:4294967295|h[Wrath of the Stitch King]|h|r!", -- [1]
 			"Zeddx-Stormscale", -- [2]
@@ -1892,7 +1166,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaZeddx|r",
 			[51] = 1543504085,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [85]
+		}, -- [52]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:11711:Player-2073-042EAE5B:1:11:29:18:4294967295:4294967295:4294967295:4294967295|h[The Fierce and the Furious]|h|r!", -- [1]
 			"Zeddx-Stormscale", -- [2]
@@ -1914,7 +1188,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaZeddx|r",
 			[51] = 1543504168,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [86]
+		}, -- [53]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:11131:Player-2073-06067728:1:11:30:18:4294967295:4294967295:4294967295:4294967295|h[5000 World Quests Completed]|h|r!", -- [1]
 			"Niseko-Stormscale", -- [2]
@@ -1936,7 +1210,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddNiseko|r",
 			[51] = 1543603610,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [87]
+		}, -- [54]
 		{
 			"creep creeper its the grim reaper", -- [1]
 			"Scread-Stormscale", -- [2]
@@ -1958,7 +1232,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffScread|r",
 			[51] = 1543603797,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [88]
+		}, -- [55]
 		{
 			"do the creep huuuu", -- [1]
 			"Reeceburton-Stormscale", -- [2]
@@ -1980,7 +1254,7 @@ ElvCharacterDB = {
 			[52] = "|cff3fc6eaReeceburton|r",
 			[51] = 1543603812,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [89]
+		}, -- [56]
 		{
 			"Wish I could go to uni", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2002,7 +1276,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668073,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [90]
+		}, -- [57]
 		{
 			"35 neck", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -2024,7 +1298,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543668166,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [91]
+		}, -- [58]
 		{
 			"im done for the week", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -2046,7 +1320,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543668170,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [92]
+		}, -- [59]
 		{
 			"no", -- [1]
 			"Ghosudaz-Stormscale", -- [2]
@@ -2068,7 +1342,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Ghosudaz|r",
 			[51] = 1543668180,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [93]
+		}, -- [60]
 		{
 			"geek", -- [1]
 			"Reeceyburton-Stormscale", -- [2]
@@ -2090,7 +1364,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edReeceyburton|r",
 			[51] = 1543668183,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [94]
+		}, -- [61]
 		{
 			"this week is level 36 week bro", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2112,7 +1386,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668219,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [95]
+		}, -- [62]
 		{
 			"^", -- [1]
 			"Spazpala-Stormscale", -- [2]
@@ -2134,7 +1408,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaSpazpala|r",
 			[51] = 1543668225,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [96]
+		}, -- [63]
 		{
 			"its 36 week", -- [1]
 			"Spazpala-Stormscale", -- [2]
@@ -2156,7 +1430,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaSpazpala|r",
 			[51] = 1543668227,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [97]
+		}, -- [64]
 		{
 			"why arent u 40", -- [1]
 			"Reeceyburton-Stormscale", -- [2]
@@ -2178,7 +1452,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edReeceyburton|r",
 			[51] = 1543668228,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [98]
+		}, -- [65]
 		{
 			"like the russian", -- [1]
 			"Reeceyburton-Stormscale", -- [2]
@@ -2200,7 +1474,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edReeceyburton|r",
 			[51] = 1543668230,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [99]
+		}, -- [66]
 		{
 			"?", -- [1]
 			"Reeceyburton-Stormscale", -- [2]
@@ -2222,7 +1496,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edReeceyburton|r",
 			[51] = 1543668230,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [100]
+		}, -- [67]
 		{
 			"no micheal you can fuck off", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -2244,7 +1518,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543668231,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [101]
+		}, -- [68]
 		{
 			"Because I am not russian", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2266,7 +1540,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668238,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [102]
+		}, -- [69]
 		{
 			"and I have a life??", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2288,7 +1562,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668239,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [103]
+		}, -- [70]
 		{
 			"i personally have a life", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2310,7 +1584,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1543668242,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [104]
+		}, -- [71]
 		{
 			"hm", -- [1]
 			"Reeceyburton-Stormscale", -- [2]
@@ -2332,7 +1606,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edReeceyburton|r",
 			[51] = 1543668244,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [105]
+		}, -- [72]
 		{
 			"I can't speak for others", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2354,7 +1628,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1543668246,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [106]
+		}, -- [73]
 		{
 			"I work a full time job and have 2 kids", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -2376,7 +1650,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543668267,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [107]
+		}, -- [74]
 		{
 			"I mean if you are 40 traits right now", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2398,7 +1672,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668270,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [108]
+		}, -- [75]
 		{
 			"you must have", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2420,7 +1694,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668275,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [109]
+		}, -- [76]
 		{
 			"SEVERE autism", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2442,7 +1716,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668277,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [110]
+		}, -- [77]
 		{
 			"Like extremely severe autism", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2464,7 +1738,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668283,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [111]
+		}, -- [78]
 		{
 			"off you go then", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2486,7 +1760,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1543668292,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [112]
+		}, -- [79]
 		{
 			"??", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2508,7 +1782,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668303,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [113]
+		}, -- [80]
 		{
 			"and have 6 characters above 370", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -2530,7 +1804,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543668303,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [114]
+		}, -- [81]
 		{
 			"Wish I had the power of will to level before 8.1", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2552,7 +1826,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668335,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [115]
+		}, -- [82]
 		{
 			"when 1 incursion will give you like 2 levels", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2574,7 +1848,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668346,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [116]
+		}, -- [83]
 		{
 			"think the warrior is going in the bin", -- [1]
 			"Hudzz-Stormscale", -- [2]
@@ -2596,7 +1870,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aHudzz|r",
 			[51] = 1543668351,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [117]
+		}, -- [84]
 		{
 			"good choice", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2618,7 +1892,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1543668367,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [118]
+		}, -- [85]
 		{
 			"qing islands if any1 wants in", -- [1]
 			"Ðírtÿstÿlé-Stormscale", -- [2]
@@ -2640,7 +1914,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dÐírtÿstÿlé|r",
 			[51] = 1543668691,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [119]
+		}, -- [86]
 		{
 			"", -- [1]
 			"|Kf22|k000000|k", -- [2]
@@ -2663,7 +1937,7 @@ ElvCharacterDB = {
 			[51] = 1543706012,
 			[50] = "CHAT_MSG_BN_INLINE_TOAST_BROADCAST",
 			[53] = "QôxXy",
-		}, -- [120]
+		}, -- [87]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:6019:Player-2073-0621EC01:1:12:3:18:4294967295:4294967295:4294967295:4294967295|h[Come One, Come All!]|h|r!", -- [1]
 			"Wart", -- [2]
@@ -2685,7 +1959,7 @@ ElvCharacterDB = {
 			[52] = "|cff3fc6eaWart|r",
 			[51] = 1543847274,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [121]
+		}, -- [88]
 		{
 			"anyone else think hydra sounds like morty", -- [1]
 			"Reeceyboy-Stormscale", -- [2]
@@ -2707,7 +1981,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dReeceyboy|r",
 			[51] = 1543848087,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [122]
+		}, -- [89]
 		{
 			"aw jeez", -- [1]
 			"Reeceyboy-Stormscale", -- [2]
@@ -2729,7 +2003,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dReeceyboy|r",
 			[51] = 1543848088,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [123]
+		}, -- [90]
 		{
 			"rastakhans rumble in 12 min Pog", -- [1]
 			"Deffrogue-Stormscale", -- [2]
@@ -2751,7 +2025,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Deffrogue|r",
 			[51] = 1543945649,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [124]
+		}, -- [91]
 		{
 			"Anyone want |cff0070dd|Hbattlepet:1966:1:3:155:11:12:0000000000000000|h[Soulbroken Whelpling]|h|r before I delete it? Pretty good pet if you need it for battling WQs n stuff", -- [1]
 			"Ozyorkbourne-Stormscale", -- [2]
@@ -2773,7 +2047,7 @@ ElvCharacterDB = {
 			[52] = "|cffc69b6dOzyorkbourne|r",
 			[51] = 1543952300,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [125]
+		}, -- [92]
 		{
 			"can take", -- [1]
 			"Deffrogue-Stormscale", -- [2]
@@ -2795,7 +2069,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Deffrogue|r",
 			[51] = 1543952402,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [126]
+		}, -- [93]
 		{
 			"just mail :)", -- [1]
 			"Deffrogue-Stormscale", -- [2]
@@ -2816,6 +2090,732 @@ ElvCharacterDB = {
 			false, -- [17]
 			[52] = "|cfffff468Deffrogue|r",
 			[51] = 1543952405,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [94]
+		{
+			"what did u get btw", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			2, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958667,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [95]
+		{
+			"why did i gz u", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			3, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958669,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [96]
+		{
+			"smoky's replacement?", -- [1]
+			"Gubbyhunter-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			4, -- [11]
+			"Player-2073-0636968A", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffaad372Gubbyhunter|r",
+			[51] = 1543958670,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [97]
+		{
+			"dream big", -- [1]
+			"Gubbyhunter-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			5, -- [11]
+			"Player-2073-0636968A", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffaad372Gubbyhunter|r",
+			[51] = 1543958678,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [98]
+		{
+			"stu am i coming to raid on dk tmrw ye", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			6, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958679,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [99]
+		{
+			"i got the achi for doing TK", -- [1]
+			"Spazmage-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			8, -- [11]
+			"Player-2073-065632AC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaSpazmage|r",
+			[51] = 1543958696,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [100]
+		{
+			"and no", -- [1]
+			"Spazmage-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			9, -- [11]
+			"Player-2073-065632AC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaSpazmage|r",
+			[51] = 1543958697,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [101]
+		{
+			"why", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			10, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958700,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [102]
+		{
+			"o nice bro", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			11, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958702,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [103]
+		{
+			"no ashes of alar?", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			12, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958704,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [104]
+		{
+			":/", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			13, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958715,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [105]
+		{
+			"i have prat now reece", -- [1]
+			"Spazmage-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			14, -- [11]
+			"Player-2073-065632AC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaSpazmage|r",
+			[51] = 1543958722,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [106]
+		{
+			"nope", -- [1]
+			"Spazmage-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			15, -- [11]
+			"Player-2073-065632AC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaSpazmage|r",
+			[51] = 1543958723,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [107]
+		{
+			"we need geared dks", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			17, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958736,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [108]
+		{
+			"o nice bro", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			18, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958741,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [109]
+		{
+			"u are a prat", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			19, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543958743,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [110]
+		{
+			"then i will recruit some dks", -- [1]
+			"Spazmage-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			20, -- [11]
+			"Player-2073-065632AC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaSpazmage|r",
+			[51] = 1543958748,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [111]
+		{
+			"?", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			21, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958753,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [112]
+		{
+			"?", -- [1]
+			"Tigerozy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			22, -- [11]
+			"Player-2073-05CDA347", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffff7c0aTigerozy|r",
+			[51] = 1543958762,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [113]
+		{
+			"I'm online for sec and cla is chatting shit", -- [1]
+			"Tigerozy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			25, -- [11]
+			"Player-2073-05CDA347", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffff7c0aTigerozy|r",
+			[51] = 1543958776,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [114]
+		{
+			"shaggedurdad is right there", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			26, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958776,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [115]
+		{
+			"ready to slam", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			27, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958779,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [116]
+		{
+			"why gear up a dk when you can just recruit one", -- [1]
+			"Spazmage-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			28, -- [11]
+			"Player-2073-065632AC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaSpazmage|r",
+			[51] = 1543958795,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [117]
+		{
+			"cause itll be some nig from a w400 guild", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			30, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543958833,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [118]
+		{
+			"Hopefully", -- [1]
+			"Tigerozy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			33, -- [11]
+			"Player-2073-05CDA347", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffff7c0aTigerozy|r",
+			[51] = 1543958854,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [119]
+		{
+			"this retard doesnt give me 370balefire cus hes saving it for holy spec ", -- [1]
+			"Nâte-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			35, -- [11]
+			"Player-2073-063AE898", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaNâte|r",
+			[51] = 1543958890,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [120]
+		{
+			"XD", -- [1]
+			"Nâte-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			36, -- [11]
+			"Player-2073-063AE898", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff3fc6eaNâte|r",
+			[51] = 1543958891,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [121]
+		{
+			"ding 26", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			50, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543959082,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [122]
+		{
+			":-)", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			51, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543959083,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [123]
+		{
+			"gz reeceyboy", -- [1]
+			"Gubbyhunter-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			52, -- [11]
+			"Player-2073-0636968A", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffaad372Gubbyhunter|r",
+			[51] = 1543959089,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [124]
+		{
+			"thank u gubbyhunter", -- [1]
+			"Reeceyboy-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			53, -- [11]
+			"Player-2073-0654581F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc69b6dReeceyboy|r",
+			[51] = 1543959093,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [125]
+		{
+			"i didnt ding 35 today", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			54, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543959139,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [126]
+		{
+			"feels bad", -- [1]
+			"Khunee-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			55, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1543959141,
 			[50] = "CHAT_MSG_GUILD",
 		}, -- [127]
 	},

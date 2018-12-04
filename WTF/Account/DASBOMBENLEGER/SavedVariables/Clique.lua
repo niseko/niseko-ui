@@ -10,23 +10,11 @@ CliqueDB3 = {
 			["spec2_profileKey"] = "Nisefy - Stormscale",
 			["downclick"] = false,
 			["fastooc"] = false,
-			["spec3_profileKey"] = "Nisefy - Stormscale",
-			["alerthidden"] = true,
 			["specswap"] = false,
+			["alerthidden"] = true,
+			["spec3_profileKey"] = "Nisefy - Stormscale",
 		},
 		["Donnerbock - Ysera"] = {
-			["alerthidden"] = true,
-		},
-		["Niseko - Stormscale"] = {
-			["spec1_profileKey"] = "Niseko - Stormscale",
-			["fastooc"] = false,
-			["specswap"] = false,
-			["downclick"] = false,
-			["spec2_profileKey"] = "Niseko - Stormscale",
-			["alerthidden"] = true,
-			["spec3_profileKey"] = "Niseko - Stormscale",
-		},
-		["Nisetest - Stormscale"] = {
 			["alerthidden"] = true,
 		},
 		["Nedoka - Antonidas"] = {
@@ -34,9 +22,21 @@ CliqueDB3 = {
 			["spec2_profileKey"] = "Nedoka - Antonidas",
 			["downclick"] = false,
 			["fastooc"] = false,
-			["spec3_profileKey"] = "Nedoka - Antonidas",
-			["alerthidden"] = true,
 			["specswap"] = false,
+			["alerthidden"] = true,
+			["spec3_profileKey"] = "Nedoka - Antonidas",
+		},
+		["Nisetest - Stormscale"] = {
+			["alerthidden"] = true,
+		},
+		["Niseko - Stormscale"] = {
+			["spec1_profileKey"] = "Niseko - Stormscale",
+			["fastooc"] = false,
+			["spec2_profileKey"] = "Niseko - Stormscale",
+			["downclick"] = false,
+			["specswap"] = false,
+			["spec3_profileKey"] = "Niseko - Stormscale",
+			["alerthidden"] = true,
 		},
 	},
 	["profileKeys"] = {
@@ -49,23 +49,23 @@ CliqueDB3 = {
 		["Niseniseko - Stormscale"] = "Niseniseko - Stormscale",
 		["Nise - Stormscale"] = "Nise - Stormscale",
 		["Nisetest - Stormscale"] = "Nisetest - Stormscale",
-		["Mondeko - Blackmoore"] = "Mondeko - Blackmoore",
+		["Nedoka - Antonidas"] = "Niseko - Stormscale",
 		["Nisecakes - Stormscale"] = "Nisecakes - Stormscale",
-		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
+		["Pixelfehler - Ysera"] = "Pixelfehler - Ysera",
 		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
 		["Vordt - Twisting Nether"] = "Vordt - Twisting Nether",
 		["Nisegob - Stormscale"] = "Nisegob - Stormscale",
-		["Pixelfehler - Ysera"] = "Pixelfehler - Ysera",
-		["Nedoka - Antonidas"] = "Niseko - Stormscale",
+		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
+		["Mondeko - Blackmoore"] = "Mondeko - Blackmoore",
 	},
 	["profiles"] = {
 		["Zelda - Mal'Ganis"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -81,10 +81,10 @@ CliqueDB3 = {
 		["Nisepeg - Stormscale"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -100,10 +100,10 @@ CliqueDB3 = {
 		["Yvera - Moonglade"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -227,10 +227,10 @@ CliqueDB3 = {
 		["Niseko - Twisting Nether"] = {
 			["bindings"] = {
 				{
-					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -320,10 +320,10 @@ CliqueDB3 = {
 		["Nisedog - Stormscale"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -339,10 +339,10 @@ CliqueDB3 = {
 		["Niseniseko - Stormscale"] = {
 			["bindings"] = {
 				{
-					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -358,10 +358,10 @@ CliqueDB3 = {
 		["Nise - Stormscale"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -377,10 +377,10 @@ CliqueDB3 = {
 		["Nisetest - Stormscale"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -393,13 +393,13 @@ CliqueDB3 = {
 				}, -- [2]
 			},
 		},
-		["Mondeko - Blackmoore"] = {
+		["Nedoka - Antonidas"] = {
 			["bindings"] = {
 				{
-					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -415,10 +415,10 @@ CliqueDB3 = {
 		["Nisecakes - Stormscale"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -431,7 +431,7 @@ CliqueDB3 = {
 				}, -- [2]
 			},
 		},
-		["Nisefy - Stormscale"] = {
+		["Pixelfehler - Ysera"] = {
 			["bindings"] = {
 				{
 					["type"] = "target",
@@ -442,93 +442,21 @@ CliqueDB3 = {
 					["unit"] = "mouseover",
 				}, -- [1]
 				{
-					["spell"] = "Vivify",
-					["key"] = "T",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 1360980,
-					["type"] = "spell",
-				}, -- [2]
-				{
-					["spell"] = "Detox",
-					["key"] = "BUTTON3",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 460692,
-					["type"] = "spell",
-				}, -- [3]
-				{
-					["spell"] = "Life Cocoon",
-					["key"] = "6",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 627485,
-					["type"] = "spell",
-				}, -- [4]
-				{
 					["type"] = "menu",
 					["key"] = "BUTTON2",
 					["sets"] = {
 						["default"] = true,
 					},
-				}, -- [5]
-				{
-					["spell"] = "Enveloping Mist",
-					["key"] = "R",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 775461,
-					["type"] = "spell",
-				}, -- [6]
-				{
-					["spell"] = "Sheilun's Gift",
-					["key"] = "5",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 1242282,
-					["type"] = "spell",
-				}, -- [7]
-				{
-					["spell"] = "Renewing Mist",
-					["key"] = "3",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 627487,
-					["type"] = "spell",
-				}, -- [8]
-				{
-					["spell"] = "Effuse",
-					["key"] = "1",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 1360977,
-					["type"] = "spell",
-				}, -- [9]
-				{
-					["spell"] = "Soothing Mist",
-					["key"] = "4",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 606550,
-					["type"] = "spell",
-				}, -- [10]
+				}, -- [2]
 			},
 		},
 		["Donnerbock - Ysera"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -616,10 +544,10 @@ CliqueDB3 = {
 		["Vordt - Twisting Nether"] = {
 			["bindings"] = {
 				{
+					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -635,25 +563,6 @@ CliqueDB3 = {
 		["Nisegob - Stormscale"] = {
 			["bindings"] = {
 				{
-					["type"] = "target",
-					["sets"] = {
-						["default"] = true,
-					},
-					["key"] = "BUTTON1",
-					["unit"] = "mouseover",
-				}, -- [1]
-				{
-					["type"] = "menu",
-					["key"] = "BUTTON2",
-					["sets"] = {
-						["default"] = true,
-					},
-				}, -- [2]
-			},
-		},
-		["Pixelfehler - Ysera"] = {
-			["bindings"] = {
-				{
 					["sets"] = {
 						["default"] = true,
 					},
@@ -670,13 +579,104 @@ CliqueDB3 = {
 				}, -- [2]
 			},
 		},
-		["Nedoka - Antonidas"] = {
+		["Nisefy - Stormscale"] = {
 			["bindings"] = {
 				{
-					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
+					["type"] = "target",
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["spell"] = "Vivify",
+					["key"] = "T",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 1360980,
+					["type"] = "spell",
+				}, -- [2]
+				{
+					["spell"] = "Detox",
+					["key"] = "BUTTON3",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 460692,
+					["type"] = "spell",
+				}, -- [3]
+				{
+					["spell"] = "Life Cocoon",
+					["key"] = "6",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 627485,
+					["type"] = "spell",
+				}, -- [4]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [5]
+				{
+					["spell"] = "Enveloping Mist",
+					["key"] = "R",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 775461,
+					["type"] = "spell",
+				}, -- [6]
+				{
+					["spell"] = "Sheilun's Gift",
+					["key"] = "5",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 1242282,
+					["type"] = "spell",
+				}, -- [7]
+				{
+					["spell"] = "Renewing Mist",
+					["key"] = "3",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 627487,
+					["type"] = "spell",
+				}, -- [8]
+				{
+					["spell"] = "Effuse",
+					["key"] = "1",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 1360977,
+					["type"] = "spell",
+				}, -- [9]
+				{
+					["spell"] = "Soothing Mist",
+					["key"] = "4",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 606550,
+					["type"] = "spell",
+				}, -- [10]
+			},
+		},
+		["Mondeko - Blackmoore"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]

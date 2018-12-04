@@ -1,7 +1,7 @@
 
 BugGrabberDB = {
+	["session"] = 2632,
 	["lastSanitation"] = 3,
-	["session"] = 2629,
 	["errors"] = {
 		{
 			["message"] = "Interface\\AddOns\\Hekili\\State.lua:2634: attempt to perform arithmetic on field 'buffPadding' (a nil value)",
@@ -23,14 +23,14 @@ BugGrabberDB = {
 			["time"] = "2018/11/26 17:14:24",
 			["locals"] = "gsub = <function> defined =[C]:-1\nformat = <function> defined =[C]:-1\nstrsub = <function> defined =[C]:-1\nstrfind = <function> defined =[C]:-1\nstrmatch = <function> defined =[C]:-1\nstrrev = <function> defined =[C]:-1\n(*temporary) = <table> {\n}\n(*temporary) = nil\n(*temporary) = 1456\n(*temporary) = \"attempt to call field 'GetMapInfo' (a nil value)\"\n",
 			["stack"] = "...terface\\AddOns\\KeystoneLinkPlus\\KeystoneLinkPlus-1.4.lua:9: in main chunk",
-			["session"] = 2629,
-			["counter"] = 25,
+			["session"] = 2632,
+			["counter"] = 28,
 		}, -- [3]
 		{
 			["message"] = "(null)",
+			["session"] = 2632,
 			["time"] = "2018/11/26 17:14:28",
-			["session"] = 2629,
-			["counter"] = 75,
+			["counter"] = 84,
 		}, -- [4]
 	},
 }

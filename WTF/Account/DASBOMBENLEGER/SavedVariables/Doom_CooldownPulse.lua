@@ -10,9 +10,9 @@ DCP_Saved = {
 	["fadeOutTime"] = 0.7,
 	["maxAlpha"] = 0.7,
 	["x"] = 934.345336914063,
-	["showSpellName"] = false,
-	["iconSize"] = 75,
-	["animScale"] = 1.5,
-	["ignoredSpells"] = "",
 	["y"] = 543.835845947266,
+	["iconSize"] = 75,
+	["ignoredSpells"] = "",
+	["animScale"] = 1.5,
+	["showSpellName"] = false,
 }
