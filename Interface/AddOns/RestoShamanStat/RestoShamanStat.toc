@@ -1,0 +1,33 @@
+## Interface: 70100
+## Title: Resto Shaman Stat Analyzer
+## Notes: Tells you how effective different stats are at increasing your heals
+## SavedVariablesPerCharacter: RShamanStatArchive
+## X-Curse-Packaged-Version: v3.2
+## X-Curse-Project-Name: RestoShamanStats
+## X-Curse-Project-ID: restoshamanstats
+## X-Curse-Repository-ID: wow/restoshamanstats/mainline
+
+libs/LibStub/LibStub.lua
+libs/LibArtifactData-1.0/LibArtifactData-1.0.lua
+
+RShamanStat.lua
+archive.lua
+data.lua
+encounter.lua
+metaparser.lua
+monitor.lua
+parser.lua
+theory.lua
+utility.lua
+tooltips.lua
+RShamanStatUI.lua
+
+RShamanStat.xml
+
+## OptionalDeps: LibArtifactData-1.0
+
+#@no-lib-strip@
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibArtifactData-1.0\LibArtifactData-1.0.lua
+#@end-no-lib-strip@

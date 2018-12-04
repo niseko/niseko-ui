@@ -1,0 +1,19 @@
+changeset:   153:963a20066bc6
+tag:         v8.0.1.153
+user:        Tercioo
+date:        Sat Nov 17 19:30:39 2018 -0200
+summary:     - Added breakline to auras that doesn't grow from center.
+
+
+changeset:   152:ca2e77649f4d
+user:        Tercioo
+date:        Thu Nov 08 11:54:19 2018 -0200
+summary:     - Added breakline to auras that doesn't grow from center.
+
+
+changeset:   151:407ea62d475c
+user:        Tercioo
+date:        Wed Nov 07 17:39:24 2018 -0200
+summary:     - Added text to the status bar.
+
+

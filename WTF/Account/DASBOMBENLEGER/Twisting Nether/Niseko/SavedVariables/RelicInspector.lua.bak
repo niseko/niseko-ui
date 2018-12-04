@@ -1,0 +1,220 @@
+
+RelicInspectorCharDB = {
+	["profileKeys"] = {
+		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
+	},
+	["char"] = {
+		["Niseko - Twisting Nether"] = {
+			["crucibleUsed"] = true,
+			["artifactCache"] = {
+				[128868] = {
+					{
+						["traits"] = {
+							{
+								["requiredArtifactLevel"] = 0,
+								["canChoose"] = false,
+								["tier"] = 1,
+								["powerID"] = 1739,
+								["isChosen"] = true,
+								["icon"] = 1033184,
+								["spellID"] = 250879,
+							}, -- [1]
+							{
+								["requiredArtifactLevel"] = 60,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1778,
+								["isChosen"] = true,
+								["icon"] = 136146,
+								["spellID"] = 252875,
+							}, -- [2]
+							{
+								["requiredArtifactLevel"] = 60,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1777,
+								["isChosen"] = false,
+								["icon"] = 460953,
+								["spellID"] = 252799,
+							}, -- [3]
+							{
+								["requiredArtifactLevel"] = 69,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 894,
+								["isChosen"] = false,
+								["icon"] = 135940,
+								["spellID"] = 197729,
+							}, -- [4]
+							{
+								["requiredArtifactLevel"] = 69,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 888,
+								["isChosen"] = false,
+								["icon"] = 237545,
+								["spellID"] = 197708,
+							}, -- [5]
+							{
+								["requiredArtifactLevel"] = 69,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 890,
+								["isChosen"] = false,
+								["icon"] = 135936,
+								["spellID"] = 197713,
+							}, -- [6]
+						},
+						["relic"] = {
+							"Carved Argunite Idol", -- [1]
+							134896, -- [2]
+							"Holy", -- [3]
+							"|cffa335ee|Hitem:151297:::::::::::35:3:3418:1592:3337:::|h[Carved Argunite Idol]|h|r", -- [4]
+						},
+					}, -- [1]
+					{
+						["traits"] = {
+							{
+								["requiredArtifactLevel"] = 0,
+								["canChoose"] = false,
+								["tier"] = 1,
+								["powerID"] = 1739,
+								["isChosen"] = true,
+								["icon"] = 1033184,
+								["spellID"] = 250879,
+							}, -- [1]
+							{
+								["requiredArtifactLevel"] = 63,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1771,
+								["isChosen"] = false,
+								["icon"] = 136194,
+								["spellID"] = 252091,
+							}, -- [2]
+							{
+								["requiredArtifactLevel"] = 63,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1784,
+								["isChosen"] = true,
+								["icon"] = 236687,
+								["spellID"] = 253111,
+							}, -- [3]
+							{
+								["requiredArtifactLevel"] = 72,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 896,
+								["isChosen"] = false,
+								["icon"] = 136202,
+								["spellID"] = 216212,
+							}, -- [4]
+							{
+								["requiredArtifactLevel"] = 72,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 888,
+								["isChosen"] = false,
+								["icon"] = 237545,
+								["spellID"] = 197708,
+							}, -- [5]
+							{
+								["requiredArtifactLevel"] = 72,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 893,
+								["isChosen"] = false,
+								["icon"] = 237548,
+								["spellID"] = 197727,
+							}, -- [6]
+						},
+						["relic"] = {
+							"Brand of Relentless Agony", -- [1]
+							615100, -- [2]
+							"Shadow", -- [3]
+							"|cffa335ee|Hitem:147108:::::::::::5:3:3562:1497:3528:::|h[Brand of Relentless Agony]|h|r", -- [4]
+						},
+					}, -- [2]
+					{
+						["traits"] = {
+							{
+								["requiredArtifactLevel"] = 0,
+								["canChoose"] = false,
+								["tier"] = 1,
+								["powerID"] = 1739,
+								["isChosen"] = true,
+								["icon"] = 1033184,
+								["spellID"] = 250879,
+							}, -- [1]
+							{
+								["requiredArtifactLevel"] = 66,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1780,
+								["isChosen"] = false,
+								["icon"] = 615101,
+								["spellID"] = 252906,
+							}, -- [2]
+							{
+								["requiredArtifactLevel"] = 66,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1783,
+								["isChosen"] = false,
+								["icon"] = 876916,
+								["spellID"] = 253093,
+							}, -- [3]
+							{
+								["requiredArtifactLevel"] = 75,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 888,
+								["isChosen"] = false,
+								["icon"] = 237545,
+								["spellID"] = 197708,
+							}, -- [4]
+							{
+								["requiredArtifactLevel"] = 75,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 895,
+								["isChosen"] = false,
+								["icon"] = 633042,
+								["spellID"] = 197762,
+							}, -- [5]
+							{
+								["requiredArtifactLevel"] = 75,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 892,
+								["isChosen"] = false,
+								["icon"] = 135922,
+								["spellID"] = 197716,
+							}, -- [6]
+						},
+						["relic"] = {
+							"Inquisition's Master Key", -- [1]
+							135828, -- [2]
+							"Holy", -- [3]
+							"|cffa335ee|Hitem:147096:::::::::::5:3:3562:1497:3528:::|h[Inquisition's Master Key]|h|r", -- [4]
+						},
+					}, -- [3]
+					["level"] = 63,
+					["crucibled"] = true,
+					["timestamp"] = 727048.582,
+				},
+				[128827] = {
+					["timestamp"] = 727040.948,
+					["crucibled"] = false,
+					["level"] = 23,
+				},
+				[128825] = {
+					["timestamp"] = 727040.948,
+					["crucibled"] = false,
+					["level"] = 52,
+				},
+			},
+		},
+	},
+}

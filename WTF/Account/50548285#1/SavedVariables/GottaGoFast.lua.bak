@@ -1,0 +1,11 @@
+
+GottaGoFastDB = {
+	["profileKeys"] = {
+		["Nisekoi - Eredar"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["Version"] = 27000,
+		},
+	},
+}

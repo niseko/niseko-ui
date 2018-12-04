@@ -1,0 +1,10 @@
+lightweight tag ba0c6b2f066bd85ba88662032be6577e6abf71bb 2.43-release
+Author:	Thomas Shannon <thomasjohnshannon@gmail.com>
+Date:	Fri Jan 19 23:51:45 2018 -0700
+
+commit ba0c6b2f066bd85ba88662032be6577e6abf71bb
+Author: Thomas Shannon <thomasjohnshannon@gmail.com>
+Date:   Fri Jan 19 23:51:45 2018 -0700
+
+    2.43
+

@@ -1,0 +1,14 @@
+Lorti UI: disabled
+EasyFrames: disabled
+nMainbar: disabled
+bdGrid: disabled
+VuhDo: enabled
+WeakAuras: enabled
+bdNameplates: enabled
+bdUnitframes: enabled
+RelicInspector: enabled
+TipTac: enabled
+bdCore: enabled
+VuhDoOptions: enabled
+ElvUI: enabled
+ElvUI_Config: enabled

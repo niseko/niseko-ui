@@ -1,0 +1,22 @@
+Hekili: enabled
+Lime_Option: disabled
+Lime: disabled
+nPlates: disabled
+Plater: enabled
+AngryWorldQuests: disabled
+FlashTaskBar: disabled
+WorldQuestTracker: disabled
+PremadeGroupsFilter: enabled
+Azeroth Auto Pilot: disabled
+OmniCC: enabled
+OmniCC_Config: enabled
+GottaGoFast: enabled
+GottaGoFastHistory: enabled
+bigdumblootcouncil: enabled
+Grid2: enabled
+WeakAuras: enabled
+VuhDo: disabled
+SuppressRightClick: disabled
+OmniBar: enabled
+Gladius: enabled
+GladiatorlosSA2: enabled
