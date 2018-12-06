@@ -1,5 +1,7 @@
 
 OmniCC4Config = {
+	["groups"] = {
+	},
 	["version"] = "8.0.9",
 	["groupSettings"] = {
 		["base"] = {
@@ -23,21 +25,19 @@ OmniCC4Config = {
 					["scale"] = 1.50000001490116,
 				},
 			},
-			["fontSize"] = 15,
-			["yOff"] = 0,
-			["minEffectDuration"] = 30,
-			["minSize"] = 0.4,
+			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
+			["scaleText"] = true,
+			["mmSSDuration"] = 0,
+			["anchor"] = "CENTER",
 			["spiralOpacity"] = 1.00999997742474,
-			["minDuration"] = 2,
+			["yOff"] = 0,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["anchor"] = "CENTER",
-			["mmSSDuration"] = 0,
-			["scaleText"] = true,
-			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
+			["minSize"] = 0.4,
+			["minEffectDuration"] = 30,
+			["minDuration"] = 2,
+			["fontSize"] = 15,
 		},
-	},
-	["groups"] = {
 	},
 }

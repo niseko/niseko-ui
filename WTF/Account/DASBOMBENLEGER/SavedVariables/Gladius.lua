@@ -1,12 +1,42 @@
 
 Gladius2DB = {
 	["profileKeys"] = {
-		["Niseko - Stormscale"] = "Niseko - Stormscale",
+		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
 		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
+		["Niseko - Stormscale"] = "Niseko - Stormscale",
 	},
 	["profiles"] = {
+		["Nedoka - Antonidas"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["x"] = {
+				["arena1"] = 1234.48883197572,
+			},
+			["y"] = {
+				["arena1"] = 388.977700391079,
+			},
+		},
+		["Niseko - Twisting Nether"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["y"] = {
+				["arena1"] = 36.9777732478246,
+			},
+			["x"] = {
+				["arena1"] = 1059.55610204539,
+			},
+		},
+		["Nisefy - Stormscale"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["x"] = {
+				["arena1"] = 1024.00011160109,
+			},
+			["y"] = {
+				["arena1"] = 479.288943897354,
+			},
+		},
 		["Niseko - Stormscale"] = {
 			["modules"] = {
 				["Announcements"] = false,
@@ -24,36 +54,6 @@ Gladius2DB = {
 			["frameScale"] = 0.9,
 			["auraVersion"] = 1,
 			["barWidth"] = 114,
-		},
-		["Niseko - Twisting Nether"] = {
-			["auraVersion"] = 1,
-			["tagsVersion"] = 4,
-			["x"] = {
-				["arena1"] = 1059.55610204539,
-			},
-			["y"] = {
-				["arena1"] = 36.9777732478246,
-			},
-		},
-		["Nisefy - Stormscale"] = {
-			["auraVersion"] = 1,
-			["tagsVersion"] = 4,
-			["y"] = {
-				["arena1"] = 479.288943897354,
-			},
-			["x"] = {
-				["arena1"] = 1024.00011160109,
-			},
-		},
-		["Nedoka - Antonidas"] = {
-			["auraVersion"] = 1,
-			["tagsVersion"] = 4,
-			["y"] = {
-				["arena1"] = 388.977700391079,
-			},
-			["x"] = {
-				["arena1"] = 1234.48883197572,
-			},
 		},
 	},
 }

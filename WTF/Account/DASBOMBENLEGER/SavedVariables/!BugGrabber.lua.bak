@@ -1,7 +1,7 @@
 
 BugGrabberDB = {
+	["session"] = 2644,
 	["lastSanitation"] = 3,
-	["session"] = 2631,
 	["errors"] = {
 		{
 			["message"] = "Interface\\AddOns\\Hekili\\State.lua:2634: attempt to perform arithmetic on field 'buffPadding' (a nil value)",
@@ -19,18 +19,34 @@ BugGrabberDB = {
 			["counter"] = 5,
 		}, -- [2]
 		{
+			["message"] = "[string \"local _,gcd=GetSpellCooldown(\"Lightning Bol...\"]:1: attempt to concatenate local 'gcd' (a nil value)",
+			["time"] = "2018/12/05 02:32:33",
+			["locals"] = "_ = nil\ngcd = nil\n(*temporary) = <function> defined @Interface\\FrameXML\\RestrictedInfrastructure.lua:116\n(*temporary) = \"Current global cooldown is \"\n(*temporary) = nil\n(*temporary) = \" seconds.\"\n(*temporary) = \"attempt to concatenate local 'gcd' (a nil value)\"\n",
+			["stack"] = "[string \"local _,gcd=GetSpellCooldown(\"Lightning Bol...\"]:1: in main chunk\n[C]: in function `RunScript'\nInterface\\FrameXML\\ChatFrame.lua:2158: in function `?'\nInterface\\FrameXML\\ChatFrame.lua:4734: in function `ChatEdit_ParseText'\nInterface\\FrameXML\\ChatFrame.lua:4396: in function `ChatEdit_SendText'\nInterface\\FrameXML\\ChatFrame.lua:4432: in function <Interface\\FrameXML\\ChatFrame.lua:4428>\n[C]: in function `ChatEdit_OnEnterPressed'\n[string \"*:OnEnterPressed\"]:1: in function <[string \"*:OnEnterPressed\"]:1>",
+			["session"] = 2636,
+			["counter"] = 2,
+		}, -- [3]
+		{
+			["message"] = "[string \"--[[ Error in 'Uldir - Zek'voz - Surging Da...\"]:13: attempt to perform arithmetic on field 'brain_lag' (a nil value)",
+			["time"] = "2018/12/05 19:57:26",
+			["locals"] = "InCombatSkipped",
+			["stack"] = "[C]: in function `xpcall'\nInterface\\AddOns\\WeakAuras\\WeakAuras-2.10.2.lua:3255: in function `PerformActions'\n...ace\\AddOns\\WeakAuras\\RegionTypes\\RegionPrototype.lua:524: in function `Expand'\nInterface\\AddOns\\WeakAuras\\WeakAuras-2.10.2.lua:4380: in function <Interface\\AddOns\\WeakAuras\\WeakAuras.lua:4331>\nInterface\\AddOns\\WeakAuras\\WeakAuras-2.10.2.lua:4428: in function <Interface\\AddOns\\WeakAuras\\WeakAuras.lua:4422>\nInterface\\AddOns\\WeakAuras\\WeakAuras-2.10.2.lua:4513: in function `UpdatedTriggerState'\nInterface\\AddOns\\WeakAuras\\BuffTrigger.lua:823: in function `ScanAuras'\nInterface\\AddOns\\WeakAuras\\BuffTrigger.lua:1357: in function <Interface\\AddOns\\WeakAuras\\BuffTrigger.lua:1353>",
+			["session"] = 2643,
+			["counter"] = 48,
+		}, -- [4]
+		{
 			["message"] = "...terface\\AddOns\\KeystoneLinkPlus\\KeystoneLinkPlus-1.4.lua:9: attempt to call field 'GetMapInfo' (a nil value)",
 			["time"] = "2018/11/26 17:14:24",
 			["locals"] = "gsub = <function> defined =[C]:-1\nformat = <function> defined =[C]:-1\nstrsub = <function> defined =[C]:-1\nstrfind = <function> defined =[C]:-1\nstrmatch = <function> defined =[C]:-1\nstrrev = <function> defined =[C]:-1\n(*temporary) = <table> {\n}\n(*temporary) = nil\n(*temporary) = 1456\n(*temporary) = \"attempt to call field 'GetMapInfo' (a nil value)\"\n",
 			["stack"] = "...terface\\AddOns\\KeystoneLinkPlus\\KeystoneLinkPlus-1.4.lua:9: in main chunk",
-			["session"] = 2631,
-			["counter"] = 27,
-		}, -- [3]
+			["session"] = 2644,
+			["counter"] = 40,
+		}, -- [5]
 		{
 			["message"] = "(null)",
+			["session"] = 2644,
 			["time"] = "2018/11/26 17:14:28",
-			["session"] = 2631,
-			["counter"] = 81,
-		}, -- [4]
+			["counter"] = 120,
+		}, -- [6]
 	},
 }

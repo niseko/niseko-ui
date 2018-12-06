@@ -181,9 +181,9 @@ END
 VER 3 000000000000002E "toggletest" "INV_MISC_QUESTIONMARK"
 /run if GetCVar("countdownForCooldowns")=="1" then SetCVar("countdownForCooldowns","0");else SetCVar("countdownForCooldowns","1");end
 END
-VER 3 000000000000000A "XT-Hard" "Ability_Druid_Dreamstate"
-/tar Lebensfunke
-END
 VER 3 0000000000000011 "XT-Hard" "Ability_Hunter_SniperTraining"
 /tar Herz
+END
+VER 3 000000000000000A "XT-Hard" "Ability_Druid_Dreamstate"
+/tar Lebensfunke
 END

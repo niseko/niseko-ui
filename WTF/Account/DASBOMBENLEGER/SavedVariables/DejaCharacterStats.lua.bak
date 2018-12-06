@@ -7,8 +7,8 @@ DejaCharacterStatsDB = {
 		["dejacharacterstatsItemLevelChecked"] = {
 			["ItemLevelTwoDecimalsSetChecked"] = false,
 			["ItemLevelEQ_AV_SetChecked"] = true,
-			["ItemLevelDecimalsSetChecked"] = true,
 			["ItemLevelClassColorSetChecked"] = false,
+			["ItemLevelDecimalsSetChecked"] = true,
 		},
 		["dejacharacterstatsHideAtZeroChecked"] = {
 			["SetChecked"] = true,
@@ -19,8 +19,8 @@ DejaCharacterStatsDB = {
 		["dejacharacterstatsShowDecimalsChecked"] = {
 			["SetChecked"] = true,
 		},
-		["dejacharacterstatsScrollbarChecked"] = {
-			["ScrollbarSetChecked"] = false,
+		["dejacharacterstatsExpandButtonChecked"] = {
+			["ExpandButtonSetChecked"] = false,
 		},
 		["dejacharacterstatsShowDuraTextureChecked"] = {
 			["ShowDuraTextureSetChecked"] = false,
@@ -31,17 +31,17 @@ DejaCharacterStatsDB = {
 		["dejacharacterstatsClassBackgroundChecked"] = {
 			["ClassBackgroundChecked"] = false,
 		},
-		["dejacharacterstatsShowItemLevelChecked"] = {
-			["ShowItemLevelSetChecked"] = true,
+		["dejacharacterstatsShowDuraChecked"] = {
+			["ShowDuraSetChecked"] = false,
 		},
 		["dejacharacterstatsExpandChecked"] = {
 			["ExpandSetChecked"] = true,
 		},
-		["dejacharacterstatsShowDuraChecked"] = {
-			["ShowDuraSetChecked"] = false,
+		["dejacharacterstatsShowItemLevelChecked"] = {
+			["ShowItemLevelSetChecked"] = true,
 		},
-		["dejacharacterstatsExpandButtonChecked"] = {
-			["ExpandButtonSetChecked"] = false,
+		["dejacharacterstatsScrollbarChecked"] = {
+			["ScrollbarSetChecked"] = false,
 		},
 	},
 }
@@ -2352,7 +2352,7 @@ DCS_ClassSpecDB = {
 		}, -- [49]
 		["uniqueKey"] = "Nisetest:Stormscale:1",
 	},
-	["Nise:Stormscale:1"] = {
+	["Nedoka:Antonidas:3"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -2529,10 +2529,7 @@ DCS_ClassSpecDB = {
 			["hideAt"] = 0,
 			["hidden"] = true,
 		}, -- [46]
-		{
-			["statKey"] = "SPEED",
-		}, -- [47]
-		["uniqueKey"] = "Nise:Stormscale:1",
+		["uniqueKey"] = "Nedoka:Antonidas:3",
 	},
 	["Niseniseko:Stormscale:3"] = {
 		{
@@ -2918,7 +2915,7 @@ DCS_ClassSpecDB = {
 		}, -- [49]
 		["uniqueKey"] = "Nisepeg:Stormscale:3",
 	},
-	["Nisegob:Stormscale:3"] = {
+	["Nisedog:Stormscale:2"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -2956,10 +2953,10 @@ DCS_ClassSpecDB = {
 		}, -- [11]
 		{
 			["statKey"] = "AGILITY",
-			["hidden"] = true,
 		}, -- [12]
 		{
 			["statKey"] = "INTELLECT",
+			["hidden"] = true,
 		}, -- [13]
 		{
 			["statKey"] = "STAMINA",
@@ -2972,25 +2969,23 @@ DCS_ClassSpecDB = {
 		}, -- [16]
 		{
 			["statKey"] = "ATTACK_DAMAGE",
-			["hidden"] = true,
 		}, -- [17]
 		{
 			["statKey"] = "ATTACK_AP",
-			["hidden"] = true,
 		}, -- [18]
 		{
 			["statKey"] = "DCS_ATTACK_ATTACKSPEED",
-			["hidden"] = true,
 		}, -- [19]
 		{
 			["statKey"] = "WEAPON_DPS",
-			["hidden"] = true,
 		}, -- [20]
 		{
 			["statKey"] = "SPELLPOWER",
+			["hidden"] = true,
 		}, -- [21]
 		{
 			["statKey"] = "MANAREGEN",
+			["hidden"] = true,
 		}, -- [22]
 		{
 			["statKey"] = "ENERGY_REGEN",
@@ -3108,7 +3103,7 @@ DCS_ClassSpecDB = {
 		{
 			["statKey"] = "STAGGER",
 		}, -- [49]
-		["uniqueKey"] = "Nisegob:Stormscale:3",
+		["uniqueKey"] = "Nisedog:Stormscale:2",
 	},
 	["Vordt:Twisting Nether:1"] = {
 		{
@@ -3490,7 +3485,7 @@ DCS_ClassSpecDB = {
 		}, -- [47]
 		["uniqueKey"] = "Zelda:Mal'Ganis:1",
 	},
-	["Nisedog:Stormscale:2"] = {
+	["Nisegob:Stormscale:3"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -3528,10 +3523,10 @@ DCS_ClassSpecDB = {
 		}, -- [11]
 		{
 			["statKey"] = "AGILITY",
+			["hidden"] = true,
 		}, -- [12]
 		{
 			["statKey"] = "INTELLECT",
-			["hidden"] = true,
 		}, -- [13]
 		{
 			["statKey"] = "STAMINA",
@@ -3544,23 +3539,25 @@ DCS_ClassSpecDB = {
 		}, -- [16]
 		{
 			["statKey"] = "ATTACK_DAMAGE",
+			["hidden"] = true,
 		}, -- [17]
 		{
 			["statKey"] = "ATTACK_AP",
+			["hidden"] = true,
 		}, -- [18]
 		{
 			["statKey"] = "DCS_ATTACK_ATTACKSPEED",
+			["hidden"] = true,
 		}, -- [19]
 		{
 			["statKey"] = "WEAPON_DPS",
+			["hidden"] = true,
 		}, -- [20]
 		{
 			["statKey"] = "SPELLPOWER",
-			["hidden"] = true,
 		}, -- [21]
 		{
 			["statKey"] = "MANAREGEN",
-			["hidden"] = true,
 		}, -- [22]
 		{
 			["statKey"] = "ENERGY_REGEN",
@@ -3678,7 +3675,7 @@ DCS_ClassSpecDB = {
 		{
 			["statKey"] = "STAGGER",
 		}, -- [49]
-		["uniqueKey"] = "Nisedog:Stormscale:2",
+		["uniqueKey"] = "Nisegob:Stormscale:3",
 	},
 	["Nisetest:Stormscale:3"] = {
 		{
@@ -3872,7 +3869,7 @@ DCS_ClassSpecDB = {
 		}, -- [49]
 		["uniqueKey"] = "Nisetest:Stormscale:3",
 	},
-	["Nedoka:Antonidas:3"] = {
+	["Nise:Stormscale:1"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -4049,6 +4046,9 @@ DCS_ClassSpecDB = {
 			["hideAt"] = 0,
 			["hidden"] = true,
 		}, -- [46]
-		["uniqueKey"] = "Nedoka:Antonidas:3",
+		{
+			["statKey"] = "SPEED",
+		}, -- [47]
+		["uniqueKey"] = "Nise:Stormscale:1",
 	},
 }

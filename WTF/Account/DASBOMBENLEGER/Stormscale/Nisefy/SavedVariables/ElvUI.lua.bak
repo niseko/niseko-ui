@@ -1,688 +1,28 @@
 
 ElvCharacterDB = {
 	["ChatEditHistory"] = {
-		"/4 or that", -- [1]
-		"/4 i wanted to trade chars with coby", -- [2]
-		"/4 but he didn't want to", -- [3]
-		" |cffa335ee|Hkeystone:158923:245:10:9:7:13:16|h[Keystone: Freehold (10)]|h|r", -- [4]
-		"/p fuck zuto", -- [5]
-		" same", -- [6]
-		"/cw Lyllotxd-Stormscale sure whatever", -- [7]
-		"/cw Lyllotxd-Stormscale no", -- [8]
-		" probably", -- [9]
-		"/p just 4 dps it", -- [10]
-		"/p scufefd group", -- [11]
-		" you never answered which guild", -- [12]
-		" bitch", -- [13]
-		" rude", -- [14]
-		" oh is that the 5 days with garbage worldrank one", -- [15]
-		" i don't really have a memory", -- [16]
-		"/g also doing one", -- [17]
-		"/g unlucky timing", -- [18]
-		"/g could've done the double mw", -- [19]
-		"/p ok dad", -- [20]
+		"/cw Lyllotxd-Stormscale sure whatever", -- [1]
+		"/cw Lyllotxd-Stormscale no", -- [2]
+		" probably", -- [3]
+		"/p just 4 dps it", -- [4]
+		"/p scufefd group", -- [5]
+		" you never answered which guild", -- [6]
+		" bitch", -- [7]
+		" rude", -- [8]
+		" oh is that the 5 days with garbage worldrank one", -- [9]
+		" i don't really have a memory", -- [10]
+		"/g also doing one", -- [11]
+		"/g unlucky timing", -- [12]
+		"/g could've done the double mw", -- [13]
+		"/p ok dad", -- [14]
+		"/rt note", -- [15]
+		"/cw Spazmonk-Stormscale maybe", -- [16]
+		"/cw Spazmonk-Stormscale but what do you have against my monk", -- [17]
+		"/cw Spazmonk-Stormscale technically", -- [18]
+		"/cw Spazmonk-Stormscale just asking if this raid happens", -- [19]
+		"/cw Spazmonk-Stormscale `Ill let u know in 20 sec` he said, 1 minute ago", -- [20]
 	},
 	["ChatHistoryLog"] = {
-		{
-			"Interrupted Marked Sister's |cff71d5ff|Hspell:278551:0|h[Soul Fetish]|h|r!", -- [1]
-			"Bitool-Draenor", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1631, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720638,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [1]
-		{
-			"r", -- [1]
-			"Bitool-Draenor", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1633, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720675,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [2]
-		{
-			"?", -- [1]
-			"Bitool-Draenor", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1634, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720676,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [3]
-		{
-			"r", -- [1]
-			"Vregorix-TwistingNether", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Vregorix-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1635, -- [11]
-			"Player-3674-08DAB088", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edVregorix-TwistingNether|r",
-			[51] = 1542720679,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [4]
-		{
-			"Interrupted Sister Solena's |cff71d5ff|Hspell:260698:0|h[Soul Bolt]|h|r!", -- [1]
-			"Bitool-Draenor", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1638, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720686,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [5]
-		{
-			"Unstable Runic Mark on Nisefy", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1647, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720706,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [6]
-		{
-			"Interrupted Sister Malady's |cff71d5ff|Hspell:260696:0|h[Ruinous Bolt]|h|r!", -- [1]
-			"Bitool-Draenor", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1650, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720709,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [7]
-		{
-			"3", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1653, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720709,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [8]
-		{
-			"2", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1657, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720710,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [9]
-		{
-			"1", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1660, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720711,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [10]
-		{
-			"bl", -- [1]
-			"Bitool-Draenor", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1662, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720714,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [11]
-		{
-			"Unstable Runic Mark on Nisefy", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1667, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720718,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [12]
-		{
-			"3", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1674, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720721,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [13]
-		{
-			"2", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1679, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720723,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [14]
-		{
-			"1", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1684, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720723,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [15]
-		{
-			"Unstable Runic Mark on Nisefy", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1698, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720774,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [16]
-		{
-			"Unstable Runic Mark on Bitool", -- [1]
-			"Bitool-Draenor", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1699, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720774,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [17]
-		{
-			"Unstable Runic Mark on Bitool", -- [1]
-			"Bitool-Draenor", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1700, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720774,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [18]
-		{
-			"Unstable Runic Mark on Varylia", -- [1]
-			"Varylia-TwistingNether", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Varylia-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1701, -- [11]
-			"Player-3674-079AB6A9", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Varylia-TwistingNether|r",
-			[51] = 1542720774,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [19]
-		{
-			"Unstable Runic Mark on Vregorix", -- [1]
-			"Vregorix-TwistingNether", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Vregorix-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1702, -- [11]
-			"Player-3674-08DAB088", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edVregorix-TwistingNether|r",
-			[51] = 1542720774,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [20]
-		{
-			"3", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1704, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720777,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [21]
-		{
-			"3", -- [1]
-			"Bitool-Draenor", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1705, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720777,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [22]
-		{
-			"3", -- [1]
-			"Varylia-TwistingNether", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Varylia-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1706, -- [11]
-			"Player-3674-079AB6A9", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Varylia-TwistingNether|r",
-			[51] = 1542720777,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [23]
-		{
-			"3", -- [1]
-			"Vregorix-TwistingNether", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Vregorix-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1707, -- [11]
-			"Player-3674-08DAB088", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edVregorix-TwistingNether|r",
-			[51] = 1542720777,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [24]
-		{
-			"I", -- [1]
-			"Xyliani-TwistingNether", -- [2]
-			"Shath'Yar", -- [3]
-			"", -- [4]
-			"Xyliani-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1708, -- [11]
-			"Player-3674-0698176D", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffXyliani-TwistingNether|r",
-			[51] = 1542720777,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [25]
-		{
-			"2", -- [1]
-			"Nisefy-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Nisefy", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1709, -- [11]
-			"Player-2073-06136AF4", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff00ff96Nisefy|r",
-			[51] = 1542720778,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [26]
-		{
-			"2", -- [1]
-			"Bitool-Draenor", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1710, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542720778,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [27]
-		{
-			"2", -- [1]
-			"Varylia-TwistingNether", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Varylia-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1711, -- [11]
-			"Player-3674-079AB6A9", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Varylia-TwistingNether|r",
-			[51] = 1542720778,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [28]
-		{
-			"2", -- [1]
-			"Vregorix-TwistingNether", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Vregorix-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1712, -- [11]
-			"Player-3674-08DAB088", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff8787edVregorix-TwistingNether|r",
-			[51] = 1542720778,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [29]
-		{
-			"I", -- [1]
-			"Xyliani-TwistingNether", -- [2]
-			"Shath'Yar", -- [3]
-			"", -- [4]
-			"Xyliani-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1713, -- [11]
-			"Player-3674-0698176D", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffXyliani-TwistingNether|r",
-			[51] = 1542720778,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [30]
 		{
 			"1", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -704,7 +44,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542720779,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [31]
+		}, -- [1]
 		{
 			"1", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -726,7 +66,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542720779,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [32]
+		}, -- [2]
 		{
 			"1", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -748,7 +88,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542720779,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [33]
+		}, -- [3]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -770,7 +110,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542720779,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [34]
+		}, -- [4]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -792,7 +132,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542720779,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [35]
+		}, -- [5]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:12826:Player-2073-068BA5F9:1:11:20:18:4294967295:4294967295:4294967295:4294967295|h[Mythic: Atal'Dazar]|h|r!", -- [1]
 			"Shaggedurdad-Stormscale", -- [2]
@@ -814,7 +154,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aShaggedurdad|r",
 			[51] = 1542720878,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [36]
+		}, -- [6]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:12825:Player-2073-068BA5F9:1:11:20:18:4294967295:4294967295:4294967295:4294967295|h[Heroic: Atal'Dazar]|h|r!", -- [1]
 			"Shaggedurdad-Stormscale", -- [2]
@@ -836,7 +176,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aShaggedurdad|r",
 			[51] = 1542720878,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [37]
+		}, -- [7]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:12824:Player-2073-068BA5F9:1:11:20:18:4294967295:4294967295:4294967295:4294967295|h[Atal'Dazar]|h|r!", -- [1]
 			"Shaggedurdad-Stormscale", -- [2]
@@ -858,7 +198,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aShaggedurdad|r",
 			[51] = 1542720878,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [38]
+		}, -- [8]
 		{
 			"Interrupted Heartsbane Runeweaver's |cff71d5ff|Hspell:263943:0|h[Etch]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -880,7 +220,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542720925,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [39]
+		}, -- [9]
 		{
 			"Interrupted Bewitched Captain's |cff71d5ff|Hspell:265368:0|h[Spirited Defense]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -902,7 +242,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542720957,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [40]
+		}, -- [10]
 		{
 			"Interrupted Coven Thornshaper's |cff71d5ff|Hspell:278474:0|h[Effigy Reconstruction]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -924,7 +264,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721034,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [41]
+		}, -- [11]
 		{
 			"Interrupted Coven Thornshaper's |cff71d5ff|Hspell:264050:0|h[Infected Thorn]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -946,7 +286,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721057,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [42]
+		}, -- [12]
 		{
 			"Interrupted Coven Thornshaper's |cff71d5ff|Hspell:264050:0|h[Infected Thorn]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -968,7 +308,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721092,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [43]
+		}, -- [13]
 		{
 			"??", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -990,7 +330,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721262,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [44]
+		}, -- [14]
 		{
 			"|cffa335ee|Hkeystone:158923:247:11:10:5:13:16|h[Keystone: The MOTHERLODE!! (11)]|h|r any1 :)", -- [1]
 			"Shaggedurdad-Stormscale", -- [2]
@@ -1012,7 +352,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aShaggedurdad|r",
 			[51] = 1542721369,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [45]
+		}, -- [15]
 		{
 			":D", -- [1]
 			"Fluke-Stormscale", -- [2]
@@ -1034,7 +374,7 @@ ElvCharacterDB = {
 			[52] = "|cffa330c9Fluke|r",
 			[51] = 1542721376,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [46]
+		}, -- [16]
 		{
 			":D", -- [1]
 			"Shaggedurdad-Stormscale", -- [2]
@@ -1056,7 +396,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aShaggedurdad|r",
 			[51] = 1542721379,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [47]
+		}, -- [17]
 		{
 			"Interrupted Coven Thornshaper's |cff71d5ff|Hspell:278474:0|h[Effigy Reconstruction]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1078,7 +418,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721893,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [48]
+		}, -- [18]
 		{
 			"3", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1100,7 +440,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542721955,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [49]
+		}, -- [19]
 		{
 			"2", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1122,7 +462,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542721956,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [50]
+		}, -- [20]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1144,7 +484,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542721964,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [51]
+		}, -- [21]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1166,7 +506,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542721965,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [52]
+		}, -- [22]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1188,7 +528,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542721966,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [53]
+		}, -- [23]
 		{
 			"Runic Mark on Nisefy", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1210,7 +550,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721973,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [54]
+		}, -- [24]
 		{
 			"3", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1232,7 +572,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721976,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [55]
+		}, -- [25]
 		{
 			"2", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1254,7 +594,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721977,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [56]
+		}, -- [26]
 		{
 			"1", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1276,7 +616,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721978,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [57]
+		}, -- [27]
 		{
 			"Dread Mark on Nisefy", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1298,7 +638,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721979,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [58]
+		}, -- [28]
 		{
 			"3", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1320,7 +660,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542721982,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [59]
+		}, -- [29]
 		{
 			"3", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -1342,7 +682,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542721982,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [60]
+		}, -- [30]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1364,7 +704,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542721982,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [61]
+		}, -- [31]
 		{
 			"3", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1386,7 +726,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721982,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [62]
+		}, -- [32]
 		{
 			"3", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1408,7 +748,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721982,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [63]
+		}, -- [33]
 		{
 			"2", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1430,7 +770,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542721983,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [64]
+		}, -- [34]
 		{
 			"2", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -1452,7 +792,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542721983,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [65]
+		}, -- [35]
 		{
 			"2", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1474,7 +814,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721983,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [66]
+		}, -- [36]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1496,7 +836,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542721983,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [67]
+		}, -- [37]
 		{
 			"2", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1518,7 +858,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721983,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [68]
+		}, -- [38]
 		{
 			"1", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -1540,7 +880,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542721984,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [69]
+		}, -- [39]
 		{
 			"1", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1562,7 +902,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542721984,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [70]
+		}, -- [40]
 		{
 			"1", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1584,7 +924,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721984,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [71]
+		}, -- [41]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1606,7 +946,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542721984,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [72]
+		}, -- [42]
 		{
 			"1", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1628,7 +968,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542721984,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [73]
+		}, -- [43]
 		{
 			"Dread Mark on Nisefy", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1650,7 +990,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542721999,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [74]
+		}, -- [44]
 		{
 			"3", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1672,7 +1012,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722002,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [75]
+		}, -- [45]
 		{
 			"3", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1694,7 +1034,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722002,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [76]
+		}, -- [46]
 		{
 			"3", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -1716,7 +1056,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722002,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [77]
+		}, -- [47]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1738,7 +1078,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722002,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [78]
+		}, -- [48]
 		{
 			"3", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1760,7 +1100,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722002,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [79]
+		}, -- [49]
 		{
 			"2", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1782,7 +1122,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722003,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [80]
+		}, -- [50]
 		{
 			"2", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1804,7 +1144,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722003,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [81]
+		}, -- [51]
 		{
 			"2", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -1826,7 +1166,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722003,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [82]
+		}, -- [52]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1848,7 +1188,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722003,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [83]
+		}, -- [53]
 		{
 			"2", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1870,7 +1210,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722003,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [84]
+		}, -- [54]
 		{
 			"1", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1892,7 +1232,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722004,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [85]
+		}, -- [55]
 		{
 			"1", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -1914,7 +1254,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722004,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [86]
+		}, -- [56]
 		{
 			"1", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -1936,7 +1276,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722004,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [87]
+		}, -- [57]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -1958,7 +1298,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722004,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [88]
+		}, -- [58]
 		{
 			"1", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -1980,7 +1320,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722004,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [89]
+		}, -- [59]
 		{
 			"stop", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -2002,7 +1342,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722018,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [90]
+		}, -- [60]
 		{
 			"not enough percentage", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -2024,7 +1364,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722021,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [91]
+		}, -- [61]
 		{
 			"Interrupted Coven Diviner's |cff71d5ff|Hspell:278551:0|h[Soul Fetish]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2046,7 +1386,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722051,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [92]
+		}, -- [62]
 		{
 			"Interrupted Marked Sister's |cff71d5ff|Hspell:264105:0|h[Runic Mark]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2068,7 +1408,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722074,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [93]
+		}, -- [63]
 		{
 			"H'iwn Qwor za Awtgssh", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2090,7 +1430,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722084,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [94]
+		}, -- [64]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2112,7 +1452,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722088,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [95]
+		}, -- [65]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2134,7 +1474,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722089,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [96]
+		}, -- [66]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2156,7 +1496,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722089,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [97]
+		}, -- [67]
 		{
 			"Runic Mark on Nisefy", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -2178,7 +1518,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722099,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [98]
+		}, -- [68]
 		{
 			"3", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -2200,7 +1540,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722102,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [99]
+		}, -- [69]
 		{
 			"2", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -2222,7 +1562,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722103,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [100]
+		}, -- [70]
 		{
 			"1", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -2244,7 +1584,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722104,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [101]
+		}, -- [71]
 		{
 			"cc", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2266,7 +1606,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722104,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [102]
+		}, -- [72]
 		{
 			"inf", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2288,7 +1628,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722105,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [103]
+		}, -- [73]
 		{
 			"go", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -2310,7 +1650,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722118,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [104]
+		}, -- [74]
 		{
 			"she cant be ccd", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -2332,7 +1672,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722120,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [105]
+		}, -- [75]
 		{
 			"Interrupted Heartsbane Soulcharmer's |cff71d5ff|Hspell:264024:0|h[Soul Bolt]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2354,7 +1694,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722125,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [106]
+		}, -- [76]
 		{
 			"Interrupted Heartsbane Soulcharmer's |cff71d5ff|Hspell:264024:0|h[Soul Bolt]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2376,7 +1716,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722141,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [107]
+		}, -- [77]
 		{
 			"Interrupted Heartsbane Soulcharmer's |cff71d5ff|Hspell:263959:0|h[Soul Volley]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2398,7 +1738,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722173,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [108]
+		}, -- [78]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2420,7 +1760,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722238,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [109]
+		}, -- [79]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2442,7 +1782,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722245,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [110]
+		}, -- [80]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2464,7 +1804,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722246,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [111]
+		}, -- [81]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2486,7 +1826,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722247,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [112]
+		}, -- [82]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -2508,7 +1848,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722254,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [113]
+		}, -- [83]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -2530,7 +1870,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722255,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [114]
+		}, -- [84]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -2552,7 +1892,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722256,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [115]
+		}, -- [85]
 		{
 			"Interrupted Lady Waycrest's |cff71d5ff|Hspell:268278:0|h[Wracking Chord]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2574,7 +1914,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722265,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [116]
+		}, -- [86]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -2596,7 +1936,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722271,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [117]
+		}, -- [87]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -2618,7 +1958,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722272,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [118]
+		}, -- [88]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -2640,7 +1980,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722273,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [119]
+		}, -- [89]
 		{
 			"awhy ", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2662,7 +2002,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722314,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [120]
+		}, -- [90]
 		{
 			"rip", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -2684,7 +2024,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722398,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [121]
+		}, -- [91]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2706,7 +2046,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722414,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [122]
+		}, -- [92]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2728,7 +2068,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722430,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [123]
+		}, -- [93]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2750,7 +2090,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722447,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [124]
+		}, -- [94]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2772,7 +2112,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722473,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [125]
+		}, -- [95]
 		{
 			"thanks for the dungeon!", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -2794,7 +2134,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722643,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [126]
+		}, -- [96]
 		{
 			"next? :D", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -2816,6 +2156,666 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722648,
 			[50] = "CHAT_MSG_PARTY",
+		}, -- [97]
+		{
+			"WHAAAAAT", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			223, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909816,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [98]
+		{
+			"A monk !", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			224, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909818,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [99]
+		{
+			"b-b-b-benching me ? :(", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			228, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909843,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [100]
+		{
+			"Revival coming throug", -- [1]
+			"Rachellá-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Rachellá-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			231, -- [11]
+			"Player-3674-088D7076", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff8787edRachellá-TwistingNether|r",
+			[51] = 1542909846,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [101]
+		{
+			"Snipin ur parses", -- [1]
+			"Rachellá-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Rachellá-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			233, -- [11]
+			"Player-3674-088D7076", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff8787edRachellá-TwistingNether|r",
+			[51] = 1542909851,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [102]
+		{
+			"Nope he's here cause meemz would be late", -- [1]
+			"Renstorp-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Renstorp-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			235, -- [11]
+			"Player-3674-0825B88C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddRenstorp-TwistingNether|r",
+			[51] = 1542909859,
+			[50] = "CHAT_MSG_RAID_LEADER",
+		}, -- [103]
+		{
+			"cant ", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			236, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909861,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [104]
+		{
+			"oh :D", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			237, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909864,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [105]
+		{
+			"meemz is gonna be here what", -- [1]
+			"Rachellá-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Rachellá-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			240, -- [11]
+			"Player-3674-088D7076", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff8787edRachellá-TwistingNether|r",
+			[51] = 1542909880,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [106]
+		{
+			"around 19;30", -- [1]
+			"Rachellá-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Rachellá-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			241, -- [11]
+			"Player-3674-088D7076", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff8787edRachellá-TwistingNether|r",
+			[51] = 1542909882,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [107]
+		{
+			"Its actually nice to see other Mw monks", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			242, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909883,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [108]
+		{
+			"he's a shaman main", -- [1]
+			"Renstorp-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Renstorp-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			245, -- [11]
+			"Player-3674-0825B88C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddRenstorp-TwistingNether|r",
+			[51] = 1542909895,
+			[50] = "CHAT_MSG_RAID_LEADER",
+		}, -- [109]
+		{
+			"F", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			246, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909898,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [110]
+		{
+			"i am over it", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			249, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909901,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [111]
+		{
+			"no mw is a mw main", -- [1]
+			"Renstorp-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Renstorp-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			251, -- [11]
+			"Player-3674-0825B88C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddRenstorp-TwistingNether|r",
+			[51] = 1542909910,
+			[50] = "CHAT_MSG_RAID_LEADER",
+		}, -- [112]
+		{
+			"except Clawz", -- [1]
+			"Renstorp-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Renstorp-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			253, -- [11]
+			"Player-3674-0825B88C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddRenstorp-TwistingNether|r",
+			[51] = 1542909915,
+			[50] = "CHAT_MSG_RAID_LEADER",
+		}, -- [113]
+		{
+			"me", -- [1]
+			"Frozoone-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Frozoone-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			254, -- [11]
+			"Player-3674-077CB3D5", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Frozoone-TwistingNether|r",
+			[51] = 1542909915,
+			[50] = "CHAT_MSG_RAID",
+		}, -- [114]
+		{
+			"and u", -- [1]
+			"Renstorp-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Renstorp-TwistingNether", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			255, -- [11]
+			"Player-3674-0825B88C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddRenstorp-TwistingNether|r",
+			[51] = 1542909917,
+			[50] = "CHAT_MSG_RAID_LEADER",
+		}, -- [115]
+		{
+			"come islands", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			256, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542909918,
+			[50] = "CHAT_MSG_WHISPER",
+		}, -- [116]
+		{
+			"on shaman", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			258, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542909923,
+			[50] = "CHAT_MSG_WHISPER",
+		}, -- [117]
+		{
+			"maybe", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			266, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542909985,
+			[50] = "CHAT_MSG_WHISPER_INFORM",
+		}, -- [118]
+		{
+			"not maybe", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			270, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542909991,
+			[50] = "CHAT_MSG_WHISPER",
+		}, -- [119]
+		{
+			"but what do you have against my monk", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			271, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542909992,
+			[50] = "CHAT_MSG_WHISPER_INFORM",
+		}, -- [120]
+		{
+			"do you have a ww spec?!", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			273, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910000,
+			[50] = "CHAT_MSG_WHISPER",
+		}, -- [121]
+		{
+			"technically", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			275, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910012,
+			[50] = "CHAT_MSG_WHISPER_INFORM",
+		}, -- [122]
+		{
+			"well come monk then idc", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			276, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910018,
+			[50] = "CHAT_MSG_WHISPER",
+		}, -- [123]
+		{
+			"just asking if this raid happens", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			277, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910035,
+			[50] = "CHAT_MSG_WHISPER_INFORM",
+		}, -- [124]
+		{
+			"`Ill let u know in 20 sec` he said, 1 minute ago", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			281, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910057,
+			[50] = "CHAT_MSG_WHISPER_INFORM",
+		}, -- [125]
+		{
+			"excellent", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			282, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910064,
+			[50] = "CHAT_MSG_WHISPER",
+		}, -- [126]
+		{
+			"did you get an answer yet", -- [1]
+			"Spazmonk-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Spazmonk", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			320, -- [11]
+			"Player-2073-05E99378", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Spazmonk|r",
+			[51] = 1542910258,
+			[50] = "CHAT_MSG_WHISPER",
 		}, -- [127]
 	},
 }
