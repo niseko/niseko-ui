@@ -69,7 +69,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 408935.799,
 							["objectiveTimes"] = {
 								"05:37.556", -- [1]
 								"13:24.877", -- [2]
@@ -77,7 +77,7 @@ GottaGoFastHistoryDB = {
 								"29:38.566", -- [4]
 								"26:38.521", -- [5]
 							},
-							["startTime"] = 408935.799,
+							["level"] = 5,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -128,7 +128,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 426120.82,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"04:54.127", -- [1]
 								"10:55.531", -- [2]
@@ -136,7 +136,7 @@ GottaGoFastHistoryDB = {
 								"22:06.765", -- [4]
 								"19:28.388", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 426120.82,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -187,7 +187,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 428721.829,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"04:41.491", -- [1]
 								"11:31.360", -- [2]
@@ -195,7 +195,7 @@ GottaGoFastHistoryDB = {
 								"23:19.229", -- [4]
 								"20:26.100", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 428721.829,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -246,7 +246,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 509046.331,
 							["objectiveTimes"] = {
 								"05:38.710", -- [1]
 								"11:24.276", -- [2]
@@ -254,7 +254,7 @@ GottaGoFastHistoryDB = {
 								"25:23.182", -- [4]
 								"22:32.375", -- [5]
 							},
-							["startTime"] = 509046.331,
+							["level"] = 5,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -305,7 +305,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 518402.303,
 							["objectiveTimes"] = {
 								"05:04.860", -- [1]
 								"10:55.643", -- [2]
@@ -313,7 +313,7 @@ GottaGoFastHistoryDB = {
 								"22:50.688", -- [4]
 								"20:09.768", -- [5]
 							},
-							["startTime"] = 518402.303,
+							["level"] = 5,
 						}, -- [5]
 						{
 							["corrupt"] = false,
@@ -333,8 +333,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 40,
 								["day"] = 32,
 							},
-							["startTime"] = 602259.275,
 							["level"] = 2,
+							["startTime"] = 602259.275,
 							["objectiveTimes"] = {
 								"04:15.222", -- [1]
 								"09:32.293", -- [2]
@@ -392,8 +392,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 8,
 								["day"] = 32,
 							},
-							["startTime"] = 603640.263,
 							["level"] = 5,
+							["startTime"] = 603640.263,
 							["objectiveTimes"] = {
 								"05:31.249", -- [1]
 								"11:07.699", -- [2]
@@ -451,8 +451,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 25,
 								["day"] = 32,
 							},
-							["level"] = 6,
 							["startTime"] = 607297.267,
+							["level"] = 6,
 							["objectiveTimes"] = {
 								"15:43.524", -- [1]
 								"23:53.220", -- [2]
@@ -514,8 +514,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 44,
 								["day"] = 32,
 							},
-							["startTime"] = 695255.262,
 							["level"] = 8,
+							["startTime"] = 695255.262,
 							["objectiveTimes"] = {
 								"06:31.319", -- [1]
 								"13:50.295", -- [2]
@@ -604,7 +604,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 245046.166,
 							["objectiveTimes"] = {
 								"05:18.735", -- [1]
 								"12:39.104", -- [2]
@@ -612,7 +612,7 @@ GottaGoFastHistoryDB = {
 								"26:09.709", -- [4]
 								"21:57.024", -- [5]
 							},
-							["startTime"] = 245046.166,
+							["level"] = 9,
 						}, -- [10]
 						{
 							["corrupt"] = false,
@@ -671,7 +671,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 298035.01,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"07:07.636", -- [1]
 								"14:36.731", -- [2]
@@ -679,7 +679,7 @@ GottaGoFastHistoryDB = {
 								"31:21.131", -- [4]
 								"26:53.459", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 298035.01,
 						}, -- [11]
 						{
 							["corrupt"] = false,
@@ -707,8 +707,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 43,
 								["day"] = 32,
 							},
-							["level"] = 9,
 							["startTime"] = 89154.58,
+							["level"] = 9,
 							["objectiveTimes"] = {
 								"06:24.781", -- [1]
 								"12:34.551", -- [2]
@@ -748,21 +748,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 4,
 							["affixes"] = {
-								[6] = {
-									["name"] = "Raging",
-									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
-								},
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
 								},
 								[4] = {
 									["name"] = "Necrotic",
 									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -774,8 +774,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 20,
 								["day"] = 32,
 							},
-							["level"] = 10,
 							["startTime"] = 177891.326,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"05:28.524", -- [1]
 								"12:13.981", -- [2]
@@ -868,7 +868,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 325441.039,
 							["objectiveTimes"] = {
 								"06:01.869", -- [1]
 								"14:43.406", -- [2]
@@ -876,7 +876,7 @@ GottaGoFastHistoryDB = {
 								"35:53.757", -- [4]
 								"25:02.347", -- [5]
 							},
-							["startTime"] = 325441.039,
+							["level"] = 10,
 						}, -- [14]
 						{
 							["corrupt"] = false,
@@ -935,7 +935,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 11,
+							["startTime"] = 158788.33,
 							["objectiveTimes"] = {
 								"10:22.059", -- [1]
 								"19:41.108", -- [2]
@@ -943,7 +943,7 @@ GottaGoFastHistoryDB = {
 								"40:19.167", -- [4]
 								"35:59.349", -- [5]
 							},
-							["startTime"] = 158788.33,
+							["level"] = 11,
 						}, -- [15]
 						{
 							["corrupt"] = false,
@@ -1002,7 +1002,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 11,
+							["startTime"] = 73516.648,
 							["objectiveTimes"] = {
 								"07:53.704", -- [1]
 								"15:16.543", -- [2]
@@ -1010,7 +1010,7 @@ GottaGoFastHistoryDB = {
 								"31:47.083", -- [4]
 								"28:23.529", -- [5]
 							},
-							["startTime"] = 73516.648,
+							["level"] = 11,
 						}, -- [16]
 					},
 					["name"] = "Siege of Boralus",
@@ -1060,8 +1060,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 0,
 								["day"] = 32,
 							},
-							["startTime"] = 500241.083,
 							["level"] = 8,
+							["startTime"] = 500241.083,
 							["objectiveTimes"] = {
 								"06:54.496", -- [1]
 								"26:00.895", -- [2]
@@ -1146,7 +1146,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 514498.302,
 							["objectiveTimes"] = {
 								"04:53.659", -- [1]
 								"13:05.029", -- [2]
@@ -1154,7 +1154,7 @@ GottaGoFastHistoryDB = {
 								"25:50.168", -- [4]
 								"23:50.966", -- [5]
 							},
-							["startTime"] = 514498.302,
+							["level"] = 5,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -1213,7 +1213,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 310969.035,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"07:44.398", -- [1]
 								"20:22.663", -- [2]
@@ -1221,7 +1221,7 @@ GottaGoFastHistoryDB = {
 								"45:03.140", -- [4]
 								"36:20.140", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 310969.035,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -1253,8 +1253,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 31,
 								["day"] = 32,
 							},
-							["startTime"] = 496800.899,
 							["level"] = 10,
+							["startTime"] = 496800.899,
 							["objectiveTimes"] = {
 								"08:50.212", -- [1]
 								"20:22.925", -- [2]
@@ -1320,8 +1320,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 34,
 								["day"] = 32,
 							},
-							["level"] = 10,
 							["startTime"] = 511328.925,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"12:06.791", -- [1]
 								"21:32.754", -- [2]
@@ -1361,14 +1361,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 30,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[4] = {
 									["name"] = "Necrotic",
 									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
@@ -1376,6 +1368,14 @@ GottaGoFastHistoryDB = {
 								[6] = {
 									["name"] = "Raging",
 									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -1414,7 +1414,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 186927.78,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"22:43.287", -- [1]
 								"32:46.225", -- [2]
@@ -1422,7 +1422,7 @@ GottaGoFastHistoryDB = {
 								"50:08.694", -- [4]
 								"45:53.835", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 186927.78,
 						}, -- [6]
 						{
 							["corrupt"] = false,
@@ -1454,8 +1454,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 27,
 								["day"] = 32,
 							},
-							["startTime"] = 100612.924,
 							["level"] = 11,
+							["startTime"] = 100612.924,
 							["objectiveTimes"] = {
 								"11:08.831", -- [1]
 								"22:39.180", -- [2]
@@ -1540,7 +1540,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["level"] = 2,
+							["startTime"] = 326896.641,
 							["objectiveTimes"] = {
 								"13:00.028", -- [1]
 								"07:38.945", -- [2]
@@ -1548,7 +1548,7 @@ GottaGoFastHistoryDB = {
 								"15:10.778", -- [4]
 								"13:00.028", -- [5]
 							},
-							["startTime"] = 326896.641,
+							["level"] = 2,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -1572,8 +1572,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 23,
 								["day"] = 32,
 							},
-							["startTime"] = 493573.275,
 							["level"] = 4,
+							["startTime"] = 493573.275,
 							["objectiveTimes"] = {
 								"06:36.576", -- [1]
 								"14:26.949", -- [2]
@@ -1631,8 +1631,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 35,
 								["day"] = 32,
 							},
-							["startTime"] = 619982.297,
 							["level"] = 5,
+							["startTime"] = 619982.297,
 							["objectiveTimes"] = {
 								"08:24.607", -- [1]
 								"18:14.913", -- [2]
@@ -1725,7 +1725,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 309184.043,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"22:20.889", -- [1]
 								"13:32.237", -- [2]
@@ -1733,7 +1733,7 @@ GottaGoFastHistoryDB = {
 								"26:24.152", -- [4]
 								"22:20.889", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 309184.043,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -1765,8 +1765,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 15,
 								["day"] = 32,
 							},
-							["startTime"] = 410318.464,
 							["level"] = 11,
+							["startTime"] = 410318.464,
 							["objectiveTimes"] = {
 								"21:24.010", -- [1]
 								"13:46.579", -- [2]
@@ -1859,7 +1859,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 602256.769,
 							["objectiveTimes"] = {
 								"16:30.010", -- [1]
 								"09:24.572", -- [2]
@@ -1867,7 +1867,7 @@ GottaGoFastHistoryDB = {
 								"24:11.496", -- [4]
 								"17:54.393", -- [5]
 							},
-							["startTime"] = 602256.769,
+							["level"] = 10,
 						}, -- [6]
 						{
 							["corrupt"] = false,
@@ -1895,8 +1895,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 24,
 								["day"] = 32,
 							},
-							["startTime"] = 1433487.222,
 							["level"] = 9,
+							["startTime"] = 1433487.222,
 							["objectiveTimes"] = {
 								"18:43.128", -- [1]
 								"12:30.385", -- [2]
@@ -1936,14 +1936,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 5,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[4] = {
 									["name"] = "Necrotic",
 									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
@@ -1951,6 +1943,14 @@ GottaGoFastHistoryDB = {
 								[6] = {
 									["name"] = "Raging",
 									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -1989,7 +1989,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 190160.832,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"20:50.399", -- [1]
 								"13:14.276", -- [2]
@@ -1997,20 +1997,12 @@ GottaGoFastHistoryDB = {
 								"24:50.468", -- [4]
 								"22:13.211", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 190160.832,
 						}, -- [8]
 						{
 							["corrupt"] = false,
 							["deaths"] = 14,
 							["affixes"] = {
-								[4] = {
-									["name"] = "Necrotic",
-									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
-								},
-								[6] = {
-									["name"] = "Raging",
-									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
-								},
 								[9] = {
 									["name"] = "Tyrannical",
 									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
@@ -2018,6 +2010,14 @@ GottaGoFastHistoryDB = {
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
+								},
+								[4] = {
+									["name"] = "Necrotic",
+									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
 								},
 							},
 							["active"] = false,
@@ -2056,7 +2056,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 78515.577,
 							["objectiveTimes"] = {
 								"22:43.461", -- [1]
 								"14:32.061", -- [2]
@@ -2064,7 +2064,7 @@ GottaGoFastHistoryDB = {
 								"30:30.561", -- [4]
 								"27:01.889", -- [5]
 							},
-							["startTime"] = 78515.577,
+							["level"] = 10,
 						}, -- [9]
 						{
 							["corrupt"] = false,
@@ -2092,8 +2092,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 54,
 								["day"] = 32,
 							},
-							["level"] = 9,
 							["startTime"] = 180219.332,
+							["level"] = 9,
 							["objectiveTimes"] = {
 								"19:09.855", -- [1]
 								"13:21.823", -- [2]
@@ -2133,21 +2133,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 19,
 							["affixes"] = {
-								[10] = {
-									["name"] = "Fortified",
-									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
-								},
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
+								},
+								[2] = {
+									["name"] = "Skittish",
+									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
 								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
-								[2] = {
-									["name"] = "Skittish",
-									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -2186,7 +2186,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 82006.707,
+							["level"] = 12,
 							["objectiveTimes"] = {
 								"26:51.915", -- [1]
 								"15:22.582", -- [2]
@@ -2194,7 +2194,7 @@ GottaGoFastHistoryDB = {
 								"30:16.999", -- [4]
 								"34:45.964", -- [5]
 							},
-							["level"] = 12,
+							["startTime"] = 82006.707,
 						}, -- [11]
 						{
 							["corrupt"] = false,
@@ -2253,7 +2253,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 93866.088,
 							["objectiveTimes"] = {
 								"33:14.755", -- [1]
 								"19:24.496", -- [2]
@@ -2261,7 +2261,7 @@ GottaGoFastHistoryDB = {
 								"36:43.500", -- [4]
 								"34:09.467", -- [5]
 							},
-							["startTime"] = 93866.088,
+							["level"] = 10,
 						}, -- [12]
 						{
 							["corrupt"] = false,
@@ -2320,7 +2320,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 531917.834,
 							["objectiveTimes"] = {
 								"19:10.989", -- [1]
 								"09:19.576", -- [2]
@@ -2328,8 +2328,75 @@ GottaGoFastHistoryDB = {
 								"23:17.793", -- [4]
 								"21:20.611", -- [5]
 							},
-							["startTime"] = 531917.834,
+							["level"] = 10,
 						}, -- [13]
+						{
+							["corrupt"] = false,
+							["deaths"] = 6,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 10% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[2] = {
+									["name"] = "Skittish",
+									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 163308.977,
+							["timeStamp"] = {
+								["day"] = 11,
+								["month"] = 12,
+								["hours"] = 19,
+								["year"] = 2018,
+								["mins"] = 59,
+							},
+							["startTime"] = 162045.809,
+							["level"] = 10,
+							["objectiveTimes"] = {
+								"17:34.367", -- [1]
+								"08:56.660", -- [2]
+								"02:05.814", -- [3]
+								"21:32.487", -- [4]
+								"18:31.772", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Ozyelfbourne",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Calekx",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Lyllotdruid",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Кодьжа (*)",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [14]
 					},
 					["name"] = "Atal'dazar",
 					["zoneID"] = 1763,
@@ -2396,7 +2463,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 11,
+							["startTime"] = 1165651.754,
 							["objectiveTimes"] = {
 								"10:33.922", -- [1]
 								"15:16.993", -- [2]
@@ -2405,7 +2472,7 @@ GottaGoFastHistoryDB = {
 								"37:22.733", -- [5]
 								"32:56.509", -- [6]
 							},
-							["startTime"] = 1165651.754,
+							["level"] = 11,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -2460,7 +2527,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 1887699.476,
 							["objectiveTimes"] = {
 								"17:28.544", -- [1]
 								"12:44.211", -- [2]
@@ -2469,16 +2536,12 @@ GottaGoFastHistoryDB = {
 								"22:09.718", -- [5]
 								"19:49.878", -- [6]
 							},
-							["startTime"] = 1887699.476,
+							["level"] = 10,
 						}, -- [2]
 						{
 							["corrupt"] = false,
 							["deaths"] = 4,
 							["affixes"] = {
-								[12] = {
-									["name"] = "Grievous",
-									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
-								},
 								[9] = {
 									["name"] = "Tyrannical",
 									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
@@ -2486,6 +2549,10 @@ GottaGoFastHistoryDB = {
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
+								},
+								[12] = {
+									["name"] = "Grievous",
+									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
 								},
 							},
 							["active"] = false,
@@ -2497,8 +2564,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 22,
 							},
-							["startTime"] = 738203.177,
 							["level"] = 16,
+							["startTime"] = 738203.177,
 							["objectiveTimes"] = {
 								"09:29.561", -- [1]
 								"13:56.941", -- [2]
@@ -2585,8 +2652,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 29,
 							},
-							["level"] = 15,
 							["startTime"] = 426374.166,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"06:29.638", -- [1]
 								"11:30.136", -- [2]
@@ -2676,7 +2743,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 15,
+							["startTime"] = 300834.857,
 							["objectiveTimes"] = {
 								"03:09.496", -- [1]
 								"08:28.716", -- [2]
@@ -2685,7 +2752,7 @@ GottaGoFastHistoryDB = {
 								"21:49.086", -- [5]
 								"19:58.253", -- [6]
 							},
-							["startTime"] = 300834.857,
+							["level"] = 15,
 						}, -- [2]
 					},
 				},
@@ -2744,7 +2811,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 12,
+							["startTime"] = 290242.319,
 							["objectiveTimes"] = {
 								"04:39.817", -- [1]
 								"14:05.844", -- [2]
@@ -2752,16 +2819,12 @@ GottaGoFastHistoryDB = {
 								"25:39.302", -- [4]
 								"22:05.757", -- [5]
 							},
-							["startTime"] = 290242.319,
+							["level"] = 12,
 						}, -- [1]
 						{
 							["corrupt"] = false,
 							["deaths"] = 17,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
@@ -2769,6 +2832,10 @@ GottaGoFastHistoryDB = {
 								[12] = {
 									["name"] = "Grievous",
 									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -2780,8 +2847,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 2,
 							},
-							["startTime"] = 830616.65,
 							["level"] = 16,
+							["startTime"] = 830616.65,
 							["objectiveTimes"] = {
 								"05:11.846", -- [1]
 								"13:57.215", -- [2]
@@ -2843,8 +2910,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 19,
 							},
-							["level"] = 16,
 							["startTime"] = 524203.154,
+							["level"] = 16,
 							["objectiveTimes"] = {
 								"04:32.770", -- [1]
 								"13:29.944", -- [2]
@@ -2906,8 +2973,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 34,
 							},
-							["level"] = 16,
 							["startTime"] = 73635.602,
+							["level"] = 16,
 							["objectiveTimes"] = {
 								"06:13.017", -- [1]
 								"12:42.025", -- [2]
@@ -2988,8 +3055,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 53,
 								["day"] = 32,
 							},
-							["startTime"] = 498340.286,
 							["level"] = 5,
+							["startTime"] = 498340.286,
 							["objectiveTimes"] = {
 								"17:51.830", -- [1]
 								"12:43.302", -- [2]
@@ -3075,7 +3142,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 588296.233,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"02:18.023", -- [1]
 								"07:26.048", -- [2]
@@ -3084,7 +3151,7 @@ GottaGoFastHistoryDB = {
 								"21:19.164", -- [5]
 								"22:48.078", -- [6]
 							},
-							["level"] = 5,
+							["startTime"] = 588296.233,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -3112,8 +3179,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 31,
 								["day"] = 32,
 							},
-							["startTime"] = 50607.501,
 							["level"] = 9,
+							["startTime"] = 50607.501,
 							["objectiveTimes"] = {
 								"03:16.529", -- [1]
 								"14:25.311", -- [2]
@@ -3176,8 +3243,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 42,
 								["day"] = 32,
 							},
-							["startTime"] = 408211.448,
 							["level"] = 9,
+							["startTime"] = 408211.448,
 							["objectiveTimes"] = {
 								"18:01.422", -- [1]
 								"13:32.515", -- [2]
@@ -3267,7 +3334,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 502815.915,
 							["objectiveTimes"] = {
 								"03:37.335", -- [1]
 								"09:10.956", -- [2]
@@ -3276,7 +3343,7 @@ GottaGoFastHistoryDB = {
 								"22:44.997", -- [5]
 								"21:07.418", -- [6]
 							},
-							["startTime"] = 502815.915,
+							["level"] = 9,
 						}, -- [5]
 						{
 							["corrupt"] = false,
@@ -3335,7 +3402,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 508861.945,
 							["objectiveTimes"] = {
 								"24:37.279", -- [1]
 								"17:14.018", -- [2]
@@ -3344,7 +3411,7 @@ GottaGoFastHistoryDB = {
 								"34:05.491", -- [5]
 								"32:03.640", -- [6]
 							},
-							["startTime"] = 508861.945,
+							["level"] = 10,
 						}, -- [6]
 						{
 							["corrupt"] = false,
@@ -3376,8 +3443,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 42,
 								["day"] = 32,
 							},
-							["startTime"] = 595218.739,
 							["level"] = 10,
+							["startTime"] = 595218.739,
 							["objectiveTimes"] = {
 								"04:20.941", -- [1]
 								"10:32.653", -- [2]
@@ -3471,7 +3538,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 1109358.291,
 							["objectiveTimes"] = {
 								"50:43", -- [1]
 								"?", -- [2]
@@ -3480,7 +3547,7 @@ GottaGoFastHistoryDB = {
 								"63:44", -- [5]
 								"61:33", -- [6]
 							},
-							["startTime"] = 1109358.291,
+							["level"] = 10,
 						}, -- [8]
 						{
 							["corrupt"] = true,
@@ -3512,8 +3579,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 8,
 								["day"] = 32,
 							},
-							["startTime"] = 1264501.24,
 							["level"] = 11,
+							["startTime"] = 1264501.24,
 							["objectiveTimes"] = {
 								"?", -- [1]
 								"?", -- [2]
@@ -3554,14 +3621,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 12,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[4] = {
 									["name"] = "Necrotic",
 									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
@@ -3569,6 +3628,14 @@ GottaGoFastHistoryDB = {
 								[6] = {
 									["name"] = "Raging",
 									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -3607,7 +3674,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 183422.843,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"19:04.625", -- [1]
 								"12:50.389", -- [2]
@@ -3616,7 +3683,7 @@ GottaGoFastHistoryDB = {
 								"29:57.584", -- [5]
 								"27:44.216", -- [6]
 							},
-							["level"] = 10,
+							["startTime"] = 183422.843,
 						}, -- [10]
 						{
 							["corrupt"] = false,
@@ -3644,8 +3711,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 34,
 								["day"] = 32,
 							},
-							["level"] = 9,
 							["startTime"] = 92427.583,
+							["level"] = 9,
 							["objectiveTimes"] = {
 								"16:36.327", -- [1]
 								"11:12.017", -- [2]
@@ -3712,8 +3779,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 0,
 							},
-							["level"] = 10,
 							["startTime"] = 514181.729,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"07:00.612", -- [1]
 								"14:49.547", -- [2]
@@ -3789,8 +3856,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 23,
 							},
-							["level"] = 12,
 							["startTime"] = 422892.141,
+							["level"] = 12,
 							["objectiveTimes"] = {
 								"05:53.161", -- [1]
 								"08:58.133", -- [2]
@@ -3879,7 +3946,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 15,
+							["startTime"] = 138148.48,
 							["objectiveTimes"] = {
 								"09:16.419", -- [1]
 								"13:50.024", -- [2]
@@ -3887,7 +3954,7 @@ GottaGoFastHistoryDB = {
 								"24:15.074", -- [4]
 								"21:13.924", -- [5]
 							},
-							["startTime"] = 138148.48,
+							["level"] = 15,
 						}, -- [2]
 					},
 				},
@@ -3927,8 +3994,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 56,
 							},
-							["startTime"] = 1775200.033,
 							["level"] = 11,
+							["startTime"] = 1775200.033,
 							["objectiveTimes"] = {
 								"06:03.964", -- [1]
 								"11:52.873", -- [2]
@@ -4016,14 +4083,14 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 94185.181,
+							["level"] = 14,
 							["objectiveTimes"] = {
 								"02:30.896", -- [1]
 								"06:39.794", -- [2]
 								"12:06.536", -- [3]
 								"08:47.488", -- [4]
 							},
-							["level"] = 14,
+							["startTime"] = 94185.181,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -4078,14 +4145,14 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 351686.451,
+							["level"] = 16,
 							["objectiveTimes"] = {
 								"04:03.065", -- [1]
 								"09:59.005", -- [2]
 								"17:53.659", -- [3]
 								"14:38.425", -- [4]
 							},
-							["level"] = 16,
+							["startTime"] = 351686.451,
 						}, -- [3]
 					},
 				},
@@ -4127,8 +4194,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 39,
 							},
-							["startTime"] = 282965.292,
 							["level"] = 10,
+							["startTime"] = 282965.292,
 							["objectiveTimes"] = {
 								"03:22.497", -- [1]
 								"06:36.947", -- [2]
@@ -4191,8 +4258,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 47,
 							},
-							["startTime"] = 1291574,
 							["level"] = 11,
+							["startTime"] = 1291574,
 							["objectiveTimes"] = {
 								"05:12.329", -- [1]
 								"09:10.557", -- [2]
@@ -4286,7 +4353,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 271323.43,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"05:46.754", -- [1]
 								"13:06.038", -- [2]
@@ -4294,7 +4361,7 @@ GottaGoFastHistoryDB = {
 								"26:40.715", -- [4]
 								"32:29.251", -- [5]
 							},
-							["level"] = 15,
+							["startTime"] = 271323.43,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -4349,7 +4416,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 273453.896,
+							["level"] = 12,
 							["objectiveTimes"] = {
 								"05:19.503", -- [1]
 								"13:42.698", -- [2]
@@ -4357,7 +4424,7 @@ GottaGoFastHistoryDB = {
 								"20:57.811", -- [4]
 								"28:12.083", -- [5]
 							},
-							["level"] = 12,
+							["startTime"] = 273453.896,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -4412,7 +4479,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 11,
+							["startTime"] = 211554.124,
 							["objectiveTimes"] = {
 								"05:25.382", -- [1]
 								"14:52.799", -- [2]
@@ -4420,7 +4487,7 @@ GottaGoFastHistoryDB = {
 								"24:56.810", -- [4]
 								"32:24.189", -- [5]
 							},
-							["startTime"] = 211554.124,
+							["level"] = 11,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -4475,7 +4542,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 6594.363,
+							["level"] = 16,
 							["objectiveTimes"] = {
 								"05:12.232", -- [1]
 								"12:33.782", -- [2]
@@ -4483,7 +4550,7 @@ GottaGoFastHistoryDB = {
 								"23:38.738", -- [4]
 								"20:39.824", -- [5]
 							},
-							["level"] = 16,
+							["startTime"] = 6594.363,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -4511,8 +4578,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 2,
 							},
-							["startTime"] = 403232.01,
 							["level"] = 15,
+							["startTime"] = 403232.01,
 							["objectiveTimes"] = {
 								"05:07.945", -- [1]
 								"13:23.978", -- [2]
@@ -4574,8 +4641,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 52,
 							},
-							["level"] = 15,
 							["startTime"] = 424544.146,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"04:22.564", -- [1]
 								"07:53.080", -- [2]
@@ -4664,7 +4731,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["level"] = 15,
+							["startTime"] = 1319088.774,
 							["objectiveTimes"] = {
 								"04:56.546", -- [1]
 								"07:40.163", -- [2]
@@ -4672,7 +4739,7 @@ GottaGoFastHistoryDB = {
 								"18:26.005", -- [4]
 								"15:19.339", -- [5]
 							},
-							["startTime"] = 1319088.774,
+							["level"] = 15,
 						}, -- [7]
 					},
 					["name"] = "Return to Karazhan: Lower",
@@ -4749,7 +4816,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 130351.888,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"05:56.523", -- [1]
 								"12:36.350", -- [2]
@@ -4757,7 +4824,7 @@ GottaGoFastHistoryDB = {
 								"23:48.149", -- [4]
 								"21:54.875", -- [5]
 							},
-							["level"] = 15,
+							["startTime"] = 130351.888,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -4785,8 +4852,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 41,
 							},
-							["startTime"] = 779766.252,
 							["level"] = 15,
+							["startTime"] = 779766.252,
 							["objectiveTimes"] = {
 								"05:40.100", -- [1]
 								"11:53.184", -- [2]
@@ -4875,7 +4942,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 412926.802,
 							["objectiveTimes"] = {
 								"03:44.557", -- [1]
 								"10:49.180", -- [2]
@@ -4883,7 +4950,7 @@ GottaGoFastHistoryDB = {
 								"20:16.993", -- [4]
 								"18:16.582", -- [5]
 							},
-							["startTime"] = 412926.802,
+							["level"] = 5,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -4907,8 +4974,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 30,
 								["day"] = 32,
 							},
-							["startTime"] = 490037.265,
 							["level"] = 5,
+							["startTime"] = 490037.265,
 							["objectiveTimes"] = {
 								"04:57.969", -- [1]
 								"12:19.327", -- [2]
@@ -4966,8 +5033,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 50,
 								["day"] = 32,
 							},
-							["startTime"] = 494934.269,
 							["level"] = 5,
+							["startTime"] = 494934.269,
 							["objectiveTimes"] = {
 								"05:36.635", -- [1]
 								"12:38.767", -- [2]
@@ -5056,7 +5123,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 504777.911,
 							["objectiveTimes"] = {
 								"02:25.017", -- [1]
 								"09:01.954", -- [2]
@@ -5064,7 +5131,7 @@ GottaGoFastHistoryDB = {
 								"23:14.380", -- [4]
 								"20:25.654", -- [5]
 							},
-							["startTime"] = 504777.911,
+							["level"] = 9,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -5123,7 +5190,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 606503.778,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"01:38.397", -- [1]
 								"12:33.421", -- [2]
@@ -5131,27 +5198,27 @@ GottaGoFastHistoryDB = {
 								"22:41.665", -- [4]
 								"19:57.055", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 606503.778,
 						}, -- [5]
 						{
 							["corrupt"] = false,
 							["deaths"] = 2,
 							["affixes"] = {
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[6] = {
 									["name"] = "Raging",
 									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
 								},
-								[4] = {
-									["name"] = "Necrotic",
-									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 								[9] = {
 									["name"] = "Tyrannical",
 									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[4] = {
+									["name"] = "Necrotic",
+									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
 								},
 							},
 							["active"] = false,
@@ -5163,8 +5230,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 6,
 								["day"] = 32,
 							},
-							["startTime"] = 1435619.25,
 							["level"] = 11,
+							["startTime"] = 1435619.25,
 							["objectiveTimes"] = {
 								"05:44.230", -- [1]
 								"17:31.988", -- [2]
@@ -5204,21 +5271,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 13,
 							["affixes"] = {
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[13] = {
 									["name"] = "Explosive",
 									["desc"] = "While in combat, enemies periodically summon Explosive Orbs that will detonate if not destroyed.",
 								},
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -5230,8 +5297,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 0,
 							},
-							["startTime"] = 330213.518,
 							["level"] = 11,
+							["startTime"] = 330213.518,
 							["objectiveTimes"] = {
 								"07:51.012", -- [1]
 								"18:13.184", -- [2]
@@ -5333,7 +5400,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 201844.413,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"01:42.798", -- [1]
 								"12:29.078", -- [2]
@@ -5341,7 +5408,7 @@ GottaGoFastHistoryDB = {
 								"26:24.667", -- [4]
 								"23:50.445", -- [5]
 							},
-							["level"] = 15,
+							["startTime"] = 201844.413,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -5369,8 +5436,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 21,
 							},
-							["level"] = 15,
 							["startTime"] = 1321477.786,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"02:27.282", -- [1]
 								"14:19.704", -- [2]
@@ -5432,8 +5499,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 41,
 							},
-							["level"] = 15,
 							["startTime"] = 349908.465,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"02:44.899", -- [1]
 								"09:02.300", -- [2]
@@ -5518,7 +5585,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["startTime"] = 255926.911,
+							["level"] = 9,
 							["objectiveTimes"] = {
 								"02:32.532", -- [1]
 								"08:01.821", -- [2]
@@ -5526,7 +5593,7 @@ GottaGoFastHistoryDB = {
 								"17:52.514", -- [4]
 								"16:08.345", -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 255926.911,
 						}, -- [4]
 					},
 					["name"] = "Black Rook Hold",
@@ -5590,7 +5657,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 516640.323,
 							["objectiveTimes"] = {
 								"01:34.816", -- [1]
 								"10:11.045", -- [2]
@@ -5598,7 +5665,7 @@ GottaGoFastHistoryDB = {
 								"23:19.619", -- [4]
 								"21:55.466", -- [5]
 							},
-							["startTime"] = 516640.323,
+							["level"] = 5,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -5622,8 +5689,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 10,
 								["day"] = 32,
 							},
-							["startTime"] = 599983.254,
 							["level"] = 5,
+							["startTime"] = 599983.254,
 							["objectiveTimes"] = {
 								"05:18.397", -- [1]
 								"18:03.013", -- [2]
@@ -5716,7 +5783,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 304358.017,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"06:55.638", -- [1]
 								"20:22.348", -- [2]
@@ -5724,7 +5791,7 @@ GottaGoFastHistoryDB = {
 								"31:41.979", -- [4]
 								"28:48.993", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 304358.017,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -5756,8 +5823,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 31,
 								["day"] = 32,
 							},
-							["startTime"] = 97726.923,
 							["level"] = 12,
+							["startTime"] = 97726.923,
 							["objectiveTimes"] = {
 								"04:05.093", -- [1]
 								"13:54.584", -- [2]
@@ -5797,21 +5864,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 8,
 							["affixes"] = {
-								[7] = {
-									["name"] = "Bolstering",
-									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
 								[12] = {
 									["name"] = "Grievous",
 									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
+								},
+								[7] = {
+									["name"] = "Bolstering",
+									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
 							},
 							["active"] = false,
@@ -5823,8 +5890,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 30,
 							},
-							["startTime"] = 9690.409,
 							["level"] = 10,
+							["startTime"] = 9690.409,
 							["objectiveTimes"] = {
 								"06:28.619", -- [1]
 								"17:34.921", -- [2]
@@ -5922,7 +5989,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 422222.804,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"07:09.751", -- [1]
 								"15:44.393", -- [2]
@@ -5930,7 +5997,7 @@ GottaGoFastHistoryDB = {
 								"28:13.042", -- [4]
 								"26:28.887", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 422222.804,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -5981,7 +6048,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 424205.804,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"07:33.686", -- [1]
 								"16:00.802", -- [2]
@@ -5989,7 +6056,7 @@ GottaGoFastHistoryDB = {
 								"27:36.658", -- [4]
 								"25:59.735", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 424205.804,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -6009,8 +6076,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 47,
 								["day"] = 32,
 							},
-							["startTime"] = 437136.839,
 							["level"] = 2,
+							["startTime"] = 437136.839,
 							["objectiveTimes"] = {
 								"04:32.366", -- [1]
 								"10:24.237", -- [2]
@@ -6091,7 +6158,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 2,
+							["startTime"] = 507726.304,
 							["objectiveTimes"] = {
 								"03:28.084", -- [1]
 								"08:24.577", -- [2]
@@ -6099,7 +6166,7 @@ GottaGoFastHistoryDB = {
 								"17:42.427", -- [4]
 								"16:38.021", -- [5]
 							},
-							["startTime"] = 507726.304,
+							["level"] = 2,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -6123,8 +6190,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 12,
 								["day"] = 32,
 							},
-							["level"] = 5,
 							["startTime"] = 610903.272,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"07:36.566", -- [1]
 								"15:28.884", -- [2]
@@ -6217,7 +6284,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 306813.038,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"08:51.653", -- [1]
 								"19:52.968", -- [2]
@@ -6225,7 +6292,7 @@ GottaGoFastHistoryDB = {
 								"34:03.148", -- [4]
 								"31:18.231", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 306813.038,
 						}, -- [6]
 						{
 							["corrupt"] = true,
@@ -6257,8 +6324,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 55,
 								["day"] = 32,
 							},
-							["startTime"] = 592216.984,
 							["level"] = 10,
+							["startTime"] = 592216.984,
 							["objectiveTimes"] = {
 								"33:57", -- [1]
 								"33:57", -- [2]
@@ -6324,8 +6391,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 3,
 								["day"] = 32,
 							},
-							["startTime"] = 599805.762,
 							["level"] = 10,
+							["startTime"] = 599805.762,
 							["objectiveTimes"] = {
 								"06:24.403", -- [1]
 								"15:33.234", -- [2]
@@ -6387,8 +6454,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 3,
 								["day"] = 32,
 							},
-							["level"] = 8,
 							["startTime"] = 86655.566,
+							["level"] = 8,
 							["objectiveTimes"] = {
 								"05:36.664", -- [1]
 								"16:21.574", -- [2]
@@ -6428,21 +6495,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 22,
 							["affixes"] = {
-								[10] = {
-									["name"] = "Fortified",
-									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
-								},
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
+								},
+								[2] = {
+									["name"] = "Skittish",
+									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
 								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
-								[2] = {
-									["name"] = "Skittish",
-									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -6454,8 +6521,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 12,
 								["day"] = 32,
 							},
-							["startTime"] = 12538.473,
 							["level"] = 11,
+							["startTime"] = 12538.473,
 							["objectiveTimes"] = {
 								"11:13.809", -- [1]
 								"36:40.201", -- [2]
@@ -6548,7 +6615,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 68820.634,
 							["objectiveTimes"] = {
 								"09:29.610", -- [1]
 								"25:13.018", -- [2]
@@ -6556,7 +6623,7 @@ GottaGoFastHistoryDB = {
 								"45:20.374", -- [4]
 								"40:54.802", -- [5]
 							},
-							["startTime"] = 68820.634,
+							["level"] = 10,
 						}, -- [11]
 						{
 							["corrupt"] = false,
@@ -6615,7 +6682,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 251095.953,
 							["objectiveTimes"] = {
 								"07:29.330", -- [1]
 								"18:31.434", -- [2]
@@ -6623,7 +6690,7 @@ GottaGoFastHistoryDB = {
 								"31:45.561", -- [4]
 								"28:28.150", -- [5]
 							},
-							["startTime"] = 251095.953,
+							["level"] = 10,
 						}, -- [12]
 						{
 							["corrupt"] = false,
@@ -6655,8 +6722,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 42,
 							},
-							["level"] = 11,
 							["startTime"] = 444057.56,
+							["level"] = 11,
 							["objectiveTimes"] = {
 								"10:54.860", -- [1]
 								"24:06.599", -- [2]
@@ -6754,7 +6821,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 1768590.984,
+							["level"] = 8,
 							["objectiveTimes"] = {
 								"04:03.460", -- [1]
 								"29:07.161", -- [2]
@@ -6762,7 +6829,7 @@ GottaGoFastHistoryDB = {
 								"54:38.993", -- [4]
 								"48:21.185", -- [5]
 							},
-							["level"] = 8,
+							["startTime"] = 1768590.984,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -6813,7 +6880,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["startTime"] = 257714.925,
+							["level"] = 9,
 							["objectiveTimes"] = {
 								"03:13.112", -- [1]
 								"12:42.982", -- [2]
@@ -6821,7 +6888,7 @@ GottaGoFastHistoryDB = {
 								"24:05.984", -- [4]
 								"18:59.119", -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 257714.925,
 						}, -- [2]
 					},
 					["name"] = "Seat of the Triumvirate",
@@ -6885,7 +6952,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "DAMAGER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 328286.632,
 							["objectiveTimes"] = {
 								"06:01.902", -- [1]
 								"15:56.160", -- [2]
@@ -6893,7 +6960,7 @@ GottaGoFastHistoryDB = {
 								"31:33.092", -- [4]
 								"29:02.781", -- [5]
 							},
-							["startTime"] = 328286.632,
+							["level"] = 5,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -6944,7 +7011,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 410901.791,
 							["objectiveTimes"] = {
 								"05:47.191", -- [1]
 								"13:30.548", -- [2]
@@ -6952,7 +7019,7 @@ GottaGoFastHistoryDB = {
 								"22:44.289", -- [4]
 								"21:10.108", -- [5]
 							},
-							["startTime"] = 410901.791,
+							["level"] = 5,
 						}, -- [2]
 						{
 							["corrupt"] = false,
@@ -7003,7 +7070,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 414641.79,
 							["objectiveTimes"] = {
 								"04:32.316", -- [1]
 								"11:38.300", -- [2]
@@ -7011,7 +7078,7 @@ GottaGoFastHistoryDB = {
 								"22:16.176", -- [4]
 								"20:34.558", -- [5]
 							},
-							["startTime"] = 414641.79,
+							["level"] = 5,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -7062,7 +7129,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 430372.818,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"03:19.138", -- [1]
 								"11:27.147", -- [2]
@@ -7070,7 +7137,7 @@ GottaGoFastHistoryDB = {
 								"24:30.256", -- [4]
 								"24:53.395", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 430372.818,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -7094,8 +7161,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 19,
 								["day"] = 32,
 							},
-							["startTime"] = 496623.277,
 							["level"] = 5,
+							["startTime"] = 496623.277,
 							["objectiveTimes"] = {
 								"03:51.046", -- [1]
 								"11:39.820", -- [2]
@@ -7180,7 +7247,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 586268.227,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"03:50.062", -- [1]
 								"11:52.540", -- [2]
@@ -7188,7 +7255,7 @@ GottaGoFastHistoryDB = {
 								"21:43.482", -- [4]
 								"20:11.815", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 586268.227,
 						}, -- [6]
 						{
 							["corrupt"] = false,
@@ -7220,8 +7287,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 18,
 								["day"] = 32,
 							},
-							["startTime"] = 53269.516,
 							["level"] = 10,
+							["startTime"] = 53269.516,
 							["objectiveTimes"] = {
 								"03:17.364", -- [1]
 								"18:46.138", -- [2]
@@ -7314,7 +7381,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 300187.018,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"07:20.004", -- [1]
 								"14:49.913", -- [2]
@@ -7322,7 +7389,7 @@ GottaGoFastHistoryDB = {
 								"31:56.668", -- [4]
 								"28:43.112", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 300187.018,
 						}, -- [8]
 						{
 							["corrupt"] = false,
@@ -7381,7 +7448,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 302405.027,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"06:02.535", -- [1]
 								"13:33.060", -- [2]
@@ -7389,7 +7456,7 @@ GottaGoFastHistoryDB = {
 								"27:53.855", -- [4]
 								"24:59.919", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 302405.027,
 						}, -- [9]
 						{
 							["corrupt"] = false,
@@ -7421,8 +7488,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 57,
 								["day"] = 32,
 							},
-							["startTime"] = 412619.467,
 							["level"] = 10,
+							["startTime"] = 412619.467,
 							["objectiveTimes"] = {
 								"06:25.258", -- [1]
 								"13:14.455", -- [2]
@@ -7511,7 +7578,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 506612.914,
 							["objectiveTimes"] = {
 								"02:36.839", -- [1]
 								"09:50.494", -- [2]
@@ -7519,7 +7586,7 @@ GottaGoFastHistoryDB = {
 								"23:03.238", -- [4]
 								"23:39.331", -- [5]
 							},
-							["startTime"] = 506612.914,
+							["level"] = 9,
 						}, -- [11]
 						{
 							["corrupt"] = false,
@@ -7551,8 +7618,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 38,
 								["day"] = 32,
 							},
-							["startTime"] = 1105350.065,
 							["level"] = 10,
+							["startTime"] = 1105350.065,
 							["objectiveTimes"] = {
 								"12:29.595", -- [1]
 								"23:03.598", -- [2]
@@ -7618,8 +7685,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 50,
 								["day"] = 32,
 							},
-							["startTime"] = 88514.918,
 							["level"] = 10,
+							["startTime"] = 88514.918,
 							["objectiveTimes"] = {
 								"03:18.335", -- [1]
 								"13:11.946", -- [2]
@@ -7685,8 +7752,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 52,
 								["day"] = 32,
 							},
-							["startTime"] = 92020.909,
 							["level"] = 12,
+							["startTime"] = 92020.909,
 							["objectiveTimes"] = {
 								"05:51.213", -- [1]
 								"13:49.365", -- [2]
@@ -7752,8 +7819,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 41,
 								["day"] = 32,
 							},
-							["startTime"] = 94650.92,
 							["level"] = 13,
+							["startTime"] = 94650.92,
 							["objectiveTimes"] = {
 								"04:24.457", -- [1]
 								"27:37.946", -- [2]
@@ -7793,14 +7860,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 0,
 							["affixes"] = {
-								[7] = {
-									["name"] = "Bolstering",
-									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
-								},
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[9] = {
 									["name"] = "Tyrannical",
 									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
@@ -7808,6 +7867,14 @@ GottaGoFastHistoryDB = {
 								[13] = {
 									["name"] = "Explosive",
 									["desc"] = "While in combat, enemies periodically summon Explosive Orbs that will detonate if not destroyed.",
+								},
+								[7] = {
+									["name"] = "Bolstering",
+									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -7846,7 +7913,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 513679.784,
+							["level"] = 11,
 							["objectiveTimes"] = {
 								"03:56.099", -- [1]
 								"21:28.956", -- [2]
@@ -7854,7 +7921,7 @@ GottaGoFastHistoryDB = {
 								"24:50.409", -- [4]
 								"22:05.513", -- [5]
 							},
-							["level"] = 11,
+							["startTime"] = 513679.784,
 						}, -- [16]
 						{
 							["corrupt"] = false,
@@ -7886,8 +7953,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 43,
 							},
-							["startTime"] = 603071.37,
 							["level"] = 11,
+							["startTime"] = 603071.37,
 							["objectiveTimes"] = {
 								"05:06.377", -- [1]
 								"12:58.315", -- [2]
@@ -7980,7 +8047,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 605395.348,
 							["objectiveTimes"] = {
 								"06:26.680", -- [1]
 								"17:58.592", -- [2]
@@ -7988,7 +8055,7 @@ GottaGoFastHistoryDB = {
 								"22:20.173", -- [4]
 								"24:53.154", -- [5]
 							},
-							["startTime"] = 605395.348,
+							["level"] = 10,
 						}, -- [18]
 					},
 					["name"] = "Freehold",
@@ -8034,8 +8101,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 18,
 								["day"] = 32,
 							},
-							["startTime"] = 434810.823,
 							["level"] = 5,
+							["startTime"] = 434810.823,
 							["objectiveTimes"] = {
 								"06:31.295", -- [1]
 								"16:12.610", -- [2]
@@ -8093,8 +8160,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 20,
 								["day"] = 32,
 							},
-							["startTime"] = 438811.852,
 							["level"] = 5,
+							["startTime"] = 438811.852,
 							["objectiveTimes"] = {
 								"03:36.388", -- [1]
 								"10:43.710", -- [2]
@@ -8179,7 +8246,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 510968.284,
 							["objectiveTimes"] = {
 								"04:14.603", -- [1]
 								"12:40.985", -- [2]
@@ -8187,7 +8254,7 @@ GottaGoFastHistoryDB = {
 								"25:32.161", -- [4]
 								"21:49.479", -- [5]
 							},
-							["startTime"] = 510968.284,
+							["level"] = 5,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -8238,7 +8305,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 512700.302,
 							["objectiveTimes"] = {
 								"04:03.641", -- [1]
 								"10:57.807", -- [2]
@@ -8246,7 +8313,7 @@ GottaGoFastHistoryDB = {
 								"23:58.308", -- [4]
 								"19:56.530", -- [5]
 							},
-							["startTime"] = 512700.302,
+							["level"] = 5,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -8297,7 +8364,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 584180.24,
+							["level"] = 5,
 							["objectiveTimes"] = {
 								"03:55.248", -- [1]
 								"12:56.446", -- [2]
@@ -8305,7 +8372,7 @@ GottaGoFastHistoryDB = {
 								"25:54.685", -- [4]
 								"22:11.445", -- [5]
 							},
-							["level"] = 5,
+							["startTime"] = 584180.24,
 						}, -- [5]
 						{
 							["corrupt"] = false,
@@ -8337,8 +8404,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 13,
 								["day"] = 32,
 							},
-							["level"] = 11,
 							["startTime"] = 124620.878,
+							["level"] = 11,
 							["objectiveTimes"] = {
 								"39:32.565", -- [1]
 								"53:15.320", -- [2]
@@ -8404,8 +8471,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 13,
 								["day"] = 32,
 							},
-							["level"] = 10,
 							["startTime"] = 604106.759,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"10:41.437", -- [1]
 								"19:12.000", -- [2]
@@ -8494,7 +8561,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 75963.559,
 							["objectiveTimes"] = {
 								"03:31.483", -- [1]
 								"11:31.297", -- [2]
@@ -8502,20 +8569,12 @@ GottaGoFastHistoryDB = {
 								"31:15.134", -- [4]
 								"26:42.224", -- [5]
 							},
-							["startTime"] = 75963.559,
+							["level"] = 9,
 						}, -- [8]
 						{
 							["corrupt"] = false,
 							["deaths"] = 11,
 							["affixes"] = {
-								[4] = {
-									["name"] = "Necrotic",
-									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
-								},
-								[6] = {
-									["name"] = "Raging",
-									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
-								},
 								[9] = {
 									["name"] = "Tyrannical",
 									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
@@ -8523,6 +8582,14 @@ GottaGoFastHistoryDB = {
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
+								},
+								[4] = {
+									["name"] = "Necrotic",
+									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
 								},
 							},
 							["active"] = false,
@@ -8561,7 +8628,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 82519.57,
 							["objectiveTimes"] = {
 								"06:36.478", -- [1]
 								"15:20.311", -- [2]
@@ -8569,27 +8636,27 @@ GottaGoFastHistoryDB = {
 								"35:22.018", -- [4]
 								"29:33.167", -- [5]
 							},
-							["startTime"] = 82519.57,
+							["level"] = 10,
 						}, -- [9]
 						{
 							["corrupt"] = false,
 							["deaths"] = 29,
 							["affixes"] = {
-								[6] = {
-									["name"] = "Raging",
-									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
-								},
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
 								},
 								[4] = {
 									["name"] = "Necrotic",
 									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -8601,8 +8668,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 40,
 								["day"] = 32,
 							},
-							["level"] = 10,
 							["startTime"] = 174205.325,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"16:58.596", -- [1]
 								"28:29.466", -- [2]
@@ -8678,8 +8745,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 46,
 							},
-							["startTime"] = 757872.239,
 							["level"] = 16,
+							["startTime"] = 757872.239,
 							["objectiveTimes"] = {
 								"06:38.797", -- [1]
 								"20:06.300", -- [2]
@@ -8769,7 +8836,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 75774.634,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"02:47.506", -- [1]
 								"12:12.124", -- [2]
@@ -8778,7 +8845,7 @@ GottaGoFastHistoryDB = {
 								"24:57.525", -- [5]
 								"23:00.227", -- [6]
 							},
-							["level"] = 15,
+							["startTime"] = 75774.634,
 						}, -- [2]
 					},
 				},
@@ -8837,14 +8904,14 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 701795.65,
+							["level"] = 11,
 							["objectiveTimes"] = {
 								"04:34.281", -- [1]
 								"12:02.816", -- [2]
 								"15:01.235", -- [3]
 								"12:02.816", -- [4]
 							},
-							["level"] = 11,
+							["startTime"] = 701795.65,
 						}, -- [1]
 						{
 							["corrupt"] = false,
@@ -8872,8 +8939,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2017,
 								["mins"] = 14,
 							},
-							["startTime"] = 706295.662,
 							["level"] = 16,
+							["startTime"] = 706295.662,
 							["objectiveTimes"] = {
 								"05:46.785", -- [1]
 								"20:40.492", -- [2]
@@ -8961,14 +9028,14 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 1279185.928,
 							["objectiveTimes"] = {
 								"06:45.729", -- [1]
 								"19:35.123", -- [2]
 								"24:00.361", -- [3]
 								"19:35.123", -- [4]
 							},
-							["startTime"] = 1279185.928,
+							["level"] = 10,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -9023,14 +9090,14 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 1884005.455,
+							["level"] = 11,
 							["objectiveTimes"] = {
 								"07:41.130", -- [1]
 								"18:18.054", -- [2]
 								"21:57.933", -- [3]
 								"18:18.054", -- [4]
 							},
-							["level"] = 11,
+							["startTime"] = 1884005.455,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -9085,14 +9152,14 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 37555.844,
+							["level"] = 15,
 							["objectiveTimes"] = {
 								"06:10.787", -- [1]
 								"16:31.010", -- [2]
 								"21:56.548", -- [3]
 								"16:31.010", -- [4]
 							},
-							["level"] = 15,
+							["startTime"] = 37555.844,
 						}, -- [5]
 						{
 							["corrupt"] = false,
@@ -9120,8 +9187,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 0,
 							},
-							["startTime"] = 89933.047,
 							["level"] = 17,
+							["startTime"] = 89933.047,
 							["objectiveTimes"] = {
 								"06:09.658", -- [1]
 								"18:31.759", -- [2]
@@ -9195,8 +9262,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 2,
 								["day"] = 32,
 							},
-							["startTime"] = 491711.271,
 							["level"] = 2,
+							["startTime"] = 491711.271,
 							["objectiveTimes"] = {
 								"11:57.608", -- [1]
 								"18:22.121", -- [2]
@@ -9254,8 +9321,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 25,
 								["day"] = 32,
 							},
-							["startTime"] = 597084.268,
 							["level"] = 5,
+							["startTime"] = 597084.268,
 							["objectiveTimes"] = {
 								"07:51.516", -- [1]
 								"16:13.175", -- [2]
@@ -9344,7 +9411,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 295996.987,
+							["level"] = 9,
 							["objectiveTimes"] = {
 								"07:37.101", -- [1]
 								"21:47.404", -- [2]
@@ -9352,7 +9419,7 @@ GottaGoFastHistoryDB = {
 								"31:17.103", -- [4]
 								"26:24.684", -- [5]
 							},
-							["level"] = 9,
+							["startTime"] = 295996.987,
 						}, -- [3]
 						{
 							["corrupt"] = false,
@@ -9411,7 +9478,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 499976.923,
 							["objectiveTimes"] = {
 								"13:09.705", -- [1]
 								"20:16.594", -- [2]
@@ -9419,7 +9486,7 @@ GottaGoFastHistoryDB = {
 								"42:11.784", -- [4]
 								"34:49.401", -- [5]
 							},
-							["startTime"] = 499976.923,
+							["level"] = 10,
 						}, -- [4]
 						{
 							["corrupt"] = false,
@@ -9451,8 +9518,8 @@ GottaGoFastHistoryDB = {
 								["mins"] = 20,
 								["day"] = 32,
 							},
-							["startTime"] = 597693.744,
 							["level"] = 10,
+							["startTime"] = 597693.744,
 							["objectiveTimes"] = {
 								"07:00.154", -- [1]
 								"13:37.426", -- [2]
@@ -9492,14 +9559,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 11,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[4] = {
 									["name"] = "Necrotic",
 									["desc"] = "All enemies' melee attacks apply a stacking blight that inflicts damage over time and reduces healing received.",
@@ -9507,6 +9566,14 @@ GottaGoFastHistoryDB = {
 								[6] = {
 									["name"] = "Raging",
 									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -9545,7 +9612,7 @@ GottaGoFastHistoryDB = {
 									["role"] = "HEALER",
 								}, -- [5]
 							},
-							["startTime"] = 192077.808,
+							["level"] = 10,
 							["objectiveTimes"] = {
 								"10:16.808", -- [1]
 								"22:01.728", -- [2]
@@ -9553,7 +9620,7 @@ GottaGoFastHistoryDB = {
 								"31:34.571", -- [4]
 								"28:43.558", -- [5]
 							},
-							["level"] = 10,
+							["startTime"] = 192077.808,
 						}, -- [6]
 						{
 							["corrupt"] = false,
@@ -9585,8 +9652,8 @@ GottaGoFastHistoryDB = {
 								["year"] = 2018,
 								["mins"] = 14,
 							},
-							["startTime"] = 248138.976,
 							["level"] = 10,
+							["startTime"] = 248138.976,
 							["objectiveTimes"] = {
 								"07:10.807", -- [1]
 								"13:57.928", -- [2]

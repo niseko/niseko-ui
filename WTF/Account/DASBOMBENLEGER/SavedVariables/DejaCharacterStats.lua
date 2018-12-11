@@ -2534,7 +2534,7 @@ DCS_ClassSpecDB = {
 		}, -- [47]
 		["uniqueKey"] = "Nise:Stormscale:1",
 	},
-	["Nedoka:Antonidas:3"] = {
+	["Niseniseko:Stormscale:3"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -2711,7 +2711,20 @@ DCS_ClassSpecDB = {
 			["hideAt"] = 0,
 			["hidden"] = true,
 		}, -- [46]
-		["uniqueKey"] = "Nedoka:Antonidas:3",
+		{
+			["statKey"] = "SPEED_RATING",
+			["hideAt"] = 0,
+			["hidden"] = true,
+		}, -- [47]
+		{
+			["statKey"] = "SPEED",
+			["hideAt"] = 0,
+			["hidden"] = true,
+		}, -- [48]
+		{
+			["statKey"] = "STAGGER",
+		}, -- [49]
+		["uniqueKey"] = "Niseniseko:Stormscale:3",
 	},
 	["Nisepeg:Stormscale:3"] = {
 		{
@@ -3097,7 +3110,7 @@ DCS_ClassSpecDB = {
 		}, -- [49]
 		["uniqueKey"] = "Nisegob:Stormscale:3",
 	},
-	["Nisedog:Stormscale:2"] = {
+	["Vordt:Twisting Nether:1"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -3131,10 +3144,10 @@ DCS_ClassSpecDB = {
 		}, -- [10]
 		{
 			["statKey"] = "STRENGTH",
-			["hidden"] = true,
 		}, -- [11]
 		{
 			["statKey"] = "AGILITY",
+			["hidden"] = true,
 		}, -- [12]
 		{
 			["statKey"] = "INTELLECT",
@@ -3144,89 +3157,84 @@ DCS_ClassSpecDB = {
 			["statKey"] = "STAMINA",
 		}, -- [14]
 		{
-			["statKey"] = "ARMOR",
+			["statKey"] = "OffenseCategory",
 		}, -- [15]
 		{
-			["statKey"] = "OffenseCategory",
+			["statKey"] = "ATTACK_DAMAGE",
 		}, -- [16]
 		{
-			["statKey"] = "ATTACK_DAMAGE",
+			["statKey"] = "ATTACK_AP",
 		}, -- [17]
 		{
-			["statKey"] = "ATTACK_AP",
+			["statKey"] = "DCS_ATTACK_ATTACKSPEED",
 		}, -- [18]
 		{
-			["statKey"] = "DCS_ATTACK_ATTACKSPEED",
-		}, -- [19]
-		{
 			["statKey"] = "WEAPON_DPS",
-		}, -- [20]
+		}, -- [19]
 		{
 			["statKey"] = "SPELLPOWER",
 			["hidden"] = true,
-		}, -- [21]
+		}, -- [20]
 		{
 			["statKey"] = "MANAREGEN",
 			["hidden"] = true,
-		}, -- [22]
+		}, -- [21]
 		{
 			["statKey"] = "ENERGY_REGEN",
-		}, -- [23]
+		}, -- [22]
 		{
 			["statKey"] = "DCS_RUNEREGEN",
-			["hidden"] = true,
-		}, -- [24]
+		}, -- [23]
 		{
 			["statKey"] = "FOCUS_REGEN",
-		}, -- [25]
+		}, -- [24]
 		{
 			["statKey"] = "GCD",
-		}, -- [26]
+		}, -- [25]
 		{
 			["statKey"] = "EnhancementsCategory",
-		}, -- [27]
+		}, -- [26]
 		{
 			["statKey"] = "CRITCHANCE",
 			["hideAt"] = 0,
-		}, -- [28]
+		}, -- [27]
 		{
 			["statKey"] = "HASTE",
 			["hideAt"] = 0,
-		}, -- [29]
+		}, -- [28]
 		{
 			["statKey"] = "VERSATILITY",
 			["hideAt"] = 0,
-		}, -- [30]
+		}, -- [29]
 		{
 			["statKey"] = "MASTERY",
 			["hideAt"] = 0,
-		}, -- [31]
+		}, -- [30]
 		{
 			["statKey"] = "LIFESTEAL",
 			["hideAt"] = 0,
-		}, -- [32]
+		}, -- [31]
 		{
 			["statKey"] = "AVOIDANCE",
 			["hideAt"] = 0,
-		}, -- [33]
+		}, -- [32]
 		{
 			["statKey"] = "DefenseCategory",
-			["hidden"] = true,
+		}, -- [33]
+		{
+			["statKey"] = "ARMOR",
 		}, -- [34]
 		{
 			["statKey"] = "DODGE",
 			["hideAt"] = 0,
-			["hidden"] = true,
 		}, -- [35]
 		{
 			["statKey"] = "PARRY",
 			["hideAt"] = 0,
-			["hidden"] = true,
 		}, -- [36]
 		{
 			["statKey"] = "BLOCK",
 			["hideAt"] = 0,
-			["hidden"] = true,
 		}, -- [37]
 		{
 			["statKey"] = "RatingCategory",
@@ -3273,19 +3281,19 @@ DCS_ClassSpecDB = {
 			["hidden"] = true,
 		}, -- [46]
 		{
-			["statKey"] = "SPEED_RATING",
+			["statKey"] = "SPEED",
 			["hideAt"] = 0,
 			["hidden"] = true,
 		}, -- [47]
 		{
-			["statKey"] = "SPEED",
-			["hideAt"] = 0,
-			["hidden"] = true,
+			["statKey"] = "STAGGER",
 		}, -- [48]
 		{
-			["statKey"] = "STAGGER",
+			["statKey"] = "SPEED_RATING",
+			["hideAt"] = 0,
+			["hidden"] = true,
 		}, -- [49]
-		["uniqueKey"] = "Nisedog:Stormscale:2",
+		["uniqueKey"] = "Vordt:Twisting Nether:1",
 	},
 	["Zelda:Mal'Ganis:1"] = {
 		{
@@ -3482,7 +3490,7 @@ DCS_ClassSpecDB = {
 		}, -- [47]
 		["uniqueKey"] = "Zelda:Mal'Ganis:1",
 	},
-	["Vordt:Twisting Nether:1"] = {
+	["Nisedog:Stormscale:2"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -3516,10 +3524,10 @@ DCS_ClassSpecDB = {
 		}, -- [10]
 		{
 			["statKey"] = "STRENGTH",
+			["hidden"] = true,
 		}, -- [11]
 		{
 			["statKey"] = "AGILITY",
-			["hidden"] = true,
 		}, -- [12]
 		{
 			["statKey"] = "INTELLECT",
@@ -3529,84 +3537,89 @@ DCS_ClassSpecDB = {
 			["statKey"] = "STAMINA",
 		}, -- [14]
 		{
-			["statKey"] = "OffenseCategory",
+			["statKey"] = "ARMOR",
 		}, -- [15]
 		{
-			["statKey"] = "ATTACK_DAMAGE",
+			["statKey"] = "OffenseCategory",
 		}, -- [16]
 		{
-			["statKey"] = "ATTACK_AP",
+			["statKey"] = "ATTACK_DAMAGE",
 		}, -- [17]
 		{
-			["statKey"] = "DCS_ATTACK_ATTACKSPEED",
+			["statKey"] = "ATTACK_AP",
 		}, -- [18]
 		{
-			["statKey"] = "WEAPON_DPS",
+			["statKey"] = "DCS_ATTACK_ATTACKSPEED",
 		}, -- [19]
+		{
+			["statKey"] = "WEAPON_DPS",
+		}, -- [20]
 		{
 			["statKey"] = "SPELLPOWER",
 			["hidden"] = true,
-		}, -- [20]
+		}, -- [21]
 		{
 			["statKey"] = "MANAREGEN",
 			["hidden"] = true,
-		}, -- [21]
-		{
-			["statKey"] = "ENERGY_REGEN",
 		}, -- [22]
 		{
-			["statKey"] = "DCS_RUNEREGEN",
+			["statKey"] = "ENERGY_REGEN",
 		}, -- [23]
 		{
-			["statKey"] = "FOCUS_REGEN",
+			["statKey"] = "DCS_RUNEREGEN",
+			["hidden"] = true,
 		}, -- [24]
 		{
-			["statKey"] = "GCD",
+			["statKey"] = "FOCUS_REGEN",
 		}, -- [25]
 		{
-			["statKey"] = "EnhancementsCategory",
+			["statKey"] = "GCD",
 		}, -- [26]
+		{
+			["statKey"] = "EnhancementsCategory",
+		}, -- [27]
 		{
 			["statKey"] = "CRITCHANCE",
 			["hideAt"] = 0,
-		}, -- [27]
+		}, -- [28]
 		{
 			["statKey"] = "HASTE",
 			["hideAt"] = 0,
-		}, -- [28]
+		}, -- [29]
 		{
 			["statKey"] = "VERSATILITY",
 			["hideAt"] = 0,
-		}, -- [29]
+		}, -- [30]
 		{
 			["statKey"] = "MASTERY",
 			["hideAt"] = 0,
-		}, -- [30]
+		}, -- [31]
 		{
 			["statKey"] = "LIFESTEAL",
 			["hideAt"] = 0,
-		}, -- [31]
+		}, -- [32]
 		{
 			["statKey"] = "AVOIDANCE",
 			["hideAt"] = 0,
-		}, -- [32]
-		{
-			["statKey"] = "DefenseCategory",
 		}, -- [33]
 		{
-			["statKey"] = "ARMOR",
+			["statKey"] = "DefenseCategory",
+			["hidden"] = true,
 		}, -- [34]
 		{
 			["statKey"] = "DODGE",
 			["hideAt"] = 0,
+			["hidden"] = true,
 		}, -- [35]
 		{
 			["statKey"] = "PARRY",
 			["hideAt"] = 0,
+			["hidden"] = true,
 		}, -- [36]
 		{
 			["statKey"] = "BLOCK",
 			["hideAt"] = 0,
+			["hidden"] = true,
 		}, -- [37]
 		{
 			["statKey"] = "RatingCategory",
@@ -3653,19 +3666,19 @@ DCS_ClassSpecDB = {
 			["hidden"] = true,
 		}, -- [46]
 		{
-			["statKey"] = "SPEED",
+			["statKey"] = "SPEED_RATING",
 			["hideAt"] = 0,
 			["hidden"] = true,
 		}, -- [47]
 		{
-			["statKey"] = "STAGGER",
-		}, -- [48]
-		{
-			["statKey"] = "SPEED_RATING",
+			["statKey"] = "SPEED",
 			["hideAt"] = 0,
 			["hidden"] = true,
+		}, -- [48]
+		{
+			["statKey"] = "STAGGER",
 		}, -- [49]
-		["uniqueKey"] = "Vordt:Twisting Nether:1",
+		["uniqueKey"] = "Nisedog:Stormscale:2",
 	},
 	["Nisetest:Stormscale:3"] = {
 		{
@@ -3859,7 +3872,7 @@ DCS_ClassSpecDB = {
 		}, -- [49]
 		["uniqueKey"] = "Nisetest:Stormscale:3",
 	},
-	["Niseniseko:Stormscale:3"] = {
+	["Nedoka:Antonidas:3"] = {
 		{
 			["statKey"] = "ItemLevelFrame",
 		}, -- [1]
@@ -4036,19 +4049,6 @@ DCS_ClassSpecDB = {
 			["hideAt"] = 0,
 			["hidden"] = true,
 		}, -- [46]
-		{
-			["statKey"] = "SPEED_RATING",
-			["hideAt"] = 0,
-			["hidden"] = true,
-		}, -- [47]
-		{
-			["statKey"] = "SPEED",
-			["hideAt"] = 0,
-			["hidden"] = true,
-		}, -- [48]
-		{
-			["statKey"] = "STAGGER",
-		}, -- [49]
-		["uniqueKey"] = "Niseniseko:Stormscale:3",
+		["uniqueKey"] = "Nedoka:Antonidas:3",
 	},
 }

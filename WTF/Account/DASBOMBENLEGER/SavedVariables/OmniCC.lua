@@ -1,5 +1,8 @@
 
 OmniCC4Config = {
+	["groups"] = {
+	},
+	["version"] = "8.0.9",
 	["groupSettings"] = {
 		["base"] = {
 			["styles"] = {
@@ -23,21 +26,18 @@ OmniCC4Config = {
 				},
 			},
 			["fontSize"] = 15,
-			["minDuration"] = 2,
+			["scaleText"] = true,
 			["minEffectDuration"] = 30,
 			["minSize"] = 0.4,
 			["spiralOpacity"] = 1.00999997742474,
-			["scaleText"] = true,
+			["yOff"] = 0,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
 			["anchor"] = "CENTER",
 			["mmSSDuration"] = 0,
-			["yOff"] = 0,
+			["minDuration"] = 2,
 			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
 		},
 	},
-	["groups"] = {
-	},
-	["version"] = "8.0.9",
 }

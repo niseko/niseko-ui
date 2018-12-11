@@ -54,66 +54,66 @@ VExRT = {
 		["Nyantera-Blackmoore"] = "default",
 		["Niseniseko-Stormscale"] = "default",
 		["Psyfoxx-Mal'Ganis"] = "default",
-		["Yvera-Moonglade"] = "default",
+		["Purrmeow-TwistingNether"] = "default",
 		["Nyandeko-Blackmoore"] = "default",
 		["Nisekoi-TwistingNether"] = "default",
-		["Purrmeow-TwistingNether"] = "default",
+		["Yvera-Moonglade"] = "default",
 		["Nisegob-Stormscale"] = "default",
 		["Felvordt-TwistingNether"] = "default",
 		["Illidarling-TwistingNether"] = "default",
 		["Tattoos-Antonidas"] = "default",
-		["Noskeaos-TwistingNether"] = "default",
-		["Nyandeko-TwistingNether"] = "default",
 		["Weebsiko-TwistingNether"] = "default",
+		["Nyandeko-TwistingNether"] = "default",
+		["Noskeaos-TwistingNether"] = "default",
 		["Nise-Stormscale"] = "default",
 		["Nisedog-Stormscale"] = "default",
 		["Nisekobabe-TwistingNether"] = "default",
 		["Nodeko-TwistingNether"] = "default",
 		["Nekoda-Antonidas"] = "default",
-		["Mondeko-Mal'Ganis"] = "default",
+		["Nisepeg-Stormscale"] = "default",
 		["Nyandeko-Stormreaver"] = "default",
 		["Nisecakes-Stormscale"] = "default",
 		["Grönk-Draenor"] = "default",
 		["Nisefy-Stormscale"] = "default",
 		["Nyanbaka-Blackmoore"] = "default",
 		["Vordt-TwistingNether"] = "default",
-		["Manacats-TwistingNether"] = "default",
+		["Nadero-TwistingNether"] = "default",
 		["Zelda-Mal'Ganis"] = "default",
 		["Nedako-Blackmoore"] = "default",
 		["Mondeko-Blackmoore"] = "default",
 		["Nadeko-Moonglade"] = "default",
 		["Noskaos-TwistingNether"] = "default",
 		["Pixelfehler-Ysera"] = "default",
-		["Nideko-TwistingNether"] = "default",
+		["Nisekobaby-TwistingNether"] = "default",
 		["Nadeko-Khaz'goroth"] = "default",
 		["Nekado-TwistingNether"] = "default",
-		["Nisekobaby-TwistingNether"] = "default",
+		["Stromausfall-Ysera"] = "default",
 		["Thedab-Blackrock"] = "default",
 		["Nekoda-Blackmoore"] = "default",
 		["Donnerbock-Ysera"] = "default",
 		["Seyana-Moonglade"] = "default",
 		["Nyanporo-Blackmoore"] = "default",
 		["Nisko-TwistingNether"] = "default",
-		["Stromausfall-Ysera"] = "default",
+		["Nideko-TwistingNether"] = "default",
 		["Testvordt-TwistingNether"] = "default",
 		["Nisetest-Stormscale"] = "default",
 		["Vodel-TwistingNether"] = "default",
 		["Niseko-Stormscale"] = "default",
-		["Nadero-TwistingNether"] = "default",
+		["Manacats-TwistingNether"] = "default",
 		["Nyanfox-Blackmoore"] = "default",
 		["Tattoos-TwistingNether"] = "default",
-		["Nisepeg-Stormscale"] = "default",
+		["Mondeko-Mal'Ganis"] = "default",
 		["Gronkgronk-TwistingNether"] = "default",
 		["Weebseko-TwistingNether"] = "default",
 		["Grönk-TwistingNether"] = "default",
 		["Nisemon-TwistingNether"] = "default",
 	},
 	["Arrow"] = {
-		["Scale"] = 134,
 		["Point1"] = "CENTER",
+		["Scale"] = 134,
 		["PointX"] = 145.654235839844,
-		["Point2"] = "CENTER",
 		["PointY"] = 47.6119956970215,
+		["Point2"] = "CENTER",
 	},
 	["Encounter"] = {
 		["list"] = {
@@ -258,6 +258,10 @@ VExRT = {
 			["Mondeko"] = {
 			},
 			["Nekado"] = {
+			},
+			["Thedab"] = {
+			},
+			["Nisekobaby"] = {
 			},
 			["Nisefy"] = {
 				"^1443^1^1508180662^0^0^5^11.93^", -- [1]
@@ -2677,10 +2681,6 @@ VExRT = {
 				"^2115^8^1542721721^79^1^5^377.35^", -- [2415]
 				"^2116^8^1542722208^88^1^5^377.35^", -- [2416]
 				"^2117^8^1542722406^68^1^5^377.35^", -- [2417]
-			},
-			["Nisekobaby"] = {
-			},
-			["Thedab"] = {
 			},
 			["Weebsiko"] = {
 			},
@@ -11102,6 +11102,10 @@ VExRT = {
 				"^2122^16^1544041608^117^0^20^383.71^Pinkyjones", -- [8415]
 				"^2122^16^1544041790^0^0^20^383.71^", -- [8416]
 				"^2122^16^1544041834^487^1^20^383.71^Pinkyjones", -- [8417]
+				"^2086^8^1544553551^112^1^5^379.45^", -- [8418]
+				"^2085^8^1544553966^108^1^5^379.45^", -- [8419]
+				"^2084^8^1544554468^94^1^5^379.45^", -- [8420]
+				"^2087^8^1544554670^130^1^5^379.45^", -- [8421]
 			},
 			["Nyanporo"] = {
 				"6B9E14366579020E1117Stamppî-Darksorrow", -- [1]
@@ -13426,14 +13430,14 @@ VExRT = {
 			},
 			["Stromausfall"] = {
 			},
-			["Nyandere"] = {
-			},
 			["Nisemon"] = {
 				"^1064^1^1498300710^34^1^5^12.00^", -- [1]
 				"^1065^1^1498300865^39^1^5^12.43^", -- [2]
 				"^1063^1^1498301024^26^1^5^12.43^", -- [3]
 				"^1062^1^1498301245^62^1^5^12.58^", -- [4]
 				"^1060^1^1498301320^27^1^5^12.64^", -- [5]
+			},
+			["Nyandere"] = {
 			},
 			["Vodel"] = {
 			},
@@ -20395,19 +20399,19 @@ VExRT = {
 			[1883] = "Echo of Jaina",
 			[1884] = "Echo of Tyrande",
 			[1064] = "Glubtok",
-			[1886] = "High Botanist Tel'arn",
+			[472] = "The Unforgiven",
 			[1887] = "Obsidian Sentinel",
 			[1072] = "Lord Godfrey",
 			[1889] = "Exarch Maladaar",
-			[1890] = "Shirrak the Dead Watcher",
+			[473] = "Hearthsinger Forresten",
 			[1891] = "Omor the Unscarred",
 			[1892] = "Vazruden the Herald",
 			[1893] = "Watchkeeper Gargolmar",
 			[1894] = "Kael'thas Sunstrider",
 			[1895] = "Priestess Delrissa",
-			[475] = "Willey Hopebreaker",
-			[1897] = "Selin Fireheart",
 			[1898] = "Vexallus",
+			[1897] = "Selin Fireheart",
+			[475] = "Willey Hopebreaker",
 			[1899] = "Nexus-Prince Shaffar",
 			[1900] = "Pandemonius",
 			[1901] = "Tavarok",
@@ -20426,31 +20430,31 @@ VExRT = {
 			[479] = "Baroness Anastari",
 			[1915] = "Wrath-Scryer Soccothrates",
 			[1916] = "Zereketh the Unbound",
-			[481] = "Maleki the Pallid",
+			[1922] = "The Maker",
 			[480] = "Nerub'enkan",
 			[1919] = "Aeonus",
 			[1920] = "Chrono Lord Deja",
 			[1921] = "Temporus",
-			[1922] = "The Maker",
+			[481] = "Maleki the Pallid",
 			[1923] = "Keli'dan the Breaker",
 			[1924] = "Broggok",
 			[1390] = "Feng the Accursed",
 			[482] = "Magistrate Barthilas",
-			[1930] = "Nethermancer Sepethrea",
-			[1933] = "Gatewatcher Gyro-Kill",
-			[243] = "The Seven",
 			[483] = "Ramstein the Gorger",
+			[242] = "Ambassador Flamelash",
+			[1941] = "Rokmar the Crackler",
+			[1930] = "Nethermancer Sepethrea",
 			[1931] = "Pathaleon the Calculator",
 			[1932] = "Mechano-Lord Capacitus",
-			[242] = "Ambassador Flamelash",
-			[1934] = "Gatewatcher Iron-Hand",
+			[1933] = "Gatewatcher Gyro-Kill",
+			[484] = "Lord Aurius Rivendare",
 			[1935] = "Blood Guard Porung",
 			[1936] = "Grand Warlock Nethekurse",
 			[1937] = "Warbringer O'mrogg",
 			[1938] = "Warchief Kargath Bladefist",
 			[1939] = "Mennu the Betrayer",
 			[1940] = "Quagmirran",
-			[1941] = "Rokmar the Crackler",
+			[243] = "The Seven",
 			[486] = "Dreamscythe",
 			[1059] = "Slabhide",
 			[1946] = "Hungarfen",
@@ -20464,18 +20468,18 @@ VExRT = {
 			[267] = "Highlord Omokk",
 			[235] = "Bael'Gar",
 			[1954] = "Maiden of Virtue",
-			[490] = "Morphaz",
-			[1962] = "Guarm",
-			[245] = "Emperor Dagran Thaurissan",
 			[1958] = "Odyn",
+			[1962] = "Guarm",
+			[1957] = "Opera Hall",
+			[490] = "Morphaz",
 			[1959] = "Mana Devourer",
 			[1960] = "Attumen the Huntsman",
 			[1961] = "Moroes",
 			[491] = "Hazzas",
-			[1966] = "Prince Taldaram",
+			[492] = "Avatar of Hakkar",
 			[1964] = "The Curator",
 			[1965] = "Shade of Medivh",
-			[492] = "Avatar of Hakkar",
+			[1966] = "Prince Taldaram",
 			[1967] = "Jedoga Shadowseeker",
 			[1968] = "Herald Volazj",
 			[1969] = "Elder Nadox",
@@ -20506,13 +20510,13 @@ VExRT = {
 			[1994] = "Krystallus",
 			[553] = "Grimlok",
 			[1996] = "Maiden of Grief",
-			[1957] = "Opera Hall",
+			[245] = "Emperor Dagran Thaurissan",
 			[1998] = "Sjonnir the Ironshaper",
 			[1999] = "Forgemaster Garfrost",
 			[2000] = "Scourgelord Tyrannus",
 			[2001] = "Krick",
 			[1060] = "\"Captain\" Cookie",
-			[484] = "Lord Aurius Rivendare",
+			[1934] = "Gatewatcher Iron-Hand",
 			[1071] = "Commander Springvale",
 			[268] = "Shadow Hunter Vosh'gajin",
 			[474] = "Timmy the Cruel",
@@ -20523,8 +20527,8 @@ VExRT = {
 			[2011] = "Keristrasza",
 			[2012] = "Ormorok the Tree-Shaper",
 			[1042] = "Asaad",
-			[473] = "Hearthsinger Forresten",
-			[472] = "The Unforgiven",
+			[1890] = "Shirrak the Dead Watcher",
+			[1886] = "High Botanist Tel'arn",
 			[1053] = "High Prophet Barim",
 			[2017] = "Viz'aduum the Watcher",
 			[1038] = "Corla, Herald of Twilight",
@@ -41491,15 +41495,15 @@ VExRT = {
 			[62618] = true,
 			[271466] = true,
 			[740] = true,
-			[114052] = true,
+			[31821] = true,
 			[115310] = true,
 			[64901] = true,
-			[31821] = true,
-			[265202] = true,
-			[116844] = true,
-			[108280] = true,
-			[64843] = true,
 			[29166] = true,
+			[108280] = true,
+			[116844] = true,
+			[64843] = true,
+			[265202] = true,
+			[114052] = true,
 		},
 		["enabled"] = true,
 		["default_userDuration"] = {
@@ -41507,42 +41511,97 @@ VExRT = {
 		["gnGUIDs"] = {
 			["Calekx"] = 63,
 			["Submit-Turalyon"] = 251,
-			["Wrathgul-Drak'thul"] = 250,
-			["Xerethars"] = 251,
+			["Ozyelfbourne"] = 71,
+			["Trikita"] = 256,
+			["Arânia-Thrall"] = 66,
+			["Bigimôtgðdx"] = 252,
 			["Nâte"] = 63,
+			["Spinäl-Kael'thas"] = 71,
 			["Naalii"] = 256,
-			["Valdurachi"] = 270,
-			["Dumii"] = 105,
-			["Kbrews"] = 268,
+			["Lyllotdruid"] = 102,
+			["Strug-TarrenMill"] = 70,
+			["Needgírly-Garrosh"] = 66,
+			["Frébi-Chromaggus"] = 263,
 			["Fishidk-TarrenMill"] = 250,
-			["Nisefy"] = 270,
-			["Niseko"] = 264,
+			["Jhnsn-Kazzak"] = 255,
 			["Cirkagurkan"] = 261,
-			["Gubbyhunter"] = 253,
 			["Buffww"] = 269,
+			["Rhuby-Blackrock"] = 253,
+			["Дочьиссуса-СвежевательДуш"] = 70,
+			["Drakhtar-BurningLegion"] = 72,
+			["Kalasfrasse-Draenor"] = 102,
 			["Zuto"] = 71,
 			["Spazpriest"] = 257,
 			["Reeceburton"] = 63,
-			["Dumiipala"] = 65,
+			["Zumara-Talnivarr"] = 258,
 			["Simuns-Draenor"] = 263,
-			["Calekk"] = 102,
-			["Fluke"] = 577,
-			["Scread"] = 258,
-			["Ginsu"] = 265,
+			["Bazto"] = 72,
+			["Tigerozy"] = 104,
 			["Lyllotwarr"] = 71,
-			["Ghosudaz"] = 259,
 			["Ridggz-C'Thun"] = 267,
 			["Khunee"] = 70,
-			["Leatherpants-Ravencrest"] = 72,
-			["Pinkyjones"] = 259,
-			["Quas-Stormreaver"] = 581,
-			["Chinkngr-Ragnaros"] = 258,
-			["Râstafary-Kazzak"] = 102,
-			["Guppylock"] = 265,
-			["Lyllot"] = 253,
+			["Puttmann"] = 64,
 			["Boomtastíc"] = 265,
 			["Puuh-TarrenMill"] = 102,
-			["Tigerozy"] = 104,
+			["Guppylock"] = 265,
+			["Lyllot"] = 253,
+			["Gelengider-TwistingNether"] = 102,
+			["Хаизенберг-СвежевательДуш"] = 252,
+			["Tabara-Kazzak"] = 255,
+			["Xerethars"] = 251,
+			["Alaster-Auchindoun"] = 263,
+			["Jormus-Nathrezim"] = 62,
+			["Killarz-DieTodeskrallen"] = 250,
+			["Flashfury-Al'Akir"] = 262,
+			["Kroonk-Nemesis"] = 253,
+			["Mágy-DieTodeskrallen"] = 64,
+			["Dumii"] = 105,
+			["Ariana-Executus"] = 250,
+			["Nisefy"] = 270,
+			["Ковенн-Ревущийфьорд"] = 63,
+			["Scread"] = 258,
+			["Gravlaks-TwistingNether"] = 259,
+			["Кодьжа-СвежевательДуш"] = 250,
+			["Rotbert-Sanguino"] = 70,
+			["Kbrews"] = 268,
+			["Janisjumplin-Draenor"] = 64,
+			["Ashryna-Arathor"] = 253,
+			["Moozus-DefiasBrotherhood"] = 66,
+			["Dumiipala"] = 65,
+			["Regwolf-Minahonda"] = 259,
+			["Tyreal-BronzeDragonflight"] = 258,
+			["Valdurachi"] = 270,
+			["Niseko"] = 264,
+			["Crowbone-Draenor"] = 265,
+			["Gubbyhunter"] = 253,
+			["Wrathgul-Drak'thul"] = 250,
+			["Sombrixx-Sanguino"] = 577,
+			["Odokan-C'Thun"] = 251,
+			["Asoye-LaCroisadeécarlate"] = 267,
+			["Celticá"] = 253,
+			["Lutècya-Ner’zhul"] = 66,
+			["Ðróòdy-Blackrock"] = 102,
+			["Bigdikrik-TarrenMill"] = 71,
+			["Monicastutte-Zenedar"] = 71,
+			["Зеллия-ВечнаяПесня"] = 65,
+			["Leatherpants-Ravencrest"] = 72,
+			["Fluke"] = 577,
+			["Narjia-Anetheron"] = 253,
+			["Ginsu"] = 265,
+			["Hólÿcòw-Draenor"] = 66,
+			["Ghosudaz"] = 259,
+			["Temnio-Draenor"] = 71,
+			["Legiondemon-Jaedenar"] = 577,
+			["Calekk"] = 102,
+			["Pinkyjones"] = 259,
+			["Quas-Stormreaver"] = 581,
+			["Râstafary-Kazzak"] = 102,
+			["Chinkngr-Ragnaros"] = 258,
+			["Shesonfire-Outland"] = 63,
+			["Qwertify-Draenor"] = 70,
+			["Marteno-Draenor"] = 254,
+			["Destrosack-Blackmoore"] = 261,
+			["Вуддже-СвежевательДуш"] = 64,
 		},
 		["NoRaid"] = true,
 		["Top"] = 261.761077880859,
@@ -41566,49 +41625,6 @@ VExRT = {
 			["47788;3"] = 3,
 			["98008;4"] = 1,
 			["21169;1"] = 2,
-		},
-		["SortByAvailability"] = true,
-		["userDB"] = {
-			{
-				114052, -- [1]
-				"SHAMAN", -- [2]
-				[6] = {
-					114052, -- [1]
-					180, -- [2]
-					15, -- [3]
-				},
-				["user"] = true,
-			}, -- [1]
-			{
-				47528, -- [1]
-				"DEATHKNIGHT", -- [2]
-				[4] = {
-					47528, -- [1]
-					15, -- [2]
-					0, -- [3]
-				},
-				["user"] = true,
-			}, -- [2]
-			{
-				116705, -- [1]
-				"MONK", -- [2]
-				[4] = {
-					116705, -- [1]
-					15, -- [2]
-					0, -- [3]
-				},
-				["user"] = true,
-			}, -- [3]
-			{
-				116844, -- [1]
-				"MONK", -- [2]
-				{
-					116844, -- [1]
-					45, -- [2]
-					5, -- [3]
-				}, -- [3]
-				["user"] = true,
-			}, -- [4]
 		},
 		["colSet"] = {
 			{
@@ -41693,9 +41709,9 @@ VExRT = {
 				["posY"] = 670,
 				["fontGeneral"] = true,
 				["iconGeneral"] = true,
-				["posX"] = 902.5,
-				["visibilityGeneral"] = true,
 				["fontOutline"] = true,
+				["visibilityGeneral"] = true,
+				["posX"] = 902.5,
 				["textureAnimation"] = true,
 				["textureGeneral"] = true,
 			}, -- [4]
@@ -41706,26 +41722,26 @@ VExRT = {
 				["textureAnimation"] = true,
 				["textureAlphaBackground"] = 0.3,
 				["textureColorTextDefaultB"] = 0.870588235294118,
-				["posX"] = 89.7506332397461,
-				["iconSize"] = 16,
 				["fontOutline"] = true,
 				["visibilityGeneral"] = true,
+				["posX"] = 89.7506332397461,
+				["iconSize"] = 16,
 				["enabled"] = true,
 				["textureSmoothAnimationDuration"] = 50,
-				["textureGeneral"] = true,
+				["fontGeneral"] = true,
 				["frameLines"] = 15,
 				["textureFile"] = "Interface\\AddOns\\Details\\images\\bar_background",
 				["posY"] = 583,
-				["frameAnchorBottom"] = true,
 				["textureClassText"] = true,
+				["textGeneral"] = true,
 				["fontSize"] = 12,
 				["fontShadow"] = false,
 				["blacklistGeneral"] = true,
-				["textGeneral"] = true,
+				["frameAnchorBottom"] = true,
 				["methodsShownOnCD"] = true,
 				["iconGeneral"] = true,
+				["textureGeneral"] = true,
 				["textureAlphaTimeLine"] = 0.8,
-				["fontGeneral"] = true,
 				["frameScale"] = 200,
 				["frameWidth"] = 136,
 				["textureColorTextDefaultG"] = 0.43921568627451,
@@ -41740,9 +41756,9 @@ VExRT = {
 				["posY"] = 670,
 				["fontGeneral"] = true,
 				["iconGeneral"] = true,
-				["posX"] = 902.5,
-				["visibilityGeneral"] = true,
 				["fontOutline"] = true,
+				["visibilityGeneral"] = true,
+				["posX"] = 902.5,
 				["textureAnimation"] = true,
 				["textureGeneral"] = true,
 			}, -- [6]
@@ -41756,9 +41772,9 @@ VExRT = {
 				["posY"] = 670,
 				["fontGeneral"] = true,
 				["iconGeneral"] = true,
-				["posX"] = 902.5,
-				["visibilityGeneral"] = true,
 				["fontOutline"] = true,
+				["visibilityGeneral"] = true,
+				["posX"] = 902.5,
 				["textureAnimation"] = true,
 				["textureGeneral"] = true,
 			}, -- [7]
@@ -41772,9 +41788,9 @@ VExRT = {
 				["posY"] = 670,
 				["fontGeneral"] = true,
 				["iconGeneral"] = true,
-				["posX"] = 902.5,
-				["visibilityGeneral"] = true,
 				["fontOutline"] = true,
+				["visibilityGeneral"] = true,
+				["posX"] = 902.5,
 				["textureAnimation"] = true,
 				["textureGeneral"] = true,
 			}, -- [8]
@@ -41788,9 +41804,9 @@ VExRT = {
 				["posY"] = 670,
 				["fontGeneral"] = true,
 				["iconGeneral"] = true,
-				["posX"] = 902.5,
-				["visibilityGeneral"] = true,
 				["fontOutline"] = true,
+				["visibilityGeneral"] = true,
+				["posX"] = 902.5,
 				["textureAnimation"] = true,
 				["textureGeneral"] = true,
 			}, -- [9]
@@ -41804,9 +41820,9 @@ VExRT = {
 				["posY"] = 670,
 				["fontGeneral"] = true,
 				["iconGeneral"] = true,
-				["posX"] = 902.5,
-				["visibilityGeneral"] = true,
 				["fontOutline"] = true,
+				["visibilityGeneral"] = true,
+				["posX"] = 902.5,
 				["textureAnimation"] = true,
 				["textureGeneral"] = true,
 			}, -- [10]
@@ -41862,6 +41878,49 @@ VExRT = {
 				["textureAlphaCooldown"] = 0.75,
 			}, -- [11]
 		},
+		["userDB"] = {
+			{
+				114052, -- [1]
+				"SHAMAN", -- [2]
+				[6] = {
+					114052, -- [1]
+					180, -- [2]
+					15, -- [3]
+				},
+				["user"] = true,
+			}, -- [1]
+			{
+				47528, -- [1]
+				"DEATHKNIGHT", -- [2]
+				[4] = {
+					47528, -- [1]
+					15, -- [2]
+					0, -- [3]
+				},
+				["user"] = true,
+			}, -- [2]
+			{
+				116705, -- [1]
+				"MONK", -- [2]
+				[4] = {
+					116705, -- [1]
+					15, -- [2]
+					0, -- [3]
+				},
+				["user"] = true,
+			}, -- [3]
+			{
+				116844, -- [1]
+				"MONK", -- [2]
+				{
+					116844, -- [1]
+					45, -- [2]
+					5, -- [3]
+				}, -- [3]
+				["user"] = true,
+			}, -- [4]
+		},
+		["SortByAvailability"] = true,
 		["SplitOpt"] = true,
 	},
 	["Bossmods"] = {
@@ -41885,7 +41944,7 @@ VExRT = {
 			[46] = "Shizôphrenia-Eredar",
 			[149] = "Jinkalî",
 			[150] = "Nyandeko-Blackmoore",
-			[64] = "Iskariott-Thrall",
+			[252] = "Zornhau",
 			[151] = "Bállthazar-KultderVerdammten",
 			[246] = "Blízzér",
 			[152] = "Zornhau",
@@ -41895,11 +41954,11 @@ VExRT = {
 			[154] = "Kizuru-Alleria",
 			[249] = "Jinkalî",
 			[155] = "Fenelopé-Thrall",
-			[250] = "Nyandeko-Blackmoore",
+			[32] = "Arízøna",
 			[40] = "Asran",
 			[48] = "Shazy-KultderVerdammten",
 			[41] = "Ddg",
-			[252] = "Zornhau",
+			[64] = "Iskariott-Thrall",
 			[49] = "Dommie-Nethersturm",
 			[253] = "Lethezia",
 			[159] = "Kalla-Rexxar",
@@ -41918,9 +41977,9 @@ VExRT = {
 			[132] = "Hank-Vek'lor",
 			[248] = "Bighenker",
 			[148] = "Bighenker",
-			[43] = "Littlemonk",
-			[59] = "Bighenker",
 			["time"] = 1469987797,
+			[59] = "Bighenker",
+			[231] = "Lokad",
 			[51] = "Lethezia",
 			[232] = "Hank-Vek'lor",
 			[26] = "Araxil-Eredar",
@@ -41932,7 +41991,7 @@ VExRT = {
 			[141] = "Powerdrui",
 			[60] = "Blackdeed",
 			[142] = "Ddg",
-			[231] = "Lokad",
+			[43] = "Littlemonk",
 			[143] = "Forgotten",
 			[243] = "Forgotten",
 			[37] = "Wyvcam",
@@ -41941,7 +42000,7 @@ VExRT = {
 			[240] = "Zedaan-Rexxar",
 			[146] = "Blízzér",
 			[241] = "Powerdrui",
-			[32] = "Arízøna",
+			[250] = "Nyandeko-Blackmoore",
 		},
 		["ArchimondeTop"] = 1065.55554199219,
 		["KormrokSetups"] = {
@@ -41993,9 +42052,9 @@ VExRT = {
 			"Kelgynne", -- [24]
 			"Diferente", -- [25]
 			"Solenne", -- [26]
-			["sync"] = true,
 			["time"] = 1433878697,
 			["name"] = "Divi-Blackmoore",
+			["sync"] = true,
 		},
 	},
 	["LegendaryRing"] = {
@@ -42038,8 +42097,8 @@ VExRT = {
 		["fix"] = true,
 		["Scale"] = 57,
 		["Top"] = 1514.61999511719,
-		["HideTimer"] = true,
 		["Left"] = 33.5293235778809,
+		["HideTimer"] = true,
 	},
 	["Note"] = {
 		["BlackNames"] = {
@@ -42050,43 +42109,34 @@ VExRT = {
 		["Left"] = 38.8463172912598,
 		["SelfText"] = "",
 		["Fix"] = true,
-		["Outline"] = true,
 		["ScaleBack"] = 0,
 		["Text1"] = "Group 1\n#1 ||cfff48cbaKhunee||r  + ||cff8787edSeor||r \n#2 ||cff00ff96Kbrews||r \n\nGroup 2\n#1 ||cff8787edGinsu||r \n#2 ||cff00ff96Valdurachi||r \n\nGroup 3\n#1 ||cff0070ddNiseko||r + ||cffff7c0aTigerozy||r \n#2 ||cffc69b6dZuto||r \n\nGroup 4\n#1 ||cffa330c9Fluke||r  + ||cffff7c0aDumii||r\n#2  ||cff00ff96Buffww||r \n\nGroup 5\n#1 ||cffffffffSpazpriest||r  + ||cffff7c0aCalekk||r\n#2 ||cffc41e3aXerethars||r  + ||cff8787edBoomtastíc||r \n\n",
 		["OptionsFormatting"] = true,
 		["DefName"] = "G'huun",
+		["Outline"] = true,
 		["OnlyPromoted"] = true,
-		["LastUpdateTime"] = 1544040963,
 		["LastUpdateName"] = "Tigerozy-Stormscale",
 		["Alpha"] = 100,
 		["BlackLastUpdateName"] = {
 		},
 		["FontName"] = "Interface\\AddOns\\ElvUI\\media\\fonts\\Expressway.ttf",
 		["Width"] = 506.949981689453,
+		["EnableWhenReceive"] = true,
 		["Top"] = 880.931213378906,
+		["BlackLastUpdateTime"] = {
+		},
 		["Black"] = {
 			"", -- [1]
 			"", -- [2]
 			"", -- [3]
 			"", -- [4]
 		},
-		["BlackLastUpdateTime"] = {
-		},
-		["EnableWhenReceive"] = true,
 		["Height"] = 726.56494140625,
+		["LastUpdateTime"] = 1544040963,
 		["Strata"] = "MEDIUM",
 		["Scale"] = 100,
-		["enabled"] = true,
 	},
-	["BossWatcher"] = {
-		["optionsDamageGraph"] = true,
-		["fightsNum"] = 2,
-		["autoSegments"] = {
-		},
-		["optionsPositionsDist"] = true,
-		["optionsHealingGraph"] = true,
-		["trackingDamageSpells"] = {
-		},
+	["Profiles"] = {
 	},
 	["Profile"] = "default",
 	["LootLink"] = {
@@ -42103,7 +42153,15 @@ VExRT = {
 		["OnlyGuild"] = true,
 		["Rank"] = 1,
 	},
-	["Profiles"] = {
+	["BossWatcher"] = {
+		["optionsDamageGraph"] = true,
+		["fightsNum"] = 2,
+		["autoSegments"] = {
+		},
+		["optionsPositionsDist"] = true,
+		["optionsHealingGraph"] = true,
+		["trackingDamageSpells"] = {
+		},
 	},
 	["Logging"] = {
 	},

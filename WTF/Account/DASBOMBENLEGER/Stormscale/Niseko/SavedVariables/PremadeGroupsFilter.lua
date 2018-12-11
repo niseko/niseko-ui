@@ -297,7 +297,7 @@ PremadeGroupsFilterState = {
 		["ilvl"] = {
 			["max"] = "",
 			["min"] = "350",
-			["act"] = false,
+			["act"] = true,
 		},
 		["dps"] = {
 			["max"] = "",
