@@ -1,0 +1,112 @@
+
+BagSyncDB = {
+	["Eredar"] = {
+		["Nisekoi"] = {
+			["bag"] = {
+				[0] = {
+					"6948", -- [1]
+				},
+			},
+			["gold"] = 0,
+			["equip"] = {
+				[0] = {
+					[5] = "52544",
+					[16] = "36",
+					[7] = "52545",
+					[17] = "2362",
+				},
+			},
+			["class"] = "SHAMAN",
+			["faction"] = "Horde",
+			["realm"] = "Eredar",
+		},
+	},
+}
+BagSyncOpt = {
+	["enableCrossRealmsItems"] = true,
+	["tooltipOnlySearch"] = false,
+	["enableMailbox"] = true,
+	["enableFaction"] = true,
+	["enableGuild"] = true,
+	["dbversion"] = "10.9",
+	["enableTooltipItemID"] = false,
+	["enableUnitClass"] = false,
+	["enableMinimap"] = true,
+	["enableAuction"] = true,
+	["showGuildNames"] = false,
+	["enableTooltips"] = true,
+	["enableRealmShortName"] = false,
+	["enableLoginVersionInfo"] = true,
+	["showTotal"] = true,
+	["colors"] = {
+		["total"] = {
+			["b"] = 0.376470588235294,
+			["g"] = 0.643137254901961,
+			["r"] = 0.956862745098039,
+		},
+		["guild"] = {
+			["b"] = 0.752941176470588,
+			["g"] = 0.72156862745098,
+			["r"] = 0.396078431372549,
+		},
+		["cross"] = {
+			["b"] = 0.0392156862745098,
+			["g"] = 0.490196078431373,
+			["r"] = 1,
+		},
+		["itemid"] = {
+			["b"] = 0.525490196078431,
+			["g"] = 0.827450980392157,
+			["r"] = 0.32156862745098,
+		},
+		["first"] = {
+			["b"] = 0,
+			["g"] = 1,
+			["r"] = 0.501960784313726,
+		},
+		["bnet"] = {
+			["b"] = 1,
+			["g"] = 0.533333333333333,
+			["r"] = 0.207843137254902,
+		},
+		["second"] = {
+			["b"] = 1,
+			["g"] = 1,
+			["r"] = 1,
+		},
+	},
+	["enableRealmAstrickName"] = false,
+	["enableBNetAccountItems"] = false,
+	["enableTooltipGreenCheck"] = true,
+	["enableTooltipSeperator"] = true,
+	["enableRealmIDTags"] = true,
+}
+BagSyncGUILD_DB = {
+	["Eredar"] = {
+	},
+}
+BagSyncCURRENCY_DB = {
+	["Eredar"] = {
+	},
+}
+BagSyncPROFESSION_DB = {
+	["Eredar"] = {
+		["Nisekoi"] = {
+		},
+	},
+}
+BagSyncBLACKLIST_DB = {
+	["Eredar"] = {
+	},
+}
+BagSync_REALMKEY = {
+	["Eredar"] = "Eredar",
+	[0] = {
+		["Eredar"] = {
+			"Eredar", -- [1]
+			"Wildhammer", -- [2]
+			"Spinebreaker", -- [3]
+			"Gorefiend", -- [4]
+		},
+	},
+}

@@ -1,0 +1,210 @@
+
+RelicInspectorCharDB = {
+	["profileKeys"] = {
+		["Zelda - Mal'Ganis"] = "Zelda - Mal'Ganis",
+	},
+	["char"] = {
+		["Zelda - Mal'Ganis"] = {
+			["crucibleUsed"] = true,
+			["artifactCache"] = {
+				[128823] = {
+					{
+						["traits"] = {
+							{
+								["requiredArtifactLevel"] = 0,
+								["canChoose"] = false,
+								["tier"] = 1,
+								["powerID"] = 1739,
+								["isChosen"] = true,
+								["icon"] = 1033184,
+								["spellID"] = 250879,
+							}, -- [1]
+							{
+								["requiredArtifactLevel"] = 60,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1774,
+								["isChosen"] = false,
+								["icon"] = 136129,
+								["spellID"] = 252191,
+							}, -- [2]
+							{
+								["requiredArtifactLevel"] = 60,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1783,
+								["isChosen"] = false,
+								["icon"] = 876916,
+								["spellID"] = 253093,
+							}, -- [3]
+							{
+								["requiredArtifactLevel"] = 69,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 1186,
+								["isChosen"] = false,
+								["icon"] = 461859,
+								["spellID"] = 200482,
+							}, -- [4]
+							{
+								["requiredArtifactLevel"] = 69,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 971,
+								["isChosen"] = false,
+								["icon"] = 135938,
+								["spellID"] = 200316,
+							}, -- [5]
+							{
+								["requiredArtifactLevel"] = 69,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 970,
+								["isChosen"] = false,
+								["icon"] = 135928,
+								["spellID"] = 200326,
+							}, -- [6]
+						},
+						["relic"] = {
+							"Eyir's Blessing", -- [1]
+							135878, -- [2]
+							"Holy", -- [3]
+							"|cffa335ee|Hitem:136771:::::::::::35:3:3416:1547:3336:::|h[Eyir's Blessing]|h|r", -- [4]
+						},
+					}, -- [1]
+					{
+						["traits"] = {
+							{
+								["requiredArtifactLevel"] = 0,
+								["canChoose"] = false,
+								["tier"] = 1,
+								["powerID"] = 1739,
+								["isChosen"] = true,
+								["icon"] = 1033184,
+								["spellID"] = 250879,
+							}, -- [1]
+							{
+								["requiredArtifactLevel"] = 63,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1781,
+								["isChosen"] = false,
+								["icon"] = 839910,
+								["spellID"] = 252922,
+							}, -- [2]
+							{
+								["requiredArtifactLevel"] = 63,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1783,
+								["isChosen"] = false,
+								["icon"] = 876916,
+								["spellID"] = 253093,
+							}, -- [3]
+							{
+								["requiredArtifactLevel"] = 72,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 972,
+								["isChosen"] = false,
+								["icon"] = 135972,
+								["spellID"] = 200315,
+							}, -- [4]
+							{
+								["requiredArtifactLevel"] = 72,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 1186,
+								["isChosen"] = false,
+								["icon"] = 461859,
+								["spellID"] = 200482,
+							}, -- [5]
+							{
+								["requiredArtifactLevel"] = 72,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 971,
+								["isChosen"] = false,
+								["icon"] = 135938,
+								["spellID"] = 200316,
+							}, -- [6]
+						},
+						["relic"] = {
+							"Icon of Perverse Animation", -- [1]
+							537517, -- [2]
+							"Life", -- [3]
+							"|cffa335ee|Hitem:147104:::::::::::5:3:3562:1502:3336:::|h[Icon of Perverse Animation]|h|r", -- [4]
+						},
+					}, -- [2]
+					{
+						["traits"] = {
+							{
+								["requiredArtifactLevel"] = 0,
+								["canChoose"] = false,
+								["tier"] = 1,
+								["powerID"] = 1739,
+								["isChosen"] = true,
+								["icon"] = 1033184,
+								["spellID"] = 250879,
+							}, -- [1]
+							{
+								["requiredArtifactLevel"] = 66,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1780,
+								["isChosen"] = false,
+								["icon"] = 615101,
+								["spellID"] = 252906,
+							}, -- [2]
+							{
+								["requiredArtifactLevel"] = 66,
+								["canChoose"] = false,
+								["tier"] = 2,
+								["powerID"] = 1775,
+								["isChosen"] = false,
+								["icon"] = 458412,
+								["spellID"] = 252207,
+							}, -- [3]
+							{
+								["requiredArtifactLevel"] = 75,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 976,
+								["isChosen"] = false,
+								["icon"] = 461859,
+								["spellID"] = 200296,
+							}, -- [4]
+							{
+								["requiredArtifactLevel"] = 75,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 974,
+								["isChosen"] = false,
+								["icon"] = 135959,
+								["spellID"] = 200302,
+							}, -- [5]
+							{
+								["requiredArtifactLevel"] = 75,
+								["canChoose"] = false,
+								["tier"] = 3,
+								["powerID"] = 972,
+								["isChosen"] = false,
+								["icon"] = 135972,
+								["spellID"] = 200315,
+							}, -- [6]
+						},
+						["relic"] = {
+							"Boon of the Prophet", -- [1]
+							135876, -- [2]
+							"Holy", -- [3]
+							"|cffa335ee|Hitem:147099:::::::::::5:3:3562:1507:3528:::|h[Boon of the Prophet]|h|r", -- [4]
+						},
+					}, -- [3]
+					["level"] = 53,
+					["timestamp"] = 100957.495,
+					["crucibled"] = true,
+				},
+			},
+		},
+	},
+}

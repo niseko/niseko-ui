@@ -1,0 +1,2 @@
+WeakAuras: enabled
+Grid2: enabled

@@ -1,0 +1,22 @@
+
+FlashTaskbarDB = {
+	["profileKeys"] = {
+		["Zelda - Mal'Ganis"] = "Default",
+		["Nisepeg - Stormscale"] = "Default",
+		["Niseniseko - Stormscale"] = "Default",
+		["Yvera - Moonglade"] = "Default",
+		["Niseko - Stormscale"] = "Default",
+		["Pixelfehler - Ysera"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
+		["Nisefy - Stormscale"] = "Default",
+		["Donnerbock - Ysera"] = "Default",
+		["Vordt - Twisting Nether"] = "Default",
+		["Nisedog - Stormscale"] = "Default",
+		["Niseko - Twisting Nether"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}

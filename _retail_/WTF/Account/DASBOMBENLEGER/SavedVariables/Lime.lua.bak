@@ -1,0 +1,57 @@
+
+limeDB = {
+	["minimapButton"] = {
+		["radius"] = 80,
+		["hide"] = true,
+		["angle"] = 19,
+		["dragable"] = true,
+		["rounding"] = 10,
+	},
+	["profileKeys"] = {
+	},
+	["version"] = 3,
+	["profiles"] = {
+		["Default"] = {
+			["py"] = -774.498931884766,
+			["highlightAlpha"] = 0,
+			["offset"] = 0,
+			["userAura"] = {
+				[974] = false,
+				[71909] = false,
+			},
+			["font"] = {
+				["file"] = "Roboto-Medium",
+				["size"] = 14,
+			},
+			["hideBlizzardParty"] = false,
+			["height"] = 42,
+			["partyTag"] = false,
+			["width"] = 100,
+			["units"] = {
+				["useClassColors"] = false,
+				["debuffIconType"] = 2,
+				["backgroundColor"] = {
+					0, -- [1]
+					0, -- [2]
+					0, -- [3]
+					1, -- [4]
+				},
+				["debuffIconSize"] = 20,
+				["className"] = true,
+				["powerBarHeight"] = 0,
+				["useCastingBar"] = false,
+				["healIcon"] = false,
+				["displayRaidRoleIcon"] = false,
+				["texture"] = "VuhDo - Plain White",
+			},
+			["px"] = 279.999816894531,
+			["colors"] = {
+				["help"] = {
+					0.654901960784314, -- [1]
+					0.623529411764706, -- [2]
+					0.623529411764706, -- [3]
+				},
+			},
+		},
+	},
+}

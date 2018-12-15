@@ -1,0 +1,17 @@
+
+RelicInspectorCharDB = {
+	["profileKeys"] = {
+		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
+	},
+	["char"] = {
+		["Nedoka - Antonidas"] = {
+			["artifactCache"] = {
+				[128911] = {
+					["timestamp"] = 285032.5,
+					["level"] = 33,
+					["crucibled"] = false,
+				},
+			},
+		},
+	},
+}

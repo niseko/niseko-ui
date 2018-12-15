@@ -1,0 +1,12 @@
+tag ca1161ec4c67637e12170932b36b8b2e33f0e77b 1.5.1
+Author:	Kyle Buller <bullerk@gmail.com>
+Date:	Sun Sep 9 20:54:00 2018 -0500
+
+Tagging as 1.5.1
+
+commit 30fe0576afc6c512a19109edc9750d624f0fd88f
+Author: Kyle Buller <bullerk@gmail.com>
+Date:   Sun Sep 9 20:53:32 2018 -0500
+
+    Fix disabling the instance
+

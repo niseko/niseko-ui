@@ -1,0 +1,32 @@
+BINDINGMODE 0
+bind BUTTON3 MULTIACTIONBAR2BUTTON4
+bind UP ACTIONBUTTON10
+bind DOWN MULTIACTIONBAR3BUTTON8
+bind LEFT MULTIACTIONBAR2BUTTON3
+bind RIGHT MULTIACTIONBAR2BUTTON10
+bind NUMLOCK NONE
+bind BUTTON4 ACTIONBUTTON12
+bind SHIFT-1 CLICK BonusActionButton1:LeftButton
+bind SHIFT-2 CLICK BonusActionButton2:LeftButton
+bind SHIFT-3 CLICK BonusActionButton3:LeftButton
+bind SHIFT-4 CLICK BonusActionButton4:LeftButton
+bind SHIFT-5 CLICK BonusActionButton5:LeftButton
+bind SHIFT-6 CLICK BonusActionButton6:LeftButton
+bind G CLICK BonusActionButton9:LeftButton
+bind F CLICK BonusActionButton7:LeftButton
+bind B TOGGLEBACKPACK
+bind F8 NONE
+bind F9 NONE
+bind F10 NONE
+bind F11 NONE
+bind F12 NONE
+bind H CLICK BT4Button24:LeftButton
+bind ß ACTIONBUTTON11
+bind ´ ACTIONBUTTON12
+bind ^ TOGGLEAUTORUN
+bind ALT-M CARTOGRAPHER_OPENALTERNATEMAP
+bind BUTTON5 ACTIONBUTTON11
+bind F6 NONE
+bind ALT-RIGHT CLICK BonusActionButton6:LeftButton
+bind [ PAWN_COMPARE_LEFT
+bind ] PAWN_COMPARE_RIGHT
