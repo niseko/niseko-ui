@@ -2,11 +2,11 @@ EasyFrames: disabled
 Lorti UI: disabled
 bdGrid: disabled
 nMainbar: disabled
-VuhDo: disabled
+VuhDo: enabled
 TellMeWhen: disabled
 TellMeWhen_Options: disabled
 VocalRaidAssistant: disabled
-VuhDoOptions: disabled
+VuhDoOptions: enabled
 MikScrollingBattleText: disabled
 MSBTOptions: disabled
 ElvUI_Config: enabled

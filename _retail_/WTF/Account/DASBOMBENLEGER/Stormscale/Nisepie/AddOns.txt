@@ -20,3 +20,5 @@ SuppressRightClick: disabled
 OmniBar: enabled
 Gladius: enabled
 GladiatorlosSA2: enabled
+MoveAnything: enabled
+VuhDoOptions: disabled

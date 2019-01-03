@@ -21,7 +21,7 @@ TellMeWhen_Options: disabled
 LoggerHeadLite: enabled
 BagSync: disabled
 VuhDo: disabled
-VuhDoOptions: enabled
+VuhDoOptions: disabled
 WeakAuras: enabled
 Dominos: enabled
 Bartender4: disabled
@@ -34,7 +34,7 @@ GottaGoFastHistory: enabled
 GottaGoFast: enabled
 PremadeGroupsFilter: enabled
 WorldQuestAssistant: disabled
-MoveAnything: disabled
+MoveAnything: enabled
 TipTac: enabled
 TipTacItemRef: enabled
 TipTacTalents: disabled

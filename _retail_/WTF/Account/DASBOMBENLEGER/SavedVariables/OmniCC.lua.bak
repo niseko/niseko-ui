@@ -1,43 +1,71 @@
 
 OmniCC4Config = {
-	["groups"] = {
-	},
-	["version"] = "8.0.9",
 	["groupSettings"] = {
 		["base"] = {
 			["styles"] = {
 				["seconds"] = {
-					["scale"] = 1.00000000745058,
+					["scale"] = 1,
 				},
 				["minutes"] = {
-					["scale"] = 1.00000000745058,
+					["scale"] = 1,
 				},
 				["soon"] = {
-					["scale"] = 1.50000001490116,
+					["scale"] = 1.5,
 				},
 				["hours"] = {
-					["scale"] = 0.75000000372529,
+					["scale"] = 0.75,
 				},
 				["charging"] = {
-					["scale"] = 0.75000000372529,
+					["scale"] = 0.75,
 				},
 				["controlled"] = {
-					["scale"] = 1.50000001490116,
+					["scale"] = 1.5,
 				},
 			},
 			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
-			["scaleText"] = true,
+			["minDuration"] = 2,
 			["mmSSDuration"] = 0,
 			["anchor"] = "CENTER",
 			["spiralOpacity"] = 1.00999997742474,
-			["yOff"] = 0,
+			["scaleText"] = true,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
 			["minSize"] = 0.4,
 			["minEffectDuration"] = 30,
-			["minDuration"] = 2,
+			["yOff"] = 0,
 			["fontSize"] = 15,
 		},
+		["PlaterNameplates Blacklist"] = {
+			["enabled"] = false,
+			["styles"] = {
+				["minutes"] = {
+				},
+				["soon"] = {
+				},
+				["seconds"] = {
+				},
+				["hours"] = {
+				},
+				["charging"] = {
+				},
+				["controlled"] = {
+				},
+			},
+			["tenthsDuration"] = 0,
+			["minSize"] = 0.5,
+			["minEffectDuration"] = 30,
+			["mmSSDuration"] = 0,
+			["minDuration"] = 2,
+		},
 	},
+	["groups"] = {
+		{
+			["id"] = "PlaterNameplates Blacklist",
+			["rules"] = {
+			},
+			["enabled"] = true,
+		}, -- [1]
+	},
+	["version"] = "8.1.0",
 }

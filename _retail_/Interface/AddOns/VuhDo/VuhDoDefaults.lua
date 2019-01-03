@@ -1768,6 +1768,40 @@ function VUHDO_loadDefaultConfig()
 		-- Dunegorger Kraulok
 	);
 		
+	-- 8.0.1 - Battle for Azeroth - Debuff Absorbs
+	VUHDO_addCustomSpellIds(40,
+		-- [[ The Underrot ]]
+		-- Diseased Lasher
+		278961, -- Decaying Mind
+		-- [[ Uldir - Vectis ]]
+		265206  -- Immunosuppression
+	);
+
+	-- 8.0.1 - Battle for Azeroth - Uldir part 2
+	VUHDO_addCustomSpellIds(41, 
+		-- [[ Uldir ]]
+		-- Taloc
+		275270, -- Fixate 
+		-- Mother
+		-- Devourer
+		-- Zek'voz
+		-- Vectis
+		265127, -- Lingering Infection
+		267160, -- Omega Vector		
+		267161, -- Omega Vector
+		267162, -- Omega Vector
+		267163, -- Omega Vector
+		267164, -- Omega Vector
+		267165, -- Omega Vector
+		267166, -- Omega Vector
+		267167, -- Omega Vector
+		267168, -- Omega Vector
+		-- Zul
+		276020, -- Fixate
+		-- Mythrax
+		-- G'huun
+		272506  -- Explosive Corruption
+	);
 
 	local debuffRemovalList = {};
 

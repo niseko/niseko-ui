@@ -404,9 +404,11 @@ function SunnArt:HideGryphons()
 	if self.db.global.hideblizzart then
 		MainMenuBarArtFrame.LeftEndCap:Hide()
 		MainMenuBarArtFrame.RightEndCap:Hide()
+		MainMenuBarArtFrameBackground:Hide()
 	else
 		MainMenuBarArtFrame.LeftEndCap:Show()
 		MainMenuBarArtFrame.RightEndCap:Show()
+		MainMenuBarArtFrameBackground:Show()
 	end
 end
 

@@ -9,7 +9,7 @@ bdUnitframes: enabled
 RelicInspector: enabled
 TipTac: enabled
 bdCore: enabled
-VuhDoOptions: enabled
+VuhDoOptions: disabled
 ElvUI: enabled
 ElvUI_Config: enabled
 ElvUI_CustomTweaks: disabled
@@ -59,7 +59,7 @@ GottaGoFastHistory: enabled
 GottaGoFast: enabled
 PremadeGroupsFilter: enabled
 WorldQuestAssistant: disabled
-MoveAnything: disabled
+MoveAnything: enabled
 TipTacItemRef: enabled
 TipTacTalents: disabled
 Lime: disabled
@@ -91,3 +91,5 @@ BigWigs_Azeroth: enabled
 OmniBar: enabled
 Gladius: enabled
 GladiatorlosSA2: enabled
+BigWigs_BattleOfDazaralor: enabled
+BigWigs_CrucibleOfStorms: enabled

@@ -56,11 +56,12 @@ END
 VER 3 0100000000000017 "Mystch" "136048"
 /whisper Mystch innervate
 END
-VER 3 010000000000000A "slth" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover] Spirit Link Totem
+VER 3 010000000000001B "primal" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [talent:6/3]Icefury;[talent:4/2,talent:6/2]Eye of the Storm;[notalent:4/2,talent:6/2]Meteor
 END
-VER 3 0100000000000014 "test" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover]Riptide
+VER 3 010000000000000A "slth" "INV_MISC_QUESTIONMARK"
+/cast [@mouseover, help, nodead] Purify Spirit; [@mouseover, harm, nodead][@target, harm, nodead] Purge; [@target, help, nodead][@player]Purify Spirit
 END
 VER 3 0100000000000009 "tier100" "INV_MISC_QUESTIONMARK"
 #showtooltip

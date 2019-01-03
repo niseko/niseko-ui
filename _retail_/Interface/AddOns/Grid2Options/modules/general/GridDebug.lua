@@ -4,9 +4,8 @@
 
 local L = Grid2Options.L
 
-function Grid2Options:AddModuleDebugMenu(name, module)
-	local option= {}
-	option[name]= {
+local function AddModuleDebugMenu(name, module, options)
+	options[name]= {
 		type = "toggle",
 		order = 3,
 		name = name,
@@ -18,11 +17,37 @@ function Grid2Options:AddModuleDebugMenu(name, module)
 			module.debugging = v
 		end,
 	}
-	Grid2Options:AddGeneralOptions( "Debug", nil,  option )
 end
 
-Grid2Options:AddModuleDebugMenu("Grid2", Grid2 )
-for name, module in Grid2:IterateModules() do
-	Grid2Options:AddModuleDebugMenu(name, module)
+local options = {
+
+	modules = {
+		type = "group",
+		order = 10,
+		name = L["Modules"],
+		inline = true,
+		args = {},
+	},
+
+	resetpos = {
+		type = "execute",
+		order = 260,
+		name = L["Reset Position"],
+		desc = L["Resets the Grid2 main window position and anchor."],
+		func = function () Grid2Layout:ResetPosition() end,
+	}
+
+}
+
+do
+	local options = options.modules.args
+	AddModuleDebugMenu("Grid2", Grid2, options )
+	for name, module in Grid2:IterateModules() do
+		AddModuleDebugMenu(name, module, options)
+	end
 end
 
+-- options.separator2 = { type = "header", order = 100, name = "Maintenance" }
+
+
+Grid2Options:AddGeneralOptions( "Debug", nil,  options )

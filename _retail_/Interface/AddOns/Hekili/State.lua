@@ -12,7 +12,7 @@ local ResourceRegenerates = ns.ResourceRegenerates
 
 local Error = ns.Error
 
-local round, roundUp = ns.round, ns.roundUp
+local round, roundUp, roundDown = ns.round, ns.roundUp, ns.roundDown
 local safeMin, safeMax = ns.safeMin, ns.safeMax
 
 local table_insert = table.insert
@@ -29,7 +29,7 @@ state.iteration = 0
 
 local PTR = ns.PTR
 state.PTR = PTR
-state.ptr = ptr and 1 or 0
+state.ptr = PTR and 1 or 0
 
 state.now = 0
 state.offset = 0
@@ -426,8 +426,10 @@ state.UnitDebuff = UnitDebuff
 state.UnitCanAttack = UnitCanAttack
 state.UnitCastingInfo = UnitCastingInfo
 state.UnitChannelInfo = UnitChannelInfo
+state.UnitClassification = UnitClassification
 state.UnitIsUnit = UnitIsUnit
 state.UnitIsPlayer = UnitIsPlayer
+state.UnitLevel = UnitLevel
 state.abs = math.abs
 state.ceil = math.ceil
 state.floor = math.floor
@@ -451,7 +453,7 @@ state.safebool = function( val )
     return val ~= 0 and true or false
 end
 
-state.boss = false
+state.inEncounter = false
 state.combat = 0
 state.faction = UnitFactionGroup( 'player' )
 state.race[ formatKey( UnitRace('player') ) ] = true
@@ -914,9 +916,9 @@ local function forecastResources( resource )
     table.wipe( events )
     table.wipe( remains )
 
-    local now = state.now + state.offset
+    local now = roundDown( state.now + state.offset, 2 )
 
-    local timeout = FORECAST_DURATION * state.haste
+    local timeout = roundDown( FORECAST_DURATION * state.haste, 2 )
     if state.class.file == "DEATHKNIGHT" and state.runes then
         timeout = max( timeout, 1 + state.runes.cooldown )
     end       
@@ -950,7 +952,7 @@ local function forecastResources( resource )
                 local r = state[ v.resource ]
 
                 local l = v.last()
-                local i = ( type( v.interval ) == 'number' and v.interval or ( type( v.interval ) == 'function' and v.interval( now, r.actual ) or ( type( v.interval ) == 'string' and state[ v.interval ] or 0 ) ) )
+                local i = roundDown( type( v.interval ) == 'number' and v.interval or ( type( v.interval ) == 'function' and v.interval( now, r.actual ) or ( type( v.interval ) == 'string' and state[ v.interval ] or 0 ) ), 2 )
 
                 v.next = l + i
                 v.name = k
@@ -1024,7 +1026,7 @@ local function forecastResources( resource )
                 r.fcount = idx
 
                 -- interval() takes the last tick and the current value to remember the next step.
-                local step = type( e.interval ) == 'number' and e.interval or ( type( e.interval ) == 'function' and e.interval( now, v ) or ( type( e.interval ) == 'string' and state[ e.interval ] or 0 ) )
+                local step = roundDown( type( e.interval ) == 'number' and e.interval or ( type( e.interval ) == 'function' and e.interval( now, v ) or ( type( e.interval ) == 'string' and state[ e.interval ] or 0 ) ), 2 )
 
                 remains[ e.resource ] = finish - e.next
                 e.next = e.next + step
@@ -1053,6 +1055,7 @@ local function forecastResources( resource )
 
 end
 ns.forecastResources = forecastResources
+state.forecastResources = forecastResources
 
 
 local function gain( amount, resource, overcap )
@@ -1271,6 +1274,9 @@ local mt_state = {
         elseif k == 'desired_targets' then
             return 1
 
+        elseif k == 'boss' then
+            return ( t.inEncounter or UnitClassification( "target" ) == "worldboss" or UnitLevel( "target" ) == -1 ) == true
+
         elseif k == 'cycle' then
             return false
 
@@ -1278,7 +1284,7 @@ local mt_state = {
             return 0
 
         elseif k == 'channeling' then
-            return t.player.channelSpell ~= nil and t.player.channelEnd > t.query_time
+            return t.player.channelSpell ~= nil and t.player.channelEnd >= t.query_time
 
         elseif k == 'channel' then
             return t.channeling and t.player.channelSpell or nil
@@ -3351,13 +3357,10 @@ local mt_default_action = {
         else
             local val = class.abilities[ t.action ][ k ]
 
-            if val then
+            if val ~= nil then
                 if type( val ) == 'function' then return val() end
                 return val
             end
-
-            return 0
-            
         end
         
         return 0
@@ -3641,7 +3644,7 @@ end
 
 function state.reset( dispName )
     
-    state.now = GetTime()
+    state.now = roundUp( GetTime(), 2 )
     state.offset = 0
     state.delay = 0
     state.cast_start = 0

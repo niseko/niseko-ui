@@ -72,7 +72,22 @@ BigWigs3DB = {
 		},
 		["BigWigs_Plugins_Statistics"] = {
 		},
-		["BigWigs_Plugins_AutoReply"] = {
+		["BigWigs_Plugins_Messages"] = {
+			["profiles"] = {
+				["Default"] = {
+					["outline"] = "OUTLINE",
+					["BWEmphasizeMessageAnchor_x"] = 627.911126315594,
+					["BWEmphasizeCountdownMessageAnchor_x"] = 457.955783658563,
+					["emphasizedMessages"] = {
+						["sink20OutputSink"] = "BigWigs",
+					},
+					["BWMessageAnchor_x"] = 628.455700981558,
+					["BWEmphasizeCountdownMessageAnchor_y"] = 468.76424746195,
+					["font"] = "Arial Narrow",
+					["BWEmphasizeMessageAnchor_y"] = 644.053357609246,
+					["BWMessageAnchor_y"] = 659.377576730312,
+				},
+			},
 		},
 		["BigWigs_Plugins_Common Auras"] = {
 		},
@@ -80,23 +95,6 @@ BigWigs3DB = {
 			["profiles"] = {
 				["Default"] = {
 					[274271] = 1032951,
-				},
-			},
-		},
-		["BigWigs_Plugins_Messages"] = {
-			["profiles"] = {
-				["Default"] = {
-					["outline"] = "OUTLINE",
-					["BWEmphasizeCountdownMessageAnchor_x"] = 457.955783658563,
-					["BWEmphasizeMessageAnchor_y"] = 644.053357609246,
-					["BWMessageAnchor_y"] = 659.377576730312,
-					["BWMessageAnchor_x"] = 628.455700981558,
-					["BWEmphasizeCountdownMessageAnchor_y"] = 468.76424746195,
-					["font"] = "Arial Narrow",
-					["BWEmphasizeMessageAnchor_x"] = 627.911126315594,
-					["emphasizedMessages"] = {
-						["sink20OutputSink"] = "BigWigs",
-					},
 				},
 			},
 		},
@@ -109,117 +107,11 @@ BigWigs3DB = {
 				},
 			},
 		},
-		["BigWigs_Plugins_Proximity"] = {
-			["profiles"] = {
-				["Default"] = {
-					["posx"] = 831.288995823597,
-					["width"] = 131.999862670898,
-					["objects"] = {
-						["close"] = false,
-						["tooltip"] = false,
-						["background"] = false,
-					},
-					["font"] = "Arial Narrow",
-					["lock"] = true,
-					["height"] = 86.0000152587891,
-					["posy"] = 401.06593853101,
-				},
-			},
+		["BigWigs_Plugins_BossBlock"] = {
 		},
 		["BigWigs_Plugins_Colors"] = {
 			["profiles"] = {
 				["Default"] = {
-					["barEmphasized"] = {
-						["BigWigs_Bosses_Spellblade Aluriel"] = {
-							[230403] = {
-								nil, -- [1]
-								0.937254901960784, -- [2]
-							},
-						},
-						["BigWigs_Bosses_Odyn-TrialOfValor"] = {
-							[227629] = {
-								nil, -- [1]
-								0.956862745098039, -- [2]
-							},
-							[228012] = {
-								nil, -- [1]
-								0.956862745098039, -- [2]
-							},
-							[231350] = {
-								nil, -- [1]
-								0.956862745098039, -- [2]
-							},
-							[228162] = {
-								nil, -- [1]
-								0.956862745098039, -- [2]
-							},
-						},
-						["BigWigs_Bosses_Argus the Unmaker"] = {
-							[258068] = {
-								0.827450980392157, -- [1]
-								1, -- [2]
-							},
-						},
-						["BigWigs_Bosses_Guarm-TrialOfValor"] = {
-							[228187] = {
-								0.886274509803922, -- [1]
-								1, -- [2]
-								0.164705882352941, -- [3]
-							},
-						},
-						["BigWigs_Bosses_Xavius"] = {
-							[210264] = {
-								nil, -- [1]
-								0.96078431372549, -- [2]
-							},
-							[207830] = {
-								nil, -- [1]
-								0.956862745098039, -- [2]
-							},
-							[224508] = {
-								nil, -- [1]
-								0.956862745098039, -- [2]
-							},
-						},
-						["BigWigs_Bosses_G'huun"] = {
-							[277007] = {
-								0, -- [1]
-								1, -- [2]
-								0.505882352941176, -- [3]
-							},
-						},
-						["BigWigs_Bosses_Mythrax the Unraveler"] = {
-							[279157] = {
-								0.67843137254902, -- [1]
-								0.380392156862745, -- [2]
-							},
-							[276922] = {
-								[3] = 0.109803921568627,
-							},
-							[272404] = {
-								0, -- [1]
-								1, -- [2]
-								0.250980392156863, -- [3]
-							},
-						},
-						["BigWigs_Plugins_Colors"] = {
-							["default"] = {
-								0.250980392156863, -- [1]
-								0.329411764705882, -- [2]
-								0.67843137254902, -- [3]
-							},
-						},
-					},
-					["barBackground"] = {
-						["BigWigs_Plugins_Colors"] = {
-							["default"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								0, -- [4]
-							},
-						},
-					},
 					["barColor"] = {
 						["BigWigs_Bosses_Odyn-TrialOfValor"] = {
 							[227629] = {
@@ -243,11 +135,32 @@ BigWigs3DB = {
 								0, -- [3]
 							},
 						},
+						["BigWigs_Bosses_Argus the Unmaker"] = {
+							[258068] = {
+								0.827450980392157, -- [1]
+								1, -- [2]
+								0, -- [3]
+							},
+						},
 						["BigWigs_Plugins_Colors"] = {
 							["default"] = {
 								0.250980392156863, -- [1]
 								0.329411764705882, -- [2]
 								0.67843137254902, -- [3]
+							},
+						},
+						["BigWigs_Bosses_Felhounds of Sargeras"] = {
+							[244056] = {
+								0, -- [1]
+								0.67843137254902, -- [2]
+								0.0549019607843137, -- [3]
+							},
+						},
+						["BigWigs_Bosses_Grand Magistrix Elisande"] = {
+							[209244] = {
+								0.811764705882353, -- [1]
+								0.709803921568628, -- [2]
+								0.235294117647059, -- [3]
 							},
 						},
 						["BigWigs_Bosses_G'huun"] = {
@@ -274,25 +187,95 @@ BigWigs3DB = {
 								0.294117647058824, -- [3]
 							},
 						},
-						["BigWigs_Bosses_Grand Magistrix Elisande"] = {
-							[209244] = {
-								0.811764705882353, -- [1]
-								0.709803921568628, -- [2]
-								0.235294117647059, -- [3]
+					},
+					["barEmphasized"] = {
+						["BigWigs_Bosses_Spellblade Aluriel"] = {
+							[230403] = {
+								nil, -- [1]
+								0.937254901960784, -- [2]
+							},
+						},
+						["BigWigs_Bosses_Odyn-TrialOfValor"] = {
+							[227629] = {
+								nil, -- [1]
+								0.956862745098039, -- [2]
+							},
+							[228012] = {
+								nil, -- [1]
+								0.956862745098039, -- [2]
+							},
+							[231350] = {
+								nil, -- [1]
+								0.956862745098039, -- [2]
+							},
+							[228162] = {
+								nil, -- [1]
+								0.956862745098039, -- [2]
+							},
+						},
+						["BigWigs_Plugins_Colors"] = {
+							["default"] = {
+								0.250980392156863, -- [1]
+								0.329411764705882, -- [2]
+								0.67843137254902, -- [3]
+							},
+						},
+						["BigWigs_Bosses_Xavius"] = {
+							[210264] = {
+								nil, -- [1]
+								0.96078431372549, -- [2]
+							},
+							[207830] = {
+								nil, -- [1]
+								0.956862745098039, -- [2]
+							},
+							[224508] = {
+								nil, -- [1]
+								0.956862745098039, -- [2]
+							},
+						},
+						["BigWigs_Bosses_Guarm-TrialOfValor"] = {
+							[228187] = {
+								0.886274509803922, -- [1]
+								1, -- [2]
+								0.164705882352941, -- [3]
+							},
+						},
+						["BigWigs_Bosses_G'huun"] = {
+							[277007] = {
+								0, -- [1]
+								1, -- [2]
+								0.505882352941176, -- [3]
+							},
+						},
+						["BigWigs_Bosses_Mythrax the Unraveler"] = {
+							[279157] = {
+								0.67843137254902, -- [1]
+								0.380392156862745, -- [2]
+							},
+							[276922] = {
+								[3] = 0.109803921568627,
+							},
+							[272404] = {
+								0, -- [1]
+								1, -- [2]
+								0.250980392156863, -- [3]
 							},
 						},
 						["BigWigs_Bosses_Argus the Unmaker"] = {
 							[258068] = {
 								0.827450980392157, -- [1]
 								1, -- [2]
-								0, -- [3]
 							},
 						},
-						["BigWigs_Bosses_Felhounds of Sargeras"] = {
-							[244056] = {
-								0, -- [1]
-								0.67843137254902, -- [2]
-								0.0549019607843137, -- [3]
+					},
+					["barBackground"] = {
+						["BigWigs_Plugins_Colors"] = {
+							["default"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								0, -- [4]
 							},
 						},
 					},
@@ -312,32 +295,25 @@ BigWigs3DB = {
 		["BigWigs_Plugins_Bars"] = {
 			["profiles"] = {
 				["Default"] = {
-					["BigWigsEmphasizeAnchor_y"] = 210.986702157525,
-					["BigWigsAnchor_width"] = 212.5,
-					["BigWigsAnchor_x"] = 1015.02268082815,
-					["fill"] = true,
-					["BigWigsEmphasizeAnchor_height"] = 22.0000019073486,
-					["monochrome"] = false,
-					["BigWigsAnchor_height"] = 15.9999980926514,
+					["outline"] = "OUTLINE",
 					["fontSize"] = 12,
+					["BigWigsAnchor_width"] = 212.5,
 					["BigWigsAnchor_y"] = 16.3556780219108,
 					["emphasizeGrowup"] = true,
+					["BigWigsAnchor_x"] = 1015.02268082815,
 					["spacing"] = 4,
-					["texture"] = "ElvUI Blank",
+					["fill"] = true,
 					["barStyle"] = "ElvUI",
-					["BigWigsEmphasizeAnchor_width"] = 287.5810546875,
+					["BigWigsEmphasizeAnchor_height"] = 22.0000019073486,
+					["monochrome"] = false,
 					["BigWigsEmphasizeAnchor_x"] = 882.985872075406,
-					["emphasizeTime"] = 20,
-					["outline"] = "OUTLINE",
-					["onlyInterceptOnKeypress"] = true,
+					["BigWigsAnchor_height"] = 15.9999980926514,
 					["interceptMouse"] = false,
-				},
-			},
-		},
-		["BigWigs_Bosses_Zek'voz, Herald of N'zoth"] = {
-			["profiles"] = {
-				["Default"] = {
-					[267239] = 1032951,
+					["texture"] = "ElvUI Blank",
+					["BigWigsEmphasizeAnchor_y"] = 210.986702157525,
+					["onlyInterceptOnKeypress"] = true,
+					["BigWigsEmphasizeAnchor_width"] = 287.5810546875,
+					["emphasizeTime"] = 20,
 				},
 			},
 		},
@@ -347,11 +323,11 @@ BigWigs3DB = {
 			["profiles"] = {
 				["Default"] = {
 					["outline"] = "OUTLINE",
+					["font"] = "Arial Narrow",
 					["countdownTime"] = 10,
 					["voice"] = "English: David",
 					["Countdown"] = {
 						["BigWigs_Bosses_Spellblade Aluriel"] = {
-							[230403] = "English: Overwatch: D.Va",
 						},
 						["BigWigs_Bosses_Argus the Unmaker"] = {
 							[248165] = "English: Heroes of the Storm: Li Li",
@@ -360,7 +336,6 @@ BigWigs3DB = {
 							[209244] = "English: Overwatch: Mercy",
 						},
 						["BigWigs_Bosses_Guarm-TrialOfValor"] = {
-							[228187] = "English: Overwatch: D.Va",
 						},
 						["BigWigs_Bosses_Krosus"] = {
 							[205862] = "English: Overwatch: Tracer",
@@ -374,10 +349,8 @@ BigWigs3DB = {
 							[213238] = "English: Overwatch: Pharah",
 						},
 						["BigWigs_Bosses_Sisters of the Moon"] = {
-							[233263] = "English: Overwatch: D.Va",
 						},
 						["BigWigs_Bosses_Odyn-TrialOfValor"] = {
-							[227629] = "English: Overwatch: D.Va",
 						},
 						["BigWigs_Bosses_Mistress Sassz'ine"] = {
 							[234621] = "English: Overwatch: Mei",
@@ -388,11 +361,9 @@ BigWigs3DB = {
 							[276922] = "English: Overwatch: Soldier76",
 						},
 						["BigWigs_Bosses_Kil'jaeden"] = {
-							[236710] = "English: Overwatch: D.Va",
 							[238999] = "English: Overwatch: Ana",
 						},
 						["BigWigs_Bosses_Xavius"] = {
-							[207830] = "English: Overwatch: D.Va",
 							[210264] = "English: Overwatch: Genji",
 						},
 						["BigWigs_Bosses_Zul"] = {
@@ -407,11 +378,19 @@ BigWigs3DB = {
 							[205408] = "English: Overwatch: Tracer",
 						},
 					},
-					["font"] = "Arial Narrow",
+				},
+			},
+		},
+		["BigWigs_Bosses_Zek'voz, Herald of N'zoth"] = {
+			["profiles"] = {
+				["Default"] = {
+					[267239] = 1032951,
 				},
 			},
 		},
 		["BigWigs_Plugins_Wipe"] = {
+		},
+		["BigWigs_Plugins_AutoReply"] = {
 		},
 		["BigWigs_Bosses_Vectis"] = {
 			["profiles"] = {
@@ -434,7 +413,22 @@ BigWigs3DB = {
 		},
 		["BigWigs_Plugins_Pull"] = {
 		},
-		["BigWigs_Plugins_BossBlock"] = {
+		["BigWigs_Plugins_Proximity"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 831.288995823597,
+					["posy"] = 401.06593853101,
+					["lock"] = true,
+					["height"] = 86.0000152587891,
+					["font"] = "Arial Narrow",
+					["objects"] = {
+						["tooltip"] = false,
+						["background"] = false,
+						["close"] = false,
+					},
+					["width"] = 131.999862670898,
+				},
+			},
 		},
 	},
 	["wipe80"] = true,
@@ -673,9 +667,9 @@ BigWigsStatsDB = {
 				["kills"] = 3,
 			},
 			["mythic"] = {
-				["kills"] = 14,
-				["wipes"] = 5,
-				["best"] = 216.268,
+				["kills"] = 17,
+				["wipes"] = 6,
+				["best"] = 213.055,
 			},
 		},
 		[2169] = {
@@ -689,9 +683,9 @@ BigWigsStatsDB = {
 				["kills"] = 3,
 			},
 			["mythic"] = {
-				["kills"] = 14,
+				["kills"] = 16,
 				["wipes"] = 21,
-				["best"] = 327.244,
+				["best"] = 321.538,
 			},
 		},
 		[2167] = {
@@ -705,7 +699,7 @@ BigWigsStatsDB = {
 				["kills"] = 3,
 			},
 			["mythic"] = {
-				["kills"] = 14,
+				["kills"] = 17,
 				["wipes"] = 17,
 				["best"] = 175.76,
 			},
@@ -733,9 +727,9 @@ BigWigsStatsDB = {
 				["best"] = 156.287,
 			},
 			["mythic"] = {
-				["kills"] = 14,
+				["kills"] = 17,
 				["wipes"] = 34,
-				["best"] = 291.485,
+				["best"] = 281.042,
 			},
 			["normal"] = {
 				["kills"] = 3,
@@ -750,9 +744,9 @@ BigWigsStatsDB = {
 				["best"] = 231.259,
 			},
 			["mythic"] = {
-				["kills"] = 12,
+				["kills"] = 15,
 				["wipes"] = 113,
-				["best"] = 427.102000000001,
+				["best"] = 399.175,
 			},
 			["normal"] = {
 				["kills"] = 3,
@@ -767,9 +761,9 @@ BigWigsStatsDB = {
 				["best"] = 122.413,
 			},
 			["mythic"] = {
-				["kills"] = 2,
+				["kills"] = 5,
 				["wipes"] = 3,
-				["best"] = 200.265000000001,
+				["best"] = 192.999,
 			},
 			["normal"] = {
 				["kills"] = 5,
@@ -787,8 +781,8 @@ BigWigsStatsDB = {
 				["best"] = 313.621,
 			},
 			["mythic"] = {
-				["kills"] = 11,
-				["wipes"] = 247,
+				["kills"] = 14,
+				["wipes"] = 254,
 				["best"] = 478.792000000001,
 			},
 			["normal"] = {

@@ -7,12 +7,12 @@ CliqueDB3 = {
 		},
 		["Nisefy - Stormscale"] = {
 			["spec1_profileKey"] = "Nisefy - Stormscale",
-			["spec3_profileKey"] = "Nisefy - Stormscale",
+			["spec2_profileKey"] = "Nisefy - Stormscale",
 			["downclick"] = false,
 			["fastooc"] = false,
-			["spec2_profileKey"] = "Nisefy - Stormscale",
 			["specswap"] = false,
 			["alerthidden"] = true,
+			["spec3_profileKey"] = "Nisefy - Stormscale",
 		},
 		["Donnerbock - Ysera"] = {
 			["alerthidden"] = true,
@@ -32,24 +32,27 @@ CliqueDB3 = {
 		["Niseko - Stormscale"] = {
 			["spec1_profileKey"] = "Niseko - Stormscale",
 			["fastooc"] = false,
-			["specswap"] = false,
-			["downclick"] = false,
 			["spec3_profileKey"] = "Niseko - Stormscale",
+			["downclick"] = false,
 			["alerthidden"] = true,
 			["spec2_profileKey"] = "Niseko - Stormscale",
+			["specswap"] = false,
 		},
 	},
 	["profileKeys"] = {
 		["Zelda - Mal'Ganis"] = "Zelda - Mal'Ganis",
 		["Nisepeg - Stormscale"] = "Nisepeg - Stormscale",
+		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
 		["Yvera - Moonglade"] = "Yvera - Moonglade",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
 		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Nisedog - Stormscale"] = "Nisedog - Stormscale",
+		["Purrmeow - Twisting Nether"] = "Purrmeow - Twisting Nether",
 		["Niseniseko - Stormscale"] = "Niseniseko - Stormscale",
 		["Nise - Stormscale"] = "Nise - Stormscale",
 		["Nisetest - Stormscale"] = "Nisetest - Stormscale",
 		["Nedoka - Antonidas"] = "Niseko - Stormscale",
+		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Nisecakes - Stormscale"] = "Nisecakes - Stormscale",
 		["Pixelfehler - Ysera"] = "Pixelfehler - Ysera",
 		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
@@ -85,6 +88,25 @@ CliqueDB3 = {
 					["sets"] = {
 						["default"] = true,
 					},
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
+		["Valdurawr - Stormscale"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -336,6 +358,25 @@ CliqueDB3 = {
 				}, -- [2]
 			},
 		},
+		["Purrmeow - Twisting Nether"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
 		["Niseniseko - Stormscale"] = {
 			["bindings"] = {
 				{
@@ -394,6 +435,25 @@ CliqueDB3 = {
 			},
 		},
 		["Nedoka - Antonidas"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
+		["Yoshicakes - Stormscale"] = {
 			["bindings"] = {
 				{
 					["sets"] = {

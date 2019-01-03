@@ -1,2 +1,10 @@
 WeakAuras: enabled
 Grid2: enabled
+MoveAnything: enabled
+Plater: enabled
+VuhDo: disabled
+VuhDoOptions: disabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+BigWigs_Plugins: enabled
+ElvUI_EverySecondCounts: disabled

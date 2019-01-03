@@ -749,6 +749,27 @@ end
 
 
 --
+local function VUHDO_hasSummonIconValidator(anInfo, _)
+	if C_IncomingSummon.HasIncomingSummon(anInfo["unit"]) then
+		local status = C_IncomingSummon.IncomingSummonStatus(anInfo["unit"]);
+
+		if (status == Enum.SummonStatus.Pending) then
+			return true, "Raid-Icon-SummonPending", -1, -1, -1, nil, nil, 0, 1, 0, 1;
+		elseif (status == Enum.SummonStatus.Accepted) then
+			return true, "Raid-Icon-SummonAccepted", -1, -1, -1, nil, nil, 0, 1, 0, 1;
+		elseif (status == Enum.SummonStatus.Declined) then
+			return true, "Raid-Icon-SummonDeclined", -1, -1, -1, nil, nil, 0, 1, 0, 1;
+		else
+			return false, nil, -1, -1, -1;
+		end
+	else
+		return false, nil, -1, -1, -1;
+	end
+end
+
+
+
+--
 local function VUHDO_classIconValidator(anInfo, _)
 	if CLASS_ICON_TCOORDS[anInfo["class"]] then
 		return true, "Interface\\TargetingFrame\\UI-Classes-Circles", -1, -1, -1, nil, nil, unpack(CLASS_ICON_TCOORDS[anInfo["class"]]);
@@ -1180,7 +1201,7 @@ end
 --
 local tShieldLeft;
 local function VUHDO_overflowCountValidator(anInfo, _)
-	tShieldLeft = select(16, VUHDO_unitAura(anInfo["unit"], VUHDO_SPELL_ID.DEBUFF_OVERFLOW)) or 0;
+	tShieldLeft = select(16, VUHDO_unitDebuff(anInfo["unit"], VUHDO_SPELL_ID.DEBUFF_OVERFLOW)) or 0;
 	return tShieldLeft >= 1000, nil, -1, floor(tShieldLeft * 0.001 + 0.5), -1;
 end
 
@@ -1594,6 +1615,13 @@ VUHDO_BOUQUET_BUFFS_SPECIAL = {
 		["custom_type"] = VUHDO_BOUQUET_CUSTOM_TYPE_STACKS,
 		["updateCyclic"] = true,
 		["interests"] = { },
+	},
+
+	["HAS_SUMMON_ICON"] = {
+		["displayName"] = VUHDO_I18N_BOUQUET_HAS_SUMMON_ICON,
+		["validator"] = VUHDO_hasSummonIconValidator,
+		["no_color"] = true,
+		["interests"] = { VUHDO_UPDATE_SUMMON },
 	},
 
 	["CLASS_ICON"] = {

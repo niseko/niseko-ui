@@ -1,22 +1,24 @@
 
 ErrorFilterDB = {
 	["profileKeys"] = {
-		["Nedoka - Antonidas"] = "Default",
-		["Nise - Stormscale"] = "Default",
-		["Nisetest - Stormscale"] = "Default",
+		["Nisefy - Stormscale"] = "Default",
 		["Nisepeg - Stormscale"] = "Default",
-		["Zelda - Mal'Ganis"] = "Default",
-		["Niseko - Twisting Nether"] = "Default",
+		["Valdurawr - Stormscale"] = "Default",
 		["Yvera - Moonglade"] = "Default",
 		["Niseko - Stormscale"] = "Default",
-		["Nisegob - Stormscale"] = "Default",
+		["Niseko - Twisting Nether"] = "Default",
+		["Nisedog - Stormscale"] = "Default",
+		["Niseniseko - Stormscale"] = "Default",
+		["Nise - Stormscale"] = "Default",
+		["Nisetest - Stormscale"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
+		["Yoshicakes - Stormscale"] = "Default",
 		["Nisecakes - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
-		["Nisedog - Stormscale"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
+		["Zelda - Mal'Ganis"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
 		["Mondeko - Blackmoore"] = "Default",
-		["Nisefy - Stormscale"] = "Default",
-		["Niseniseko - Stormscale"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

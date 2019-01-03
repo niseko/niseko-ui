@@ -26,18 +26,20 @@ Details_StreamerDB = {
 		["Grönk - Draenor"] = "Niseko - Twisting Nether",
 		["Zelda - Mal'Ganis"] = "Niseko - Twisting Nether",
 		["Nisepeg - Stormscale"] = "Niseko - Twisting Nether",
+		["Valdurawr - Stormscale"] = "Niseko - Twisting Nether",
+		["Netsu - Antonidas"] = "Niseko - Twisting Nether",
 		["Yvera - Moonglade"] = "Niseko - Twisting Nether",
 		["Mondeko - Mal'Ganis"] = "Niseko - Twisting Nether",
 		["Nisekobabe - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Pixelfehler - Ysera"] = "Niseko - Twisting Nether",
-		["Netsu - Antonidas"] = "Niseko - Twisting Nether",
-		["Nisedog - Stormscale"] = "Niseko - Twisting Nether",
 		["Gronkgronk - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Anothertest - Twisting Nether"] = "Niseko - Twisting Nether",
+		["Nisedog - Stormscale"] = "Niseko - Twisting Nether",
 		["Nedoka - Antonidas"] = "Niseko - Twisting Nether",
+		["Anothertest - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Nisko - Blackmoore"] = "Niseko - Twisting Nether",
-		["Nisekobaby - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Illidarling - Blackmoore"] = "Niseko - Twisting Nether",
+		["Nisekobaby - Twisting Nether"] = "Niseko - Twisting Nether",
+		["Yoshicakes - Stormscale"] = "Niseko - Twisting Nether",
 		["Nisetest - Stormscale"] = "Niseko - Twisting Nether",
 		["Nodeko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Illidarling - Twisting Nether"] = "Niseko - Twisting Nether",
@@ -79,17 +81,12 @@ Details_StreamerDB = {
 			},
 			["arrow_anchor_x"] = 0,
 			["row_texture"] = "VuhDo - Plain White",
-			["arrow_anchor_y"] = 0,
-			["main_frame_locked"] = true,
-			["row_color"] = {
-				0.101960784313725, -- [1]
-				0.101960784313725, -- [2]
-				0.101960784313725, -- [3]
-				0.400000035762787, -- [4]
-			},
+			["scale"] = 1,
+			["row_height"] = 20,
+			["point"] = "LEFT",
 			["enabled"] = false,
 			["arrow_size"] = 10,
-			["author"] = "Details! Team",
+			["y"] = 207.334197998047,
 			["row_spacement"] = 20,
 			["main_frame_color"] = {
 				0, -- [1]
@@ -97,7 +94,12 @@ Details_StreamerDB = {
 				0, -- [3]
 				0, -- [4]
 			},
-			["main_frame_strata"] = "LOW",
+			["row_color"] = {
+				0.101960784313725, -- [1]
+				0.101960784313725, -- [2]
+				0.101960784313725, -- [3]
+				0.400000035762787, -- [4]
+			},
 			["arrow_texture"] = "Interface\\CHATFRAME\\ChatFrameExpandArrow",
 			["per_second"] = {
 				["enabled"] = true,
@@ -106,18 +108,18 @@ Details_StreamerDB = {
 				["font_shadow"] = true,
 				["y"] = -191.110321044922,
 				["x"] = 181.110778808594,
-				["attribute_type"] = 2,
-				["update_speed"] = 0.05,
 				["size"] = 32,
+				["update_speed"] = 0.05,
+				["attribute_type"] = 2,
 			},
 			["use_spark"] = true,
 			["x"] = 50.0000419616699,
 			["font_face"] = "Friz Quadrata TT",
-			["y"] = 207.334197998047,
 			["font_size"] = 10,
-			["point"] = "LEFT",
-			["row_height"] = 20,
-			["scale"] = 1,
+			["main_frame_strata"] = "LOW",
+			["author"] = "Details! Team",
+			["main_frame_locked"] = true,
+			["arrow_anchor_y"] = 0,
 		},
 	},
 }

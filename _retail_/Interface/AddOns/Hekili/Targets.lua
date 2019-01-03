@@ -44,6 +44,7 @@ function ns.getNumberTargets()
     for k,v in pairs( nameplates ) do
         nameplates[k] = nil
     end
+    Hekili.TargetDebug = nil
 
     npCount = 0
 
@@ -55,6 +56,8 @@ function ns.getNumberTargets()
             if UnitExists( unit ) then
                 local guid = UnitGUID( unit )                
                 local _, range = RC:GetRange( unit )
+
+                Hekili.TargetDebug = ( Hekili.TargetDebug or "" ) .. format( "%12s - %2d - %s\n", unit, range or 0, guid )
 
                 if not nameplates[ guid ] and ( unit == "target" or ( range and range < spec.nameplateRange ) ) and ( not UnitIsDead( unit ) ) and UnitCanAttack( "player", unit ) and UnitInPhase( unit ) and ( UnitIsPVP( "player" ) or not UnitIsPlayer( unit ) ) then
                     npCount = npCount + 1
@@ -420,7 +423,6 @@ do
     local function InitTTD( unit )
 
         if not unit then return end
-
         local GUID = UnitGUID( unit )
 
         TTD[ GUID ] = TTD[ GUID ] or tremove( recycleBin ) or {}
@@ -436,8 +438,9 @@ do
 
 
     local function UpdateTTD( unit )
+        local guid = UnitExists( unit ) and UnitGUID( unit )
+        if not guid then return end
 
-        local guid = UnitGUID( unit )
         local health, healthMax = UnitHealth( unit ), UnitHealthMax( unit )
 
         local now = GetTime()
@@ -476,6 +479,7 @@ do
         ttd.sec = projected
 
     end
+    Hekili.UpdateTTD = UpdateTTD
 
 
     local seen  = {}
@@ -681,45 +685,3 @@ end
     end )
 
 end ]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

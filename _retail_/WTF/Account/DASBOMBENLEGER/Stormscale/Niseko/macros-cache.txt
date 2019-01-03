@@ -44,10 +44,6 @@ VER 3 010000000000001A "est" "INV_MISC_QUESTIONMARK"
 /cast [talent:6/1] Healing Stream Totem
 /cast [talent:6/2] Healing Stream Totem
 END
-VER 3 010000000000000E "healingrainc" "INV_MISC_QUESTIONMARK"
-#showtooltip Healing Rain 
-/cast !healing rain
-END
 VER 3 0100000000000007 "HTT" "INV_MISC_QUESTIONMARK"
 #showtooltip Healing Tide Totem
 /use Velen's Future Sight
@@ -56,11 +52,17 @@ END
 VER 3 0100000000000017 "Mystch" "136048"
 /whisper Mystch innervate
 END
-VER 3 010000000000000A "slth" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover] Spirit Link Totem
+VER 3 010000000000001B "primal" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [talent:6/3]Icefury;[talent:4/2,talent:6/2]Eye of the Storm;[notalent:4/2,talent:6/2]Meteor
 END
-VER 3 0100000000000014 "test" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover] Chain Heal
+VER 3 010000000000001C "SE" "INV_MISC_QUESTIONMARK"
+#showtooltip Storm Elemental
+/use Ignition Mage's Fuse
+/cast Storm Elemental
+END
+VER 3 010000000000000A "slth" "INV_MISC_QUESTIONMARK"
+/cast [@mouseover, help, nodead] Purify Spirit; [@mouseover, harm, nodead][@target, harm, nodead] Purge; [@target, help, nodead][@player]Purify Spirit
 END
 VER 3 0100000000000009 "tier100" "INV_MISC_QUESTIONMARK"
 #showtooltip

@@ -21,9 +21,10 @@ local function TimerEvent()
 		end
 	end
 	if not next(offline) then
-		Grid2:CancelTimer(timer); timer = nil
+		timer = Grid2:CancelTimer(timer)
 	end
 end
+
 
 function Offline:UNIT_CONNECTION(_, unit, hasConnected)
 	if Grid2:IsUnitNoPetInRaid(unit) then
@@ -47,9 +48,7 @@ function Offline:SetConnected(unit, connected)
 		offline[unit] = nil
 	else
 		offline[unit] = GetTime()
-		if not timer then 
-			timer = Grid2:ScheduleRepeatingTimer(TimerEvent, 2)
-		end
+		timer = timer or Grid2:CreateTimer(TimerEvent, 2)
 	end
 end
 
@@ -67,7 +66,7 @@ function Offline:OnDisable()
 end
 
 function Offline:IsActive(unit)
-	if offline[unit] then return true end
+	return offline[unit]~=nil
 end
 
 local text = L["Offline"]

@@ -7,7 +7,7 @@ OptionHouse: enabled
 TellMeWhen_Options: disabled
 WorldQuestAssistant: disabled
 bigdumblootcouncil: enabled
-MoveAnything: disabled
+MoveAnything: enabled
 TipTac: enabled
 TipTacItemRef: enabled
 TipTacTalents: disabled
@@ -33,3 +33,4 @@ SuppressRightClick: disabled
 OmniBar: enabled
 Gladius: enabled
 GladiatorlosSA2: enabled
+VuhDoOptions: disabled

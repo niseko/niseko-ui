@@ -1,11 +1,11 @@
-## Interface: 80000
+## Interface: 80100
 ## Title: Grid2 |cd0ff7d0aOptions|r
 ## Title-esES: Grid2 |cd0ff7d0aOpciones|r
 ## Notes: Configuration module for Grid2
 ## Notes-esES: Modulo de configuracion del Grid2
 ## LoadOnDemand: 1
 ## Dependencies: Grid2
-## Version: r838
+## Version: r854
 
 # Ace Libraries
 Libs\AceGUI-3.0\AceGUI-3.0.xml
@@ -21,9 +21,10 @@ locales.xml
 
 # Grid2Options
 GridCore.lua
+GridUtils.lua
 GridGeneral.lua
 GridIndicators.lua
 GridStatuses.lua
-GridUtils.lua
+GridThemes.lua
 
 modules.xml

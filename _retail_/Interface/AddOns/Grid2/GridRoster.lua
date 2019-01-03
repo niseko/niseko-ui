@@ -3,15 +3,26 @@
 -- Local variables to speedup things
 local UnitName = UnitName
 local UnitGUID = UnitGUID
+local UnitClass = UnitClass
 local UnitExists = UnitExists
 local IsInRaid = IsInRaid
 local GetNumGroupMembers = GetNumGroupMembers
-local pairs, next = pairs, next
+local GetPartyAssignment = GetPartyAssignment
+local UnitGroupRolesAssigned = UnitGroupRolesAssigned
+local GetRaidRosterInfo = GetRaidRosterInfo
+local ipairs, pairs, next = ipairs, pairs, next
+local UNKNOWNOBJECT = UNKNOWNOBJECT
 
 -- realm name
 local my_realm = GetRealmName()
 
--- indexed by unit ID
+-- myUnits, used by other modules
+local roster_my_units = { player = true, pet = true, vehicle = true }
+
+-- is raid roster ?
+local inRaid
+
+-- indexed by unit
 local roster_names = {}
 local roster_realms = {}
 local roster_guids = {}
@@ -24,6 +35,13 @@ local party_units = {}
 local raid_units = {}
 local pet_of_unit = {}
 local owner_of_unit = {}
+
+-- indexed by index, only nonpet units
+local roster_count = 0
+local roster_indexed
+
+-- flag to track if roster contains unknown units, workaround to blizard bug (see ticket #628)
+local roster_unknowns
 
 -- populate unit tables
 do
@@ -41,16 +59,31 @@ do
 	end
 end
 
+-- Used as workaround to blizard bug (see ticket #628)
+function Grid2:RosterHasUnknowns()
+	return roster_unknowns
+end
+
 -- roster query functions
-function Grid2:GetUnitByFullName(fullName)
-	local name, realm = fullName:match("^([^%-]+)%-(.*)$")
-	name = name or fullName
-	if realm == my_realm or realm == "" then realm = nil end
-	for unit, unit_name in pairs(roster_names) do
-		if name == unit_name and roster_realms[unit] == realm then
-			return unit
+function Grid2:GetRosterInfoByIndex(index)
+	local unit, name, group, class, role1, role2, _
+	if inRaid then
+		name, _, group, _, _, class, _, _, _, role1, _, role2 = GetRaidRosterInfo(index)
+		return roster_indexed[index], name, class, group, role1, role2
+	else
+		unit = party_units[index]
+		name = UnitName(unit)
+		if name then
+			_, class = UnitClass(unit)
+			role1 = (GetPartyAssignment("MAINTANK",unit) and "MAINTANK") or (GetPartyAssignment("MAINASSIST",unit) and "MAINASSIST")
+			role2 = UnitGroupRolesAssigned(unit)
+			return unit, name, class, 1, role1, role2
 		end
 	end
+end
+
+function Grid2:GetNonPetUnits()
+	return roster_indexed, roster_count
 end
 
 function Grid2:GetUnitidByGUID(guid)
@@ -109,7 +142,7 @@ end
 do
 	local groupType, instType, instMaxPlayers
 	function Grid2:GetGroupType()
-		return groupType, instType, instMaxPlayers
+		return groupType or "solo", instType or "other", instMaxPlayers or 1
 	end
 	function Grid2:PLAYER_ENTERING_WORLD()
 		-- this is needed to trigger an update when switching from one BG directly to another
@@ -122,43 +155,39 @@ do
 		local newGroupType
 		local InInstance, newInstType = IsInInstance()
 		local _, _, difficultyID, _, maxPlayers = GetInstanceInfo()
-
+		inRaid = IsInRaid()
 		if newInstType == "arena" then
-			-- arena@arena instances
-			newGroupType = newInstType
-			maxPlayers = 5
-		else
-			if IsInRaid() then
-				newGroupType = "raid"
-				if InInstance then
-					if newInstType == "pvp" then
-						-- raid@pvp / PvP battleground instance
-					elseif newInstType == "none" then
-						-- raid@none / Not in Instance, in theory its not posible to reach this point
-						maxPlayers = 40
-					elseif difficultyID == 17 then
-						-- raid@lfr / Looking for Raid instances (but not LFR especial events instances)
-						newInstType = "lfr"
-					elseif difficultyID == 16 then
-						-- raid@mythic / Mythic instance
-						newInstType = "mythic"
-					elseif maxPlayers == 30 then
-						-- raid@flex / Flexible instances normal/heroic (but no LFR)
-						newInstType = "flex"
-					else
-						-- raid@other / Other instances: 5man/garrison/unknow instances
-						newInstType = "other"
-					end
-				else
-					-- raid@none / In World Map or Garrison
-					newInstType = "none"
+			newGroupType = newInstType	-- arena@arena instances
+		elseif inRaid then
+			newGroupType = "raid"
+			if InInstance then
+				if newInstType == "pvp" then
+					-- raid@pvp / PvP battleground instance
+				elseif newInstType == "none" then
+					-- raid@none / Not in Instance, in theory its not posible to reach this point
 					maxPlayers = 40
+				elseif difficultyID == 17 then
+					-- raid@lfr / Looking for Raid instances (but not LFR especial events instances)
+					newInstType = "lfr"
+				elseif difficultyID == 16 then
+					-- raid@mythic / Mythic instance
+					newInstType = "mythic"
+				elseif maxPlayers == 30 then
+					-- raid@flex / Flexible instances normal/heroic (but no LFR)
+					newInstType = "flex"
+				else
+					-- raid@other / Other instances: 5man/garrison/unknow instances
+					newInstType = "other"
 				end
-			elseif GetNumGroupMembers()>0 then
-				newGroupType, newInstType, maxPlayers = "party", "other", 5
 			else
-				newGroupType, newInstType, maxPlayers = "solo", "other", 1
+				-- raid@none / In World Map or Garrison
+				newInstType = "none"
+				maxPlayers = 40
 			end
+		elseif GetNumGroupMembers()>0 then
+			newGroupType, newInstType, maxPlayers = "party", "other", 5
+		else
+			newGroupType, newInstType, maxPlayers = "solo", "other", 1
 		end
 		if maxPlayers == nil or maxPlayers == 0 then
 			maxPlayers = 40
@@ -187,7 +216,7 @@ do
 
 		local old_name = roster_names[unit]
 		local old_realm = roster_realms[unit]
-
+		
 		roster_names[unit] = name
 		roster_realms[unit] = realm
 
@@ -196,6 +225,7 @@ do
 			self:SendMessage("Grid_UnitUpdated", unit, guid)
 			self:SendMessage("Grid_UnitUpdate", unit, guid)
 			self:SendMessage("Grid_RosterUpdated")
+			self:SendMessage("Grid_RosterUpdate")
 		end
 	end
 
@@ -281,15 +311,20 @@ do
 				roster_units[oldGuid] = nil
 			end
 		end
+		
+		if name == UNKNOWNOBJECT then
+			roster_unknowns = true
+		end	
 	end
 
 	function Grid2:UpdateRoster()
 		roster_guids, units_to_remove = units_to_remove, roster_guids
 
-		local units = IsInRaid() and raid_units or party_units
-
-		for i= 1,#units do
-			local unit = units[i]
+		roster_unknowns = false
+		roster_count = 0
+		roster_indexed = IsInRaid() and raid_units or party_units
+		for i=1,#roster_indexed do
+			local unit = roster_indexed[i]
 			if not UnitExists(unit) then break end
 			UpdateUnit(unit)
 
@@ -297,8 +332,9 @@ do
 			if UnitExists(unitpet) then
 				UpdateUnit(unitpet)
 			end
+			roster_count = roster_count + 1
 		end
-
+		
 		local updated = false
 
 		for unit, guid in pairs(units_to_remove) do
@@ -335,13 +371,14 @@ do
 		end
 
 		if updated then
-			self:SendMessage("Grid_RosterUpdated")
+			self:SendMessage("Grid_RosterUpdated", roster_unknowns)
 		end
+
+		self:SendMessage("Grid_RosterUpdate", roster_unknowns) -- Fired even when no changes in grid2 roster, but other atributes like roles or subgroups could be modified
 	end
 end
 
 --{{ Publish tables used by some statuses
-Grid2.party_units = party_units
-Grid2.raid_units  = raid_units
-Grid2.roster_units = roster_units
+Grid2.roster_units    = roster_units
+Grid2.roster_my_units = roster_my_units
 --}}

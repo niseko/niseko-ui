@@ -1,4 +1,308 @@
 ------------------------------------------------------------------------
+r854 | michaelspain | 2019-01-02 16:15:00 +0000 (Wed, 02 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/GridRoster.lua
+   M /trunk/GridUtils.lua
+
+-Workaround to blizzard securegroupheaders bug introduced in patch 8.1 (see ticket #628)
+------------------------------------------------------------------------
+r853 | michaelspain | 2018-12-22 17:55:41 +0000 (Sat, 22 Dec 2018) | 1 line
+Changed paths:
+   M /trunk/Grid2.toc
+   M /trunk/LDB/Grid2LDB.toc
+   M /trunk/Options/Grid2Options.toc
+   M /trunk/RaidDebuffs/Grid2RaidDebuffs.toc
+   M /trunk/RaidDebuffsOptions/Grid2RaidDebuffsOptions.toc
+
+TOC Update
+------------------------------------------------------------------------
+r852 | michaelspain | 2018-12-21 19:35:26 +0000 (Fri, 21 Dec 2018) | 5 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/Options/GridThemes.lua
+   M /trunk/Options/modules/statuses/StatusHealth.lua
+   M /trunk/modules/IndicatorIcon.lua
+   M /trunk/modules/StatusHealth.lua
+
+- Icon Indicator: Now stack count text will be displayed over the cooldown animation, not applicable to icons(plural) indicator. (Ticket #623)
+- Health Updates: Removed normal update frequency, now only "Fast" and "Instant" updates are applicable. This must fix ticket #625.
+- Health Updates: "Fast" update frequency renamed to "Normal", so only "Normal" and "Instant" are available in configuration. 
+- Themes: Now specialization theme rules/conditions are class specific. (Ticket #626).
+
+------------------------------------------------------------------------
+r851 | michaelspain | 2018-12-16 00:09:11 +0000 (Sun, 16 Dec 2018) | 1 line
+Changed paths:
+   M /trunk/Options/modules/statuses/StatusAuraNew.lua
+   M /trunk/modules/StatusAuras.lua
+
+Debuffs: Now mine & not-mine debuffs can be created, useful to track the new priest "Weakened Soul" debuff.
+------------------------------------------------------------------------
+r850 | michaelspain | 2018-12-12 17:19:59 +0000 (Wed, 12 Dec 2018) | 2 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/GridFrame.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/statuses/StatusMisc.lua
+   M /trunk/Options/modules/themes/GridGeneral.lua
+   A /trunk/modules/StatusSummon.lua
+   M /trunk/modules.xml
+
+*Added a new "summon" status to track summoned players (summon accepted, declined,etc)(setup is under Miscellaneous category).
+*Using background textures instead of border textures for mouseover highlight texture option.
+------------------------------------------------------------------------
+r849 | michaelspain | 2018-11-30 20:26:54 +0000 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   M /trunk/modules/StatusReadyCheck.lua
+
+-Fixing readycheck status bug (when linked to icons indicator) (second issue in ticket #616)
+------------------------------------------------------------------------
+r848 | michaelspain | 2018-11-30 17:09:24 +0000 (Fri, 30 Nov 2018) | 2 lines
+Changed paths:
+   M /trunk/GridRoster.lua
+   M /trunk/modules/StatusReadyCheck.lua
+
+-Minor changes in ReadyCheck status.
+-Fixed a minor issue in roster module.
+------------------------------------------------------------------------
+r847 | michaelspain | 2018-11-29 03:25:07 +0000 (Thu, 29 Nov 2018) | 4 lines
+Changed paths:
+   M /trunk/GridUtils.lua
+   M /trunk/Options/modules/statuses/StatusHealsAoe.lua
+   M /trunk/modules/StatusOffline.lua
+   M /trunk/modules/StatusRange.lua
+
+-Now StatusAOE configuration allows to add more spells (spells with spellID>150000)
+-Using a standalone frame as parent for animation timers instead of the Grid2 main frame (because 
+using Grid2 main frame, timers "Play" method is up to half million x times slower :O).
+
+------------------------------------------------------------------------
+r846 | michaelspain | 2018-11-23 18:09:57 +0000 (Fri, 23 Nov 2018) | 2 lines
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/GridRoster.lua
+   M /trunk/GridUtils.lua
+   M /trunk/Options/GridUtils.lua
+   M /trunk/Options/modules/themes/GridGeneral.lua
+   M /trunk/modules/StatusBanzai.lua
+   M /trunk/modules/StatusReadyCheck.lua
+   M /trunk/modules/StatusRole.lua
+
+-Minor refactoring in roster management, role and ready check statuses.
+-Removed some debug code.
+------------------------------------------------------------------------
+r845 | michaelspain | 2018-11-12 00:18:36 +0000 (Mon, 12 Nov 2018) | 3 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/Grid2.toc
+   M /trunk/GridCore.lua
+   M /trunk/GridLayout.lua
+   M /trunk/GridStatus.lua
+   M /trunk/GridUtils.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+   M /trunk/Options/modules/statuses/Status.lua
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/Options/modules/statuses/StatusColor.lua
+   M /trunk/Options/modules/statuses/StatusHealth.lua
+   M /trunk/Options/modules/statuses/StatusMana.lua
+   M /trunk/Options/modules/statuses/StatusRaidIcon.lua
+   M /trunk/Options/modules/themes/GridGeneral.lua
+   M /trunk/modules/IndicatorBar.lua
+   M /trunk/modules/IndicatorText.lua
+   M /trunk/modules/StatusAFK.lua
+   M /trunk/modules/StatusAuras.lua
+   M /trunk/modules/StatusBanzai.lua
+   M /trunk/modules/StatusCombat.lua
+   M /trunk/modules/StatusDirection.lua
+   M /trunk/modules/StatusHealsAoe.lua
+   M /trunk/modules/StatusOffline.lua
+   M /trunk/modules/StatusPvP.lua
+   M /trunk/modules/StatusRange.lua
+   M /trunk/modules/StatusReadyCheck.lua
+   M /trunk/modules/StatusRes.lua
+   M /trunk/modules/StatusRole.lua
+   M /trunk/modules/StatusThreat.lua
+   M /trunk/modules/StatusVehicle.lua
+
+-Replace all AceTimers with built-in timers.
+-Removed AceTimer library.
+-Fixed a bug, auras tracking by spellID was not working.
+------------------------------------------------------------------------
+r844 | michaelspain | 2018-11-07 17:22:59 +0000 (Wed, 07 Nov 2018) | 1 line
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+
+- Fixed a crash due to a bug in conversion code from old custom layout format.
+------------------------------------------------------------------------
+r843 | michaelspain | 2018-11-05 17:52:12 +0000 (Mon, 05 Nov 2018) | 1 line
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+
+Fixed a crash with ancient user defined layouts.
+------------------------------------------------------------------------
+r842 | michaelspain | 2018-11-05 02:57:14 +0000 (Mon, 05 Nov 2018) | 6 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/GridLayout.lua
+   M /trunk/GridLayoutLayouts.lua
+   M /trunk/GridRoster.lua
+   M /trunk/GridUtils.lua
+   M /trunk/Options/GridThemes.lua
+   M /trunk/Options/GridUtils.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/general/GridDebug.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+   M /trunk/Options/modules/themes/GridLayouts.lua
+   M /trunk/Options/modules/themes/GridTestLayout.lua
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+   M /trunk/locales/esES.lua
+   M /trunk/modules/StatusCombat.lua
+
+*Removed a lot of layouts, now the only available built-in layouts are:
+ By Group, By Class, By Role, By Group & Role.
+ Deleted layouts can be recreated using the layout editor.
+*Added some defaults settings for layouts in General -> Layouts.
+*Improved the layout editor (in General -> Layouts): Now players NameLists filters can be defined.
+*Fixed a bug: not all players were visible in some Brawl instances when using some built-in layouts.
+------------------------------------------------------------------------
+r841 | michaelspain | 2018-10-24 23:27:27 +0000 (Wed, 24 Oct 2018) | 2 lines
+Changed paths:
+   M /trunk/Options/locales/esES.lua
+   A /trunk/Options/modules/statuses/StatusCombat.lua
+   M /trunk/Options/modules.xml
+   M /trunk/locales/esES.lua
+   A /trunk/modules/StatusCombat.lua
+   M /trunk/modules/StatusRole.lua
+   M /trunk/modules.xml
+
+-Little optimization in Leader status.
+-Added "Combat" and "Combat:mine" statuses.
+------------------------------------------------------------------------
+r840 | michaelspain | 2018-10-24 01:27:40 +0000 (Wed, 24 Oct 2018) | 6 lines
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/indicators/IndicatorMultiBar.lua
+   M /trunk/Options/modules/themes/GridGeneral.lua
+   M /trunk/Options/modules/themes/GridTestLayout.lua
+   M /trunk/modules/StatusAuras.lua
+
+-Fixed a bug in StatusAuras/Multibars. "Val" values were not set to nil when a buff ends (ticket #609)
+-Workaround for a strange AceDialog/AceGUI/EditBox bug, occasionally, the first time Theme->General 
+options are displayed, all slider editboxes display nothing: the sliders display the correct values but 
+the editboxes are blank.
+-Fixed Minor bug in GridTestLayout.lua.
+-Fixed a lua error when moving grid2 main window in combat.
+------------------------------------------------------------------------
+r839 | michaelspain | 2018-10-21 16:53:38 +0000 (Sun, 21 Oct 2018) | 25 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/GridDefaults.lua
+   M /trunk/GridFrame.lua
+   M /trunk/GridIndicator.lua
+   M /trunk/GridLayout.lua
+   M /trunk/GridRoster.lua
+   M /trunk/GridSetup.lua
+   M /trunk/GridUtils.lua
+   M /trunk/LDB/Grid2LDB.lua
+   M /trunk/Options/Grid2Options.toc
+   M /trunk/Options/GridCore.lua
+   M /trunk/Options/GridIndicators.lua
+   M /trunk/Options/GridStatuses.lua
+   A /trunk/Options/GridThemes.lua
+   M /trunk/Options/GridUtils.lua
+   M /trunk/Options/locales/enUS.lua
+   M /trunk/Options/locales/esES.lua
+   D /trunk/Options/modules/general/GridBlink.lua
+   M /trunk/Options/modules/general/GridDebug.lua
+   D /trunk/Options/modules/general/GridFrame.lua
+   A /trunk/Options/modules/general/GridGeneral.lua
+   D /trunk/Options/modules/general/GridHideBlizzardFrames.lua
+   D /trunk/Options/modules/general/GridLayout.lua
+   D /trunk/Options/modules/general/GridLayouts.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+   D /trunk/Options/modules/general/GridLoadOnDemand.lua
+   D /trunk/Options/modules/general/GridMinimapIcon.lua
+   M /trunk/Options/modules/general/GridProfile.lua
+   D /trunk/Options/modules/general/GridTestIndicators.lua
+   D /trunk/Options/modules/general/GridTestLayout.lua
+   D /trunk/Options/modules/general/GridTextFormat.lua
+   M /trunk/Options/modules/indicators/Indicator.lua
+   M /trunk/Options/modules/indicators/IndicatorBar.lua
+   M /trunk/Options/modules/indicators/IndicatorBorder.lua
+   M /trunk/Options/modules/indicators/IndicatorIcon.lua
+   M /trunk/Options/modules/indicators/IndicatorIcons.lua
+   M /trunk/Options/modules/indicators/IndicatorMultiBar.lua
+   M /trunk/Options/modules/indicators/IndicatorSquare.lua
+   M /trunk/Options/modules/indicators/IndicatorText.lua
+   D /trunk/Options/modules/indicators/NewIndicator.lua
+   D /trunk/Options/modules/indicators/StatusesIndicator.lua
+   D /trunk/Options/modules/indicators/TypeIndicator.lua
+   M /trunk/Options/modules/statuses/Status.lua
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/Options/modules/statuses/StatusAuraNew.lua
+   M /trunk/Options/modules/statuses/StatusAuraNewPredictor.lua
+   M /trunk/Options/modules/statuses/StatusHealth.lua
+   A /trunk/Options/modules/themes
+   A /trunk/Options/modules/themes/GridGeneral.lua
+   A /trunk/Options/modules/themes/GridIndicators.lua
+   A /trunk/Options/modules/themes/GridLayouts.lua
+   A /trunk/Options/modules/themes/GridTestLayout.lua
+   M /trunk/Options/modules.xml
+   M /trunk/RaidDebuffs/Grid2RaidDebuffs.lua
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+   M /trunk/modules/IndicatorAlpha.lua
+   M /trunk/modules/IndicatorBar.lua
+   M /trunk/modules/IndicatorBorder.lua
+   M /trunk/modules/IndicatorIcon.lua
+   M /trunk/modules/IndicatorIcons.lua
+   M /trunk/modules/IndicatorMultiBar.lua
+   M /trunk/modules/IndicatorSquare.lua
+   M /trunk/modules/IndicatorText.lua
+   M /trunk/modules/IndicatorTooltip.lua
+   M /trunk/modules/StatusAuras.lua
+   D /trunk/modules/StatusAurasBuffDebuff.lua
+   M /trunk/modules/StatusAurasBuffs.lua
+   D /trunk/modules/StatusAurasDebuffType.lua
+   M /trunk/modules/StatusAurasDebuffs.lua
+   M /trunk/modules/StatusBanzai.lua
+   M /trunk/modules/StatusDirection.lua
+   M /trunk/modules/StatusHealAbsorbs.lua
+   M /trunk/modules/StatusHealth.lua
+   M /trunk/modules/StatusRaidIcon.lua
+   M /trunk/modules/StatusRange.lua
+   M /trunk/modules/StatusRes.lua
+   M /trunk/modules/StatusShields.lua
+   M /trunk/modules.xml
+
+WARNING this version has massive changes, some crashes&bugs may be expected.
+
+-Fixed an issue with tooltips and clique (ticket #602)
+-Changed the way unit frames are registered on clique addon.
+-Removed some duplicated raid debuffs.
+-Refactored StatusAuras/Buffs/Debuffs code to avoid a lot of function calls.
+-Refactored the code of most timers.
+-Removed the main window background gradient and added an option to setup the background texture.
+-Removed the posibility to change profiles based on group type and raid size.
+-Options to remove or rename indicators have been moved to: Indicators -> Right Panel.
+-Added the posibility to have multiple "Themes", a different theme can be enabled for each especialization, group type or raid size.
+
+A theme defines:
+* Main window and unit frames appearance & position.
+* Some default values for indicators: bars orientation&texture, font, font size, icon size, etc.
+* A list of indicators enabled for the theme.
+* The layouts to be used.
+
+Indicators & Statuses are the same for all themes, but the displayed information & appearance can 
+be customized enabling/disabling different indicators for each theme or using different default values
+per theme.
+
+People who do not want to use themes can locate the old appearance configuration (general&layouts) in the default theme:
+Left Panel -> Themes -> Default.
+
+------------------------------------------------------------------------
 r838 | michaelspain | 2018-09-24 02:11:07 +0000 (Mon, 24 Sep 2018) | 4 lines
 Changed paths:
    M /trunk/GridCore.lua

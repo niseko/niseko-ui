@@ -1,8 +1,13 @@
 -- Misc functions
 
-local Grid2Utils = Grid2:NewModule("Grid2Utils")
-
+local media = LibStub("LibSharedMedia-3.0", true)
 local Grid2 = Grid2
+local select = select
+local strtrim  = strtrim
+local type = type
+local pairs = pairs
+local tonumber = tonumber
+local tremove = table.remove
 
 function Grid2.Dummy()
 end
@@ -16,9 +21,42 @@ function Grid2:MakeColor(color, default)
 	return color or defaultColors[default or "TRANSPARENT"]
 end
 
-local media = LibStub("LibSharedMedia-3.0", true)
 function Grid2:MediaFetch(mediatype, key, def)
 	return (key and media:Fetch(mediatype, key)) or (def and media:Fetch(mediatype, def))
+end
+
+-- Repeating Timer Management
+do
+	local frame = CreateFrame("Frame")
+	local timers = {}
+	local function SetDuration(self, duration)
+		self.animation:SetDuration(duration)
+	end
+	-- Grid2:CreateTimer(func, duration, play)
+	-- play=true|nil => timer running; play=false => timer paused
+	-- timer methods: timer:Play() timer:Stop() timer:SetDuration()
+	function Grid2:CreateTimer( func, duration, play )
+		local timer = tremove(timers)
+		if not timer then
+			timer = frame:CreateAnimationGroup()
+			timer.animation = timer:CreateAnimation()
+			timer.SetDuration = SetDuration
+			timer:SetLooping("REPEAT")
+		end
+		timer:SetScript("OnLoop", func)
+		if duration then 
+			timer:SetDuration(duration) 
+			if play~=false then timer:Play() end
+		end
+		return timer
+	end
+	-- Grid2:CancelTimer(timer)
+	function Grid2:CancelTimer( timer )
+		if timer then
+			timer:Stop()
+			timers[#timers+1] = timer
+		end	
+	end
 end
 
 -- UTF8 string truncate
@@ -45,11 +83,54 @@ function Grid2.CopyTable(src, dst)
 	for k,v in pairs(src) do
 		if type(v)=="table" then
 			dst[k] = Grid2.CopyTable(v,dst[k])
-		elseif not dst[k] then
+		elseif dst[k]==nil then
 			dst[k] = v
 		end
 	end
 	return dst
+end
+
+-- Remove item by value in a ipairs table
+function Grid2.TableRemoveByValue(t,v)
+	for i=#t,1,-1 do
+		if t[i]==v then
+			tremove(t, i)
+			return
+		end
+	end	
+end
+
+-- Fill tokens table
+function Grid2.FillTokenTable(tbl,...)
+	tbl = tbl or {}
+	local m = select("#",...) 
+	for i = 1, m  do
+		local key = select(i,...)
+		tbl[ tonumber(key) or strtrim(key) ] = i
+	end
+	return tbl
+end
+
+-- Double fill table
+function Grid2.DoubleFillTable(tbl,...)
+	tbl = tbl or {}
+	local m = select("#", ...)
+	for i = 1, m do
+		local k = strtrim( (select(i, ...)) )
+		tbl[i] = k
+		tbl[k] = i
+	end
+	return tbl
+end
+
+-- Fill ipairs table
+function Grid2.FillTable(tbl,...)
+	tbl = tbl or {}
+	local m = select("#",...) 
+	for i = 1, m  do
+		tbl[i] = select(i,...)
+	end
+	return tbl
 end
 
 -- Creates a location table, used by GridDefaults.lua
@@ -67,9 +148,6 @@ Grid2.statusLibrary = {
 	IsActive = function() 
 		return true 
 	end,
-	GetBorder = function()
-		return 1
-	end,
 	GetColor = function(self)
 		local c = self.dbx.color1
 		return c.r, c.g, c.b, c.a
@@ -84,7 +162,7 @@ Grid2.statusLibrary = {
 	end,
 }
 
---  Used by bar indicators
+-- Used by bar indicators
 Grid2.AlignPoints= {
 	HORIZONTAL = { 
 		[true]  = { "TOPLEFT", "TOPRIGHT", "BOTTOMLEFT", "BOTTOMRIGHT" },    -- normal Fill
@@ -96,58 +174,48 @@ Grid2.AlignPoints= {
 	}	
 }
 
--- Cheap method to hook/change on the fly some globals
--- Used by health/shields statuses to retrieve global UnitHealthMax function (see StatusShields.lua)
--- Needed to change the behavior of UnitHealthMax function in HFC Velhari encounter.
+-- Grid2:RunSecure(priority, object, method, arg) 
+-- Queue some methods to be executed when out of combat, if we are not in combat do nothing.
+-- Methods with lower priority value override the execution of methods with higher priority value.
+-- Methods executed (in order of priority): ReloadProfile(1), ReloadTheme(2), ReloadLayout(3), ReloadFilter(4), FixRoster(5), UpdateSize(6)
 do
-	local _g = {}
-	Grid2.Globals = setmetatable( {}, { 
-		__index    = function (t,k) return _g[k] or _G[k] end,
-		__newindex = function (t,k,v) _g[k] = v; Grid2:SendMessage("Grid2_Update_"..k, v or _G[k]) end,
-	} )
-end
-
--- Hellfire Citadel Velhari Encounter Health Fix
--- Grid2Utils:FixVelhariEncounterHealth(true | false)
-do
-	local velhari_fix = false
-	local velhari_percent = -1
-	local floor = math.floor
-	local select = select
-	local UnitAura = UnitAura
-	local UnitHealthMax = UnitHealthMax
-	local function VelhariHealthMax(unit)
-		return floor( UnitHealthMax(unit) * velhari_percent )
+	local sec_priority, sec_object, sec_method, sec_arg 
+	function Grid2:PLAYER_REGEN_ENABLED()
+		if sec_priority then
+			sec_priority = nil
+			sec_object[sec_method](sec_object, sec_arg)
+		end
 	end
-	local function VelhariUpdate()
-		if velhari_percent~=-1 then
-			local p = select(14, UnitAura("boss1", 179986)) -- CONTEMPT_AURA
-			p = p and p/100 or 1
-			if velhari_percent ~= p then
-				velhari_percent = p
-				Grid2.Globals.UnitHealthMax = VelhariHealthMax
-			end
-			C_Timer.After(1, VelhariUpdate)
-		end	
-	end
-	function Grid2Utils:FixVelhariEncounterHealth(v)
-		if v ~= velhari_fix then
-			if v then
-				self:RegisterEvent( "ENCOUNTER_START", function(_,ID) if ID == 1784 then velhari_percent = 1; VelhariUpdate() end end )
-				self:RegisterEvent( "ENCOUNTER_END",   function() velhari_percent = -1; Grid2.Globals.UnitHealthMax = nil end )
-				self:Debug("HFC Tyrant Velhari Encounter Max Health Fix: ENABLED")
-			else
-				self:UnregisterEvent( "ENCOUNTER_START" )
-				self:UnregisterEvent( "ENCOUNTER_END" )
-				self:Debug("HFC Tyrant Velhari Encounter Max Health Fix: DISABLED")				
-			end 	
-			velhari_fix = v
+	function Grid2:RunSecure(priority, object, method, arg)
+		if InCombatLockdown() then
+			if not sec_priority or priority<sec_priority then
+				sec_priority, sec_object, sec_method, sec_arg = priority, object, method, arg
+			end	
+			return true
 		end
 	end
 end
 
-function Grid2Utils:OnModuleEnable()
-	self:FixVelhariEncounterHealth( Grid2.db.profile.HfcVelhariHealthFix )
+-- Grid2:RunThrottled(object or arg1, method or func, delay) 
+-- Delays and throttles the execution of a method or function
+do
+	local counts = {}
+	function Grid2:RunThrottled(object, method, delay)
+		local func  = object[method] or method
+		local count = counts[func]
+		counts[func] = (count or 0) + 1
+		if not count then
+			local callback
+			callback = function()
+				if counts[func]>0 then
+					counts[func] = 0
+					func(object)
+					C_Timer.After(delay or 0.1, callback)
+				else
+					counts[func] = nil
+				end
+			end
+			C_Timer.After(delay or 0.1, callback)
+		end	
+	end
 end
-
-_G.Grid2Utils = Grid2Utils

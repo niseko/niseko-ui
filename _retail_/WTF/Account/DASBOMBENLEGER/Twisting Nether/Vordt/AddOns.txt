@@ -2,7 +2,7 @@ EasyFrames: disabled
 Lorti UI: disabled
 bdGrid: disabled
 nMainbar: disabled
-VuhDo: disabled
+VuhDo: enabled
 AdvancedInterfaceOptions: enabled
 AngryWorldQuests: disabled
 BigWigs: disabled
@@ -79,7 +79,7 @@ TipTac: disabled
 TipTacItemRef: disabled
 TipTacOptions: disabled
 TipTacTalents: disabled
-VuhDoOptions: disabled
+VuhDoOptions: enabled
 WeakAuras: enabled
 WeakAurasModelPaths: enabled
 WeakAurasOptions: enabled

@@ -1,3 +1,31 @@
+Version 3.98
+
+
+Known issues:
+-- BfA stat squish cleanup still a work in progress
+--   AOE Advice spell equations need complete overhaul
+--   Some text providers need changes to better display small numbers
+-- Debuff tooltips are currently bugged when using ElvUI
+--   Deselect 'VuhDo Options > Panels > Tooltips > Tooltips > Debuffs'
+
+
+Bugfixes:
+-- Fixed debuff absorb tracking
+
+
+Improvements:
+-- Added Vectis Immunosuppression debuff absorb tracking
+-- Added Diseased Lasher Decaying Mind debuff absorb tracking
+-- Added Priest Luminous Barrier absorb tracking
+-- Added more default custom debuffs for Uldir raid encounters
+-- Added new bouquet validator 'Has Summon'
+-- Added new default bouquet 'Summon Status Icon'
+-- Added new default bouquet 'Role & Summon Status Icon'
+--   Now assigned to the 'Special Dot' indicator by default
+-- Bump TOC interface version for 8.1
+
+
+--------------------------------------------------------------
 Version 3.97
 
 

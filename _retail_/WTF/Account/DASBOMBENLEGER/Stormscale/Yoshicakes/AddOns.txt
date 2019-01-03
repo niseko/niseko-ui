@@ -1,6 +1,6 @@
 BagSync: disabled
 VuhDo: disabled
-VuhDoOptions: enabled
+VuhDoOptions: disabled
 WeakAuras: enabled
 Dominos: enabled
 Bartender4: disabled
@@ -16,7 +16,7 @@ GottaGoFast: enabled
 PremadeGroupsFilter: enabled
 WorldQuestAssistant: disabled
 bigdumblootcouncil: enabled
-MoveAnything: disabled
+MoveAnything: enabled
 TipTac: enabled
 TipTacItemRef: enabled
 TipTacTalents: disabled
@@ -39,3 +39,7 @@ SuppressRightClick: disabled
 OmniBar: enabled
 Gladius: enabled
 GladiatorlosSA2: enabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+BigWigs_Plugins: enabled
+ElvUI_EverySecondCounts: disabled

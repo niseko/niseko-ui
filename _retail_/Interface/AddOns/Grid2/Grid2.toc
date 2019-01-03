@@ -1,4 +1,4 @@
-## Interface: 80000
+## Interface: 80100
 ## Title: Grid2
 ## Notes: A modular, lightweight and screen-estate saving grid of party/raid unit frames
 ## Notes-esES: Marcos de unidades de raid compactos y ligeros.
@@ -12,8 +12,8 @@
 ## DefaultState: enabled
 ## LoadOnDemand: 0
 
-## Version: r838
-## X-ReleaseDate: "$Date: 2018-09-23 03:43:01 +0000 (Sun, 23 Sep 2018) $"
+## Version: r854
+## X-ReleaseDate: "$Date: 2018-12-22 17:55:41 +0000 (Sat, 22 Dec 2018) $"
 ## X-Category: UnitFrame
 
 # Ace Libraries
@@ -22,7 +22,6 @@ Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
 Libs\AceAddon-3.0\AceAddon-3.0.xml
 Libs\AceEvent-3.0\AceEvent-3.0.xml
-Libs\AceTimer-3.0\AceTimer-3.0.xml
 Libs\AceDB-3.0\AceDB-3.0.xml
 Libs\AceConsole-3.0\AceConsole-3.0.xml
 Libs\AceLocale-3.0\AceLocale-3.0.xml

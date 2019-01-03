@@ -1,20 +1,22 @@
 
 LoggerHeadNDB = {
 	["profileKeys"] = {
-		["Nise - Stormscale"] = "Default",
-		["Zelda - Mal'Ganis"] = "Default",
+		["Nisefy - Stormscale"] = "Default",
 		["Nisepeg - Stormscale"] = "Default",
-		["Niseniseko - Stormscale"] = "Default",
-		["Nisetest - Stormscale"] = "Default",
+		["Valdurawr - Stormscale"] = "Default",
 		["Yvera - Moonglade"] = "Default",
 		["Niseko - Stormscale"] = "Default",
 		["Niseko - Twisting Nether"] = "Default",
-		["Nisegob - Stormscale"] = "Default",
 		["Nisedog - Stormscale"] = "Default",
+		["Niseniseko - Stormscale"] = "Default",
+		["Nise - Stormscale"] = "Default",
+		["Nisetest - Stormscale"] = "Default",
+		["Yoshicakes - Stormscale"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Nisefy - Stormscale"] = "Default",
 		["Donnerbock - Twisting Nether"] = "Default",
+		["Zelda - Mal'Ganis"] = "Default",
 		["Nedoka - Antonidas"] = "Default",
 	},
 	["profiles"] = {

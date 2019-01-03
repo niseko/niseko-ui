@@ -2,7 +2,7 @@ EasyFrames: disabled
 Lorti UI: disabled
 bdGrid: disabled
 nMainbar: disabled
-VuhDo: disabled
+VuhDo: enabled
 RaiderIO_DB_US_H: disabled
 RaiderIO_DB_US_A: disabled
 RaiderIO_DB_TW_H: disabled
@@ -12,7 +12,7 @@ RaiderIO_DB_KR_A: disabled
 TellMeWhen: disabled
 TellMeWhen_Options: disabled
 VocalRaidAssistant: disabled
-VuhDoOptions: disabled
+VuhDoOptions: enabled
 MikScrollingBattleText: disabled
 MSBTOptions: disabled
 ElvUI_Config: enabled

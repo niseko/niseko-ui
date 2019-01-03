@@ -1,8 +1,9 @@
 ------------------------------------------------------------------------
-r129 | Sunn | 2018-07-21 19:52:47 +0000 (Sat, 21 Jul 2018) | 1 line
+r131 | Sunn | 2018-12-16 21:29:35 +0000 (Sun, 16 Dec 2018) | 1 line
 Changed paths:
+   M /trunk/SunnArt.toc
    M /trunk/SunnArt_Core.lua
 
-Fixed: Hide Blizzard UI Gryphons
+TOC update for 8.1
 ------------------------------------------------------------------------
 
