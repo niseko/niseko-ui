@@ -13,12 +13,12 @@ HekiliDB = {
 		["Nisetest - Stormscale"] = "Nisetest - Stormscale",
 		["Yvera - Moonglade"] = "Yvera - Moonglade",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
-		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Nisegob - Stormscale"] = "Nisegob - Stormscale",
+		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
 		["Nisedog - Stormscale"] = "Nisedog - Stormscale",
 		["Vordt - Twisting Nether"] = "Vordt - Twisting Nether",
-		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
+		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
 		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
 	},
@@ -70,8 +70,8 @@ HekiliDB = {
 		["Nise - Stormscale"] = {
 			["actionLists"] = {
 				{
-					["Default"] = true,
 					["Name"] = "Usable Items",
+					["Specialization"] = 0,
 					["Actions"] = {
 						{
 							["Enabled"] = true,
@@ -197,11 +197,11 @@ HekiliDB = {
 					["Release"] = 20180208.181753,
 					["Script"] = "",
 					["Hidden"] = true,
-					["Specialization"] = 0,
+					["Default"] = true,
 				}, -- [1]
 				{
-					["Name"] = "SimC Feral: default",
 					["Script"] = "",
+					["Default"] = true,
 					["Specialization"] = 103,
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "ticking and ( 0.05 + remains - ( duration * 0.3 ) ) or 0",
@@ -409,7 +409,7 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [16]
 					},
-					["Default"] = true,
+					["Name"] = "SimC Feral: default",
 				}, -- [2]
 				{
 					["Name"] = "SimC Feral: precombat",
@@ -470,8 +470,8 @@ HekiliDB = {
 					["Specialization"] = 103,
 				}, -- [3]
 				{
-					["Name"] = "SimC Feral: cooldowns",
 					["Script"] = "",
+					["Specialization"] = 103,
 					["Default"] = true,
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "energy.time_to_30",
@@ -620,11 +620,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [11]
 					},
-					["Specialization"] = 103,
+					["Name"] = "SimC Feral: cooldowns",
 				}, -- [4]
 				{
-					["Specialization"] = 103,
 					["Script"] = "",
+					["Name"] = "SimC Feral: single target",
 					["Default"] = true,
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "ticking and ( 0.05 + remains - ( duration * 0.3 ) ) or 0",
@@ -749,11 +749,11 @@ HekiliDB = {
 							["ModName"] = "SimC Feral: ST generators",
 						}, -- [9]
 					},
-					["Name"] = "SimC Feral: single target",
+					["Specialization"] = 103,
 				}, -- [5]
 				{
-					["Script"] = "",
 					["Default"] = true,
+					["Specialization"] = 103,
 					["Name"] = "SimC Feral: ST finishers",
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "",
@@ -869,11 +869,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [8]
 					},
-					["Specialization"] = 103,
+					["Script"] = "",
 				}, -- [6]
 				{
-					["Script"] = "",
 					["Default"] = true,
+					["Specialization"] = 103,
 					["Name"] = "SimC Feral: ST generators",
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "ticking and ( 0.01 + remains - ( duration * 0.3 ) ) or 0",
@@ -1152,7 +1152,7 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [20]
 					},
-					["Specialization"] = 103,
+					["Script"] = "",
 				}, -- [7]
 				{
 					["Default"] = true,
@@ -1954,8 +1954,8 @@ HekiliDB = {
 		["Zelda - Mal'Ganis"] = {
 			["actionLists"] = {
 				{
-					["Default"] = true,
 					["Name"] = "Usable Items",
+					["Specialization"] = 0,
 					["Hidden"] = true,
 					["Release"] = 20180208.181753,
 					["Script"] = "",
@@ -2081,7 +2081,7 @@ HekiliDB = {
 							},
 						}, -- [12]
 					},
-					["Specialization"] = 0,
+					["Default"] = true,
 				}, -- [1]
 				{
 					["Specialization"] = 66,
@@ -3887,10 +3887,10 @@ HekiliDB = {
 					["Copy To"] = "Retribution AOE",
 					["Script"] = "single&!auto",
 					["Primary Caption"] = "targets",
-					["Default"] = true,
-					["Name"] = "Retribution AOE",
-					["Talent Group"] = 0,
 					["minAuto"] = 3,
+					["Default"] = true,
+					["Talent Group"] = 0,
+					["Name"] = "Retribution AOE",
 					["queuedFontSize"] = 12,
 					["queuedIconSize"] = 50,
 					["kbFont"] = "PT Sans Narrow",
@@ -4878,16 +4878,16 @@ HekiliDB = {
 					["enabled"] = true,
 					["maxRefresh"] = 10,
 					["buffPadding"] = 0.25,
-					["aoe"] = 2,
+					["nameplates"] = true,
 					["package"] = "Enhancement",
 					["gcdSync"] = true,
-					["potionsReset"] = 20180919.1,
+					["aoe"] = 2,
 					["debuffPadding"] = 0,
 					["cycle"] = false,
 					["nameplateRange"] = 8,
 					["potion"] = "battle_potion_of_agility",
 					["throttleRefresh"] = false,
-					["nameplates"] = true,
+					["potionsReset"] = 20180919.1,
 					["damageExpiration"] = 8,
 					["damageDots"] = false,
 					["damage"] = true,
@@ -4896,16 +4896,16 @@ HekiliDB = {
 					["enabled"] = true,
 					["maxRefresh"] = 10,
 					["buffPadding"] = 0.25,
-					["aoe"] = 3,
+					["nameplates"] = false,
 					["package"] = "Elemental",
 					["gcdSync"] = true,
-					["potionsReset"] = 20180919.1,
+					["aoe"] = 3,
 					["debuffPadding"] = 0,
 					["cycle"] = false,
 					["nameplateRange"] = 8,
 					["potion"] = "battle_potion_of_intellect",
 					["throttleRefresh"] = false,
-					["nameplates"] = false,
+					["potionsReset"] = 20180919.1,
 					["damageExpiration"] = 6,
 					["damageDots"] = false,
 					["damage"] = true,
@@ -5563,11 +5563,11 @@ HekiliDB = {
 					["maxRefresh"] = 10,
 					["package"] = "Enhancement",
 					["throttleRefresh"] = false,
-					["nameplates"] = true,
+					["potionsReset"] = 20180910.4,
 					["nameplateRange"] = 8,
 					["potion"] = "prolonged_power",
+					["nameplates"] = true,
 					["aoe"] = 2,
-					["potionsReset"] = 20180910.4,
 					["damageExpiration"] = 8,
 					["damageDots"] = false,
 					["damage"] = true,
@@ -5577,11 +5577,11 @@ HekiliDB = {
 					["maxRefresh"] = 10,
 					["package"] = "Elemental",
 					["throttleRefresh"] = false,
-					["nameplates"] = false,
+					["potionsReset"] = 20180910.4,
 					["nameplateRange"] = 8,
 					["potion"] = "battle_potion_of_intellect",
+					["nameplates"] = false,
 					["aoe"] = 3,
-					["potionsReset"] = 20180910.4,
 					["damageExpiration"] = 6,
 					["damageDots"] = false,
 					["damage"] = true,
@@ -7599,690 +7599,6 @@ HekiliDB = {
 			},
 			["Toggle State: hold_t20_stacks"] = false,
 		},
-		["Yoshicakes - Stormscale"] = {
-			["runOnce"] = {
-				["reviseDisplayModes_20180709"] = true,
-				["enableAllOfTheThings_20180820"] = true,
-			},
-			["specs"] = {
-				[263] = {
-					["enabled"] = true,
-					["maxRefresh"] = 10,
-					["damage"] = true,
-					["potionsReset"] = 20180919.1,
-					["package"] = "Enhancement",
-					["damageExpiration"] = 8,
-					["nameplates"] = true,
-					["throttleRefresh"] = false,
-					["nameplateRange"] = 8,
-					["cycle"] = false,
-					["potion"] = "battle_potion_of_agility",
-					["debuffPadding"] = 0,
-					["aoe"] = 2,
-					["gcdSync"] = true,
-					["damageDots"] = false,
-					["buffPadding"] = 0.25,
-				},
-				[262] = {
-					["enabled"] = true,
-					["maxRefresh"] = 10,
-					["damage"] = true,
-					["potionsReset"] = 20180919.1,
-					["package"] = "Elemental",
-					["damageExpiration"] = 6,
-					["nameplates"] = false,
-					["throttleRefresh"] = false,
-					["nameplateRange"] = 8,
-					["cycle"] = false,
-					["potion"] = "battle_potion_of_intellect",
-					["debuffPadding"] = 0,
-					["aoe"] = 3,
-					["gcdSync"] = true,
-					["damageDots"] = false,
-					["buffPadding"] = 0.25,
-				},
-			},
-			["displays"] = {
-				["Interrupts"] = {
-				},
-			},
-			["packs"] = {
-				["Elemental"] = {
-					["source"] = "https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Elemental.simc",
-					["builtIn"] = true,
-					["date"] = 20181211.2257,
-					["spec"] = 262,
-					["desc"] = "# Elemental Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Elemental.simc\n# December 11, 2018 - 22:40\n\n# Changes:\n# - Use X_elemental.up rather than checking cooldowns to see if elementals are active.\n# - Disabled Earth Elemental entries.",
-					["profile"] = "# Elemental Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Elemental.simc\n# December 11, 2018 - 22:40\n\n# Changes:\n# - Use X_elemental.up rather than checking cooldowns to see if elementals are active.\n# - Disabled Earth Elemental entries.\n\n# Executed before combat begins. Accepts non-harmful actions only.\nactions.precombat=flask\nactions.precombat+=/food\nactions.precombat+=/augmentation\n# Snapshot raid buffed stats before combat begins and pre-potting is done.\nactions.precombat+=/snapshot_stats\nactions.precombat+=/totem_mastery\nactions.precombat+=/earth_elemental,if=!talent.primal_elementalist.enabled\n# Use Stormkeeper precombat unless some adds will spawn soon.\nactions.precombat+=/stormkeeper,if=talent.stormkeeper.enabled&(raid_event.adds.count<3||raid_event.adds.in>50)\nactions.precombat+=/fire_elemental,if=!talent.storm_elemental.enabled\nactions.precombat+=/potion\nactions.precombat+=/elemental_blast,if=talent.elemental_blast.enabled\n\n# Executed every time the actor is available.\n# Cast Bloodlust manually if the Azerite Trait Ancestral Resonance is present.\nactions=bloodlust,if=azerite.ancestral_resonance.enabled\n# Interrupt of casts.\nactions+=/wind_shear\nactions+=/totem_mastery,if=talent.totem_mastery.enabled&buff.resonance_totem.remains<2\nactions+=/fire_elemental,if=!talent.storm_elemental.enabled\nactions+=/storm_elemental,if=talent.storm_elemental.enabled&(!talent.icefury.enabled||!buff.icefury.up&!cooldown.icefury.up)\nactions+=/earth_elemental,if=!talent.primal_elementalist.enabled||talent.primal_elementalist.enabled&(cooldown.fire_elemental.remains<120&!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120&talent.storm_elemental.enabled)\nactions+=/use_items\nactions+=/blood_fury,if=!talent.ascendance.enabled||buff.ascendance.up||cooldown.ascendance.remains>50\nactions+=/berserking,if=!talent.ascendance.enabled||buff.ascendance.up\nactions+=/fireblood,if=!talent.ascendance.enabled||buff.ascendance.up||cooldown.ascendance.remains>50\nactions+=/ancestral_call,if=!talent.ascendance.enabled||buff.ascendance.up||cooldown.ascendance.remains>50\nactions+=/run_action_list,name=aoe,if=active_enemies>2&(spell_targets.chain_lightning>2||spell_targets.lava_beam>2)\nactions+=/run_action_list,name=single_target\n\n# Multi target action priority list\nactions.aoe=stormkeeper,if=talent.stormkeeper.enabled\nactions.aoe+=/ascendance,if=talent.ascendance.enabled&(talent.storm_elemental.enabled&cooldown.storm_elemental.remains<120&cooldown.storm_elemental.remains>15||!talent.storm_elemental.enabled)\nactions.aoe+=/liquid_magma_totem,if=talent.liquid_magma_totem.enabled\n\n# Spread Flame Shock in <=4 target fights, but not during SE uptime, unless you're fighting 3 targets and have less than 14 Wind Gust stacks.\nactions.aoe+=/flame_shock,cycle_targets=1,if=refreshable&spell_targets.chain_lightning<5&(!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120||spell_targets.chain_lightning=3&buff.wind_gust.stack<14)\n\n# Try to game Earthquake with Master of the Elements buff when fighting 3 targets. Don't overcap Maelstrom!\nactions.aoe+=/earthquake,if=!talent.master_of_the_elements.enabled||buff.stormkeeper.up||maelstrom>=(100-4*spell_targets.chain_lightning)||buff.master_of_the_elements.up||spell_targets.chain_lightning>3\n\n# Only cast Lava Burst on three targets if it is an instant and Storm Elemental is NOT active.\nactions.aoe+=/lava_burst,if=(buff.lava_surge.up||buff.ascendance.up)&spell_targets.chain_lightning<4&(!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120)\n\n# Use Elemental Blast against up to 3 targets as long as Storm Elemental is not active.\nactions.aoe+=/elemental_blast,if=talent.elemental_blast.enabled&spell_targets.chain_lightning<4&(!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120)\nactions.aoe+=/lava_beam,if=talent.ascendance.enabled\nactions.aoe+=/chain_lightning\nactions.aoe+=/lava_burst,moving=1,if=talent.ascendance.enabled\nactions.aoe+=/flame_shock,moving=1,cycle_targets=1,if=refreshable\nactions.aoe+=/frost_shock,moving=1\n\n\n# Single Target Action Priority List\n# Ensure FS is active unless you have 14 or more stacks of Wind Gust from Storm Elemental. (Edge case: upcoming Asc but active SE; don't )\nactions.single_target=flame_shock,if=(!ticking||talent.storm_elemental.enabled&cooldown.storm_elemental.remains<2*gcd||dot.flame_shock.remains<=gcd||talent.ascendance.enabled&dot.flame_shock.remains<(cooldown.ascendance.remains+buff.ascendance.duration)&cooldown.ascendance.remains<4&(!talent.storm_elemental.enabled||talent.storm_elemental.enabled&cooldown.storm_elemental.remains<120))&buff.wind_gust.stack<14\n\n# Use Ascendance after you've spent all Lava Burst charges and only if neither Storm Elemental nor Icefury are currently active.\nactions.single_target+=/ascendance,if=talent.ascendance.enabled&(time>=60||buff.bloodlust.up)&cooldown.lava_burst.remains>0&(!talent.storm_elemental.enabled||storm_elemental.up)&(!talent.icefury.enabled||!buff.icefury.up&!cooldown.icefury.up)\n\n# Don't use Elemental Blast if you could cast a Master of the Elements empowered Earth Shock instead. Don't cast Elemental Blast during Storm Elemental unless you have 3x Natural Harmony in which case you stop using Elemental Blast once you reach 14 stacks of Wind Gust.\nactions.single_target+=/elemental_blast,if=talent.elemental_blast.enabled&(talent.master_of_the_elements.enabled&buff.master_of_the_elements.up&maelstrom<60||!talent.master_of_the_elements.enabled)&(!(storm_elemental.up&talent.storm_elemental.enabled)||azerite.natural_harmony.rank=3&buff.wind_gust.stack<14)\n\n# Keep SK for large or soon add waves. Unless you have Surge of Power, in which case you want to double buff Lightning Bolt by pooling Maelstrom beforehand. Example sequence: 100MS, ES, SK, LB, LvB, ES, LB\nactions.single_target+=/stormkeeper,if=talent.stormkeeper.enabled&(raid_event.adds.count<3||raid_event.adds.in>50)&(!talent.surge_of_power.enabled||buff.surge_of_power.up||maelstrom>=44)\nactions.single_target+=/liquid_magma_totem,if=talent.liquid_magma_totem.enabled&(raid_event.adds.count<3||raid_event.adds.in>50)\n\n# Combine Stormkeeper with Master of the Elements or Surge of Power.\nactions.single_target+=/lightning_bolt,if=buff.stormkeeper.up&spell_targets.chain_lightning<2&(buff.master_of_the_elements.up&!talent.surge_of_power.enabled||buff.surge_of_power.up)\n\n# There might come an update for this line with some SoP logic.\nactions.single_target+=/earthquake,if=active_enemies>1&spell_targets.chain_lightning>1&(!talent.surge_of_power.enabled||!dot.flame_shock.refreshable||storm_elemental.up)&(!talent.master_of_the_elements.enabled||buff.master_of_the_elements.up||maelstrom>=92)\n\n# Boy...what a condition. With Master of the Elements pool Maelstrom up to 8 Maelstrom below the cap to ensure it's used with Earth Shock. Without Master of the Elements, use Earth Shock either if Stormkeeper is up, Maelstrom is 10 Maelstrom below the cap or less, or either Storm Elemental isn't talented or it's not active and your last Storm Elemental of the fight will have only a partial duration.\nactions.single_target+=/earth_shock,if=!buff.surge_of_power.up&talent.master_of_the_elements.enabled&(buff.master_of_the_elements.up||maelstrom>=92+30*talent.call_the_thunder.enabled||buff.stormkeeper.up&active_enemies<2)||!talent.master_of_the_elements.enabled&(buff.stormkeeper.up||maelstrom>=90+30*talent.call_the_thunder.enabled||!(storm_elemental.up&talent.storm_elemental.enabled)&expected_combat_length-time-cooldown.storm_elemental.remains-150*floor((expected_combat_length-time-cooldown.storm_elemental.remains)%150)>=30*(1+(azerite.echo_of_the_elementals.rank>=2)))\n\n# Use Earth Shock if Surge of Power is talented, but neither it nor a DPS Elemental is active at the moment, and Lava Burst is ready or will be within the next GCD.\nactions.single_target+=/earth_shock,if=talent.surge_of_power.enabled&!buff.surge_of_power.up&cooldown.lava_burst.remains<=gcd&(!talent.storm_elemental.enabled&!(fire_elemental.up)||talent.storm_elemental.enabled&!(storm_elemental.up))\n\n# Cast Lightning Bolts during Storm Elemental duration.\nactions.single_target+=/lightning_bolt,if=storm_elemental.up&talent.storm_elemental.enabled\n\n# Use Frost Shock with Icefury and Master of the Elements.\nactions.single_target+=/frost_shock,if=talent.icefury.enabled&talent.master_of_the_elements.enabled&buff.icefury.up&buff.master_of_the_elements.up\nactions.single_target+=/lava_burst,if=buff.ascendance.up\n\n# Utilize Surge of Power to spread Flame Shock if multiple enemies are present.\nactions.single_target+=/flame_shock,cycle_targets=1,if=refreshable&active_enemies>1&buff.surge_of_power.up\n\n# Use Lava Burst with Surge of Power if the last potential usage of a DPS Elemental hasn't a full duration OR if you could get another usage of the DPS Elemental if the remaining fight was 16% longer.\nactions.single_target+=/lava_burst,if=talent.storm_elemental.enabled&cooldown_react&buff.surge_of_power.up&(expected_combat_length-time-cooldown.storm_elemental.remains-150*floor((expected_combat_length-time-cooldown.storm_elemental.remains)%150)<30*(1+(azerite.echo_of_the_elementals.rank>=2))||(1.16*(expected_combat_length-time)-cooldown.storm_elemental.remains-150*floor((1.16*(expected_combat_length-time)-cooldown.storm_elemental.remains)%150))<(expected_combat_length-time-cooldown.storm_elemental.remains-150*floor((expected_combat_length-time-cooldown.storm_elemental.remains)%150)))\n\n# Use Lava Burst with Surge of Power if the last potential usage of a DPS Elemental hasn't a full duration OR if you could get another usage of the DPS Elemental if the remaining fight was 16% longer.\nactions.single_target+=/lava_burst,if=!talent.storm_elemental.enabled&cooldown_react&buff.surge_of_power.up&(expected_combat_length-time-cooldown.fire_elemental.remains-150*floor((expected_combat_length-time-cooldown.fire_elemental.remains)%150)<30*(1+(azerite.echo_of_the_elementals.rank>=2))||(1.16*(expected_combat_length-time)-cooldown.fire_elemental.remains-150*floor((1.16*(expected_combat_length-time)-cooldown.fire_elemental.remains)%150))<(expected_combat_length-time-cooldown.fire_elemental.remains-150*floor((expected_combat_length-time-cooldown.fire_elemental.remains)%150)))\nactions.single_target+=/lightning_bolt,if=buff.surge_of_power.up\nactions.single_target+=/lava_burst,if=cooldown_react\n\n# Don't accidentally use Surge of Power with Flame Shock during single target.\nactions.single_target+=/flame_shock,cycle_targets=1,if=refreshable&!buff.surge_of_power.up\nactions.single_target+=/totem_mastery,if=talent.totem_mastery.enabled&(buff.resonance_totem.remains<6||(buff.resonance_totem.remains<(buff.ascendance.duration+cooldown.ascendance.remains)&cooldown.ascendance.remains<15))\n\n# Slightly game Icefury buff to hopefully buff some with Master of the Elements.\nactions.single_target+=/frost_shock,if=talent.icefury.enabled&buff.icefury.up&(buff.icefury.remains<gcd*4*buff.icefury.stack||buff.stormkeeper.up||!talent.master_of_the_elements.enabled)\nactions.single_target+=/icefury,if=talent.icefury.enabled\nactions.single_target+=/lightning_bolt\nactions.single_target+=/flame_shock,moving=1,cycle_targets=1,if=refreshable\nactions.single_target+=/flame_shock,moving=1,if=movement.distance>6\n\n# Frost Shock is our movement filler.\nactions.single_target+=/frost_shock,moving=1",
-					["version"] = 20181211.2257,
-					["warnings"] = "WARNING:  The import for 'aoe' required some automated changes.\nThe following auras were used in the action list but were not found in the addon database:\n - wind_gust\n\nWARNING:  The import for 'single_target' required some automated changes.\nThe following auras were used in the action list but were not found in the addon database:\n - wind_gust\n\nImported 4 action lists.\n",
-					["author"] = "SimulationCraft",
-					["lists"] = {
-						["aoe"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.stormkeeper.enabled",
-								["action"] = "stormkeeper",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.ascendance.enabled & ( talent.storm_elemental.enabled & cooldown.storm_elemental.remains < 120 & cooldown.storm_elemental.remains > 15 || ! talent.storm_elemental.enabled )",
-								["action"] = "ascendance",
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.liquid_magma_totem.enabled",
-								["action"] = "liquid_magma_totem",
-							}, -- [3]
-							{
-								["enabled"] = true,
-								["action"] = "flame_shock",
-								["criteria"] = "refreshable & spell_targets.chain_lightning < 5 & ( ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 || spell_targets.chain_lightning = 3 & buff.wind_gust.stack < 14 )",
-								["cycle_targets"] = 1,
-							}, -- [4]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.master_of_the_elements.enabled || buff.stormkeeper.up || maelstrom >= ( 100 - 4 * spell_targets.chain_lightning ) || buff.master_of_the_elements.up || spell_targets.chain_lightning > 3",
-								["action"] = "earthquake",
-							}, -- [5]
-							{
-								["enabled"] = true,
-								["criteria"] = "( buff.lava_surge.up || buff.ascendance.up ) & spell_targets.chain_lightning < 4 & ( ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 )",
-								["action"] = "lava_burst",
-							}, -- [6]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.elemental_blast.enabled & spell_targets.chain_lightning < 4 & ( ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 )",
-								["action"] = "elemental_blast",
-							}, -- [7]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.ascendance.enabled",
-								["action"] = "lava_beam",
-							}, -- [8]
-							{
-								["action"] = "chain_lightning",
-								["enabled"] = true,
-							}, -- [9]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.ascendance.enabled",
-								["action"] = "lava_burst",
-								["moving"] = "1",
-							}, -- [10]
-							{
-								["enabled"] = true,
-								["action"] = "flame_shock",
-								["cycle_targets"] = 1,
-								["criteria"] = "refreshable",
-								["moving"] = "1",
-							}, -- [11]
-							{
-								["moving"] = "1",
-								["action"] = "frost_shock",
-								["enabled"] = true,
-							}, -- [12]
-						},
-						["single_target"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "( ! ticking || talent.storm_elemental.enabled & cooldown.storm_elemental.remains < 2 * gcd || dot.flame_shock.remains <= gcd || talent.ascendance.enabled & dot.flame_shock.remains < ( cooldown.ascendance.remains + buff.ascendance.duration ) & cooldown.ascendance.remains < 4 & ( ! talent.storm_elemental.enabled || talent.storm_elemental.enabled & cooldown.storm_elemental.remains < 120 ) ) & buff.wind_gust.stack < 14",
-								["action"] = "flame_shock",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.ascendance.enabled & ( time >= 60 || buff.bloodlust.up ) & cooldown.lava_burst.remains > 0 & ( ! talent.storm_elemental.enabled || storm_elemental.up ) & ( ! talent.icefury.enabled || ! buff.icefury.up & ! cooldown.icefury.up )",
-								["action"] = "ascendance",
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.elemental_blast.enabled & ( talent.master_of_the_elements.enabled & buff.master_of_the_elements.up & maelstrom < 60 || ! talent.master_of_the_elements.enabled ) & ( ! ( storm_elemental.up & talent.storm_elemental.enabled ) || azerite.natural_harmony.rank = 3 & buff.wind_gust.stack < 14 )",
-								["action"] = "elemental_blast",
-							}, -- [3]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.stormkeeper.enabled & ( raid_event.adds.count < 3 || raid_event.adds.in > 50 ) & ( ! talent.surge_of_power.enabled || buff.surge_of_power.up || maelstrom >= 44 )",
-								["action"] = "stormkeeper",
-							}, -- [4]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.liquid_magma_totem.enabled & ( raid_event.adds.count < 3 || raid_event.adds.in > 50 )",
-								["action"] = "liquid_magma_totem",
-							}, -- [5]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.stormkeeper.up & spell_targets.chain_lightning < 2 & ( buff.master_of_the_elements.up & ! talent.surge_of_power.enabled || buff.surge_of_power.up )",
-								["action"] = "lightning_bolt",
-							}, -- [6]
-							{
-								["enabled"] = true,
-								["criteria"] = "active_enemies > 1 & spell_targets.chain_lightning > 1 & ( ! talent.surge_of_power.enabled || ! dot.flame_shock.refreshable || storm_elemental.up ) & ( ! talent.master_of_the_elements.enabled || buff.master_of_the_elements.up || maelstrom >= 92 )",
-								["action"] = "earthquake",
-							}, -- [7]
-							{
-								["enabled"] = true,
-								["criteria"] = "! buff.surge_of_power.up & talent.master_of_the_elements.enabled & ( buff.master_of_the_elements.up || maelstrom >= 92 + 30 * talent.call_the_thunder.enabled || buff.stormkeeper.up & active_enemies < 2 ) || ! talent.master_of_the_elements.enabled & ( buff.stormkeeper.up || maelstrom >= 90 + 30 * talent.call_the_thunder.enabled || ! ( storm_elemental.up & talent.storm_elemental.enabled ) & expected_combat_length - time - cooldown.storm_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.storm_elemental.remains ) % 150 ) >= 30 * ( 1 + ( azerite.echo_of_the_elementals.rank >= 2 ) ) )",
-								["action"] = "earth_shock",
-							}, -- [8]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.surge_of_power.enabled & ! buff.surge_of_power.up & cooldown.lava_burst.remains <= gcd & ( ! talent.storm_elemental.enabled & ! ( fire_elemental.up ) || talent.storm_elemental.enabled & ! ( storm_elemental.up ) )",
-								["action"] = "earth_shock",
-							}, -- [9]
-							{
-								["enabled"] = true,
-								["criteria"] = "storm_elemental.up & talent.storm_elemental.enabled",
-								["action"] = "lightning_bolt",
-							}, -- [10]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.icefury.enabled & talent.master_of_the_elements.enabled & buff.icefury.up & buff.master_of_the_elements.up",
-								["action"] = "frost_shock",
-							}, -- [11]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.ascendance.up",
-								["action"] = "lava_burst",
-							}, -- [12]
-							{
-								["enabled"] = true,
-								["action"] = "flame_shock",
-								["criteria"] = "refreshable & active_enemies > 1 & buff.surge_of_power.up",
-								["cycle_targets"] = 1,
-							}, -- [13]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.storm_elemental.enabled & cooldown_react & buff.surge_of_power.up & ( expected_combat_length - time - cooldown.storm_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.storm_elemental.remains ) % 150 ) < 30 * ( 1 + ( azerite.echo_of_the_elementals.rank >= 2 ) ) || ( 1.16 * ( expected_combat_length - time ) - cooldown.storm_elemental.remains - 150 * floor ( ( 1.16 * ( expected_combat_length - time ) - cooldown.storm_elemental.remains ) % 150 ) ) < ( expected_combat_length - time - cooldown.storm_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.storm_elemental.remains ) % 150 ) ) )",
-								["action"] = "lava_burst",
-							}, -- [14]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.storm_elemental.enabled & cooldown_react & buff.surge_of_power.up & ( expected_combat_length - time - cooldown.fire_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.fire_elemental.remains ) % 150 ) < 30 * ( 1 + ( azerite.echo_of_the_elementals.rank >= 2 ) ) || ( 1.16 * ( expected_combat_length - time ) - cooldown.fire_elemental.remains - 150 * floor ( ( 1.16 * ( expected_combat_length - time ) - cooldown.fire_elemental.remains ) % 150 ) ) < ( expected_combat_length - time - cooldown.fire_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.fire_elemental.remains ) % 150 ) ) )",
-								["action"] = "lava_burst",
-							}, -- [15]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.surge_of_power.up",
-								["action"] = "lightning_bolt",
-							}, -- [16]
-							{
-								["enabled"] = true,
-								["criteria"] = "cooldown_react",
-								["action"] = "lava_burst",
-							}, -- [17]
-							{
-								["enabled"] = true,
-								["action"] = "flame_shock",
-								["criteria"] = "refreshable & ! buff.surge_of_power.up",
-								["cycle_targets"] = 1,
-							}, -- [18]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.totem_mastery.enabled & ( buff.resonance_totem.remains < 6 || ( buff.resonance_totem.remains < ( buff.ascendance.duration + cooldown.ascendance.remains ) & cooldown.ascendance.remains < 15 ) )",
-								["action"] = "totem_mastery",
-							}, -- [19]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.icefury.enabled & buff.icefury.up & ( buff.icefury.remains < gcd * 4 * buff.icefury.stack || buff.stormkeeper.up || ! talent.master_of_the_elements.enabled )",
-								["action"] = "frost_shock",
-							}, -- [20]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.icefury.enabled",
-								["action"] = "icefury",
-							}, -- [21]
-							{
-								["action"] = "lightning_bolt",
-								["enabled"] = true,
-							}, -- [22]
-							{
-								["enabled"] = true,
-								["action"] = "flame_shock",
-								["cycle_targets"] = 1,
-								["criteria"] = "refreshable",
-								["moving"] = "1",
-							}, -- [23]
-							{
-								["enabled"] = true,
-								["criteria"] = "movement.distance > 6",
-								["action"] = "flame_shock",
-								["moving"] = "1",
-							}, -- [24]
-							{
-								["moving"] = "1",
-								["action"] = "frost_shock",
-								["enabled"] = true,
-							}, -- [25]
-						},
-						["default"] = {
-							{
-								["enabled"] = false,
-								["criteria"] = "azerite.ancestral_resonance.enabled",
-								["action"] = "bloodlust",
-							}, -- [1]
-							{
-								["action"] = "wind_shear",
-								["enabled"] = true,
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.totem_mastery.enabled & buff.resonance_totem.remains < 2",
-								["action"] = "totem_mastery",
-							}, -- [3]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.storm_elemental.enabled",
-								["action"] = "fire_elemental",
-							}, -- [4]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.storm_elemental.enabled & ( ! talent.icefury.enabled || ! buff.icefury.up & ! cooldown.icefury.up )",
-								["action"] = "storm_elemental",
-							}, -- [5]
-							{
-								["enabled"] = false,
-								["criteria"] = "! talent.primal_elementalist.enabled || talent.primal_elementalist.enabled & ( cooldown.fire_elemental.remains < 120 & ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 & talent.storm_elemental.enabled )",
-								["action"] = "earth_elemental",
-							}, -- [6]
-							{
-								["action"] = "use_items",
-								["enabled"] = true,
-							}, -- [7]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up || cooldown.ascendance.remains > 50",
-								["action"] = "blood_fury",
-							}, -- [8]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up",
-								["action"] = "berserking",
-							}, -- [9]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up || cooldown.ascendance.remains > 50",
-								["action"] = "fireblood",
-							}, -- [10]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up || cooldown.ascendance.remains > 50",
-								["action"] = "ancestral_call",
-							}, -- [11]
-							{
-								["enabled"] = true,
-								["criteria"] = "active_enemies > 2 & ( spell_targets.chain_lightning > 2 || spell_targets.lava_beam > 2 )",
-								["action"] = "run_action_list",
-								["list_name"] = "aoe",
-							}, -- [12]
-							{
-								["enabled"] = true,
-								["action"] = "run_action_list",
-								["list_name"] = "single_target",
-							}, -- [13]
-						},
-						["precombat"] = {
-							{
-								["enabled"] = true,
-							}, -- [1]
-							{
-								["enabled"] = true,
-							}, -- [2]
-							{
-								["enabled"] = true,
-							}, -- [3]
-							{
-								["enabled"] = true,
-							}, -- [4]
-							{
-								["action"] = "totem_mastery",
-								["enabled"] = true,
-							}, -- [5]
-							{
-								["enabled"] = false,
-								["criteria"] = "! talent.primal_elementalist.enabled",
-								["action"] = "earth_elemental",
-							}, -- [6]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.stormkeeper.enabled & ( raid_event.adds.count < 3 || raid_event.adds.in > 50 )",
-								["action"] = "stormkeeper",
-							}, -- [7]
-							{
-								["enabled"] = true,
-								["criteria"] = "! talent.storm_elemental.enabled",
-								["action"] = "fire_elemental",
-							}, -- [8]
-							{
-								["action"] = "potion",
-								["enabled"] = true,
-							}, -- [9]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.elemental_blast.enabled",
-								["action"] = "elemental_blast",
-							}, -- [10]
-						},
-					},
-				},
-				["Enhancement"] = {
-					["source"] = "https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/Tier22/T22_Shaman_Enhancement.simc",
-					["builtIn"] = true,
-					["date"] = 20181210.2249,
-					["author"] = "SimulationCraft",
-					["desc"] = "# Enhancement Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Enhancement.simc\n# December 10, 2018 - 22:47",
-					["lists"] = {
-						["opener"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "maelstrom < 15 & time < gcd",
-								["action"] = "rockbiter",
-							}, -- [1]
-						},
-						["core"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "variable.furyCheck25",
-								["action"] = "earthen_spike",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "active_enemies >= 3",
-								["action"] = "sundering",
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["action"] = "stormstrike",
-								["criteria"] = "azerite.lightning_conduit.enabled & ! debuff.lightning_conduit.up & active_enemies > 1 & ( buff.stormbringer.up || ( variable.OCPool70 & variable.furyCheck35 ) )",
-								["cycle_targets"] = 1,
-							}, -- [3]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.stormbringer.up || ( buff.gathering_storms.up & variable.OCPool70 & variable.furyCheck35 )",
-								["action"] = "stormstrike",
-							}, -- [4]
-							{
-								["enabled"] = true,
-								["criteria"] = "active_enemies >= 3 & variable.furyCheck25",
-								["action"] = "crash_lightning",
-							}, -- [5]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.overcharge.enabled & active_enemies = 1 & variable.furyCheck45 & maelstrom >= 40",
-								["action"] = "lightning_bolt",
-							}, -- [6]
-							{
-								["enabled"] = true,
-								["criteria"] = "variable.OCPool70 & variable.furyCheck35",
-								["action"] = "stormstrike",
-							}, -- [7]
-							{
-								["action"] = "sundering",
-								["enabled"] = true,
-							}, -- [8]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.forceful_winds.enabled & active_enemies > 1 & variable.furyCheck25",
-								["action"] = "crash_lightning",
-							}, -- [9]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.searing_assault.enabled",
-								["action"] = "flametongue",
-							}, -- [10]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.hot_hand.enabled & buff.hot_hand.react",
-								["action"] = "lava_lash",
-							}, -- [11]
-							{
-								["enabled"] = true,
-								["criteria"] = "active_enemies > 1 & variable.furyCheck25",
-								["action"] = "crash_lightning",
-							}, -- [12]
-						},
-						["default"] = {
-							{
-								["action"] = "wind_shear",
-								["enabled"] = true,
-							}, -- [1]
-							{
-								["value"] = "( ! talent.fury_of_air.enabled || ( talent.fury_of_air.enabled & maelstrom > 45 ) )",
-								["enabled"] = true,
-								["action"] = "variable",
-								["var_name"] = "furyCheck45",
-							}, -- [2]
-							{
-								["value"] = "( ! talent.fury_of_air.enabled || ( talent.fury_of_air.enabled & maelstrom > 35 ) )",
-								["enabled"] = true,
-								["action"] = "variable",
-								["var_name"] = "furyCheck35",
-							}, -- [3]
-							{
-								["value"] = "( ! talent.fury_of_air.enabled || ( talent.fury_of_air.enabled & maelstrom > 25 ) )",
-								["enabled"] = true,
-								["action"] = "variable",
-								["var_name"] = "furyCheck25",
-							}, -- [4]
-							{
-								["value"] = "( ! talent.overcharge.enabled || active_enemies > 1 || ( talent.overcharge.enabled & active_enemies = 1 & ( cooldown.lightning_bolt.remains >= 2 * gcd || maelstrom > 80 ) ) )",
-								["enabled"] = true,
-								["action"] = "variable",
-								["var_name"] = "OCPool80",
-							}, -- [5]
-							{
-								["value"] = "( ! talent.overcharge.enabled || active_enemies > 1 || ( talent.overcharge.enabled & active_enemies = 1 & ( cooldown.lightning_bolt.remains >= 2 * gcd || maelstrom > 70 ) ) )",
-								["enabled"] = true,
-								["action"] = "variable",
-								["var_name"] = "OCPool70",
-							}, -- [6]
-							{
-								["value"] = "( ! talent.overcharge.enabled || active_enemies > 1 || ( talent.overcharge.enabled & active_enemies = 1 & ( cooldown.lightning_bolt.remains >= 2 * gcd || maelstrom > 60 ) ) )",
-								["enabled"] = true,
-								["action"] = "variable",
-								["var_name"] = "OCPool60",
-							}, -- [7]
-							{
-								["action"] = "auto_attack",
-								["enabled"] = true,
-							}, -- [8]
-							{
-								["action"] = "use_items",
-								["enabled"] = true,
-							}, -- [9]
-							{
-								["enabled"] = true,
-								["action"] = "call_action_list",
-								["list_name"] = "opener",
-							}, -- [10]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.ascendance.up",
-								["action"] = "call_action_list",
-								["list_name"] = "asc",
-							}, -- [11]
-							{
-								["enabled"] = true,
-								["action"] = "call_action_list",
-								["list_name"] = "buffs",
-							}, -- [12]
-							{
-								["enabled"] = true,
-								["action"] = "call_action_list",
-								["list_name"] = "cds",
-							}, -- [13]
-							{
-								["enabled"] = true,
-								["action"] = "call_action_list",
-								["list_name"] = "core",
-							}, -- [14]
-							{
-								["enabled"] = true,
-								["action"] = "call_action_list",
-								["list_name"] = "filler",
-							}, -- [15]
-						},
-						["precombat"] = {
-							{
-								["enabled"] = true,
-							}, -- [1]
-							{
-								["enabled"] = true,
-							}, -- [2]
-							{
-								["enabled"] = true,
-							}, -- [3]
-							{
-								["enabled"] = true,
-							}, -- [4]
-							{
-								["action"] = "potion",
-								["enabled"] = true,
-							}, -- [5]
-							{
-								["action"] = "totem_mastery",
-								["enabled"] = true,
-							}, -- [6]
-							{
-								["action"] = "lightning_shield",
-								["enabled"] = true,
-							}, -- [7]
-						},
-						["asc"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "! buff.crash_lightning.up & active_enemies > 1 & variable.furyCheck25",
-								["action"] = "crash_lightning",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.landslide.enabled & ! buff.landslide.up & charges_fractional > 1.7",
-								["action"] = "rockbiter",
-							}, -- [2]
-							{
-								["action"] = "windstrike",
-								["enabled"] = true,
-							}, -- [3]
-						},
-						["buffs"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "! buff.crash_lightning.up & active_enemies > 1 & variable.furyCheck25",
-								["action"] = "crash_lightning",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.landslide.enabled & ! buff.landslide.up & charges_fractional > 1.7",
-								["action"] = "rockbiter",
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["criteria"] = "! ticking & maelstrom >= 20",
-								["action"] = "fury_of_air",
-							}, -- [3]
-							{
-								["enabled"] = true,
-								["criteria"] = "! buff.flametongue.up",
-								["action"] = "flametongue",
-							}, -- [4]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.hailstorm.enabled & ! buff.frostbrand.up & variable.furyCheck25",
-								["action"] = "frostbrand",
-							}, -- [5]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.flametongue.remains < 4.8 + gcd",
-								["action"] = "flametongue",
-							}, -- [6]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.hailstorm.enabled & buff.frostbrand.remains < 4.8 + gcd & variable.furyCheck25",
-								["action"] = "frostbrand",
-							}, -- [7]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.resonance_totem.remains < 2",
-								["action"] = "totem_mastery",
-							}, -- [8]
-						},
-						["cds"] = {
-							{
-								["enabled"] = false,
-								["criteria"] = "azerite.ancestral_resonance.enabled",
-								["action"] = "bloodlust",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "( talent.ascendance.enabled & buff.ascendance.up ) || ( talent.elemental_spirits.enabled & feral_spirit.remains > 5 ) || ( ! talent.ascendance.enabled & ! talent.elemental_spirits.enabled )",
-								["action"] = "berserking",
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["criteria"] = "( talent.ascendance.enabled & ( buff.ascendance.up || cooldown.ascendance.remains > 50 ) ) || ( ! talent.ascendance.enabled & ( feral_spirit.remains > 5 || cooldown.feral_spirit.remains > 50 ) )",
-								["action"] = "blood_fury",
-							}, -- [3]
-							{
-								["enabled"] = true,
-								["criteria"] = "( talent.ascendance.enabled & ( buff.ascendance.up || cooldown.ascendance.remains > 50 ) ) || ( ! talent.ascendance.enabled & ( feral_spirit.remains > 5 || cooldown.feral_spirit.remains > 50 ) )",
-								["action"] = "fireblood",
-							}, -- [4]
-							{
-								["enabled"] = true,
-								["criteria"] = "( talent.ascendance.enabled & ( buff.ascendance.up || cooldown.ascendance.remains > 50 ) ) || ( ! talent.ascendance.enabled & ( feral_spirit.remains > 5 || cooldown.feral_spirit.remains > 50 ) )",
-								["action"] = "ancestral_call",
-							}, -- [5]
-							{
-								["enabled"] = true,
-								["criteria"] = "buff.ascendance.up || ! talent.ascendance.enabled & feral_spirit.remains > 5 || time_to_die <= 60",
-								["action"] = "potion",
-							}, -- [6]
-							{
-								["action"] = "feral_spirit",
-								["enabled"] = true,
-							}, -- [7]
-							{
-								["enabled"] = true,
-								["criteria"] = "cooldown.strike.remains > 0",
-								["action"] = "ascendance",
-							}, -- [8]
-							{
-								["action"] = "earth_elemental",
-								["enabled"] = true,
-							}, -- [9]
-						},
-						["filler"] = {
-							{
-								["enabled"] = true,
-								["criteria"] = "maelstrom < 70 & ! buff.strength_of_earth.up",
-								["action"] = "rockbiter",
-							}, -- [1]
-							{
-								["enabled"] = true,
-								["criteria"] = "talent.crashing_storm.enabled & variable.OCPool60",
-								["action"] = "crash_lightning",
-							}, -- [2]
-							{
-								["enabled"] = true,
-								["criteria"] = "variable.OCPool80 & variable.furyCheck45",
-								["action"] = "lava_lash",
-							}, -- [3]
-							{
-								["action"] = "rockbiter",
-								["enabled"] = true,
-							}, -- [4]
-							{
-								["action"] = "flametongue",
-								["enabled"] = true,
-							}, -- [5]
-						},
-					},
-					["version"] = 20181210.2249,
-					["warnings"] = "WARNING:  The import for 'default' required some automated changes.\nLine 8: Unsupported action 'auto_attack'.\n\nImported 8 action lists.\n",
-					["spec"] = 263,
-					["profile"] = "# Enhancement Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Enhancement.simc\n# December 10, 2018 - 22:47\n\n# Executed before combat begins. Accepts non-harmful actions only.\nactions.precombat=flask\nactions.precombat+=/food\nactions.precombat+=/augmentation\n# Snapshot raid buffed stats before combat begins and pre-potting is done.\nactions.precombat+=/snapshot_stats\nactions.precombat+=/potion\nactions.precombat+=/totem_mastery\nactions.precombat+=/lightning_shield\n\n# Executed every time the actor is available.\nactions=wind_shear\nactions+=/variable,name=furyCheck45,value=(!talent.fury_of_air.enabled||(talent.fury_of_air.enabled&maelstrom>45))\nactions+=/variable,name=furyCheck35,value=(!talent.fury_of_air.enabled||(talent.fury_of_air.enabled&maelstrom>35))\nactions+=/variable,name=furyCheck25,value=(!talent.fury_of_air.enabled||(talent.fury_of_air.enabled&maelstrom>25))\nactions+=/variable,name=OCPool80,value=(!talent.overcharge.enabled||active_enemies>1||(talent.overcharge.enabled&active_enemies=1&(cooldown.lightning_bolt.remains>=2*gcd||maelstrom>80)))\nactions+=/variable,name=OCPool70,value=(!talent.overcharge.enabled||active_enemies>1||(talent.overcharge.enabled&active_enemies=1&(cooldown.lightning_bolt.remains>=2*gcd||maelstrom>70)))\nactions+=/variable,name=OCPool60,value=(!talent.overcharge.enabled||active_enemies>1||(talent.overcharge.enabled&active_enemies=1&(cooldown.lightning_bolt.remains>=2*gcd||maelstrom>60)))\nactions+=/auto_attack\nactions+=/use_items\nactions+=/call_action_list,name=opener\nactions+=/call_action_list,name=asc,if=buff.ascendance.up\nactions+=/call_action_list,name=buffs\nactions+=/call_action_list,name=cds\nactions+=/call_action_list,name=core\nactions+=/call_action_list,name=filler\n\nactions.asc=crash_lightning,if=!buff.crash_lightning.up&active_enemies>1&variable.furyCheck25\nactions.asc+=/rockbiter,if=talent.landslide.enabled&!buff.landslide.up&charges_fractional>1.7\nactions.asc+=/windstrike\n\nactions.buffs=crash_lightning,if=!buff.crash_lightning.up&active_enemies>1&variable.furyCheck25\nactions.buffs+=/rockbiter,if=talent.landslide.enabled&!buff.landslide.up&charges_fractional>1.7\nactions.buffs+=/fury_of_air,if=!ticking&maelstrom>=20\nactions.buffs+=/flametongue,if=!buff.flametongue.up\nactions.buffs+=/frostbrand,if=talent.hailstorm.enabled&!buff.frostbrand.up&variable.furyCheck25\nactions.buffs+=/flametongue,if=buff.flametongue.remains<4.8+gcd\nactions.buffs+=/frostbrand,if=talent.hailstorm.enabled&buff.frostbrand.remains<4.8+gcd&variable.furyCheck25\nactions.buffs+=/totem_mastery,if=buff.resonance_totem.remains<2\n\n# Cast Bloodlust manually if the Azerite Trait Ancestral Resonance is present.\nactions.cds=bloodlust,if=azerite.ancestral_resonance.enabled\nactions.cds+=/berserking,if=(talent.ascendance.enabled&buff.ascendance.up)||(talent.elemental_spirits.enabled&feral_spirit.remains>5)||(!talent.ascendance.enabled&!talent.elemental_spirits.enabled)\nactions.cds+=/blood_fury,if=(talent.ascendance.enabled&(buff.ascendance.up||cooldown.ascendance.remains>50))||(!talent.ascendance.enabled&(feral_spirit.remains>5||cooldown.feral_spirit.remains>50))\nactions.cds+=/fireblood,if=(talent.ascendance.enabled&(buff.ascendance.up||cooldown.ascendance.remains>50))||(!talent.ascendance.enabled&(feral_spirit.remains>5||cooldown.feral_spirit.remains>50))\nactions.cds+=/ancestral_call,if=(talent.ascendance.enabled&(buff.ascendance.up||cooldown.ascendance.remains>50))||(!talent.ascendance.enabled&(feral_spirit.remains>5||cooldown.feral_spirit.remains>50))\nactions.cds+=/potion,if=buff.ascendance.up||!talent.ascendance.enabled&feral_spirit.remains>5||time_to_die<=60\nactions.cds+=/feral_spirit\nactions.cds+=/ascendance,if=cooldown.strike.remains>0\nactions.cds+=/earth_elemental\n\nactions.core=earthen_spike,if=variable.furyCheck25\nactions.core+=/sundering,if=active_enemies>=3\nactions.core+=/stormstrike,cycle_targets=1,if=azerite.lightning_conduit.enabled&!debuff.lightning_conduit.up&active_enemies>1&(buff.stormbringer.up||(variable.OCPool70&variable.furyCheck35))\nactions.core+=/stormstrike,if=buff.stormbringer.up||(buff.gathering_storms.up&variable.OCPool70&variable.furyCheck35)\nactions.core+=/crash_lightning,if=active_enemies>=3&variable.furyCheck25\nactions.core+=/lightning_bolt,if=talent.overcharge.enabled&active_enemies=1&variable.furyCheck45&maelstrom>=40\nactions.core+=/stormstrike,if=variable.OCPool70&variable.furyCheck35\nactions.core+=/sundering\nactions.core+=/crash_lightning,if=talent.forceful_winds.enabled&active_enemies>1&variable.furyCheck25\nactions.core+=/flametongue,if=talent.searing_assault.enabled\nactions.core+=/lava_lash,if=talent.hot_hand.enabled&buff.hot_hand.react\nactions.core+=/crash_lightning,if=active_enemies>1&variable.furyCheck25\n\nactions.filler=rockbiter,if=maelstrom<70&!buff.strength_of_earth.up\nactions.filler+=/crash_lightning,if=talent.crashing_storm.enabled&variable.OCPool60\nactions.filler+=/lava_lash,if=variable.OCPool80&variable.furyCheck45\nactions.filler+=/rockbiter\nactions.filler+=/flametongue\n\nactions.opener=rockbiter,if=maelstrom<15&time<gcd",
-				},
-			},
-		},
 		["Nisegob - Stormscale"] = {
 			["runOnce"] = {
 				["reviseDisplayModes_20180709"] = true,
@@ -9163,6 +8479,47 @@ HekiliDB = {
 				["minimapPos"] = 194.886142986271,
 			},
 		},
+		["Niseko - Twisting Nether"] = {
+			["Enabled"] = false,
+			["specs"] = {
+				[258] = {
+					["enabled"] = false,
+					["maxRefresh"] = 10,
+					["nameplateRange"] = 8,
+					["nameplates"] = false,
+					["throttleRefresh"] = false,
+					["damageExpiration"] = 6,
+					["aoe"] = 3,
+					["damage"] = true,
+				},
+			},
+			["displays"] = {
+				["Interrupts"] = {
+				},
+			},
+			["runOnce"] = {
+				["useNewAPLsForDemonHunters_06132017_1"] = true,
+				["removeActionListEnabled_04102017"] = true,
+				["reduceExtremeZoom_12182017"] = true,
+				["changeSwipesToSwipe_11052017"] = true,
+				["reviseDisplayModes_20180709"] = true,
+				["elementalSimpleAOEis3_12132017"] = true,
+				["turnOffDebug_04162017"] = true,
+				["removeExtraQuotes_04142017_3"] = true,
+				["changeThrashCatToThrash_11062017"] = true,
+				["forceRetToRefreshAPLsFor730_09012017"] = true,
+				["disableTrinketsForMonks_10102017"] = true,
+				["attachDefaultAPLs_04022017"] = true,
+				["spruceUpActionListNames_04162017"] = true,
+				["changeGuardianAPLToSimC_2018012102"] = true,
+				["setDisplayTypes_04022017"] = true,
+				["undoIncarnationNameChange_12042017"] = true,
+				["disableSpecterForPaladins_10102017"] = true,
+				["dontDisableGlobalCooldownYouFools_05232017"] = true,
+				["changeBrewmasterAPLToSimC_20180121"] = true,
+			},
+			["AutoDisabled"] = true,
+		},
 		["Donnerbock - Ysera"] = {
 			["runOnce"] = {
 				["useNewAPLsForDemonHunters_06132017_1"] = true,
@@ -9279,8 +8636,8 @@ HekiliDB = {
 			},
 			["actionLists"] = {
 				{
-					["Specialization"] = 0,
 					["Default"] = true,
+					["Name"] = "Usable Items",
 					["Hidden"] = true,
 					["Release"] = 20180208.181753,
 					["Script"] = "",
@@ -9406,11 +8763,11 @@ HekiliDB = {
 							["Indicator"] = "none",
 						}, -- [12]
 					},
-					["Name"] = "Usable Items",
+					["Specialization"] = 0,
 				}, -- [1]
 				{
-					["Default"] = true,
 					["Name"] = "SimC Feral: default",
+					["Script"] = "",
 					["Specialization"] = 103,
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "ticking and ( 0.05 + remains - ( duration * 0.3 ) ) or 0",
@@ -9618,7 +8975,7 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [16]
 					},
-					["Script"] = "",
+					["Default"] = true,
 				}, -- [2]
 				{
 					["Name"] = "SimC Feral: precombat",
@@ -9679,8 +9036,8 @@ HekiliDB = {
 					["Default"] = true,
 				}, -- [3]
 				{
-					["Specialization"] = 103,
 					["Name"] = "SimC Feral: cooldowns",
+					["Script"] = "",
 					["Default"] = true,
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "energy.time_to_30",
@@ -9829,11 +9186,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [11]
 					},
-					["Script"] = "",
+					["Specialization"] = 103,
 				}, -- [4]
 				{
-					["Name"] = "SimC Feral: single target",
 					["Specialization"] = 103,
+					["Script"] = "",
 					["Default"] = true,
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "ticking and ( 0.05 + remains - ( duration * 0.3 ) ) or 0",
@@ -9958,11 +9315,11 @@ HekiliDB = {
 							["ModName"] = "SimC Feral: ST generators",
 						}, -- [9]
 					},
-					["Script"] = "",
+					["Name"] = "SimC Feral: single target",
 				}, -- [5]
 				{
-					["Specialization"] = 103,
 					["Script"] = "",
+					["Default"] = true,
 					["Name"] = "SimC Feral: ST finishers",
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "",
@@ -10078,11 +9435,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [8]
 					},
-					["Default"] = true,
+					["Specialization"] = 103,
 				}, -- [6]
 				{
-					["Specialization"] = 103,
 					["Script"] = "",
+					["Default"] = true,
 					["Name"] = "SimC Feral: ST generators",
 					["Release"] = 20180205.201654,
 					["ReadyTime"] = "ticking and ( 0.01 + remains - ( duration * 0.3 ) ) or 0",
@@ -10361,7 +9718,7 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [20]
 					},
-					["Default"] = true,
+					["Specialization"] = 103,
 				}, -- [7]
 				{
 					["Default"] = true,
@@ -12007,15 +11364,15 @@ HekiliDB = {
 							}, -- [7]
 							{
 								["enabled"] = true,
-								["action"] = "feloiled_infernal_machine",
 								["criteria"] = "pet.gargoyle.active || ! talent.summon_gargoyle.enabled",
 								["name"] = "feloiled_infernal_machine",
+								["action"] = "feloiled_infernal_machine",
 							}, -- [8]
 							{
 								["enabled"] = true,
-								["action"] = "ring_of_collapsing_futures",
 								["criteria"] = "( buff.temptation.stack = 0 & target.time_to_die > 60 ) || target.time_to_die < 60",
 								["name"] = "ring_of_collapsing_futures",
+								["action"] = "ring_of_collapsing_futures",
 							}, -- [9]
 							{
 								["enabled"] = true,
@@ -12576,9 +11933,9 @@ HekiliDB = {
 							}, -- [1]
 							{
 								["enabled"] = true,
-								["name"] = "horn_of_valor",
 								["action"] = "horn_of_valor",
 								["criteria"] = "buff.pillar_of_frost.up & ( ! talent.breath_of_sindragosa.enabled || ! cooldown.breath_of_sindragosa.remains > 0 )",
+								["name"] = "horn_of_valor",
 							}, -- [2]
 							{
 								["enabled"] = true,
@@ -12669,46 +12026,689 @@ HekiliDB = {
 				},
 			},
 		},
-		["Niseko - Twisting Nether"] = {
-			["Enabled"] = false,
+		["Yoshicakes - Stormscale"] = {
+			["runOnce"] = {
+				["reviseDisplayModes_20180709"] = true,
+				["enableAllOfTheThings_20180820"] = true,
+			},
 			["specs"] = {
-				[258] = {
-					["enabled"] = false,
+				[263] = {
+					["enabled"] = true,
 					["maxRefresh"] = 10,
-					["nameplateRange"] = 8,
-					["aoe"] = 3,
-					["nameplates"] = false,
-					["damageExpiration"] = 6,
-					["throttleRefresh"] = false,
 					["damage"] = true,
+					["aoe"] = 2,
+					["package"] = "Enhancement",
+					["damageExpiration"] = 8,
+					["potionsReset"] = 20180919.1,
+					["throttleRefresh"] = false,
+					["nameplateRange"] = 8,
+					["cycle"] = false,
+					["potion"] = "battle_potion_of_agility",
+					["debuffPadding"] = 0,
+					["nameplates"] = true,
+					["gcdSync"] = true,
+					["damageDots"] = false,
+					["buffPadding"] = 0.25,
+				},
+				[262] = {
+					["enabled"] = true,
+					["maxRefresh"] = 10,
+					["damage"] = true,
+					["aoe"] = 3,
+					["package"] = "Elemental",
+					["damageExpiration"] = 6,
+					["potionsReset"] = 20180919.1,
+					["throttleRefresh"] = false,
+					["nameplateRange"] = 8,
+					["cycle"] = false,
+					["potion"] = "battle_potion_of_intellect",
+					["debuffPadding"] = 0,
+					["nameplates"] = false,
+					["gcdSync"] = true,
+					["damageDots"] = false,
+					["buffPadding"] = 0.25,
 				},
 			},
 			["displays"] = {
 				["Interrupts"] = {
 				},
 			},
-			["runOnce"] = {
-				["useNewAPLsForDemonHunters_06132017_1"] = true,
-				["removeActionListEnabled_04102017"] = true,
-				["reduceExtremeZoom_12182017"] = true,
-				["changeSwipesToSwipe_11052017"] = true,
-				["reviseDisplayModes_20180709"] = true,
-				["elementalSimpleAOEis3_12132017"] = true,
-				["turnOffDebug_04162017"] = true,
-				["removeExtraQuotes_04142017_3"] = true,
-				["changeThrashCatToThrash_11062017"] = true,
-				["forceRetToRefreshAPLsFor730_09012017"] = true,
-				["disableTrinketsForMonks_10102017"] = true,
-				["attachDefaultAPLs_04022017"] = true,
-				["spruceUpActionListNames_04162017"] = true,
-				["changeGuardianAPLToSimC_2018012102"] = true,
-				["setDisplayTypes_04022017"] = true,
-				["undoIncarnationNameChange_12042017"] = true,
-				["disableSpecterForPaladins_10102017"] = true,
-				["dontDisableGlobalCooldownYouFools_05232017"] = true,
-				["changeBrewmasterAPLToSimC_20180121"] = true,
+			["packs"] = {
+				["Elemental"] = {
+					["source"] = "https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Elemental.simc",
+					["builtIn"] = true,
+					["date"] = 20181211.2257,
+					["spec"] = 262,
+					["desc"] = "# Elemental Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Elemental.simc\n# December 11, 2018 - 22:40\n\n# Changes:\n# - Use X_elemental.up rather than checking cooldowns to see if elementals are active.\n# - Disabled Earth Elemental entries.",
+					["profile"] = "# Elemental Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Elemental.simc\n# December 11, 2018 - 22:40\n\n# Changes:\n# - Use X_elemental.up rather than checking cooldowns to see if elementals are active.\n# - Disabled Earth Elemental entries.\n\n# Executed before combat begins. Accepts non-harmful actions only.\nactions.precombat=flask\nactions.precombat+=/food\nactions.precombat+=/augmentation\n# Snapshot raid buffed stats before combat begins and pre-potting is done.\nactions.precombat+=/snapshot_stats\nactions.precombat+=/totem_mastery\nactions.precombat+=/earth_elemental,if=!talent.primal_elementalist.enabled\n# Use Stormkeeper precombat unless some adds will spawn soon.\nactions.precombat+=/stormkeeper,if=talent.stormkeeper.enabled&(raid_event.adds.count<3||raid_event.adds.in>50)\nactions.precombat+=/fire_elemental,if=!talent.storm_elemental.enabled\nactions.precombat+=/potion\nactions.precombat+=/elemental_blast,if=talent.elemental_blast.enabled\n\n# Executed every time the actor is available.\n# Cast Bloodlust manually if the Azerite Trait Ancestral Resonance is present.\nactions=bloodlust,if=azerite.ancestral_resonance.enabled\n# Interrupt of casts.\nactions+=/wind_shear\nactions+=/totem_mastery,if=talent.totem_mastery.enabled&buff.resonance_totem.remains<2\nactions+=/fire_elemental,if=!talent.storm_elemental.enabled\nactions+=/storm_elemental,if=talent.storm_elemental.enabled&(!talent.icefury.enabled||!buff.icefury.up&!cooldown.icefury.up)\nactions+=/earth_elemental,if=!talent.primal_elementalist.enabled||talent.primal_elementalist.enabled&(cooldown.fire_elemental.remains<120&!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120&talent.storm_elemental.enabled)\nactions+=/use_items\nactions+=/blood_fury,if=!talent.ascendance.enabled||buff.ascendance.up||cooldown.ascendance.remains>50\nactions+=/berserking,if=!talent.ascendance.enabled||buff.ascendance.up\nactions+=/fireblood,if=!talent.ascendance.enabled||buff.ascendance.up||cooldown.ascendance.remains>50\nactions+=/ancestral_call,if=!talent.ascendance.enabled||buff.ascendance.up||cooldown.ascendance.remains>50\nactions+=/run_action_list,name=aoe,if=active_enemies>2&(spell_targets.chain_lightning>2||spell_targets.lava_beam>2)\nactions+=/run_action_list,name=single_target\n\n# Multi target action priority list\nactions.aoe=stormkeeper,if=talent.stormkeeper.enabled\nactions.aoe+=/ascendance,if=talent.ascendance.enabled&(talent.storm_elemental.enabled&cooldown.storm_elemental.remains<120&cooldown.storm_elemental.remains>15||!talent.storm_elemental.enabled)\nactions.aoe+=/liquid_magma_totem,if=talent.liquid_magma_totem.enabled\n\n# Spread Flame Shock in <=4 target fights, but not during SE uptime, unless you're fighting 3 targets and have less than 14 Wind Gust stacks.\nactions.aoe+=/flame_shock,cycle_targets=1,if=refreshable&spell_targets.chain_lightning<5&(!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120||spell_targets.chain_lightning=3&buff.wind_gust.stack<14)\n\n# Try to game Earthquake with Master of the Elements buff when fighting 3 targets. Don't overcap Maelstrom!\nactions.aoe+=/earthquake,if=!talent.master_of_the_elements.enabled||buff.stormkeeper.up||maelstrom>=(100-4*spell_targets.chain_lightning)||buff.master_of_the_elements.up||spell_targets.chain_lightning>3\n\n# Only cast Lava Burst on three targets if it is an instant and Storm Elemental is NOT active.\nactions.aoe+=/lava_burst,if=(buff.lava_surge.up||buff.ascendance.up)&spell_targets.chain_lightning<4&(!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120)\n\n# Use Elemental Blast against up to 3 targets as long as Storm Elemental is not active.\nactions.aoe+=/elemental_blast,if=talent.elemental_blast.enabled&spell_targets.chain_lightning<4&(!talent.storm_elemental.enabled||cooldown.storm_elemental.remains<120)\nactions.aoe+=/lava_beam,if=talent.ascendance.enabled\nactions.aoe+=/chain_lightning\nactions.aoe+=/lava_burst,moving=1,if=talent.ascendance.enabled\nactions.aoe+=/flame_shock,moving=1,cycle_targets=1,if=refreshable\nactions.aoe+=/frost_shock,moving=1\n\n\n# Single Target Action Priority List\n# Ensure FS is active unless you have 14 or more stacks of Wind Gust from Storm Elemental. (Edge case: upcoming Asc but active SE; don't )\nactions.single_target=flame_shock,if=(!ticking||talent.storm_elemental.enabled&cooldown.storm_elemental.remains<2*gcd||dot.flame_shock.remains<=gcd||talent.ascendance.enabled&dot.flame_shock.remains<(cooldown.ascendance.remains+buff.ascendance.duration)&cooldown.ascendance.remains<4&(!talent.storm_elemental.enabled||talent.storm_elemental.enabled&cooldown.storm_elemental.remains<120))&buff.wind_gust.stack<14\n\n# Use Ascendance after you've spent all Lava Burst charges and only if neither Storm Elemental nor Icefury are currently active.\nactions.single_target+=/ascendance,if=talent.ascendance.enabled&(time>=60||buff.bloodlust.up)&cooldown.lava_burst.remains>0&(!talent.storm_elemental.enabled||storm_elemental.up)&(!talent.icefury.enabled||!buff.icefury.up&!cooldown.icefury.up)\n\n# Don't use Elemental Blast if you could cast a Master of the Elements empowered Earth Shock instead. Don't cast Elemental Blast during Storm Elemental unless you have 3x Natural Harmony in which case you stop using Elemental Blast once you reach 14 stacks of Wind Gust.\nactions.single_target+=/elemental_blast,if=talent.elemental_blast.enabled&(talent.master_of_the_elements.enabled&buff.master_of_the_elements.up&maelstrom<60||!talent.master_of_the_elements.enabled)&(!(storm_elemental.up&talent.storm_elemental.enabled)||azerite.natural_harmony.rank=3&buff.wind_gust.stack<14)\n\n# Keep SK for large or soon add waves. Unless you have Surge of Power, in which case you want to double buff Lightning Bolt by pooling Maelstrom beforehand. Example sequence: 100MS, ES, SK, LB, LvB, ES, LB\nactions.single_target+=/stormkeeper,if=talent.stormkeeper.enabled&(raid_event.adds.count<3||raid_event.adds.in>50)&(!talent.surge_of_power.enabled||buff.surge_of_power.up||maelstrom>=44)\nactions.single_target+=/liquid_magma_totem,if=talent.liquid_magma_totem.enabled&(raid_event.adds.count<3||raid_event.adds.in>50)\n\n# Combine Stormkeeper with Master of the Elements or Surge of Power.\nactions.single_target+=/lightning_bolt,if=buff.stormkeeper.up&spell_targets.chain_lightning<2&(buff.master_of_the_elements.up&!talent.surge_of_power.enabled||buff.surge_of_power.up)\n\n# There might come an update for this line with some SoP logic.\nactions.single_target+=/earthquake,if=active_enemies>1&spell_targets.chain_lightning>1&(!talent.surge_of_power.enabled||!dot.flame_shock.refreshable||storm_elemental.up)&(!talent.master_of_the_elements.enabled||buff.master_of_the_elements.up||maelstrom>=92)\n\n# Boy...what a condition. With Master of the Elements pool Maelstrom up to 8 Maelstrom below the cap to ensure it's used with Earth Shock. Without Master of the Elements, use Earth Shock either if Stormkeeper is up, Maelstrom is 10 Maelstrom below the cap or less, or either Storm Elemental isn't talented or it's not active and your last Storm Elemental of the fight will have only a partial duration.\nactions.single_target+=/earth_shock,if=!buff.surge_of_power.up&talent.master_of_the_elements.enabled&(buff.master_of_the_elements.up||maelstrom>=92+30*talent.call_the_thunder.enabled||buff.stormkeeper.up&active_enemies<2)||!talent.master_of_the_elements.enabled&(buff.stormkeeper.up||maelstrom>=90+30*talent.call_the_thunder.enabled||!(storm_elemental.up&talent.storm_elemental.enabled)&expected_combat_length-time-cooldown.storm_elemental.remains-150*floor((expected_combat_length-time-cooldown.storm_elemental.remains)%150)>=30*(1+(azerite.echo_of_the_elementals.rank>=2)))\n\n# Use Earth Shock if Surge of Power is talented, but neither it nor a DPS Elemental is active at the moment, and Lava Burst is ready or will be within the next GCD.\nactions.single_target+=/earth_shock,if=talent.surge_of_power.enabled&!buff.surge_of_power.up&cooldown.lava_burst.remains<=gcd&(!talent.storm_elemental.enabled&!(fire_elemental.up)||talent.storm_elemental.enabled&!(storm_elemental.up))\n\n# Cast Lightning Bolts during Storm Elemental duration.\nactions.single_target+=/lightning_bolt,if=storm_elemental.up&talent.storm_elemental.enabled\n\n# Use Frost Shock with Icefury and Master of the Elements.\nactions.single_target+=/frost_shock,if=talent.icefury.enabled&talent.master_of_the_elements.enabled&buff.icefury.up&buff.master_of_the_elements.up\nactions.single_target+=/lava_burst,if=buff.ascendance.up\n\n# Utilize Surge of Power to spread Flame Shock if multiple enemies are present.\nactions.single_target+=/flame_shock,cycle_targets=1,if=refreshable&active_enemies>1&buff.surge_of_power.up\n\n# Use Lava Burst with Surge of Power if the last potential usage of a DPS Elemental hasn't a full duration OR if you could get another usage of the DPS Elemental if the remaining fight was 16% longer.\nactions.single_target+=/lava_burst,if=talent.storm_elemental.enabled&cooldown_react&buff.surge_of_power.up&(expected_combat_length-time-cooldown.storm_elemental.remains-150*floor((expected_combat_length-time-cooldown.storm_elemental.remains)%150)<30*(1+(azerite.echo_of_the_elementals.rank>=2))||(1.16*(expected_combat_length-time)-cooldown.storm_elemental.remains-150*floor((1.16*(expected_combat_length-time)-cooldown.storm_elemental.remains)%150))<(expected_combat_length-time-cooldown.storm_elemental.remains-150*floor((expected_combat_length-time-cooldown.storm_elemental.remains)%150)))\n\n# Use Lava Burst with Surge of Power if the last potential usage of a DPS Elemental hasn't a full duration OR if you could get another usage of the DPS Elemental if the remaining fight was 16% longer.\nactions.single_target+=/lava_burst,if=!talent.storm_elemental.enabled&cooldown_react&buff.surge_of_power.up&(expected_combat_length-time-cooldown.fire_elemental.remains-150*floor((expected_combat_length-time-cooldown.fire_elemental.remains)%150)<30*(1+(azerite.echo_of_the_elementals.rank>=2))||(1.16*(expected_combat_length-time)-cooldown.fire_elemental.remains-150*floor((1.16*(expected_combat_length-time)-cooldown.fire_elemental.remains)%150))<(expected_combat_length-time-cooldown.fire_elemental.remains-150*floor((expected_combat_length-time-cooldown.fire_elemental.remains)%150)))\nactions.single_target+=/lightning_bolt,if=buff.surge_of_power.up\nactions.single_target+=/lava_burst,if=cooldown_react\n\n# Don't accidentally use Surge of Power with Flame Shock during single target.\nactions.single_target+=/flame_shock,cycle_targets=1,if=refreshable&!buff.surge_of_power.up\nactions.single_target+=/totem_mastery,if=talent.totem_mastery.enabled&(buff.resonance_totem.remains<6||(buff.resonance_totem.remains<(buff.ascendance.duration+cooldown.ascendance.remains)&cooldown.ascendance.remains<15))\n\n# Slightly game Icefury buff to hopefully buff some with Master of the Elements.\nactions.single_target+=/frost_shock,if=talent.icefury.enabled&buff.icefury.up&(buff.icefury.remains<gcd*4*buff.icefury.stack||buff.stormkeeper.up||!talent.master_of_the_elements.enabled)\nactions.single_target+=/icefury,if=talent.icefury.enabled\nactions.single_target+=/lightning_bolt\nactions.single_target+=/flame_shock,moving=1,cycle_targets=1,if=refreshable\nactions.single_target+=/flame_shock,moving=1,if=movement.distance>6\n\n# Frost Shock is our movement filler.\nactions.single_target+=/frost_shock,moving=1",
+					["version"] = 20181211.2257,
+					["warnings"] = "WARNING:  The import for 'aoe' required some automated changes.\nThe following auras were used in the action list but were not found in the addon database:\n - wind_gust\n\nWARNING:  The import for 'single_target' required some automated changes.\nThe following auras were used in the action list but were not found in the addon database:\n - wind_gust\n\nImported 4 action lists.\n",
+					["author"] = "SimulationCraft",
+					["lists"] = {
+						["aoe"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.stormkeeper.enabled",
+								["action"] = "stormkeeper",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.ascendance.enabled & ( talent.storm_elemental.enabled & cooldown.storm_elemental.remains < 120 & cooldown.storm_elemental.remains > 15 || ! talent.storm_elemental.enabled )",
+								["action"] = "ascendance",
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.liquid_magma_totem.enabled",
+								["action"] = "liquid_magma_totem",
+							}, -- [3]
+							{
+								["enabled"] = true,
+								["action"] = "flame_shock",
+								["criteria"] = "refreshable & spell_targets.chain_lightning < 5 & ( ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 || spell_targets.chain_lightning = 3 & buff.wind_gust.stack < 14 )",
+								["cycle_targets"] = 1,
+							}, -- [4]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.master_of_the_elements.enabled || buff.stormkeeper.up || maelstrom >= ( 100 - 4 * spell_targets.chain_lightning ) || buff.master_of_the_elements.up || spell_targets.chain_lightning > 3",
+								["action"] = "earthquake",
+							}, -- [5]
+							{
+								["enabled"] = true,
+								["criteria"] = "( buff.lava_surge.up || buff.ascendance.up ) & spell_targets.chain_lightning < 4 & ( ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 )",
+								["action"] = "lava_burst",
+							}, -- [6]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.elemental_blast.enabled & spell_targets.chain_lightning < 4 & ( ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 )",
+								["action"] = "elemental_blast",
+							}, -- [7]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.ascendance.enabled",
+								["action"] = "lava_beam",
+							}, -- [8]
+							{
+								["action"] = "chain_lightning",
+								["enabled"] = true,
+							}, -- [9]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.ascendance.enabled",
+								["action"] = "lava_burst",
+								["moving"] = "1",
+							}, -- [10]
+							{
+								["enabled"] = true,
+								["action"] = "flame_shock",
+								["cycle_targets"] = 1,
+								["criteria"] = "refreshable",
+								["moving"] = "1",
+							}, -- [11]
+							{
+								["moving"] = "1",
+								["action"] = "frost_shock",
+								["enabled"] = true,
+							}, -- [12]
+						},
+						["single_target"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "( ! ticking || talent.storm_elemental.enabled & cooldown.storm_elemental.remains < 2 * gcd || dot.flame_shock.remains <= gcd || talent.ascendance.enabled & dot.flame_shock.remains < ( cooldown.ascendance.remains + buff.ascendance.duration ) & cooldown.ascendance.remains < 4 & ( ! talent.storm_elemental.enabled || talent.storm_elemental.enabled & cooldown.storm_elemental.remains < 120 ) ) & buff.wind_gust.stack < 14",
+								["action"] = "flame_shock",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.ascendance.enabled & ( time >= 60 || buff.bloodlust.up ) & cooldown.lava_burst.remains > 0 & ( ! talent.storm_elemental.enabled || storm_elemental.up ) & ( ! talent.icefury.enabled || ! buff.icefury.up & ! cooldown.icefury.up )",
+								["action"] = "ascendance",
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.elemental_blast.enabled & ( talent.master_of_the_elements.enabled & buff.master_of_the_elements.up & maelstrom < 60 || ! talent.master_of_the_elements.enabled ) & ( ! ( storm_elemental.up & talent.storm_elemental.enabled ) || azerite.natural_harmony.rank = 3 & buff.wind_gust.stack < 14 )",
+								["action"] = "elemental_blast",
+							}, -- [3]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.stormkeeper.enabled & ( raid_event.adds.count < 3 || raid_event.adds.in > 50 ) & ( ! talent.surge_of_power.enabled || buff.surge_of_power.up || maelstrom >= 44 )",
+								["action"] = "stormkeeper",
+							}, -- [4]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.liquid_magma_totem.enabled & ( raid_event.adds.count < 3 || raid_event.adds.in > 50 )",
+								["action"] = "liquid_magma_totem",
+							}, -- [5]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.stormkeeper.up & spell_targets.chain_lightning < 2 & ( buff.master_of_the_elements.up & ! talent.surge_of_power.enabled || buff.surge_of_power.up )",
+								["action"] = "lightning_bolt",
+							}, -- [6]
+							{
+								["enabled"] = true,
+								["criteria"] = "active_enemies > 1 & spell_targets.chain_lightning > 1 & ( ! talent.surge_of_power.enabled || ! dot.flame_shock.refreshable || storm_elemental.up ) & ( ! talent.master_of_the_elements.enabled || buff.master_of_the_elements.up || maelstrom >= 92 )",
+								["action"] = "earthquake",
+							}, -- [7]
+							{
+								["enabled"] = true,
+								["criteria"] = "! buff.surge_of_power.up & talent.master_of_the_elements.enabled & ( buff.master_of_the_elements.up || maelstrom >= 92 + 30 * talent.call_the_thunder.enabled || buff.stormkeeper.up & active_enemies < 2 ) || ! talent.master_of_the_elements.enabled & ( buff.stormkeeper.up || maelstrom >= 90 + 30 * talent.call_the_thunder.enabled || ! ( storm_elemental.up & talent.storm_elemental.enabled ) & expected_combat_length - time - cooldown.storm_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.storm_elemental.remains ) % 150 ) >= 30 * ( 1 + ( azerite.echo_of_the_elementals.rank >= 2 ) ) )",
+								["action"] = "earth_shock",
+							}, -- [8]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.surge_of_power.enabled & ! buff.surge_of_power.up & cooldown.lava_burst.remains <= gcd & ( ! talent.storm_elemental.enabled & ! ( fire_elemental.up ) || talent.storm_elemental.enabled & ! ( storm_elemental.up ) )",
+								["action"] = "earth_shock",
+							}, -- [9]
+							{
+								["enabled"] = true,
+								["criteria"] = "storm_elemental.up & talent.storm_elemental.enabled",
+								["action"] = "lightning_bolt",
+							}, -- [10]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.icefury.enabled & talent.master_of_the_elements.enabled & buff.icefury.up & buff.master_of_the_elements.up",
+								["action"] = "frost_shock",
+							}, -- [11]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.ascendance.up",
+								["action"] = "lava_burst",
+							}, -- [12]
+							{
+								["enabled"] = true,
+								["action"] = "flame_shock",
+								["criteria"] = "refreshable & active_enemies > 1 & buff.surge_of_power.up",
+								["cycle_targets"] = 1,
+							}, -- [13]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.storm_elemental.enabled & cooldown_react & buff.surge_of_power.up & ( expected_combat_length - time - cooldown.storm_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.storm_elemental.remains ) % 150 ) < 30 * ( 1 + ( azerite.echo_of_the_elementals.rank >= 2 ) ) || ( 1.16 * ( expected_combat_length - time ) - cooldown.storm_elemental.remains - 150 * floor ( ( 1.16 * ( expected_combat_length - time ) - cooldown.storm_elemental.remains ) % 150 ) ) < ( expected_combat_length - time - cooldown.storm_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.storm_elemental.remains ) % 150 ) ) )",
+								["action"] = "lava_burst",
+							}, -- [14]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.storm_elemental.enabled & cooldown_react & buff.surge_of_power.up & ( expected_combat_length - time - cooldown.fire_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.fire_elemental.remains ) % 150 ) < 30 * ( 1 + ( azerite.echo_of_the_elementals.rank >= 2 ) ) || ( 1.16 * ( expected_combat_length - time ) - cooldown.fire_elemental.remains - 150 * floor ( ( 1.16 * ( expected_combat_length - time ) - cooldown.fire_elemental.remains ) % 150 ) ) < ( expected_combat_length - time - cooldown.fire_elemental.remains - 150 * floor ( ( expected_combat_length - time - cooldown.fire_elemental.remains ) % 150 ) ) )",
+								["action"] = "lava_burst",
+							}, -- [15]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.surge_of_power.up",
+								["action"] = "lightning_bolt",
+							}, -- [16]
+							{
+								["enabled"] = true,
+								["criteria"] = "cooldown_react",
+								["action"] = "lava_burst",
+							}, -- [17]
+							{
+								["enabled"] = true,
+								["action"] = "flame_shock",
+								["criteria"] = "refreshable & ! buff.surge_of_power.up",
+								["cycle_targets"] = 1,
+							}, -- [18]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.totem_mastery.enabled & ( buff.resonance_totem.remains < 6 || ( buff.resonance_totem.remains < ( buff.ascendance.duration + cooldown.ascendance.remains ) & cooldown.ascendance.remains < 15 ) )",
+								["action"] = "totem_mastery",
+							}, -- [19]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.icefury.enabled & buff.icefury.up & ( buff.icefury.remains < gcd * 4 * buff.icefury.stack || buff.stormkeeper.up || ! talent.master_of_the_elements.enabled )",
+								["action"] = "frost_shock",
+							}, -- [20]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.icefury.enabled",
+								["action"] = "icefury",
+							}, -- [21]
+							{
+								["action"] = "lightning_bolt",
+								["enabled"] = true,
+							}, -- [22]
+							{
+								["enabled"] = true,
+								["action"] = "flame_shock",
+								["cycle_targets"] = 1,
+								["criteria"] = "refreshable",
+								["moving"] = "1",
+							}, -- [23]
+							{
+								["enabled"] = true,
+								["criteria"] = "movement.distance > 6",
+								["action"] = "flame_shock",
+								["moving"] = "1",
+							}, -- [24]
+							{
+								["moving"] = "1",
+								["action"] = "frost_shock",
+								["enabled"] = true,
+							}, -- [25]
+						},
+						["default"] = {
+							{
+								["enabled"] = false,
+								["criteria"] = "azerite.ancestral_resonance.enabled",
+								["action"] = "bloodlust",
+							}, -- [1]
+							{
+								["action"] = "wind_shear",
+								["enabled"] = true,
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.totem_mastery.enabled & buff.resonance_totem.remains < 2",
+								["action"] = "totem_mastery",
+							}, -- [3]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.storm_elemental.enabled",
+								["action"] = "fire_elemental",
+							}, -- [4]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.storm_elemental.enabled & ( ! talent.icefury.enabled || ! buff.icefury.up & ! cooldown.icefury.up )",
+								["action"] = "storm_elemental",
+							}, -- [5]
+							{
+								["enabled"] = false,
+								["criteria"] = "! talent.primal_elementalist.enabled || talent.primal_elementalist.enabled & ( cooldown.fire_elemental.remains < 120 & ! talent.storm_elemental.enabled || cooldown.storm_elemental.remains < 120 & talent.storm_elemental.enabled )",
+								["action"] = "earth_elemental",
+							}, -- [6]
+							{
+								["action"] = "use_items",
+								["enabled"] = true,
+							}, -- [7]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up || cooldown.ascendance.remains > 50",
+								["action"] = "blood_fury",
+							}, -- [8]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up",
+								["action"] = "berserking",
+							}, -- [9]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up || cooldown.ascendance.remains > 50",
+								["action"] = "fireblood",
+							}, -- [10]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.ascendance.enabled || buff.ascendance.up || cooldown.ascendance.remains > 50",
+								["action"] = "ancestral_call",
+							}, -- [11]
+							{
+								["enabled"] = true,
+								["criteria"] = "active_enemies > 2 & ( spell_targets.chain_lightning > 2 || spell_targets.lava_beam > 2 )",
+								["action"] = "run_action_list",
+								["list_name"] = "aoe",
+							}, -- [12]
+							{
+								["enabled"] = true,
+								["action"] = "run_action_list",
+								["list_name"] = "single_target",
+							}, -- [13]
+						},
+						["precombat"] = {
+							{
+								["enabled"] = true,
+							}, -- [1]
+							{
+								["enabled"] = true,
+							}, -- [2]
+							{
+								["enabled"] = true,
+							}, -- [3]
+							{
+								["enabled"] = true,
+							}, -- [4]
+							{
+								["action"] = "totem_mastery",
+								["enabled"] = true,
+							}, -- [5]
+							{
+								["enabled"] = false,
+								["criteria"] = "! talent.primal_elementalist.enabled",
+								["action"] = "earth_elemental",
+							}, -- [6]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.stormkeeper.enabled & ( raid_event.adds.count < 3 || raid_event.adds.in > 50 )",
+								["action"] = "stormkeeper",
+							}, -- [7]
+							{
+								["enabled"] = true,
+								["criteria"] = "! talent.storm_elemental.enabled",
+								["action"] = "fire_elemental",
+							}, -- [8]
+							{
+								["action"] = "potion",
+								["enabled"] = true,
+							}, -- [9]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.elemental_blast.enabled",
+								["action"] = "elemental_blast",
+							}, -- [10]
+						},
+					},
+				},
+				["Enhancement"] = {
+					["source"] = "https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/Tier22/T22_Shaman_Enhancement.simc",
+					["builtIn"] = true,
+					["date"] = 20181210.2249,
+					["author"] = "SimulationCraft",
+					["desc"] = "# Enhancement Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Enhancement.simc\n# December 10, 2018 - 22:47",
+					["lists"] = {
+						["opener"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "maelstrom < 15 & time < gcd",
+								["action"] = "rockbiter",
+							}, -- [1]
+						},
+						["core"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "variable.furyCheck25",
+								["action"] = "earthen_spike",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "active_enemies >= 3",
+								["action"] = "sundering",
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["action"] = "stormstrike",
+								["criteria"] = "azerite.lightning_conduit.enabled & ! debuff.lightning_conduit.up & active_enemies > 1 & ( buff.stormbringer.up || ( variable.OCPool70 & variable.furyCheck35 ) )",
+								["cycle_targets"] = 1,
+							}, -- [3]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.stormbringer.up || ( buff.gathering_storms.up & variable.OCPool70 & variable.furyCheck35 )",
+								["action"] = "stormstrike",
+							}, -- [4]
+							{
+								["enabled"] = true,
+								["criteria"] = "active_enemies >= 3 & variable.furyCheck25",
+								["action"] = "crash_lightning",
+							}, -- [5]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.overcharge.enabled & active_enemies = 1 & variable.furyCheck45 & maelstrom >= 40",
+								["action"] = "lightning_bolt",
+							}, -- [6]
+							{
+								["enabled"] = true,
+								["criteria"] = "variable.OCPool70 & variable.furyCheck35",
+								["action"] = "stormstrike",
+							}, -- [7]
+							{
+								["action"] = "sundering",
+								["enabled"] = true,
+							}, -- [8]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.forceful_winds.enabled & active_enemies > 1 & variable.furyCheck25",
+								["action"] = "crash_lightning",
+							}, -- [9]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.searing_assault.enabled",
+								["action"] = "flametongue",
+							}, -- [10]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.hot_hand.enabled & buff.hot_hand.react",
+								["action"] = "lava_lash",
+							}, -- [11]
+							{
+								["enabled"] = true,
+								["criteria"] = "active_enemies > 1 & variable.furyCheck25",
+								["action"] = "crash_lightning",
+							}, -- [12]
+						},
+						["default"] = {
+							{
+								["action"] = "wind_shear",
+								["enabled"] = true,
+							}, -- [1]
+							{
+								["value"] = "( ! talent.fury_of_air.enabled || ( talent.fury_of_air.enabled & maelstrom > 45 ) )",
+								["enabled"] = true,
+								["action"] = "variable",
+								["var_name"] = "furyCheck45",
+							}, -- [2]
+							{
+								["value"] = "( ! talent.fury_of_air.enabled || ( talent.fury_of_air.enabled & maelstrom > 35 ) )",
+								["enabled"] = true,
+								["action"] = "variable",
+								["var_name"] = "furyCheck35",
+							}, -- [3]
+							{
+								["value"] = "( ! talent.fury_of_air.enabled || ( talent.fury_of_air.enabled & maelstrom > 25 ) )",
+								["enabled"] = true,
+								["action"] = "variable",
+								["var_name"] = "furyCheck25",
+							}, -- [4]
+							{
+								["value"] = "( ! talent.overcharge.enabled || active_enemies > 1 || ( talent.overcharge.enabled & active_enemies = 1 & ( cooldown.lightning_bolt.remains >= 2 * gcd || maelstrom > 80 ) ) )",
+								["enabled"] = true,
+								["action"] = "variable",
+								["var_name"] = "OCPool80",
+							}, -- [5]
+							{
+								["value"] = "( ! talent.overcharge.enabled || active_enemies > 1 || ( talent.overcharge.enabled & active_enemies = 1 & ( cooldown.lightning_bolt.remains >= 2 * gcd || maelstrom > 70 ) ) )",
+								["enabled"] = true,
+								["action"] = "variable",
+								["var_name"] = "OCPool70",
+							}, -- [6]
+							{
+								["value"] = "( ! talent.overcharge.enabled || active_enemies > 1 || ( talent.overcharge.enabled & active_enemies = 1 & ( cooldown.lightning_bolt.remains >= 2 * gcd || maelstrom > 60 ) ) )",
+								["enabled"] = true,
+								["action"] = "variable",
+								["var_name"] = "OCPool60",
+							}, -- [7]
+							{
+								["action"] = "auto_attack",
+								["enabled"] = true,
+							}, -- [8]
+							{
+								["action"] = "use_items",
+								["enabled"] = true,
+							}, -- [9]
+							{
+								["enabled"] = true,
+								["action"] = "call_action_list",
+								["list_name"] = "opener",
+							}, -- [10]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.ascendance.up",
+								["action"] = "call_action_list",
+								["list_name"] = "asc",
+							}, -- [11]
+							{
+								["enabled"] = true,
+								["action"] = "call_action_list",
+								["list_name"] = "buffs",
+							}, -- [12]
+							{
+								["enabled"] = true,
+								["action"] = "call_action_list",
+								["list_name"] = "cds",
+							}, -- [13]
+							{
+								["enabled"] = true,
+								["action"] = "call_action_list",
+								["list_name"] = "core",
+							}, -- [14]
+							{
+								["enabled"] = true,
+								["action"] = "call_action_list",
+								["list_name"] = "filler",
+							}, -- [15]
+						},
+						["precombat"] = {
+							{
+								["enabled"] = true,
+							}, -- [1]
+							{
+								["enabled"] = true,
+							}, -- [2]
+							{
+								["enabled"] = true,
+							}, -- [3]
+							{
+								["enabled"] = true,
+							}, -- [4]
+							{
+								["action"] = "potion",
+								["enabled"] = true,
+							}, -- [5]
+							{
+								["action"] = "totem_mastery",
+								["enabled"] = true,
+							}, -- [6]
+							{
+								["action"] = "lightning_shield",
+								["enabled"] = true,
+							}, -- [7]
+						},
+						["asc"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "! buff.crash_lightning.up & active_enemies > 1 & variable.furyCheck25",
+								["action"] = "crash_lightning",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.landslide.enabled & ! buff.landslide.up & charges_fractional > 1.7",
+								["action"] = "rockbiter",
+							}, -- [2]
+							{
+								["action"] = "windstrike",
+								["enabled"] = true,
+							}, -- [3]
+						},
+						["buffs"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "! buff.crash_lightning.up & active_enemies > 1 & variable.furyCheck25",
+								["action"] = "crash_lightning",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.landslide.enabled & ! buff.landslide.up & charges_fractional > 1.7",
+								["action"] = "rockbiter",
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["criteria"] = "! ticking & maelstrom >= 20",
+								["action"] = "fury_of_air",
+							}, -- [3]
+							{
+								["enabled"] = true,
+								["criteria"] = "! buff.flametongue.up",
+								["action"] = "flametongue",
+							}, -- [4]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.hailstorm.enabled & ! buff.frostbrand.up & variable.furyCheck25",
+								["action"] = "frostbrand",
+							}, -- [5]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.flametongue.remains < 4.8 + gcd",
+								["action"] = "flametongue",
+							}, -- [6]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.hailstorm.enabled & buff.frostbrand.remains < 4.8 + gcd & variable.furyCheck25",
+								["action"] = "frostbrand",
+							}, -- [7]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.resonance_totem.remains < 2",
+								["action"] = "totem_mastery",
+							}, -- [8]
+						},
+						["cds"] = {
+							{
+								["enabled"] = false,
+								["criteria"] = "azerite.ancestral_resonance.enabled",
+								["action"] = "bloodlust",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "( talent.ascendance.enabled & buff.ascendance.up ) || ( talent.elemental_spirits.enabled & feral_spirit.remains > 5 ) || ( ! talent.ascendance.enabled & ! talent.elemental_spirits.enabled )",
+								["action"] = "berserking",
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["criteria"] = "( talent.ascendance.enabled & ( buff.ascendance.up || cooldown.ascendance.remains > 50 ) ) || ( ! talent.ascendance.enabled & ( feral_spirit.remains > 5 || cooldown.feral_spirit.remains > 50 ) )",
+								["action"] = "blood_fury",
+							}, -- [3]
+							{
+								["enabled"] = true,
+								["criteria"] = "( talent.ascendance.enabled & ( buff.ascendance.up || cooldown.ascendance.remains > 50 ) ) || ( ! talent.ascendance.enabled & ( feral_spirit.remains > 5 || cooldown.feral_spirit.remains > 50 ) )",
+								["action"] = "fireblood",
+							}, -- [4]
+							{
+								["enabled"] = true,
+								["criteria"] = "( talent.ascendance.enabled & ( buff.ascendance.up || cooldown.ascendance.remains > 50 ) ) || ( ! talent.ascendance.enabled & ( feral_spirit.remains > 5 || cooldown.feral_spirit.remains > 50 ) )",
+								["action"] = "ancestral_call",
+							}, -- [5]
+							{
+								["enabled"] = true,
+								["criteria"] = "buff.ascendance.up || ! talent.ascendance.enabled & feral_spirit.remains > 5 || time_to_die <= 60",
+								["action"] = "potion",
+							}, -- [6]
+							{
+								["action"] = "feral_spirit",
+								["enabled"] = true,
+							}, -- [7]
+							{
+								["enabled"] = true,
+								["criteria"] = "cooldown.strike.remains > 0",
+								["action"] = "ascendance",
+							}, -- [8]
+							{
+								["action"] = "earth_elemental",
+								["enabled"] = true,
+							}, -- [9]
+						},
+						["filler"] = {
+							{
+								["enabled"] = true,
+								["criteria"] = "maelstrom < 70 & ! buff.strength_of_earth.up",
+								["action"] = "rockbiter",
+							}, -- [1]
+							{
+								["enabled"] = true,
+								["criteria"] = "talent.crashing_storm.enabled & variable.OCPool60",
+								["action"] = "crash_lightning",
+							}, -- [2]
+							{
+								["enabled"] = true,
+								["criteria"] = "variable.OCPool80 & variable.furyCheck45",
+								["action"] = "lava_lash",
+							}, -- [3]
+							{
+								["action"] = "rockbiter",
+								["enabled"] = true,
+							}, -- [4]
+							{
+								["action"] = "flametongue",
+								["enabled"] = true,
+							}, -- [5]
+						},
+					},
+					["version"] = 20181210.2249,
+					["warnings"] = "WARNING:  The import for 'default' required some automated changes.\nLine 8: Unsupported action 'auto_attack'.\n\nImported 8 action lists.\n",
+					["spec"] = 263,
+					["profile"] = "# Enhancement Shaman\n# https://github.com/simulationcraft/simc/blob/bfa-dev/profiles/PreRaids/PR_Shaman_Enhancement.simc\n# December 10, 2018 - 22:47\n\n# Executed before combat begins. Accepts non-harmful actions only.\nactions.precombat=flask\nactions.precombat+=/food\nactions.precombat+=/augmentation\n# Snapshot raid buffed stats before combat begins and pre-potting is done.\nactions.precombat+=/snapshot_stats\nactions.precombat+=/potion\nactions.precombat+=/totem_mastery\nactions.precombat+=/lightning_shield\n\n# Executed every time the actor is available.\nactions=wind_shear\nactions+=/variable,name=furyCheck45,value=(!talent.fury_of_air.enabled||(talent.fury_of_air.enabled&maelstrom>45))\nactions+=/variable,name=furyCheck35,value=(!talent.fury_of_air.enabled||(talent.fury_of_air.enabled&maelstrom>35))\nactions+=/variable,name=furyCheck25,value=(!talent.fury_of_air.enabled||(talent.fury_of_air.enabled&maelstrom>25))\nactions+=/variable,name=OCPool80,value=(!talent.overcharge.enabled||active_enemies>1||(talent.overcharge.enabled&active_enemies=1&(cooldown.lightning_bolt.remains>=2*gcd||maelstrom>80)))\nactions+=/variable,name=OCPool70,value=(!talent.overcharge.enabled||active_enemies>1||(talent.overcharge.enabled&active_enemies=1&(cooldown.lightning_bolt.remains>=2*gcd||maelstrom>70)))\nactions+=/variable,name=OCPool60,value=(!talent.overcharge.enabled||active_enemies>1||(talent.overcharge.enabled&active_enemies=1&(cooldown.lightning_bolt.remains>=2*gcd||maelstrom>60)))\nactions+=/auto_attack\nactions+=/use_items\nactions+=/call_action_list,name=opener\nactions+=/call_action_list,name=asc,if=buff.ascendance.up\nactions+=/call_action_list,name=buffs\nactions+=/call_action_list,name=cds\nactions+=/call_action_list,name=core\nactions+=/call_action_list,name=filler\n\nactions.asc=crash_lightning,if=!buff.crash_lightning.up&active_enemies>1&variable.furyCheck25\nactions.asc+=/rockbiter,if=talent.landslide.enabled&!buff.landslide.up&charges_fractional>1.7\nactions.asc+=/windstrike\n\nactions.buffs=crash_lightning,if=!buff.crash_lightning.up&active_enemies>1&variable.furyCheck25\nactions.buffs+=/rockbiter,if=talent.landslide.enabled&!buff.landslide.up&charges_fractional>1.7\nactions.buffs+=/fury_of_air,if=!ticking&maelstrom>=20\nactions.buffs+=/flametongue,if=!buff.flametongue.up\nactions.buffs+=/frostbrand,if=talent.hailstorm.enabled&!buff.frostbrand.up&variable.furyCheck25\nactions.buffs+=/flametongue,if=buff.flametongue.remains<4.8+gcd\nactions.buffs+=/frostbrand,if=talent.hailstorm.enabled&buff.frostbrand.remains<4.8+gcd&variable.furyCheck25\nactions.buffs+=/totem_mastery,if=buff.resonance_totem.remains<2\n\n# Cast Bloodlust manually if the Azerite Trait Ancestral Resonance is present.\nactions.cds=bloodlust,if=azerite.ancestral_resonance.enabled\nactions.cds+=/berserking,if=(talent.ascendance.enabled&buff.ascendance.up)||(talent.elemental_spirits.enabled&feral_spirit.remains>5)||(!talent.ascendance.enabled&!talent.elemental_spirits.enabled)\nactions.cds+=/blood_fury,if=(talent.ascendance.enabled&(buff.ascendance.up||cooldown.ascendance.remains>50))||(!talent.ascendance.enabled&(feral_spirit.remains>5||cooldown.feral_spirit.remains>50))\nactions.cds+=/fireblood,if=(talent.ascendance.enabled&(buff.ascendance.up||cooldown.ascendance.remains>50))||(!talent.ascendance.enabled&(feral_spirit.remains>5||cooldown.feral_spirit.remains>50))\nactions.cds+=/ancestral_call,if=(talent.ascendance.enabled&(buff.ascendance.up||cooldown.ascendance.remains>50))||(!talent.ascendance.enabled&(feral_spirit.remains>5||cooldown.feral_spirit.remains>50))\nactions.cds+=/potion,if=buff.ascendance.up||!talent.ascendance.enabled&feral_spirit.remains>5||time_to_die<=60\nactions.cds+=/feral_spirit\nactions.cds+=/ascendance,if=cooldown.strike.remains>0\nactions.cds+=/earth_elemental\n\nactions.core=earthen_spike,if=variable.furyCheck25\nactions.core+=/sundering,if=active_enemies>=3\nactions.core+=/stormstrike,cycle_targets=1,if=azerite.lightning_conduit.enabled&!debuff.lightning_conduit.up&active_enemies>1&(buff.stormbringer.up||(variable.OCPool70&variable.furyCheck35))\nactions.core+=/stormstrike,if=buff.stormbringer.up||(buff.gathering_storms.up&variable.OCPool70&variable.furyCheck35)\nactions.core+=/crash_lightning,if=active_enemies>=3&variable.furyCheck25\nactions.core+=/lightning_bolt,if=talent.overcharge.enabled&active_enemies=1&variable.furyCheck45&maelstrom>=40\nactions.core+=/stormstrike,if=variable.OCPool70&variable.furyCheck35\nactions.core+=/sundering\nactions.core+=/crash_lightning,if=talent.forceful_winds.enabled&active_enemies>1&variable.furyCheck25\nactions.core+=/flametongue,if=talent.searing_assault.enabled\nactions.core+=/lava_lash,if=talent.hot_hand.enabled&buff.hot_hand.react\nactions.core+=/crash_lightning,if=active_enemies>1&variable.furyCheck25\n\nactions.filler=rockbiter,if=maelstrom<70&!buff.strength_of_earth.up\nactions.filler+=/crash_lightning,if=talent.crashing_storm.enabled&variable.OCPool60\nactions.filler+=/lava_lash,if=variable.OCPool80&variable.furyCheck45\nactions.filler+=/rockbiter\nactions.filler+=/flametongue\n\nactions.opener=rockbiter,if=maelstrom<15&time<gcd",
+				},
 			},
-			["AutoDisabled"] = true,
 		},
 		["Nisefy - Stormscale"] = {
 			["runOnce"] = {
@@ -13262,8 +13262,8 @@ HekiliDB = {
 		["Nedoka - Antonidas"] = {
 			["actionLists"] = {
 				{
-					["Specialization"] = 0,
 					["Default"] = true,
+					["Name"] = "Usable Items",
 					["Actions"] = {
 						{
 							["Enabled"] = true,
@@ -13389,7 +13389,7 @@ HekiliDB = {
 					["Release"] = 20180208.181753,
 					["Script"] = "",
 					["Hidden"] = true,
-					["Name"] = "Usable Items",
+					["Specialization"] = 0,
 				}, -- [1]
 				{
 					["Default"] = true,
@@ -14653,8 +14653,8 @@ HekiliDB = {
 					["Specialization"] = 262,
 				}, -- [11]
 				{
-					["Default"] = true,
 					["Name"] = "SimC Elemental: single lr",
+					["Script"] = "",
 					["Specialization"] = 262,
 					["Release"] = 20171125.213329,
 					["ReadyTime"] = "dot.flame_shock.remains-(debuff.flame_shock.duration*0.3)",
@@ -14911,11 +14911,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [19]
 					},
-					["Script"] = "",
+					["Default"] = true,
 				}, -- [12]
 				{
-					["Default"] = true,
 					["Name"] = "SimC Elemental: single if",
+					["Script"] = "",
 					["Specialization"] = 262,
 					["Release"] = 20171125.213329,
 					["ReadyTime"] = "dot.flame_shock.remains-(debuff.flame_shock.duration*0.3)",
@@ -15210,11 +15210,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [22]
 					},
-					["Script"] = "",
+					["Default"] = true,
 				}, -- [13]
 				{
-					["Specialization"] = 262,
 					["Name"] = "SimC Elemental: AOE",
+					["Script"] = "",
 					["Default"] = true,
 					["Release"] = 20171125.213329,
 					["ReadyTime"] = "dot.flame_shock.remains-(debuff.flame_shock.duration*0.3)",
@@ -15375,11 +15375,11 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [12]
 					},
-					["Script"] = "",
+					["Specialization"] = 262,
 				}, -- [14]
 				{
-					["Script"] = "",
 					["Specialization"] = 262,
+					["Name"] = "SimC Elemental: single asc",
 					["Default"] = true,
 					["Release"] = 20171217.14241,
 					["ReadyTime"] = "remains-buff.ascendance.duration",
@@ -15646,7 +15646,7 @@ HekiliDB = {
 							["ModName"] = "",
 						}, -- [20]
 					},
-					["Name"] = "SimC Elemental: single asc",
+					["Script"] = "",
 				}, -- [15]
 			},
 			["Class Option: forecast_swings"] = true,
@@ -15744,17 +15744,17 @@ HekiliDB = {
 					["targetFont"] = "PT Sans Narrow",
 					["captionFont"] = "PT Sans Narrow",
 					["Primary Caption"] = "sratio",
-					["minAuto"] = 3,
+					["Default"] = true,
 					["showCaptions"] = true,
 					["LastConversion"] = 20180114.3,
 					["defaultAPL"] = 2,
-					["Name"] = "Enhancement AOE",
+					["minAuto"] = 3,
 					["yOffsetKBs"] = 0,
 					["xOffsetKBs"] = 0,
 					["simpleAOE"] = 3,
 					["targetFontSize"] = 12,
 					["Talent Group"] = 0,
-					["Default"] = true,
+					["Name"] = "Enhancement AOE",
 					["queuedFontSize"] = 12,
 					["primaryIconSize"] = 40,
 					["kbFont"] = "PT Sans Narrow",
@@ -15853,17 +15853,17 @@ HekiliDB = {
 					["targetFont"] = "PT Sans Narrow",
 					["captionFont"] = "PT Sans Narrow",
 					["queuedIconSize"] = 40,
-					["Default"] = true,
+					["minAuto"] = 2,
 					["showCaptions"] = true,
 					["LastConversion"] = 20180114.3,
 					["defaultAPL"] = 10,
-					["Name"] = "Elemental AOE",
+					["Default"] = true,
 					["x"] = -82,
 					["xOffsetKBs"] = 0,
 					["simpleAOE"] = 3,
 					["targetFontSize"] = 12,
 					["Talent Group"] = 0,
-					["minAuto"] = 2,
+					["Name"] = "Elemental AOE",
 					["queuedFontSize"] = 12,
 					["Release"] = 20180205.20044,
 					["kbFont"] = "PT Sans Narrow",

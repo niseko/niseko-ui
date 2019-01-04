@@ -108,16 +108,6 @@ BigWigs3DB = {
 		["BigWigs_Plugins_Colors"] = {
 			["profiles"] = {
 				["Default"] = {
-					["barBackground"] = {
-						["BigWigs_Plugins_Colors"] = {
-							["default"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								0, -- [4]
-							},
-						},
-					},
 					["barColor"] = {
 						["BigWigs_Bosses_Odyn-TrialOfValor"] = {
 							[227629] = {
@@ -272,6 +262,16 @@ BigWigs3DB = {
 								0.886274509803922, -- [1]
 								1, -- [2]
 								0.164705882352941, -- [3]
+							},
+						},
+					},
+					["barBackground"] = {
+						["BigWigs_Plugins_Colors"] = {
+							["default"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								0, -- [4]
 							},
 						},
 					},

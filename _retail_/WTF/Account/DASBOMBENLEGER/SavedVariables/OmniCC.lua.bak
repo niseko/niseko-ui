@@ -1,5 +1,14 @@
 
 OmniCC4Config = {
+	["groups"] = {
+		{
+			["id"] = "PlaterNameplates Blacklist",
+			["rules"] = {
+			},
+			["enabled"] = true,
+		}, -- [1]
+	},
+	["version"] = "8.1.0",
 	["groupSettings"] = {
 		["base"] = {
 			["styles"] = {
@@ -23,17 +32,17 @@ OmniCC4Config = {
 				},
 			},
 			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
-			["minDuration"] = 2,
+			["scaleText"] = true,
 			["mmSSDuration"] = 0,
 			["anchor"] = "CENTER",
 			["spiralOpacity"] = 1.00999997742474,
-			["scaleText"] = true,
+			["yOff"] = 0,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
 			["minSize"] = 0.4,
 			["minEffectDuration"] = 30,
-			["yOff"] = 0,
+			["minDuration"] = 2,
 			["fontSize"] = 15,
 		},
 		["PlaterNameplates Blacklist"] = {
@@ -59,13 +68,4 @@ OmniCC4Config = {
 			["minDuration"] = 2,
 		},
 	},
-	["groups"] = {
-		{
-			["id"] = "PlaterNameplates Blacklist",
-			["rules"] = {
-			},
-			["enabled"] = true,
-		}, -- [1]
-	},
-	["version"] = "8.1.0",
 }

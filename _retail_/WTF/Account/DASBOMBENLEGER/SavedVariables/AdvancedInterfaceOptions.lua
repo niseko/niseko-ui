@@ -162,9 +162,9 @@ AdvancedInterfaceOptionsSaved = {
 	["CharVars"] = {
 	},
 	["AccountVars"] = {
-		["nameplateMinScale"] = "0.8",
-		["nameplateOverlapH"] = "0.8",
 		["nameplateLargerScale"] = "1.2",
+		["nameplateOverlapH"] = "0.8",
+		["nameplateMinScale"] = "0.8",
 	},
 	["EnforceSettings"] = false,
 }
