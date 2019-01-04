@@ -1,7 +1,0 @@
-## Interface: 70100
-## Author: Vexisle
-## Version: 1.4
-## Title: KeystoneLinkPlus
-## Notes: Improve the formatting on Mythic Keystone item links
-
-KeystoneLinkPlus.lua

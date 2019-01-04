@@ -1,9 +1,0 @@
-EasyFrames: disabled
-Lorti UI: disabled
-bdGrid: disabled
-nMainbar: disabled
-VuhDo: enabled
-TellMeWhen: disabled
-TellMeWhen_Options: disabled
-VocalRaidAssistant: disabled
-VuhDoOptions: enabled
