@@ -11,6 +11,7 @@ LoggerHeadNDB = {
 		["Niseniseko - Stormscale"] = "Default",
 		["Nise - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
 		["Yoshicakes - Stormscale"] = "Default",
 		["Nisegob - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
@@ -57,11 +58,11 @@ LoggerHeadNDB = {
 				[1594] = {
 					[8] = true,
 				},
-				[1877] = {
-					[8] = true,
-				},
 				[1753] = {
 					[8] = false,
+				},
+				[1877] = {
+					[8] = true,
 				},
 				[1754] = {
 					[8] = true,

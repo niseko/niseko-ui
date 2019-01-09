@@ -1,14 +1,22 @@
-lightweight tag 4a6a3c22df85ce72440eaec1df516bdc3fdac556 v1.10.8
+lightweight tag 48551f0cc71eee73ee30a02422eb9e243b8b232c v1.10.10
 Author:	Dave Hendler <sollaires@gmail.com>
-Date:	Mon Dec 10 10:51:34 2018 -0800
+Date:	Fri Jan 4 18:13:49 2019 -0800
 
-commit 4a6a3c22df85ce72440eaec1df516bdc3fdac556
+commit 48551f0cc71eee73ee30a02422eb9e243b8b232c
 Author: Dave Hendler <sollaires@gmail.com>
-Date:   Mon Dec 10 10:51:34 2018 -0800
+Date:   Fri Jan 4 18:13:49 2019 -0800
 
-    1.10.8 Update
-    
-    * Adds minimap button to open SimC input
-    * Toggle button on/off with /simc minimap
-    * Changes "reforge" to "context" in item strings, remove warning comment
+    Update version for new WoW build number
+
+commit b9ed27271474f644a443f70cfd58e5f4ef93250a
+Author: Dave Hendler <sollaires@gmail.com>
+Date:   Fri Jan 4 18:12:35 2019 -0800
+
+    Update WoW build version to fix out-of-date warning in client
+
+commit 6f1c3ed6c4fa770b767ff44b54cdc2eaf8e7ef73
+Author: Dave Hendler <sollaires@gmail.com>
+Date:   Mon Dec 17 13:55:21 2018 -0800
+
+    Update SimC logo to not look terrible as a square
 

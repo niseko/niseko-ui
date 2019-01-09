@@ -1,4 +1,12 @@
 ------------------------------------------------------------------------
+r855 | michaelspain | 2019-01-06 19:59:41 +0000 (Sun, 06 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/modules/StatusAuras.lua
+
+Added an stacks count activation threshold option to buffs and debuffs statuses (ticket #629)
+------------------------------------------------------------------------
 r854 | michaelspain | 2019-01-02 16:15:00 +0000 (Wed, 02 Jan 2019) | 1 line
 Changed paths:
    M /trunk/GridLayout.lua

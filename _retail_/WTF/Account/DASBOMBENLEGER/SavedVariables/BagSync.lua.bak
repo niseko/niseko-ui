@@ -95,10 +95,7 @@ BagSyncDB = {
 					"132365::::::::::::2:1811:3630:::", -- [19]
 				},
 			},
-			["mailbox"] = {
-				[0] = {
-				},
-			},
+			["realm"] = "TwistingNether",
 			["gold"] = 8242230,
 			["equip"] = {
 				[0] = {
@@ -122,7 +119,10 @@ BagSyncDB = {
 			},
 			["class"] = "DEATHKNIGHT",
 			["faction"] = "Horde",
-			["realm"] = "TwistingNether",
+			["mailbox"] = {
+				[0] = {
+				},
+			},
 		},
 		["Niseko"] = {
 			["bag"] = {
@@ -170,10 +170,10 @@ BagSyncDB = {
 					[24] = "147559",
 					[21] = "147451,3",
 					[25] = "139812",
-					[30] = "138310::::::::::::3:3518:1484:3528:::",
-					[19] = "128710::::::::::::3:689:600:679:::",
-					[23] = "139801,3",
 					[26] = "139874",
+					[19] = "128710::::::::::::3:689:600:679:::",
+					[30] = "138310::::::::::::3:3518:1484:3528:::",
+					[23] = "139801,3",
 				}, -- [2]
 				{
 					"147003::::::::::::3:3562:1498:3337:::", -- [1]
@@ -241,107 +241,18 @@ BagSyncDB = {
 			},
 			["guild"] = "Without a Trace",
 			["class"] = "PRIEST",
-			["AH_Count"] = 1,
-			["bank"] = {
-				[6] = {
-					"140363", -- [1]
-					"140363", -- [2]
-					"140363", -- [3]
-					"140363", -- [4]
-					"140363", -- [5]
-					"140363", -- [6]
-					"140363", -- [7]
-					"140363", -- [8]
-					"140363", -- [9]
-					"140363", -- [10]
-					"140363", -- [11]
-					"140363", -- [12]
-					"140363", -- [13]
-					"140363", -- [14]
-					"140363", -- [15]
-					"140363", -- [16]
-					"140363", -- [17]
-					"140363", -- [18]
-					"140363", -- [19]
-					"140363", -- [20]
-					"140363", -- [21]
-				},
-				[7] = {
-					"17202,3", -- [1]
-					"26045,100", -- [2]
-					"26044,40", -- [3]
-					"124099,635", -- [4]
-					"117397,19", -- [5]
-					"116415,35", -- [6]
-				},
-				[8] = {
-				},
-				[10] = {
-				},
-				[5] = {
-					"124233::::::::::::2:40:566:::", -- [1]
-					"113986::::::::::::2:562:567:::", -- [2]
-					"119194::::::::::::1:567:::", -- [3]
-					"113948::::::::::::1:567:::", -- [4]
-					"112320::::::::::::2:530:527:::", -- [5]
-					"140575", -- [6]
-					"118372", -- [7]
-					"15197", -- [8]
-					"69210", -- [9]
-					"69209", -- [10]
-					"139300", -- [11]
-					"21525", -- [12]
-					"97901", -- [13]
-					"93228", -- [14]
-					"71634", -- [15]
-					"128353", -- [16]
-					"140363", -- [17]
-					"140363", -- [18]
-					"140363", -- [19]
-					"140363", -- [20]
-					"140363", -- [21]
-					"140363", -- [22]
-				},
-				[9] = {
-				},
-				[-1] = {
-					"128320", -- [1]
-					"119151", -- [2]
-					"45038,17", -- [3]
-					"118236,3", -- [4]
-					"71083,2", -- [5]
-					"109223,13", -- [6]
-					"139909", -- [7]
-					"139757::::::::::::2:3386:3381:::", -- [8]
-					"124161::::::::::::3:1798:1512:3442:::", -- [9]
-					"115563::::::::::::2:42:567:::", -- [10]
-					"111184", -- [11]
-					"124178::::::::::::2:1798:1487:::", -- [12]
-					"115561::::::::::::1:567:::", -- [13]
-					"139759::::::::::::2:3386:3383:::", -- [14]
-					"124172::::::::::::1:566:::", -- [15]
-					"115560::::::::::::1:567:::", -- [16]
-					"111186", -- [17]
-					"139762::::::::::::2:3386:3381:::", -- [18]
-					"111099", -- [19]
-					"139905", -- [20]
-					"124155", -- [21]
-					"115562::::::::::::2:561:566:::", -- [22]
-					"720", -- [23]
-					"124166::::::::::::3:1798:1492:3441:::", -- [24]
-					"115564::::::::::::1:566:::", -- [25]
-					"27944", -- [26]
-					"124638::::::::::::2:650:630:::", -- [27]
-					"124234::::::::::::2:561:566:::", -- [28]
+			["mailbox"] = {
+				[0] = {
 				},
 			},
+			["realm"] = "TwistingNether",
 			["AH_LastScan"] = 1527353064,
 			["auction"] = {
 				[0] = {
 				},
 			},
-			["gold"] = 61841246,
 			["faction"] = "Horde",
+			["gold"] = 61841246,
 			["equip"] = {
 				[0] = {
 					"146991::::::::::::5:3562:1808:42:1483:3528:::", -- [1]
@@ -418,11 +329,100 @@ BagSyncDB = {
 					"136342,68", -- [52]
 				},
 			},
-			["realm"] = "TwistingNether",
-			["mailbox"] = {
-				[0] = {
+			["bank"] = {
+				[6] = {
+					"140363", -- [1]
+					"140363", -- [2]
+					"140363", -- [3]
+					"140363", -- [4]
+					"140363", -- [5]
+					"140363", -- [6]
+					"140363", -- [7]
+					"140363", -- [8]
+					"140363", -- [9]
+					"140363", -- [10]
+					"140363", -- [11]
+					"140363", -- [12]
+					"140363", -- [13]
+					"140363", -- [14]
+					"140363", -- [15]
+					"140363", -- [16]
+					"140363", -- [17]
+					"140363", -- [18]
+					"140363", -- [19]
+					"140363", -- [20]
+					"140363", -- [21]
+				},
+				[7] = {
+					"17202,3", -- [1]
+					"26045,100", -- [2]
+					"26044,40", -- [3]
+					"124099,635", -- [4]
+					"117397,19", -- [5]
+					"116415,35", -- [6]
+				},
+				[8] = {
+				},
+				[10] = {
+				},
+				[-1] = {
+					"128320", -- [1]
+					"119151", -- [2]
+					"45038,17", -- [3]
+					"118236,3", -- [4]
+					"71083,2", -- [5]
+					"109223,13", -- [6]
+					"139909", -- [7]
+					"139757::::::::::::2:3386:3381:::", -- [8]
+					"124161::::::::::::3:1798:1512:3442:::", -- [9]
+					"115563::::::::::::2:42:567:::", -- [10]
+					"111184", -- [11]
+					"124178::::::::::::2:1798:1487:::", -- [12]
+					"115561::::::::::::1:567:::", -- [13]
+					"139759::::::::::::2:3386:3383:::", -- [14]
+					"124172::::::::::::1:566:::", -- [15]
+					"115560::::::::::::1:567:::", -- [16]
+					"111186", -- [17]
+					"139762::::::::::::2:3386:3381:::", -- [18]
+					"111099", -- [19]
+					"139905", -- [20]
+					"124155", -- [21]
+					"115562::::::::::::2:561:566:::", -- [22]
+					"720", -- [23]
+					"124166::::::::::::3:1798:1492:3441:::", -- [24]
+					"115564::::::::::::1:566:::", -- [25]
+					"27944", -- [26]
+					"124638::::::::::::2:650:630:::", -- [27]
+					"124234::::::::::::2:561:566:::", -- [28]
+				},
+				[5] = {
+					"124233::::::::::::2:40:566:::", -- [1]
+					"113986::::::::::::2:562:567:::", -- [2]
+					"119194::::::::::::1:567:::", -- [3]
+					"113948::::::::::::1:567:::", -- [4]
+					"112320::::::::::::2:530:527:::", -- [5]
+					"140575", -- [6]
+					"118372", -- [7]
+					"15197", -- [8]
+					"69210", -- [9]
+					"69209", -- [10]
+					"139300", -- [11]
+					"21525", -- [12]
+					"97901", -- [13]
+					"93228", -- [14]
+					"71634", -- [15]
+					"128353", -- [16]
+					"140363", -- [17]
+					"140363", -- [18]
+					"140363", -- [19]
+					"140363", -- [20]
+					"140363", -- [21]
+					"140363", -- [22]
+				},
+				[9] = {
 				},
 			},
+			["AH_Count"] = 1,
 		},
 	},
 	["Mal'Ganis"] = {
@@ -499,10 +499,7 @@ BagSyncDB = {
 				[0] = {
 				},
 			},
-			["mailbox"] = {
-				[0] = {
-				},
-			},
+			["realm"] = "Mal'Ganis",
 			["faction"] = "Horde",
 			["equip"] = {
 				[0] = {
@@ -524,9 +521,12 @@ BagSyncDB = {
 					"128823::::::::::::4:735:1487:1491:1492:::", -- [16]
 				},
 			},
-			["AH_Count"] = 0,
 			["gold"] = 670854204,
-			["realm"] = "Mal'Ganis",
+			["AH_Count"] = 0,
+			["mailbox"] = {
+				[0] = {
+				},
+			},
 		},
 	},
 	["Stormscale"] = {
@@ -745,10 +745,10 @@ BagSyncDB = {
 					"52616", -- [9]
 					"52612", -- [10]
 					"55135", -- [11]
-					[19] = "5976",
-					[16] = "52644",
-					[15] = "52660",
 					[17] = "52643",
+					[19] = "5976",
+					[15] = "52660",
+					[16] = "52644",
 				},
 			},
 			["class"] = "SHAMAN",
@@ -775,44 +775,44 @@ BagSyncOpt = {
 	["showTotal"] = true,
 	["colors"] = {
 		["total"] = {
-			["r"] = 0.956862745098039,
-			["g"] = 0.643137254901961,
 			["b"] = 0.376470588235294,
+			["g"] = 0.643137254901961,
+			["r"] = 0.956862745098039,
 		},
 		["guild"] = {
-			["r"] = 0.396078431372549,
-			["g"] = 0.72156862745098,
 			["b"] = 0.752941176470588,
+			["g"] = 0.72156862745098,
+			["r"] = 0.396078431372549,
 		},
 		["cross"] = {
-			["r"] = 1,
-			["g"] = 0.490196078431373,
 			["b"] = 0.0392156862745098,
-		},
-		["bnet"] = {
-			["r"] = 0.207843137254902,
-			["g"] = 0.533333333333333,
-			["b"] = 1,
-		},
-		["first"] = {
-			["r"] = 0.501960784313726,
-			["g"] = 1,
-			["b"] = 0,
+			["g"] = 0.490196078431373,
+			["r"] = 1,
 		},
 		["itemid"] = {
-			["r"] = 0.32156862745098,
-			["g"] = 0.827450980392157,
 			["b"] = 0.525490196078431,
+			["g"] = 0.827450980392157,
+			["r"] = 0.32156862745098,
+		},
+		["first"] = {
+			["b"] = 0,
+			["g"] = 1,
+			["r"] = 0.501960784313726,
+		},
+		["bnet"] = {
+			["b"] = 1,
+			["g"] = 0.533333333333333,
+			["r"] = 0.207843137254902,
 		},
 		["second"] = {
-			["r"] = 1,
-			["g"] = 1,
 			["b"] = 1,
+			["g"] = 1,
+			["r"] = 1,
 		},
 	},
-	["enableTooltipGreenCheck"] = true,
-	["enableBNetAccountItems"] = false,
 	["enableRealmAstrickName"] = false,
+	["enableBNetAccountItems"] = false,
+	["enableTooltipGreenCheck"] = true,
 	["enableTooltipSeperator"] = true,
 	["enableRealmIDTags"] = true,
 }
@@ -830,319 +830,319 @@ BagSyncCURRENCY_DB = {
 	["TwistingNether"] = {
 		["Vordt"] = {
 			["Ancient Mana"] = {
-				["count"] = 1185,
 				["icon"] = 1377394,
 				["header"] = "Legion",
+				["count"] = 1185,
 			},
 			["Nethershard"] = {
-				["count"] = 2035,
 				["icon"] = 132775,
 				["header"] = "Legion",
+				["count"] = 2035,
 			},
 			["Seal of Broken Fate"] = {
-				["count"] = 4,
 				["icon"] = 1604167,
 				["header"] = "Legion",
+				["count"] = 4,
 			},
 			["Curious Coin"] = {
-				["count"] = 56,
 				["icon"] = 1604168,
 				["header"] = "Legion",
+				["count"] = 56,
 			},
 			["Order Resources"] = {
-				["count"] = 937,
 				["icon"] = 1397630,
 				["header"] = "Legion",
-			},
-			["Timewarped Badge"] = {
-				["count"] = 1335,
-				["icon"] = 463446,
-				["header"] = "Dungeon and Raid",
-			},
-			["Garrison Resources"] = {
-				["count"] = 300,
-				["icon"] = 1005027,
-				["header"] = "Warlords of Draenor",
-			},
-			["Timeworn Artifact"] = {
-				["count"] = 10,
-				["icon"] = 1061303,
-				["header"] = "Legion",
+				["count"] = 937,
 			},
 			["Legionfall War Supplies"] = {
-				["count"] = 82,
 				["icon"] = 803763,
 				["header"] = "Legion",
+				["count"] = 82,
+			},
+			["Timeworn Artifact"] = {
+				["icon"] = 1061303,
+				["header"] = "Legion",
+				["count"] = 10,
+			},
+			["Garrison Resources"] = {
+				["icon"] = 1005027,
+				["header"] = "Warlords of Draenor",
+				["count"] = 300,
+			},
+			["Timewarped Badge"] = {
+				["icon"] = 463446,
+				["header"] = "Dungeon and Raid",
+				["count"] = 1335,
 			},
 		},
 		["Niseko"] = {
 			["Ancient Mana"] = {
+				["icon"] = 1377394,
 				["header"] = "Legion",
 				["count"] = 2000,
-				["icon"] = 1377394,
 			},
 			["Ironpaw Token"] = {
+				["icon"] = 134912,
 				["header"] = "Miscellaneous",
 				["count"] = 1,
-				["icon"] = 134912,
 			},
 			["Nethershard"] = {
+				["icon"] = 132775,
 				["header"] = "Legion",
 				["count"] = 1793,
-				["icon"] = 132775,
 			},
 			["Valor"] = {
+				["count"] = 500,
 				["icon"] = 463447,
 				["header"] = "Dungeon and Raid",
-				["count"] = 500,
 			},
 			["Lesser Charm of Good Fortune"] = {
+				["icon"] = 237282,
 				["header"] = "Mists of Pandaria",
 				["count"] = 79,
-				["icon"] = 237282,
 			},
 			["Curious Coin"] = {
+				["icon"] = 1604168,
 				["header"] = "Legion",
 				["count"] = 83,
-				["icon"] = 1604168,
 			},
 			["Order Resources"] = {
+				["icon"] = 1397630,
 				["header"] = "Legion",
 				["count"] = 1064,
-				["icon"] = 1397630,
 			},
 			["Veiled Argunite"] = {
+				["icon"] = 1064188,
 				["header"] = "Legion",
 				["count"] = 170,
-				["icon"] = 1064188,
 			},
 			["Timewarped Badge"] = {
+				["icon"] = 463446,
 				["header"] = "Dungeon and Raid",
 				["count"] = 3035,
-				["icon"] = 463446,
 			},
 			["Seal of Tempered Fate"] = {
+				["icon"] = 838813,
 				["header"] = "Warlords of Draenor",
 				["count"] = 9,
-				["icon"] = 838813,
 			},
 			["Seal of Inevitable Fate"] = {
-				["header"] = "Warlords of Draenor",
-				["count"] = 5,
 				["icon"] = 1119886,
-			},
-			["Echoes of Battle"] = {
-				["header"] = "Legion",
-				["count"] = 0,
-				["icon"] = 1455891,
-			},
-			["Timeworn Artifact"] = {
-				["header"] = "Legion",
-				["count"] = 6,
-				["icon"] = 1061303,
-			},
-			["Sightless Eye"] = {
-				["header"] = "Legion",
-				["count"] = 600,
-				["icon"] = 801132,
-			},
-			["Seal of Broken Fate"] = {
-				["header"] = "Legion",
-				["count"] = 2,
-				["icon"] = 1604167,
-			},
-			["Brawler's Gold"] = {
-				["header"] = "Legion",
-				["count"] = 368,
-				["icon"] = 237281,
-			},
-			["Apexis Crystal"] = {
 				["header"] = "Warlords of Draenor",
-				["count"] = 17433,
-				["icon"] = 1061300,
-			},
-			["Darkmoon Prize Ticket"] = {
-				["header"] = "Miscellaneous",
 				["count"] = 5,
-				["icon"] = 134481,
-			},
-			["Artifact Fragment"] = {
-				["header"] = "Warlords of Draenor",
-				["count"] = 0,
-				["icon"] = 1061303,
-			},
-			["Garrison Resources"] = {
-				["header"] = "Warlords of Draenor",
-				["count"] = 867,
-				["icon"] = 1005027,
 			},
 			["Oil"] = {
+				["icon"] = 1131085,
 				["header"] = "Warlords of Draenor",
 				["count"] = 1390,
-				["icon"] = 1131085,
+			},
+			["Timeworn Artifact"] = {
+				["icon"] = 1061303,
+				["header"] = "Legion",
+				["count"] = 6,
+			},
+			["Sightless Eye"] = {
+				["icon"] = 801132,
+				["header"] = "Legion",
+				["count"] = 600,
+			},
+			["Garrison Resources"] = {
+				["icon"] = 1005027,
+				["header"] = "Warlords of Draenor",
+				["count"] = 867,
+			},
+			["Artifact Fragment"] = {
+				["icon"] = 1061303,
+				["header"] = "Warlords of Draenor",
+				["count"] = 0,
+			},
+			["Apexis Crystal"] = {
+				["icon"] = 1061300,
+				["header"] = "Warlords of Draenor",
+				["count"] = 17433,
+			},
+			["Darkmoon Prize Ticket"] = {
+				["icon"] = 134481,
+				["header"] = "Miscellaneous",
+				["count"] = 5,
+			},
+			["Brawler's Gold"] = {
+				["icon"] = 237281,
+				["header"] = "Legion",
+				["count"] = 368,
+			},
+			["Seal of Broken Fate"] = {
+				["icon"] = 1604167,
+				["header"] = "Legion",
+				["count"] = 2,
+			},
+			["Echoes of Battle"] = {
+				["icon"] = 1455891,
+				["header"] = "Legion",
+				["count"] = 0,
 			},
 			["Lingering Soul Fragment"] = {
+				["icon"] = 463284,
 				["header"] = "Legion",
 				["count"] = 40,
-				["icon"] = 463284,
 			},
 			["Legionfall War Supplies"] = {
+				["icon"] = 803763,
 				["header"] = "Legion",
 				["count"] = 20,
-				["icon"] = 803763,
 			},
 		},
 	},
 	["Mal'Ganis"] = {
 		["Zelda"] = {
 			["Ancient Mana"] = {
+				["count"] = 76,
 				["icon"] = 1377394,
 				["header"] = "Legion",
-				["count"] = 76,
-			},
-			["Legionfall War Supplies"] = {
-				["icon"] = 803763,
-				["header"] = "Legion",
-				["count"] = 1,
-			},
-			["Nethershard"] = {
-				["icon"] = 132775,
-				["header"] = "Legion",
-				["count"] = 3479,
-			},
-			["Seal of Broken Fate"] = {
-				["icon"] = 1604167,
-				["header"] = "Legion",
-				["count"] = 1,
-			},
-			["Curious Coin"] = {
-				["icon"] = 1604168,
-				["header"] = "Legion",
-				["count"] = 19,
-			},
-			["Wakening Essence"] = {
-				["icon"] = 236521,
-				["header"] = "Legion",
-				["count"] = 62,
-			},
-			["Seal of Tempered Fate"] = {
-				["icon"] = 838813,
-				["header"] = "Warlords of Draenor",
-				["count"] = 9,
-			},
-			["Order Resources"] = {
-				["icon"] = 1397630,
-				["header"] = "Legion",
-				["count"] = 4926,
-			},
-			["Oil"] = {
-				["icon"] = 1131085,
-				["header"] = "Warlords of Draenor",
-				["count"] = 140,
-			},
-			["Garrison Resources"] = {
-				["icon"] = 1005027,
-				["header"] = "Warlords of Draenor",
-				["count"] = 3862,
-			},
-			["Apexis Crystal"] = {
-				["icon"] = 1061300,
-				["header"] = "Warlords of Draenor",
-				["count"] = 39673,
-			},
-			["Seal of Inevitable Fate"] = {
-				["icon"] = 1119886,
-				["header"] = "Warlords of Draenor",
-				["count"] = 2,
-			},
-			["Timeworn Artifact"] = {
-				["icon"] = 1061303,
-				["header"] = "Legion",
-				["count"] = 0,
 			},
 			["Timewarped Badge"] = {
+				["count"] = 160,
 				["icon"] = 463446,
 				["header"] = "Dungeon and Raid",
-				["count"] = 160,
+			},
+			["Nethershard"] = {
+				["count"] = 3479,
+				["icon"] = 132775,
+				["header"] = "Legion",
+			},
+			["Seal of Broken Fate"] = {
+				["count"] = 1,
+				["icon"] = 1604167,
+				["header"] = "Legion",
+			},
+			["Timeworn Artifact"] = {
+				["count"] = 0,
+				["icon"] = 1061303,
+				["header"] = "Legion",
+			},
+			["Wakening Essence"] = {
+				["count"] = 62,
+				["icon"] = 236521,
+				["header"] = "Legion",
+			},
+			["Curious Coin"] = {
+				["count"] = 19,
+				["icon"] = 1604168,
+				["header"] = "Legion",
+			},
+			["Order Resources"] = {
+				["count"] = 4926,
+				["icon"] = 1397630,
+				["header"] = "Legion",
+			},
+			["Seal of Inevitable Fate"] = {
+				["count"] = 2,
+				["icon"] = 1119886,
+				["header"] = "Warlords of Draenor",
+			},
+			["Apexis Crystal"] = {
+				["count"] = 39673,
+				["icon"] = 1061300,
+				["header"] = "Warlords of Draenor",
+			},
+			["Garrison Resources"] = {
+				["count"] = 3862,
+				["icon"] = 1005027,
+				["header"] = "Warlords of Draenor",
+			},
+			["Oil"] = {
+				["count"] = 140,
+				["icon"] = 1131085,
+				["header"] = "Warlords of Draenor",
+			},
+			["Seal of Tempered Fate"] = {
+				["count"] = 9,
+				["icon"] = 838813,
+				["header"] = "Warlords of Draenor",
+			},
+			["Legionfall War Supplies"] = {
+				["count"] = 1,
+				["icon"] = 803763,
+				["header"] = "Legion",
 			},
 		},
 	},
 	["Stormscale"] = {
 		["Niseko"] = {
 			["Ancient Mana"] = {
+				["icon"] = 1377394,
 				["header"] = "Unused",
 				["count"] = 1700,
-				["icon"] = 1377394,
 			},
 			["Brawler's Gold"] = {
-				["header"] = "Unused",
-				["count"] = 1,
 				["icon"] = 237281,
-			},
-			["Timewarped Badge"] = {
 				["header"] = "Unused",
-				["count"] = 5305,
-				["icon"] = 463446,
-			},
-			["Nethershard"] = {
-				["header"] = "Unused",
-				["count"] = 23586,
-				["icon"] = 132775,
-			},
-			["Timeworn Artifact"] = {
-				["header"] = "Unused",
-				["count"] = 21,
-				["icon"] = 1061303,
-			},
-			["Sightless Eye"] = {
-				["header"] = "Unused",
-				["count"] = 532,
-				["icon"] = 801132,
-			},
-			["Wakening Essence"] = {
-				["header"] = "Legion",
-				["count"] = 740,
-				["icon"] = 236521,
-			},
-			["Curious Coin"] = {
-				["header"] = "Legion",
-				["count"] = 105,
-				["icon"] = 1604168,
-			},
-			["Order Resources"] = {
-				["header"] = "Legion",
 				["count"] = 1,
-				["icon"] = 1397630,
-			},
-			["Echoes of Battle"] = {
-				["header"] = "Unused",
-				["count"] = 0,
-				["icon"] = 1455891,
-			},
-			["Seal of Broken Fate"] = {
-				["header"] = "Legion",
-				["count"] = 0,
-				["icon"] = 1604167,
-			},
-			["Garrison Resources"] = {
-				["header"] = "Unused",
-				["count"] = 1803,
-				["icon"] = 1005027,
-			},
-			["Veiled Argunite"] = {
-				["header"] = "Legion",
-				["count"] = 434,
-				["icon"] = 1064188,
-			},
-			["Lingering Soul Fragment"] = {
-				["header"] = "Unused",
-				["count"] = 40,
-				["icon"] = 463284,
 			},
 			["Legionfall War Supplies"] = {
+				["icon"] = 803763,
 				["header"] = "Unused",
 				["count"] = 85,
-				["icon"] = 803763,
+			},
+			["Nethershard"] = {
+				["icon"] = 132775,
+				["header"] = "Unused",
+				["count"] = 23586,
+			},
+			["Timeworn Artifact"] = {
+				["icon"] = 1061303,
+				["header"] = "Unused",
+				["count"] = 21,
+			},
+			["Sightless Eye"] = {
+				["icon"] = 801132,
+				["header"] = "Unused",
+				["count"] = 532,
+			},
+			["Wakening Essence"] = {
+				["icon"] = 236521,
+				["header"] = "Legion",
+				["count"] = 740,
+			},
+			["Curious Coin"] = {
+				["icon"] = 1604168,
+				["header"] = "Legion",
+				["count"] = 105,
+			},
+			["Order Resources"] = {
+				["icon"] = 1397630,
+				["header"] = "Legion",
+				["count"] = 1,
+			},
+			["Echoes of Battle"] = {
+				["icon"] = 1455891,
+				["header"] = "Unused",
+				["count"] = 0,
+			},
+			["Seal of Broken Fate"] = {
+				["icon"] = 1604167,
+				["header"] = "Legion",
+				["count"] = 0,
+			},
+			["Veiled Argunite"] = {
+				["icon"] = 1064188,
+				["header"] = "Legion",
+				["count"] = 434,
+			},
+			["Garrison Resources"] = {
+				["icon"] = 1005027,
+				["header"] = "Unused",
+				["count"] = 1803,
+			},
+			["Lingering Soul Fragment"] = {
+				["icon"] = 463284,
+				["header"] = "Unused",
+				["count"] = 40,
+			},
+			["Timewarped Badge"] = {
+				["icon"] = 463446,
+				["header"] = "Unused",
+				["count"] = 5305,
 			},
 		},
 	},
@@ -1183,7 +1183,6 @@ BagSync_REALMKEY = {
 	["TwistingNether"] = "Twisting Nether",
 	["Mal'Ganis"] = "Mal'Ganis",
 	["Moonglade"] = "Moonglade",
-	["Stormscale"] = "Stormscale",
 	[0] = {
 		["TwistingNether"] = {
 			"TwistingNether", -- [1]
@@ -1202,4 +1201,5 @@ BagSync_REALMKEY = {
 			"TheSha'tar", -- [3]
 		},
 	},
+	["Stormscale"] = "Stormscale",
 }

@@ -14,11 +14,12 @@ RelicInspectorDB = {
 		["Nedoka - Antonidas"] = "Default",
 		["Yoshicakes - Stormscale"] = "Default",
 		["Nisecakes - Stormscale"] = "Default",
+		["Zelda - Mal'Ganis"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Zelda - Mal'Ganis"] = "Default",
 		["Nisegob - Stormscale"] = "Default",
 		["Mondeko - Blackmoore"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

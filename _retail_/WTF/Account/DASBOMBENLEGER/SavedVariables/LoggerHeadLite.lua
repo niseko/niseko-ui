@@ -11,13 +11,14 @@ LoggerHeadNDB = {
 		["Niseniseko - Stormscale"] = "Default",
 		["Nise - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
 		["Yoshicakes - Stormscale"] = "Default",
-		["Nisegob - Stormscale"] = "Default",
+		["Donnerbock - Twisting Nether"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Donnerbock - Twisting Nether"] = "Default",
 		["Zelda - Mal'Ganis"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -60,8 +61,8 @@ LoggerHeadNDB = {
 				[1205] = {
 					[16] = false,
 				},
-				[1877] = {
-					[8] = true,
+				[1753] = {
+					[8] = false,
 				},
 				[1754] = {
 					[8] = true,
@@ -75,8 +76,8 @@ LoggerHeadNDB = {
 				[1771] = {
 					[8] = true,
 				},
-				[1753] = {
-					[8] = false,
+				[1877] = {
+					[8] = true,
 				},
 			},
 			["minimap"] = {

@@ -22,3 +22,4 @@ Gladius: enabled
 GladiatorlosSA2: enabled
 MoveAnything: enabled
 VuhDoOptions: disabled
+BagSync: enabled

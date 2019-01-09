@@ -20,11 +20,11 @@ CliqueDB3 = {
 		["Niseko - Stormscale"] = {
 			["spec1_profileKey"] = "Niseko - Stormscale",
 			["fastooc"] = false,
-			["alerthidden"] = true,
+			["spec2_profileKey"] = "Niseko - Stormscale",
 			["downclick"] = false,
+			["alerthidden"] = true,
 			["spec3_profileKey"] = "Niseko - Stormscale",
 			["specswap"] = false,
-			["spec2_profileKey"] = "Niseko - Stormscale",
 		},
 		["Nisetest - Stormscale"] = {
 			["alerthidden"] = true,
@@ -53,13 +53,14 @@ CliqueDB3 = {
 		["Nisetest - Stormscale"] = "Nisetest - Stormscale",
 		["Mondeko - Blackmoore"] = "Mondeko - Blackmoore",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Nisegob - Stormscale"] = "Nisegob - Stormscale",
+		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
+		["Pixelfehler - Ysera"] = "Pixelfehler - Ysera",
 		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
 		["Vordt - Twisting Nether"] = "Vordt - Twisting Nether",
-		["Pixelfehler - Ysera"] = "Pixelfehler - Ysera",
 		["Nisecakes - Stormscale"] = "Nisecakes - Stormscale",
 		["Nedoka - Antonidas"] = "Niseko - Stormscale",
+		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 	},
 	["profiles"] = {
 		["Zelda - Mal'Ganis"] = {
@@ -544,6 +545,25 @@ CliqueDB3 = {
 				}, -- [10]
 			},
 		},
+		["Nisegob - Stormscale"] = {
+			["bindings"] = {
+				{
+					["type"] = "target",
+					["sets"] = {
+						["default"] = true,
+					},
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
 		["Yoshicakes - Stormscale"] = {
 			["bindings"] = {
 				{
@@ -563,13 +583,13 @@ CliqueDB3 = {
 				}, -- [2]
 			},
 		},
-		["Nisegob - Stormscale"] = {
+		["Pixelfehler - Ysera"] = {
 			["bindings"] = {
 				{
-					["type"] = "target",
 					["sets"] = {
 						["default"] = true,
 					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -692,25 +712,6 @@ CliqueDB3 = {
 				}, -- [2]
 			},
 		},
-		["Pixelfehler - Ysera"] = {
-			["bindings"] = {
-				{
-					["sets"] = {
-						["default"] = true,
-					},
-					["type"] = "target",
-					["key"] = "BUTTON1",
-					["unit"] = "mouseover",
-				}, -- [1]
-				{
-					["type"] = "menu",
-					["key"] = "BUTTON2",
-					["sets"] = {
-						["default"] = true,
-					},
-				}, -- [2]
-			},
-		},
 		["Nisecakes - Stormscale"] = {
 			["bindings"] = {
 				{
@@ -731,6 +732,25 @@ CliqueDB3 = {
 			},
 		},
 		["Nedoka - Antonidas"] = {
+			["bindings"] = {
+				{
+					["type"] = "target",
+					["sets"] = {
+						["default"] = true,
+					},
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
+		["Nisearw - Stormscale"] = {
 			["bindings"] = {
 				{
 					["type"] = "target",

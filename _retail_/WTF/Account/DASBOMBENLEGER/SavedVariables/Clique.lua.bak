@@ -32,11 +32,11 @@ CliqueDB3 = {
 		["Niseko - Stormscale"] = {
 			["spec1_profileKey"] = "Niseko - Stormscale",
 			["fastooc"] = false,
-			["spec3_profileKey"] = "Niseko - Stormscale",
-			["downclick"] = false,
 			["alerthidden"] = true,
+			["downclick"] = false,
 			["spec2_profileKey"] = "Niseko - Stormscale",
 			["specswap"] = false,
+			["spec3_profileKey"] = "Niseko - Stormscale",
 		},
 	},
 	["profileKeys"] = {
@@ -51,6 +51,7 @@ CliqueDB3 = {
 		["Niseniseko - Stormscale"] = "Niseniseko - Stormscale",
 		["Nise - Stormscale"] = "Nise - Stormscale",
 		["Nisetest - Stormscale"] = "Nisetest - Stormscale",
+		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 		["Nedoka - Antonidas"] = "Niseko - Stormscale",
 		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Nisecakes - Stormscale"] = "Nisecakes - Stormscale",
@@ -422,6 +423,25 @@ CliqueDB3 = {
 					["sets"] = {
 						["default"] = true,
 					},
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
+		["Nisearw - Stormscale"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]

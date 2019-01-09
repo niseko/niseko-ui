@@ -1,74 +1,74 @@
 
 ElvCharacterDB = {
 	["ChatEditHistory"] = {
-		"/p same with pvp", -- [1]
-		"/p time to", -- [2]
-		"/p never ever", -- [3]
-		"/p log in again", -- [4]
-		"/p now that i'm 38", -- [5]
-		"/p was a good time with you", -- [6]
-		"/p the spreadsheet made it sound hard", -- [7]
-		"/p that ill barely manage for mythic", -- [8]
-		"/p here i am 3 weeks before", -- [9]
-		"/p i'm just too efficient", -- [10]
-		"/p didnt even do islands", -- [11]
-		"/p where is the fucking", -- [12]
-		"/p tortollan", -- [13]
-		"/p porcelain", -- [14]
-		"/p paragon", -- [15]
-		"/p guy", -- [16]
-		"/p why wouldnt he be here", -- [17]
-		"/p what a massive bitch", -- [18]
-		"/p ill just never pick it up", -- [19]
-		"/quit", -- [20]
+		"/p i'm waiting for ps5 details", -- [1]
+		"/p if its backwards compatible with ps4 games i'll buy a ps5", -- [2]
+		"/p a ps4 otherwise", -- [3]
+		"/p i usually buy them late and play the exclusives, like with the ps3", -- [4]
+		"/p switch is the only one i bought on release", -- [5]
+		"/p and it was worth", -- [6]
+		"/p i use it so much", -- [7]
+		"/p every time i travel as well", -- [8]
+		"/p ps4 has some insane exclusives", -- [9]
+		"/p its actually retarded", -- [10]
+		"/p yeah i use my main monitor for consoles", -- [11]
+		"/p ps4 goes for cheap now", -- [12]
+		"/p like 200€ cheap sometimes", -- [13]
+		"/ec", -- [14]
+		"/omnicc", -- [15]
+		"/framestack", -- [16]
+		"/grid2", -- [17]
+		"/wa", -- [18]
+		"/bagsync", -- [19]
+		"/bgs config", -- [20]
 	},
 	["ChatHistoryLog"] = {
 		{
-			"rng spawning", -- [1]
-			"Reeceburton-Stormscale", -- [2]
+			"evnagelism", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			534, -- [11]
-			"Player-2073-06452CB7", -- [12]
+			161, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546633884,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546997887,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [1]
 		{
-			"?", -- [1]
-			"Reeceburton-Stormscale", -- [2]
+			"rapture", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			535, -- [11]
-			"Player-2073-06452CB7", -- [12]
+			162, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546633885,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546997889,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [2]
 		{
-			"its months into bfa", -- [1]
+			"luminous barrier", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -78,7 +78,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			536, -- [11]
+			163, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -86,33 +86,11 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546633888,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546997892,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [3]
 		{
-			"windows*", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			538, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546633892,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [4]
-		{
-			"ppl still asking if shamans use staffs", -- [1]
+			"your own dont work idio", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -122,7 +100,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			539, -- [11]
+			165, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -130,231 +108,253 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546633895,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546997896,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [4]
+		{
+			"t", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			166, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546997899,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [5]
 		{
-			"huh", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"!", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			540, -- [11]
-			"Player-2073-068BD130", -- [12]
+			168, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546633909,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546997906,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [6]
 		{
-			"multimeter", -- [1]
-			"Reeceburton-Stormscale", -- [2]
+			"just need to decide how to do wa", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			542, -- [11]
-			"Player-2073-06452CB7", -- [12]
+			178, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546633919,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546997957,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [7]
 		{
-			"lmao", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"or action bars like before", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			543, -- [11]
+			179, -- [11]
 			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546633920,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546997961,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [8]
 		{
-			"classic", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"my wa are a complicated mess", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			544, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			185, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546633921,
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546997974,
 			[50] = "CHAT_MSG_PARTY",
 		}, -- [9]
 		{
-			"never heard of it before", -- [1]
-			"Reeceburton-Stormscale", -- [2]
+			"its a masterpiece", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			545, -- [11]
-			"Player-2073-06452CB7", -- [12]
+			186, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546633922,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546997978,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [10]
 		{
-			"some adware", -- [1]
-			"Reeceburton-Stormscale", -- [2]
+			"kappa", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			546, -- [11]
-			"Player-2073-06452CB7", -- [12]
+			187, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546633923,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546997983,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [11]
 		{
-			"i saw your lovely chat with mira", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"hahah", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			547, -- [11]
+			188, -- [11]
 			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546633931,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546997985,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [12]
 		{
-			"um just use good adware software ", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"if they work for you", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			548, -- [11]
-			"Player-2073-068BD130", -- [12]
+			189, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546633935,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546997992,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [13]
 		{
-			"and dont click into \"pornhub account generator working 2019\" links", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"all that matters", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			552, -- [11]
-			"Player-2073-068BD130", -- [12]
+			190, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546633972,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546997994,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [14]
 		{
-			"lol", -- [1]
-			"Valdura-Stormscale", -- [2]
+			"if you move the bottom left group around", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			561, -- [11]
-			"Player-2073-0693F449", -- [12]
+			193, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddValdura|r",
-			[51] = 1546633983,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998060,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [15]
 		{
-			"i couldnt really say what i actually needed to say", -- [1]
+			"they should all move with it", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -364,7 +364,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			572, -- [11]
+			194, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -372,55 +372,55 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634001,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546998062,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [16]
 		{
-			"because the top shamans are actual literal garbage ", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"ya thats moved now", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			573, -- [11]
-			"Player-2073-06067728", -- [12]
+			196, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634011,
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998084,
 			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [17]
 		{
-			"ya", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"the only shit thing is", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			574, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			197, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634029,
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998095,
 			[50] = "CHAT_MSG_PARTY",
 		}, -- [18]
 		{
-			"you can watch their vods and realize that they don't actually know what they're doing", -- [1]
+			"that they dont show properly in the wa menu", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -430,7 +430,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			575, -- [11]
+			198, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -438,11 +438,11 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634030,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546998100,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [19]
 		{
-			"there is no skill involved", -- [1]
+			"unless you specifically show the master group", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -452,7 +452,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			576, -- [11]
+			199, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -460,55 +460,55 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634051,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546998109,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [20]
 		{
-			"Malwarebytes is what I used whenever I got some shit", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"ya i thought that", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			577, -- [11]
-			"Player-2073-068BD130", -- [12]
+			200, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634064,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998113,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [21]
 		{
-			"Interrupted Infused Bedrock's |cff71d5ff|Hspell:275523:0|h[Azerite Vent]|h|r!", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
+			"i think i deleted them", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			578, -- [11]
-			"Player-2073-06067728", -- [12]
+			202, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634082,
-			[50] = "CHAT_MSG_SAY",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998121,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [22]
 		{
-			"that guy in general has some dumb ideas", -- [1]
+			"bitch", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -518,7 +518,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			613, -- [11]
+			203, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -526,277 +526,277 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634154,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546998125,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [23]
 		{
-			":O", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
+			"couldve copied and just redone them as disc spells", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			614, -- [11]
-			"Player-2073-0645AE90", -- [12]
+			204, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634171,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998128,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [24]
 		{
-			":D", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
+			"xd", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			615, -- [11]
-			"Player-2073-0645AE90", -- [12]
+			205, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634171,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998128,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [25]
 		{
-			"if the raid lasts 2 months longer he'd say level 25 keys instead", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"oi im never gonn play sham", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			616, -- [11]
-			"Player-2073-06067728", -- [12]
+			208, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634175,
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998148,
 			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [26]
 		{
-			"D:", -- [1]
-			"Khunee-Stormscale", -- [2]
+			"you spaz and coby", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			617, -- [11]
-			"Player-2073-05E7B1B6", -- [12]
+			209, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfff48cbaKhunee|r",
-			[51] = 1546634184,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998154,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [27]
 		{
-			"D:?", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
+			"dansham is benched forever", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			618, -- [11]
-			"Player-2073-0645AE90", -- [12]
+			210, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634224,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998159,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [28]
 		{
-			":D", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
+			"i might have recruited another shaman", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			619, -- [11]
-			"Player-2073-0645AE90", -- [12]
+			211, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634224,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998163,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [29]
 		{
-			":DDDDDDDDDDDDDDDDDDDDDDDDD", -- [1]
-			"Buffww-Stormscale", -- [2]
+			"ya lmao", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			621, -- [11]
-			"Player-2073-060FB5B5", -- [12]
+			212, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff00ff96Buffww|r",
-			[51] = 1546634238,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998167,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [30]
 		{
-			"ya", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"spaz was telling me", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			622, -- [11]
+			213, -- [11]
 			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634238,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998170,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [31]
 		{
-			"=DDDDDDDDDDDD", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"he applied to bloom as well", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			623, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634244,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [32]
-		{
-			"Interrupted Sandscour's |cff71d5ff|Hspell:268792:0|h[Sand Blast]|h|r!", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			624, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634245,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [33]
-		{
-			"classic person who goes agaisnt the grain ", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			625, -- [11]
+			214, -- [11]
 			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634246,
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998174,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [32]
+		{
+			"tim messaged me asking about him", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			215, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998177,
 			[50] = "CHAT_MSG_PARTY",
+		}, -- [33]
+		{
+			"and u 2 snatched him", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			216, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998177,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [34]
 		{
-			"-(0", -- [1]
-			"Khunee-Stormscale", -- [2]
+			"yeah", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			626, -- [11]
-			"Player-2073-05E7B1B6", -- [12]
+			217, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfff48cbaKhunee|r",
-			[51] = 1546634259,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998179,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [35]
 		{
-			"Interrupted Sandscour's |cff71d5ff|Hspell:79174:0|h[Sand Spray]|h|r!", -- [1]
+			"i yoinked him", -- [1]
 			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
+			"", -- [3]
 			"", -- [4]
 			"Niseko-Stormscale", -- [5]
 			"", -- [6]
@@ -804,7 +804,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			627, -- [11]
+			218, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -812,55 +812,55 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634263,
-			[50] = "CHAT_MSG_SAY",
+			[51] = 1546998188,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [36]
 		{
-			"):():D)(", -- [1]
-			"Khunee-Stormscale", -- [2]
+			"good x)", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			628, -- [11]
-			"Player-2073-05E7B1B6", -- [12]
+			220, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfff48cbaKhunee|r",
-			[51] = 1546634269,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998194,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [37]
 		{
-			"\\(^_^)/", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"got access to his logs and am not fully convinced", -- [1]
+			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Niseko-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			629, -- [11]
-			"Player-2073-068BD130", -- [12]
+			222, -- [11]
+			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634277,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998203,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [38]
 		{
-			"you're not doing the raid when the content is difficult", -- [1]
+			"we'll see today", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -870,7 +870,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			630, -- [11]
+			223, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -878,99 +878,55 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634277,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[51] = 1546998206,
+			[50] = "CHAT_MSG_PARTY",
 		}, -- [39]
 		{
-			"and compare it to dungeons that you purposefully made difficult", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"ya", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			636, -- [11]
-			"Player-2073-06067728", -- [12]
+			227, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634289,
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998253,
 			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [40]
 		{
-			"(~^_^)~", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
+			"hopefully hes good", -- [1]
+			"Moron-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"", -- [5]
+			"Moron-Stormscale", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			637, -- [11]
-			"Player-2073-068BD130", -- [12]
+			228, -- [11]
+			"Player-2073-0693B4B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634289,
-			[50] = "CHAT_MSG_GUILD",
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998255,
+			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [41]
 		{
-			"D:", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			638, -- [11]
-			"Player-2073-0645AE90", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634300,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [42]
-		{
-			"not me that got it", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			640, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634322,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [43]
-		{
-			"i wish i could just clip sarett and lalas streams and post it there", -- [1]
+			"pala should be harder to mess up", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -980,7 +936,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			641, -- [11]
+			229, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -988,33 +944,55 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634332,
+			[51] = 1546998262,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [42]
+		{
+			"than ", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			231, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998263,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [43]
+		{
+			"most palas have like giga sucked so far right", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			232, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998263,
 			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [44]
 		{
-			"yea right", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			642, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634334,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [45]
-		{
-			"as a counter argument", -- [1]
+			"shaman", -- [1]
 			"Niseko-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -1024,7 +1002,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			643, -- [11]
+			233, -- [11]
 			"Player-2073-06067728", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -1032,11 +1010,1243 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634335,
+			[51] = 1546998265,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [45]
+		{
+			"!", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			235, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998300,
 			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [46]
 		{
-			"fkin sara", -- [1]
+			"back in the bank", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			236, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998311,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [47]
+		{
+			"f u", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			237, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998312,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [48]
+		{
+			"same", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			238, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998318,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [49]
+		{
+			"i should get my 1440p screen", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			266, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998512,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [50]
+		{
+			"and finish witcher 3", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			267, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998515,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [51]
+		{
+			"ya ive done started w3", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			269, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998544,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [52]
+		{
+			"looks really good", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			270, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998546,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [53]
+		{
+			"i'm in the middle of the dlcs somewhere", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			271, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998561,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [54]
+		{
+			"good game", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			273, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998566,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [55]
+		{
+			"i was gonna play it when i first got my 1080", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			278, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998595,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [56]
+		{
+			"but never got round to it", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			279, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998598,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [57]
+		{
+			"whenever i want to game i usually open my switch tho", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			280, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998599,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [58]
+		{
+			"fucking op console", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			281, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998601,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [59]
+		{
+			"ya", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			282, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998606,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [60]
+		{
+			"a lot of my friends all play switch ", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			283, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998611,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [61]
+		{
+			"dont have one", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			284, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998615,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [62]
+		{
+			"all the games i usually bought on steam i get on switch now", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			288, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998632,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [63]
+		{
+			"like i bought gris yesterday", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			289, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998637,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [64]
+		{
+			"and played hollow knight and dark cells on it", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			291, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998646,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [65]
+		{
+			"dead cells*", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			292, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998651,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [66]
+		{
+			"its just so good", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			293, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998655,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [67]
+		{
+			"ya", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			295, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998672,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [68]
+		{
+			"i'm waiting for ps5 details", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			299, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998705,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [69]
+		{
+			"if its backwards compatible with ps4 games i'll buy a ps5", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			300, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998716,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [70]
+		{
+			"a ps4 otherwise", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			301, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998718,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [71]
+		{
+			"ya dont own any console :(", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			304, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998773,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [72]
+		{
+			"i probably should", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			305, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998776,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [73]
+		{
+			"i usually buy them late and play the exclusives, like with the ps3", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			307, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998796,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [74]
+		{
+			"switch is the only one i bought on release", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			308, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998802,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [75]
+		{
+			"and it was worth", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			310, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998806,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [76]
+		{
+			"i use it so much", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			311, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998808,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [77]
+		{
+			"every time i travel as well", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			312, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998812,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [78]
+		{
+			"yea, the exclusives always look good", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			313, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998823,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [79]
+		{
+			"some of the 2018 big games were exclusives ", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			314, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998837,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [80]
+		{
+			"and like ive never played last of us", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			315, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998843,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [81]
+		{
+			"etc", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			316, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998843,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [82]
+		{
+			"ps4 has some insane exclusives", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			317, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998846,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [83]
+		{
+			"its actually retarded", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			318, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998852,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [84]
+		{
+			"ya", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			319, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998854,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [85]
+		{
+			"i should get one", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			322, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998862,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [86]
+		{
+			"and just have it on desk ", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			323, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998866,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [87]
+		{
+			"and use monitor when i wanna chill and play other stuff", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			325, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998873,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [88]
+		{
+			"brb 1 min", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			326, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546998882,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [89]
+		{
+			"yeah i use my main monitor for consoles", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			327, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998887,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [90]
+		{
+			"ps4 goes for cheap now", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			345, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998946,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [91]
+		{
+			"like 200€ cheap sometimes", -- [1]
+			"Niseko-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Niseko-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			352, -- [11]
+			"Player-2073-06067728", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff0070ddNiseko|r",
+			[51] = 1546998956,
+			[50] = "CHAT_MSG_PARTY",
+		}, -- [92]
+		{
+			"ya", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			414, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999127,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [93]
+		{
+			"ill wait for 5 as well", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			418, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999172,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [94]
+		{
+			"maybe if its sick ill splash some cash", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			420, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999179,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [95]
+		{
+			"i dont have", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			421, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999180,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [96]
+		{
+			"ok gonna head off", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			427, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999239,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [97]
+		{
+			"have fun on PTR", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			428, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999241,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [98]
+		{
+			"cya tomorrow", -- [1]
+			"Moron-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Moron-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			429, -- [11]
+			"Player-2073-0693B4B6", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffMoron|r",
+			[51] = 1546999243,
+			[50] = "CHAT_MSG_PARTY_LEADER",
+		}, -- [99]
+		{
+			"is it", -- [1]
+			"Scread-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			1, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043078,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [100]
+		{
+			"why is that", -- [1]
+			"Scread-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			9, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043085,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [101]
+		{
+			"rare wqs give 350 rep ", -- [1]
 			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
@@ -1046,7 +2256,7 @@ ElvCharacterDB = {
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			644, -- [11]
+			10, -- [11]
 			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
@@ -1054,1768 +2264,558 @@ ElvCharacterDB = {
 			false, -- [16]
 			false, -- [17]
 			[52] = "|cfff48cbaKhunee|r",
-			[51] = 1546634337,
+			[51] = 1547043093,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [47]
-		{
-			"Interrupted Dagrus the Scorned's |cff71d5ff|Hspell:185350:0|h[Furious Roar]|h|r!", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			645, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634345,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [48]
-		{
-			"lol", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			646, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634351,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [49]
-		{
-			"are they the m+ shamans?", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			647, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634354,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [50]
-		{
-			"install Malwarebytes > scan > unistall later, should help", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			654, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634361,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [51]
-		{
-			"malwarebytes didnt catch it", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			655, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634376,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [52]
-		{
-			"isnt malware", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			656, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634378,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [53]
-		{
-			"is adware", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			657, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634380,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [54]
-		{
-			"isn't that same shit", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			658, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634392,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [55]
-		{
-			"na", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			659, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634395,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [56]
-		{
-			"but its weird man", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			660, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634403,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [57]
-		{
-			"it just spawns in boot", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			661, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634407,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [58]
-		{
-			"completely hidden", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			662, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634415,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [59]
-		{
-			"well I had once a virus that reinstalled himself", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			663, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634419,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [60]
-		{
-			"if u dont have inet access", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			664, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634419,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [61]
-		{
-			"btu u plug in", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			665, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634421,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [62]
-		{
-			"and it respawns", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			666, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634423,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [63]
-		{
-			"yea", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			667, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634426,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [64]
-		{
-			"i dealted with that sort of thing, it's rooted somewhere deep", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			668, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634441,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [65]
-		{
-			"like fuck", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			669, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634441,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [66]
-		{
-			"tilting", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			670, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634443,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [67]
-		{
-			"yeee", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			671, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634446,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [68]
-		{
-			"they can barely turn their character", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			672, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634447,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [69]
-		{
-			"try checking C:\\Users\\Daniel\\AppData", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			673, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634456,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [70]
-		{
-			"but are considered the \"best of their class\" because they can clear high keys", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			674, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634457,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [71]
-		{
-			"by repeating them over and over and over", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			675, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634461,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [72]
-		{
-			"it's where I found some shitass folder named \"223kj423g423h42348g234g23\"", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			678, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634470,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [73]
-		{
-			"is ur name daniel", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			679, -- [11]
-			"Player-2073-0645AE90", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634474,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [74]
-		{
-			"im not daniel", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			680, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634474,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [75]
-		{
-			"while picking the easiest combination of affixes to do so", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			681, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634477,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [76]
-		{
-			"that's a nice name bro", -- [1]
-			"Gubbymeme-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			682, -- [11]
-			"Player-2073-0645AE90", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffc41e3aGubbymeme|r",
-			[51] = 1546634480,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [77]
-		{
-			"i dont have that folder", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			683, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634482,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [78]
-		{
-			"yes thx", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			684, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634484,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [79]
-		{
-			"well whatever your computer is named xD", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			685, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634491,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [80]
-		{
-			"give something better", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			688, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634547,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [81]
-		{
-			"give another adware program", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			690, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634564,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [82]
-		{
-			"plz", -- [1]
-			"Reeceburton-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			691, -- [11]
-			"Player-2073-06452CB7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaReeceburton|r",
-			[51] = 1546634564,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [83]
-		{
-			"i didn't bring the endless repeat argument because he'd just say that you repeat raid bosses endlessly", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			692, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634568,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [84]
-		{
-			"I remember the virus folder had a really long name with random letters like \"235h25g23g5oi23g23g523g23h523h62\" it reinstalled itself whenever I deleted it from programs list", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			694, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634571,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [85]
-		{
-			"it was some shit nigger game", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			697, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634583,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [86]
-		{
-			"ya", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			698, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634586,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [87]
-		{
-			"ill never understand the keys argument ", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			700, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634597,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [88]
-		{
-			"max talks about it a lot on stream as well", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			702, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634604,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [89]
-		{
-			"perhaps check your current processes ", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			703, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634615,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [90]
-		{
-			"Interrupted Sister Celicia's |cff71d5ff|Hspell:271276:0|h[Water Barrier]|h|r!", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			704, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634616,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [91]
-		{
-			"if you find something suspicious right click and open folder location", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			705, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634625,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [92]
-		{
-			"i just want a m+", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			712, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634667,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [93]
-		{
-			"channel", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			713, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634669,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [94]
-		{
-			"and mute it", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			714, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634670,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [95]
-		{
-			"ctrl/shift/esc thing I meant", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			717, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634693,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [96]
-		{
-			"same with pvp", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			718, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634696,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [97]
-		{
-			"the task manager", -- [1]
-			"Ghosudaz-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			719, -- [11]
-			"Player-2073-068BD130", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Ghosudaz|r",
-			[51] = 1546634700,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [98]
-		{
-			"Interrupted Tidesage Archivist's |cff71d5ff|Hspell:225514:0|h[Water Bolt]|h|r!", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			720, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546634704,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [99]
-		{
-			"ya i have that in fw", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			736, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634823,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [100]
-		{
-			"muted pvp ", -- [1]
-			"Dístance-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Dístance-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			737, -- [11]
-			"Player-2073-0693B4B6", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546634830,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [101]
-		{
-			"time to", -- [1]
-			"Niseko-Stormscale", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-Stormscale", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			843, -- [11]
-			"Player-2073-06067728", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635338,
-			[50] = "CHAT_MSG_PARTY_LEADER",
 		}, -- [102]
 		{
-			"never ever", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"even just doing those you get a box every 3 days", -- [1]
+			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			845, -- [11]
-			"Player-2073-06067728", -- [12]
+			14, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635340,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1547043100,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [103]
 		{
-			"log in again", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"no way :O that's MWAD ", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			846, -- [11]
-			"Player-2073-06067728", -- [12]
+			15, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635341,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043104,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [104]
 		{
-			"now that i'm 38", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"ikr :O", -- [1]
+			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			847, -- [11]
-			"Player-2073-06067728", -- [12]
+			16, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635347,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1547043111,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [105]
 		{
-			"was a good time with you", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"shame you're still a fucking loser that doesn't have 400 mounts", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			848, -- [11]
-			"Player-2073-06067728", -- [12]
+			21, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635362,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043133,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [106]
 		{
-			"hahah", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"way she goes", -- [1]
+			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			855, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			23, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635388,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1547043144,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [107]
 		{
-			"gz", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"I had the famous vegan roll today", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			856, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			26, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635390,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043158,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [108]
 		{
-			"ill miss you", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"we dont even have em", -- [1]
+			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			857, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			28, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635392,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1547043167,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [109]
 		{
-			"the spreadsheet made it sound hard", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"it was actually decent", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			859, -- [11]
-			"Player-2073-06067728", -- [12]
+			29, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635425,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043169,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [110]
 		{
-			"that ill barely manage for mythic", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"hummus roll?", -- [1]
+			"Hudzz-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			860, -- [11]
-			"Player-2073-06067728", -- [12]
+			30, -- [11]
+			"Player-2073-065F6CAF", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635428,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffff7c0aHudzz|r",
+			[51] = 1547043170,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [111]
 		{
-			"here i am 3 weeks before", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"its quorn", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			861, -- [11]
-			"Player-2073-06067728", -- [12]
+			33, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635440,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043223,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [112]
 		{
-			"ya", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"and its pengers", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			862, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			34, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635445,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043242,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [113]
 		{
-			"i'm just too efficient", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"Cal ", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			863, -- [11]
-			"Player-2073-06067728", -- [12]
+			39, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635445,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043294,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [114]
 		{
-			"it sounds scary when its purely in islands", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"Lets play this mov", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			864, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			40, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635460,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043298,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [115]
 		{
-			"im already at a 28k ap week and aint dome island cap", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"?", -- [1]
+			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			865, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			41, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635474,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1547043309,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [116]
 		{
-			"didnt even do islands", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"mob", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			866, -- [11]
-			"Player-2073-06067728", -- [12]
+			42, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635478,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043318,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [117]
 		{
-			"where is the fucking", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"*", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			867, -- [11]
-			"Player-2073-06067728", -- [12]
+			43, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635482,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043319,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [118]
 		{
-			"tortollan", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"Pepega", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			868, -- [11]
-			"Player-2073-06067728", -- [12]
+			44, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635483,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043323,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [119]
 		{
-			"porcelain", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"play the pack bro", -- [1]
+			"Khunee-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			869, -- [11]
-			"Player-2073-06067728", -- [12]
+			45, -- [11]
+			"Player-2073-05E7B1B6", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635488,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cfff48cbaKhunee|r",
+			[51] = 1547043340,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [120]
 		{
-			"paragon", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"is temple of sethraliss fixed", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			870, -- [11]
-			"Player-2073-06067728", -- [12]
+			48, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635493,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043388,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [121]
 		{
-			"guy", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"no word on it", -- [1]
+			"Hudzz-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			871, -- [11]
-			"Player-2073-06067728", -- [12]
+			50, -- [11]
+			"Player-2073-065F6CAF", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635495,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffff7c0aHudzz|r",
+			[51] = 1547043397,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [122]
 		{
-			"mm", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"ye it is", -- [1]
+			"Calekk-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			872, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			51, -- [11]
+			"Player-2073-060FB8B3", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635499,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffff7c0aCalekk|r",
+			[51] = 1547043401,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [123]
 		{
-			"check stormsong", -- [1]
-			"Dístance-Stormscale", -- [2]
+			"PepeHands", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Dístance-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			873, -- [11]
-			"Player-2073-0693B4B6", -- [12]
+			52, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cffffffffDístance|r",
-			[51] = 1546635501,
-			[50] = "CHAT_MSG_PARTY",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043408,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [124]
 		{
-			"why wouldnt he be here", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"we're fucking doomed", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			875, -- [11]
-			"Player-2073-06067728", -- [12]
+			53, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635513,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043411,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [125]
 		{
-			"what a massive bitch", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"is that your last one?", -- [1]
+			"Hudzz-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			876, -- [11]
-			"Player-2073-06067728", -- [12]
+			55, -- [11]
+			"Player-2073-065F6CAF", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635521,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffff7c0aHudzz|r",
+			[51] = 1547043419,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [126]
 		{
-			"ill just never pick it up", -- [1]
-			"Niseko-Stormscale", -- [2]
+			"1 of 3", -- [1]
+			"Scread-Stormscale", -- [2]
 			"", -- [3]
 			"", -- [4]
-			"Niseko-Stormscale", -- [5]
+			"", -- [5]
 			"", -- [6]
 			0, -- [7]
 			0, -- [8]
 			"", -- [9]
 			0, -- [10]
-			882, -- [11]
-			"Player-2073-06067728", -- [12]
+			56, -- [11]
+			"Player-2073-05CE9F7C", -- [12]
 			0, -- [13]
 			false, -- [14]
 			false, -- [15]
 			false, -- [16]
 			false, -- [17]
-			[52] = "|cff0070ddNiseko|r",
-			[51] = 1546635547,
-			[50] = "CHAT_MSG_PARTY_LEADER",
+			[52] = "|cffffffffScread|r",
+			[51] = 1547043425,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [127]
 	},
 }

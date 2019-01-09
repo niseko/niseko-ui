@@ -1,6 +1,7 @@
 
 Gladius2DB = {
 	["profileKeys"] = {
+		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
 		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
@@ -10,6 +11,16 @@ Gladius2DB = {
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
 	},
 	["profiles"] = {
+		["Nisearw - Stormscale"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["x"] = {
+				["arena1"] = 1251.55558586121,
+			},
+			["y"] = {
+				["arena1"] = 390.399966050518,
+			},
+		},
 		["Niseko - Twisting Nether"] = {
 			["auraVersion"] = 1,
 			["tagsVersion"] = 4,

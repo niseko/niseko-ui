@@ -17,7 +17,7 @@ MikScrollingBattleText: disabled
 TellMeWhen: disabled
 TellMeWhen_Options: disabled
 LoggerHeadLite: enabled
-BagSync: disabled
+BagSync: enabled
 VuhDo: disabled
 VuhDoOptions: disabled
 WeakAuras: enabled

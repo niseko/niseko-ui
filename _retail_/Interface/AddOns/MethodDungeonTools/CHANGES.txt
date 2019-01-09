@@ -1,16 +1,28 @@
-lightweight tag 65461cef2c267f489f6d34bffbfd30585e859ece v2.2.50
+lightweight tag 8e837ac807c8b43caf8bd63590e2d0fa0769f19f v2.2.54
 Author:	Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:	Thu Dec 27 09:26:13 2018 +0100
+Date:	Mon Jan 7 17:14:57 2019 +0100
 
-commit 65461cef2c267f489f6d34bffbfd30585e859ece
+commit 8e837ac807c8b43caf8bd63590e2d0fa0769f19f
 Author: Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:   Thu Dec 27 09:26:13 2018 +0100
+Date:   Mon Jan 7 17:14:57 2019 +0100
 
     version update
 
-commit 3b5f1629ea0d25d0da4cc694f8be205df31d2e31
+commit 0468ba50fba83ecce4cdeb41315d4972b22e94d8
 Author: Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:   Thu Dec 27 09:25:57 2018 +0100
+Date:   Mon Jan 7 17:14:50 2019 +0100
 
-    fix database corruption
+    mapping updates
+
+commit 93175e5469b8186cdd6dc2629b52a9333ba3c16b
+Author: Nnogga <27819512+nnogga@users.noreply.github.com>
+Date:   Mon Jan 7 17:03:12 2019 +0100
+
+    added function to retrieve enemy forces
+
+commit 9a77701ba4caff5acc6d85823a47c610668b50b8
+Author: Nnogga <27819512+nnogga@users.noreply.github.com>
+Date:   Sun Jan 6 21:35:51 2019 +0100
+
+    mapping updates
 

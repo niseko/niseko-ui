@@ -1,7 +1,7 @@
 
 manaUsed = 0
 manaUsedInverse = 40000
-reloadedUI = false
+reloadedUI = true
 textFormatOptions = {
 	"25,350", -- [1]
 	"25350 : 40k", -- [2]

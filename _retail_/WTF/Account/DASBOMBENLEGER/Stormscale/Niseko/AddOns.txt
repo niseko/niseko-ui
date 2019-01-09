@@ -42,7 +42,7 @@ MikScrollingBattleText: disabled
 TellMeWhen: disabled
 TellMeWhen_Options: disabled
 LoggerHeadLite: enabled
-BagSync: disabled
+BagSync: enabled
 Dominos: enabled
 Bartender4: disabled
 Masque: enabled
