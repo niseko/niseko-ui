@@ -35,6 +35,7 @@ function GottaGoFast.InitOptions()
       DeathInObjectives = false,
       MobPoints = false,
       IndividualMobValue = true,
+      UseMdt = true,
       ObjectiveCompleteInObjectives = true,
       TimerTooltip = true,
       History = {},
@@ -135,8 +136,16 @@ function GottaGoFast.InitOptions()
             get = GottaGoFast.GetIndividualMobValue,
             set = GottaGoFast.SetIndividualMobValue,
           },
-          TimerTooltip = {
+          UseMdt = {
             order = 11,
+            type = "toggle",
+            name = "MDT Mob Count",
+            desc = "When possible use Method Dungeon Tools for mob count, generally this addon has the most up to date values",
+            get = GottaGoFast.GetUseMdt,
+            set = GottaGoFast.SetUseMdt,
+          },
+          TimerTooltip = {
+            order = 12,
             type = "toggle",
             name = "Timer Tooltip",
             desc = "Display Detailed Information About Current M+ By Hovering Over The Timer. This Also Prevents Full Clickthrough Frames (Clickthrough Requires Reload)",
@@ -144,7 +153,7 @@ function GottaGoFast.InitOptions()
             set = GottaGoFast.SetTimerTooltip,
           },
           BestReport = {
-            order = 12,
+            order = 13,
             type = "toggle",
             name = "Report Best Run",
             desc = "Reports Your Best Run At This Dungeon / Level Affixes At The Start Of The Run, And When You Beat This Run, New Record At The End",
@@ -152,14 +161,14 @@ function GottaGoFast.InitOptions()
             set = GottaGoFast.SetBestReport,
           },
           Changelog = {
-            order = 13,
+            order = 14,
             name = "Changelog",
             desc = "GottaGoFast Changelog",
             type = "execute",
             func = GottaGoFast.Changelog,
           },
           History = {
-            order = 14,
+            order = 15,
             name = "History",
             desc = "GottaGoFast History - Display Of Your Runs",
             type = "execute",

@@ -1,4 +1,41 @@
 ------------------------------------------------------------------------
+r859 | michaelspain | 2019-01-12 19:17:36 +0000 (Sat, 12 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/Options/modules/indicators/Indicator.lua
+
+-Fixing ticket #633 (Indicator configuration doesn't update correctly)
+------------------------------------------------------------------------
+r858 | michaelspain | 2019-01-12 03:45:18 +0000 (Sat, 12 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/GridDefaults.lua
+   M /trunk/Options/GridIndicators.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/indicators/IndicatorTooltip.lua
+   M /trunk/modules/IndicatorTooltip.lua
+
+Changed a bit the tooltip indicator code and configuration, now must be more intuitive.(see ticket #631)
+------------------------------------------------------------------------
+r857 | michaelspain | 2019-01-10 21:38:17 +0000 (Thu, 10 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/Options/modules/statuses/StatusColor.lua
+
+Fixing #632 ticket ("Color Charmed Unit" option cannot be disabled)
+------------------------------------------------------------------------
+r856 | michaelspain | 2019-01-10 02:33:36 +0000 (Thu, 10 Jan 2019) | 5 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/Options/modules/statuses/StatusRange.lua
+   M /trunk/RaidDebuffsOptions/OptionsAdvanced.lua
+   M /trunk/RaidDebuffsOptions/OptionsLuaCode.lua
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+   M /trunk/modules/StatusRange.lua
+
+-Range Status:
+Now "Heal Range" can be used in non healer specs (range status will use 38 yards range if no heal spell is available).
+Now "Heal Range" option is not class specific (the same profile will work for different heal classes).
+-Raid Debuffs:
+Added some code for develop & debug purposes (a hidden option to extract instances&bosses info from the Game Encounter Journal)
+------------------------------------------------------------------------
 r855 | michaelspain | 2019-01-06 19:59:41 +0000 (Sun, 06 Jan 2019) | 1 line
 Changed paths:
    M /trunk/Options/locales/esES.lua

@@ -1,7 +1,7 @@
 local Constants = {};
 
-Constants.Version = 30200;
-Constants.VersionName = "3.0.2";
+Constants.Version = 31000;
+Constants.VersionName = "3.1.0";
 Constants.HistoryPrefix = "GGFHistory"
 Constants.Colors = {};
 Constants.Colors.Gold = "ffffdf00";

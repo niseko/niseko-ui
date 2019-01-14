@@ -283,6 +283,14 @@ function GottaGoFast.SetIndividualMobValue(info, value)
   GottaGoFast.db.profile.IndividualMobValue = value;
 end
 
+function GottaGoFast.GetUseMdt(info)
+  return GottaGoFast.db.profile.UseMdt;
+end
+
+function GottaGoFast.SetUseMdt(info, value)
+  GottaGoFast.db.profile.UseMdt = value;
+end
+
 function GottaGoFast.GetTimerFontFlag(info)
   return GottaGoFast.db.profile.TimerFontFlag;
 end

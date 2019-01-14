@@ -173,8 +173,8 @@ PremadeGroupsFilterState = {
 		},
 		["ilvl"] = {
 			["max"] = "",
-			["min"] = "940",
-			["act"] = false,
+			["min"] = "370",
+			["act"] = true,
 		},
 		["dps"] = {
 			["max"] = "",
@@ -292,12 +292,12 @@ PremadeGroupsFilterState = {
 		["tanks"] = {
 			["max"] = "",
 			["min"] = "1",
-			["act"] = true,
+			["act"] = false,
 		},
 		["ilvl"] = {
 			["max"] = "",
 			["min"] = "350",
-			["act"] = false,
+			["act"] = true,
 		},
 		["dps"] = {
 			["max"] = "",

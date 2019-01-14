@@ -7,7 +7,7 @@ itemData.itemBlacklist = {
 	[109164] = true,
 }
 
--- Quests with incorrect or missing quest area blobs
+-- Quests with incorrect or missing quest area blobs (questID = mapID)
 itemData.questAreas = {
 	-- Global
 	[24629] = true,
@@ -38,12 +38,16 @@ itemData.questAreas = {
 	[25577] = 198,
 }
 
--- Quests items with incorrect or missing quest area blobs
+-- Quests items with incorrect or missing quest area blobs (itemID = mapID)
 itemData.itemAreas = {
 	-- Global
 	[34862] = true,
 	[34833] = true,
 	[39700] = true,
+	[155915] = true,
+	[156474] = true,
+	[156477] = true,
+	[155918] = true,
 
 	-- Deepholm
 	[58167] = 207,
@@ -88,6 +92,17 @@ itemData.itemAreas = {
 	[38699] = 121,
 	[41390] = 121,
 
+	-- Grizzly Hills
+	[38083] = 116,
+	[35797] = 116,
+	[37716] = 116,
+	[35739] = 116,
+	[36851] = 116,
+	-- [36859] = 116,
+
+	-- Icecrown
+	[41265] = 170,
+
 	-- Dalaran (Broken Isles)
 	[129047] = 625,
 
@@ -100,4 +115,23 @@ itemData.itemAreas = {
 
 	-- Suramar
 	[133882] = 680,
+
+	-- Tiragarde Sound
+	[154878] = 895
+}
+
+-- Items not properly flagged as a special quest item (questID = itemID)
+itemData.questItems = {
+	-- Grizzly Hills
+	[11982] = 35734,
+	[11991] = 35797,
+	[12007] = 35797,
+	[12802] = 35797,
+	[12068] = 35797,
+	[12137] = 36859,
+}
+
+-- Items from the above list that needs to be showed when the quest is completed (itemID = flag)
+itemData.questItemsShowComplete = {
+	[35797] = true
 }

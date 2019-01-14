@@ -252,8 +252,24 @@ function GottaGoFast.AddMobPointsToTooltip()
   local cmID = ggf.CurrentCM["CmID"]
   local isTeeming = ggf.HasTeeming(ggf.CurrentCM["Affixes"]);
   if (npcID ~= nil and mapID ~= nil and isTeeming ~= nil) then
-    local isAlternate = GottaGoFast.IsAlternate(cmID, mapID);
-    local weight = ggf.LOP:GetNPCWeightByMap(mapID, npcID, isTeeming, isAlternate);
+    local weight = nil;
+
+    if (ggf.GetUseMdt() and MethodDungeonTools ~= nil and MethodDungeonTools.GetEnemyForces ~= nil) then
+      local count, max, maxTeeming = MethodDungeonTools:GetEnemyForces(npcID);
+
+      if (count ~= nil and max ~= nil and maxTeeming ~= nil) then
+        if (isTeeming) then
+          weight = count / maxTeeming;
+        else
+          weight = count / max;
+        end
+        weight = weight * 100;
+      end
+    else
+      local isAlternate = GottaGoFast.IsAlternate(cmID, mapID);
+      weight = ggf.LOP:GetNPCWeightByMap(mapID, npcID, isTeeming, isAlternate);
+    end
+
     if (weight ~= nil) then
       local appendString = string.format(" (%.2f%%)", weight);
 

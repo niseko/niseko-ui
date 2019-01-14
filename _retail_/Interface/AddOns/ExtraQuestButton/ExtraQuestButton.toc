@@ -1,6 +1,6 @@
-## Interface: 80000
+## Interface: 80100
 ## Author: p3lim
-## Version: 80000.13-Release
+## Version: 80100.14-Release
 ## Title: ExtraQuestButton
 ## Notes: An extra button for quest items!
 ## SavedVariables: ExtraQuestButtonDB

@@ -6,19 +6,21 @@ LoggerHeadNDB = {
 		["Valdurawr - Stormscale"] = "Default",
 		["Yvera - Moonglade"] = "Default",
 		["Niseko - Stormscale"] = "Default",
+		["Nisepie - Stormscale"] = "Default",
 		["Niseko - Twisting Nether"] = "Default",
 		["Nisedog - Stormscale"] = "Default",
 		["Niseniseko - Stormscale"] = "Default",
 		["Nise - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
+		["Seko - Stormscale"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
 		["Yoshicakes - Stormscale"] = "Default",
-		["Donnerbock - Twisting Nether"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
 		["Zelda - Mal'Ganis"] = "Default",
-		["Nisegob - Stormscale"] = "Default",
-		["Nisearw - Stormscale"] = "Default",
+		["Donnerbock - Twisting Nether"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -58,8 +60,8 @@ LoggerHeadNDB = {
 				[1594] = {
 					[8] = true,
 				},
-				[1205] = {
-					[16] = false,
+				[1877] = {
+					[8] = true,
 				},
 				[1753] = {
 					[8] = false,
@@ -67,17 +69,17 @@ LoggerHeadNDB = {
 				[1754] = {
 					[8] = true,
 				},
-				[1501] = {
-					[8] = false,
+				[1771] = {
+					[8] = true,
 				},
 				[1136] = {
 					[16] = false,
 				},
-				[1771] = {
-					[8] = true,
+				[1501] = {
+					[8] = false,
 				},
-				[1877] = {
-					[8] = true,
+				[1205] = {
+					[16] = false,
 				},
 			},
 			["minimap"] = {

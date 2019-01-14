@@ -169,12 +169,32 @@ function ExtraQuestButtonMixin:OnUpdate(elapsed)
 	end
 end
 
-function ExtraQuestButtonMixin:SetItem(itemLink)
-	self:SetItemLink(itemLink)
-	self:SetItemID((GetItemInfoFromHyperlink(itemLink or '')))
+local itemIDs = setmetatable({}, {
+	-- caching itemLinks to itemIDs
+	__index = function(t, item)
+		if(type(item) == 'number') then
+			t[item] = item
+			return item
+		elseif(type(item) ~= 'string') then
+			t[item] = false
+			return
+		end
 
+		local itemID = GetItemInfoFromHyperlink(item)
+		t[item] = itemID
+		return itemID
+	end
+})
+
+function ExtraQuestButtonMixin:SetItem(itemLink)
 	if(itemLink) then
+		self:SetItemLink(itemLink)
+		self:SetItemID(itemIDs[itemLink])
+
 		return not itemData.itemBlacklist[self:GetItemID()]
+	else
+		self.itemID = nil
+		self.itemLink = nil
 	end
 end
 
@@ -200,21 +220,31 @@ end
 
 local function GetQuestDistanceAndItemLink(questLogIndex)
 	-- returns the distance to the quest area and the item link if the quest has an item
-	local itemLink, _, _, showCompleted = GetQuestLogSpecialItemInfo(questLogIndex)
-	if(itemLink) then
-		local _, _, _, isHeader, _, isComplete, _, questID = GetQuestLogTitle(questLogIndex)
-		if(not isHeader) then
+	local _, _, _, isHeader, _, isComplete, _, questID = GetQuestLogTitle(questLogIndex)
+	if(not isHeader) then
+		local itemLink, _, _, showCompleted = GetQuestLogSpecialItemInfo(questLogIndex)
+		if(not itemLink) then
+			local itemID = itemData.questItems[questID]
+			if(itemID and GetItemCount(itemID) > 0) then
+				_, itemLink = GetItemInfo(itemID)
+				showCompleted = itemData.questItemsShowComplete[itemID]
+			end
+		end
+
+		if(itemLink) then
 			local areaID = itemData.questAreas[questID]
 			if(not areaID) then
 				areaID = itemData.itemAreas[(GetItemInfoFromHyperlink(itemLink))]
 			end
 
-			if(areaID and (type(areaID) == 'boolean' or areaID == C_Map.GetBestMapForUnit('player'))) then
-				return 62500, itemLink -- "maximum" distance, basically lowest priority
-			elseif(QuestHasPOIInfo(questID) and (not isComplete or (isComplete and showCompleted))) then
-				local distanceSq, onContinent = GetDistanceSqToQuest(questLogIndex)
-				if(onContinent) then
-					return distanceSq, itemLink
+			if(not isComplete or (isComplete and showCompleted)) then
+				if(areaID and (type(areaID) == 'boolean' or areaID == C_Map.GetBestMapForUnit('player'))) then
+					return 62500, itemLink -- "maximum" distance, basically lowest priority
+				elseif(QuestHasPOIInfo(questID)) then
+					local distanceSq, onContinent = GetDistanceSqToQuest(questLogIndex)
+					if(onContinent) then
+						return distanceSq, itemLink
+					end
 				end
 			end
 		end
@@ -377,4 +407,9 @@ end
 function ExtraQuestButtonMixin:UpdateCount()
 	local num = GetItemCount(self:GetItemLink())
 	self.Count:SetText(num and num > 1 and num or '')
+
+	if(num == 0) then
+		-- we probably don't want the item showing any more, let's update to be sure
+		self:Update()
+	end
 end

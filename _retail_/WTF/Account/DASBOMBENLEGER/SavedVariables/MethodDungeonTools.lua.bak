@@ -1,13 +1,15 @@
 
 MethodDungeonToolsDB = {
 	["profileKeys"] = {
-		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
-		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Yvera - Moonglade"] = "Yvera - Moonglade",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
+		["Nisepie - Stormscale"] = "Nisepie - Stormscale",
+		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
+		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
+		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
+		["Seko - Stormscale"] = "Seko - Stormscale",
 	},
 	["global"] = {
 		["presets"] = {
