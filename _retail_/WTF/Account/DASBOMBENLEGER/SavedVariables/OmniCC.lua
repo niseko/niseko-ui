@@ -1,6 +1,5 @@
 
 OmniCC4Config = {
-	["version"] = "8.1.0",
 	["groupSettings"] = {
 		["grid2"] = {
 			["styles"] = {
@@ -23,19 +22,19 @@ OmniCC4Config = {
 					["scale"] = 1.45000004768372,
 				},
 			},
-			["fontSize"] = 14,
-			["yOff"] = 0,
-			["minEffectDuration"] = 30,
-			["minSize"] = 0.4,
-			["spiralOpacity"] = 1.00999997742474,
+			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
 			["scaleText"] = true,
+			["mmSSDuration"] = 0,
+			["anchor"] = "TOPRIGHT",
+			["spiralOpacity"] = 1.00999997742474,
+			["minDuration"] = 2,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["anchor"] = "TOPRIGHT",
-			["mmSSDuration"] = 0,
-			["minDuration"] = 2,
-			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
+			["minSize"] = 0.4,
+			["minEffectDuration"] = 30,
+			["yOff"] = 0,
+			["fontSize"] = 14,
 		},
 		["base"] = {
 			["styles"] = {
@@ -58,19 +57,19 @@ OmniCC4Config = {
 					["scale"] = 1.5,
 				},
 			},
-			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
-			["yOff"] = 0,
-			["mmSSDuration"] = 0,
-			["anchor"] = "CENTER",
-			["spiralOpacity"] = 1.00999997742474,
+			["fontSize"] = 15,
 			["minDuration"] = 2,
+			["minEffectDuration"] = 30,
+			["minSize"] = 0.4,
+			["spiralOpacity"] = 1.00999997742474,
+			["scaleText"] = true,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["minSize"] = 0.4,
-			["minEffectDuration"] = 30,
-			["scaleText"] = true,
-			["fontSize"] = 15,
+			["anchor"] = "CENTER",
+			["mmSSDuration"] = 0,
+			["yOff"] = 0,
+			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
 		},
 		["PlaterNameplates Blacklist"] = {
 			["enabled"] = false,
@@ -91,8 +90,8 @@ OmniCC4Config = {
 			["tenthsDuration"] = 0,
 			["minSize"] = 0.5,
 			["minEffectDuration"] = 30,
-			["mmSSDuration"] = 0,
 			["minDuration"] = 2,
+			["mmSSDuration"] = 0,
 		},
 	},
 	["groups"] = {
@@ -110,4 +109,5 @@ OmniCC4Config = {
 			["enabled"] = true,
 		}, -- [2]
 	},
+	["version"] = "8.1.1",
 }

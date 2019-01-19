@@ -49,6 +49,11 @@ VER 3 0100000000000007 "HTT" "INV_MISC_QUESTIONMARK"
 /use Velen's Future Sight
 /use Healing Tide Totem
 END
+VER 3 010000000000001D "mount" "INV_MISC_QUESTIONMARK"
+#showtooltip Vulpine Familiar
+/cast [nomounted,nocombat] Water Walking
+/cast Vulpine Familiar
+END
 VER 3 0100000000000017 "Mystch" "136048"
 /whisper Mystch innervate
 END
@@ -71,7 +76,4 @@ END
 VER 3 0100000000000008 "tier75" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [talent:4/3] Ancestral Protection Totem; [talent:4/2] Earthen Wall Totem
-END
-VER 3 0100000000000018 "wrt" "INV_MISC_QUESTIONMARK"
-/use [@mouseover,help] 13
 END

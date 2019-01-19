@@ -7,10 +7,11 @@ GladiatorlosSADB = {
 		["Niseko - Stormscale"] = "Default",
 		["Nisepie - Stormscale"] = "Default",
 		["Yoshicakes - Stormscale"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
+		["Seko - Stormscale"] = "Default",
 		["Niseko - Twisting Nether"] = "Default",
 		["Nisearw - Stormscale"] = "Default",
-		["Seko - Stormscale"] = "Default",
+		["Nyanporo - Blackmoore"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

@@ -1,5 +1,6 @@
 
 limeDB = {
+	["version"] = 4,
 	["minimapButton"] = {
 		["radius"] = 80,
 		["rounding"] = 10,
@@ -9,11 +10,10 @@ limeDB = {
 	},
 	["profileKeys"] = {
 	},
-	["version"] = 4,
 	["profiles"] = {
 		["Default"] = {
-			["py"] = -512.999877929688,
 			["px"] = 1458.99975585938,
+			["py"] = -512.999877929688,
 		},
 	},
 }

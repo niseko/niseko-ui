@@ -1,11 +1,13 @@
 
 TellMeWhenDB = {
 	["profileKeys"] = {
+		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
 		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Zelda - Mal'Ganis"] = "Zelda - Mal'Ganis",
 		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
+		["Yvera - Moonglade"] = "Yvera - Moonglade",
 		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
 	},
 	["global"] = {
@@ -23,169 +25,74 @@ TellMeWhenDB = {
 				}, -- [2]
 			},
 		},
-		["AuraCache"] = {
-			[210657] = 2,
-			[2580] = 2,
-			[20707] = 2,
-			[143625] = 2,
-			[210053] = 2,
-			[186370] = 2,
-			[194084] = 2,
-			[207472] = 2,
-			[5672] = 2,
-			[242981] = 2,
-			[119085] = 2,
-			[190515] = 2,
-			[228287] = 2,
-			[242599] = 2,
-			[195488] = 2,
-			[201640] = 2,
-			[228224] = 2,
-			[108280] = 2,
-			[241835] = 2,
-			[243174] = 2,
-			[160331] = 2,
-			[188031] = 2,
-			[216528] = 2,
-			[197690] = 2,
-			[54149] = 2,
-			[171011] = 2,
-			[79849] = 1,
-			[188033] = 2,
-			[198839] = 2,
-			[221885] = 2,
-			[188034] = 2,
-			[158486] = 2,
-			[200657] = 2,
-			[196099] = 2,
-			[5215] = 2,
-			[207288] = 2,
-			[79962] = 1,
-			[208628] = 2,
-			[236200] = 2,
-			[5487] = 2,
-			[203975] = 2,
-			[234862] = 2,
-			[256824] = 2,
-			[208693] = 2,
-			[113942] = 2,
-			[235054] = 2,
-			[227723] = 2,
-			[199450] = 2,
-			[31821] = 2,
-			[8936] = 2,
-			[210320] = 2,
-			[210607] = 2,
-			[198240] = 2,
-			[190909] = 2,
-			[176151] = 2,
-			[2383] = 2,
-			[166302] = 1,
-			[72968] = 2,
-			[188838] = 2,
-			[255744] = 2,
-			[216251] = 2,
-			[3408] = 2,
-			[226802] = 2,
-			[216411] = 2,
-			[2645] = 2,
-			[108366] = 2,
-			[154797] = 2,
-			[202004] = 2,
-			[194386] = 2,
-			[167898] = 2,
-			[108446] = 1,
-			[129914] = 2,
-			[252208] = 2,
-			[223202] = 2,
-			[242551] = 2,
-			[223203] = 2,
-			[137619] = 2,
-			[157382] = 2,
-			[224001] = 2,
-			[48168] = 1,
-			[207076] = 2,
-			[203538] = 2,
-			[225787] = 2,
-			[207778] = 2,
-			[31842] = 2,
-			[203539] = 2,
-			[40120] = 2,
-			[57723] = 2,
-			[156779] = 2,
-			[252141] = 2,
-			[173184] = 2,
-			[173183] = 2,
-			[255742] = 2,
-			[252202] = 2,
-			[253261] = 2,
-			[183585] = 1,
-			[192225] = 2,
-			[768] = 2,
-			[101650] = 1,
-			[205495] = 2,
-			[43308] = 2,
-			[208772] = 2,
-			[210660] = 2,
-			[225599] = 2,
-			[165961] = 2,
-			[202188] = 2,
-			[203850] = 2,
-			[191877] = 2,
-			[162264] = 2,
-			[253331] = 2,
-			[3600] = 1,
-			[188370] = 2,
-			[207527] = 2,
-			[188389] = 2,
-			[183111] = 1,
-			[255227] = 2,
-			[209950] = 2,
-			[57724] = 2,
-			[253269] = 2,
-			[77762] = 2,
-			[24858] = 2,
-			[130] = 2,
-			[201350] = 2,
-			[208899] = 2,
-			[225506] = 2,
-			[157384] = 2,
-			[61295] = 2,
-			[118922] = 2,
-			[217474] = 2,
-			[186403] = 2,
-			[242586] = 2,
-			[235800] = 2,
-			[16246] = 2,
-			[53390] = 2,
-			[186258] = 2,
-			[201633] = 1,
-			[201671] = 2,
-			[155777] = 2,
-			[8221] = 2,
-			[80354] = 2,
-			[207400] = 2,
-			[2823] = 2,
-			[79892] = 1,
-			[225604] = 2,
-			[248473] = 2,
-			[774] = 2,
-			[203852] = 2,
-			[261764] = 2,
-			[156132] = 2,
-			[245686] = 2,
-			[232698] = 2,
-			[193475] = 2,
-			[209540] = 2,
-		},
 		["HelpSettings"] = {
 			["CNDT_ANDOR_FIRSTSEE"] = true,
 			["SUG_FIRSTHELP"] = true,
 			["SCROLLBAR_DROPDOWN"] = true,
 		},
 	},
-	["Version"] = 84405,
+	["Version"] = 85702,
 	["profiles"] = {
+		["Nyanporo - Blackmoore"] = {
+			["Version"] = 85702,
+			["Groups"] = {
+				{
+					["GUID"] = "TMW:group:1SGTFz12fe0x",
+					["Icons"] = {
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [1]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [2]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [3]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [4]
+					},
+					["Point"] = {
+						["y"] = 64.0011825561524,
+						["point"] = "BOTTOMRIGHT",
+						["relativePoint"] = "BOTTOMRIGHT",
+						["x"] = -195.503845214844,
+					},
+				}, -- [1]
+			},
+		},
 		["Niseko - Twisting Nether"] = {
 			["Version"] = 84305,
 			["Groups"] = {
@@ -350,31 +257,22 @@ TellMeWhenDB = {
 			},
 		},
 		["Niseko - Stormscale"] = {
-			["Version"] = 84405,
+			["Locked"] = true,
 			["NumGroups"] = 2,
 			["Groups"] = {
 				{
+					["GUID"] = "TMW:group:1Qfpp4iWShy7",
 					["Point"] = {
 						["y"] = -45.6698646921144,
 						["x"] = -163.897583784519,
 					},
 					["Scale"] = 0.9935,
 					["Rows"] = 2,
-					["TextureName"] = "VuhDo - Plain",
-					["Role"] = 2,
-					["ShrinkGroup"] = true,
-					["EnabledSpecs"] = {
-						[262] = false,
-						[263] = false,
-					},
-					["Columns"] = 3,
 					["Icons"] = {
 						{
-							["ShowTimer"] = true,
-							["Type"] = "cooldown",
-							["ShowTimerText"] = true,
-							["Name"] = "Healing Stream Totem",
 							["Enabled"] = true,
+							["ShowTimer"] = true,
+							["ShowTimerText"] = true,
 							["SettingsPerView"] = {
 								["icon"] = {
 									["TextLayout"] = "icon1",
@@ -383,6 +281,8 @@ TellMeWhenDB = {
 									},
 								},
 							},
+							["Type"] = "cooldown",
+							["Name"] = "Healing Stream Totem",
 							["States"] = {
 								{
 								}, -- [1]
@@ -397,11 +297,9 @@ TellMeWhenDB = {
 							},
 						}, -- [1]
 						{
-							["ShowTimer"] = true,
-							["Type"] = "totem",
-							["ShowTimerText"] = true,
-							["Name"] = "Cloudburst Totem",
 							["Enabled"] = true,
+							["ShowTimer"] = true,
+							["ShowTimerText"] = true,
 							["SettingsPerView"] = {
 								["icon"] = {
 									["Texts"] = {
@@ -409,6 +307,8 @@ TellMeWhenDB = {
 									},
 								},
 							},
+							["Type"] = "totem",
+							["Name"] = "Cloudburst Totem",
 							["States"] = {
 								{
 								}, -- [1]
@@ -423,11 +323,11 @@ TellMeWhenDB = {
 							},
 						}, -- [2]
 						{
-							["ShowTimer"] = true,
-							["Type"] = "cooldown",
-							["ShowTimerText"] = true,
-							["Name"] = "Gift of the Queen",
 							["Enabled"] = true,
+							["ShowTimer"] = true,
+							["ShowTimerText"] = true,
+							["Type"] = "cooldown",
+							["Name"] = "Gift of the Queen",
 							["States"] = {
 								{
 								}, -- [1]
@@ -442,11 +342,11 @@ TellMeWhenDB = {
 							},
 						}, -- [3]
 						{
-							["ShowTimer"] = true,
-							["Type"] = "cooldown",
-							["ShowTimerText"] = true,
-							["Name"] = "Earthen Shield Totem; Ancestral Protection Totem",
 							["Enabled"] = true,
+							["ShowTimer"] = true,
+							["ShowTimerText"] = true,
+							["Type"] = "cooldown",
+							["Name"] = "Earthen Shield Totem; Ancestral Protection Totem",
 							["States"] = {
 								{
 								}, -- [1]
@@ -461,11 +361,11 @@ TellMeWhenDB = {
 							},
 						}, -- [4]
 						{
-							["ShowTimer"] = true,
-							["Type"] = "cooldown",
-							["Name"] = "Riptide",
-							["ShowTimerText"] = true,
 							["Enabled"] = true,
+							["ShowTimer"] = true,
+							["Name"] = "Riptide",
+							["Type"] = "cooldown",
+							["ShowTimerText"] = true,
 							["States"] = {
 								{
 								}, -- [1]
@@ -480,11 +380,11 @@ TellMeWhenDB = {
 							},
 						}, -- [5]
 						{
-							["ShowTimer"] = true,
-							["Type"] = "cooldown",
-							["Name"] = "Healing Rain",
-							["ShowTimerText"] = true,
 							["Enabled"] = true,
+							["ShowTimer"] = true,
+							["Name"] = "Healing Rain",
+							["Type"] = "cooldown",
+							["ShowTimerText"] = true,
 							["States"] = {
 								{
 								}, -- [1]
@@ -653,13 +553,21 @@ TellMeWhenDB = {
 							},
 						}, -- [20]
 					},
+					["TextureName"] = "VuhDo - Plain",
 					["LayoutDirection"] = 3,
-					["GUID"] = "TMW:group:1Qfpp4iWShy7",
+					["Role"] = 2,
+					["ShrinkGroup"] = true,
+					["EnabledSpecs"] = {
+						[262] = false,
+						[263] = false,
+					},
+					["Columns"] = 3,
 				}, -- [1]
 				{
-					["Scale"] = 2.73333740234375,
 					["Enabled"] = false,
 					["Columns"] = 1,
+					["Scale"] = 2.73333740234375,
+					["GUID"] = "TMW:group:1QfpxEJ7MuNh",
 					["Icons"] = {
 						{
 							["States"] = {
@@ -706,14 +614,13 @@ TellMeWhenDB = {
 							},
 						}, -- [4]
 					},
-					["GUID"] = "TMW:group:1QfpxEJ7MuNh",
 					["Point"] = {
 						["y"] = 10.2438897087258,
 						["x"] = 72.8048731157386,
 					},
 				}, -- [2]
 			},
-			["Locked"] = true,
+			["Version"] = 84405,
 		},
 		["Nisefy - Stormscale"] = {
 			["Locked"] = true,
@@ -766,6 +673,64 @@ TellMeWhenDB = {
 								}, -- [4]
 							},
 						}, -- [4]
+					},
+				}, -- [1]
+			},
+		},
+		["Yvera - Moonglade"] = {
+			["Version"] = 85009,
+			["Groups"] = {
+				{
+					["GUID"] = "TMW:group:1RKgOdbbxPfC",
+					["Icons"] = {
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [1]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [2]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [3]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [4]
+					},
+					["Point"] = {
+						["y"] = 21.0000915527344,
+						["x"] = 135.500122070313,
 					},
 				}, -- [1]
 			},

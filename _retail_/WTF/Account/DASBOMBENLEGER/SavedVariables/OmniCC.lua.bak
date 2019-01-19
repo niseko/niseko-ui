@@ -1,5 +1,21 @@
 
 OmniCC4Config = {
+	["groups"] = {
+		{
+			["id"] = "PlaterNameplates Blacklist",
+			["rules"] = {
+			},
+			["enabled"] = true,
+		}, -- [1]
+		{
+			["id"] = "grid2",
+			["rules"] = {
+				"Grid2IconsDebuffs", -- [1]
+			},
+			["enabled"] = true,
+		}, -- [2]
+	},
+	["version"] = "8.1.1",
 	["groupSettings"] = {
 		["grid2"] = {
 			["styles"] = {
@@ -22,19 +38,19 @@ OmniCC4Config = {
 					["scale"] = 1.45000004768372,
 				},
 			},
-			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
-			["scaleText"] = true,
-			["mmSSDuration"] = 0,
-			["anchor"] = "TOPRIGHT",
-			["spiralOpacity"] = 1.00999997742474,
+			["fontSize"] = 14,
 			["minDuration"] = 2,
+			["minEffectDuration"] = 30,
+			["minSize"] = 0.4,
+			["spiralOpacity"] = 1.00999997742474,
+			["yOff"] = 0,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["minSize"] = 0.4,
-			["minEffectDuration"] = 30,
-			["yOff"] = 0,
-			["fontSize"] = 14,
+			["anchor"] = "TOPRIGHT",
+			["mmSSDuration"] = 0,
+			["scaleText"] = true,
+			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
 		},
 		["base"] = {
 			["styles"] = {
@@ -57,19 +73,19 @@ OmniCC4Config = {
 					["scale"] = 1.5,
 				},
 			},
-			["fontSize"] = 15,
-			["minDuration"] = 2,
-			["minEffectDuration"] = 30,
-			["minSize"] = 0.4,
-			["spiralOpacity"] = 1.00999997742474,
+			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
 			["scaleText"] = true,
+			["mmSSDuration"] = 0,
+			["anchor"] = "CENTER",
+			["spiralOpacity"] = 1.00999997742474,
+			["yOff"] = 0,
 			["xOff"] = 0,
 			["tenthsDuration"] = 0,
 			["fontOutline"] = "OUTLINE",
-			["anchor"] = "CENTER",
-			["mmSSDuration"] = 0,
-			["yOff"] = 0,
-			["fontFace"] = "Interface\\Addons\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf",
+			["minSize"] = 0.4,
+			["minEffectDuration"] = 30,
+			["minDuration"] = 2,
+			["fontSize"] = 15,
 		},
 		["PlaterNameplates Blacklist"] = {
 			["enabled"] = false,
@@ -90,24 +106,8 @@ OmniCC4Config = {
 			["tenthsDuration"] = 0,
 			["minSize"] = 0.5,
 			["minEffectDuration"] = 30,
-			["minDuration"] = 2,
 			["mmSSDuration"] = 0,
+			["minDuration"] = 2,
 		},
 	},
-	["groups"] = {
-		{
-			["id"] = "PlaterNameplates Blacklist",
-			["rules"] = {
-			},
-			["enabled"] = true,
-		}, -- [1]
-		{
-			["id"] = "grid2",
-			["rules"] = {
-				"Grid2IconsDebuffs", -- [1]
-			},
-			["enabled"] = true,
-		}, -- [2]
-	},
-	["version"] = "8.1.0",
 }

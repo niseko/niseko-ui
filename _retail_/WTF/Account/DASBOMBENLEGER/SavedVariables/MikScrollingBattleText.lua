@@ -6,6 +6,21 @@ MSBTProfiles_SavedVars = {
 			["stickyCritsDisabled"] = true,
 			["mergeSwingsDisabled"] = true,
 			["scrollAreas"] = {
+				["Notification"] = {
+					["offsetY"] = 122,
+				},
+				["Outgoing"] = {
+					["scrollHeight"] = 220,
+					["offsetX"] = -527,
+					["behavior"] = "MSBT_NORMAL",
+					["offsetY"] = 298,
+					["animationStyle"] = "Straight",
+				},
+				["Static"] = {
+					["offsetY"] = -299,
+					["disabled"] = true,
+					["scrollHeight"] = 50,
+				},
 				["Incoming"] = {
 					["stickyTextAlignIndex"] = 1,
 					["disabled"] = true,
@@ -16,21 +31,6 @@ MSBTProfiles_SavedVars = {
 					["offsetY"] = -158,
 					["animationStyle"] = "Straight",
 					["stickyAnimationStyle"] = "Static",
-				},
-				["Notification"] = {
-					["offsetY"] = 122,
-				},
-				["Static"] = {
-					["offsetY"] = -299,
-					["disabled"] = true,
-					["scrollHeight"] = 50,
-				},
-				["Outgoing"] = {
-					["scrollHeight"] = 220,
-					["offsetX"] = -527,
-					["behavior"] = "MSBT_NORMAL",
-					["offsetY"] = 298,
-					["animationStyle"] = "Straight",
 				},
 			},
 			["hideMergeTrailer"] = true,
@@ -96,13 +96,13 @@ MSBTProfiles_SavedVars = {
 				["NOTIFICATION_POWER_GAIN"] = {
 					["disabled"] = true,
 				},
-				["NOTIFICATION_CP_FULL"] = {
+				["NOTIFICATION_BUFF_STACK"] = {
 					["disabled"] = true,
 				},
 				["NOTIFICATION_ENEMY_BUFF"] = {
 					["disabled"] = true,
 				},
-				["NOTIFICATION_BUFF_STACK"] = {
+				["NOTIFICATION_CP_FULL"] = {
 					["disabled"] = true,
 				},
 				["NOTIFICATION_EXTRA_ATTACK"] = {

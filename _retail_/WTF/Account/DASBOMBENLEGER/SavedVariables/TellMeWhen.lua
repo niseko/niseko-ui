@@ -1,12 +1,13 @@
 
 TellMeWhenDB = {
 	["profileKeys"] = {
+		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
 		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Zelda - Mal'Ganis"] = "Zelda - Mal'Ganis",
 		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
-		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Nedoka - Antonidas"] = "Nedoka - Antonidas",
 		["Yvera - Moonglade"] = "Yvera - Moonglade",
+		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
+		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
 	},
 	["global"] = {
@@ -30,8 +31,63 @@ TellMeWhenDB = {
 			["SCROLLBAR_DROPDOWN"] = true,
 		},
 	},
-	["Version"] = 85009,
+	["Version"] = 85702,
 	["profiles"] = {
+		["Nedoka - Antonidas"] = {
+			["Locked"] = true,
+			["Version"] = 84305,
+			["Groups"] = {
+				{
+					["Icons"] = {
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [1]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [2]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [3]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [4]
+					},
+					["GUID"] = "TMW:group:1QldsTEIi2q4",
+				}, -- [1]
+			},
+		},
 		["Niseko - Twisting Nether"] = {
 			["Version"] = 84305,
 			["Groups"] = {
@@ -195,116 +251,6 @@ TellMeWhenDB = {
 				}, -- [1]
 			},
 		},
-		["Nisefy - Stormscale"] = {
-			["Locked"] = true,
-			["Version"] = 84305,
-			["Groups"] = {
-				{
-					["GUID"] = "TMW:group:1Qg1R94LX207",
-					["Icons"] = {
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [1]
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [2]
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [3]
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [4]
-					},
-				}, -- [1]
-			},
-		},
-		["Nedoka - Antonidas"] = {
-			["Locked"] = true,
-			["Version"] = 84305,
-			["Groups"] = {
-				{
-					["Icons"] = {
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [1]
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [2]
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [3]
-						{
-							["States"] = {
-								{
-								}, -- [1]
-								nil, -- [2]
-								{
-								}, -- [3]
-								{
-								}, -- [4]
-							},
-						}, -- [4]
-					},
-					["GUID"] = "TMW:group:1QldsTEIi2q4",
-				}, -- [1]
-			},
-		},
 		["Yvera - Moonglade"] = {
 			["Version"] = 85009,
 			["Groups"] = {
@@ -363,8 +309,126 @@ TellMeWhenDB = {
 				}, -- [1]
 			},
 		},
+		["Nisefy - Stormscale"] = {
+			["Locked"] = true,
+			["Version"] = 84305,
+			["Groups"] = {
+				{
+					["GUID"] = "TMW:group:1Qg1R94LX207",
+					["Icons"] = {
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [1]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [2]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [3]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [4]
+					},
+				}, -- [1]
+			},
+		},
+		["Nyanporo - Blackmoore"] = {
+			["Version"] = 85702,
+			["Groups"] = {
+				{
+					["Icons"] = {
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [1]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [2]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [3]
+						{
+							["States"] = {
+								{
+								}, -- [1]
+								nil, -- [2]
+								{
+								}, -- [3]
+								{
+								}, -- [4]
+							},
+						}, -- [4]
+					},
+					["GUID"] = "TMW:group:1SGTFz12fe0x",
+					["Point"] = {
+						["y"] = 64.0011825561524,
+						["x"] = -195.503845214844,
+						["point"] = "BOTTOMRIGHT",
+						["relativePoint"] = "BOTTOMRIGHT",
+					},
+				}, -- [1]
+			},
+			["Locked"] = true,
+		},
 		["Niseko - Stormscale"] = {
 			["Locked"] = true,
+			["Version"] = 84405,
+			["NumGroups"] = 2,
 			["Groups"] = {
 				{
 					["GUID"] = "TMW:group:1Qfpp4iWShy7",
@@ -726,8 +790,6 @@ TellMeWhenDB = {
 					["GUID"] = "TMW:group:1QfpxEJ7MuNh",
 				}, -- [2]
 			},
-			["Version"] = 84405,
-			["NumGroups"] = 2,
 		},
 	},
 }

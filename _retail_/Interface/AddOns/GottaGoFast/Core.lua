@@ -24,7 +24,6 @@ function GottaGoFast:OnEnable()
     self:RegisterEvent("GOSSIP_SHOW");
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("SCENARIO_POI_UPDATE");
-    self:RegisterEvent("UPDATE_MOUSEOVER_UNIT");
     self:RegisterEvent("WORLD_STATE_TIMER_START");
     self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     self:RegisterChatCommand("ggf", "ChatCommand");
@@ -32,6 +31,7 @@ function GottaGoFast:OnEnable()
     self:RegisterComm("GottaGoFast", "ChatComm");
     self:RegisterComm("GottaGoFastCM", "CMChatComm");
     self:RegisterComm("GottaGoFastTW", "TWChatComm");
+    self:SecureHookScript(GameTooltip, "OnTooltipSetUnit", "GameTooltip_OnTooltipSetUnit")
 
     -- Setup AddOn
     GottaGoFast.InitState();
@@ -99,12 +99,6 @@ function GottaGoFast:WORLD_STATE_TIMER_START()
   end
 end
 
-function GottaGoFast:UPDATE_MOUSEOVER_UNIT()
-  if (ggf.inCM == true and ggf.GetIndividualMobValue(nil) == true and ggf.CurrentCM ~= nil and next(ggf.CurrentCM) ~= nil) then
-    GottaGoFast.AddMobPointsToTooltip();
-  end
-end
-
 function GottaGoFast:GOSSIP_SHOW()
   if (ggf.inCM == true and ggf.CurrentCM ~= nil and next(ggf.CurrentCM) ~= nil) then
     GottaGoFast.HandleGossip();
@@ -114,6 +108,12 @@ end
 function GottaGoFast:ZONE_CHANGED_NEW_AREA()
   GottaGoFast.Utility.DebugPrint("Zone Changed New Area")
   GottaGoFast.WhereAmI();
+end
+
+function GottaGoFast:GameTooltip_OnTooltipSetUnit()
+  if (ggf.inCM == true and ggf.GetIndividualMobValue(nil) == true and ggf.CurrentCM ~= nil and next(ggf.CurrentCM) ~= nil) then
+    GottaGoFast.AddMobPointsToTooltip();
+  end
 end
 
 function GottaGoFast:ChatCommand(input)

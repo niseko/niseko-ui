@@ -30,7 +30,11 @@ function ggf.Changelog()
 end
 
 local changes = {};
+table.insert(changes, "# v3.1.1");
+table.insert(changes, "- Mythic+: Fix tooltip bug");
+table.insert(changes, "");
 table.insert(changes, "# v3.1.0");
+table.insert(changes, "- Addon: Update to 8.1");
 table.insert(changes, "- Mythic+: Use MDT For Count When Possible!");
 table.insert(changes, "");
 table.insert(changes, "# v3.0.2");

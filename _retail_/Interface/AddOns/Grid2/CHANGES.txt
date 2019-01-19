@@ -1,4 +1,10 @@
 ------------------------------------------------------------------------
+r860 | michaelspain | 2019-01-16 18:45:41 +0000 (Wed, 16 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/Options/modules/indicators/Indicator.lua
+
+Fixing (for the second time) ticket #633 (Indicator configuration doesn't update correctly)
+------------------------------------------------------------------------
 r859 | michaelspain | 2019-01-12 19:17:36 +0000 (Sat, 12 Jan 2019) | 1 line
 Changed paths:
    M /trunk/Options/modules/indicators/Indicator.lua
