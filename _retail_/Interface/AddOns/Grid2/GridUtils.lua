@@ -1,6 +1,7 @@
 -- Misc functions
 
 local media = LibStub("LibSharedMedia-3.0", true)
+local L = LibStub:GetLibrary("AceLocale-3.0"):GetLocale("Grid2")
 local Grid2 = Grid2
 local select = select
 local strtrim  = strtrim
@@ -173,6 +174,56 @@ Grid2.AlignPoints= {
 		[false] = { "TOPRIGHT", "BOTTOMRIGHT","TOPLEFT","BOTTOMLEFT" }, -- reverse Fill
 	}	
 }
+
+-- Create/Manage/Sets frame backdrops
+do
+	local format = string.format
+	local tostring = tostring
+	local backdrops = {}
+	-- Generates a backdrop table, reuses tables avoiding to create duplicates
+	function Grid2:GetBackdropTable(edgeFile, edgeSize, bgFile, tile, tileSize, inset)
+		inset = inset or edgeSize
+		local key = format("%s;%s;%d;%s;%d;%d", bgFile or "", edgeFile or "", edgeSize or -1, tostring(tile), tileSize or -1, inset or -1)
+		local backdrop = backdrops[key]
+		if not backdrop then
+			backdrop = { 
+				bgFile = bgFile,
+				tile = tile,
+				tileSize = tileSize,
+				edgeFile = edgeFile,
+				edgeSize = edgeSize,
+				insets = { left = inset, right = inset, top = inset, bottom = inset },  
+			}
+			backdrops[key] = backdrop
+		end
+		return backdrop
+	end
+	-- Sets a backdrop only if necessary to alleviate game freezes, see ticket #640
+	function Grid2:SetFrameBackdrop(frame, backdrop)
+		if backdrop~=frame.currentBackdrop then
+			frame:SetBackdrop(backdrop)
+			frame.currentBackdrop = backdrop
+		end
+	end
+end
+
+-- Useful to change theme from external sources (macros, wa2,etc)
+-- theme = number(theme index starting in 0) or string(theme name)
+function Grid2:SetDefaultTheme(theme)
+	local themes = self.db.profile.themes
+	if type(theme)~='number' then
+		for index,name in pairs(themes.names) do
+			if theme==name then	theme = index; break; end
+		end
+		if type(theme)~='number' and (theme=='Default' or theme==L['Default']) then
+			theme = 0
+		end
+	end
+	if theme==0 or themes.names[theme] then
+		themes.enabled.default = theme
+		self:ReloadTheme()
+	end	
+end
 
 -- Grid2:RunSecure(priority, object, method, arg) 
 -- Queue some methods to be executed when out of combat, if we are not in combat do nothing.

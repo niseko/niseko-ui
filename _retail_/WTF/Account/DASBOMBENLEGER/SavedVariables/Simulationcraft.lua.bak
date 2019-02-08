@@ -4,11 +4,11 @@ SimulationCraftDB = {
 		["Nisepie - Stormscale"] = "Nisepie - Stormscale",
 		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
 		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
+		["Niseko - Stormscale"] = "Niseko - Stormscale",
 		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
 		["Seko - Stormscale"] = "Seko - Stormscale",
 		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
-		["Niseko - Stormscale"] = "Niseko - Stormscale",
+		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 	},
 	["profiles"] = {
 		["Nisepie - Stormscale"] = {
@@ -17,7 +17,10 @@ SimulationCraftDB = {
 		},
 		["Nisefy - Stormscale"] = {
 		},
-		["Nisearw - Stormscale"] = {
+		["Niseko - Stormscale"] = {
+			["minimap"] = {
+				["hide"] = true,
+			},
 		},
 		["Valdurawr - Stormscale"] = {
 		},
@@ -25,10 +28,7 @@ SimulationCraftDB = {
 		},
 		["Nyanporo - Blackmoore"] = {
 		},
-		["Niseko - Stormscale"] = {
-			["minimap"] = {
-				["hide"] = true,
-			},
+		["Nisearw - Stormscale"] = {
 		},
 	},
 }

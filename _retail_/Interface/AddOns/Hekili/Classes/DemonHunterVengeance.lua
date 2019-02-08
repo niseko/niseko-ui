@@ -25,7 +25,7 @@ if UnitClassBase( 'player' ) == 'DEMONHUNTER' then
             end,
 
             interval = 1,
-            value = PTR and 8 or 7
+            value = 8,
         },
     } )
     
@@ -439,7 +439,10 @@ if UnitClassBase( 'player' ) == 'DEMONHUNTER' then
             texture = 1305153,
 
             toggle = "interrupts",
-            usable = function () return target.casting end,            
+
+            debuff = "casting",
+            readyTime = state.timeToInterrupt,
+
             handler = function ()
                 gain( buff.solitude.up and 33 or 30, "pain" )
                 interrupt()
@@ -638,7 +641,7 @@ if UnitClassBase( 'player' ) == 'DEMONHUNTER' then
             
             handler = function ()
                 applyBuff( "metamorphosis" )
-                gain( PTR and 8 or 7, "pain" )
+                gain( 8, "pain" )
 
                 if level < 116 and equipped.runemasters_pauldrons then
                     setCooldown( "sigil_of_chains", 0 )
@@ -765,6 +768,7 @@ if UnitClassBase( 'player' ) == 'DEMONHUNTER' then
             toggle = "interrupts",
 
             usable = function () return debuff.casting.remains > ( talent.quickened_sigils.enabled and 1 or 2 ) end,
+
             handler = function ()
                 interrupt() -- early, but oh well.
                 create_sigil( "silence" )

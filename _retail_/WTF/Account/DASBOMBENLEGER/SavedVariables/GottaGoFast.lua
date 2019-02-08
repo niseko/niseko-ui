@@ -21,6 +21,8 @@ GottaGoFastDB = {
 	},
 	["profiles"] = {
 		["Default"] = {
+			["FrameX"] = -4.99998474121094,
+			["FrameY"] = 36.0005378723145,
 			["Version"] = 31100,
 		},
 	},

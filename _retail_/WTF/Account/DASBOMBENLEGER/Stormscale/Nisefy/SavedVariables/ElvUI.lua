@@ -24,50 +24,6 @@ ElvCharacterDB = {
 	},
 	["ChatHistoryLog"] = {
 		{
-			"1", -- [1]
-			"Bitool-Draenor", -- [2]
-			"Orcish", -- [3]
-			"", -- [4]
-			"Bitool-Draenor", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1825, -- [11]
-			"Player-1403-06DCCBF7", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBitool-Draenor|r",
-			[51] = 1542722004,
-			[50] = "CHAT_MSG_SAY",
-		}, -- [1]
-		{
-			"stop", -- [1]
-			"Varylia-TwistingNether", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Varylia-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			1827, -- [11]
-			"Player-3674-079AB6A9", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cfffff468Varylia-TwistingNether|r",
-			[51] = 1542722018,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [2]
-		{
 			"not enough percentage", -- [1]
 			"Varylia-TwistingNether", -- [2]
 			"", -- [3]
@@ -88,7 +44,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722021,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [3]
+		}, -- [1]
 		{
 			"Interrupted Coven Diviner's |cff71d5ff|Hspell:278551:0|h[Soul Fetish]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -110,7 +66,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722051,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [4]
+		}, -- [2]
 		{
 			"Interrupted Marked Sister's |cff71d5ff|Hspell:264105:0|h[Runic Mark]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -132,7 +88,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722074,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [5]
+		}, -- [3]
 		{
 			"H'iwn Qwor za Awtgssh", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -154,7 +110,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722084,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [6]
+		}, -- [4]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -176,7 +132,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722088,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [7]
+		}, -- [5]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -198,7 +154,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722089,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [8]
+		}, -- [6]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -220,7 +176,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722089,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [9]
+		}, -- [7]
 		{
 			"Runic Mark on Nisefy", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -242,7 +198,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722099,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [10]
+		}, -- [8]
 		{
 			"3", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -264,7 +220,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722102,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [11]
+		}, -- [9]
 		{
 			"2", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -286,7 +242,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722103,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [12]
+		}, -- [10]
 		{
 			"1", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -308,7 +264,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1542722104,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [13]
+		}, -- [11]
 		{
 			"cc", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -330,7 +286,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722104,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [14]
+		}, -- [12]
 		{
 			"inf", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -352,7 +308,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722105,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [15]
+		}, -- [13]
 		{
 			"go", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -374,7 +330,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722118,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [16]
+		}, -- [14]
 		{
 			"she cant be ccd", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -396,7 +352,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722120,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [17]
+		}, -- [15]
 		{
 			"Interrupted Heartsbane Soulcharmer's |cff71d5ff|Hspell:264024:0|h[Soul Bolt]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -418,7 +374,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722125,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [18]
+		}, -- [16]
 		{
 			"Interrupted Heartsbane Soulcharmer's |cff71d5ff|Hspell:264024:0|h[Soul Bolt]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -440,7 +396,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722141,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [19]
+		}, -- [17]
 		{
 			"Interrupted Heartsbane Soulcharmer's |cff71d5ff|Hspell:263959:0|h[Soul Volley]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -462,7 +418,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722173,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [20]
+		}, -- [18]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -484,7 +440,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722238,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [21]
+		}, -- [19]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -506,7 +462,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722245,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [22]
+		}, -- [20]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -528,7 +484,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722246,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [23]
+		}, -- [21]
 		{
 			"I", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -550,7 +506,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722247,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [24]
+		}, -- [22]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -572,7 +528,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722254,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [25]
+		}, -- [23]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -594,7 +550,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722255,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [26]
+		}, -- [24]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -616,7 +572,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722256,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [27]
+		}, -- [25]
 		{
 			"Interrupted Lady Waycrest's |cff71d5ff|Hspell:268278:0|h[Wracking Chord]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -638,7 +594,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722265,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [28]
+		}, -- [26]
 		{
 			"3", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -660,7 +616,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722271,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [29]
+		}, -- [27]
 		{
 			"2", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -682,7 +638,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722272,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [30]
+		}, -- [28]
 		{
 			"1", -- [1]
 			"Vregorix-TwistingNether", -- [2]
@@ -704,7 +660,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edVregorix-TwistingNether|r",
 			[51] = 1542722273,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [31]
+		}, -- [29]
 		{
 			"awhy ", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -726,7 +682,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722314,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [32]
+		}, -- [30]
 		{
 			"rip", -- [1]
 			"Varylia-TwistingNether", -- [2]
@@ -748,7 +704,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Varylia-TwistingNether|r",
 			[51] = 1542722398,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [33]
+		}, -- [31]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -770,7 +726,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722414,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [34]
+		}, -- [32]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -792,7 +748,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722430,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [35]
+		}, -- [33]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -814,7 +770,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722447,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [36]
+		}, -- [34]
 		{
 			"Interrupted Gorak Tul's |cff71d5ff|Hspell:266225:0|h[Darkened Lightning]|h|r!", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -836,7 +792,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722473,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [37]
+		}, -- [35]
 		{
 			"thanks for the dungeon!", -- [1]
 			"Xyliani-TwistingNether", -- [2]
@@ -858,7 +814,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffXyliani-TwistingNether|r",
 			[51] = 1542722643,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [38]
+		}, -- [36]
 		{
 			"next? :D", -- [1]
 			"Bitool-Draenor", -- [2]
@@ -880,7 +836,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBitool-Draenor|r",
 			[51] = 1542722648,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [39]
+		}, -- [37]
 		{
 			"WHAAAAAT", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -902,7 +858,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909816,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [40]
+		}, -- [38]
 		{
 			"A monk !", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -924,7 +880,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909818,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [41]
+		}, -- [39]
 		{
 			"b-b-b-benching me ? :(", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -946,7 +902,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909843,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [42]
+		}, -- [40]
 		{
 			"Revival coming throug", -- [1]
 			"Rachellá-TwistingNether", -- [2]
@@ -968,7 +924,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edRachellá-TwistingNether|r",
 			[51] = 1542909846,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [43]
+		}, -- [41]
 		{
 			"Snipin ur parses", -- [1]
 			"Rachellá-TwistingNether", -- [2]
@@ -990,7 +946,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edRachellá-TwistingNether|r",
 			[51] = 1542909851,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [44]
+		}, -- [42]
 		{
 			"Nope he's here cause meemz would be late", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -1012,7 +968,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp-TwistingNether|r",
 			[51] = 1542909859,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [45]
+		}, -- [43]
 		{
 			"cant ", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -1034,7 +990,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909861,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [46]
+		}, -- [44]
 		{
 			"oh :D", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -1056,7 +1012,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909864,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [47]
+		}, -- [45]
 		{
 			"meemz is gonna be here what", -- [1]
 			"Rachellá-TwistingNether", -- [2]
@@ -1078,7 +1034,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edRachellá-TwistingNether|r",
 			[51] = 1542909880,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [48]
+		}, -- [46]
 		{
 			"around 19;30", -- [1]
 			"Rachellá-TwistingNether", -- [2]
@@ -1100,7 +1056,7 @@ ElvCharacterDB = {
 			[52] = "|cff8787edRachellá-TwistingNether|r",
 			[51] = 1542909882,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [49]
+		}, -- [47]
 		{
 			"Its actually nice to see other Mw monks", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -1122,7 +1078,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909883,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [50]
+		}, -- [48]
 		{
 			"he's a shaman main", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -1144,7 +1100,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp-TwistingNether|r",
 			[51] = 1542909895,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [51]
+		}, -- [49]
 		{
 			"F", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -1166,7 +1122,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909898,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [52]
+		}, -- [50]
 		{
 			"i am over it", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -1188,7 +1144,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909901,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [53]
+		}, -- [51]
 		{
 			"no mw is a mw main", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -1210,7 +1166,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp-TwistingNether|r",
 			[51] = 1542909910,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [54]
+		}, -- [52]
 		{
 			"except Clawz", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -1232,7 +1188,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp-TwistingNether|r",
 			[51] = 1542909915,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [55]
+		}, -- [53]
 		{
 			"me", -- [1]
 			"Frozoone-TwistingNether", -- [2]
@@ -1254,7 +1210,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Frozoone-TwistingNether|r",
 			[51] = 1542909915,
 			[50] = "CHAT_MSG_RAID",
-		}, -- [56]
+		}, -- [54]
 		{
 			"and u", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -1276,7 +1232,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp-TwistingNether|r",
 			[51] = 1542909917,
 			[50] = "CHAT_MSG_RAID_LEADER",
-		}, -- [57]
+		}, -- [55]
 		{
 			"come islands", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1298,7 +1254,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542909918,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [58]
+		}, -- [56]
 		{
 			"on shaman", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1320,7 +1276,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542909923,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [59]
+		}, -- [57]
 		{
 			"maybe", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1342,7 +1298,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542909985,
 			[50] = "CHAT_MSG_WHISPER_INFORM",
-		}, -- [60]
+		}, -- [58]
 		{
 			"not maybe", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1364,7 +1320,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542909991,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [61]
+		}, -- [59]
 		{
 			"but what do you have against my monk", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1386,7 +1342,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542909992,
 			[50] = "CHAT_MSG_WHISPER_INFORM",
-		}, -- [62]
+		}, -- [60]
 		{
 			"do you have a ww spec?!", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1408,7 +1364,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910000,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [63]
+		}, -- [61]
 		{
 			"technically", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1430,7 +1386,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910012,
 			[50] = "CHAT_MSG_WHISPER_INFORM",
-		}, -- [64]
+		}, -- [62]
 		{
 			"well come monk then idc", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1452,7 +1408,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910018,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [65]
+		}, -- [63]
 		{
 			"just asking if this raid happens", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1474,7 +1430,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910035,
 			[50] = "CHAT_MSG_WHISPER_INFORM",
-		}, -- [66]
+		}, -- [64]
 		{
 			"`Ill let u know in 20 sec` he said, 1 minute ago", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1496,7 +1452,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910057,
 			[50] = "CHAT_MSG_WHISPER_INFORM",
-		}, -- [67]
+		}, -- [65]
 		{
 			"excellent", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1518,7 +1474,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910064,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [68]
+		}, -- [66]
 		{
 			"did you get an answer yet", -- [1]
 			"Spazmonk-Stormscale", -- [2]
@@ -1540,7 +1496,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Spazmonk|r",
 			[51] = 1542910258,
 			[50] = "CHAT_MSG_WHISPER",
-		}, -- [69]
+		}, -- [67]
 		{
 			"!keys", -- [1]
 			"Bluen-TarrenMill", -- [2]
@@ -1562,7 +1518,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBluen-TarrenMill|r",
 			[51] = 1545578596,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [70]
+		}, -- [68]
 		{
 			"|cffa335ee|Hkeystone:158923:246:9:9:6:4:0|h[Keystone: Tol Dagor (9)]|h|r", -- [1]
 			"Calekz-Stormscale", -- [2]
@@ -1584,7 +1540,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Calekz|r",
 			[51] = 1545578596,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [71]
+		}, -- [69]
 		{
 			"|cffa335ee|Hkeystone:158923:244:11:9:6:4:16|h[Keystone: Atal'Dazar (11)]|h|r", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -1606,7 +1562,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545578596,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [72]
+		}, -- [70]
 		{
 			"|cffa335ee|Hkeystone:158923:245:10:9:6:4:16|h[Keystone: Freehold (10)]|h|r", -- [1]
 			"Bluen-TarrenMill", -- [2]
@@ -1628,7 +1584,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aBluen-TarrenMill|r",
 			[51] = 1545578596,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [73]
+		}, -- [71]
 		{
 			"|cffa335ee|Hkeystone:158923:244:10:9:6:4:16|h[Keystone: Atal'Dazar (10)]|h|r", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -1650,7 +1606,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545578842,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [74]
+		}, -- [72]
 		{
 			"Pursuit on Nisefy", -- [1]
 			"Nisefy-Stormscale", -- [2]
@@ -1672,7 +1628,7 @@ ElvCharacterDB = {
 			[52] = "|cff00ff96Nisefy|r",
 			[51] = 1545578871,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [75]
+		}, -- [73]
 		{
 			"Interrupted Dazar'ai Augur's |cff71d5ff|Hspell:253562:0|h[Wildfire]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1694,7 +1650,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579034,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [76]
+		}, -- [74]
 		{
 			"Interrupted Dazar'ai Confessor's |cff71d5ff|Hspell:253517:0|h[Mending Word]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1716,7 +1672,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579052,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [77]
+		}, -- [75]
 		{
 			"PS Died: Calekz > 53k, |cff71d5ff|Hspell:253279:0|h[Merciless Assault]|h|r (O: 43k) [Dazar'ai Juggernaut] (Physical)", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1738,7 +1694,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579067,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [78]
+		}, -- [76]
 		{
 			"Interrupted Zanchuli Witch-Doctor's |cff71d5ff|Hspell:252923:0|h[Venom Blast]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1760,7 +1716,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579236,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [79]
+		}, -- [77]
 		{
 			"Interrupted Zanchuli Witch-Doctor's |cff71d5ff|Hspell:252923:0|h[Venom Blast]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1782,7 +1738,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579280,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [80]
+		}, -- [78]
 		{
 			"Interrupted Vol'kaal's |cff71d5ff|Hspell:259572:0|h[Noxious Stench]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1804,7 +1760,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579391,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [81]
+		}, -- [79]
 		{
 			"Interrupted Vol'kaal's |cff71d5ff|Hspell:259572:0|h[Noxious Stench]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1826,7 +1782,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579456,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [82]
+		}, -- [80]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:12853:Player-2073-062BB9ED:1:12:23:18:4294967295:4294967295:4294967295:4294967295|h[Treasures of Stormsong Valley]|h|r!", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -1848,7 +1804,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1545579466,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [83]
+		}, -- [81]
 		{
 			"Interrupted Vol'kaal's |cff71d5ff|Hspell:259572:0|h[Noxious Stench]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1870,7 +1826,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579476,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [84]
+		}, -- [82]
 		{
 			"Interrupted Vol'kaal's |cff71d5ff|Hspell:259572:0|h[Noxious Stench]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1892,7 +1848,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579495,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [85]
+		}, -- [83]
 		{
 			"Interrupted Vol'kaal's |cff71d5ff|Hspell:259572:0|h[Noxious Stench]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1914,7 +1870,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579514,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [86]
+		}, -- [84]
 		{
 			"Tigerozy interrupted |cff71d5ff|Hspell:259572:0|h[Noxious Stench]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -1936,7 +1892,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579514,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [87]
+		}, -- [85]
 		{
 			"Unstable Hex on Húddz", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -1958,7 +1914,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579559,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [88]
+		}, -- [86]
 		{
 			"3", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -1980,7 +1936,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579561,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [89]
+		}, -- [87]
 		{
 			"1", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2002,7 +1958,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579563,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [90]
+		}, -- [88]
 		{
 			"Tigerozy interrupted |cff71d5ff|Hspell:252923:0|h[Venom Blast]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2024,7 +1980,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579572,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [91]
+		}, -- [89]
 		{
 			"Interrupted Zanchuli Witch-Doctor's |cff71d5ff|Hspell:252923:0|h[Venom Blast]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2046,7 +2002,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579572,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [92]
+		}, -- [90]
 		{
 			"Unstable Hex on Húddz", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2068,7 +2024,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579589,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [93]
+		}, -- [91]
 		{
 			"3", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2090,7 +2046,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579591,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [94]
+		}, -- [92]
 		{
 			"1", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2112,7 +2068,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579593,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [95]
+		}, -- [93]
 		{
 			"Unstable Hex on Calekz", -- [1]
 			"Calekz-Stormscale", -- [2]
@@ -2134,7 +2090,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Calekz|r",
 			[51] = 1545579608,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [96]
+		}, -- [94]
 		{
 			"3", -- [1]
 			"Calekz-Stormscale", -- [2]
@@ -2156,7 +2112,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Calekz|r",
 			[51] = 1545579610,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [97]
+		}, -- [95]
 		{
 			"2", -- [1]
 			"Calekz-Stormscale", -- [2]
@@ -2178,7 +2134,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Calekz|r",
 			[51] = 1545579611,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [98]
+		}, -- [96]
 		{
 			"1", -- [1]
 			"Calekz-Stormscale", -- [2]
@@ -2200,7 +2156,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Calekz|r",
 			[51] = 1545579612,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [99]
+		}, -- [97]
 		{
 			"Tigerozy interrupted |cff71d5ff|Hspell:252923:0|h[Venom Blast]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2222,7 +2178,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579621,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [100]
+		}, -- [98]
 		{
 			"Interrupted Zanchuli Witch-Doctor's |cff71d5ff|Hspell:252923:0|h[Venom Blast]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2244,7 +2200,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579621,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [101]
+		}, -- [99]
 		{
 			"Interrupted Feasting Skyscreamer's |cff71d5ff|Hspell:255041:0|h[Terrifying Screech]|h|r!", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2266,7 +2222,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579664,
 			[50] = "CHAT_MSG_EMOTE",
-		}, -- [102]
+		}, -- [100]
 		{
 			"Interrupted Feasting Skyscreamer's |cff71d5ff|Hspell:255041:0|h[Terrifying Screech]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2288,7 +2244,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579699,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [103]
+		}, -- [101]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:13301:Player-2073-06513EB7:1:12:23:18:4294967295:4294967295:4294967295:4294967295|h[Under Cover of Darkness]|h|r!", -- [1]
 			"Hyperiá-Stormscale", -- [2]
@@ -2310,7 +2266,7 @@ ElvCharacterDB = {
 			[52] = "|cffaad372Hyperiá|r",
 			[51] = 1545579730,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [104]
+		}, -- [102]
 		{
 			"Interrupted Dazar'ai Augur's |cff71d5ff|Hspell:253562:0|h[Wildfire]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2332,7 +2288,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579781,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [105]
+		}, -- [103]
 		{
 			"Tigerozy interrupted |cff71d5ff|Hspell:253562:0|h[Wildfire]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2354,7 +2310,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579781,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [106]
+		}, -- [104]
 		{
 			"Interrupted Dazar'ai Juggernaut's |cff71d5ff|Hspell:255824:0|h[Fanatic's Rage]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2376,7 +2332,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579811,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [107]
+		}, -- [105]
 		{
 			"Interrupted Dazar'ai Juggernaut's |cff71d5ff|Hspell:255824:0|h[Fanatic's Rage]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2398,7 +2354,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579915,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [108]
+		}, -- [106]
 		{
 			"Tigerozy interrupted |cff71d5ff|Hspell:255824:0|h[Fanatic's Rage]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2420,7 +2376,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545579915,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [109]
+		}, -- [107]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2442,7 +2398,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545579990,
 			[50] = "CHAT_MSG_EMOTE",
-		}, -- [110]
+		}, -- [108]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2464,7 +2420,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545580009,
 			[50] = "CHAT_MSG_EMOTE",
-		}, -- [111]
+		}, -- [109]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2486,7 +2442,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545580028,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [112]
+		}, -- [110]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2508,7 +2464,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545580050,
 			[50] = "CHAT_MSG_EMOTE",
-		}, -- [113]
+		}, -- [111]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2530,7 +2486,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545580067,
 			[50] = "CHAT_MSG_EMOTE",
-		}, -- [114]
+		}, -- [112]
 		{
 			"Tigerozy interrupted |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2552,7 +2508,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545580084,
 			[50] = "CHAT_MSG_SAY",
-		}, -- [115]
+		}, -- [113]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2574,7 +2530,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545580084,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [116]
+		}, -- [114]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2596,7 +2552,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545580103,
 			[50] = "CHAT_MSG_EMOTE",
-		}, -- [117]
+		}, -- [115]
 		{
 			"Interrupted Yazma's |cff71d5ff|Hspell:250096:0|h[Wracking Pain]|h|r!", -- [1]
 			"Tigerozy-Stormscale", -- [2]
@@ -2618,7 +2574,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aTigerozy|r",
 			[51] = 1545580125,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [118]
+		}, -- [116]
 		{
 			"|cffa335ee|Hkeystone:158923:247:13:9:6:4:16|h[Keystone: The MOTHERLODE!! (13)]|h|r", -- [1]
 			"Húddz-Stormscale", -- [2]
@@ -2640,7 +2596,7 @@ ElvCharacterDB = {
 			[52] = "|cfffff468Húddz|r",
 			[51] = 1545580130,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [119]
+		}, -- [117]
 		{
 			"Cal", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2662,7 +2618,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1546028555,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [120]
+		}, -- [118]
 		{
 			"when are you boosting my DH in a 10?", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2684,7 +2640,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1546028559,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [121]
+		}, -- [119]
 		{
 			"probably never", -- [1]
 			"Khunee-Stormscale", -- [2]
@@ -2706,7 +2662,7 @@ ElvCharacterDB = {
 			[52] = "|cfff48cbaKhunee|r",
 			[51] = 1546028566,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [122]
+		}, -- [120]
 		{
 			"XDD", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2728,7 +2684,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1546028569,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [123]
+		}, -- [121]
 		{
 			"Okey", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2750,7 +2706,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1546028572,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [124]
+		}, -- [122]
 		{
 			"You'll ask me to help you out on your alts again", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2772,7 +2728,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1546028580,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [125]
+		}, -- [123]
 		{
 			"Fucking monkey", -- [1]
 			"Xerethars-Stormscale", -- [2]
@@ -2794,7 +2750,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aXerethars|r",
 			[51] = 1546028586,
 			[50] = "CHAT_MSG_GUILD",
-		}, -- [126]
+		}, -- [124]
 		{
 			"haven't done any islands", -- [1]
 			"Fluke-Stormscale", -- [2]
@@ -2816,6 +2772,50 @@ ElvCharacterDB = {
 			[52] = "|cffa330c9Fluke|r",
 			[51] = 1546175477,
 			[50] = "CHAT_MSG_GUILD",
+		}, -- [125]
+		{
+			"%s has earned the achievement |cffffff00|Hachievement:6469:Player-2073-068758E8:1:1:23:19:4294967295:4294967295:4294967295:4294967295|h[Shado-Pan Monastery]|h|r!", -- [1]
+			"Boomtastíc-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Boomtastíc-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			2, -- [11]
+			"Player-2073-068758E8", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff8787edBoomtastíc|r",
+			[51] = 1548273293,
+			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
+		}, -- [126]
+		{
+			"%s has earned the achievement |cffffff00|Hachievement:6470:Player-2073-068758E8:1:1:23:19:4294967295:4294967295:4294967295:4294967295|h[Heroic: Shado-Pan Monastery]|h|r!", -- [1]
+			"Boomtastíc-Stormscale", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"Boomtastíc-Stormscale", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			3, -- [11]
+			"Player-2073-068758E8", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff8787edBoomtastíc|r",
+			[51] = 1548273293,
+			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
 		}, -- [127]
 	},
 }

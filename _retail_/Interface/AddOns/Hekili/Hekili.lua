@@ -4,7 +4,8 @@
 local addon, ns = ...
 Hekili = LibStub("AceAddon-3.0"):NewAddon( "Hekili", "AceConsole-3.0", "AceSerializer-3.0" )
 Hekili.Version = GetAddOnMetadata("Hekili", "Version")
--- if Hekili.Version == "v8.1.0-09" then Hekili.Version = "Working Copy" end
+
+if Hekili.Version == ( "@" .. "project-version" .. "@" ) then Hekili.Version = "Development-" .. date("%Y%m%d" ) end
 
 Hekili.AllowSimCImports = true
 
@@ -12,7 +13,7 @@ local format = string.format
 local upper  = string.upper
 
 
-ns.PTR = GetBuildInfo() == "8.1.0"
+ns.PTR = GetBuildInfo() == "8.1.5"
 
 
 ns.Patrons = {

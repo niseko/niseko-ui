@@ -21,16 +21,12 @@ VER 3 010000000000000D "asc ring" "INV_MISC_QUESTIONMARK"
 /use Velen's Future Sight
 END
 VER 3 0100000000000015 "calekk" "136048"
-/whisper Calekk Innervate me!
+/whisper Calekk Innervate
 END
 VER 3 0100000000000011 "canceljump" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /stopcasting
 /use Gust of Wind
-END
-VER 3 0100000000000012 "dgdtest" "INV_MISC_QUESTIONMARK"
-#showtooltip
-/use [@target,help][@targettarget,help][] The Deceiver's Grand Design
 END
 VER 3 0100000000000019 "earth elemental" "INV_MISC_QUESTIONMARK"
 #showtooltip
@@ -39,6 +35,11 @@ VER 3 0100000000000019 "earth elemental" "INV_MISC_QUESTIONMARK"
 /focus
 /targetlasttarget
 END
+VER 3 010000000000001E "equipchange" "INV_MISC_QUESTIONMARK"
+/equip Fogbreaker, Light of the Sea
+/stopmacro [equipped:Fogbreaker, Light of the Sea]
+/equip Bulwark of Brimming Potential
+END
 VER 3 010000000000001A "est" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [talent:6/1] Healing Stream Totem
@@ -46,7 +47,8 @@ VER 3 010000000000001A "est" "INV_MISC_QUESTIONMARK"
 END
 VER 3 0100000000000007 "HTT" "INV_MISC_QUESTIONMARK"
 #showtooltip Healing Tide Totem
-/use Velen's Future Sight
+/use Everlasting Darkmoon Firework
+/cast Berserking(Racial)
 /use Healing Tide Totem
 END
 VER 3 010000000000001D "mount" "INV_MISC_QUESTIONMARK"
@@ -64,7 +66,9 @@ END
 VER 3 010000000000001C "SE" "INV_MISC_QUESTIONMARK"
 #showtooltip Storm Elemental
 /use Ignition Mage's Fuse
+/cast Berserking(Racial)
 /cast Storm Elemental
+/cast Fire Elemental
 END
 VER 3 010000000000000A "slth" "INV_MISC_QUESTIONMARK"
 /cast [@mouseover, help, nodead] Purify Spirit; [@mouseover, harm, nodead][@target, harm, nodead] Purge; [@target, help, nodead][@player]Purify Spirit

@@ -118,6 +118,11 @@ VER 3 000000000000000E "Proto" "Ability_Hunter_BeastWithin"
 /w Pixelfehler OMFG, %t gefunden!
 /w Pixelfehler OMFG, %t gefunden!
 END
+VER 3 0000000000000038 "racials" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast Rocket Jump(Racial)
+/cast Stoneform(Racial)
+END
 VER 3 0000000000000012 "Rat Hard" "Ability_Creature_Cursed_02"
 /tar runenmeister molgeim
 /cast Zauberraub
@@ -162,20 +167,19 @@ VER 3 0000000000000024 "temp tar" "SPELL_HOLY_SEALOFPROTECTION"
 /cast Hand of Protection
 /target Blackhand
 END
-VER 3 000000000000001C "test" "INV_MISC_QUESTIONMARK"
-/cast [noform] !Shadowform
-/castsequence [nochanneling] reset=target mind blast, vampiric touch, mind flay, mind blast, shadow word: pain, mind flay, mind blast, devouring plague, mind flay
-/cast shadow word: death
-/script UIErrorsFrame:Hide()
-END
 VER 3 0000000000000033 "test" "INV_MISC_QUESTIONMARK"
-#showtooltip Riptide
-/cast [@mouseover, nodead, help] Riptide; Flame Shock
+/cast [@mouseover, help][@target, help][@player] Chain Heal
 END
 VER 3 0000000000000032 "test" "INV_MISC_QUESTIONMARK"
 local currentSpec = GetSpecialization()
 local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or "None"
 print("Your current spec:", currentSpecName)
+END
+VER 3 000000000000001C "test" "INV_MISC_QUESTIONMARK"
+/cast [noform] !Shadowform
+/castsequence [nochanneling] reset=target mind blast, vampiric touch, mind flay, mind blast, shadow word: pain, mind flay, mind blast, devouring plague, mind flay
+/cast shadow word: death
+/script UIErrorsFrame:Hide()
 END
 VER 3 0000000000000029 "Tier 6" "971076"
 #showtooltip

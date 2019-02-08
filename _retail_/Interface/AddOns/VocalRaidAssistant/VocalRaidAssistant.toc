@@ -1,9 +1,9 @@
-## Interface: 80000
+## Interface: 80100
 ## Title: VocalRaidAssistant
 ## Notes: Raid Cooldown Alerter
 ## Author: Nitrak
 ## SavedVariables: VocalRaidAssistantDB
-## Version: 1.5.1
+## Version: 1.6.0
 
 embeds.xml
 Locales\locales.xml

@@ -54,9 +54,7 @@ end
 --}}}
 
 -- {{ Precalculated backdrop table, shared by all frames
-local frameBackdrop = {
-	bgFile = "Interface\\Addons\\Grid2\\media\\white16x16", tile = true, tileSize = 16,	insets = {}
-}
+local frameBackdrop
 -- }}
 
 --{{{ Grid2Frame script handlers
@@ -129,7 +127,7 @@ function GridFramePrototype:Layout()
 	local w, h = Grid2Frame:GetFrameSize()
 	-- external border controlled by the border indicator
 	local r,g,b,a = self:GetBackdropBorderColor()
-	self:SetBackdrop( frameBackdrop )
+	Grid2:SetFrameBackdrop( self, frameBackdrop )
 	self:SetBackdropBorderColor(r, g, b, a)
 	-- inner border color (sure that is the inner border)
 	local cf = dbx.frameColor
@@ -227,6 +225,7 @@ function Grid2Frame:OnModuleEnable()
 	self:UpdateMenu()
 	self:UpdateBlink()
 	self:CreateIndicators()
+	self:RefreshIndicators()
 	self:LayoutFrames()
 	self:UpdateFrameUnits()
 	self:UpdateIndicators()
@@ -253,8 +252,27 @@ function Grid2Frame:UpdateTheme()
 end
 
 function Grid2Frame:RefreshTheme()
+	self:RefreshIndicators()
 	self:LayoutFrames()
 	self:UpdateIndicators()
+end
+
+-- wakeup/suspend indicators according to the current theme
+function Grid2Frame:RefreshIndicators()
+	local _, _, suspended = Grid2:GetCurrentTheme()
+	for _,indicator in ipairs(Grid2.indicatorSorted) do
+		if not indicator.parentName then
+			local s1 = indicator.suspended
+			local s2 = suspended[indicator.name]
+			if s1~=s2 then
+				if s2 then
+					Grid2:SuspendIndicator(indicator)
+				else
+					Grid2:WakeUpIndicator(indicator)
+				end
+			end
+		end	
+	end
 end
 
 function Grid2Frame:RegisterFrame(frame)
@@ -276,13 +294,7 @@ end
 
 function Grid2Frame:UpdateBackdrop()
 	local dbx = self.db.profile
-	local frameBorder = dbx.frameBorder
-	frameBackdrop.edgeFile      = Grid2:MediaFetch("border", dbx.frameBorderTexture, "Grid2 Flat")
-	frameBackdrop.edgeSize      = frameBorder
-	frameBackdrop.insets.left   = frameBorder
-	frameBackdrop.insets.right  = frameBorder
-	frameBackdrop.insets.top    = frameBorder
-	frameBackdrop.insets.bottom = frameBorder
+	frameBackdrop = Grid2:GetBackdropTable( Grid2:MediaFetch("border", dbx.frameBorderTexture, "Grid2 Flat"), dbx.frameBorder, "Interface\\Addons\\Grid2\\media\\white16x16", true, 16 )
 end
 
 function Grid2Frame:LayoutFrames(notify)

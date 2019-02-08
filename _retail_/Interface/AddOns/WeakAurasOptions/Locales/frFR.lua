@@ -6,7 +6,6 @@ local L = WeakAuras.L
 
 -- WeakAuras/Options
 	L[" by "] = "de"
-	L[" Configuration"] = "Configuration"
 	L["-- Do not remove this comment, it is part of this trigger: "] = "-- Ne retirez pas ce commentaire, il fait partie de ce déclencheur : "
 	L[" to version "] = "vers version"
 	L["% of Progress"] = "% de progression"
@@ -14,6 +13,8 @@ local L = WeakAuras.L
 	L["%i Matches"] = "%i Correspondances"
 	L["%s Color"] = "%s Couleur"
 	L["%s total auras"] = "%s auras au total"
+	--[[Translation missing --]]
+	L["|cFFFF0000Duplicate Keys Found!|nPlease change the keys of the following options!|r"] = "|cFFFF0000Duplicate Keys Found!|nPlease change the keys of the following options!|r"
 	L["1 Match"] = "1 Correspondance"
 	L["1. Text"] = "1. Texte"
 	L["1. Text Settings"] = "1. Paramètres du Texte"
@@ -132,8 +133,7 @@ Souhaitez-vous que ce graphiques soit placé dans un nouveau |cFF22AA22Groupe Dy
 	L["Color"] = "Couleur"
 	L["color"] = "couleur"
 	L["Combinations"] = "Combinaisons"
-	--[[Translation missing --]]
-	L["Combine Matches Per Unit"] = "Combine Matches Per Unit"
+	L["Combine Matches Per Unit"] = "Combiner toutes les Correspondances Par Unité"
 	L["Compare against the number of units affected."] = "Comparer contre le nombre d'unités affectées."
 	L["Compress"] = "Compresser"
 	L["Condition %i"] = "Condition %i"
@@ -323,6 +323,8 @@ Si le nombre entré est decimal (ex. 0.5), une fraction (ex. 1/2), ou un pourcen
 	L["Icon Settings"] = "Icon Settings"
 	L["If"] = "Si"
 	--[[Translation missing --]]
+	L["If checked, then this separator will include text. Otherwise, it will be just a horizontal line."] = "If checked, then this separator will include text. Otherwise, it will be just a horizontal line."
+	--[[Translation missing --]]
 	L["If checked, then this space will span across multiple lines."] = "If checked, then this space will span across multiple lines."
 	L["If this option is enabled, you are no longer able to import auras."] = "Si cette option est activé, vous ne pourrez plus importé des auras."
 	L["If Trigger %s"] = "Si Déclencheur %s"
@@ -506,6 +508,12 @@ Seule une unique valeur peut être choisie]=]
 	L["Search"] = "Chrecher"
 	L["Select the auras you always want to be listed first"] = "Choisissez les auras que vous voulez toujours voir apparaître en premier dans la liste"
 	L["Send To"] = "Envoyer vers"
+	--[[Translation missing --]]
+	L["Separator"] = "Separator"
+	--[[Translation missing --]]
+	L["Separator Text"] = "Separator Text"
+	--[[Translation missing --]]
+	L["Separator text"] = "Separator text"
 	L["Set Parent to Anchor"] = "Définir Parent à l'Ancrage"
 	L["Set tooltip description"] = "Définir la description de l'info-bulle"
 	--[[Translation missing --]]
@@ -647,25 +655,18 @@ Seule une unique valeur peut être choisie]=]
 	--[[Translation missing --]]
 	L["Update "] = "Update "
 	L["Update Custom Text On..."] = "Mettre à jour Texte Perso sur..."
-	--[[Translation missing --]]
-	L["Update in Group"] = "Update in Group"
-	--[[Translation missing --]]
-	L["Update this Aura"] = "Update this Aura"
+	L["Update in Group"] = "Mettre à jour dans le Groupe"
+	L["Update this Aura"] = "Mettre à jour cette Aura"
 	L["Use Full Scan (High CPU)"] = "Utiliser Scan Complet (CPU élevé)"
 	L["Use nth value from tooltip:"] = "Utilisez la nième valeur de l'info-bulle:"
 	L["Use SetTransform"] = "Utiliser SetTransform"
 	L["Use tooltip \"size\" instead of stacks"] = "Utiliser la \"taille\" de l'infobulle plutôt que la pile"
-	--[[Translation missing --]]
-	L["Use Tooltip Information"] = "Use Tooltip Information"
-	--[[Translation missing --]]
-	L["Used in Auras:"] = "Used in Auras:"
+	L["Use Tooltip Information"] = "Utiliser l'information de la boite de dialogue"
+	L["Used in Auras:"] = "Utilisé(e) dans les Auras:"
 	L["Used in auras:"] = "Utilisé dans les auras:"
-	--[[Translation missing --]]
-	L["Value %i"] = "Value %i"
-	--[[Translation missing --]]
-	L["Values are in normalized rgba format."] = "Values are in normalized rgba format."
-	--[[Translation missing --]]
-	L["Values:"] = "Values:"
+	L["Value %i"] = "Valeur %i"
+	L["Values are in normalized rgba format."] = "Les valeurs sont normalisées dans le format rvba"
+	L["Values:"] = "Valeurs:"
 	L["Version: "] = "Version: "
 	L["Vertical Align"] = "Aligner verticalement"
 	L["Vertical Bar"] = "Barre verticale"

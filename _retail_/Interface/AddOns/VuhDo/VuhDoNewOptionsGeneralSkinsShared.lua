@@ -1959,7 +1959,7 @@ end
 
 
 --
-local tAutoProfileIndices = { "1", "5", "10", "15", "20", "25", "30", "40" };
+local tAutoProfileIndices = { "1", "3", "5", "10", "15", "20", "25", "30", "40" };
 local tKey;
 local function VUHDO_getBestProfileForSpecAndSize(aSpec, aSize)
 	for _, tIndex in ipairs(tAutoProfileIndices) do
@@ -2433,7 +2433,7 @@ local VUHDO_PROFILE_MODEL = {
 local tOriginatorClass = nil;
 local tOriginatorToon = nil;
 local function VUHDO_smartLoadFromProfile(aDestArray, aSourceArray, aProfileModel, aDerivedRule)
-	if not aSourceArray then
+	if not aSourceArray or not aDestArray then
 		return aDestArray;
 	end
 

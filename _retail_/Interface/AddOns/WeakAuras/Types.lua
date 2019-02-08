@@ -1598,6 +1598,7 @@ WeakAuras.mythic_plus_affixes = {
   [13] = true,
   [14] = true,
   [16] = true,
+  [117] = true -- Reaping
 }
 
 for k in pairs(WeakAuras.mythic_plus_affixes) do
@@ -1794,6 +1795,7 @@ WeakAuras.author_option_types = {
   select = L["Dropdown Menu"],
   space = L["Space"],
   multiselect = L["Toggle List"],
+  header = L["Separator"],
 }
 
 WeakAuras.author_option_fields = {
@@ -1845,12 +1847,11 @@ WeakAuras.author_option_fields = {
   multiselect = {
     default = {true},
     values = {"val1"},
-  }
-}
-
-WeakAuras.space_types = {
-  multi = L["Multi-Line"],
-  single = L["Single-Line"]
+  },
+  header = {
+    useName = false,
+    text = "",
+  },
 }
 
 WeakAuras.difficulty_info = {

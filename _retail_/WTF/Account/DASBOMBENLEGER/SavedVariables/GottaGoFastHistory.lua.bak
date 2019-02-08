@@ -1227,6 +1227,266 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [19]
+						{
+							["corrupt"] = false,
+							["deaths"] = 9,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 270121.911,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 20,
+								["year"] = 2019,
+								["mins"] = 34,
+							},
+							["level"] = 6,
+							["startTime"] = 268845.227,
+							["objectiveTimes"] = {
+								"05:42.533", -- [1]
+								"11:12.490", -- [2]
+								"19:13.321", -- [3]
+								"22:01.350", -- [4]
+								"19:13.321", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [20]
+						{
+							["corrupt"] = false,
+							["deaths"] = 15,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 368261.915,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 1,
+								["year"] = 2019,
+								["mins"] = 54,
+							},
+							["level"] = 11,
+							["startTime"] = 366483.845,
+							["objectiveTimes"] = {
+								"05:35.192", -- [1]
+								"12:58.285", -- [2]
+								"22:42.940", -- [3]
+								"30:52.658", -- [4]
+								"22:42.940", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Hudz",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warlock",
+									["name"] = "Boomtastíc",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [21]
+						{
+							["corrupt"] = false,
+							["deaths"] = 13,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 446819.786,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 23,
+								["year"] = 2019,
+								["mins"] = 42,
+							},
+							["startTime"] = 445110.441,
+							["level"] = 13,
+							["objectiveTimes"] = {
+								"07:44.644", -- [1]
+								"15:24.800", -- [2]
+								"25:20.368", -- [3]
+								"29:33.806", -- [4]
+								"25:20.368", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [22]
+						{
+							["corrupt"] = false,
+							["deaths"] = 34,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 450043.408,
+							["timeStamp"] = {
+								["day"] = 2,
+								["month"] = 2,
+								["hours"] = 0,
+								["year"] = 2019,
+								["mins"] = 36,
+							},
+							["startTime"] = 447860.433,
+							["level"] = 15,
+							["objectiveTimes"] = {
+								"07:16.318", -- [1]
+								"15:54.215", -- [2]
+								"33:44.005", -- [3]
+								"39:12.246", -- [4]
+								"33:44.005", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Xerethars",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [23]
 					},
 				},
 				[1762] = {
@@ -1755,6 +2015,124 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [8]
+						{
+							["corrupt"] = false,
+							["deaths"] = 5,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 273759.978,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 21,
+								["year"] = 2019,
+								["mins"] = 34,
+							},
+							["level"] = 6,
+							["startTime"] = 272336.235,
+							["objectiveTimes"] = {
+								"04:58.294", -- [1]
+								"13:20.716", -- [2]
+								"20:57.138", -- [3]
+								"24:08.395", -- [4]
+								"22:09.857", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [9]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 275510.885,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 22,
+								["mins"] = 3,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 274028.228,
+							["objectiveTimes"] = {
+								"05:55.559", -- [1]
+								"14:45.326", -- [2]
+								"22:09.710", -- [3]
+								"24:56.841", -- [4]
+								"23:16.701", -- [5]
+							},
+							["level"] = 6,
+						}, -- [10]
 					},
 					["name"] = "Kings' Rest",
 					["zoneID"] = 1762,
@@ -2415,21 +2793,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 19,
 							["affixes"] = {
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[2] = {
 									["name"] = "Skittish",
 									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
 								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
-								[10] = {
-									["name"] = "Fortified",
-									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -2817,21 +3195,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 7,
 							["affixes"] = {
-								[2] = {
-									["name"] = "Skittish",
-									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
-								},
 								[10] = {
 									["name"] = "Fortified",
 									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
+								[2] = {
+									["name"] = "Skittish",
+									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
 								},
 							},
 							["active"] = false,
@@ -3014,6 +3392,786 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [19]
+						{
+							["corrupt"] = false,
+							["deaths"] = 5,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 202099.158,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 1,
+								["mins"] = 40,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Dijen (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [2]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Руззи (*)",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Mage",
+									["name"] = "Анкорвис (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["level"] = 6,
+							["objectiveTimes"] = {
+								"19:02.868", -- [1]
+								"08:31.627", -- [2]
+								"01:43.239", -- [3]
+								"20:57.967", -- [4]
+								"19:02.868", -- [5]
+							},
+							["startTime"] = 200866.069,
+						}, -- [20]
+						{
+							["corrupt"] = false,
+							["deaths"] = 2,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 267214.044,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 19,
+								["year"] = 2019,
+								["mins"] = 45,
+							},
+							["level"] = 6,
+							["startTime"] = 266141.244,
+							["objectiveTimes"] = {
+								"16:02.827", -- [1]
+								"07:49.668", -- [2]
+								"01:14.220", -- [3]
+								"18:02.444", -- [4]
+								"16:02.827", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Zoré (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zonked (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Vandrolf (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+						}, -- [21]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 14% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 286415.469,
+							["timeStamp"] = {
+								["day"] = 26,
+								["month"] = 1,
+								["hours"] = 1,
+								["mins"] = 5,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Mage",
+									["name"] = "Zelaroth (*)",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 285540.216,
+							["objectiveTimes"] = {
+								"12:28.890", -- [1]
+								"05:48.043", -- [2]
+								"01:01.604", -- [3]
+								"14:49.608", -- [4]
+								"13:08.638", -- [5]
+							},
+							["level"] = 6,
+						}, -- [22]
+						{
+							["corrupt"] = false,
+							["deaths"] = 16,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 14% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[14] = {
+									["name"] = "Quaking",
+									["desc"] = "Periodically, all players emit a shockwave, inflicting damage and interrupting nearby allies.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 19116.057,
+							["timeStamp"] = {
+								["day"] = 28,
+								["month"] = 1,
+								["hours"] = 0,
+								["mins"] = 54,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Hudzz",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Ozyorkbourne",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 17330.465,
+							["objectiveTimes"] = {
+								"25:03.330", -- [1]
+								"14:51.906", -- [2]
+								"02:07.053", -- [3]
+								"28:19.067", -- [4]
+								"31:05.143", -- [5]
+							},
+							["level"] = 14,
+						}, -- [23]
+						{
+							["corrupt"] = false,
+							["deaths"] = 15,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 14% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[14] = {
+									["name"] = "Quaking",
+									["desc"] = "Periodically, all players emit a shockwave, inflicting damage and interrupting nearby allies.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 164881.822,
+							["timeStamp"] = {
+								["day"] = 29,
+								["month"] = 1,
+								["hours"] = 17,
+								["mins"] = 23,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Rogue",
+									["name"] = "Deffrogue",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Priest",
+									["name"] = "Zeeyxp (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Warrior",
+									["name"] = "Dibz (*)",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Mage",
+									["name"] = "Nâte",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"26:04.529", -- [1]
+								"14:52.507", -- [2]
+								"02:16.515", -- [3]
+								"34:28.450", -- [4]
+								"31:03.751", -- [5]
+							},
+							["startTime"] = 162887.728,
+						}, -- [24]
+						{
+							["corrupt"] = false,
+							["deaths"] = 15,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 14% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[14] = {
+									["name"] = "Quaking",
+									["desc"] = "Periodically, all players emit a shockwave, inflicting damage and interrupting nearby allies.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 187166.319,
+							["timeStamp"] = {
+								["day"] = 29,
+								["month"] = 1,
+								["hours"] = 23,
+								["year"] = 2019,
+								["mins"] = 35,
+							},
+							["startTime"] = 185522.708,
+							["level"] = 13,
+							["objectiveTimes"] = {
+								"25:11.597", -- [1]
+								"11:34.721", -- [2]
+								"01:52.728", -- [3]
+								"28:14.875", -- [4]
+								"28:38.265", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Mage",
+									["name"] = "Aerillia (*)",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Priest",
+									["name"] = "Xalun (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Talidk (*)",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Ribzy (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [25]
+						{
+							["corrupt"] = false,
+							["deaths"] = 37,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 14% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[14] = {
+									["name"] = "Quaking",
+									["desc"] = "Periodically, all players emit a shockwave, inflicting damage and interrupting nearby allies.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 189760.61,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 0,
+								["year"] = 2019,
+								["mins"] = 18,
+							},
+							["startTime"] = 187742.698,
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"33:04.574", -- [1]
+								"15:07.264", -- [2]
+								"07:12.706", -- [3]
+								"36:19.644", -- [4]
+								"36:42.552", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Mage",
+									["name"] = "Aerillia (*)",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Priest",
+									["name"] = "Xalun (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Talidk (*)",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Ribzy (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [26]
+						{
+							["corrupt"] = false,
+							["deaths"] = 7,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 232780.808,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 12,
+								["mins"] = 15,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Paladin",
+									["name"] = "Gjira",
+									["role"] = "HEALER",
+								}, -- [1]
+								{
+									["class"] = "Monk",
+									["name"] = "Buffww",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Xarcow (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["startTime"] = 231250.67,
+							["objectiveTimes"] = {
+								"21:57.400", -- [1]
+								"13:42.335", -- [2]
+								"03:00.841", -- [3]
+								"26:04.536", -- [4]
+								"21:57.400", -- [5]
+							},
+							["level"] = 14,
+						}, -- [27]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 336027.205,
+							["timeStamp"] = {
+								["day"] = 31,
+								["month"] = 1,
+								["hours"] = 16,
+								["mins"] = 56,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Nâte",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 12,
+							["objectiveTimes"] = {
+								"15:21.687", -- [1]
+								"09:52.613", -- [2]
+								"01:58.692", -- [3]
+								"20:04.559", -- [4]
+								"16:14.662", -- [5]
+							},
+							["startTime"] = 334836.866,
+						}, -- [28]
+						{
+							["corrupt"] = false,
+							["deaths"] = 13,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 339887.001,
+							["timeStamp"] = {
+								["day"] = 31,
+								["month"] = 1,
+								["hours"] = 18,
+								["mins"] = 0,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Nâte",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"20:22.884", -- [1]
+								"11:14.713", -- [2]
+								"02:24.943", -- [3]
+								"23:59.397", -- [4]
+								"24:32.736", -- [5]
+							},
+							["startTime"] = 338478.841,
+						}, -- [29]
+						{
+							["corrupt"] = false,
+							["deaths"] = 24,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 529900.396,
+							["timeStamp"] = {
+								["day"] = 2,
+								["month"] = 2,
+								["hours"] = 22,
+								["mins"] = 46,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Paladin",
+									["name"] = "Guppyn (*)",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Lyllotdruid",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"25:00.474", -- [1]
+								"14:10.240", -- [2]
+								"02:28.819", -- [3]
+								"29:21.692", -- [4]
+								"25:00.474", -- [5]
+							},
+							["startTime"] = 528258.003,
+						}, -- [30]
+						{
+							["corrupt"] = false,
+							["deaths"] = 27,
+							["affixes"] = {
+								[5] = {
+									["name"] = "Teeming",
+									["desc"] = "Additional non-boss enemies are present throughout the dungeon.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[13] = {
+									["name"] = "Explosive",
+									["desc"] = "While in combat, enemies periodically summon Explosive Orbs that will detonate if not destroyed.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 212542.918,
+							["timeStamp"] = {
+								["day"] = 8,
+								["month"] = 2,
+								["hours"] = 2,
+								["mins"] = 44,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Gingerprick",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Reeceburton",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 15,
+							["objectiveTimes"] = {
+								"30:03.829", -- [1]
+								"17:01.539", -- [2]
+								"01:38.311", -- [3]
+								"32:40.645", -- [4]
+								"30:03.829", -- [5]
+							},
+							["startTime"] = 210716.827,
+						}, -- [31]
 					},
 				},
 				[1516] = {
@@ -3160,10 +4318,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 4,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
-								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
@@ -3171,6 +4325,10 @@ GottaGoFastHistoryDB = {
 								[12] = {
 									["name"] = "Grievous",
 									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -3442,10 +4600,6 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 17,
 							["affixes"] = {
-								[7] = {
-									["name"] = "Bolstering",
-									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
-								},
 								[12] = {
 									["name"] = "Grievous",
 									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
@@ -3453,6 +4607,10 @@ GottaGoFastHistoryDB = {
 								[9] = {
 									["name"] = "Tyrannical",
 									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[7] = {
+									["name"] = "Bolstering",
+									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
 							},
 							["active"] = false,
@@ -4551,6 +5709,406 @@ GottaGoFastHistoryDB = {
 							},
 							["level"] = 16,
 						}, -- [14]
+						{
+							["corrupt"] = false,
+							["deaths"] = 19,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 277722.813,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 22,
+								["mins"] = 40,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 276270.241,
+							["objectiveTimes"] = {
+								"18:56.542", -- [1]
+								"14:38.114", -- [2]
+								"10:28.464", -- [3]
+								"23:20.541", -- [4]
+								"25:46.896", -- [5]
+								"23:20.541", -- [6]
+							},
+							["level"] = 6,
+						}, -- [15]
+						{
+							["corrupt"] = false,
+							["deaths"] = 0,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 334352.05,
+							["timeStamp"] = {
+								["day"] = 31,
+								["month"] = 1,
+								["hours"] = 16,
+								["mins"] = 28,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Nâte",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 12,
+							["objectiveTimes"] = {
+								"17:08.772", -- [1]
+								"10:29.539", -- [2]
+								"06:04.360", -- [3]
+								"22:53.560", -- [4]
+								"26:29.854", -- [5]
+								"23:52.381", -- [6]
+							},
+							["startTime"] = 332761.843,
+						}, -- [16]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 437929.022,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 21,
+								["year"] = 2019,
+								["mins"] = 14,
+							},
+							["startTime"] = 436060.432,
+							["level"] = 15,
+							["objectiveTimes"] = {
+								"20:09.144", -- [1]
+								"13:22.452", -- [2]
+								"07:32.592", -- [3]
+								"26:09.433", -- [4]
+								"31:23.087", -- [5]
+								"27:41.550", -- [6]
+							},
+							["players"] = {
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [17]
+						{
+							["corrupt"] = false,
+							["deaths"] = 0,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 439979.272,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 21,
+								["year"] = 2019,
+								["mins"] = 48,
+							},
+							["startTime"] = 438161.438,
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"20:43.398", -- [1]
+								"12:41.678", -- [2]
+								"07:32.317", -- [3]
+								"25:50.000", -- [4]
+								"30:17.140", -- [5]
+								"26:54.391", -- [6]
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [18]
+						{
+							["corrupt"] = false,
+							["deaths"] = 9,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 444557.918,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 23,
+								["year"] = 2019,
+								["mins"] = 4,
+							},
+							["startTime"] = 442686.437,
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"20:53.687", -- [1]
+								"12:39.462", -- [2]
+								"07:14.516", -- [3]
+								"27:38.811", -- [4]
+								"31:27.550", -- [5]
+								"31:55.937", -- [6]
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [19]
+						{
+							["corrupt"] = false,
+							["deaths"] = 12,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 29386.04,
+							["timeStamp"] = {
+								["day"] = 5,
+								["month"] = 2,
+								["hours"] = 23,
+								["mins"] = 50,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Asdfsdv (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 17,
+							["objectiveTimes"] = {
+								"05:22.788", -- [1]
+								"16:23.675", -- [2]
+								"25:40.670", -- [3]
+								"32:44.117", -- [4]
+								"37:47.786", -- [5]
+								"38:43.125", -- [6]
+							},
+							["startTime"] = 27122.516,
+						}, -- [20]
 					},
 					["name"] = "Waycrest Manor",
 					["zoneID"] = 1862,
@@ -6422,6 +7980,459 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [12]
+						{
+							["corrupt"] = false,
+							["deaths"] = 7,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 253457.554,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 15,
+								["year"] = 2019,
+								["mins"] = 56,
+							},
+							["level"] = 6,
+							["startTime"] = 252316.274,
+							["objectiveTimes"] = {
+								"04:19.477", -- [1]
+								"11:12.950", -- [2]
+								"14:50.492", -- [3]
+								"19:35.565", -- [4]
+								"17:50.666", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Manov (*)",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [2]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Noxlow (*)",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Toúka (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+						}, -- [13]
+						{
+							["corrupt"] = false,
+							["deaths"] = 1,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 284895.622,
+							["timeStamp"] = {
+								["day"] = 26,
+								["month"] = 1,
+								["hours"] = 0,
+								["mins"] = 39,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 284090.221,
+							["objectiveTimes"] = {
+								"03:00.228", -- [1]
+								"07:35.766", -- [2]
+								"10:07.295", -- [3]
+								"13:30.027", -- [4]
+								"12:06.524", -- [5]
+							},
+							["level"] = 6,
+						}, -- [14]
+						{
+							["corrupt"] = false,
+							["deaths"] = 9,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 220758.821,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 8,
+								["year"] = 2019,
+								["mins"] = 54,
+							},
+							["level"] = 10,
+							["startTime"] = 219238.686,
+							["objectiveTimes"] = {
+								"05:37.434", -- [1]
+								"17:44.346", -- [2]
+								"15:08.161", -- [3]
+								"26:04.813", -- [4]
+								"21:58.507", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Daisyhunter (*)",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Paladin",
+									["name"] = "Lightxenu (*)",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [15]
+						{
+							["corrupt"] = false,
+							["deaths"] = 2,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 235810.438,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 13,
+								["mins"] = 6,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Paladin",
+									["name"] = "Gjira",
+									["role"] = "HEALER",
+								}, -- [1]
+								{
+									["class"] = "Monk",
+									["name"] = "Buffww",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Xarcow (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["startTime"] = 234215.676,
+							["objectiveTimes"] = {
+								"04:54.042", -- [1]
+								"14:15.092", -- [2]
+								"20:04.490", -- [3]
+								"26:44.460", -- [4]
+								"23:15.812", -- [5]
+							},
+							["level"] = 13,
+						}, -- [16]
+						{
+							["corrupt"] = false,
+							["deaths"] = 2,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 341827.219,
+							["timeStamp"] = {
+								["day"] = 31,
+								["month"] = 1,
+								["hours"] = 18,
+								["mins"] = 32,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Nâte",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"04:56.405", -- [1]
+								"15:45.343", -- [2]
+								"18:47.969", -- [3]
+								"25:50.954", -- [4]
+								"22:08.048", -- [5]
+							},
+							["startTime"] = 340285.843,
+						}, -- [17]
+						{
+							["corrupt"] = false,
+							["deaths"] = 10,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 372635.091,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 3,
+								["year"] = 2019,
+								["mins"] = 6,
+							},
+							["level"] = 14,
+							["startTime"] = 370765.831,
+							["objectiveTimes"] = {
+								"05:39.523", -- [1]
+								"16:35.687", -- [2]
+								"20:05.192", -- [3]
+								"31:58.748", -- [4]
+								"24:09.476", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Hudz",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warlock",
+									["name"] = "Boomtastíc",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [18]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 545473.569,
+							["timeStamp"] = {
+								["day"] = 3,
+								["month"] = 2,
+								["hours"] = 3,
+								["year"] = 2019,
+								["mins"] = 6,
+							},
+							["startTime"] = 543874.987,
+							["level"] = 15,
+							["objectiveTimes"] = {
+								"05:14.943", -- [1]
+								"15:42.176", -- [2]
+								"19:04.379", -- [3]
+								"26:53.089", -- [4]
+								"22:39.558", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Zariis",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [19]
 					},
 				},
 				[1501] = {
@@ -7333,6 +9344,266 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [10]
+						{
+							["corrupt"] = false,
+							["deaths"] = 5,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 262472.212,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 18,
+								["year"] = 2019,
+								["mins"] = 26,
+							},
+							["level"] = 6,
+							["startTime"] = 260982.251,
+							["objectiveTimes"] = {
+								"10:41.600", -- [1]
+								"16:00.173", -- [2]
+								"21:29.919", -- [3]
+								"25:14.559", -- [4]
+								"22:17.468", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Babacik (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Rogue",
+									["name"] = "Feelinside (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [3]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Jamirryo (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+						}, -- [11]
+						{
+							["corrupt"] = false,
+							["deaths"] = 14,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 338207.483,
+							["timeStamp"] = {
+								["day"] = 31,
+								["month"] = 1,
+								["hours"] = 17,
+								["mins"] = 32,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Nâte",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 14,
+							["objectiveTimes"] = {
+								"15:01.303", -- [1]
+								"23:02.950", -- [2]
+								"26:43.952", -- [3]
+								"31:43.449", -- [4]
+								"32:12.289", -- [5]
+							},
+							["startTime"] = 336344.851,
+						}, -- [12]
+						{
+							["corrupt"] = false,
+							["deaths"] = 10,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 442159.72,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 22,
+								["year"] = 2019,
+								["mins"] = 25,
+							},
+							["startTime"] = 440289.438,
+							["level"] = 15,
+							["objectiveTimes"] = {
+								"14:16.786", -- [1]
+								"22:54.419", -- [2]
+								"26:56.990", -- [3]
+								"31:59.743", -- [4]
+								"26:56.990", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Warlock",
+									["name"] = "Ginsu",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [13]
+						{
+							["corrupt"] = false,
+							["deaths"] = 9,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 6569.143,
+							["timeStamp"] = {
+								["day"] = 5,
+								["month"] = 2,
+								["hours"] = 17,
+								["mins"] = 29,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Spazpriest",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Monk",
+									["name"] = "Jezmonk",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Shaman",
+									["name"] = "Valdura",
+									["role"] = "HEALER",
+								}, -- [3]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["startTime"] = 4376.537,
+							["objectiveTimes"] = {
+								"09:57.793", -- [1]
+								"18:37.660", -- [2]
+								"28:34.839", -- [3]
+								"37:16.909", -- [4]
+								"34:09.806", -- [5]
+							},
+							["level"] = 10,
+						}, -- [14]
 					},
 					["name"] = "The MOTHERLODE!!",
 					["zoneID"] = 1594,
@@ -7910,21 +10181,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 22,
 							["affixes"] = {
-								[16] = {
-									["name"] = "Infested",
-									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
-								},
 								[2] = {
 									["name"] = "Skittish",
 									["desc"] = "Enemies pay far less attention to threat generated by tanks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
 								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
 								},
-								[10] = {
-									["name"] = "Fortified",
-									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								[16] = {
+									["name"] = "Infested",
+									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
 							},
 							["active"] = false,
@@ -8308,6 +10579,333 @@ GottaGoFastHistoryDB = {
 							},
 							["startTime"] = 268558.715,
 						}, -- [15]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 280090.341,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 23,
+								["mins"] = 19,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 278695.226,
+							["objectiveTimes"] = {
+								"06:10.979", -- [1]
+								"14:05.889", -- [2]
+								"20:26.286", -- [3]
+								"23:29.439", -- [4]
+								"22:24.640", -- [5]
+							},
+							["level"] = 6,
+						}, -- [16]
+						{
+							["corrupt"] = false,
+							["deaths"] = 1,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 225150.778,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 10,
+								["year"] = 2019,
+								["mins"] = 8,
+							},
+							["level"] = 10,
+							["startTime"] = 223372.684,
+							["objectiveTimes"] = {
+								"07:06.797", -- [1]
+								"16:36.091", -- [2]
+								"24:16.537", -- [3]
+								"29:42.422", -- [4]
+								"26:13.389", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Daisyhunter (*)",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Paladin",
+									["name"] = "Benjipala (*)",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [17]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 364785.637,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 0,
+								["year"] = 2019,
+								["mins"] = 56,
+							},
+							["level"] = 13,
+							["startTime"] = 362948.837,
+							["objectiveTimes"] = {
+								"07:39.461", -- [1]
+								"17:32.997", -- [2]
+								"25:50.990", -- [3]
+								"30:28.058", -- [4]
+								"30:51.059", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Xerethars",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Calekk",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [18]
+						{
+							["corrupt"] = false,
+							["deaths"] = 12,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 543190.558,
+							["timeStamp"] = {
+								["day"] = 3,
+								["month"] = 2,
+								["hours"] = 2,
+								["mins"] = 28,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Zariis",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 540690.033,
+							["objectiveTimes"] = {
+								"10:16.740", -- [1]
+								"23:56.297", -- [2]
+								"34:53.169", -- [3]
+								"42:11.503", -- [4]
+								"42:40.110", -- [5]
+							},
+							["level"] = 17,
+						}, -- [19]
+						{
+							["corrupt"] = false,
+							["deaths"] = 3,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 678520.886,
+							["timeStamp"] = {
+								["day"] = 4,
+								["month"] = 2,
+								["hours"] = 16,
+								["mins"] = 3,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Death Knight",
+									["name"] = "Водкассалом (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Klitokris (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [3]
+								{
+									["class"] = "Rogue",
+									["name"] = "Trikzstar (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["level"] = 11,
+							["objectiveTimes"] = {
+								"07:45.449", -- [1]
+								"19:44.371", -- [2]
+								"27:45.849", -- [3]
+								"33:27.398", -- [4]
+								"34:10.395", -- [5]
+							},
+							["startTime"] = 676484.812,
+						}, -- [20]
 					},
 				},
 				[1753] = {
@@ -9740,6 +12338,333 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [20]
+						{
+							["corrupt"] = false,
+							["deaths"] = 7,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 283207.68,
+							["timeStamp"] = {
+								["day"] = 26,
+								["month"] = 1,
+								["hours"] = 0,
+								["mins"] = 11,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 282139.224,
+							["objectiveTimes"] = {
+								"04:09.962", -- [1]
+								"09:52.257", -- [2]
+								"14:58.540", -- [3]
+								"18:22.925", -- [4]
+								"16:48.841", -- [5]
+							},
+							["level"] = 6,
+						}, -- [21]
+						{
+							["corrupt"] = false,
+							["deaths"] = 5,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 222685.319,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 9,
+								["year"] = 2019,
+								["mins"] = 26,
+							},
+							["level"] = 10,
+							["startTime"] = 221270.678,
+							["objectiveTimes"] = {
+								"05:44.028", -- [1]
+								"13:04.278", -- [2]
+								"18:57.128", -- [3]
+								"23:59.200", -- [4]
+								"20:29.780", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Daisyhunter (*)",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Köttigdk",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [22]
+						{
+							["corrupt"] = false,
+							["deaths"] = 4,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 230809.326,
+							["timeStamp"] = {
+								["day"] = 30,
+								["month"] = 1,
+								["hours"] = 11,
+								["mins"] = 42,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Paladin",
+									["name"] = "Gjira",
+									["role"] = "HEALER",
+								}, -- [1]
+								{
+									["class"] = "Monk",
+									["name"] = "Buffww",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Paladin",
+									["name"] = "Khunee",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Xarcow (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["startTime"] = 228989.689,
+							["objectiveTimes"] = {
+								"05:27.818", -- [1]
+								"17:03.403", -- [2]
+								"30:39.143", -- [3]
+								"22:44.641", -- [4]
+								"27:40.701", -- [5]
+							},
+							["level"] = 13,
+						}, -- [23]
+						{
+							["corrupt"] = false,
+							["deaths"] = 13,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 370282.637,
+							["timeStamp"] = {
+								["day"] = 1,
+								["month"] = 2,
+								["hours"] = 2,
+								["year"] = 2019,
+								["mins"] = 27,
+							},
+							["level"] = 12,
+							["startTime"] = 368685.834,
+							["objectiveTimes"] = {
+								"07:26.944", -- [1]
+								"15:52.417", -- [2]
+								"23:52.794", -- [3]
+								"27:17.500", -- [4]
+								"27:41.481", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Warrior",
+									["name"] = "Zuto",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Rogue",
+									["name"] = "Húddz",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Warlock",
+									["name"] = "Boomtastíc",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [24]
+						{
+							["corrupt"] = false,
+							["deaths"] = 9,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 539688.554,
+							["timeStamp"] = {
+								["day"] = 3,
+								["month"] = 2,
+								["hours"] = 1,
+								["mins"] = 29,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Zariis",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 538009.001,
+							["objectiveTimes"] = {
+								"07:31.967", -- [1]
+								"14:30.882", -- [2]
+								"23:29.468", -- [3]
+								"28:21.297", -- [4]
+								"28:44.148", -- [5]
+							},
+							["level"] = 15,
+						}, -- [25]
 					},
 				},
 				[1877] = {
@@ -10437,6 +13362,317 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [11]
+						{
+							["corrupt"] = false,
+							["deaths"] = 6,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[14] = {
+									["name"] = "Quaking",
+									["desc"] = "Periodically, all players emit a shockwave, inflicting damage and interrupting nearby allies.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 204969.871,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 2,
+								["mins"] = 28,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Dhpogjaymp (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Mage",
+									["name"] = "Aerillia (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Rogue",
+									["name"] = "Lèvi (*)",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Warlock",
+									["name"] = "Mharlock (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["level"] = 10,
+							["objectiveTimes"] = {
+								"05:15.697", -- [1]
+								"14:53.302", -- [2]
+								"20:48.174", -- [3]
+								"33:06.363", -- [4]
+								"29:39.042", -- [5]
+							},
+							["startTime"] = 203013.053,
+						}, -- [12]
+						{
+							["corrupt"] = false,
+							["deaths"] = 2,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 256282.665,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 16,
+								["year"] = 2019,
+								["mins"] = 43,
+							},
+							["level"] = 6,
+							["startTime"] = 254968.282,
+							["objectiveTimes"] = {
+								"03:47.535", -- [1]
+								"10:44.212", -- [2]
+								"14:02.250", -- [3]
+								"22:04.229", -- [4]
+								"18:29.617", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Manov (*)",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [2]
+								{
+									["class"] = "Mage",
+									["name"] = "Testostitera (*)",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Death Knight",
+									["name"] = "Kampvognen (*)",
+									["role"] = "TANK",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+						}, -- [13]
+						{
+							["corrupt"] = false,
+							["deaths"] = 0,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 265511.875,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 19,
+								["year"] = 2019,
+								["mins"] = 17,
+							},
+							["level"] = 5,
+							["startTime"] = 264275.249,
+							["objectiveTimes"] = {
+								"03:35.546", -- [1]
+								"10:00.451", -- [2]
+								"13:18.181", -- [3]
+								"20:36.290", -- [4]
+								"17:51.182", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Zoré (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Warrior",
+									["name"] = "Zonked (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Vandrolf (*)",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+						}, -- [14]
+						{
+							["corrupt"] = false,
+							["deaths"] = 1,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 281683.744,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 23,
+								["mins"] = 46,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 280564.237,
+							["objectiveTimes"] = {
+								"03:22.406", -- [1]
+								"09:20.955", -- [2]
+								"12:39.270", -- [3]
+								"18:43.864", -- [4]
+								"16:39.056", -- [5]
+							},
+							["level"] = 6,
+						}, -- [15]
+						{
+							["corrupt"] = false,
+							["deaths"] = 9,
+							["affixes"] = {
+								[5] = {
+									["name"] = "Teeming",
+									["desc"] = "Additional non-boss enemies are present throughout the dungeon.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+								[13] = {
+									["name"] = "Explosive",
+									["desc"] = "While in combat, enemies periodically summon Explosive Orbs that will detonate if not destroyed.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 84295.187,
+							["timeStamp"] = {
+								["day"] = 6,
+								["month"] = 2,
+								["hours"] = 15,
+								["year"] = 2019,
+								["mins"] = 6,
+							},
+							["level"] = 11,
+							["startTime"] = 82258.866,
+							["objectiveTimes"] = {
+								"06:18.254", -- [1]
+								"16:44.560", -- [2]
+								"24:02.932", -- [3]
+								"34:40.987", -- [4]
+								"30:14.054", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Gingerslåyer",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Warrior",
+									["name"] = "Thirtyseven",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Shaman",
+									["name"] = "Jíra",
+									["role"] = "HEALER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+						}, -- [16]
 					},
 					["name"] = "Temple of Sethraliss",
 					["zoneID"] = 1877,
@@ -11241,21 +14477,21 @@ GottaGoFastHistoryDB = {
 							["corrupt"] = false,
 							["deaths"] = 8,
 							["affixes"] = {
-								[9] = {
-									["name"] = "Tyrannical",
-									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								[12] = {
+									["name"] = "Grievous",
+									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
 								},
 								[16] = {
 									["name"] = "Infested",
 									["desc"] = "Some non-boss enemies have been infested with a Spawn of G'huun.",
 								},
-								[12] = {
-									["name"] = "Grievous",
-									["desc"] = "When injured below 90% health, players will suffer increasing damage over time until healed above 90% health.",
-								},
 								[7] = {
 									["name"] = "Bolstering",
 									["desc"] = "When any non-boss enemy dies, its death cry empowers nearby allies, increasing their maximum health and damage by 20%.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
 								},
 							},
 							["active"] = false,
@@ -11371,6 +14607,195 @@ GottaGoFastHistoryDB = {
 								}, -- [5]
 							},
 						}, -- [6]
+						{
+							["corrupt"] = false,
+							["deaths"] = 19,
+							["affixes"] = {
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[14] = {
+									["name"] = "Quaking",
+									["desc"] = "Periodically, all players emit a shockwave, inflicting damage and interrupting nearby allies.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 200093.301,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 1,
+								["mins"] = 7,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Death Knight",
+									["name"] = "Окалок (*)",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Priest",
+									["name"] = "Virginhealer (*)",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Warlock",
+									["name"] = "Boomtastíc",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Shaman",
+									["name"] = "Renstorp (*)",
+									["role"] = "HEALER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "DAMAGER",
+								}, -- [5]
+							},
+							["level"] = 7,
+							["objectiveTimes"] = {
+								"02:33.274", -- [1]
+								"17:13.758", -- [2]
+								"26:33.529", -- [3]
+								"30:02.635", -- [4]
+								"27:53.121", -- [5]
+							},
+							["startTime"] = 198385.055,
+						}, -- [7]
+						{
+							["corrupt"] = false,
+							["deaths"] = 10,
+							["affixes"] = {
+								[10] = {
+									["name"] = "Fortified",
+									["desc"] = "Non-boss enemies have 20% more health and inflict up to 30% increased damage.",
+								},
+								[11] = {
+									["name"] = "Bursting",
+									["desc"] = "When slain, non-boss enemies explode, causing all players to suffer 5% of their max health in damage over 4 sec. This effect stacks.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 271953.442,
+							["timeStamp"] = {
+								["day"] = 25,
+								["month"] = 1,
+								["hours"] = 21,
+								["year"] = 2019,
+								["mins"] = 4,
+							},
+							["level"] = 5,
+							["startTime"] = 271007.25,
+							["objectiveTimes"] = {
+								"02:07.482", -- [1]
+								"08:18.364", -- [2]
+								"14:28.490", -- [3]
+								"16:35.577", -- [4]
+								"15:19.075", -- [5]
+							},
+							["players"] = {
+								{
+									["class"] = "Monk",
+									["name"] = "Kbrews",
+									["role"] = "TANK",
+								}, -- [1]
+								{
+									["class"] = "Hunter",
+									["name"] = "Lyllot",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Warrior",
+									["name"] = "Ozyorkbourne",
+									["role"] = "DAMAGER",
+								}, -- [3]
+								{
+									["class"] = "Hunter",
+									["name"] = "Zulgara",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+						}, -- [8]
+						{
+							["corrupt"] = false,
+							["deaths"] = 11,
+							["affixes"] = {
+								[3] = {
+									["name"] = "Volcanic",
+									["desc"] = "While in combat, enemies periodically cause gouts of flame to erupt beneath the feet of distant players.",
+								},
+								[6] = {
+									["name"] = "Raging",
+									["desc"] = "Non-boss enemies enrage at 30% health remaining, dealing 100% increased damage until defeated.",
+								},
+								[9] = {
+									["name"] = "Tyrannical",
+									["desc"] = "Boss enemies have 40% more health and inflict up to 15% increased damage.",
+								},
+								[117] = {
+									["name"] = "Reaping",
+									["desc"] = "Non-boss enemies are empowered by Bwonsamdi and periodically seek vengeance from beyond the grave.",
+								},
+							},
+							["active"] = false,
+							["endTime"] = 537693.264,
+							["timeStamp"] = {
+								["day"] = 3,
+								["month"] = 2,
+								["hours"] = 0,
+								["mins"] = 56,
+								["year"] = 2019,
+							},
+							["players"] = {
+								{
+									["class"] = "Priest",
+									["name"] = "Scread",
+									["role"] = "DAMAGER",
+								}, -- [1]
+								{
+									["class"] = "Demon Hunter",
+									["name"] = "Fluke",
+									["role"] = "DAMAGER",
+								}, -- [2]
+								{
+									["class"] = "Druid",
+									["name"] = "Tigerozy",
+									["role"] = "TANK",
+								}, -- [3]
+								{
+									["class"] = "Druid",
+									["name"] = "Zariis",
+									["role"] = "DAMAGER",
+								}, -- [4]
+								{
+									["class"] = "Shaman",
+									["name"] = "Niseko",
+									["role"] = "HEALER",
+								}, -- [5]
+							},
+							["startTime"] = 535956.993,
+							["objectiveTimes"] = {
+								"03:39.704", -- [1]
+								"17:26.110", -- [2]
+								"25:33.744", -- [3]
+								"29:51.172", -- [4]
+								"25:33.744", -- [5]
+							},
+							["level"] = 15,
+						}, -- [9]
 					},
 				},
 			},

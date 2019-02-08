@@ -138,8 +138,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
 
         body_and_soul = 22315, -- 64129
         sanlayn = 23374, -- 199855
-        mania = not PTR and 21976 or nil, -- 193173
-        intangibility = PTR and 21976 or nil, -- 288733
+        intangibility = 21976, -- 288733
 
         twist_of_fate = 23125, -- 109142
         misery = 23126, -- 238558
@@ -725,6 +724,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
             handler = function ()
                 applyDebuff( "target", "mind_flay" )
                 channelSpell( "mind_flay" )
+
                 if level < 116 then
                     if equipped.the_twins_painful_touch and action.mind_flay.lastCast < max( action.dark_ascension.lastCast, action.void_eruption.lastCast ) then
                         if debuff.shadow_word_pain.up and active_dot.shadow_word_pain < min( 4, active_enemies ) then
@@ -739,6 +739,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
                         addStack( "empty_mind", nil, 3 )
                     end
                 end
+                
                 forecastResources( "insanity" )
             end,
         },
@@ -767,9 +768,10 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
             
             handler = function ()
                 applyDebuff( "target", "mind_sear" )
+                channelSpell( "mind_sear" )
+
                 removeBuff( "thought_harvester" )
                 if azerite.searing_dialogue.enabled then applyDebuff( "target", "searing_dialogue" ) end
-                channelSpell( "mind_sear" )
                 forecastResources( "insanity" )
             end,
         },
@@ -1102,7 +1104,9 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
             toggle = "interrupts",
             interrupt = true,
 
-            usable = function () return target.casting end,
+            debuff = "casting",
+            readyTime = state.timeToInterrupt,
+
             handler = function ()
                 interrupt()
                 applyDebuff( "target", "silence" )
@@ -1113,7 +1117,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
         surrender_to_madness = {
             id = 193223,
             cast = 0,
-            cooldown = PTR and 180 or 240,
+            cooldown = 180,
             gcd = "spell",
             
             toggle = "cooldowns",
@@ -1177,7 +1181,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
 
             spend = function ()
                 if debuff.surrendered_to_madness.up then return 0 end
-                return buff.surrender_to_madness.up and ( PTR and -40 or -32 ) or ( PTR and -20 or -16 )
+                return buff.surrender_to_madness.up and -40 or -20
             end,
             spendType = "insanity",
             

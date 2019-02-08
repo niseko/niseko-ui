@@ -396,9 +396,9 @@ function WeakAuras.ActivateEvent(id, triggernum, data, state)
     state.inverse = nil;
     state.autoHide = autoHide;
   elseif (data.durationFunc) then
-    local arg1, arg2, arg3, inverse = data.durationFunc(data.trigger);
-    arg1 = type(arg1) == "number" and arg1 or 0;
-    arg2 = type(arg2) == "number" and arg2 or 0;
+    local ok, arg1, arg2, arg3, inverse = xpcall(data.durationFunc, geterrorhandler(), data.trigger);
+    arg1 = ok and type(arg1) == "number" and arg1 or 0;
+    arg2 = ok and type(arg2) == "number" and arg2 or 0;
 
     if(type(arg3) == "string") then
       if (state.durationFunc ~= data.durationFunc) then
@@ -1657,14 +1657,8 @@ do
   end
 
   function WeakAuras.GetSpellCooldownUnified(id, runeDuration)
-    local charges, maxCharges, startTimeCharges, durationCharges
     local startTime, duration, enabled = GetSpellCooldown(id)
-    -- Spells can return both information via GetSpellCooldown and GetSpellCharges
-    -- E.g. Rune of Power see Github-Issue: #1060
-    -- So if GetSpellCooldown returned a cooldown, use that one. Otherwise check GetSpellCharges
-    if duration and duration <= 1 or (duration == gcdDuration and startTime == gcdStart) then
-      charges, maxCharges, startTimeCharges, durationCharges = GetSpellCharges(id);
-    end
+    local charges, maxCharges, startTimeCharges, durationCharges = GetSpellCharges(id);
 
     local cooldownBecauseRune = false;
     if (charges == nil) then -- charges is nil if the spell has no charges. Or in other words GetSpellCharges is the wrong api
@@ -1695,7 +1689,15 @@ do
     elseif (charges == maxCharges) then
       startTime, duration = 0, 0;
     else
-      startTime, duration = startTimeCharges, durationCharges
+      -- Spells can return both information via GetSpellCooldown and GetSpellCharges
+      -- E.g. Rune of Power see Github-Issue: #1060
+      -- So if GetSpellCooldown returned a cooldown, use that one, if it's a "significant" cooldown
+      --  Otherwise check GetSpellCharges
+      -- A few abilities have a minor cooldown just to prevent the user from triggering it multiple times,
+      -- ignore them since pratically no one wants to see them
+      if duration and duration <= 1.5 or (duration == gcdDuration and startTime == gcdStart) then
+        startTime, duration = startTimeCharges, durationCharges
+      end
     end
 
     startTime = startTime or 0;
@@ -2634,72 +2636,37 @@ end
 function GenericTrigger.CanHaveDuration(data, triggernum)
   local trigger = data.triggers[triggernum].trigger
 
-  if(
-    (
-    (
-    trigger.type == "event"
-    or trigger.type == "status"
-    )
-    and (
-    (
-    trigger.event
-    and WeakAuras.event_prototypes[trigger.event]
-    and (WeakAuras.event_prototypes[trigger.event].durationFunc
-    or WeakAuras.event_prototypes[trigger.event].canHaveDuration)
-    )
-    or (
-    trigger.unevent == "timed"
-    and trigger.duration
-    )
-    )
-    and not trigger.use_inverse
-    )
-    or (
-    trigger.type == "custom"
-    and (
-    (
-    trigger.custom_type == "event"
-    and trigger.custom_hide == "timed"
-    and trigger.duration
-    )
-    or (
-    trigger.customDuration
-    and trigger.customDuration ~= ""
-    )
-    or trigger.custom_type == "stateupdate"
-    )
-    )
-    ) then
-    if(
-      (
-      trigger.type == "event"
-      or trigger.type == "status"
-      )
-      and trigger.event
-      and WeakAuras.event_prototypes[trigger.event]
-      and WeakAuras.event_prototypes[trigger.event].durationFunc
-      ) then
-      if(type(WeakAuras.event_prototypes[trigger.event].init) == "function") then
-        WeakAuras.event_prototypes[trigger.event].init(trigger);
+  if (trigger.type == "event" or trigger.type == "status") then
+    if trigger.event and WeakAuras.event_prototypes[trigger.event] then
+      if WeakAuras.event_prototypes[trigger.event].durationFunc then
+        if(type(WeakAuras.event_prototypes[trigger.event].init) == "function") then
+          WeakAuras.event_prototypes[trigger.event].init(trigger);
+        end
+        local current, maximum, custom = WeakAuras.event_prototypes[trigger.event].durationFunc(trigger);
+        current = type(current) ~= "number" and current or 0
+        maximum = type(maximum) ~= "number" and maximum or 0
+        if(custom) then
+          return {current = current, maximum = maximum};
+        else
+          return "timed";
+        end
+      elseif WeakAuras.event_prototypes[trigger.event].canHaveDuration then
+        return WeakAuras.event_prototypes[trigger.event].canHaveDuration
       end
-      local current, maximum, custom = WeakAuras.event_prototypes[trigger.event].durationFunc(trigger);
-      current = type(current) ~= "number" and current or 0
-      maximum = type(maximum) ~= "number" and maximum or 0
-      if(custom) then
-        return {current = current, maximum = maximum};
-      else
-        return "timed";
-      end
-    elseif trigger.event
-      and WeakAuras.event_prototypes[trigger.event]
-      and WeakAuras.event_prototypes[trigger.event].canHaveDuration then
-      return WeakAuras.event_prototypes[trigger.event].canHaveDuration
-    else
+    end
+    if trigger.unevent == "timed" and trigger.duration then
+      return "timed"
+    end
+  elseif (trigger.type == "custom") then
+    if trigger.custom_type == "event" and trigger.custom_hide == "timed" and trigger.duration then
+      return "timed";
+    elseif (trigger.customDuration and trigger.customDuration ~= "") then
+      return "timed";
+    elseif (trigger.custom_type == "stateupdate") then
       return "timed";
     end
-  else
-    return false;
   end
+  return false
 end
 
 --- Returns a table containing the names of all overlays
@@ -2977,6 +2944,8 @@ function GenericTrigger.GetTriggerConditions(data, triggernum)
             end
             if (v.operator_types_without_equal) then
               result[v.name].operator_types_without_equal = true;
+            elseif (v.operator_types_only_equal) then
+              result[v.name].operator_types_only_equal = true;
             end
           end
         end

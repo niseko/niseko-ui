@@ -18,10 +18,17 @@ local VRA_LOCALEPATH = {
 }
 self.VRA_LOCALEPATH = VRA_LOCALEPATH
 local VRA_LANGUAGE = {
-	
 	["VocalRaidAssistant\\Voice_enUS"] = L["English(female)"],
 }
 self.VRA_LANGUAGE = VRA_LANGUAGE
+local VRA_CHANNEL = {
+	["Master"] = "Master",
+	["SFX"] = "Sound",
+	["Ambience"] = "Ambience",
+	["Music"] = "Music",
+	["Dialog"] = "Dialog"
+}
+self.VRA_CHANNEL = VRA_CHANNEL
 local VRA_EVENT = {
 	SPELL_CAST_SUCCESS = L["Spell cast success"],
 	SPELL_CAST_START = L["Spell cast start"],
@@ -73,6 +80,7 @@ local dbDefaults = {
 		
 		field = true,
 		path = "VocalRaidAssistant\\Voice_enUS",
+		channel = "Master",
 		throttle = 0,
 		smartDisable = false,
 		spells = {},
@@ -347,6 +355,16 @@ function VocalRaidAssistant:OnInitialize()
 						order = -700,
 						type = "description",
 						name = "Current version: " .. L["GET_VERSION"] .. "\n",
+					},
+					header33 = {
+							order = -68,
+							type = "header",
+							name = "1.6.0",
+					},
+					desc33 = {
+						order	= -67,
+						type	= "description",
+						name	= L["1.6.0 Changelog"],
 					},
 					header32 = {
 							order = -66,
@@ -714,9 +732,12 @@ function VocalRaidAssistant:OnEnable()
 		
 	--VocalRaidAssistant:RegisterEvent("UNIT_AURA")
 	if not VRA_LANGUAGE[vradb.path] then vradb.path = VRA_LOCALEPATH[GetLocale()] end
+	if not VRA_CHANNEL[vradb.channel] then vradb.channel = "Master" end
+	
 	self.throttled = {}
 	self.smarter = 0
 	self:InitDB()
+	vradb.channelEnabled = GetCVar("Sound_Enable"..vradb.channel)==1
 end
 
 function VocalRaidAssistant:OnDisable()
@@ -728,7 +749,7 @@ end
 
 -- play sound by file name
 function VRA:PlaySound(fileName, extend)
-	PlaySoundFile("Interface\\Addons\\"..vradb.path.."\\"..fileName .. "." .. (extend or "ogg"), "Master")
+	PlaySoundFile("Interface\\Addons\\"..vradb.path.."\\"..fileName .. "." .. (extend or "ogg"), VRA_CHANNEL[vradb.channel])
 end
 
 function VocalRaidAssistant:ArenaClass(id)
@@ -788,7 +809,7 @@ end
 
 
 function VocalRaidAssistant:COMBAT_LOG_EVENT_UNFILTERED(event , ...)
-	
+
 	local _,currentZoneType = IsInInstance()
 	if (not (
 	(currentZoneType == "none" and vradb.field) or 
@@ -1112,7 +1133,7 @@ function VocalRaidAssistant:COMBAT_LOG_EVENT_UNFILTERED(event , ...)
 		end
 		if css.eventtype[event] and destuid[css.destuidfilter] and desttype[css.desttypefilter] and sourceuid[css.sourceuidfilter] and sourcetype[css.sourcetypefilter] and spellID == tonumber(css.spellid) then
 			if self:Throttle(tostring(spellID)..css.name, 0.1) then return end
-			PlaySoundFile(css.soundfilepath, "Master")
+			PlaySoundFile(css.soundfilepath, VRA_CHANNEL[vradb.channel])
 		end
 	end
 	end

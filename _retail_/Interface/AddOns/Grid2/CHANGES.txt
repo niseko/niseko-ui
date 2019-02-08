@@ -1,4 +1,124 @@
 ------------------------------------------------------------------------
+r871 | michaelspain | 2019-02-04 19:58:41 +0000 (Mon, 04 Feb 2019) | 1 line
+Changed paths:
+   M /trunk/modules/StatusMana.lua
+
+Fixing ticket #642 (Mana Bar appears empty for healers who respec)
+------------------------------------------------------------------------
+r870 | michaelspain | 2019-02-04 00:11:35 +0000 (Mon, 04 Feb 2019) | 5 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/GridRoster.lua
+   M /trunk/GridUtils.lua
+   M /trunk/Options/GridThemes.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/themes/GridLayouts.lua
+   M /trunk/locales/esES.lua
+
+- Added 15 man raid size to Themes Conditions and Layout Sizes.
+- Fixing raid size issue in BGs, see ticket #641.
+- Added Grid2:SetDefaultTheme(theme) function, to allow to change the current theme 
+from external sources like macros or other addons, "theme" parameter can be an index 
+(starting in 0) or a theme name.
+------------------------------------------------------------------------
+r869 | michaelspain | 2019-02-02 21:34:01 +0000 (Sat, 02 Feb 2019) | 1 line
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/GridFrame.lua
+   M /trunk/GridIndicator.lua
+   M /trunk/GridSetup.lua
+
+- Fixed a crash when a profile with disabled indicators is loaded.
+------------------------------------------------------------------------
+r868 | michaelspain | 2019-01-31 03:59:26 +0000 (Thu, 31 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+
+Added some missing "Battle of Dazar'alor" Raid Debuffs.
+------------------------------------------------------------------------
+r867 | michaelspain | 2019-01-30 23:11:24 +0000 (Wed, 30 Jan 2019) | 2 lines
+Changed paths:
+   M /trunk/Options/GridIndicators.lua
+   M /trunk/Options/locales/esES.lua
+   A /trunk/Options/media/indicator-portrait.tga
+   A /trunk/Options/modules/indicators/IndicatorPortrait.lua
+   M /trunk/Options/modules.xml
+   M /trunk/modules/IndicatorIcon.lua
+   A /trunk/modules/IndicatorPortrait.lua
+   M /trunk/modules/IndicatorSquare.lua
+   M /trunk/modules.xml
+
+-Added "portrait" indicator, it can display unit 2d, 3d model or class icon.
+-No portrait indicator is created by default, user must created the indicator manually.
+------------------------------------------------------------------------
+r866 | michaelspain | 2019-01-27 03:12:47 +0000 (Sun, 27 Jan 2019) | 2 lines
+Changed paths:
+   M /trunk/GridFrame.lua
+   M /trunk/GridLayout.lua
+   M /trunk/GridUtils.lua
+   M /trunk/Options/modules/general/GridExportImport.lua
+   M /trunk/modules/IndicatorIcon.lua
+   M /trunk/modules/IndicatorIcons.lua
+   M /trunk/modules/IndicatorSquare.lua
+
+-Fixing wrong profile export when multiple themes were defined (only one theme was exported).
+-Enhanced workaround for ticket #640: now all used backdrops are assigned only if the config has really changed to avoid delays (because SetBackdrop() method is awful slow). Now all backdrops are created using the same function, avoiding creating multiple tables for the same backdrop configuration, saving a bit of memory.
+------------------------------------------------------------------------
+r865 | michaelspain | 2019-01-26 19:27:40 +0000 (Sat, 26 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/modules/IndicatorIcons.lua
+
+- Icons indicator issue fixed: Switching themes freezes the game for a second when a lot of icons indicators are defined (ticket #640)
+------------------------------------------------------------------------
+r864 | michaelspain | 2019-01-26 17:27:27 +0000 (Sat, 26 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/modules/StatusDirection.lua
+
+Direction Status: Fixed a crash introduced in version r839 (Ticket #639)
+------------------------------------------------------------------------
+r863 | michaelspain | 2019-01-25 18:51:59 +0000 (Fri, 25 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/modules/StatusAuras.lua
+   M /trunk/modules/StatusAurasBuffs.lua
+   M /trunk/modules/StatusAurasDebuffs.lua
+
+-Fixing ticket #638 (buffs groups not showing up)
+------------------------------------------------------------------------
+r862 | michaelspain | 2019-01-19 21:20:24 +0000 (Sat, 19 Jan 2019) | 1 line
+Changed paths:
+   M /trunk/Options/GridThemes.lua
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+
+- Added Raid Debuffs for Battle of Dazar'alor and Crucible of Storms (Remember to go to "Statuses"->"Debuffs">"Raid Debuffs" to enable the raid debuffs for the new raids).
+------------------------------------------------------------------------
+r861 | michaelspain | 2019-01-19 17:41:03 +0000 (Sat, 19 Jan 2019) | 10 lines
+Changed paths:
+   M /trunk/Options/GridCore.lua
+   M /trunk/Options/GridGeneral.lua
+   M /trunk/Options/GridThemes.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/general/GridAbout.lua
+   D /trunk/Options/modules/general/GridDebug.lua
+   M /trunk/Options/modules/general/GridGeneral.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+   M /trunk/Options/modules/general/GridProfile.lua
+   M /trunk/Options/modules/themes/GridGeneral.lua
+   M /trunk/Options/modules/themes/GridIndicators.lua
+   M /trunk/Options/modules/themes/GridLayouts.lua
+   M /trunk/Options/modules.xml
+
+*Options inside "Debug" tab moved to "About" tab.
+
+*Reverted visual changes in option window to avoid confusion with new Themes configuration. Now the options to manage multiple themes are disabled by default and the grid2 window will display old style configuration, Themes Section is now hidden, only some minimal changes in General Section:
+
+- "General" Tab renamed to "Appearance".
+- "Misc" Tab renamed to "General".
+- Added new "Indicators" tab to configure default indicators values, and which indicators must be enabled/disabled.
+
+Now to enable Multiple Themes a checkbox placed in *General Section/General Tab/Enable Themes* must be checked, once enabled the "Themes" section becomes visible, and "Appearance", "Indicators" and "Layouts" tab in general options are moved to Default theme inside "Themes" Section. The Layout Editor is not moved to Themes section and it stays in General/Layouts Tab.
+
+------------------------------------------------------------------------
 r860 | michaelspain | 2019-01-16 18:45:41 +0000 (Wed, 16 Jan 2019) | 1 line
 Changed paths:
    M /trunk/Options/modules/indicators/Indicator.lua

@@ -115,12 +115,14 @@ function Grid2:OnInitialize()
 end
 
 function Grid2:OnEnable()
+	self:RegisterEvent("PLAYER_ENTERING_WORLD")
+	self:RegisterEvent("UPDATE_INSTANCE_INFO")
+	self:RegisterEvent("ZONE_CHANGED_NEW_AREA", "GroupChanged")
 	self:RegisterEvent("GROUP_ROSTER_UPDATE", "GroupChanged")
 	self:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
-	self:RegisterEvent("PLAYER_ENTERING_WORLD")
-	self:RegisterEvent("UNIT_PET")
 	self:RegisterEvent("UNIT_NAME_UPDATE")
+	self:RegisterEvent("UNIT_PET")
 	
 	self.db.RegisterCallback(self, "OnProfileShutdown", "ProfileShutdown")
     self.db.RegisterCallback(self, "OnProfileChanged", "ProfileChanged")
@@ -185,7 +187,7 @@ function Grid2:GetCurrentTheme()
 end
 
 function Grid2:SetupTheme()
-	self.currentTheme = self:CheckTheme()
+	self.currentTheme, self.suspendedIndicators = self:CheckTheme()
 	self:UpdateTheme()
 end
 
@@ -202,7 +204,8 @@ function Grid2:CheckTheme()
 	local kSG  = fmt("%s@%s",    kS, groupType)
 	local kGI  = fmt("%s@%s",    groupType, instType)
 	theme = enabled[kSM] or enabled[kSGI] or enabled[kSG] or enabled[kS] or enabled[kM] or enabled[kGI] or enabled[groupType] or theme
-	return themes.names[theme] and theme or 0
+	theme = themes.names[theme] and theme or 0
+	return theme, themes.indicators[theme] or {}
 end
 
 function Grid2:UpdateTheme()
@@ -212,7 +215,6 @@ function Grid2:UpdateTheme()
 end
 
 function Grid2:RefreshTheme()
-	self:RefreshIndicators(true)
 	for _,module in ipairs(self.orderedModules) do
 		if module.RefreshTheme then module:RefreshTheme() end
 	end
@@ -224,7 +226,7 @@ function Grid2:ReloadTheme(force)
 		if not self:RunSecure(2, self, "ReloadTheme") then
 			self.currentTheme = theme
 			self:UpdateTheme()
-			self:RefreshTheme()			
+			self:RefreshTheme()
 			self:SendMessage("Grid_ThemeChanged", theme)
 			self:Debug("ReloadTheme", theme)
 		end

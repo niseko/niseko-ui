@@ -1,3 +1,34 @@
+Version 3.99
+
+
+Known issues:
+-- BfA stat squish cleanup still a work in progress
+--   AOE Advice spell equations need complete overhaul
+--   Some text providers need changes to better display small numbers
+-- Debuff tooltips are currently bugged when using ElvUI
+--   Deselect 'VuhDo Options > Panels > Tooltips > Tooltips > Debuffs'
+
+
+Bugfixes:
+-- Fixed various reset functions under 'VuhDo Options > Tools > Reset'
+
+
+Improvements:
+-- Added new bouquet validator 'Icon: Is Phased'
+-- Added new bouquet validator 'Icon: Is War Mode Phased'
+-- Added new default bouquet 'Is Phased Icon'
+-- Added spell caster source options to custom debuffs
+--  See 'VuhDo Options > Debuffs > Custom > Store / Delete > Mine'
+--  See 'VuhDo Options > Debuffs > Custom > Store / Delete > Others'
+--  Both checkboxes are selected by default
+--  These defaults are inherited by existing custom debuffs
+-- Added auto-activate of profile due to a group size of '3'
+-- Added '3' and '15' man group sizes for 'Hold to Test' demo mode
+-- Added default custom debuffs for Battle of Dazar'alor raid
+-- Added Mage spell 'Arcane Familiar' to Buff Watch
+
+
+--------------------------------------------------------------
 Version 3.98
 
 

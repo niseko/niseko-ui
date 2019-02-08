@@ -1,4 +1,7 @@
-﻿Version 1.5.1
+﻿Version 1.6.0
+Added option to swap audio channel
+Moved Crowd Control abilities to a separate section
+Version 1.5.1
 Added missing fonts
 Added Abilities (On/Off by default):
   - Asphyxiate (On)

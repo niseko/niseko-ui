@@ -181,33 +181,18 @@ MethodDungeonTools.dungeonTotalCount = {}
 MethodDungeonTools.scaleMultiplier = {}
 
 local affixWeeks = { --affixID as used in C_ChallengeMode.GetAffixInfo(affixID)
-    [1] = {[1]=6,[2]=3,[3]=9,[4]=16},
-    [2] = {[1]=5,[2]=13,[3]=10,[4]=16},
-    [3] = {[1]=7,[2]=12,[3]=9,[4]=16},
-    [4] = {[1]=8,[2]=4,[3]=10,[4]=16},
-    [5] = {[1]=11,[2]=2,[3]=9,[4]=16},
-    [6] = {[1]=5,[2]=14,[3]=10,[4]=16},
-    [7] = {[1]=6,[2]=4,[3]=9,[4]=16},
-    [8] = {[1]=7,[2]=2,[3]=10,[4]=16},
-    [9] = {[1]=5,[2]=3,[3]=9,[4]=16},
-    [10] = {[1]=8,[2]=12,[3]=10,[4]=16},
-    [11] = {[1]=7,[2]=13,[3]=9,[4]=16},
-    [12] = {[1]=11,[2]=14,[3]=10,[4]=16},
-}
---TODO Change this once BFA hits
-local affixWeeksBFA = { --affixID as used in C_ChallengeMode.GetAffixInfo(affixID)
-    [1] = {[1]=9,[2]=6,[3]=3,[4]=16},
-    [2] = {[1]=10,[2]=5,[3]=13,[4]=16},
-    [3] = {[1]=9,[2]=7,[3]=12,[4]=16},
-    [4] = {[1]=10,[2]=8,[3]=4,[4]=16},
-    [5] = {[1]=9,[2]=11,[3]=2,[4]=16},
-    [6] = {[1]=10,[2]=5,[3]=14,[4]=16},
-    [7] = {[1]=9,[2]=6,[3]=4,[4]=16},
-    [8] = {[1]=10,[2]=7,[3]=2,[4]=16},
-    [9] = {[1]=9,[2]=5,[3]=3,[4]=16},
-    [10] = {[1]=10,[2]=8,[3]=12,[4]=16},
-    [11] = {[1]=9,[2]=7,[3]=13,[4]=16},
-    [12] = {[1]=10,[2]=11,[3]=14,[4]=16},
+    [1] = {[1]=6,[2]=3,[3]=9,[4]=117},
+    [2] = {[1]=5,[2]=13,[3]=10,[4]=117},
+    [3] = {[1]=7,[2]=12,[3]=9,[4]=117},
+    [4] = {[1]=8,[2]=4,[3]=10,[4]=117},
+    [5] = {[1]=11,[2]=2,[3]=9,[4]=117},
+    [6] = {[1]=5,[2]=14,[3]=10,[4]=117},
+    [7] = {[1]=6,[2]=4,[3]=9,[4]=117},
+    [8] = {[1]=7,[2]=2,[3]=10,[4]=117},
+    [9] = {[1]=5,[2]=3,[3]=9,[4]=117},
+    [10] = {[1]=8,[2]=12,[3]=10,[4]=117},
+    [11] = {[1]=7,[2]=13,[3]=9,[4]=117},
+    [12] = {[1]=11,[2]=14,[3]=10,[4]=117},
 }
 
 local dungeonList = {
@@ -917,7 +902,7 @@ function MethodDungeonTools:MakeSidePanel(frame)
         --dont need this here as we just change teeming and infested
         --MethodDungeonTools:UpdateMap()
         MethodDungeonTools:DungeonEnemies_UpdateTeeming()
-        MethodDungeonTools:DungeonEnemies_UpdateInfested(key)
+        --MethodDungeonTools:DungeonEnemies_UpdateInfested(key)
         MethodDungeonTools:UpdateFreeholdSelector(key)
         MethodDungeonTools:DungeonEnemies_UpdateBlacktoothEvent(key)
         MethodDungeonTools:DungeonEnemies_UpdateBoralusFaction(MethodDungeonTools:GetCurrentPreset().faction)
@@ -1282,7 +1267,8 @@ end
 ---GetCurrentPull
 ---Returns the current pull of the currently active preset
 function MethodDungeonTools:GetCurrentPull()
-    return MethodDungeonTools:GetCurrentPreset().value.currentPull
+    local selection = MethodDungeonTools:GetSelection()
+    return selection[#selection]
 end
 
 ---GetCurrentSubLevel
@@ -1902,7 +1888,7 @@ function MethodDungeonTools:MakePullSelectionButtons(frame)
 
     frame.newPullButtons = {}
 	--rightclick context menu
-	frame.optionsDropDown = CreateFrame("Frame", "PullButtonsOptionsDropDown", nil, "L_UIDropDownMenuTemplate")
+    frame.optionsDropDown = L_Create_UIDropDownMenu("PullButtonsOptionsDropDown", nil)
 end
 
 
@@ -2031,11 +2017,25 @@ function MethodDungeonTools:SetSelectionToPull(pull)
 		end
 		pull = count
 	end
-	--SaveCurrentPresetPull
-    MethodDungeonTools:GetCurrentPreset().value.currentPull = pull
-	MethodDungeonTools:PickPullButton(pull)
 
-    MethodDungeonTools:DungeonEnemies_UpdateSelected(pull)
+	--SaveCurrentPresetPull
+    if type(pull) == "number" and pull > 0 then
+        --print("SetSelectionToPull(): pull = ", pull)
+        MethodDungeonTools:GetCurrentPreset().value.currentPull = pull
+        MethodDungeonTools:GetCurrentPreset().value.selection = { pull }
+        MethodDungeonTools:PickPullButton(pull)
+
+        MethodDungeonTools:DungeonEnemies_UpdateSelected(pull)
+    elseif type(pull) == "table" then
+        MethodDungeonTools:GetCurrentPreset().value.currentPull = pull[#pull]
+        MethodDungeonTools:GetCurrentPreset().value.selection = pull
+
+        MethodDungeonTools:ClearPullButtonPicks()
+        for _, pullIdx in ipairs(MethodDungeonTools:GetSelection()) do
+            MethodDungeonTools:PickPullButton(pullIdx, true)
+            MethodDungeonTools:DungeonEnemies_UpdateSelected(pullIdx)
+        end
+    end
 end
 
 
@@ -2160,11 +2160,14 @@ end
 
 ---PickPullButton
 ---Selects the current pull button and deselects all other buttons
-function MethodDungeonTools:PickPullButton(idx)
+function MethodDungeonTools:PickPullButton(idx, keepPicked)
     if db.devMode then return end
-	MethodDungeonTools:ClearPullButtonPicks()
+
+    if not keepPicked then
+        MethodDungeonTools:ClearPullButtonPicks()
+    end
 	local frame = MethodDungeonTools.main_frame.sidePanel
-	frame.newPullButtons[idx]:Pick()
+    frame.newPullButtons[idx]:Pick()
 end
 
 ---AddPull
@@ -2219,6 +2222,28 @@ function MethodDungeonTools:RenamePreset(renameText)
 	MethodDungeonTools:UpdatePresetDropDown()
 end
 
+---GetFirstNotSelectedPullButton
+function MethodDungeonTools:GetFirstNotSelectedPullButton(start, direction)
+    if not direction then
+        direction = -1
+    elseif direction == "UP" then
+        direction = -1
+    elseif direction == "DOWN" then
+        direction = 1
+    end
+
+    local pullIdx = start
+    while MethodDungeonTools.U.contains(MethodDungeonTools:GetCurrentPreset().value.selection, pullIdx)
+            and MethodDungeonTools.U.isInRange(pullIdx, 1, #MethodDungeonTools:GetCurrentPreset().value.pulls) do
+       pullIdx = pullIdx + direction
+    end
+
+    if not MethodDungeonTools.U.isInRange(pullIdx, 1, #MethodDungeonTools:GetCurrentPreset().value.pulls) then
+        return
+    end
+
+    return pullIdx
+end
 
 function MethodDungeonTools:MakeRenameFrame(frame)
 	frame.RenameFrame = AceGUI:Create("Frame")
@@ -2691,7 +2716,13 @@ function MethodDungeonTools:DropIndicator()
     return indicator
 end
 
+function MethodDungeonTools:IsShown_DropIndicator()
+    local indicator = MethodDungeonTools:DropIndicator()
+    return indicator:IsShown()
+end
+
 function MethodDungeonTools:Show_DropIndicator(target, pos)
+    --print("Show_DropIndicator()")
     local indicator = MethodDungeonTools:DropIndicator()
 
     indicator:ClearAllPoints()
@@ -2707,13 +2738,36 @@ function MethodDungeonTools:Show_DropIndicator(target, pos)
 end
 
 function MethodDungeonTools:Hide_DropIndicator()
+    --print("Hide_DropIndicator()")
     local indicator = MethodDungeonTools:DropIndicator()
     indicator:Hide()
+end
+
+function MethodDungeonTools:GetSelection()
+    if not MethodDungeonTools:GetCurrentPreset().value.selection or #MethodDungeonTools:GetCurrentPreset().value.selection == 0 then
+        MethodDungeonTools:GetCurrentPreset().value.selection = { MethodDungeonTools:GetCurrentPreset().value.currentPull }
+    end
+
+    return MethodDungeonTools:GetCurrentPreset().value.selection
 end
 
 function MethodDungeonTools:GetScrollingAmount(scrollFrame, pixelPerSecond)
     local viewheight = scrollFrame.frame.obj.content:GetHeight()
     return (pixelPerSecond / viewheight) * 1000
+end
+
+function MethodDungeonTools:ScrollToPull(pullIdx)
+    -- Get scroll frame
+    local scrollFrame = MethodDungeonTools.main_frame.sidePanel.pullButtonsScrollFrame
+
+    -- Get amount of total pulls plus the extra button "+ Add Pull"
+    local pulls = #MethodDungeonTools:GetCurrentPreset().value.pulls + 1 or 1
+
+    local percentage = pullIdx / pulls
+    local value = percentage * 1000
+    --print("value =", value)
+    scrollFrame:SetScroll(value)
+    scrollFrame:FixScroll()
 end
 
 function initFrames()
@@ -2735,7 +2789,7 @@ function initFrames()
 	main_frame:SetPoint(db.anchorTo, UIParent,db.anchorFrom, db.xoffset, db.yoffset)
 
 
-    main_frame.contextDropdown = CreateFrame("Frame", "MethodDungeonToolsContextDropDown", nil, "L_UIDropDownMenuTemplate")
+    main_frame.contextDropdown = L_Create_UIDropDownMenu("MethodDungeonToolsContextDropDown", nil)
 
 	MethodDungeonTools:CreateMenu();
 	MethodDungeonTools:MakeTopBottomTextures(main_frame);

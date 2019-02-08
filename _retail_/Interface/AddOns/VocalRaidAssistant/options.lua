@@ -1764,7 +1764,7 @@ local function setOption(info, value)
 	local name = info[#info]
 	vradb[name] = value
 	if value then 
-		PlaySoundFile("Interface\\Addons\\"..vradb.path.."\\"..name..".ogg","Master");
+		PlaySoundFile("Interface\\Addons\\"..vradb.path.."\\"..name..".ogg", VRA.VRA_CHANNEL[vradb.channel]);
 	end
 end
 local function getOption(info)
@@ -1856,7 +1856,7 @@ function VRA:MakeCustomOption(key)
 				type = 'execute',
 				order = 28,
 				name = L["Test"],
-				func = function() PlaySoundFile(db[key].soundfilepath, "Master") end,
+				func = function() PlaySoundFile(db[key].soundfilepath, self.VRA_CHANNEL[vradb.channel]) end,
 			},
 			existingsound = {
 				name = L["Use existing sound"],
@@ -2031,9 +2031,43 @@ function VRA:OnOptionCreate()
 								step = 0.1,
 								name = L["Volume"],
 								desc = L["adjusting the voice volume(the same as adjusting the system master sound volume)"],
-								set = function (info, value) SetCVar ("Sound_MasterVolume",tostring (value)) end,
-								get = function () return tonumber (GetCVar ("Sound_MasterVolume")) end,
+								set = function (info, value) SetCVar ("Sound_"..vradb.channel.."Volume",tostring (value)) end,
+								get = function () return tonumber (GetCVar ("Sound_"..vradb.channel.."Volume")) end,
 								order = 2,
+							},
+							void = {
+								type = 'description',
+								name = "",
+								desc = "",
+								order = 3,
+							},
+							channel = {
+								type = 'select',
+								name = L["Output channel"],
+								desc = L["Output channel desc"],
+								values = self.VRA_CHANNEL,
+								order = 4,
+							},
+							enabled = {
+								type = 'toggle',
+								name = function() return vradb.channel.." channel" end,
+								width = "double",
+								desc = "Enables or disables "..self.VRA_CHANNEL[vradb.channel].." sound channel",
+								set = 	function(info,value)
+											if(vradb.channel=="Master") then
+												SetCVar ("Sound_EnableAllSound", (value and 1 or 0))
+											else
+												SetCVar ("Sound_Enable"..vradb.channel, (value and 1 or 0))
+											end
+										end,
+								get = 	function()
+											if(vradb.channel=="Master") then
+												return tonumber(GetCVar("Sound_EnableAllSound"))==1 and true or false
+											else
+												return tonumber(GetCVar("Sound_Enable"..vradb.channel))==1 and true or false
+											end
+										end,
+								order = 5,
 							},
 						},
 					},

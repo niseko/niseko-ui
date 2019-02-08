@@ -434,7 +434,7 @@ if UnitClassBase( 'player' ) == 'MONK' then
 
     spec:RegisterHook( "reset_precast", function ()
         chiSpent = 0
-        if prev_gcd[1].tiger_palm and ( class.abilities.tiger_palm.lastCast == 0 or combat == 0 or class.abilities.tiger_palm.lastCast < combat ) then
+        if prev_gcd[1].tiger_palm and ( class.abilities.tiger_palm.lastCast == 0 or combat == 0 or class.abilities.tiger_palm.lastCast < combat - 0.05 ) then
             prev_gcd.override = "none"
             prev.override = "none"
         end
@@ -1031,7 +1031,9 @@ if UnitClassBase( 'player' ) == 'MONK' then
 
             toggle = "interrupts",
 
-            usable = function () return target.casting end,
+            debuff = "casting",
+            readyTime = state.timeToInterrupt,
+
             handler = function ()
                 interrupt()
             end,

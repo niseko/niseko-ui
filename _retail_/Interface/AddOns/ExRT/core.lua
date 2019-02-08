@@ -382,7 +382,7 @@ end
 
 ---------------> Data <---------------
 
-ExRT.F.defFont = "Interface\\AddOns\\ExRT\\media\\skurri.ttf"
+ExRT.F.defFont = "Interface\\AddOns\\SharedMedia_MyMedia\\font\\Roboto-Medium.ttf"
 ExRT.F.barImg = "Interface\\AddOns\\ExRT\\media\\bar17.tga"
 ExRT.F.defBorder = "Interface\\AddOns\\ExRT\\media\\border.tga"
 ExRT.F.textureList = {

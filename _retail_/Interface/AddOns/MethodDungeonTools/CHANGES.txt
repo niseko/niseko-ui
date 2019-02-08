@@ -1,28 +1,16 @@
-lightweight tag 8e837ac807c8b43caf8bd63590e2d0fa0769f19f v2.2.54
+lightweight tag 8933123d5a4a551e22127c5b89ad0800771bf58d v2.3.2
 Author:	Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:	Mon Jan 7 17:14:57 2019 +0100
+Date:	Sat Jan 26 13:43:00 2019 +0100
 
-commit 8e837ac807c8b43caf8bd63590e2d0fa0769f19f
+commit 8933123d5a4a551e22127c5b89ad0800771bf58d
 Author: Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:   Mon Jan 7 17:14:57 2019 +0100
+Date:   Sat Jan 26 13:43:00 2019 +0100
 
     version update
 
-commit 0468ba50fba83ecce4cdeb41315d4972b22e94d8
+commit 57f06849658e0eebe353ef8f46181940d90119a8
 Author: Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:   Mon Jan 7 17:14:50 2019 +0100
+Date:   Sat Jan 26 13:42:47 2019 +0100
 
-    mapping updates
-
-commit 93175e5469b8186cdd6dc2629b52a9333ba3c16b
-Author: Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:   Mon Jan 7 17:03:12 2019 +0100
-
-    added function to retrieve enemy forces
-
-commit 9a77701ba4caff5acc6d85823a47c610668b50b8
-Author: Nnogga <27819512+nnogga@users.noreply.github.com>
-Date:   Sun Jan 6 21:35:51 2019 +0100
-
-    mapping updates
+    count updates
 

@@ -17,6 +17,7 @@ local round = ns.round
 local format = string.format
 
 local Masque, MasqueGroup
+
 local UIDropDownMenuTemplate = L_UIDropDownMenuTemplate
 local UIDropDownMenu_AddButton = L_UIDropDownMenu_AddButton
 local UIDropDownMenu_AddSeparator = L_UIDropDownMenu_AddSeparator
@@ -451,11 +452,7 @@ Hekili_Menu.initialize = function(self, level)
         i.checked = p.enabled
         UIDropDownMenu_AddButton(i, level)
 
-        i.text = " "
-        i.func = nil
-        i.notCheckable = 1
-        i.disabled = 1
-        UIDropDownMenu_AddButton(i, level)
+        UIDropDownMenu_AddSeparator(level)
 
         i.notCheckable = nil
         i.disabled = nil
@@ -499,11 +496,7 @@ Hekili_Menu.initialize = function(self, level)
         i.tooltipTitle = nil
         i.tooltipOnButton = nil
 
-        i.text = " "
-        i.func = nil
-        i.notCheckable = 1
-        i.disabled = 1
-        UIDropDownMenu_AddButton(i, level)
+        UIDropDownMenu_AddSeparator(level)
 
         i.notCheckable = nil
         i.disabled = nil
@@ -541,11 +534,7 @@ Hekili_Menu.initialize = function(self, level)
         i.hasArrow = nil
         i.value = nil
 
-        i.text = " "
-        i.func = nil
-        i.notCheckable = 1
-        i.disabled = 1
-        UIDropDownMenu_AddButton(i, level)
+        UIDropDownMenu_AddSeparator(level)
 
         i.notCheckable = nil
         i.disabled = nil
@@ -776,8 +765,11 @@ do
             -- Force glow, range, SpellFlash updates.
             self.glowTimer = -1
             self.rangeTimer = -1
+            self.flashTimer = -1
+            self.delayTimer = -1
 
             self:RefreshCooldowns()
+
             self.recTimer = 1
         end
 
@@ -1052,21 +1044,22 @@ do
             end
 
             self.delayTimer = pulseDelay
-        end
+        end        
 
-        
+
         self.refreshTimer = self.refreshTimer - elapsed
 
         local spec = Hekili.DB.profile.specs[ state.spec.id ]
         local throttle = spec.throttleUpdates and ( 1 / spec.maxRefresh ) or 0
         local refreshRate = max( throttle, state.combat == 0 and oocRefresh or icRefresh )
 
-        if ( self.criticalUpdate and now - self.lastUpdate > throttle ) or self.refreshTimer < 0 then
+        if not Hekili.UpdatedThisFrame and ( self.criticalUpdate and now - self.lastUpdate > throttle ) or self.refreshTimer < 0 then
             Hekili:ProcessHooks( self.id )
             self.criticalUpdate = false
             self.lastUpdate = now
             self.refreshTimer = refreshRate
         end
+
     end
 
     local function Display_UpdateAlpha( self )
@@ -1457,6 +1450,13 @@ do
     function Hekili:DumpActionActive()
         DevTools_Dump( actsActive )
     end
+
+
+    function Hekili:ForceUpdate( event )
+        for i, d in pairs( ns.UI.Displays ) do        
+            d.criticalUpdate = true
+        end
+    end    
 
     
     local LSM = LibStub("LibSharedMedia-3.0", true)

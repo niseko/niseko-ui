@@ -103,6 +103,7 @@ local function Icon_Layout(self, parent)
 	local ux,uy = self.ux,self.uy
 	local vx,vy = self.vx,self.vy
 	local size  = self.iconTotSize
+	local borderSize = self.borderSize
 	local frameName
 	if not self.dbx.disableOmniCC then
 		local i,j  = parent:GetName():match("Grid2LayoutHeader(%d+)UnitButton(%d+)")
@@ -126,12 +127,10 @@ local function Icon_Layout(self, parent)
 		end
 		frame:SetSize( self.iconSize, self.iconSize )
 		-- frame container
-		if self.borderSize>0 then
+		Grid2:SetFrameBackdrop(frame, self.backdrop)
+		if borderSize>0 then
 			local c = self.colorBorder
-			frame:SetBackdrop(self.backdrop)
 			frame:SetBackdropBorderColor(c.r,c.g,c.b,c.a)
-		else
-			frame:SetBackdrop(nil)
 		end
 		frame:ClearAllPoints()
 		frame:SetPoint( self.anchorIcon, f, self.anchorIcon, (x*ux+y*vx)*size, (x*uy+y*vy)*size )
@@ -166,11 +165,11 @@ local function Icon_Layout(self, parent)
 			frame.cooldown:Hide()
 		end
 		-- icon texture
-		frame.icon:SetPoint("TOPLEFT",     frame ,"TOPLEFT",  self.borderSize, -self.borderSize)
-		frame.icon:SetPoint("BOTTOMRIGHT", frame ,"BOTTOMRIGHT", -self.borderSize, self.borderSize)
+		frame.icon:SetPoint("TOPLEFT",     frame ,"TOPLEFT",  borderSize, -borderSize)
+		frame.icon:SetPoint("BOTTOMRIGHT", frame ,"BOTTOMRIGHT", -borderSize, borderSize)
 		frame.icon:SetTexCoord(0.05, 0.95, 0.05, 0.95)
 		--
-		frame:Hide()
+		frame:Hide()		
 		x = x + 1
 		if x>=self.maxIconsPerRow then x = 0; y = y + 1 end
 	end
@@ -225,17 +224,7 @@ local function Icon_UpdateDB(self)
 	self.fontSize        = dbx.fontSize or 9
 	self.font            = Grid2:MediaFetch("font", dbx.font or Grid2Frame.db.profile.font) or STANDARD_TEXT_FONT
 	-- backdrop
-	if self.borderSize>0 then
-		local backdrop         = self.backdrop   or {}
-		backdrop.insets        = backdrop.insets or {}
-		backdrop.edgeFile      = "Interface\\Addons\\Grid2\\media\\white16x16"
-		backdrop.edgeSize      = self.borderSize
-		backdrop.insets.left   = self.borderSize
-		backdrop.insets.right  = self.borderSize
-		backdrop.insets.top    = self.borderSize
-		backdrop.insets.bottom = self.borderSize
-		self.backdrop          = backdrop
-	end
+	self.backdrop = self.borderSize>0 and Grid2:GetBackdropTable("Interface\\Addons\\Grid2\\media\\white16x16", self.borderSize) or nil
 end
 
 Grid2.setupFunc["icons"] = function(indicatorKey, dbx)

@@ -57,8 +57,7 @@ if UnitClassBase( 'player' ) == 'DRUID' then
         bristling_fur = 22420, -- 155835
 
         tiger_dash = 19283, -- 252216
-        intimidating_roar = not PTR and 22916 or nil, -- 236748
-        ursols_vortex = PTR and 22916 or nil, -- 102793
+        ursols_vortex = 22916, -- 102793
         wild_charge = 18571, -- 102401
 
         balance_affinity = 22163, -- 197488
@@ -1140,7 +1139,9 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             
             toggle = "interrupts",
 
-            usable = function () return target.casting end,
+            debuff = "casting",
+            readyTime = state.timeToInterrupt,
+
             handler = function ()
                 interrupt()
             end,
@@ -1171,7 +1172,7 @@ if UnitClassBase( 'player' ) == 'DRUID' then
         stampeding_roar = {
             id = 106898,
             cast = 0,
-            cooldown = PTR and 60 or 120,
+            cooldown = 60,
             gcd = "spell",
             
             startsCombat = false,

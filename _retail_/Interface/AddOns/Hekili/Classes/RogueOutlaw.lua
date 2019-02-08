@@ -255,11 +255,11 @@ if UnitClassBase( 'player' ) == 'ROGUE' then
             duration = 3600,
             max_stack = 1,
         },
-        keep_your_wits_about_you = PTR and {
+        keep_your_wits_about_you = {
             id = 288988,
             duration = 15,
             max_stack = 30,
-        } or nil,
+        },
         paradise_lost = {
             id = 278962,
             duration = 3600,
@@ -690,7 +690,9 @@ if UnitClassBase( 'player' ) == 'ROGUE' then
             startsCombat = true,
             texture = 132219,
             
-            usable = function () return target.casting end,
+            debuff = "casting",
+            readyTime = state.timeToInterrupt,
+
             handler = function ()
                 interrupt()
             end,

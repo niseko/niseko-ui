@@ -1,9 +1,6 @@
 # Hekili
 
-## [v8.1.0-09](https://github.com/Hekili/hekili/tree/v8.1.0-09) (2019-01-07)
-[Full Changelog](https://github.com/Hekili/hekili/compare/v8.1.0-09-beta4...v8.1.0-09)
+## [v8.1.0-19](https://github.com/Hekili/hekili/tree/v8.1.0-19) (2019-02-04)
+[Full Changelog](https://github.com/Hekili/hekili/compare/v8.1.0-19-beta6...v8.1.0-19)
 
-- Balance:  APL tweaks to improve Streaking Stars.  
-- Protection Warrior:  Update APL (avoid Shield Block during Last Stand w/ azerite trait).  
-- Feral:  Consider opener\_done after Primal Wrath or Rip.  
-    - Update APL.  
+- Don't set spell ID on buff.casting if we don't know the spell.  

@@ -16,6 +16,7 @@ local GroupMembers = ns.GroupMembers
 local abs = math.abs
 local lower, match, upper = string.lower, string.match, string.upper
 local string_format = string.format
+local insert, remove, sort, unpack, wipe = table.insert, table.remove, table.sort, table.unpack, table.wipe
 
 
 local GetItemInfo = ns.CachedGetItemInfo
@@ -32,7 +33,6 @@ local unitHandlers = {}
 local itemCallbacks = {}
 
 local timerRecount = 0
-
 
 local activeDisplays = {}
 
@@ -63,6 +63,7 @@ function ns.StartEventHandler()
     end )
 
     events:SetScript( "OnUpdate", function( self, elapsed )
+        Hekili.UpdatedThisFrame = false
         timerRecount = timerRecount - elapsed
 
         if timerRecount < 0 then
@@ -88,7 +89,7 @@ end
 ns.RegisterEvent = function( event, handler )
 
     handlers[ event ] = handlers[ event ] or {}
-    table.insert( handlers[ event ], handler )
+    insert( handlers[ event ], handler )
 
     events:RegisterEvent( event )
 
@@ -103,7 +104,7 @@ function ns.UnregisterEvent( event, handler )
 
     for i = #hands, 1, -1 do
         if hands[i] == handler then
-            table.remove( hands, i )
+            remove( hands, i )
         end
     end
 end
@@ -113,7 +114,7 @@ end
 ns.RegisterUnitEvent = function( event, handler, u1, u2 )
 
     unitHandlers[ event ] = unitHandlers[ event ] or {}
-    table.insert( unitHandlers[ event ], handler )
+    insert( unitHandlers[ event ], handler )
 
     unitEvents:RegisterUnitEvent( event, 'player', 'target' )
 
@@ -128,7 +129,7 @@ function ns.UnregisterUnitEvent( event, handler )
 
     for i = #hands, 1, -1 do
         if hands[i] == handler then
-            table.remove( hands, i )
+            remove( hands, i )
         end
     end
 end
@@ -160,7 +161,7 @@ end )
 
 function Hekili:ContinueOnItemLoad( itemID, func )
     local callbacks = itemCallbacks[ itemID ] or {}
-    table.insert( callbacks, func )
+    insert( callbacks, func )
     itemCallbacks[ itemID ] = callbacks
 
     C_Item.RequestLoadItemDataByID( itemID )        
@@ -169,7 +170,7 @@ end
 function Hekili:RunItemCallbacks()
     for item, callbacks in pairs( itemCallbacks ) do
         for i = #callbacks, 1, -1 do
-            if callbacks[ i ]( true ) then table.remove( callbacks, i ) end
+            if callbacks[ i ]( true ) then remove( callbacks, i ) end
         end
 
         if #callbacks == 0 then
@@ -383,12 +384,12 @@ local gearInitialized = false
 
 function Hekili:UpdateUseItems()
     local itemList = class.itemPack.lists.items
-    table.wipe( itemList )
+    wipe( itemList )
 
     if #state.items > 0 then
         for i, item in ipairs( state.items ) do
             if not self:IsItemScripted( item ) then
-                table.insert( itemList, {
+                insert( itemList, {
                     action = item,
                     enabled = true,
                     criteria = "( ! settings.boss || boss ) & " ..
@@ -409,7 +410,7 @@ function ns.updateGear()
         state.set_bonus[ thing ] = 0
     end
 
-    table.wipe( state.items )
+    wipe( state.items )
 
     for set, items in pairs( class.gear ) do
         state.set_bonus[ set ] = 0
@@ -460,7 +461,7 @@ function ns.updateGear()
             end
 
             local usable = class.itemMap[ item ]
-            if usable then table.insert( state.items, usable ) end
+            if usable then insert( state.items, usable ) end
         end
     end
 
@@ -510,8 +511,6 @@ local dynamic_keys = setmetatable( {}, {
     end
 } )
 
-ns.spells_in_flight = {}
-local spells_in_flight = ns.spells_in_flight
 
 ns.castsOff = { 'no_action', 'no_action', 'no_action', 'no_action', 'no_action' }
 ns.castsOn = { 'no_action', 'no_action', 'no_action', 'no_action', 'no_action' }
@@ -520,9 +519,35 @@ ns.castsAll = { 'no_action', 'no_action', 'no_action', 'no_action', 'no_action' 
 local castsOn, castsOff, castsAll = ns.castsOn, ns.castsOff, ns.castsAll
 
 
-function Hekili:ForceUpdate( event )
-    for i, d in pairs( ns.UI.Displays ) do
-        d.criticalUpdate = true
+function state:AddToHistory( spellID, destGUID )
+    local ability = class.abilities[ spellID ]
+    local key = ability and ability.key or dynamic_keys[ spellID ]
+
+    local now = GetTime()
+    local player = self.player
+
+    player.lastcast = key
+    player.casttime = now
+
+    if ability then
+        local history = self.prev.history
+        insert( history, 1, key )
+        history[6] = nil
+
+        if ability.gcd ~= "off" then
+            history = self.prev_gcd.history
+            player.lastgcd = key
+            player.lastgcdtime = now
+        else
+            history = self.prev_off_gcd.history
+            player.lastoffgcd = key
+            player.lastoffgcdtime = now
+        end
+        insert( history, 1, key )
+        history[6] = nil
+
+        ability.lastCast = now
+        ability.lastUnit = destGUID
     end
 end
 
@@ -536,17 +561,17 @@ local function spellcastEvents( subtype, sourceGUID, destGUID, spellName, spellI
     local ability = class.abilities[ spellID ]
 
     if ability then
-        table.insert( castsAll, 1, ability.key )
+        insert( castsAll, 1, ability.key )
         castsAll[ 6 ] = nil
 
         if ability.gcd ~= 'off' then
-            table.insert( castsOn, 1, ability.key )
+            insert( castsOn, 1, ability.key )
             castsOn[ 6 ] = nil
 
             state.player.lastgcd = ability.key
             state.player.lastgcdtime = now
         else
-            table.insert( castsOff, 1, ability.key )
+            insert( castsOff, 1, ability.key )
             castsOff[ 6 ] = nil
 
             state.player.lastoffgcd = ability.key
@@ -558,26 +583,8 @@ local function spellcastEvents( subtype, sourceGUID, destGUID, spellName, spellI
     end
 
     -- This is an ability with a travel time.
-    if class.abilities[ spellID ] and class.abilities[ spellID ].velocity then
-
-        local lands = state.latency or 0.05
-
-        -- If we have a hostile target, we'll assume we're waiting for them to get hit.
-        if UnitExists( 'target' ) and not UnitIsFriend( 'player', 'target' ) then
-            -- Let's presume that the target is at max range.
-            local RC = LibStub( "LibRangeCheck-2.0" )
-            local _, range = RC:GetRange( 'target' )
-
-            if range then
-                lands = range > 0 and ( range / class.abilities[ spellID ].velocity ) or lands
-            end
-        end
-
-        table.insert( spells_in_flight, 1, {
-            key = class.abilities[ spellID ].key,
-            time = now + lands
-        } )
-
+    if ability and ability.isProjectile then
+        state:QueueEvent( ability.key, "projectile" )
     end
 
 end
@@ -595,19 +602,9 @@ RegisterUnitEvent( "UNIT_SPELLCAST_SUCCEEDED", function( event, unit, spell, _, 
             Hekili:Notify( "Hekili is designed for current content.\nUse below level 100 at your own risk.", 5 )
             lowLevelWarned = true
         end
-
-        Hekili:ForceUpdate( event ) 
     end
 end )
 
-
-function ns.removeSpellFromFlight( spell )
-    for i = #spells_in_flight, 1, -1 do
-        if spells_in_flight[i].spell == spell then
-            table.remove( spells_in_flight, i )
-        end
-    end
-end
 
 
 local power_tick_data = {
@@ -632,8 +629,6 @@ local lastPowerUpdate = 0
 local function UNIT_POWER_FREQUENT( event, unit, power )
 
     if not UnitIsUnit( unit, "player" ) then return end
-
-    -- print( "UPF", GetTime(), power )
 
     if power == "FOCUS" and rawget( state, "focus" ) then
         local now = GetTime()
@@ -706,16 +701,21 @@ local autoAuraKey = setmetatable( {}, {
 
 
 RegisterUnitEvent( "UNIT_AURA", function( event, unit )
-    if UnitIsUnit( unit, 'player' ) then
-        state.player.updated = true
-    elseif UnitIsUnit( "target", unit ) then
-        state.target.updated = true
+    if UnitIsUnit( unit, 'player' ) and state.player.updated then
+        Hekili.ScrapeUnitAuras( "player" )
+        state.player.updated = false
+        
+    elseif UnitIsUnit( unit, "target" ) and state.target.updated then
+        Hekili.ScrapeUnitAuras( "target" )
+        state.target.updated = false
     end
 end )
 
 
-RegisterEvent( "PLAYER_TARGET_CHANGED", function ( event )
-    state.target.updated = true
+RegisterEvent( "PLAYER_TARGET_CHANGED", function( event )
+    Hekili.ScrapeUnitAuras( "target", true )
+    state.target.updated = false
+
     Hekili.UpdateTTD( "target" )
     Hekili:ForceUpdate( event, true )
 end )
@@ -728,7 +728,10 @@ RegisterEvent( "PLAYER_STOPPED_MOVING", function( event ) Hekili:ForceUpdate( ev
 local function handleEnemyCasts( event, unit )
     if UnitIsUnit( "target", unit ) then
         Hekili:ForceUpdate( event, unit )
-    end 
+    elseif UnitIsUnit( "player", unit ) and event == "UNIT_SPELLCAST_START" then
+        -- May want to force update here in case SPELL_CAST_START doesn't fire in CLEU.
+        Hekili:ForceUpdate( event, unit )
+    end
 end 
 
 RegisterUnitEvent( "UNIT_SPELLCAST_START", handleEnemyCasts )
@@ -736,13 +739,22 @@ RegisterUnitEvent( "UNIT_SPELLCAST_INTERRUPTED", handleEnemyCasts )
 RegisterUnitEvent( "UNIT_SPELLCAST_SUCCEEDED", handleEnemyCasts )
 
 
+local cast_events = {
+    SPELL_CAST_START        = true,
+    SPELL_CAST_FAILED       = true,
+    SPELL_CAST_SUCCESS      = true
+}
+
+
 local aura_events = {
     SPELL_AURA_APPLIED      = true,
-    SPELL_AURA_REFRESH      = true,
     SPELL_AURA_APPLIED_DOSE = true,
+    SPELL_AURA_REFRESH      = true,
     SPELL_AURA_REMOVED      = true,
+    SPELL_AURA_REMOVED_DOSE = true,
     SPELL_AURA_BROKEN       = true,
-    SPELL_AURA_BROKEN_SPELL = true
+    SPELL_AURA_BROKEN_SPELL = true,
+    SPELL_CAST_SUCCESS      = true -- it appears you can refresh stacking buffs w/o a SPELL_AURA_x event.
 }
 
 
@@ -788,17 +800,29 @@ local function CLEU_HANDLER( event, _, subtype, _, sourceGUID, sourceName, _, _,
         return
     end
 
-    if sourceGUID == state.GUID and ( subtype == 'SPELL_CAST_SUCCESS' or subtype == 'SPELL_CAST_START' ) then
-        if subtype == 'SPELL_CAST_SUCCESS' then
-            spellcastEvents( subtype, sourceGUID, destGUID, spellName, spellID )
-            state.player.queued_ability = nil
-            state.player.queued_time = nil
-            state.player.queued_tt = nil
-            state.player.queued_lands = nil
-            state.player.queued_gcd = nil
-            state.player.queued_off = nil
+    if sourceGUID == state.GUID then
+        -- Started a spellcast.
+        if cast_events[ subtype ] then
+            local ability = class.abilities[ spellID ]
+
+            if subtype == "SPELL_CAST_START" then
+                state:QueueEvent( spellID, "hardcast" )
+
+            elseif subtype == "SPELL_CAST_FAILED" then
+                state:CancelCastEvent( spellID )
+
+            elseif subtype == "SPELL_CAST_SUCCESS" then
+                -- We completed a spellcast, it may have been queued and have data available to us.
+                local event = state:RemoveQueuedSpell( spellID )                
+
+                if ability then
+                    if ability.isProjectile then state:QueueEvent( spellID, "projectile", event ) end
+                    state:AddToHistory( ability.key, destGUID )
+                end
+            end
+
+            Hekili:ForceUpdate( subtype )
         end
-        Hekili:ForceUpdate( subtype )
     end
 
     if state.role.tank and state.GUID == destGUID and subtype:sub(1,5) == 'SWING' then
@@ -815,21 +839,21 @@ local function CLEU_HANDLER( event, _, subtype, _, sourceGUID, sourceName, _, _,
             sw.oh_projected = sw.oh_actual + sw.oh_speed
 
         elseif not offhand and time > sw.mh_actual then
-                sw.mh_actual = time
+            sw.mh_actual = time
             sw.mh_speed = UnitAttackSpeed( 'player' ) or sw.mh_speed
             sw.mh_projected = sw.mh_actual + sw.mh_speed
 
         end
 
     -- Player/Minion Event
-    elseif sourceGUID == state.GUID or ns.isMinion( sourceGUID ) then
+    elseif sourceGUID == state.GUID or ns.isMinion( sourceGUID ) or ( sourceGUID == destGUID and sourceGUID == UnitGUID( 'target' ) ) then
 
         if aura_events[ subtype ] then
             if state.GUID == destGUID then 
                 state.player.updated = true
                 if class.auras[ spellID ] then Hekili:ForceUpdate( subtype ) end
             end
-   
+
             if UnitGUID( 'target' ) == destGUID then
                 state.target.updated = true
                 if class.auras[ spellID ] then Hekili:ForceUpdate( subtype ) end
@@ -837,7 +861,7 @@ local function CLEU_HANDLER( event, _, subtype, _, sourceGUID, sourceName, _, _,
         end
 
         local aura = class.auras and class.auras[ spellID ]
-        
+
         if aura then
             if hostile and sourceGUID ~= destGUID and not aura.friendly then
                 -- Aura Tracking
@@ -873,7 +897,7 @@ local function CLEU_HANDLER( event, _, subtype, _, sourceGUID, sourceName, _, _,
         local action = class.abilities[ spellID ]
         
         if subtype ~= 'SPELL_CAST_SUCCESS' and action and action.velocity then
-            ns.removeSpellFromFlight( action.key )
+            state:Unqueue( action.key )
         end
 
         if hostile and dmg_events[ subtype ] and not dmg_filtered[ spellID ] then
@@ -1028,8 +1052,8 @@ local defaultBarMap = {
 local function ReadKeybindings()
 
     for k, v in pairs( keys ) do
-        table.wipe( v.upper )
-        table.wipe( v.lower )
+        wipe( v.upper )
+        wipe( v.lower )
     end
 
     -- Bartender4 support from tanichan.

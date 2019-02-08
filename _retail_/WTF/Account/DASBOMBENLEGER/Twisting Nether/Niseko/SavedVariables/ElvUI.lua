@@ -24,276 +24,6 @@ ElvCharacterDB = {
 	},
 	["ChatHistoryLog"] = {
 		{
-			"grid2", -- [1]
-			"|Kq12|k", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			461, -- [11]
-			false, -- [12]
-			13, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffGronk|r",
-			[51] = 1544914374,
-			[50] = "CHAT_MSG_BN_WHISPER_INFORM",
-			[53] = "Gronk",
-		}, -- [1]
-		{
-			"sounds like thats your problem!", -- [1]
-			"|Kq12|k", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			463, -- [11]
-			false, -- [12]
-			13, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffGronk|r",
-			[51] = 1544914381,
-			[50] = "CHAT_MSG_BN_WHISPER",
-			[53] = "Gronk",
-		}, -- [2]
-		{
-			"awful addon", -- [1]
-			"|Kq12|k", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			464, -- [11]
-			false, -- [12]
-			13, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffGronk|r",
-			[51] = 1544914382,
-			[50] = "CHAT_MSG_BN_WHISPER",
-			[53] = "Gronk",
-		}, -- [3]
-		{
-			"dunno", -- [1]
-			"|Kq12|k", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			467, -- [11]
-			false, -- [12]
-			13, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffGronk|r",
-			[51] = 1544914391,
-			[50] = "CHAT_MSG_BN_WHISPER_INFORM",
-			[53] = "Gronk",
-		}, -- [4]
-		{
-			"there must be some filtering on a per person base", -- [1]
-			"|Kq12|k", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			468, -- [11]
-			false, -- [12]
-			13, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffGronk|r",
-			[51] = 1544914405,
-			[50] = "CHAT_MSG_BN_WHISPER_INFORM",
-			[53] = "Gronk",
-		}, -- [5]
-		{
-			"hello", -- [1]
-			"Robodoge-Blackhand", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Robodoge-Blackhand", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			469, -- [11]
-			"Player-3691-0624C498", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddRobodoge-Blackhand|r",
-			[51] = 1544914410,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [6]
-		{
-			"would think so", -- [1]
-			"|Kq12|k", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			470, -- [11]
-			false, -- [12]
-			13, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffGronk|r",
-			[51] = 1544914411,
-			[50] = "CHAT_MSG_BN_WHISPER",
-			[53] = "Gronk",
-		}, -- [7]
-		{
-			"%s has earned the achievement |cffffff00|Hachievement:5356:Player-3674-0634B624:1:12:15:18:4294967295:4294967295:4294967295:4294967295|h[High Warlord]|h|r!", -- [1]
-			"Aerillia-TwistingNether", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Aerillia-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			471, -- [11]
-			"Player-3674-0634B624", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaAerillia|r",
-			[51] = 1544914412,
-			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [8]
-		{
-			"%s has earned the achievement |cffffff00|Hachievement:13465:Player-3674-0634B624:1:12:15:18:4294967295:4294967295:4294967295:4294967295|h[Elite: Battle for Azeroth Season 1]|h|r!", -- [1]
-			"Aerillia-TwistingNether", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Aerillia-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			472, -- [11]
-			"Player-3674-0634B624", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff3fc6eaAerillia|r",
-			[51] = 1544914412,
-			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [9]
-		{
-			"|Kv5|k", -- [1]
-			"Bøømerswågxx-TwistingNether", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			474, -- [11]
-			"Player-3674-085DFD36", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffff7c0aBøømerswågxx|r",
-			[51] = 1544914429,
-			[50] = "CHAT_MSG_GUILD",
-		}, -- [10]
-		{
-			"weirdo", -- [1]
-			"Niseko-TwistingNether", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Niseko-TwistingNether", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			479, -- [11]
-			"Player-3674-0766B2B9", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cffffffffNiseko|r",
-			[51] = 1544914448,
-			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [11]
-		{
-			"ha!", -- [1]
-			"Robodoge-Blackhand", -- [2]
-			"", -- [3]
-			"", -- [4]
-			"Robodoge-Blackhand", -- [5]
-			"", -- [6]
-			0, -- [7]
-			0, -- [8]
-			"", -- [9]
-			0, -- [10]
-			480, -- [11]
-			"Player-3691-0624C498", -- [12]
-			0, -- [13]
-			false, -- [14]
-			false, -- [15]
-			false, -- [16]
-			false, -- [17]
-			[52] = "|cff0070ddRobodoge-Blackhand|r",
-			[51] = 1544914454,
-			[50] = "CHAT_MSG_PARTY",
-		}, -- [12]
-		{
 			"says the priest", -- [1]
 			"Robodoge-Blackhand", -- [2]
 			"", -- [3]
@@ -314,7 +44,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914459,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [13]
+		}, -- [1]
 		{
 			"in war mode ", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -336,7 +66,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914466,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [14]
+		}, -- [2]
 		{
 			"LUL", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -358,7 +88,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914471,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [15]
+		}, -- [3]
 		{
 			"what you doin?", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -380,7 +110,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914489,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [16]
+		}, -- [4]
 		{
 			"addon stuff", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -402,7 +132,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544914506,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [17]
+		}, -- [5]
 		{
 			"8.1 broke some things", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -424,7 +154,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914522,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [18]
+		}, -- [6]
 		{
 			"how you doing these days?", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -446,7 +176,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914533,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [19]
+		}, -- [7]
 		{
 			"if you want me to do sth. to assist your efforts let me know", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -468,7 +198,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914600,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [20]
+		}, -- [8]
 		{
 			"its some grid2 stuff where it only needs to show my weakened soul and not others", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -490,7 +220,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544914627,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [21]
+		}, -- [9]
 		{
 			"", -- [1]
 			"|Kq53|k", -- [2]
@@ -513,7 +243,7 @@ ElvCharacterDB = {
 			[51] = 1544914659,
 			[50] = "CHAT_MSG_BN_INLINE_TOAST_BROADCAST",
 			[53] = "alasfour",
-		}, -- [22]
+		}, -- [10]
 		{
 			"oh i see", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -535,7 +265,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544914664,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [23]
+		}, -- [11]
 		{
 			"go on a priest renren", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -557,7 +287,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915050,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [24]
+		}, -- [12]
 		{
 			"its 113", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -579,7 +309,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp|r",
 			[51] = 1544915057,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [25]
+		}, -- [13]
 		{
 			"114 maybe", -- [1]
 			"Renstorp-TwistingNether", -- [2]
@@ -601,7 +331,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRenstorp|r",
 			[51] = 1544915060,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [26]
+		}, -- [14]
 		{
 			"i just need weakened soul", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -623,7 +353,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915065,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [27]
+		}, -- [15]
 		{
 			"we have a warmode issue", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -645,7 +375,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915154,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [28]
+		}, -- [16]
 		{
 			"why is everyone on twisting ether?", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -667,7 +397,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544915169,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [29]
+		}, -- [17]
 		{
 			"im in og stoopid", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -689,7 +419,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915176,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [30]
+		}, -- [18]
 		{
 			"i already can see your weakened anyway", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -711,7 +441,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915197,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [31]
+		}, -- [19]
 		{
 			"what is this shit", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -733,7 +463,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915199,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [32]
+		}, -- [20]
 		{
 			"where the f do I turn it on", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -755,7 +485,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915214,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [33]
+		}, -- [21]
 		{
 			"talents", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -777,7 +507,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544915227,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [34]
+		}, -- [22]
 		{
 			"woho", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -799,7 +529,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915237,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [35]
+		}, -- [23]
 		{
 			"I was in dungeon looking for it", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -821,7 +551,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915244,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [36]
+		}, -- [24]
 		{
 			"oh weakend soul is persoanl", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -843,7 +573,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915296,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [37]
+		}, -- [25]
 		{
 			"so u can have multiple discs", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -865,7 +595,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915301,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [38]
+		}, -- [26]
 		{
 			"reloading", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -887,7 +617,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915313,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [39]
+		}, -- [27]
 		{
 			"cast pws", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -909,7 +639,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915390,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [40]
+		}, -- [28]
 		{
 			"vuhdo has no issues", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -931,7 +661,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915430,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [41]
+		}, -- [29]
 		{
 			"but i need it to work on grid", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -953,7 +683,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915435,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [42]
+		}, -- [30]
 		{
 			"I know nada about grid", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -975,7 +705,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915449,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [43]
+		}, -- [31]
 		{
 			"josh is repeating himself", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -997,7 +727,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915468,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [44]
+		}, -- [32]
 		{
 			"who is that?", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1019,7 +749,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544915480,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [45]
+		}, -- [33]
 		{
 			"second time he's talking about macdonalds signature menu today", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1041,7 +771,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915489,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [46]
+		}, -- [34]
 		{
 			"he is in his 30s ... people get old", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1063,7 +793,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544915518,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [47]
+		}, -- [35]
 		{
 			"methodjosh on twitch", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1085,7 +815,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544915518,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [48]
+		}, -- [36]
 		{
 			"can you see the spellid of weakened soul", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -1107,7 +837,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544915998,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [49]
+		}, -- [37]
 		{
 			"i have elvui disabled", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -1129,7 +859,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544916002,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [50]
+		}, -- [38]
 		{
 			"no?", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -1151,7 +881,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544916054,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [51]
+		}, -- [39]
 		{
 			"oh", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1173,7 +903,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916062,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [52]
+		}, -- [40]
 		{
 			"I can check", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1195,7 +925,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916064,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [53]
+		}, -- [41]
 		{
 			"it doesnt show up anywhere", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1217,7 +947,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916089,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [54]
+		}, -- [42]
 		{
 			"I cant", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1239,7 +969,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916094,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [55]
+		}, -- [43]
 		{
 			"its not in spellbook", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1261,7 +991,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916118,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [56]
+		}, -- [44]
 		{
 			"or specialization", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1283,7 +1013,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916124,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [57]
+		}, -- [45]
 		{
 			"186403", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1305,7 +1035,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916212,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [58]
+		}, -- [46]
 		{
 			"your barrier ignored me?", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1327,7 +1057,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916347,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [59]
+		}, -- [47]
 		{
 			"racist barrier", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1349,7 +1079,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916360,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [60]
+		}, -- [48]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:12522:Player-3674-076EAAC6:1:12:16:18:4294967295:4294967295:4294967295:4294967295|h[Crimson Descent]|h|r!", -- [1]
 			"Trolldemonxd-TwistingNether", -- [2]
@@ -1371,7 +1101,7 @@ ElvCharacterDB = {
 			[52] = "|cffa330c9Trolldemonxd|r",
 			[51] = 1544916455,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [61]
+		}, -- [49]
 		{
 			"i dont see a way to do this", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -1393,7 +1123,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544916503,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [62]
+		}, -- [50]
 		{
 			"but if one addon can do it", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1415,7 +1145,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916518,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [63]
+		}, -- [51]
 		{
 			"does weakened addon not show up on grid?", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1437,7 +1167,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916527,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [64]
+		}, -- [52]
 		{
 			"the other should be able to do the same", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1459,7 +1189,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916531,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [65]
+		}, -- [53]
 		{
 			"soul*", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1481,7 +1211,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916534,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [66]
+		}, -- [54]
 		{
 			"vuhdo doesnt care if its buffs or debuffs", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -1503,7 +1233,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544916535,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [67]
+		}, -- [55]
 		{
 			"grid does", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -1525,7 +1255,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1544916537,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [68]
+		}, -- [56]
 		{
 			"this methodjosh dude is weird af", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1547,7 +1277,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916564,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [69]
+		}, -- [57]
 		{
 			"grid is a bit needy", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1569,7 +1299,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916566,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [70]
+		}, -- [58]
 		{
 			"yeah he is a strange one", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1591,7 +1321,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916577,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [71]
+		}, -- [59]
 		{
 			"I like this bear", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1613,7 +1343,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916694,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [72]
+		}, -- [60]
 		{
 			"its very clean", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1635,7 +1365,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916699,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [73]
+		}, -- [61]
 		{
 			"schwarzpranke", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1657,7 +1387,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916715,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [74]
+		}, -- [62]
 		{
 			"i have never seen that mount", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1679,7 +1409,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916723,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [75]
+		}, -- [63]
 		{
 			"its new", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1701,7 +1431,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916727,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [76]
+		}, -- [64]
 		{
 			"from a rare in darkshore", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1723,7 +1453,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916732,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [77]
+		}, -- [65]
 		{
 			"ha nice", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1745,7 +1475,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916737,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [78]
+		}, -- [66]
 		{
 			"havent spent much time there", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1767,7 +1497,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916749,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [79]
+		}, -- [67]
 		{
 			"its overrated but has a few mounts and stuff", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1789,7 +1519,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916763,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [80]
+		}, -- [68]
 		{
 			"basically only play the game when timewalking is up", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1811,7 +1541,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916769,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [81]
+		}, -- [69]
 		{
 			"ah, why timewalking?", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1833,7 +1563,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916782,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [82]
+		}, -- [70]
 		{
 			"idk ... i simply enjoy it", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1855,7 +1585,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916791,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [83]
+		}, -- [71]
 		{
 			"sweet", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1877,7 +1607,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916797,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [84]
+		}, -- [72]
 		{
 			"this toon has 10k timewalking badges and is 17days /played xD", -- [1]
 			"Robodoge-Blackhand", -- [2]
@@ -1899,7 +1629,7 @@ ElvCharacterDB = {
 			[52] = "|cff0070ddRobodoge-Blackhand|r",
 			[51] = 1544916833,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [85]
+		}, -- [73]
 		{
 			"haha dayum", -- [1]
 			"Renspriest-TwistingNether", -- [2]
@@ -1921,7 +1651,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffRenspriest|r",
 			[51] = 1544916848,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [86]
+		}, -- [74]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:5762:Player-3674-08E1D72D:1:12:18:18:4294967295:4294967295:4294967295:4294967295|h[Ohganot So Fast!]|h|r!", -- [1]
 			"Sugarbull-TwistingNether", -- [2]
@@ -1943,7 +1673,7 @@ ElvCharacterDB = {
 			[52] = "|cffff7c0aSugarbull|r",
 			[51] = 1545130124,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [87]
+		}, -- [75]
 		{
 			"i see it", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -1965,7 +1695,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130249,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [88]
+		}, -- [76]
 		{
 			"still", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -1987,7 +1717,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130251,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [89]
+		}, -- [77]
 		{
 			"well", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2009,7 +1739,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130256,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [90]
+		}, -- [78]
 		{
 			"shiel", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2031,7 +1761,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130257,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [91]
+		}, -- [79]
 		{
 			"and im holy", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2053,7 +1783,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130257,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [92]
+		}, -- [80]
 		{
 			"d", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2075,7 +1805,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130258,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [93]
+		}, -- [81]
 		{
 			"i changed my shit", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2097,7 +1827,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130268,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [94]
+		}, -- [82]
 		{
 			"i dont see it", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2119,7 +1849,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130275,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [95]
+		}, -- [83]
 		{
 			"what you do is", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2141,7 +1871,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130285,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [96]
+		}, -- [84]
 		{
 			"add weakened soul to the debuffs blacklist", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2163,7 +1893,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130296,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [97]
+		}, -- [85]
 		{
 			"and create a new debuff type, weakened soul and check [] show if mine", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2185,7 +1915,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130314,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [98]
+		}, -- [86]
 		{
 			"then you do the shit with indicator so that it changes health color or whatever you want", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2207,7 +1937,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130327,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [99]
+		}, -- [87]
 		{
 			"where is the debuff blacklist", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2229,7 +1959,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130338,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [100]
+		}, -- [88]
 		{
 			"statuses -> debuffs -> debufss", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2251,7 +1981,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130351,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [101]
+		}, -- [89]
 		{
 			"there should be a blacklist in there", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2273,7 +2003,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130364,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [102]
+		}, -- [90]
 		{
 			"shield", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2295,7 +2025,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130512,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [103]
+		}, -- [91]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:5762:Player-3674-06B5E4EF:1:12:18:18:4294967295:4294967295:4294967295:4294967295|h[Ohganot So Fast!]|h|r!", -- [1]
 			"Sugardk-TwistingNether", -- [2]
@@ -2317,7 +2047,7 @@ ElvCharacterDB = {
 			[52] = "|cffc41e3aSugardk|r",
 			[51] = 1545130518,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [104]
+		}, -- [92]
 		{
 			"it has the red border like this aswell", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2339,7 +2069,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130531,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [105]
+		}, -- [93]
 		{
 			"wtf that didnt work", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2361,7 +2091,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130539,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [106]
+		}, -- [94]
 		{
 			"hm", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2383,7 +2113,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130544,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [107]
+		}, -- [95]
 		{
 			"ok again", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2405,7 +2135,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130549,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [108]
+		}, -- [96]
 		{
 			"ok did i do it wrong", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2427,7 +2157,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130580,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [109]
+		}, -- [97]
 		{
 			"probably", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2449,7 +2179,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130585,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [110]
+		}, -- [98]
 		{
 			"i dont see any tickbox for show only mine", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2471,7 +2201,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130620,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [111]
+		}, -- [99]
 		{
 			"oh right", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2493,7 +2223,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130629,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [112]
+		}, -- [100]
 		{
 			"shield", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2515,7 +2245,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130876,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [113]
+		}, -- [101]
 		{
 			"pog", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2537,7 +2267,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130885,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [114]
+		}, -- [102]
 		{
 			"excellent stuff", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2559,7 +2289,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130916,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [115]
+		}, -- [103]
 		{
 			"idk why you'd handle buffs debuff differently anyway", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2581,7 +2311,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130943,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [116]
+		}, -- [104]
 		{
 			"but at least it works ", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2603,7 +2333,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130946,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [117]
+		}, -- [105]
 		{
 			"now", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2625,7 +2355,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545130953,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [118]
+		}, -- [106]
 		{
 			"%s has earned the achievement |cffffff00|Hachievement:5762:Player-3674-0770299C:1:12:18:18:4294967295:4294967295:4294967295:4294967295|h[Ohganot So Fast!]|h|r!", -- [1]
 			"Sugardh-TwistingNether", -- [2]
@@ -2647,7 +2377,7 @@ ElvCharacterDB = {
 			[52] = "|cffa330c9Sugardh|r",
 			[51] = 1545130958,
 			[50] = "CHAT_MSG_GUILD_ACHIEVEMENT",
-		}, -- [119]
+		}, -- [107]
 		{
 			"yeah", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2669,7 +2399,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130967,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [120]
+		}, -- [108]
 		{
 			"TYTY", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2691,7 +2421,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545130995,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [121]
+		}, -- [109]
 		{
 			"|cff1eff00|Hitem:166844::::::::120:257::11::::|h[Duskhaven Top Hat]|h|r 750k on AH", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2713,7 +2443,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545131001,
 			[50] = "CHAT_MSG_PARTY",
-		}, -- [122]
+		}, -- [110]
 		{
 			"time to forget that i have this character", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2735,7 +2465,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545131005,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [123]
+		}, -- [111]
 		{
 			"and no", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2757,7 +2487,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545131006,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [124]
+		}, -- [112]
 		{
 			"yikes that", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2779,7 +2509,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545131014,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [125]
+		}, -- [113]
 		{
 			"discord", -- [1]
 			"Niseko-TwistingNether", -- [2]
@@ -2801,7 +2531,7 @@ ElvCharacterDB = {
 			[52] = "|cffffffffNiseko|r",
 			[51] = 1545131024,
 			[50] = "CHAT_MSG_PARTY_LEADER",
-		}, -- [126]
+		}, -- [114]
 		{
 			"TIME TO GRIND AP", -- [1]
 			"Spazpriest-Stormscale", -- [2]
@@ -2823,6 +2553,270 @@ ElvCharacterDB = {
 			[52] = "|cffffffffSpazpriest-Stormscale|r",
 			[51] = 1545131024,
 			[50] = "CHAT_MSG_PARTY",
+		}, -- [115]
+		{
+			"skill", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			122, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549370678,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [116]
+		{
+			"there?", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			123, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549370681,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [117]
+		{
+			"y", -- [1]
+			"Skìllhunter-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			134, -- [11]
+			"Player-3674-06F26A4F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffaad372Skìllhunter|r",
+			[51] = 1549370705,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [118]
+		{
+			"wanna do m+?", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			159, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549370805,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [119]
+		{
+			"sure ", -- [1]
+			"Skìllhunter-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			180, -- [11]
+			"Player-3674-06F26A4F", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffaad372Skìllhunter|r",
+			[51] = 1549370841,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [120]
+		{
+			"k gimmie 5 min to make coffee", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			188, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549370873,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [121]
+		{
+			"da fuqs", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			340, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549371294,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [122]
+		{
+			"larry ", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			428, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549371544,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [123]
+		{
+			"you owe me money bitch", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			435, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549371552,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [124]
+		{
+			"no i dont? hello?", -- [1]
+			"Naomï-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			438, -- [11]
+			"Player-3674-08EAB307", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cff00ff96Naomï|r",
+			[51] = 1549371558,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [125]
+		{
+			"its ok I just wanted your attention", -- [1]
+			"Revan-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			444, -- [11]
+			"Player-3674-05A62ABC", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffc41e3aRevan|r",
+			[51] = 1549371569,
+			[50] = "CHAT_MSG_GUILD",
+		}, -- [126]
+		{
+			"MM is so fun lol", -- [1]
+			"Fenryn-TwistingNether", -- [2]
+			"", -- [3]
+			"", -- [4]
+			"", -- [5]
+			"", -- [6]
+			0, -- [7]
+			0, -- [8]
+			"", -- [9]
+			0, -- [10]
+			730, -- [11]
+			"Player-3674-05AEF2C3", -- [12]
+			0, -- [13]
+			false, -- [14]
+			false, -- [15]
+			false, -- [16]
+			false, -- [17]
+			[52] = "|cffaad372Fenryn|r",
+			[51] = 1549372216,
+			[50] = "CHAT_MSG_GUILD",
 		}, -- [127]
 	},
 }
