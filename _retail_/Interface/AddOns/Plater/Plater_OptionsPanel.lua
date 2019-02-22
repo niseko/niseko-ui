@@ -105,7 +105,8 @@ function Plater.OpenOptionsPanel()
 	Plater.db.profile.OptionsPanelDB = Plater.db.profile.OptionsPanelDB or {}
 	
 	--controi o menu principal
-	local f = DF:CreateSimplePanel (UIParent, optionsWidth, optionsHeight, "Plater Options", "PlaterOptionsPanelFrame", {UseScaleBar = true}, Plater.db.profile.OptionsPanelDB)
+	local f = DF:CreateSimplePanel (UIParent, optionsWidth, optionsHeight, "Plater: professional nameplate addon for hardcore gamers", "PlaterOptionsPanelFrame", {UseScaleBar = true}, Plater.db.profile.OptionsPanelDB)
+	f.Title:SetAlpha (.75)
 	f:SetFrameStrata ("MEDIUM")
 	DF:ApplyStandardBackdrop (f)
 	f:ClearAllPoints()
@@ -146,7 +147,7 @@ function Plater.OpenOptionsPanel()
 		{name = "DebuffSpecialContainer", title = "Buff Special"},
 		{name = "DebuffLastEvent", title = "Buff Ease"},
 		{name = "Scripting", title = "Scripting"},
-		{name = "AutoRunCode", title = "Hooking"},
+		{name = "AutoRunCode", title = "Modding"},
 		{name = "AnimationPanel", title = "Animations"},
 		{name = "AdvancedConfig", title = "Advanced"},
 		
@@ -198,6 +199,12 @@ function Plater.OpenOptionsPanel()
 	statusBar:SetAlpha (0.8)
 	
 	DF:BuildStatusbarAuthorInfo (statusBar)
+	
+	--wago.io support
+	local wagoDesc = DF:CreateLabel (statusBar, "BREAKING NEWS: scripts and profiles for Plater will be available at |cFFFFFF00WAGO.IO|r in the following weeks!")
+	wagoDesc.textcolor = "orangered"
+	wagoDesc:SetPoint ("left", statusBar.DiscordTextBox, "right", 50, 0)
+	
 	
 	f.AllMenuFrames = {}
 	for _, frame in ipairs (mainFrame.AllFrames) do
@@ -779,6 +786,10 @@ function frontPageFrame.OpenNewsWindow()
 				line.backdrop_color = {.4, .4, .4, .6}
 				line.backdrop_color_highlight = {.5, .5, .5, .8}
 				line:SetBackdropColor (.4, .4, .4, .6)
+			else
+				line.backdrop_color = {0, 0, 0, 0.2}
+				line.backdrop_color_highlight = {.2, .2, .2, 0.4}
+				line:SetBackdropColor (0, 0, 0, 0.2)
 			end
 		end
 	end
@@ -1269,7 +1280,7 @@ local debuff_options = {
 		name = "Show Auras Casted by You",
 		desc = "Show Auras Casted by You.",
 	},
-	
+
 	{type = "blank"},
 	
 	{
@@ -1599,7 +1610,7 @@ Plater.CreateAuraTesting()
 		end
 		
 		local line_onclick_trigger_dropdown = function (self, fixedValue, scriptID)
-			local scriptObject = Plater.GetScriptObject (scriptID)
+			local scriptObject = Plater.GetScriptObject (scriptID, "script")
 			local spellName = GetSpellInfo (self.SpellID)
 			
 			if (scriptObject and spellName) then
@@ -2514,6 +2525,7 @@ do
 				name = "Always Show" .. CVarIcon,
 				desc = "If enabled, the personal health bar is always shown.\n\n|cFFFFFF00Important|r: 'Personal Health and Mana Bars' (in the Main Menu tab) must be enabled." .. CVarDesc,
 			},
+
 			{
 				type = "toggle",
 				get = function() return GetCVarBool ("nameplatePersonalShowWithTarget") end,
@@ -2870,56 +2882,6 @@ do
 				desc = "With a fixed position, personal bar won't move.\n\nTo revert this, click the button above." .. CVarDesc,
 			},
 
-			--class resources
-			{type = "blank"},
-			{type = "label", get = function() return "Resources:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
-
-			{
-				type = "range",
-				get = function() return Plater.db.profile.resources.scale end,
-				set = function (self, fixedparam, value) 
-					Plater.db.profile.resources.scale = value
-					Plater.UpdateAllPlates()
-				end,
-				min = 0.65,
-				max = 3,
-				step = 0.01,
-				usedecimals = true,
-				nocombat = true,
-				name = "Resource Scale",
-				desc = "Resource Scale",
-			},
-			
-			{
-				type = "range",
-				get = function() return Plater.db.profile.resources.y_offset end,
-				set = function (self, fixedparam, value) 
-					Plater.db.profile.resources.y_offset = value
-					Plater.UpdateAllPlates()
-				end,
-				min = -100,
-				max = 100,
-				step = 1,
-				nocombat = true,
-				name = "Y OffSet",
-				desc = "Y Offset when resource bar are anchored to your personal bar",
-			},
-			
-			{
-				type = "range",
-				get = function() return Plater.db.profile.resources.y_offset_target end,
-				set = function (self, fixedparam, value) 
-					Plater.db.profile.resources.y_offset_target = value
-					Plater.UpdateAllPlates()
-				end,
-				min = -100,
-				max = 100,
-				step = 1,
-				nocombat = true,
-				name = "Y OffSet on Target",
-				desc = "Y Offset when the resource are anchored on your current target",
-			},	
-			
 			{type = "breakline"},
 			
 			--life size
@@ -2956,7 +2918,7 @@ do
 			},
 			
 			--energy bar settings
-			{type = "blank"},
+			--{type = "blank"},
 			{type = "label", get = function() return "Power Bar:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 			
 			{
@@ -3002,7 +2964,7 @@ do
 			},
 			
 			--cast bar settings
-			{type = "blank"},
+			--{type = "blank"},
 			{type = "label", get = function() return "Cast Bar:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 			
 			{
@@ -3135,6 +3097,43 @@ do
 				end,
 				name = "Shadow Color",
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
+			},
+			
+			--spell name text anchor
+			{
+				type = "select",
+				get = function() return Plater.db.profile.plate_config.player.spellname_text_anchor.side end,
+				values = function() return build_anchor_side_table ("player", "spellname_text_anchor") end,
+				name = "Anchor",
+				desc = "Which side of the nameplate this widget is attach to.",
+			},
+			--spell name text anchor x offset
+			{
+				type = "range",
+				get = function() return Plater.db.profile.plate_config.player.spellname_text_anchor.x end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.plate_config.player.spellname_text_anchor.x = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				name = "X Offset",
+				desc = "Slightly move the text horizontally.",
+			},
+			--spell name text anchor x offset
+			{
+				type = "range",
+				get = function() return Plater.db.profile.plate_config.player.spellname_text_anchor.y end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.plate_config.player.spellname_text_anchor.y = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				name = "Y Offset",
+				desc = "Slightly move the text vertically.",
 			},
 			
 			{type = "breakline"},
@@ -3600,6 +3599,71 @@ do
 				desc = "Slightly move the text vertically.",
 			},
 			
+			--class resources
+			{type = "blank"},
+			{type = "label", get = function() return "Resources:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+
+			{
+				type = "range",
+				get = function() return Plater.db.profile.resources.scale end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.resources.scale = value
+					Plater.UpdateAllPlates()
+				end,
+				min = 0.65,
+				max = 3,
+				step = 0.01,
+				usedecimals = true,
+				nocombat = true,
+				name = "Resource Scale",
+				desc = "Resource Scale",
+			},
+			
+			{
+				type = "range",
+				get = function() return Plater.db.profile.resources.y_offset end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.resources.y_offset = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				nocombat = true,
+				name = "Y OffSet",
+				desc = "Y Offset when resource bar are anchored to your personal bar",
+			},
+			
+			{
+				type = "range",
+				get = function() return Plater.db.profile.resources.y_offset_target end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.resources.y_offset_target = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				nocombat = true,
+				name = "Y OffSet on Target",
+				desc = "Y Offset when the resource are anchored on your current target",
+			},	
+			
+			{
+				type = "range",
+				get = function() return Plater.db.profile.resources.y_offset_target_withauras end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.resources.y_offset_target_withauras = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				nocombat = true,
+				name = "Offset if Buff is Shown",
+				desc = "Add this to 'Y OffSet on Target' if there is buffs or debuffs shown in the nameplate",
+			},			
+			
 	}
 
 	DF:BuildMenu (personalPlayerFrame, options_personal, startX, startY, heightSize, true, options_text_template, options_dropdown_template, options_switch_template, true, options_slider_template, options_button_template, globalCallback)
@@ -3789,7 +3853,7 @@ local targetOptions = {
 			thumbscale = 1.7,
 			usedecimals = true,
 			name = "Lock to Screen (Top Side)" .. CVarIcon,
-			desc = "Min space between the nameplate and the top of the screen. Increase this if some part of the nameplate are going out of the screen.\n\n|cFFFFFFFFDefault: 0.065|r\n\n|cFFFFFF00Important|r: setting to 0 disables this feature." .. CVarDesc,
+			desc = "Min space between the nameplate and the top of the screen. Increase this if some part of the nameplate are going out of the screen.\n\n|cFFFFFFFFDefault: 0.065|r\n\n|cFFFFFF00Important|r: if you're having issue, manually set using these macros:\n/run SetCVar ('nameplateOtherTopInset', '0.065')\n/run SetCVar ('nameplateLargeTopInset', '0.065')\n\n|cFFFFFF00Important|r: setting to 0 disables this feature." .. CVarDesc,
 			nocombat = true,
 		},
 		
@@ -5070,6 +5134,44 @@ local relevance_options = {
 			name = "Shadow Color",
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
+
+		--spell name text anchor
+		{
+			type = "select",
+			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellname_text_anchor.side end,
+			values = function() return build_anchor_side_table ("friendlyplayer", "spellname_text_anchor") end,
+			name = "Anchor",
+			desc = "Which side of the nameplate this widget is attach to.",
+		},
+		--spell name text anchor x offset
+		{
+			type = "range",
+			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellname_text_anchor.x end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config.friendlyplayer.spellname_text_anchor.x = value
+				Plater.UpdateAllPlates()
+			end,
+			min = -100,
+			max = 100,
+			step = 1,
+			name = "X Offset",
+			desc = "Slightly move the text horizontally.",
+		},
+		--spell name text anchor x offset
+		{
+			type = "range",
+			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellname_text_anchor.y end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config.friendlyplayer.spellname_text_anchor.y = value
+				Plater.UpdateAllPlates()
+			end,
+			min = -100,
+			max = 100,
+			step = 1,
+			name = "Y Offset",
+			desc = "Slightly move the text vertically.",
+		},
+		
 		
 		{type = "blank"},
 		{type = "label", get = function() return "Spell Cast Time Text:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
@@ -5879,6 +5981,42 @@ local relevance_options = {
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
+		--spell name text anchor
+		{
+			type = "select",
+			get = function() return Plater.db.profile.plate_config.enemyplayer.spellname_text_anchor.side end,
+			values = function() return build_anchor_side_table ("enemyplayer", "spellname_text_anchor") end,
+			name = "Anchor",
+			desc = "Which side of the nameplate this widget is attach to.",
+		},
+		--spell name text anchor x offset
+		{
+			type = "range",
+			get = function() return Plater.db.profile.plate_config.enemyplayer.spellname_text_anchor.x end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config.enemyplayer.spellname_text_anchor.x = value
+				Plater.UpdateAllPlates()
+			end,
+			min = -100,
+			max = 100,
+			step = 1,
+			name = "X Offset",
+			desc = "Slightly move the text horizontally.",
+		},
+		--spell name text anchor x offset
+		{
+			type = "range",
+			get = function() return Plater.db.profile.plate_config.enemyplayer.spellname_text_anchor.y end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config.enemyplayer.spellname_text_anchor.y = value
+				Plater.UpdateAllPlates()
+			end,
+			min = -100,
+			max = 100,
+			step = 1,
+			name = "Y Offset",
+			desc = "Slightly move the text vertically.",
+		},
 		
 		--level text settings
 		{type = "blank"},
@@ -6777,9 +6915,45 @@ local relevance_options = {
 			name = "Shadow Color",
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
-		
-		{type = "blank"},
+	
+		--spell name text anchor
+		{
+			type = "select",
+			get = function() return Plater.db.profile.plate_config.friendlynpc.spellname_text_anchor.side end,
+			values = function() return build_anchor_side_table ("friendlynpc", "spellname_text_anchor") end,
+			name = "Anchor",
+			desc = "Which side of the nameplate this widget is attach to.",
+		},
+		--spell name text anchor x offset
+		{
+			type = "range",
+			get = function() return Plater.db.profile.plate_config.friendlynpc.spellname_text_anchor.x end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config.friendlynpc.spellname_text_anchor.x = value
+				Plater.UpdateAllPlates()
+			end,
+			min = -100,
+			max = 100,
+			step = 1,
+			name = "X Offset",
+			desc = "Slightly move the text horizontally.",
+		},
+		--spell name text anchor x offset
+		{
+			type = "range",
+			get = function() return Plater.db.profile.plate_config.friendlynpc.spellname_text_anchor.y end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config.friendlynpc.spellname_text_anchor.y = value
+				Plater.UpdateAllPlates()
+			end,
+			min = -100,
+			max = 100,
+			step = 1,
+			name = "Y Offset",
+			desc = "Slightly move the text vertically.",
+		},
 
+		{type = "blank"},
 		{type = "label", get = function() return "Spell Cast Time Text:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		{
 			type = "toggle",
@@ -7678,9 +7852,44 @@ local relevance_options = {
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
+			--spell name text anchor
+			{
+				type = "select",
+				get = function() return Plater.db.profile.plate_config.enemynpc.spellname_text_anchor.side end,
+				values = function() return build_anchor_side_table ("enemynpc", "spellname_text_anchor") end,
+				name = "Anchor",
+				desc = "Which side of the nameplate this widget is attach to.",
+			},
+			--spell name text anchor x offset
+			{
+				type = "range",
+				get = function() return Plater.db.profile.plate_config.enemynpc.spellname_text_anchor.x end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.plate_config.enemynpc.spellname_text_anchor.x = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				name = "X Offset",
+				desc = "Slightly move the text horizontally.",
+			},
+			--spell name text anchor x offset
+			{
+				type = "range",
+				get = function() return Plater.db.profile.plate_config.enemynpc.spellname_text_anchor.y end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.plate_config.enemynpc.spellname_text_anchor.y = value
+					Plater.UpdateAllPlates()
+				end,
+				min = -100,
+				max = 100,
+				step = 1,
+				name = "Y Offset",
+				desc = "Slightly move the text vertically.",
+			},
 			
 			{type = "blank"},
-			
 			{type = "label", get = function() return "Spell Cast Time Text:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 			{
 				type = "toggle",
@@ -8570,7 +8779,7 @@ local relevance_options = {
 			thumbscale = 1.7,
 			usedecimals = true,
 			name = "Lock to Screen (Top Side)" .. CVarIcon,
-			desc = "Min space between the nameplate and the top of the screen. Increase this if some part of the nameplate are going out of the screen.\n\n|cFFFFFFFFDefault: 0.065|r\n\n|cFFFFFF00Important|r: setting to 0 disables this feature." .. CVarDesc,
+			desc = "Min space between the nameplate and the top of the screen. Increase this if some part of the nameplate are going out of the screen.\n\n|cFFFFFFFFDefault: 0.065|r\n\n|cFFFFFF00Important|r: if you're having issue, manually set using these macros:\n/run SetCVar ('nameplateOtherTopInset', '0.065')\n/run SetCVar ('nameplateLargeTopInset', '0.065')\n\n|cFFFFFF00Important|r: setting to 0 disables this feature." .. CVarDesc,
 			nocombat = true,
 		},
 		
@@ -8589,8 +8798,8 @@ local relevance_options = {
 			step = 0.05,
 			thumbscale = 1.7,
 			usedecimals = true,
-			name = "Nameplate Vertical Distance" .. CVarIcon,
-			desc = "Min distance between each nameplate (when stacking is enabled).\n\n|cFFFFFFFFDefault: 1.10|r" .. CVarDesc .. "\n\n|cFFFFFF00Important|r: if you find issues with this setting, use:\n|cFFFFFFFF/run SetCVar ('nameplateOverlapV', '1.6')|r",
+			name = "Space Between Nameplates" .. CVarIcon,
+			desc = "The space between each nameplate vertically when stacking is enabled.\n\n|cFFFFFFFFDefault: 1.10|r" .. CVarDesc .. "\n\n|cFFFFFF00Important|r: if you find issues with this setting, use:\n|cFFFFFFFF/run SetCVar ('nameplateOverlapV', '1.6')|r",
 			nocombat = true,
 		},
 		
@@ -9064,7 +9273,7 @@ local relevance_options = {
 			set = function (self, fixedparam, value) 
 				Plater.db.profile.show_health_prediction = value
 			end,
-			name = "Show Health Prediction",
+			name = "Show Health Prediction/Absorption",
 			desc = "Show an extra bar for health prediction and heal absorption.",
 		},
 		{
@@ -9085,6 +9294,17 @@ local relevance_options = {
 			end,
 			name = "Add Extra Glow to Execute Range",
 			desc = "Add Extra Glow to Execute Range",
+		},
+		
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.enable_masque_support end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.enable_masque_support = value
+				Plater:Msg ("this setting require a /reload to take effect.")
+			end,
+			name = "Masque Support",
+			desc = "If the Masque addon is installed, enabling this will make Plater to use Masque borders.\n\n|cFFFFFF00Important|r: require /reload after changing this setting.",
 		},
 		
 		{type = "blank"},

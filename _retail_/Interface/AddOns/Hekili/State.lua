@@ -27,8 +27,11 @@ local RC = LibStub( "LibRangeCheck-2.0" )
 
 local class = Hekili.Class
 local scripts = Hekili.Scripts
+
+
 -- This will be our environment table for local functions.
 local state = Hekili.State
+
 
 state.iteration = 0
 
@@ -112,6 +115,7 @@ state.predictionsOff = {}
 state.predictionsOn = {}
 state.purge = {}
 state.pvptalent = {}
+state.queuedHx = {}
 state.race = {}
 state.script = {}
 state.set_bonus = {}
@@ -445,6 +449,7 @@ state.UnitLevel = UnitLevel
 state.abs = math.abs
 state.ceil = math.ceil
 state.floor = math.floor
+state.format = string.format
 state.ipairs = ipairs
 state.pairs = pairs
 state.rawget = rawget
@@ -853,17 +858,25 @@ state.setDistance = setDistance
 
 
 -- For tracking if we are currently channeling.
-function state.channelSpell( name, start, duration )
+function state.channelSpell( name, start, duration, id )
     if name then
         local ability = class.abilities[ name ]
 
+        start = start or state.query_time
+
         if ability then
-            state.player.channelSpell = name
-            state.player.channelStart = start or state.query_time
-            state.player.channelEnd   = state.player.channelStart + ( duration or ability.cast )
+            duration = duration or ability.cast
         end
 
-        applyBuff( "casting", duration, nil, ability and ability.id or 0 )
+        if not duration then return end
+
+        state.player.channelSpell = name
+        state.player.channelStart = start
+        state.player.channelEnd = start + duration
+
+        applyBuff( "casting", duration, nil, id or ( ability and ability.id ) or 0 )
+        state.buff.casting.applied = start
+        state.buff.casting.expires = start + duration
         -- state.buff.casting.v3 = true
     end
 end
@@ -958,8 +971,8 @@ local FORECAST_DURATION = 10.01
 local function forecastResources( resource )
     if not resource then return end
 
-    table.wipe( events )
-    table.wipe( remains )
+    wipe( events )
+    wipe( remains )
 
     local now = roundDown( state.now + state.offset, 2 )
 
@@ -973,8 +986,8 @@ local function forecastResources( resource )
     -- We account for haste here so that we don't compute lots of extraneous future resource gains in Bloodlust/high haste situations.
     remains[ resource ] = timeout
 
-    table.wipe( r.times )
-    table.wipe( r.values )
+    wipe( r.times )
+    wipe( r.values )
     r.forecast[1] = r.forecast[1] or {}
     r.forecast[1].t = now
     r.forecast[1].v = r.actual
@@ -1142,7 +1155,7 @@ do
         for i = 1, n do
             local x = select( i, ... )
             if type( x ) == "number" and x > state.delayMin and x < state.delayMax then
-                table.insert( t, 0.01 + x ) 
+                table.insert( t, roundUp( x, 2 ) )
             end
         end
     end
@@ -1211,7 +1224,7 @@ do
                 -- Put tick times into recheck.
                 local i = 1
                 while ( true ) do
-                    if remains - ( i * aura.tick_time ) > 0 then table.insert( times, 0.01 + remains - ( i * aura.tick_time ) )
+                    if remains - ( i * aura.tick_time ) > 0 then table.insert( times, roundUp( remains - ( i * aura.tick_time ), 2 ) )
                     else break end
                     i = i + 1
                 end
@@ -1555,9 +1568,13 @@ local mt_state = {
             end
             return 0
             
-        elseif k == 'ticking' then
+        elseif k == 'ticking' or k == "up" then
             if app then return app.up end
             return false
+
+        elseif k == "down" then
+            if app then return app.down end
+            return true
             
         elseif k == 'ticks' then
             if app then return 1 + floor( duration / tick_time ) - t.ticks_remain end
@@ -1578,9 +1595,6 @@ local mt_state = {
         elseif k == 'tick_time' then
             if app then return tick_time end
             return 0
-
-        elseif k == 'duration' then
-            return duration
 
         end
 
@@ -2681,7 +2695,7 @@ local mt_default_buff = {
             return t[k]
             
         elseif k == 'up' or k == 'ticking' then
-            return t.applied <= state.query_time and t.expires > state.query_time
+            return t.remains > 0            
 
         elseif k == 'react' then
             -- React returns stacks assuming you've had time to react to them.
@@ -2695,16 +2709,13 @@ local mt_default_buff = {
             return state.query_time > t.lastApplied and t.lastCount or 0
 
         elseif k == 'down' then
-            return t.applied > state.query_time or t.expires <= state.query_time
+            return t.remains == 0
             
         elseif k == 'remains' then
-            if t.up then
-                if aura and aura.strictTiming then
-                    return max( 0, t.expires - state.query_time )
-                end
-                return max( 0, t.expires - state.query_time - ( state.settings.buffPadding or 0 ) )
+            if aura and aura.strictTiming then
+                return max( 0, t.expires - state.query_time )
             end
-            return 0
+            return max( 0, t.expires - state.query_time - ( state.settings.buffPadding or 0 ) )
             
         elseif k == 'refreshable' then
             return t.remains < 0.3 * ( aura.duration or 30 )
@@ -3209,7 +3220,7 @@ local mt_default_debuff = {
             return t[ k ]
             
         elseif k == 'up' or k == 'ticking' then
-            return t.applied <= state.query_time and t.expires >= state.query_time
+            return t.remains > 0
 
         elseif k == 'i_up' or k == 'rank' then
             return t.up and 1 or 0
@@ -3218,13 +3229,10 @@ local mt_default_debuff = {
             return not t.up
             
         elseif k == 'remains' then
-            if t.up then
-                if class_aura and class_aura.strictTiming then
-                    return max( 0, t.expires - state.query_time )
-                end
-                return max( 0, t.expires - state.query_time - ( state.settings.buffPadding or 0 ) )
+            if class_aura and class_aura.strictTiming then
+                return max( 0, t.expires - state.query_time )
             end
-            return 0
+            return max( 0, t.expires - state.query_time - ( state.settings.debuffPadding or 0 ) )
             
         elseif k == 'refreshable' then
             return t.remains < 0.3 * ( class_aura and class_aura.duration or t.duration or 30 )
@@ -4003,6 +4011,7 @@ do
     
         table.insert( state.predictions, 1, key )
         table.insert( state[ ability.gcd == 'off' and 'predictionsOff' or 'predictionsOn' ], 1, key )
+        state.queuedHx[ key ] = state.query_time
         
         state.predictions[6] = nil
         state.predictionsOn[6] = nil
@@ -4272,7 +4281,7 @@ end
 
 function state.reset( dispName )
     
-    state.now = roundUp( GetTime(), 2 )
+    state.now = GetTime()
     state.offset = 0
     state.delay = 0
     state.cast_start = 0
@@ -4344,6 +4353,8 @@ function state.reset( dispName )
     for k in pairs( state.stat ) do
         state.stat[ k ] = nil
     end
+
+    state.haste = nil
     
     if state.target.updated then
         ScrapeUnitAuras( 'target' )
@@ -4464,6 +4475,8 @@ function state.reset( dispName )
         state.predictionsOff[i] = nil
     end
 
+    wipe( state.queuedHx )
+
     local last_act = state.player.lastcast and class.abilities[ state.player.lastcast ]
     if last_act and last_act.startsCombat and state.combat == 0 and state.now - last_act.lastCast < 1 then
         state.false_start = last_act.lastCast - 0.01
@@ -4542,24 +4555,6 @@ function state.reset( dispName )
         
         casting = ability and ability.key or formatKey( state.buff.casting.name )
     end
-
-    --[[ state.stopChanneling( true )
-
-    local spellcast, _, _, startCast, endCast, _, _, spellID = UnitChannelInfo( 'player' )
-    if endCast ~= nil then
-        endCast = endCast / 1000
-        startCast = startCast / 1000
-
-        cast_time = endCast - state.now
-
-        state.applyBuff( "player_casting", cast_time )
-        state.buff.player_casting.applied = startCast
-        state.buff.player_casting.duration = endCast - startCast
-        state.buff.player_casting.expires = endCast
-
-        casting = spellID and class.abilities[ spellID ] and class.abilities[ spellID ].key or formatKey( spellcast )
-        state.channelSpell( casting, startCast, endCast - startCast )
-    end ]]
 
     ns.callHook( "reset_precast" )
 
@@ -5061,8 +5056,13 @@ function state:TimeToReady( action, pool )
     local wait = self.cooldown[ action ].remains
     local ability = class.abilities[ action ]
 
-    if ability.gcd ~= 'off' then
+    if ability.gcd ~= 'off' and not self.args.use_off_gcd then
         wait = max( wait, self.cooldown.global_cooldown.remains )
+    end
+
+    if ( state.args.line_cd and type( state.args.line_cd ) == 'number' ) and ability.lastCast > self.combat then
+        if Hekili.Debug then Hekili:Debug( "Line CD is " .. state.args.line_cd .. ", last cast was " .. ability.lastCast .. ", remaining CD: " .. max( 0, ability.lastCast + self.args.line_cd - self.query_time ) ) end
+        wait = max( wait, ability.lastCast + self.args.line_cd - self.query_time )
     end
     
     wait = ns.callHook( "TimeToReady", wait, action )

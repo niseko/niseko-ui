@@ -1,4 +1,10 @@
 ------------------------------------------------------------------------
+r872 | michaelspain | 2019-02-12 08:33:14 +0000 (Tue, 12 Feb 2019) | 1 line
+Changed paths:
+   M /trunk/modules/StatusAuras.lua
+
+Fixing Ticket #644 (Icons indicator showing buffs group not hiding buff that expires).
+------------------------------------------------------------------------
 r871 | michaelspain | 2019-02-04 19:58:41 +0000 (Mon, 04 Feb 2019) | 1 line
 Changed paths:
    M /trunk/modules/StatusMana.lua

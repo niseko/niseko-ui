@@ -361,6 +361,7 @@ local HekiliSpecMixin = {
         }, {
             __index = function( t, k )
                 if t.funcs[ k ] then return t.funcs[ k ]() end
+                if k == "lastCast" then return state.queuedHx[ t.key ] or t.realCast end
                 return
             end
         } )
@@ -477,7 +478,7 @@ local HekiliSpecMixin = {
             a.isProjectile = true
         end
 
-        a.lastCast = 0
+        a.realCast = 0
 
         if a.id and a.id > 0 then
             local spell = Spell:CreateFromSpellID( a.id )
@@ -992,7 +993,7 @@ all:RegisterAuras( {
                     if unit == "player" then
                         local castInfo = class.abilities[ spellID ]
                         local key = castInfo and castInfo.key or formatKey( spell )
-                        channelSpell( key, startCast, endCast - startCast, nil, t.v1 )
+                        channelSpell( key, startCast, t.duration, nil, t.v1 )
                     end
 
                     return
@@ -1463,7 +1464,7 @@ all:RegisterAbilities( {
 
         toggle = "cooldowns",
 
-        usable = function () return race.maghar_orc end,
+        -- usable = function () return race.maghar_orc end,
         handler = function ()
             applyBuff( "ancestral_call" )
         end,
@@ -1477,7 +1478,7 @@ all:RegisterAbilities( {
 
         toggle = "cooldowns",
 
-        usable = function () return race.nightborne end,
+        -- usable = function () return race.nightborne end,
         handler = function ()
             applyDebuff( "target", "arcane_pulse" )
         end,
@@ -1491,28 +1492,41 @@ all:RegisterAbilities( {
 
         toggle = "cooldowns",
 
-        usable = function () return race.troll end,
+        -- usable = function () return race.troll end,
         handler = function ()
             applyBuff( 'berserking' )
         end,
-    },
+    }
+} )
 
+
+-- Blood Fury spell IDs vary by class (whether you need AP/Int/both).
+local bf_classes = {
+    DEATHKNIGHT = 20572,
+    HUNTER = 20572,
+    MAGE = 33702,
+    MONK = 33697,
+    ROGUE = 20572,
+    SHAMAN = 33697,
+    WARLOCK = 33702,
+    WARRIOR = 20572,
+}
+
+all:RegisterAbilities( {
     blood_fury = {
-        id = function ()
-            if class.file == "MONK" or class.file == "SHAMAN" then return 33697 end
-            return 20572
-            -- 33702 ?
-        end,
+        id = function () return bf_classes[ class.file ] or 20572 end,
         cast = 0,
         cooldown = 120,
         gcd = "off",
     
         toggle = "cooldowns",
 
-        usable = function () return race.orc end,
+        -- usable = function () return race.orc end,
         handler = function ()
             applyBuff( "blood_fury", 15 )
         end,
+
+        copy = { 33702, 20572, 33697 },
     },
 
     arcane_torrent = {
@@ -1533,7 +1547,7 @@ all:RegisterAbilities( {
 
         startsCombat = true,
 
-        usable = function () return race.blood_elf end,
+        -- usable = function () return race.blood_elf end,
         toggle = "cooldowns",
 
         handler = function ()
@@ -1555,7 +1569,7 @@ all:RegisterAbilities( {
         cooldown = 120,
         gcd = "off",
 
-        usable = function () return boss and race.night_elf end,
+        -- usable = function () return boss and race.night_elf end,
         handler = function ()
             applyBuff( "shadowmeld" )
         end,
@@ -1568,7 +1582,7 @@ all:RegisterAbilities( {
         cooldown = 150,
         gcd = "spell",
 
-        usable = function () return race.lightforged_draenei end,
+        -- usable = function () return race.lightforged_draenei end,
 
         toggle = 'cooldowns',
     },
@@ -1582,7 +1596,7 @@ all:RegisterAbilities( {
 
         toggle = "cooldowns",
 
-        usable = function () return race.dark_iron_dwarf end,
+        -- usable = function () return race.dark_iron_dwarf end,
         handler = function () applyBuff( "fireblood" ) end,            
     },
 
@@ -1847,6 +1861,25 @@ all:RegisterAuras( {
 -- ON USE
 
 
+-- Sea Giant's Tidestone
+all:RegisterAbility( "sea_giants_tidestone", {
+    cast = 0,
+    cooldown = 90,
+    gcd = "off",
+
+    item = 165664,
+    toggle = "cooldowns",
+
+    handler = function () applyBuff( "ferocity_of_the_skrog" ) end
+} )
+
+all:RegisterAura( "ferocity_of_the_skrog", {
+    id = 285482,
+    duration = 12,
+    max_stack = 1
+} )
+
+
 -- Battle of Dazar'alor
 all:RegisterAbility( "invocation_of_yulon", {
     cast = 0,
@@ -1898,6 +1931,7 @@ all:RegisterAura( "incandescent_mastery", {
 } )
 
 
+
 all:RegisterAbility( "variable_intensity_gigavolt_oscillating_reactor", {
     cast = 0,
     cooldown = 90,
@@ -1906,14 +1940,23 @@ all:RegisterAbility( "variable_intensity_gigavolt_oscillating_reactor", {
     item = 165572,
     toggle = "cooldowns",
 
+    buff = "vigor_engaged",
+    readyTime = function () return max( 0, buff.vigor_engaged.applied + 12 - query_time ) end,
+
     handler = function() applyBuff( "oscillating_overload" ) end
 } )
 
 all:RegisterAura( "vigor_engaged", {
-    id = 287915,
+    id = 287916,
     duration = 3600,
     max_stack = 6
     -- May need to emulate the stacking portion.    
+} )
+
+all:RegisterAura( "vigor_cooldown", {
+    id = 287967,
+    duration = 6,
+    max_stack = 1
 } )
 
 all:RegisterAura( "oscillating_overload", {
@@ -2416,10 +2459,7 @@ all:RegisterAura( "galecallers_boon", {
     duration = 10,
     max_stack = 1,
     meta = {
-        remains = function( t )
-            if t.up then return max( 1, action.galecallers_boon.lastCast + 10 - query_time ) end
-            return 0
-        end
+        remains = function( t ) return max( 0, action.galecallers_boon.lastCast + 10 - query_time ) end
     }
 } )
 

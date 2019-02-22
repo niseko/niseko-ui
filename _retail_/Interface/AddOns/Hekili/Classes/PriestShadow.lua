@@ -7,6 +7,9 @@ local Hekili = _G[ addon ]
 local class = Hekili.Class
 local state = Hekili.State
 
+local FindUnitBuffByID = ns.FindUnitBuffByID
+
+
 local PTR = ns.PTR
 
 
@@ -187,10 +190,20 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
 
 
     spec:RegisterHook( "reset_precast", function ()
+        if Hekili.ActiveDebug then Hekili:Debug( "vf app:%.2f up:%s rem:%.2f\nsf up:%s rem:%.2f", buff.voidform.applied, tostring(buff.voidform.up), buff.voidform.remains, tostring(buff.shadowform.up), buff.shadowform.remains ) end
         if buff.voidform.up then applyBuff( "shadowform" ) end
 
-        if pet.mindbender.active then applyBuff( "mindbender", pet.mindbender.remains ) end
-        if pet.shadowfiend.active then applyBuff( "shadowfiend", pet.shadowfiend.remains ) end
+        if pet.mindbender.active then
+            applyBuff( "mindbender", pet.mindbender.remains )
+            buff.mindbender.applied = action.mindbender.lastCast
+            buff.mindbender.duration = 15
+            buff.mindbender.expires = action.mindbender.lastCast + 15
+        elseif pet.shadowfiend.active then
+            applyBuff( "shadowfiend", pet.shadowfiend.remains )
+            buff.shadowfiend.applied = action.shadowfiend.lastCast
+            buff.shadowfiend.duration = 15
+            buff.shadowfiend.expires = action.shadowfiend.lastCast + 15
+        end
 
         if action.void_bolt.in_flight then
             runHandler( "void_bolt" )
@@ -369,9 +382,43 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
             id = 194249,
             duration = 3600,
             max_stack = 99,
+            generate = function( t )
+                local name, _, count, _, duration, expires, caster, _, _, spellID, _, _, _, _, timeMod, v1, v2, v3 = FindUnitBuffByID( "player", 194249 )
+
+                if name then
+                    t.name = name
+                    t.count = max( 1, count )
+                    t.applied = max( action.void_eruption.lastCast, action.dark_ascension.lastCast, now )
+                    t.expires = t.applied + 3600
+                    t.duration = 3600
+                    t.caster = "player"
+                    t.timeMod = 1
+                    t.v1 = v1
+                    t.v2 = v2
+                    t.v3 = v3
+                    t.unit = "player"
+                    return
+                end
+
+                t.name = nil
+                t.count = 0
+                t.expires = 0
+                t.applied = 0
+                t.duration = 3600
+                t.caster = 'nobody'
+                t.timeMod = 1
+                t.v1 = 0
+                t.v2 = 0
+                t.v3 = 0
+                t.unit = unit                
+            end,
             meta = {
+                up = function ()
+                    return buff.voidform.applied > 0 and buff.voidform.drop_time > query_time
+                end,
+
                 drop_time = function ()
-                    if buff.voidform.down then return query_time end
+                    if buff.voidform.applied == 0 then return 0 end
 
                     local app = buff.voidform.applied
                     app = app + floor( query_time - app )
@@ -389,11 +436,11 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
                 end,
 
                 stacks = function ()
-                    return buff.voidform.up and ( buff.voidform.count + floor( offset + delay ) ) or 0
+                    return buff.voidform.applied > 0 and ( buff.voidform.count + floor( offset + delay ) ) or 0
                 end,
 
                 remains = function ()                    
-                    return buff.voidform.drop_time - query_time
+                    return max( 0, buff.voidform.drop_time - query_time )
                 end,
             },
         },
@@ -795,25 +842,45 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
         }, ]]
         
 
+        -- SimulationCraft module: Mindbender and Shadowfiend are interchangeable.
         mindbender = {
-            id = 200174,
+            id = function () return talent.mindbender.enabled and 200174 or 34433 end,
             cast = 0,
-            cooldown = 60,
+            cooldown = function () return talent.mindbender.enabled and 60 or 180 end,
             gcd = "spell",
             
             toggle = "cooldowns",
 
             startsCombat = true,
-            texture = 136214,
+            texture = function () return talent.mindbender.enabled and 136214 or 136199 end,
 
-            talent = "mindbender",
+            -- talent = "mindbender",
             
             handler = function ()
-                summonPet( "mindbender", 15 )
-                applyBuff( "mindbender" )
+                summonPet( talent.mindbender.enabled and "mindbender" or "shadowfiend", 15 )
+                applyBuff( talent.mindbender.enabled and "mindbender" or "shadowfiend" )
             end,
+
+            copy = { "shadowfiend", 200174, 34433 }
         },
-        
+
+        --[[ shadowfiend = {
+            id = 34433,
+            cast = 0,
+            cooldown = 180,
+            gcd = "spell",
+            
+            toggle = "cooldowns",
+            notalent = "mindbender",
+
+            startsCombat = true,
+            texture = 136199,
+            
+            handler = function ()
+                summonPet( "shadowfiend", 15 )
+                applyBuff( "shadowfiend" )
+            end,
+        }, ]]                
 
         power_word_fortitude = {
             id = 21562,
@@ -1055,7 +1122,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
         }, ]]
         
 
-        shadowfiend = {
+        --[[ shadowfiend = {
             id = 34433,
             cast = 0,
             cooldown = 180,
@@ -1071,7 +1138,7 @@ if UnitClassBase( 'player' ) == 'PRIEST' then
                 summonPet( "shadowfiend", 15 )
                 applyBuff( "shadowfiend" )
             end,
-        },
+        }, ]]
         
 
         shadowform = {

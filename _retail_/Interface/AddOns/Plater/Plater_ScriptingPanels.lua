@@ -52,10 +52,11 @@ local options_slider_template = DF:GetTemplate ("slider", "OPTIONS_SLIDER_TEMPLA
 local options_button_template = DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE")
 
 Plater.APIList = {
-	{Name = "SetNameplateColor", 		Signature = "Plater.SetNameplateColor (unitFrame, color)", 				Desc = "Set the color of the nameplate.\n\nColor formats are:\n|cFFFFFF00Just Values|r: r, g, b\n|cFFFFFF00Index Table|r: {r, g, b}\n|cFFFFFF00Hash Table|r: {r = 1, g = 1, b = 1}\n|cFFFFFF00Hex|r: '#FFFF0000' or '#FF0000'\n|cFFFFFF00Name|r: 'yellow' 'white'\n\nCalling without passing width and height reset the size to default."},
+	{Name = "SetNameplateColor", 		Signature = "Plater.SetNameplateColor (unitFrame, color)", 				Desc = "Set the color of the nameplate.\n\nColor formats are:\n|cFFFFFF00Just Values|r: r, g, b\n|cFFFFFF00Index Table|r: {r, g, b}\n|cFFFFFF00Hash Table|r: {r = 1, g = 1, b = 1}\n|cFFFFFF00Hex|r: '#FFFF0000' or '#FF0000'\n|cFFFFFF00Name|r: 'yellow' 'white'\n\nCalling without passing width and height reset the color to default."},
 	{Name = "SetNameplateSize", 		Signature = "Plater.SetNameplateSize (unitFrame, width, height)",		Desc = "Adjust the nameplate size.\n\nCalling without passing width and height reset the size to default."},
 	{Name = "SetBorderColor", 			Signature = "Plater.SetBorderColor (self, r, g, b, a)",					Desc = "Set the border color.\n\nCalling without passing any color reset the color to default."},
 	
+	{Name = "SetCastBarColor", 			Signature = "Plater.SetCastBarColor (unitFrame, r, g, b)", 				Desc = "Set the cast bar color.\n\nColor formats are:\n|cFFFFFF00Just Values|r: r, g, b\n|cFFFFFF00Index Table|r: {r, g, b}\n|cFFFFFF00Hash Table|r: {r = 1, g = 1, b = 1}\n|cFFFFFF00Hex|r: '#FFFF0000' or '#FF0000'\n|cFFFFFF00Name|r: 'yellow' 'white'\n\nCalling without passing width and height reset the color to default."},
 	{Name = "SetCastBarSize", 			Signature = "Plater.SetCastBarSize (unitFrame, width, height)", 			Desc = "Adjust the cast bar size.\n\nCalling without passing width and height reset the size to default."},
 	{Name = "SetCastBarBorderColor", 		Signature = "Plater.SetCastBarBorderColor (castBar, color)", 			Desc = "Set the color of the castbar.\n\nColor formats are:\n|cFFFFFF00Just Values|r: r, g, b, a\n|cFFFFFF00Index Table|r: {r, g, b}\n|cFFFFFF00Hash Table|r: {r = 1, g = 1, b = 1}\n|cFFFFFF00Hex|r: '#FFFF0000' or '#FF0000'\n|cFFFFFF00Name|r: 'yellow' 'white'\n\nCalling without passing any color reset the color to default."},
 	
@@ -67,9 +68,19 @@ Plater.APIList = {
 	
 	{Name = "GetNpcIDFromGUID", 		Signature = "Plater.GetNpcIDFromGUID (GUID)", 					Desc = "Extract the npcID from a GUID, guarantee to always return a number."},
 	{Name = "GetRaidMark", 			Signature = "Plater.GetRaidMark (unitFrame)", 						Desc = "Return which raid mark the nameplate has. Always return false if the nameplate is the personal health bar."},
+	{Name = "GetConfig", 				Signature = "Plater.GetConfig (unitFrame)", 						Desc = "Return a table with the settings chosen for the nameplate in the options panel. Use it to restore values is needed."},
+	{Name = "GetPlayerRole", 			Signature = "Plater:GetPlayerRole()", 							Desc = "Return TANK DAMAGER HEALER or NONE."},
+	{Name = "GetUnitGuildName", 		Signature = "Plater.GetUnitGuildName (unitFrame)", 					Desc = "Return the name unit's guild name if any, always return nil for npcs."},
+	{Name = "SetExecuteRange", 		Signature = "Plater.SetExecuteRange (isExecuteEnabled, healthAmount)", 	Desc = "Set if Plater should check for execute range and in what percent of health the execute range starts\n\nhealthAmount is in a range of zero to one, example: 25% is 0.25"},
 	
+	
+	{Name = "IsUnitInFriendsList", 		Signature = "Plater.IsUnitInFriendsList (unitFrame)", 					Desc = "Return 'true' if the unit is in the player's friends list."},
+	{Name = "IsUnitTank", 				Signature = "Plater.IsUnitTank (unitFrame)", 						Desc = "Return 'true' if the unit is in tank role."},
+	{Name = "IsUnitTapped", 			Signature = "Plater.IsUnitTapped (unitFrame)", 						Desc = "Return 'true' if the unit is tapped and the player does not receives credits to kill it. Usually units tapped are shown with a gray color."},
 	{Name = "IsInCombat", 			Signature = "Plater.IsInCombat()", 								Desc = "Return 'true' if the player is in combat."},
+	{Name = "IsInOpenWorld", 			Signature = "Plater.IsInOpenWorld()", 							Desc = "Return 'true' if the player is in open world (not inside raids, dungeons, etc)."},
 	{Name = "IsPlayerTank", 			Signature = "Plater.IsPlayerTank()", 							Desc = "Return 'true' if the player is in the tank role."},
+	{Name = "GetTanks", 				Signature = "Plater.GetTanks()", 								Desc = "Return a table with all tanks in the group, use Plater.GetTanks()[unitName] to know if the unit is a tank."},
 	
 	{Name = "DisableHighlight", 			Signature = "Plater.DisableHighlight (unitFrame)", 					Desc = "The nameplate won't highlight when the mouse passes over it."},
 	{Name = "EnableHighlight", 			Signature = "Plater.EnableHighlight (unitFrame)", 					Desc = "Enable the mouse over highlight."},
@@ -143,6 +154,7 @@ Plater.NameplateComponents = {
 		"namePlateThreatPercent",
 		"PlayerCannotAttack",
 		"InExecuteRange",
+		"InCombat",
 	},
 	
 	["unitFrame - Frames"] = {
@@ -799,13 +811,13 @@ Plater.TriggerDefaultMembers = {
 				local cursorPosition = code_editor.editbox:GetCursorPosition()
 				
 				--insert the text
-				local textToInsert = "envTable." .. text .. " = envTable." .. text .. " or " .. frameworkSelected.Signature
+				local textToInsert = "unitFrame." .. text .. " = unitFrame." .. text .. " or " .. frameworkSelected.Signature
 				code_editor.editbox:Insert (textToInsert)
 				
 				if (frameworkSelected.AddCall) then
 					code_editor.editbox:Insert ("\n")
 					local addCallString = frameworkSelected.AddCall
-					addCallString = addCallString:gsub ("@ENV@", "envTable." .. text)
+					addCallString = addCallString:gsub ("@ENV@", "unitFrame." .. text)
 					code_editor.editbox:Insert (addCallString)
 					code_editor.editbox:Insert ("\n")
 				end
@@ -897,14 +909,62 @@ Plater.TriggerDefaultMembers = {
 		--save button
 		local save_script_button = DF:CreateButton (code_editor, mainFrame.SaveScript, buttons_size[1], buttons_size[2], "Save", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 		save_script_button:SetIcon ([[Interface\BUTTONS\UI-Panel-ExpandButton-Up]], 20, 20, "overlay", {0.1, .9, 0.1, .9})
+		save_script_button.tooltip = "While editing, you may use:\n\n|cFFFFFF00SHIFT + Enter|r: save the script, apply the changes and don't lose the focus on the editor.\n\n|cFFFFFF00CTRL + Enter|r: save the script and apply the changes."
 		
 		--cancel button
 		local cancel_script_button = DF:CreateButton (code_editor, mainFrame.CancelEditing, buttons_size[1], buttons_size[2], "Cancel", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 		cancel_script_button:SetIcon ([[Interface\BUTTONS\UI-Panel-MinimizeButton-Up]], 20, 20, "overlay", {0.1, .9, 0.1, .9})
 		
+		--documentation icon
+		local docs_button = DF:CreateButton (code_editor, mainFrame.OpenDocs, buttons_size[1], buttons_size[2], "Documentation", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+		docs_button:SetIcon ([[Interface\BUTTONS\UI-GuildButton-PublicNote-Up]], 16, 16, "overlay", {0, 1, 0, 1})		
+
+		local save_feedback_texture = save_script_button:CreateTexture (nil, "overlay")
+		save_feedback_texture:SetColorTexture (1, 1, 1)
+		save_feedback_texture:SetAllPoints()
+		save_feedback_texture:SetDrawLayer ("overlay", 7)
+		save_feedback_texture:SetAlpha (0)
+		
+		local save_button_flash_animation = DF:CreateAnimationHub (save_feedback_texture)
+		DF:CreateAnimation (save_button_flash_animation, "alpha", 1, 0.08, 0, 0.2)
+		DF:CreateAnimation (save_button_flash_animation, "alpha", 2, 0.08, 0.4, 0)
+		
+		local save_button_feedback_animation = DF:CreateAnimationHub (save_script_button, function() save_button_flash_animation:Play() end)
+		local speed = 0.06
+		local rotation = 0
+		local translation = 7
+		
+		--DF:CreateAnimation (save_button_feedback_animation, "scale", 1, speed, 1, 1, 1.01, 1.01)
+		DF:CreateAnimation (save_button_feedback_animation, "translation", 1, speed, 0, -translation)
+		DF:CreateAnimation (save_button_feedback_animation, "rotation", 1, speed, -rotation)
+		
+		--DF:CreateAnimation (save_button_feedback_animation, "scale", 1, speed, 1.01, 1.01, 1, 1)
+		DF:CreateAnimation (save_button_feedback_animation, "translation", 2, speed, 0, translation)
+		DF:CreateAnimation (save_button_feedback_animation, "rotation", 2, speed, rotation)
+		
+		DF:CreateAnimation (save_button_feedback_animation, "rotation", 3, speed, rotation)
+		DF:CreateAnimation (save_button_feedback_animation, "rotation", 4, speed, -rotation)
+
+		code_editor.editbox:HookScript ("OnEnterPressed", function()
+			--if shift is pressed when the user pressed enter, save/apply the script and don't lose the focus of the editor
+			if (IsShiftKeyDown()) then
+				mainFrame.SaveScript()
+				code_editor.editbox:SetFocus (true)
+				save_button_feedback_animation:Play()
+			
+			--if ctrl is pressed when the user pressed enter, save the script like if the user has pressed the Save button
+			elseif (IsControlKeyDown()) then
+				mainFrame.SaveScript()
+				save_button_feedback_animation:Play()
+			else
+				code_editor.editbox:Insert ("\n")
+			end
+		end)
+		
 		mainFrame.ApplyScriptButton = apply_script_button
 		mainFrame.SaveScriptButton = save_script_button
 		mainFrame.CancelScriptButton = cancel_script_button
+		mainFrame.DocsButton = docs_button
 		
 	end
 	
@@ -1318,6 +1378,33 @@ function Plater.CreateHookingPanel()
 		
 		--refresh the scrollbox showing all scripts created
 		hookFrame.ScriptSelectionScrollBox:Refresh()
+	end
+	
+	function hookFrame:OpenDocs()
+		if (PlaterDocsPanel) then
+			PlaterDocsPanel:Show()
+			return
+		end
+		
+		local f = DF:CreateSimplePanel (UIParent, 460, 90, "Plater Script Documentation", "PlaterDocsPanel")
+		f:SetFrameStrata ("TOOLTIP")
+		f:SetPoint ("center", UIParent, "center")
+		
+		DF:CreateBorder (f)
+		
+		local LinkBox = DF:CreateTextEntry (f, function()end, 380, 20, "ExportLinkBox", _, _, DF:GetTemplate ("dropdown", "OPTIONS_DROPDOWN_TEMPLATE"))
+		LinkBox:SetPoint ("center", f, "center", 0, -10)
+		
+		f:SetScript ("OnShow", function()
+			LinkBox:SetText ("https://wow.curseforge.com/projects/plater-nameplates/pages/scripts")
+			C_Timer.After (1, function()
+				LinkBox:SetFocus (true)
+				LinkBox:HighlightText()
+			end)
+		end)
+		
+		f:Hide()
+		f:Show()
 	end
 	
 	function hookFrame.AddHookToScript (hookName)
@@ -1763,6 +1850,9 @@ function Plater.CreateHookingPanel()
 		
 		--load the code
 		hookFrame.CodeEditorLuaEntry:SetText (scriptObject.HooksTemp [valueSelected])
+		
+		--refresh the list of hooks for this script
+		hookScrollbox:Refresh()
 	end
 	
 	local buildHookDropdownList = function()
@@ -1810,6 +1900,7 @@ function Plater.CreateHookingPanel()
 	
 	hookFrame.SaveScriptButton:SetPoint ("topright", hookFrame.CodeEditorLuaEntry, "bottomright", 0, -10)
 	hookFrame.CancelScriptButton:SetPoint ("right", hookFrame.SaveScriptButton, "left", -20, 0)
+	hookFrame.DocsButton:SetPoint ("right", hookFrame.CancelScriptButton, "left", -20, 0)
 	
 	hookTypeLabel:SetPoint ("topleft", hookFrame.CodeEditorLuaEntry, "bottomleft", 0, -15)
 	
@@ -2279,6 +2370,33 @@ function Plater.CreateScriptingPanel()
 		
 		scriptingFrame.ImportTextEditor.IsImporting = nil
 		scriptingFrame.ImportTextEditor:Hide()
+	end
+	
+	function scriptingFrame:OpenDocs()
+		if (PlaterDocsPanel) then
+			PlaterDocsPanel:Show()
+			return
+		end
+		
+		local f = DF:CreateSimplePanel (UIParent, 460, 90, "Plater Script Documentation", "PlaterDocsPanel")
+		f:SetFrameStrata ("TOOLTIP")
+		f:SetPoint ("center", UIParent, "center")
+		
+		DF:CreateBorder (f)
+		
+		local LinkBox = DF:CreateTextEntry (f, function()end, 380, 20, "ExportLinkBox", _, _, DF:GetTemplate ("dropdown", "OPTIONS_DROPDOWN_TEMPLATE"))
+		LinkBox:SetPoint ("center", f, "center", 0, -10)
+		
+		f:SetScript ("OnShow", function()
+			LinkBox:SetText ("https://wow.curseforge.com/projects/plater-nameplates/pages/scripts")
+			C_Timer.After (1, function()
+				LinkBox:SetFocus (true)
+				LinkBox:HighlightText()
+			end)
+		end)
+		
+		f:Hide()
+		f:Show()
 	end
 	
 	--set all values from the current editing script object to all text entried and scroll fields
@@ -3224,6 +3342,8 @@ function Plater.CreateScriptingPanel()
 	--create the header
 	create_script_control_header (scriptingFrame, "script")
 
+	--
+
 	--when the profile has changed
 	function scriptingFrame:RefreshOptions()
 		--update the script data for the scroll and refresh
@@ -3260,6 +3380,7 @@ function Plater.CreateScriptingPanel()
 		--scriptingFrame.ApplyScriptButton:SetPoint ("topright", scriptingFrame.CodeEditorLuaEntry, "bottomright", 0, -10)
 		scriptingFrame.SaveScriptButton:SetPoint ("topright", scriptingFrame.CodeEditorLuaEntry, "bottomright", 0, -10)
 		scriptingFrame.CancelScriptButton:SetPoint ("right", scriptingFrame.SaveScriptButton, "left", -20, 0)
+		scriptingFrame.DocsButton:SetPoint ("right", scriptingFrame.CancelScriptButton, "left", -20, 0)
 		
 		--import control buttons
 		scriptingFrame.ImportTextEditor.OkayButton:SetPoint ("topright", scriptingFrame.CodeEditorLuaEntry, "bottomright", 0, -10)

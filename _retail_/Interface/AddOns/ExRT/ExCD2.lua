@@ -1742,7 +1742,7 @@ local function LineIconOnClickWhisper(self)
 	if not spellLink or spellLink == "" then
 		spellLink = parent.data.spellName
 	end
-	local text = "Use "..spellLink
+	local text = parent.data.spellName
 	local chat_type = ExRT.F.chatType(true)
 	SendChatMessage(text,"WHISPER",nil,parent.data.fullName)
 end

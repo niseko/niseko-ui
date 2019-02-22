@@ -17,12 +17,12 @@ SunnArt3DB = {
 		["Niseniseko - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
 		["Yoshicakes - Stormscale"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
-		["Donnerbock - Ysera"] = "Default",
-		["Niseko - Twisting Nether"] = "Default",
-		["Nisegob - Stormscale"] = "Default",
-		["Nisearw - Stormscale"] = "Default",
 		["Seko - Stormscale"] = "Default",
+		["Donnerbock - Ysera"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
+		["Niseko - Twisting Nether"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -31,18 +31,18 @@ SunnArt3DB = {
 					["resize"] = true,
 					["size"] = 14.2,
 					["blue"] = 0.109803921568627,
-					["theme"] = "solid",
-					["green"] = 0.109803921568627,
 					["red"] = 0.109803921568627,
+					["green"] = 0.109803921568627,
+					["theme"] = "solid",
 				}, -- [1]
 				{
 					["scale"] = 0,
+					["panels"] = 1,
 					["resize"] = true,
 					["size"] = 18.65,
 					["enabled"] = false,
 					["alpha"] = 0,
 					["theme"] = "solid",
-					["panels"] = 1,
 				}, -- [2]
 				{
 					["resize"] = true,

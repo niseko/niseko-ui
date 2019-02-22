@@ -17,16 +17,16 @@ MasqueDB = {
 		["Niseniseko - Stormscale"] = "Default",
 		["Nise - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
-		["Mondeko - Blackmoore"] = "Default",
-		["Zelda - Mal'Ganis"] = "Default",
+		["Seko - Stormscale"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
 		["Nisecakes - Stormscale"] = "Default",
-		["Yoshicakes - Stormscale"] = "Default",
 		["Nisegob - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
-		["Nisearw - Stormscale"] = "Default",
-		["Seko - Stormscale"] = "Default",
+		["Yoshicakes - Stormscale"] = "Default",
+		["Zelda - Mal'Ganis"] = "Default",
+		["Mondeko - Blackmoore"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -649,6 +649,10 @@ MasqueDB = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ghost_wolf_2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09_heart_of_frost_on_you"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2669,7 +2673,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__34"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_blast_cone"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_11_sweeping_\\_deadly_scythe_(tank_only)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_07-annihilation_offtank"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_big_oof"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2681,11 +2701,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_glacial_ray_bait"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tsu5"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_04_reality_tear_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_jm:_searing_embers"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_unexploded_ordnance_helper"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2700,15 +2732,31 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_06_charged_blast_dot"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_soulforged_construct"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_ancestral_guidance"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_anti-magic_shell_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_fixated"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_light_of_t'uure_1_stack"] = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_vectis_your_raidmark"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_blazing_azerite_self"] = {
 					["Inherit"] = false,
@@ -2718,7 +2766,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
 				},
+				["WeakAuras_reap_soul"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ja:_warmth"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_02_molten_touch_dodge"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tft_buff"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09_ice_shard_(tank_only)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_3._jafefire_xuen_-_nameplate_fixate_(h)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2729,7 +2797,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_expel_soul_spawn"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_maddening_gaze2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_clickable_button_creator_and_sender"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_lavaburstrdy_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_8._blockade_-_soak_shit"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2752,11 +2835,20 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_incandescent_luster_max_stacks"] = {
+				["WeakAuras_crystalline_dust,_p3_frontal_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lavaburstrdy_2"] = {
+				["WeakAuras_watery_dome2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events54"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_7._gnome_-_shrunk"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_death_strike_na"] = {
@@ -2766,7 +2858,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_misdirection"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end23"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2774,7 +2866,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_sea_swell_(mythic)"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end21"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2792,11 +2884,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_clickable_button_creator_and_sender"] = {
+				["WeakAuras_07_caress_of_death"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_heart_of_frost"] = {
+				["OmniBar_Wind Shear"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2812,14 +2904,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_ice_shard_(tank_only)"] = {
+				["WeakAuras_terrifying_roar2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_av_timer_stop"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_annihilation"] = {
+				["WeakAuras_08-dark_bargain_don't_soak"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2830,7 +2922,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-dark_bargain"] = {
+				["WeakAuras_sb:_voltaic_flash2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2842,8 +2934,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_8._blockade_-_soak_shit"] = {
-					["Inherit"] = false,
+				["WeakAuras_moonburn"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_consumption"] = {
@@ -2856,7 +2947,7 @@ MasqueDB = {
 				["WeakAuras_spear_of_anguish"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_3._jafefire_xuen_-_nameplate_fixate_(h)"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end5"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2872,11 +2963,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sb:_tempting_song2"] = {
+				["WeakAuras_09_frost_nova_cast_(priest_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end24"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end8"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2892,27 +2983,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_thrash_cat"] = {
+				["WeakAuras_lava_lash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_frost_nova_cast"] = {
+				["WeakAuras_sb:_tempting_song2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_7._gnome_-_shrunk"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end13"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end31"] = {
+				["WeakAuras_beyonce"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_watery_dome2"] = {
+				["WeakAuras_bursting_boil_1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_artillery_8.1_(tank)"] = {
+				["WeakAuras_no_talent_selected!"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2923,27 +3014,27 @@ MasqueDB = {
 				["WeakAuras_lightning_rod"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_3._jadefire_-_break_wjs"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)40"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_frost_nova_cast_(priest_only)"] = {
+				["WeakAuras_chi_burst_mistweaver2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end21"] = {
+				["WeakAuras_09_avalanche"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_caress_of_death"] = {
+				["WeakAuras_ch:_seal_of_reckoning2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_refreshing_jade_wind2"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_marked_target"] = {
+				["WeakAuras_09_warmth"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2951,8 +3042,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_paku's_wrath"] = {
-					["Inherit"] = false,
+				["WeakAuras_chitinous_exoskeleton"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_unleashlife_2"] = {
@@ -2982,7 +3072,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-dark_bargain_don't_soak"] = {
+				["WeakAuras_channeled_pot_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -2994,7 +3084,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end27"] = {
+				["WeakAuras_02-wind_tunnel"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3002,7 +3092,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_icefury_2"] = {
+				["WeakAuras_04_coin_shower"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3010,7 +3100,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_inevitable_end"] = {
+				["WeakAuras_icefury_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3021,11 +3111,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_burst_mistweaver2"] = {
+				["WeakAuras_05_akunda's_wrath"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_avalanche"] = {
+				["WeakAuras_kr:_annihilation_8.1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3033,7 +3123,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_widowmaker_toxin"] = {
+				["WeakAuras_infected"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3049,30 +3139,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_07_necrotic_smash"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_zt_-_nnogga's_party_cd_front_end10"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ap_totem"] = {
+				["WeakAuras_incandescent_luster_stacks"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_1._champion_-_turn_around"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end20"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end30"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_delphuric_beam"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bursting_boil_1"] = {
+				["WeakAuras_05_bwonsamdi's_wrath"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end2"] = {
+				["WeakAuras_life_cocoon2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3090,9 +3180,9 @@ MasqueDB = {
 				["WeakAuras_unbearable_torment"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_warmth"] = {
+				["WeakAuras_holy_word:_sanctify"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "Masque: Shadow 4",
 				},
 				["PitBull4 Aura"] = {
 					["Inherit"] = false,
@@ -3105,15 +3195,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_word:_sanctify"] = {
+				["WeakAuras_symbol_of_hope2"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_iron_gaze"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_creeping_blaze"] = {
+				["WeakAuras_jm:_successful_defense"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3121,20 +3211,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_soulbomb"] = {
+				["WeakAuras_05_kimbul's_wrath"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_radiance"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chitinous_exoskeleton"] = {
+				["WeakAuras_06_shrunk"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_dark_mark"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ch:_seal_of_reckoning2"] = {
+				["WeakAuras_04_wail_of_greed_channel"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3142,18 +3233,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_evocation"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_channeled_pot_cd"] = {
+				["WeakAuras_mt:_tampering"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-wind_tunnel"] = {
+				["WeakAuras_cc:_mind_wipe2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_annihilation_8.1"] = {
+				["WeakAuras_02_bestial_throw_(tank_only)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02_apetagonizer_3000"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3161,7 +3253,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_akunda's_wrath"] = {
+				["WeakAuras_transfusion"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3176,54 +3268,52 @@ MasqueDB = {
 				["WeakAuras_throw_spear"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_symbol_of_hope2"] = {
-					["Inherit"] = false,
+				["WeakAuras_purify-up"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_nature's_guardian_resto"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_tank_gem"] = {
+				["WeakAuras_warding_candles2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_vampiric_blood"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_iskar_mechanic"] = {
+				["WeakAuras_03_force_orb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_wave_mist2"] = {
+				["WeakAuras_03_roll_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_bwonsamdi's_wrath"] = {
+				["WeakAuras_noxious_breath_trash2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_life_cocoon2"] = {
+				["WeakAuras_09_ring_of_frost"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_loa's_pact"] = {
-					["Inherit"] = false,
+				["WeakAuras_flames_of_sargeras"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_prepot_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_volatile_charge"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end26"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_value_2"] = {
+				["WeakAuras_01_haywire_decimation_removed"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_shrunk"] = {
+				["WeakAuras_touch_of_death_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3251,11 +3341,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mt:_tampering"] = {
+				["WeakAuras_07_purging_protocol_dot"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_mind_wipe2"] = {
+				["WeakAuras_no_talent_selected!2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3263,14 +3353,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tidal_surge2"] = {
+				["WeakAuras_slam2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_anti-magic_shell_huge"] = {
+				["WeakAuras_debuff"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_apetagonizer_3000"] = {
+				["WeakAuras_runic_mark2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3278,7 +3369,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_spirits_of_gold"] = {
+				["WeakAuras_01_hardened_arteries"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3286,19 +3377,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_transfusion"] = {
+				["WeakAuras_tsu_211"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_roll_(tank_only)"] = {
-					["Inherit"] = false,
+				["WeakAuras_05-slicing_tornado"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_revival_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_ring_of_frost"] = {
+				["WeakAuras_riot_shield2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3318,15 +3408,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bad_-_jadefire_masters_-_rising_flames"] = {
+				["WeakAuras_power_strikes_up"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_crushed_(tank_only)"] = {
+				["WeakAuras_ja:_avalanche2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_force_orb"] = {
+				["WeakAuras_08_sea_swell"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3356,7 +3446,7 @@ MasqueDB = {
 				["WeakAuras_landslide_on"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu_22"] = {
+				["WeakAuras_09_cosmic_glare_others"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3379,28 +3469,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_haywire_decimation_removed"] = {
+				["WeakAuras_ja:_frozen_solid2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_pa'ku's_wrath"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)64"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_no_talent_selected!2"] = {
+				["WeakAuras_ravaging_leap2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_prepot_2"] = {
+				["WeakAuras_ja:_heart_of_frost2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_chilling_touch2"] = {
+				["WeakAuras_hail_of_flechettes4"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end16"] = {
-					["Inherit"] = false,
+				["WeakAuras_permeliative_torment"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_as_cd"] = {
@@ -3417,7 +3506,7 @@ MasqueDB = {
 				["WeakAuras_magic_binding"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_runic_mark2"] = {
+				["WeakAuras_abyssal_reach2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3431,7 +3520,7 @@ MasqueDB = {
 				["WeakAuras_08-shadowy_blades"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07-oblivion_sphere_timer/rangecheck_m"] = {
+				["WeakAuras_growl"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3439,7 +3528,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_opulence"] = {
+				["WeakAuras_jm:_fire_shield2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3447,7 +3536,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)58"] = {
+				["WeakAuras_detox2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3455,7 +3544,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_itchy_bite2"] = {
+				["WeakAuras_kr:_focused_demise2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3486,26 +3575,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_avalanche2"] = {
+				["WeakAuras_gr:_tantrum_debuffs_[a/h]2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_provoke"] = {
+				["WeakAuras_sheilun_stacks"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mt:_world_enlarger_cast2"] = {
+				["WeakAuras_bone_shield_missing"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_furious_quake2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_swg_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)64"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon25"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ch:_seal_of_retribution2"] = {
+				["WeakAuras_cc:_fixated2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3524,7 +3613,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tank_debuffs_"] = {
+				["WeakAuras_flame_shock_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3536,7 +3625,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hail_of_flechettes4"] = {
+				["WeakAuras_cc:_kimbul's_wrath_target"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3548,7 +3637,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_growl"] = {
+				["WeakAuras_plague"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3556,10 +3645,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gift_of_the_queen"] = {
+				["WeakAuras_elem_active"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_detox2"] = {
+				["WeakAuras_heart_of_frost_targeted_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3586,7 +3676,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_tantrum_debuffs_[a/h]2"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end18"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3601,7 +3691,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rockbiter"] = {
+				["WeakAuras_scan_events32"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_09_freezing_blood"] = {
@@ -3615,11 +3706,11 @@ MasqueDB = {
 				["WeakAuras_unleash_life_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_fire_shield2"] = {
+				["WeakAuras_light_of_t'uure_cd"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "Masque: Shadow 4",
 				},
-				["WeakAuras_abyssal_reach2"] = {
+				["WeakAuras_deezo_rsham_main4"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3627,18 +3718,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_focused_demise2"] = {
-					["Inherit"] = false,
+				["WeakAuras_desolate"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02_shaken_/_death_touched"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shield"] = {
+				["WeakAuras_electroshock2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon25"] = {
+				["WeakAuras_rake"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3662,15 +3753,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)2"] = {
+				["WeakAuras_04_surging_darkness"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elem_active"] = {
+				["WeakAuras_tsu_212"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_kimbul's_wrath_target"] = {
+				["WeakAuras_op:_praise_the_sun2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3681,7 +3772,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chastie2"] = {
+				["WeakAuras_mark_of_the_crane"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3693,7 +3784,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_chilling_touch"] = {
+				["WeakAuras_chi_burst"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3701,18 +3792,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mark_of_the_crane"] = {
+				["WeakAuras_09_chilling_touch"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_power_word:_solace"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__43"] = {
+				["WeakAuras_tremor"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07-imminent_ruin_aoe"] = {
+				["WeakAuras_6.__king_-_soaking!"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3727,11 +3818,11 @@ MasqueDB = {
 				["WeakAuras_echoes_of_the_great_sundering"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rummy_mancomb's_casts_(captain_eudora_week)"] = {
+				["WeakAuras_eonar"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events32"] = {
+				["WeakAuras_op:_thief's_bane2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3739,7 +3830,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_desolate"] = {
+				["WeakAuras_sa_-_detonate:_sb"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_zen_pulse"] = {
@@ -3750,15 +3841,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_crit_brew"] = {
+				["WeakAuras_withering_curse2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rake"] = {
+				["WeakAuras_op:_hex_of_lethargy"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events104"] = {
+				["WeakAuras_low_cost_potion_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3766,15 +3857,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_scan_events104"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)19"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_praise_the_sun2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04_surging_darkness"] = {
+				["WeakAuras_scabrous_bite2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3782,7 +3873,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end28"] = {
+				["WeakAuras_rip_(inverse)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3798,11 +3889,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_discharge_shadow/apetagonizer_core"] = {
+				["WeakAuras_01-hardened_arteries2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_efflorescence_counter"] = {
+				["WeakAuras_03_stalking_you"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3810,15 +3901,16 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_whirling_jade_storm2"] = {
+				["WeakAuras_reinforcing_ward2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_focused_demise"] = {
+				["WeakAuras_itchy_bite"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-twilight_glaive"] = {
+				["WeakAuras_undertow2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_earthgrab_totem_cd"] = {
@@ -3829,7 +3921,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_low_cost_potion_cd"] = {
+				["WeakAuras_jagged_nettles"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3837,7 +3929,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jagged_nettles"] = {
+				["WeakAuras_decaying_spores2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3845,14 +3937,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_thief's_bane2"] = {
+				["WeakAuras_soulrend2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_quake_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ul"] = {
+				["WeakAuras_ancestral_guidance_buff_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3863,7 +3955,7 @@ MasqueDB = {
 				["WeakAuras_05-jaws_from_the_deep"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_grossly_incandescent!"] = {
+				["WeakAuras_ul"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3871,7 +3963,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_sheep_shrapnel"] = {
+				["WeakAuras_jm:_force_orb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3879,22 +3971,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancestral_guidance_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_03_stalking_you"] = {
+				["WeakAuras_shockwave_tank"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_circle_of_healing2"] = {
+				["WeakAuras_cc:_wild_maul_(tank)2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rip_(inverse)"] = {
+				["WeakAuras_ja:_glacial_ray_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu21"] = {
+				["WeakAuras_psychic_scream_healer2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ancient_mindbender2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3902,14 +3995,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_trash_-_acid_splatter"] = {
+				["WeakAuras_08-power_matrix2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ps"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_bursting_boil_cast"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)60"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3917,7 +4011,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-hardened_arteries2"] = {
+				["WeakAuras_shattering_bellow3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3925,7 +4019,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon29"] = {
+				["WeakAuras_03-malodorous_miasma"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3941,7 +4035,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reinforcing_ward2"] = {
+				["WeakAuras_earth_link_totem_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3952,7 +4046,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_t23_co-tank_auras_(custom_options!)"] = {
+				["WeakAuras_empowerment"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3960,11 +4054,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_empowerment"] = {
+				["WeakAuras_t23_co-tank_auras_(custom_options!)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancestral_guidance_buff_2"] = {
+				["WeakAuras_rake_overlay"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -3980,29 +4074,25 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rake_overlay"] = {
+				["WeakAuras_tsu_210"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events10"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon45"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_allured"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-power_matrix2"] = {
+				["WeakAuras_06-shadow_barrage_cast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shockwave_tank"] = {
-					["Inherit"] = false,
+				["WeakAuras_scattering_field"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_plasma_explosion"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_flametongue_missing"] = {
+				["WeakAuras_azerite_heartseeker_22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4010,14 +4100,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon58"] = {
+				["WeakAuras_flametongue_missing"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_velen_active"] = {
+				["WeakAuras_scan_events33"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flame_shock_off"] = {
+				["WeakAuras_breath_of_fire_on_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_absorb_vitality"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_icefury_active_underlay__2"] = {
@@ -4035,21 +4130,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_absorb_vitality"] = {
+				["WeakAuras_hst_off_cd"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_blackout_kick_m2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_focused_dreadflame"] = {
+				["WeakAuras_bad_-_grong_-_discharge_apetagonizer/necrotic_core"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_4._opulance_-_lighting_orb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_iskar_mechanic2"] = {
+				["WeakAuras_mass_dispell_heal2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4068,14 +4165,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_soulrend2"] = {
+				["WeakAuras_jm:_tested"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_gift_of_the_queen_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancient_mindbender2"] = {
+				["WeakAuras_thunderstorm_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4109,7 +4206,8 @@ MasqueDB = {
 				["WeakAuras_infernal_burning"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blood_plague"] = {
+				["WeakAuras_03_entropic_mine_timer"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_arcane_slash"] = {
@@ -4122,19 +4220,19 @@ MasqueDB = {
 				["WeakAuras_lmt"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shattering_bellow3"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_ironskin_brew_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)60"] = {
+				["WeakAuras_brutal_blackhand3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_zappy_core"] = {
+				["WeakAuras_08-blood_host2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_big_red_rocket"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4150,15 +4248,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fel_stomp_3"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon45"] = {
+				["WeakAuras_ja:_chilling_touch"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_azerite_heartseeker_22"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon76"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_time_dilation"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_01_locked_on_(tank_only)"] = {
@@ -4173,55 +4271,41 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-malodorous_miasma"] = {
+				["WeakAuras_deadeye_shot2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earth_link_totem_cd"] = {
+				["WeakAuras_5"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_coin_shower2"] = {
+				["WeakAuras_07-oblivion_sphere"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)54"] = {
-					["Inherit"] = false,
+				["WeakAuras_healing_stream_totem_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_11-gift_of_the_sea"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ascendance_buff"] = {
+				["WeakAuras_02-sundering_scalpel_offtank2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-unleashed_shadow2"] = {
+				["WeakAuras_death_bolt2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_chilling_touch"] = {
+				["WeakAuras_unending_darkness2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mass_dispell_heal2"] = {
-					["Inherit"] = false,
+				["WeakAuras_bloodletting_sweep"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_holy_ward"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bloodlust_"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ja:_ring_of_ice"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02_desolate_gaze_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4229,7 +4313,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_av"] = {
+				["WeakAuras_aura_of_apathy"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4237,11 +4321,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lightning_surge_totem_cd"] = {
+				["WeakAuras_bloodlust_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flametongue_"] = {
+				["WeakAuras_av"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ja:_ring_of_ice"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_orby_boi"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02_desolate_gaze_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4253,7 +4349,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_soulburn2"] = {
+				["WeakAuras_tm_4"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4272,22 +4368,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tm_4"] = {
+				["WeakAuras_flametongue_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deadeye_shot2"] = {
+				["WeakAuras_cc:_pa'ku's_winds_duration2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_annihilate"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tremor_cd"] = {
-					["Inherit"] = false,
+				["WeakAuras_bestow_faith"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_pa'ku's_winds_duration2"] = {
+				["WeakAuras_tremor_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4325,7 +4420,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_coin_shower"] = {
+				["WeakAuras_lava_burst"] = {
+					["Disabled"] = true,
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4333,7 +4429,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon26"] = {
+				["WeakAuras_deadeye_target_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4349,7 +4445,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_symbol_of_hope"] = {
+				["WeakAuras_3._jadefire_-_fire_shield"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4357,7 +4453,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lightning_surge_totem_up_2"] = {
+				["WeakAuras_leg_sweep_m"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4365,7 +4461,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_pack_hunter"] = {
+				["WeakAuras_06_gnomish_force_shield"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4373,18 +4469,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-discoporate"] = {
+				["WeakAuras_op:_coin_shower"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02_high_energy_[horde]"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_3._jadefire_-_fire_shield"] = {
+				["WeakAuras_lightning_surge_totem_up_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-blood_host2"] = {
+				["WeakAuras_tsu13"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4392,14 +4489,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_innervate_b_monk"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_gravity_squeeze"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_mt_(m):_enormous"] = {
+				["WeakAuras_05_pack_hunter"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4407,33 +4497,41 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja_(m):_freezing_blood"] = {
+				["WeakAuras_mt_(m):_enormous"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_innervate_b_monk"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_gr:_deathly_slam_[a]"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_power_word:_barrier_3"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unending_darkness2"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__33"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bloodletting_sweep"] = {
+				["WeakAuras_03-shockwave_stomp2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07-oblivion_sphere"] = {
+				["WeakAuras_unending_darkness"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_repentance_holy"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_death_bolt2"] = {
+				["WeakAuras_rain"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_aura_of_apathy"] = {
-					["Inherit"] = false,
+				["WeakAuras_armageddon_rain"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_spiritwalkers_grace_buff_2"] = {
@@ -4444,11 +4542,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_putrid_blood2"] = {
+				["WeakAuras_11_volatile_soul_spawn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu13"] = {
+				["WeakAuras_gr:_bestial_throw_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4460,7 +4558,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon65"] = {
+				["WeakAuras_03-rotting_regurgitation2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4471,19 +4569,18 @@ MasqueDB = {
 				["WeakAuras_magma_wave"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_avenger"] = {
+				["WeakAuras_bulwark_of_juju"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_lacerating_claws_(tank)2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_deadly_hex"] = {
-					["Inherit"] = false,
+				["WeakAuras_02-bone_saw"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-rotting_regurgitation2"] = {
-					["Inherit"] = false,
+				["WeakAuras_holy_avenger"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_lunarbeacon"] = {
@@ -4497,30 +4594,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-shockwave_stomp2"] = {
+				["WeakAuras_sb:_new_add_incoming"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_deathly_slam_[a]"] = {
+				["WeakAuras_04_deadly_hex"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earth_link_totem"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__32"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon77"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)14"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_feed_on_the_weak"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__4"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_healing_rain_4set"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__33"] = {
-					["Inherit"] = false,
+				["WeakAuras_09-felclaws"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_guardian_spirit"] = {
@@ -4530,7 +4627,7 @@ MasqueDB = {
 				["WeakAuras_sandstorm"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["Plater Nameplates_Aura Frame 2"] = {
+				["WeakAuras_cc:_bleeding_wounds"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4538,14 +4635,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__40"] = {
+				["WeakAuras_fists_of_fury"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bursting_dreadflame"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_devouring_remnant"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__30"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_soul_burst"] = {
@@ -4555,14 +4653,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unending_darkness"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__8"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_blooddrinker"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_volatile_soul_spawn"] = {
+				["WeakAuras_touch_of_the_drowned2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4587,11 +4685,11 @@ MasqueDB = {
 				["WeakAuras_ablative_pulse"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon61"] = {
+				["WeakAuras_08_voltaic_flash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hindering_cleave"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon71"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4599,15 +4697,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fire_elemental_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08_voltaic_flash"] = {
+				["WeakAuras_voidform"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__37"] = {
+				["WeakAuras_03_post_multi-sided_strike_buff"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_holy_bulwark"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_01_judgment:_righteousness"] = {
@@ -4629,7 +4727,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_post_multi-sided_strike_buff"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__17"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4637,11 +4735,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__17"] = {
+				["WeakAuras_scan_events61"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_5._cnclave_-_fixated"] = {
+				["WeakAuras_scan_events81"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4657,7 +4755,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__27"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__37"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4669,11 +4767,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_health_pot_cd"] = {
+				["WeakAuras_evangilism2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events81"] = {
+				["WeakAuras_5._cnclave_-_fixated"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4685,11 +4783,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_evangilism2"] = {
+				["WeakAuras_jagged_nettles2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)14"] = {
+				["WeakAuras_kr:_fd_early_warning"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4708,7 +4806,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__34"] = {
+				["WeakAuras_10_wake_of_flame_dot"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4725,14 +4823,15 @@ MasqueDB = {
 				["WeakAuras_astral_shift_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_slt"] = {
+				["WeakAuras_widowmaker_toxin2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_fists_of_fury_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wdp_not_active"] = {
+				["WeakAuras_scan_events17"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4740,7 +4839,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events53"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon51"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4748,15 +4847,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__8"] = {
+				["WeakAuras_sb:_sea_swell_incoming"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_empowerment2"] = {
+				["WeakAuras_when_is_my_next_high_tide_22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_touch_of_the_drowned2"] = {
+				["WeakAuras_08-power_matrix_status_22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4772,15 +4871,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)50"] = {
+				["WeakAuras_04-orb_of_corruption2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_widowmaker_toxin2"] = {
+				["WeakAuras_creeping_rot2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_9._jaina_-_laser"] = {
+				["WeakAuras_healing_stream_totem2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4792,11 +4891,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_siegebreaker_blast"] = {
+				["WeakAuras_03_magma_trap"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_stream_totem2"] = {
+				["WeakAuras_dive_bomb2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4808,11 +4907,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events17"] = {
+				["WeakAuras_11_cosmic_ray_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_essence_of_g'hanir"] = {
+				["WeakAuras_05_feedback_-_arcane_singularity"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4829,12 +4928,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_feedback_-_arcane_singularity"] = {
+				["WeakAuras_essence_of_g'hanir"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ch:_add_is_big"] = {
-					["Inherit"] = false,
+				["WeakAuras_elemental_burst_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_electrified_scales"] = {
@@ -4858,19 +4956,20 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ch:_seal_of_reckoning"] = {
+				["WeakAuras_ch:_add_is_big"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_htt_3"] = {
+				["WeakAuras_08-power_matrix_status2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_10_wake_of_flame_dot"] = {
+				["WeakAuras_rescapacitortotemcd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-embrace_of_the_eclipse_boss"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end9"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_11_unleashed_rage"] = {
@@ -4889,22 +4988,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_frost_nova"] = {
+				["WeakAuras_bad_-_grong_-_discharge_apetagonizer_core"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_sterilize"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bad_-_grong_-_discharge_apetagonizer_core"] = {
+				["WeakAuras_09_frost_nova"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end9"] = {
+				["WeakAuras_slicing_blast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_torment_of_fel"] = {
+				["WeakAuras_anchors_wa_to_spawn_of_g'huun_nameplate_if_it_targets_you3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4912,7 +5011,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_vile_expulsion2"] = {
+				["WeakAuras_04_red_portal_(xoroth)_announcer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4920,14 +5019,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_undulation_1"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_creeping_rot2"] = {
+				["WeakAuras_numb_hands2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-gaze_of_g'huun_soon2"] = {
+				["WeakAuras_chaos_seed_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ascendance_cd_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4935,15 +5034,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ascendance_cd_2"] = {
+				["WeakAuras_unstable_runic_mark"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_blast_off"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon27"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end22"] = {
+				["WeakAuras_rotting_regurgitation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4955,7 +5054,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-burning_armor_debuff"] = {
+				["WeakAuras_06-pool_of_darkness_spawn2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_chi_burst_2"] = {
@@ -4966,32 +5066,33 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elemental_burst_cd"] = {
+				["WeakAuras_poison_spear"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["OmniBar_Counterspell"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__13"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-power_matrix_status2"] = {
+				["WeakAuras_obliteration_beam_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events74"] = {
+				["WeakAuras_desperate_prayer2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riptide>=1"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_overflowing"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_rescapacitortotemcd"] = {
+				["WeakAuras_healing_tide_totem_buff"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["Bartender4_MicroMenu"] = {
+				["WeakAuras_resspiritlink(t100hightidetaken)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_aqueous_burst"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tsu2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -4999,11 +5100,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hindering_cleave_tank2"] = {
+				["WeakAuras_lifecyclevivify"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lifecyclevivify"] = {
+				["WeakAuras_hindering_cleave_tank2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5011,18 +5112,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon46"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon8"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chaos_seed_3"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon27"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon41"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end12"] = {
+				["WeakAuras_holy_word:serenity2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon11"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5030,110 +5132,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon35"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02_sanitizing_strike_(tank)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_06-pool_of_darkness_spawn2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["OmniBar_Solar Beam"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_poisoning_strike2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02-clinging_corruption"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_boss_focused"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tsu2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_07-imminent_ruin2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04_cloying_shadows"] = {
+				["WeakAuras_tsu_27"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cleansing_protocol"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_hastening_winds_(tank_only)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_reorigination_blast"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ja:_avalanche"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_static_pulse2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_darkness_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_09_burning_explosion"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events5"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_11_avatar_of_aggramar_(tank_only)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_lightning_shield2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_nightwell_energy"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_chiburst"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tsu_27"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_mt:_sheepnel_:^)2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_06_sleeping"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_11_initialization_sequence"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_mark_of_frost_soon_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_charge_22"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__6"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5145,11 +5151,106 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_deezo_rsham_bottom2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_boss_focused"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_fade_healer"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07-imminent_ruin2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04_cloying_shadows"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08-bursting_boil2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_05_hastening_winds_(tank_only)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_static_pulse2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ja:_avalanche"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07_plague_of_fire"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09_burning_explosion"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_darkness_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events95"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_scan_events125"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_brew_spawn2"] = {
+				["WeakAuras_02-fel_squall"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_nightwell_energy"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_chiburst"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events97"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_mt:_sheepnel_:^)2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06_sleeping"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events96"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_mark_of_frost_soon_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events84"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)28"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_clogged_arteries"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)39"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_01-enlarged_heart_offtank"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5181,14 +5282,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-bursting_boil2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon55"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_04-lunar_fire"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_astral_shift_cd_"] = {
+				["WeakAuras_10_searing_tempest"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5200,22 +5301,33 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events84"] = {
+				["WeakAuras_hand_of_reckoning"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events96"] = {
+				["WeakAuras_poison_barrage_cone"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_riptidestacks_3"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-shockwave_stomp"] = {
+				["WeakAuras_07_energy_update"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events95"] = {
+				["WeakAuras_explosive_corruption"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_chronometric_particles"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tidal_surge"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_lightning_rod_on_target_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5223,14 +5335,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tidal_surge"] = {
+				["WeakAuras_01_seal_of_retribution"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02_bestial_throw_target"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bonds_of_fel"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)5"] = {
+				["WeakAuras_contagion"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5238,26 +5354,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_chronometric_particles"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_contagion"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_01_seal_of_retribution"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_cloudburst_totem_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_high_tide"] = {
+				["WeakAuras_scan_events_-_config_in_actions_-_on_init2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5268,11 +5369,11 @@ MasqueDB = {
 				["WeakAuras_mana_fang"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_demonic_charge"] = {
+				["WeakAuras_serpentine_gust2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_shrapnel_blast"] = {
+				["WeakAuras_jm:_whirling_jade_storm"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5300,7 +5401,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_whirling_jade_storm"] = {
+				["WeakAuras_scan_events2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5312,11 +5413,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riptide_echo"] = {
+				["WeakAuras_03_demonic_charge"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ascendance_active_underlay_2"] = {
+				["WeakAuras_11_blades_of_the_eternal_(only_active_for_tanks)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5347,38 +5448,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shipbreaker_storm2"] = {
+				["VuhDo"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_scan_events58"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events97"] = {
+				["WeakAuras_06_shrapnel_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)39"] = {
+				["Dominos"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_unleash_life2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "Zoomed",
 				},
 				["WeakAuras_dgd_shaman_cd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04-shatter2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tranquility_4"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__28"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events_-_config_in_actions_-_on_init4"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5386,11 +5472,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_tranquility_4"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_zt_-_nnogga's_party_cd_front_end15"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-contagion_6_stacks"] = {
+				["WeakAuras_scan_events_-_config_in_actions_-_on_init4"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_transcendence_m"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end25"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__28"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5404,7 +5505,7 @@ MasqueDB = {
 				["WeakAuras_power_infusion_"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07-essence_shear"] = {
+				["WeakAuras_bursting_boil_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5412,7 +5513,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_explosive_corruption"] = {
+				["WeakAuras_06-call_of_blood_crusher"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5420,26 +5521,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-jagged_abrasion"] = {
+				["WeakAuras_marines"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cleanse_2"] = {
-					["Disabled"] = true,
-					["Inherit"] = false,
+				["WeakAuras_03-jagged_abrasion"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_shadowfiend_cd_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)38"] = {
-					["Inherit"] = false,
+				["WeakAuras_wrt"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_lava_burst_cd_3"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_kr:_plague_of_toads2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_01_angelic_renewal"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5447,11 +5545,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_energy_update"] = {
+				["WeakAuras_06-call_of_blood_bloodhexer2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_3_3"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon75"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5459,7 +5557,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_poison_barrage_cone"] = {
+				["WeakAuras_ghost_wolf_r"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5467,30 +5565,29 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mt:_wormhole_generator"] = {
-					["Inherit"] = false,
+				["WeakAuras_bone_shield"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_torment"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ghost_wolf_r"] = {
+				["WeakAuras_mt:_wormhole_generator"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events58"] = {
+				["WeakAuras_tsu_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_background_2"] = {
+				["WeakAuras_scan_events118"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_wind_tunnel"] = {
+				["WeakAuras_05-hypergenesis2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end"] = {
+				["WeakAuras_resastralshiftcd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5498,15 +5595,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events89"] = {
-					["Inherit"] = false,
+				["WeakAuras_blood_boil_2_stacks"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_jagged_nettles_cast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tectonic_smash2"] = {
+				["WeakAuras_trinketslot_1_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5518,7 +5614,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_broadside2"] = {
+				["WeakAuras_drain_fluids2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5537,41 +5633,41 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-call_of_blood_crusher"] = {
+				["WeakAuras_shatter_essence"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)24"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wrt"] = {
+				["WeakAuras_lifecycles_vivify"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_08_dark_bargain"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_acidic_fragments_debuff"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_manatea_buff"] = {
+				["WeakAuras_velens"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["Dominos"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Zoomed",
-				},
-				["WeakAuras_sb:_voltaic_flash"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "Masque: Shadow 4",
 				},
 				["WeakAuras_phoguild_-_raid_ability_timeline_icon69"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)44"] = {
+				["WeakAuras_sb:_voltaic_flash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_revival"] = {
+				["WeakAuras_acidic_fragments_debuff"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon39"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_cocoon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5590,7 +5686,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gust_of_wind_2"] = {
+				["WeakAuras_power_word:barrier"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5598,26 +5694,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events50"] = {
+				["WeakAuras_pot_dark_side"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-void_lash"] = {
+				["WeakAuras_tsu22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_synergistic_growth"] = {
+				["WeakAuras_dessication"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_brackwater_barrage"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_trinketslot_1_3"] = {
+				["WeakAuras_03-malodorous_miasma_m"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__24"] = {
+				["WeakAuras_trample2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5625,10 +5721,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fireshock_g"] = {
+				["WeakAuras_ch:_raid_damage2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_strength"] = {
+				["WeakAuras_scan_events42"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5636,7 +5733,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon39"] = {
+				["WeakAuras_08_blood_host"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5652,49 +5749,47 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_1._champions_-_buffed_target"] = {
+				["WeakAuras_no_swp"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_savage_tempest2"] = {
-					["Inherit"] = false,
+				["WeakAuras_lava_burst_cd_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_tenderize"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lifecycles_em"] = {
+				["WeakAuras_scan_events39"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events42"] = {
+				["WeakAuras_life_cycles_(envm)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_when_is_my_next_high_tide_2"] = {
+				["WeakAuras_scan_events24"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wither"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events6"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_pot_dark_side"] = {
-					["Inherit"] = false,
+				["WeakAuras_unbound_chaos"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_power_word:barrier"] = {
+				["WeakAuras_fast_time"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_healing_rain_cd_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_fel_chain"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dessication"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__20"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5713,7 +5808,7 @@ MasqueDB = {
 				["WeakAuras_beacon_of_virtue_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__22"] = {
+				["WeakAuras_hit_combo_1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5732,14 +5827,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events24"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon49"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_poisonous_shank"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events100"] = {
+				["WeakAuras_04_acidic_web"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5754,15 +5849,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)59"] = {
+				["WeakAuras_05-mutagenic_pathogen2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__20"] = {
+				["WeakAuras_dh"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_target_raid_mark_icon"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5774,7 +5869,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mt:_discombobulation"] = {
+				["WeakAuras_05_gift_of_wind_cast_(mage_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5782,7 +5877,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_gift_of_wind_cast_(mage_only)"] = {
+				["WeakAuras_target_raid_mark_icon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5794,11 +5889,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_archive"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)20"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dust_cloud_self"] = {
+				["WeakAuras_scan_events87"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5810,7 +5905,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_wormhole_generator"] = {
+				["WeakAuras_cd:_mass_dispel"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_chi_wave_on_cd_(brm)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_dust_cloud_self"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5818,17 +5920,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hangman's_noose2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_cd:_mass_dispel"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_light_of_dawn"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["OmniBar_Disrupt"] = {
+				["WeakAuras_tsu20"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5836,29 +5931,32 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_thunderstrike_2"] = {
+				["WeakAuras_02-spreading_epidemic"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_trinketslot_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_drenched"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon49"] = {
+				["WeakAuras_scan_events93"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hit_combo_1"] = {
+				["WeakAuras_05_mutagenic_pathogen_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)34"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon21"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gravitational_pull_fel"] = {
+				["WeakAuras_bloodlust_cd_"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_jadefire"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_lavaburststacks_2"] = {
@@ -5872,14 +5970,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)20"] = {
+				["WeakAuras_moderate_stagger"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_severed_soul_3"] = {
+				["WeakAuras_hydra_shot_2.0"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-mutagenic_pathogen2"] = {
+				["OmniBar_Counter Shot"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5893,11 +5991,10 @@ MasqueDB = {
 				["WeakAuras_mark_of_frost"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_renewing_mist_cd"] = {
-					["Inherit"] = false,
+				["WeakAuras_velen"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lockdown"] = {
+				["WeakAuras_tsu9"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5905,7 +6002,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_velen"] = {
+				["WeakAuras_lockdown"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events101"] = {
@@ -5923,7 +6021,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-reorigination_blast_buff2"] = {
+				["WeakAuras_deezo_rsham_bottom3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5933,32 +6031,33 @@ MasqueDB = {
 				["WeakAuras_trash_-_avalanche"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-incorporeal_shot"] = {
+				["WeakAuras_08-reorigination_blast_buff2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_stormkeeper_active_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu20"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_judgment_of_light"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_jade_statue_not_active"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_healing_stream_totem_s"] = {
+				["WeakAuras_04-incorporeal_shot"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_mt:_extremely_dead_soon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)47"] = {
+				["WeakAuras_03-rotting_regurgitation"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_healing_stream_totem_s"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_sef_ready"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)57"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5973,15 +6072,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_suppression_slam"] = {
-					["Inherit"] = false,
+				["WeakAuras_soul_echoes"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)37"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sb:_electric_/_tidal_shroud2"] = {
+				["WeakAuras_suppression_slam"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -5989,7 +6087,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_mutagenic_pathogen_(tank)"] = {
+				["WeakAuras_fire_shock_r"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6001,7 +6099,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-spreading_epidemic"] = {
+				["WeakAuras_high_tide_proc"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6009,11 +6107,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)63"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__45"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)13"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__35"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6022,7 +6120,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - Hide Empties",
 				},
-				["WeakAuras_boulderfist_aura"] = {
+				["WeakAuras_undulation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6041,30 +6139,29 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sargeras'_rage_bw"] = {
+				["WeakAuras_mark_on_me_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__25"] = {
+				["WeakAuras_boulderfist_aura"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_lmt_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blazing_azerite_self2"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__25"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_duelist_dash3"] = {
-					["Inherit"] = false,
+				["WeakAuras_energy_surge"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_05_portals_up"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)23"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)53"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6084,30 +6181,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_divine_star_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)53"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)51"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__35"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)63"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events93"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)23"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_sanguine_healing"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_apotheosis"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_diffuse_magic"] = {
+				["WeakAuras_king_kong2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_aggramar"] = {
+				["WeakAuras_deezo_rsham_main2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6126,7 +6223,7 @@ MasqueDB = {
 				["WeakAuras_chilled"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_main2"] = {
+				["WeakAuras_haste_brew"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6137,16 +6234,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-touch_of_sargeras"] = {
+				["WeakAuras_sighted_artillery2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_delicious_bufferfish"] = {
+				["WeakAuras_02-surgical_beam_side2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_trash_-_stone_gaze"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_rotting_regurgitation"] = {
+				["WeakAuras_mt:_gigavolt_charge"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6156,11 +6255,10 @@ MasqueDB = {
 				["WeakAuras_crashing_comet"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_remote_stagger_tracker"] = {
-					["Inherit"] = false,
+				["WeakAuras_08-touch_of_sargeras"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sg_cd_2"] = {
+				["WeakAuras_11_gift_of_the_sea"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6172,11 +6270,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_moderate_stagger"] = {
+				["WeakAuras_02-sundering_scalpel2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_focused_demise"] = {
+				["WeakAuras_cloudburst_totem_available_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6184,7 +6282,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["OmniBar_Counter Shot"] = {
+				["WeakAuras_scan_events131"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6199,18 +6297,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-sundering_doom"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events131"] = {
+				["WeakAuras_scan_events20"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_malignant_growth"] = {
+				["WeakAuras_cbt_ready"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_thunder_focus_tea2"] = {
+				["WeakAuras_rjw_ready_(mw)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_cyclone_strike"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6218,7 +6317,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)10"] = {
+				["WeakAuras_06_nazmani_bloodhexer_spawn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6230,7 +6329,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_totem_available_2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon31"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6242,8 +6341,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hst_2_stack"] = {
-					["Inherit"] = false,
+				["WeakAuras_dancing_rune_weapon_huge"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_wind_rush_totem_"] = {
@@ -6254,11 +6352,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_explode_totem"] = {
+				["WeakAuras_volatile_pods"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_echo_blade3"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)43"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6270,7 +6368,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lifecycles_enveloping_mists2"] = {
+				["WeakAuras_02_consuming_sphere_(non-mythic)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6282,7 +6380,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dancing_rune_weapon_cd"] = {
+				["WeakAuras_shining_force2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_keg_smash"] = {
@@ -6293,7 +6392,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-surgical_beam_top2"] = {
+				["WeakAuras_tsu6"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6301,38 +6400,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)61"] = {
+				["WeakAuras_velen_goooo_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-sundering_scalpel2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events102"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02-surgical_beam_side2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_aura_mastery_4"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_melted_armor"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_lingering_nausea"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_desperate_prayer"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08-growing_corruption"] = {
+				["WeakAuras_02-surgical_beam_top"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6340,36 +6412,63 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Zoomed",
 				},
-				["WeakAuras_draw_in"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08_echoes_of_doom"] = {
+				["WeakAuras_crane"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_nazmani_bloodhexer_spawn"] = {
+				["WeakAuras_aura_mastery_4"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-crashing_comet"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)29"] = {
+				["WeakAuras_innervate_buff_priest2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-void_lash2"] = {
-					["Inherit"] = false,
+				["WeakAuras_annihilation"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09-darkness_of_a_thousand_souls"] = {
+				["WeakAuras_sap_soul_inc"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08-growing_corruption"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_phoguild_-_raid_ability_timeline_icon67"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_quake"] = {
+				["WeakAuras_draw_in"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tarrat"] = {
+					["Disabled"] = true,
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_frigid_nova"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_01-crashing_comet"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_dark_command"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04_eye_beams"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09-darkness_of_a_thousand_souls"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04-void_lash2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08-gaze_of_g'huun2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_chi_wave_(brm)"] = {
@@ -6390,7 +6489,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sonic_screech_3"] = {
+				["WeakAuras_tft"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6398,7 +6497,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-surgical_beam_top"] = {
+				["WeakAuras_11_sky_and_sea"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6418,22 +6517,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_green_protal_(rancora)_announcer"] = {
+				["WeakAuras_velen_htt_ready_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon66"] = {
+				["WeakAuras_void_echoes_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_consuming_sphere_(non_mythic)"] = {
+				["WeakAuras_whirling_dragon_punch"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_eye_of_gul'dan"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-pool_of_darkness_soak2"] = {
+				["WeakAuras_channel_lightning"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6441,14 +6540,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events8"] = {
+				["WeakAuras_07_demolish_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_penance_cd"] = {
+				["WeakAuras_08-blood_feast_spread"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reincarn_3"] = {
+				["WeakAuras_choking_brine"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6460,7 +6560,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_choking_brine"] = {
+				["WeakAuras_scan_events8"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ancestral_guidance_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08-blood_feast2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_electroshock"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6468,19 +6579,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-blood_feast2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_flying_serpent_kick_on_cooldown"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_mw_zen_pulse"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_10"] = {
+				["WeakAuras_elem_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6492,10 +6591,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sap_soul_inc"] = {
+				["WeakAuras_dampen_harm_timer_ww"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-bursting_lesions"] = {
+				["WeakAuras_incendiary_rounds"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6503,7 +6603,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_psychic_assault"] = {
+				["WeakAuras_hail_of_flechettes3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6511,15 +6611,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hail_of_flechettes3"] = {
+				["WeakAuras_earthgrab"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["Bartender4_BagBar"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-mutagenic_pathogen_offtank"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_explosive_keg"] = {
+				["WeakAuras_putrid_blood"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6527,7 +6626,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["Bartender4_BagBar"] = {
+				["WeakAuras_05-mutagenic_pathogen_offtank"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6535,29 +6634,28 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_annihilation"] = {
+				["WeakAuras_resonant_barrier"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_storm,_earth,_and_fire"] = {
+				["WeakAuras_health_pot_amount_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_hydra_shot_bw_1"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_eye_beam"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon59"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_coronal_ejection"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_06_rupturing_blood_(tank)"] = {
+				["WeakAuras_05-lingering_infection"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_es"] = {
-					["Inherit"] = false,
+				["WeakAuras_torment_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_fel_ejection"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bloodelf_silence"] = {
@@ -6571,7 +6669,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon18"] = {
+				["WeakAuras_flame_shock_active_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6579,12 +6677,13 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_accelerate"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_5_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["TellMeWhen_Group: 1"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - Hide Empties",
 				},
 				["WeakAuras_gr:_throw_target2"] = {
 					["Inherit"] = false,
@@ -6604,25 +6703,33 @@ MasqueDB = {
 				["WeakAuras_naraxas_-_rancid_maw"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-bursting_lesions2"] = {
-					["Inherit"] = false,
+				["WeakAuras_light's_hammer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_light's_hammer"] = {
+				["WeakAuras_05-bursting_lesions2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cleance_sprirt"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_resonant_barrier"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
+				["ElvUI"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - Hide Empties",
 				},
-				["WeakAuras_incendiary_rounds"] = {
+				["WeakAuras_op_(m):_displacement2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rising_sun_kick_mw_"] = {
+				["WeakAuras_scan_events80"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_light's_wrath"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_deathwish"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6630,41 +6737,31 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deathwish"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)31"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_light's_wrath"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_health_pot_amount_"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tidal_waves_1_buff_g"] = {
-					["Inherit"] = false,
+				["WeakAuras_gaseous_bubbles"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_divine_star2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon59"] = {
-					["Inherit"] = false,
+				["WeakAuras_doomed_sundering"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-bursting_boil_spawn"] = {
-					["Inherit"] = false,
+				["WeakAuras_trash_-_rancid_ooze"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-lingering_infection"] = {
-					["Inherit"] = false,
+				["WeakAuras_gust_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bone_shield_ossuary"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fel_ejection"] = {
+				["WeakAuras_new_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_apt_on_cd"] = {
@@ -6675,28 +6772,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ablating_explosion"] = {
+				["WeakAuras_ironskin_active"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_08-unbound_chaos"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sb:_storm's_wail"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02_singed"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_fury_of_air_off"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_abyssal_reach"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_11_fire_vulnerability"] = {
+				["WeakAuras_08-blood_feast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6704,32 +6787,48 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_searing_brand"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_gift_of_the_queen_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_shaman_velens_on_cd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_10_wrought_in_flame_(heroic)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_decimation"] = {
+				["WeakAuras_abyssal_reach"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_hothand_off"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_sb:_storm's_wail"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_searing_brand"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ascendance_timer"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_shaman_velens_on_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_fury_of_air_off"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_01_decimation"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_11_fire_vulnerability"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_trinket_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ascendance_timer"] = {
+				["WeakAuras_savage_cleave"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_wind_rush_2"] = {
@@ -6737,14 +6836,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shadowfiend_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_deezo_rsham_main5"] = {
-					["Inherit"] = false,
+				["WeakAuras_riptidestacks_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_crawling_hex2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_deezo_rsham_main5"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6756,7 +6855,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purification_beam_cast2"] = {
+				["WeakAuras_champion"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6764,18 +6863,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mark_of_frost_soon_3"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_03-putrid_paroxysm"] = {
+				["WeakAuras_dust_cloud_enemy"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["ElvUI"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - Hide Empties",
-				},
-				["WeakAuras_spit_gold2"] = {
+				["WeakAuras_purification_beam_cast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6783,24 +6875,35 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_taint_of_ghuun2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_spit_gold2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_06-shadow_barrage2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_power_word:_solace_cd"] = {
+				["WeakAuras_stinging_swarm"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_mt:_sheepnel_:^)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_trash_-_rancid_ooze"] = {
+				["WeakAuras_hooked_snare"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gaseous_bubbles"] = {
+				["WeakAuras_tsu19"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sap_soul"] = {
+				["WeakAuras_08-putrid_blood2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_05_contagion"] = {
@@ -6811,12 +6914,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-putrid_blood2"] = {
+				["WeakAuras_7._gnome_wormhole"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-blood_feast"] = {
-					["Inherit"] = false,
+				["WeakAuras_rune_tap"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_azerite_heartseeker2"] = {
@@ -6827,15 +6929,16 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["Plater Nameplates_Aura Frame 1"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)27"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_savage_cleave"] = {
+				["WeakAuras_04_felsilk_wrap"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riptidestacks_2"] = {
+				["WeakAuras_op:_tailwinds"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_slot_14_(set_as:_archive_of_faith)"] = {
@@ -6845,15 +6948,15 @@ MasqueDB = {
 				["WeakAuras_pain_suppression_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ironskin_active"] = {
+				["WeakAuras_caustic_brew"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon48"] = {
+				["WeakAuras_energizing_elixir_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_wormhole_generator_/_on_you"] = {
+				["WeakAuras_ja:_icefall"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6867,7 +6970,7 @@ MasqueDB = {
 				["WeakAuras_twilight_volley"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dust_cloud_enemy"] = {
+				["WeakAuras_06_wormhole_generator_/_on_you"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6875,10 +6978,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rune_tap"] = {
+				["WeakAuras_scan_events112"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events38"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_iced_spritzer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6886,15 +6994,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events112"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_08_blood_feast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)33"] = {
+				["WeakAuras_chiwave"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6906,7 +7010,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_final_blast4"] = {
+				["WeakAuras_09_burning_explosion_(mythic)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6914,11 +7018,12 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cast_on_you_(tank_only)_-_airhorn_sound_active_(selfcd)"] = {
+				["WeakAuras_final_blast4"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-driven_assault"] = {
+				["WeakAuras_expel_soul"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_zt_-_nnogga's_party_cd_front_end29"] = {
@@ -6928,34 +7033,15 @@ MasqueDB = {
 				["WeakAuras_flask_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chiwave"] = {
+				["WeakAuras_03_xuen_spawn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_shadow_blades_timer_(tank)"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end19"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_flames_of_punishment_dot"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_abrasive_slime"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_prepot"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_03-malodorous_miasma_m2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon60"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_obliteration_beam"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon10"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6963,15 +7049,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_orb_of_frost"] = {
+				["WeakAuras_prepot"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_apt_off_ccd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_renewing_mist_on_cd"] = {
+				["WeakAuras_incandescent_sliver_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -6979,23 +7061,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_toad_toxin"] = {
+				["WeakAuras_tectonic_smash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events27"] = {
-					["Inherit"] = false,
+				["WeakAuras_abrasive_slime"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_zombie_dust_totem"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_05_final_doom_timer"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_flametongue_debuff"] = {
+				["WeakAuras_09_orb_of_frost"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7003,30 +7076,62 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_blockade"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_emperor's_glow"] = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_stuffed"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events27"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_obliteration_beam"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_05_final_doom_timer"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_renewing_mist_on_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon20"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07_toad_toxin"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_sb:_kj_orb_2.0?2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon40"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon60"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reincarn"] = {
+				["WeakAuras_scan_events57"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)27"] = {
+				["WeakAuras_02_purifying_flame"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-soulbind"] = {
+				["WeakAuras_02-spreading_epidemic2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ironskin_not_active"] = {
+				["WeakAuras_02_smouldering"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7034,19 +7139,17 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-dark_revelation2"] = {
+				["WeakAuras_rsk_not_usable"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_caustic_brew"] = {
-					["Inherit"] = false,
+				["WeakAuras_bonestorm"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elem"] = {
-					["Inherit"] = false,
+				["WeakAuras_jaws_from_the_deep"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_indigestion2"] = {
+				["WeakAuras_eye_of_the_tiger_on"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7064,7 +7167,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_swg__2"] = {
+				["WeakAuras_tsu16"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7072,23 +7175,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu16"] = {
+				["WeakAuras_indigestion2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_4._opulance_-_swapper"] = {
+				["WeakAuras_09_flames_of_khaz'goroth"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_04-incorporeal_shot_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events57"] = {
-					["Inherit"] = false,
+				["WeakAuras_riptide_2set"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rsk_not_usable"] = {
-					["Inherit"] = false,
+				["WeakAuras_blade_surge"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ancestral_protection"] = {
@@ -7096,20 +7197,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jaws_from_the_deep"] = {
+				["WeakAuras_eye_of_the_tiger_on_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_umbra_suffusion"] = {
+				["WeakAuras_09_spectral_army_of_norgannon"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_dgd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gift_of_the_queen_4"] = {
+				["WeakAuras_11_sky_and_sea_spawn"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_spectral_army_of_norgannon"] = {
+				["WeakAuras_deezo_rsham_bottom8"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7129,7 +7232,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-malodorous_miasma2"] = {
+				["WeakAuras_11_sentence_of_sargeras"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7137,7 +7240,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_bottom8"] = {
+				["WeakAuras_plague2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7145,7 +7248,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purify_spirit__2"] = {
+				["WeakAuras_cursed_slash2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7153,7 +7256,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-infernal_burning"] = {
+				["WeakAuras_cloudburst_totem"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_op:_brilliant_aura2"] = {
@@ -7167,7 +7271,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sheared_soul_3"] = {
+				["WeakAuras_05_krag'wa's_wrath"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_unleash_life"] = {
@@ -7181,7 +7286,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lust"] = {
+				["WeakAuras_purify_spirit__2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7207,8 +7312,7 @@ MasqueDB = {
 				["WeakAuras_don't_get_jebaited"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_totem"] = {
-					["Inherit"] = false,
+				["WeakAuras_01-infernal_burning"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_healing_rain"] = {
@@ -7222,8 +7326,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_krag'wa's_wrath"] = {
-					["Inherit"] = false,
+				["WeakAuras_sheared_soul_3"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ja:_freezing_blast2"] = {
@@ -7243,12 +7346,11 @@ MasqueDB = {
 				["WeakAuras_fireshock_g_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_liquid_gold"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon47"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_siegebreaker_blast2"] = {
-					["Inherit"] = false,
+				["WeakAuras_torn_soul"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_guard_on_cd"] = {
@@ -7282,22 +7384,23 @@ MasqueDB = {
 				["WeakAuras_suffocating_dark"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_flames_of_khaz'goroth"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)21"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riptide_2set"] = {
+				["WeakAuras_maiden_assignment"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_fortifying_brew_m"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_stagger"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jade_serpent_statue_(remember)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_wdp"] = {
+				["WeakAuras_rjw_bm"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7319,7 +7422,7 @@ MasqueDB = {
 				["WeakAuras_darksoul_drain"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rjw_bm"] = {
+				["WeakAuras_09_chilled_blood"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7327,12 +7430,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_chilled_blood"] = {
+				["WeakAuras_jade_serpent_statue_(remember)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-roiling_deceit2"] = {
-					["Inherit"] = false,
+				["WeakAuras_06-doomed_sundering"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ascendance_4"] = {
@@ -7347,7 +7449,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sr:_malignant"] = {
+				["WeakAuras_rune_tap_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_healing_rain2"] = {
@@ -7358,22 +7460,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gust"] = {
+				["WeakAuras_scan_events30"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_embalming_fluid2"] = {
-					["Inherit"] = false,
+				["WeakAuras_gust"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_01_blinding_faith"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events30"] = {
-					["Inherit"] = false,
+				["WeakAuras_swg_"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-roiling_deceit"] = {
+				["WeakAuras_frenzied_charge"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7381,41 +7482,45 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_eye_of_the_tiger_on_2"] = {
+				["WeakAuras_undulation_1_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09-shadow_reflection"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_new"] = {
+				["WeakAuras_kr:_plague_of_fire"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elemental_blast_2"] = {
+				["WeakAuras_quaking_palm"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blade_surge"] = {
+				["WeakAuras_thunderfocustea-nocd"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_torn_soul"] = {
+				["WeakAuras_cinderflame"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ravaging_leap"] = {
+				["WeakAuras_07_forging_strike_(tank_only)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02_focusing_power_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_fireshock___2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-shattering_star"] = {
+				["WeakAuras_02-echoing_anguish"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_earthbind_totem_r"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_final_blast"] = {
+				["WeakAuras_scan_events41"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7423,8 +7528,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_renewingmist"] = {
-					["Inherit"] = false,
+				["WeakAuras_avenging_wrath_holy"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_flame_shock_2"] = {
@@ -7432,18 +7536,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_apt"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_rest90flashflooduptime"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_11_soulblight_orb_timer"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_kr:_artillery_8.1_(tank)2"] = {
+				["WeakAuras_tiw_missed"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7451,18 +7544,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon30"] = {
+				["WeakAuras_11_cosmic_smash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_swg_"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_link_totem"] = {
+				["WeakAuras_09_heart_of_frost_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cinderflame"] = {
+				["WeakAuras_rest90flashflooduptime"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06-sundering_doom_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_kr:_deathly_withering"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04_poison_essence"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_kr:_artillery_8.1_(tank)2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7475,14 +7580,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_storm_of_the_destroyer_cast4"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_cross_ignition2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_focusing_power_timer"] = {
+				["WeakAuras_power_word_shield"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7498,18 +7603,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shadowfiend"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_thundering_crash"] = {
+				["WeakAuras_02_endemic_virus"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mt:_buster_cannon_cast2"] = {
+				["WeakAuras_gr:_tantrum_debuffs_[a/h]"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_soothing_breeze2"] = {
+				["WeakAuras_apt"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_11_soulblight_orb_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7523,15 +7628,14 @@ MasqueDB = {
 				["WeakAuras_taint_of_the_sea"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_judgment:_reckoning"] = {
+				["WeakAuras_rest100wellspringcd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_poison_essence"] = {
-					["Inherit"] = false,
+				["WeakAuras_witness_of_the_void_myth"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flame_shock_not_active_2"] = {
+				["WeakAuras_02_sanitizing_strike_cast_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7539,7 +7643,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_endemic_virus"] = {
+				["WeakAuras_serrated_fangs2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7565,20 +7669,21 @@ MasqueDB = {
 				["WeakAuras_unleash_life_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_rain_4_set"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_05-delicious_bufferfish"] = {
+				["WeakAuras_11_frost_vulnerability"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_03-unchecked_rage"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dust_cloud_self2"] = {
+				["WeakAuras_ancestral_protection_totem_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon30"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hangman's_noose"] = {
+				["WeakAuras_tft_up_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7591,7 +7696,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_death_vacuum2"] = {
+				["WeakAuras_creeping_rot3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7607,30 +7712,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["ElvUI_ActionBars"] = {
-					["Colors"] = {
-						["Backdrop"] = {
-							1, -- [1]
-							1, -- [2]
-							1, -- [3]
-							1, -- [4]
-						},
-					},
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - Hide Empties",
-				},
-				["WeakAuras_thunder_focus_tea_2"] = {
+				["WeakAuras_cc:_lacerating_claws_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_lacerating_claws_(tank)"] = {
+				["WeakAuras_kr:_death_vacuum2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07_apocalypse_protocol"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_swp_"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_apocalypse_protocol"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)30"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7638,12 +7735,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_frost_vulnerability"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon37"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon37"] = {
-					["Inherit"] = false,
+				["WeakAuras_unstable_soul_jump"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events137"] = {
@@ -7654,14 +7750,31 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
 				},
-				["WeakAuras_02_sanitizing_strike_cast_(tank_only)"] = {
+				["WeakAuras_thunder_focus_tea_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09-bursting_dreadflame"] = {
+				["WeakAuras_blood_plague_missing"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events47"] = {
+				["WeakAuras_light's_wrath-cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_icy_ejection"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07_death's_door"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_virulent_pathogen"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_fel_infusion_stacks"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ghost_wolf_buff_h"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7669,25 +7782,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_icy_ejection"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_virulent_pathogen"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ancestral_protection_totem_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ghost_wolf_buff_h"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_mt_(m):_enormous2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08_putrid_blood"] = {
+				["WeakAuras_poison_barrage2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7707,19 +7802,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_bloodthirsty_crawg_spawn"] = {
+				["WeakAuras_searing_brand_mark_soon_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_whispers_of_power"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["Bartender4_1"] = {
+				["WeakAuras_07-critical_mass2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)30"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_light's_wrath-cd"] = {
+				["WeakAuras_burning_leg_sweep"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_vile_expulsion"] = {
@@ -7734,7 +7828,9 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elemental_mastery"] = {
+				["WeakAuras_wind_rush"] = {
+					["Disabled"] = true,
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_resonant_pulse"] = {
@@ -7753,7 +7849,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon28"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon36"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7761,10 +7857,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fel_infusion_stacks"] = {
+				["WeakAuras_healthstone_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-consuming_hunger"] = {
+				["WeakAuras_aura_mastery_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__7"] = {
@@ -7775,7 +7872,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon9"] = {
+				["WeakAuras_mindbender2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7787,29 +7884,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unstable_soul_jump"] = {
+				["WeakAuras_gs"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_touch_of_death_cd"] = {
+				["WeakAuras_08-desolate"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_psychic_scream_healer"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_04_shatter_(tank)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_blinding_light_holy"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_lst_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02-sundering_scalpel_offtank"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_wave_on_cd"] = {
-					["Inherit"] = false,
+				["WeakAuras_lst_cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_blinding_light_holy"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_felburst"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_fire_ele"] = {
@@ -7818,36 +7913,38 @@ MasqueDB = {
 				["WeakAuras_throw_torch"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_anchors_wa_to_spawn_of_g'huun_nameplate_if_it_targets_you2"] = {
+				["WeakAuras_unstable_hex"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_searing_brand_mark_soon_2"] = {
+				["WeakAuras_prismatic_image"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_phoguild_-_raid_ability_timeline_icon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_maddening_gaze"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__11"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_void_shift"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_serrated_fangs"] = {
+				["WeakAuras_02_rending_bite_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_felburst"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_sephuz"] = {
+				["WeakAuras_07_annihilation_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__11"] = {
+				["WeakAuras_07_serpent's_breath"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__31"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7863,18 +7960,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_serpent's_breath"] = {
+				["WeakAuras_sephuz"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_3"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__41"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_moon_burn"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_essence_font_on_cd"] = {
+				["WeakAuras_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7882,7 +7979,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__21"] = {
+				["WeakAuras_ch:_divine_protection"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7896,19 +7993,19 @@ MasqueDB = {
 				["WeakAuras_ravenous_leap_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blackout_combo"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)11"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__41"] = {
-					["Inherit"] = false,
+				["WeakAuras_doom_winds"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rock_lance2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_parasitic_wound"] = {
+				["WeakAuras_chi_wave_on_cd"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02_consumin_sphere_(non_mythic)"] = {
@@ -7919,7 +8016,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_decaying_spores"] = {
+				["WeakAuras_raymundo"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7927,22 +8024,20 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_essence_font_2"] = {
-					["Inherit"] = false,
+				["WeakAuras_parasitic_wound"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_inquisitive_stare"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-corruptor's_pact"] = {
-					["Inherit"] = false,
+				["WeakAuras_breath"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rising_sun_kick_m"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_savage_roar"] = {
+				["WeakAuras_scan_events7"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7950,7 +8045,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__19"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__39"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -7960,14 +8055,16 @@ MasqueDB = {
 				["WeakAuras_shadowfiend_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events7"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__29"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lightning_rod_off"] = {
+				["WeakAuras_01_fel_bombardment_(tank_only)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_breath"] = {
+				["WeakAuras_when_is_my_next_high_tide"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bulwark_of_juju2"] = {
@@ -7978,29 +8075,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_1"] = {
-					["Inherit"] = false,
+				["WeakAuras_03-frigid_blows"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_8"] = {
+				["WeakAuras_class_neck_-_holy"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_whirling_blades"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_07_apocalypse_protocol_(adds_spawn)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "Masque: Shadow 4",
 				},
 				["WeakAuras_earthen_shield_totem__2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_frostbitten_2"] = {
+				["WeakAuras_hindering_cleave_tank"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_light's_wrath_2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon16"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_healing_stream_totem_buff"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_01_coalesced_blood_spawn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8008,18 +8106,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mana_tea_active"] = {
+				["WeakAuras_1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hydra_acid"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_06-pool_of_darkness_soak"] = {
+				["WeakAuras_invoke_chi-ji_the_red_crane2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02-endemic_virus"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06-pool_of_darkness_soak"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8036,19 +8135,19 @@ MasqueDB = {
 				["WeakAuras_slt_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_slippery_ruds2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events86"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_cc:_pa'ku's_winds_duration"] = {
+				["WeakAuras_heavy_slash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_fixated"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_slippery_ruds2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_cc:_pa'ku's_winds_duration"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8062,7 +8161,7 @@ MasqueDB = {
 				["WeakAuras_power_word:_barrier_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_coalesced_blood_spawn"] = {
+				["WeakAuras_06_sleep_canister"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8070,29 +8169,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mark_of_frost_3"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_hindering_cleave_tank"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_trinket_3"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tsu23"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_icebound_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_07_scorching_detonation_(tank_only)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_light's_wrath_inc_-_taey"] = {
+				["WeakAuras_reincarn_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8100,7 +8177,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fist_of_the_white_tiger"] = {
+				["WeakAuras_trinket_3"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_9._jaina_-_get_to_fire_(non_tw)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_icebound_cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_guard_active"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_light's_wrath_inc_-_taey"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04_consuming_flame"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_shirel_cloudburst_value"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8116,11 +8216,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shirel_cloudburst_value"] = {
+				["WeakAuras_wind_stacks"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon16"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8135,7 +8235,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_got_hit_by_toads2"] = {
+				["WeakAuras_tsu14"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8143,10 +8243,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cd_body_and_mind"] = {
+				["WeakAuras_riptide_"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rjw_range_tracker"] = {
+				["WeakAuras_scan_events48"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8154,26 +8255,25 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu7"] = {
+				["WeakAuras_death_&_decay_blood_glow"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_lightning_shield"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blind_rage"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ravenous_leap"] = {
+				["WeakAuras_stormstrike_proc_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_chi_wave_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_sleep_canister"] = {
+				["WeakAuras_tsu7"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riptide_"] = {
+				["WeakAuras_void_seed2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8181,10 +8281,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gift_of_the_queen_g_2"] = {
+				["WeakAuras_aegis_of_light_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_heavy_slash"] = {
+				["WeakAuras_11_energy_update_phase_1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8192,7 +8292,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_wave_mist"] = {
+				["WeakAuras_deadeye_target"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8200,11 +8300,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wind_stacks"] = {
-					["Inherit"] = false,
+				["WeakAuras_cd_body_and_mind"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-gaze_of_g'huun_soon"] = {
+				["WeakAuras_tsu15"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8247,8 +8346,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lightning_shield"] = {
-					["Inherit"] = false,
+				["WeakAuras_felflame"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_bosses_too_close"] = {
@@ -8259,14 +8357,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_aegis_of_light_2"] = {
+				["WeakAuras_soul_venom"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_tiger's_lust_mw"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon56"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)41"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8274,7 +8372,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_decimation_timer"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon56"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8289,7 +8387,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu_25"] = {
+				["WeakAuras_04_collapsing_world_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8300,14 +8398,15 @@ MasqueDB = {
 				["WeakAuras_frostbitten"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_energy_update_phase_1"] = {
+				["WeakAuras_holy_cake"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_03_malodorous_miasma"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_frostbitten_3"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_time_bomb"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cyclone_strike2"] = {
@@ -8335,14 +8434,13 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_stormstrike_proc_timer"] = {
+				["WeakAuras_gs2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_slicing_tornado"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_06_crusher_energy_(tank_only)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_09_cosmic_glare_timer_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8362,19 +8460,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_power_strikes_cd"] = {
+				["WeakAuras_uldir_defensive_beam"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_aura_mastery_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_angelic_feather"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_schism2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_rock_lance"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_invoke_chi-ji,_the_red_crane_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8382,11 +8479,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon32"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon62"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earth_shield_r"] = {
+				["WeakAuras_invoke_chi-ji,_the_red_crane_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8394,11 +8491,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)41"] = {
+				["WeakAuras_05_plague_bomb_dot"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_stream_totem_3"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon42"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon3"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon32"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8406,29 +8511,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon62"] = {
-					["Inherit"] = false,
+				["WeakAuras_rule_of_law_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_aura_mastery_3"] = {
+				["WeakAuras_dk-blood_death_strike_v2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_06-thrumming_pulse"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earthen_wall_totem"] = {
+				["WeakAuras_07_demolished"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_dk-blood_death_strike_v2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ct"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_spray_sand"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_danknesss"] = {
@@ -8438,18 +8536,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events11"] = {
+				["WeakAuras_pursuit"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_healing_stream_totemrdy"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gow"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_pursuit"] = {
+				["WeakAuras_scan_events11"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8457,14 +8551,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_spray_sand"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_01_eradication"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_halo_3"] = {
+				["WeakAuras_bursting_boil_2_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bursting_boil_2_2"] = {
+				["WeakAuras_essence_font2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8473,8 +8571,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_resriptidecd"] = {
-					["Inherit"] = false,
+				["WeakAuras_fel_nova"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_reincarnation"] = {
@@ -8485,7 +8582,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_int"] = {
+				["WeakAuras_cloudburst_totem_active_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8497,14 +8594,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_darkness"] = {
+				["WeakAuras_resriptidecd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-rain_of_brimstone"] = {
+				["WeakAuras_hstt"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_obliteration_blast_-_boss"] = {
+				["WeakAuras_int"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8519,15 +8617,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hstt"] = {
+				["WeakAuras_01-rain_of_brimstone"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_hail_of_flechettes"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purify_spirit_cd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_03_malodorous_miasma"] = {
+				["WeakAuras_03_summon_adds"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8535,7 +8632,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_torpedo_buff"] = {
+				["WeakAuras_earth_elemental"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8543,12 +8640,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events52"] = {
+				["WeakAuras_08_sea_swell_(mythic)_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gotq"] = {
-					["Disabled"] = true,
+				["WeakAuras_04_transport_portal_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8563,7 +8659,20 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earth_elemental"] = {
+				["WeakAuras_gotq"] = {
+					["Disabled"] = true,
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_chi_wave_2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_chi_torpedo_buff"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_leap_of_faith"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8571,45 +8680,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_searing_brand_mark_soon_3"] = {
+				["WeakAuras_01_call_to_arms"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_elementalblastcd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tft_cd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_01_call_to_arms"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_01_sacred_blade_(tank_only)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_thunder_ritual"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ascendance_timer_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_hst_timer"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_03_summon_adds"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_05-contagion2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02-soul_corruption"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_cc:_akunda's_wrath2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8617,18 +8695,40 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_guard"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02-soul_corruption"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_05-contagion2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_cursed_touch"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_cc:_akunda's_wrath2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_11_soulbomb_-_big_raiddamage"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_wild_maul_(tank)"] = {
+				["WeakAuras_rest100ascendancecd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_death_&_decay_cd_blood"] = {
+				["WeakAuras_raging_gaze2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_driven_assault"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_death_&_decay_cd_blood"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_final_blast2"] = {
@@ -8650,37 +8750,38 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_siphon_corruption_timer"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_leap_of_faith"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_04_aegis_of_flames"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_sense_of_dread"] = {
+				["WeakAuras_05_crawling_hex"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_twilight_glaive"] = {
+				["WeakAuras_09_fiery_strike_timer_(tank)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_10_wrought_in_flame_(mythic)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_power_strikes_ready"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
 				},
 				["WeakAuras_riptide_cd_2set"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_apt_active"] = {
+				["WeakAuras_04_earthen_roots"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rest100ascendancecd"] = {
+				["WeakAuras_scan_events64"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_reverberating_strike_timer_(melees)"] = {
+				["WeakAuras_charge"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8695,7 +8796,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_charge"] = {
+				["WeakAuras_rsk_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8711,8 +8812,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_icefure_active_2"] = {
-					["Inherit"] = false,
+				["WeakAuras_08-tainted_essence"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_earthbind_cd"] = {
@@ -8723,11 +8823,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hail_of_flechettes"] = {
-					["Inherit"] = false,
+				["WeakAuras_hateful_gaze"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_apocalypse_protocol_(addspawn)"] = {
+				["WeakAuras_kr:_mind_control_totem2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8739,7 +8838,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events88"] = {
+				["WeakAuras_scan_events113"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8751,23 +8850,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hst"] = {
-					["Disabled"] = true,
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_hateful_gaze"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_kr:_mind_control_totem2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08-power_matrix"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_mt:_gigavolt_charge2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07_apocalypse_protocol_(addspawn)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_jadestatue2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06-thrumming_pulse2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events88"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8784,18 +8883,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_arctic_armor"] = {
+				["WeakAuras_bomb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon54"] = {
-					["Inherit"] = false,
+				["WeakAuras_gravitational_pull_frost"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_av_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon34"] = {
+				["WeakAuras_dampenharm"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon74"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8803,15 +8905,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_bestial_throw_(tank)2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_creator's_grace"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_tampering!"] = {
-					["Inherit"] = false,
+				["WeakAuras_star_sign:_hunter"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_01_divine_mallet"] = {
@@ -8822,32 +8919,34 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_radiation_zone"] = {
+				["WeakAuras_06_tampering!"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon64"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon24"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_sacred_ground"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_star_sign:_hunter"] = {
+				["WeakAuras_gr:_bestial_throw_(tank)2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ptw_off"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_gift_of_the_queen_buff"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02_enflame_corruption_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_fixated2"] = {
+				["WeakAuras_shocking_claw2"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_gorefiend's_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_leg_sweep_3"] = {
@@ -8857,7 +8956,7 @@ MasqueDB = {
 				["WeakAuras_runic_brand_blue"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon74"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon14"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8869,33 +8968,33 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_akunda's_wrath"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon54"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blooddrinker_cd"] = {
+				["WeakAuras_surge_of_the_mists"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cross_ignition"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_howling_winds_(mythic)"] = {
+				["WeakAuras_jm:_fixated2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_word:sanctuary"] = {
-					["Inherit"] = false,
+				["WeakAuras_blooddrinker_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rsk_on_cd"] = {
+				["WeakAuras_obliteration_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_armageddon_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shocking_claw2"] = {
+				["WeakAuras_tank_debuffs_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8903,10 +9002,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-tainted_essence"] = {
+				["WeakAuras_astral_shift_buff_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tremor_2"] = {
+				["WeakAuras_divine_hymn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8914,7 +9014,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_obliteration_blast"] = {
+				["WeakAuras_cc:_akunda's_wrath"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -8922,12 +9022,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_choking_brine2"] = {
+				["WeakAuras_when_is_my_next_high_tide3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_pool_of_darkness"] = {
-					["Inherit"] = false,
+				["WeakAuras_starsigns_kazrahgor_text"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rapture2"] = {
@@ -8938,28 +9037,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_maddening_gaze3"] = {
+				["WeakAuras_08_misery"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deathgrip"] = {
+				["WeakAuras_swg_off_cd"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_elemental_burst"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_reswindrushtotemcd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_necrotic_rot_self"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_shared_suffering_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_apt_cd"] = {
+				["WeakAuras_necrotic_rot_self"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06_corrupted_blood"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events31"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_cloudburst_active_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_healing_stream_totem_2"] = {
@@ -8974,8 +9075,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
 				},
-				["WeakAuras_09_machinations_of_aman'thul"] = {
-					["Inherit"] = false,
+				["WeakAuras_doom_winds_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_suppression_slam2"] = {
@@ -8986,26 +9086,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-rupturing_blood_offtank"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_evangilism"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon44"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_power_infusion"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_06_crusher_spawn"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_08_energy_update_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_fixated2"] = {
+				["WeakAuras_light_of_t'uure_up"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "Masque: Shadow 4",
 				},
-				["WeakAuras_09_searing_pitch"] = {
+				["WeakAuras_ja:_fixated2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9013,36 +9113,36 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_starsigns_kazrahgor_text"] = {
+				["WeakAuras_unchecked_rage"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_07_bwonsamdi's_boon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_trinket_2_cd"] = {
+				["WeakAuras_09_machinations_of_aman'thul"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-rupturing_blood2"] = {
-					["Inherit"] = false,
+				["WeakAuras_08-cleansing_protocol"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_06-shattering_scream"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_rt_2_stack"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_death_&_decay_blood_na"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_05_plague_bomb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_doom_winds_timer"] = {
+				["WeakAuras_death_&_decay_blood_na"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_trinket_2_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ja:_siegebreaker_blast"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_manatea"] = {
@@ -9053,11 +9153,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events73"] = {
-					["Inherit"] = false,
+				["WeakAuras_void_nova"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elusive_dance"] = {
+				["WeakAuras_scan_events73"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9065,7 +9164,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_depleted_diamond"] = {
+				["WeakAuras_09_icefall"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9076,7 +9175,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reinforcing_ward_boss_buff"] = {
+				["WeakAuras_04_depleted_diamond"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9092,21 +9191,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_corrupted_blood"] = {
-					["Inherit"] = false,
+				["WeakAuras_elemental_burst"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unchecked_rage"] = {
+				["WeakAuras_debilitating_shout"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_01-melted_armor_debuff"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_sanguine_static"] = {
+				["WeakAuras_barrle_through"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_barrle_through"] = {
+				["WeakAuras_01_sanguine_static"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9114,7 +9213,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_voodoo_totem_cd"] = {
+				["WeakAuras_revival_23"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["OmniBar_Mind Freeze"] = {
@@ -9125,11 +9225,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_revival_23"] = {
+				["WeakAuras_04-eye_beam_cast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_prismatic_image"] = {
+				["WeakAuras_ring_of_peace"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9137,7 +9237,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events132"] = {
+				["WeakAuras_earthen_shield_totem_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9145,21 +9245,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_arcane_lockdown"] = {
+				["WeakAuras_rapid_shot"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_roll_m"] = {
+				["WeakAuras_halo"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lava_burst_r"] = {
+				["WeakAuras_refreshing_jade_wind_[6/1]"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_dargrul_-_magma_wave"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_voodoo_totem_cd_2"] = {
+				["WeakAuras_ancient_mindbender"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9167,7 +9267,20 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-black_winds"] = {
+				["WeakAuras_rest60ancestralprotectiontotem"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_op:_gem_buffs"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__26"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_lava_burst_r"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_power_of_the_maelstrom_2"] = {
@@ -9177,25 +9290,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_halo"] = {
+				["WeakAuras_11_the_discs_of_norgannon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_savage_cleave_2"] = {
+				["WeakAuras_numb_hands"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_refreshing_jade_wind_[6/1]"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08-cleansing_protocol"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_fury_of_air_on"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_consuming_hunger"] = {
+				["WeakAuras_rapture_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_08-explosive_corruption"] = {
@@ -9219,12 +9322,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - Hide Empties",
 				},
-				["WeakAuras_11_the_discs_of_norgannon"] = {
+				["WeakAuras_severing_blade2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events82"] = {
-					["Inherit"] = false,
+				["WeakAuras_fury_of_air_on"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_wind_rush_totem_buff_2"] = {
@@ -9239,7 +9341,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tides_deck_mana_regens"] = {
+				["WeakAuras_purification_beam_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9254,22 +9356,22 @@ MasqueDB = {
 				["WeakAuras_incorporeal_shot"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rokmora_-_razor_shards"] = {
+				["WeakAuras_riptide_cd_0_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_05_rain_of_fel"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wicked_dagger"] = {
+				["WeakAuras_scan_events82"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_moonfire_(inverse)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purification_beam_cast"] = {
-					["Inherit"] = false,
+				["WeakAuras_rokmora_-_razor_shards"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_swp_missing_2"] = {
@@ -9279,11 +9381,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_spectral_army_of_norgannon_despawn_timer"] = {
+				["WeakAuras_life_cycles_(vivify)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_life_cycles_(vivify)"] = {
+				["WeakAuras_immune_shield2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9299,11 +9401,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_slt_2"] = {
-					["Inherit"] = false,
+				["WeakAuras_elementalblast"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-corpulent_mass"] = {
+				["WeakAuras_slt_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9330,21 +9431,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_stormstrike"] = {
+				["WeakAuras_holy_shock"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_healing_elixir"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_target_pvp_marker_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fel_vomit"] = {
+				["WeakAuras_astral_shift"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jaina2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_pain_suppresion"] = {
+				["WeakAuras_upwelling"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9356,7 +9457,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_corrupting_maw_timer_(tank)"] = {
+				["WeakAuras_jaina2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9364,7 +9465,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_debilitating_shout"] = {
+				["WeakAuras_11_soul_detonation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9372,16 +9473,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_upwelling"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)12"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_8._blockade_-_get_out"] = {
-					["Inherit"] = false,
+				["WeakAuras_jagged_shards"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_capacitor_2"] = {
-					["Disabled"] = true,
+				["WeakAuras_hex_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9389,8 +9488,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__36"] = {
-					["Inherit"] = false,
+				["WeakAuras_cd:_symbol_of_hope"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rotten_bile"] = {
@@ -9408,15 +9506,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_shock"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_09_storm_of_darkness"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_11_tank_run_to_soulbomb"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_blessing_of_t'uure"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_05-befouling_ink"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_mindbender"] = {
@@ -9427,18 +9525,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fire_elemental"] = {
+				["WeakAuras_frozen_tempest"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_flames_of_punishment"] = {
+				["WeakAuras_htt__active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_10_foe_breaker_(tank_only)"] = {
+				["WeakAuras_dive_bomb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__16"] = {
+				["WeakAuras_tsu3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9449,7 +9547,8 @@ MasqueDB = {
 				["WeakAuras_trash_-_piercing_shards"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_frozen_tempest"] = {
+				["WeakAuras_09_fury_of_golganneth_timer"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_branded"] = {
@@ -9458,11 +9557,20 @@ MasqueDB = {
 				["WeakAuras_icebound"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_fury_of_golganneth_timer"] = {
+				["WeakAuras_tft_duration"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_lacerating_claws_(tank)"] = {
+				["WeakAuras_unerring_shear"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_divine_hymn_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_fs_timer"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tectonic_proc"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9470,23 +9578,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_decay_(tank_only)"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_divine_hymn_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events98"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_ja:_frozen_solid"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_high_tides_proc"] = {
-					["Inherit"] = false,
+				["WeakAuras_growing_paranoia"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_mt:_wormhole_generator2"] = {
@@ -9497,15 +9593,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
 				},
-				["WeakAuras_tectonic_proc"] = {
+				["WeakAuras_terrifying_visage"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_serenity_2"] = {
+				["WeakAuras_high_tides_proc"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)22"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon23"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9521,17 +9617,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tyr's_deliverance_timer"] = {
+				["WeakAuras_m_ef_r6"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dive_bomb"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)62"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_storm_of_the_destroyer_cast3"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_chaotic_displacement"] = {
+				["WeakAuras_spiritwalkers_grace_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9551,11 +9648,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_spiritwalkers_grace_cd"] = {
+				["WeakAuras_04_chaotic_displacement"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_champion2"] = {
+				["WeakAuras_ja:_shattering_lance2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9575,7 +9672,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_death_fog"] = {
+				["WeakAuras_intellect_pot_amount"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9587,18 +9684,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_shattering_lance2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_07-dps/healing_buffs"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_archive2"] = {
+				["WeakAuras_ascendance_you_fucking_stupid_addon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon43"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon33"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon13"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9614,32 +9711,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_m_ef_r6"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_earthgrab_totem2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_terrifying_visage"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ch:_blinding_faith2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)52"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_power_of_the_naaru"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_sb:_kj_orb_2.0?"] = {
-					["Inherit"] = false,
+				["WeakAuras_halo_ready"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_phoguild_-_raid_ability_timeline_icon53"] = {
@@ -9650,25 +9722,31 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Zoomed",
 				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon73"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_scan_events"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_festering_rip"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon13"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon63"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_disintegrate"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_06_sleep_cannister_timer"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)42"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_est_active"] = {
+				["WeakAuras_scan_events122"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_velen_wait_htt_"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)15"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9676,11 +9754,29 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_rune_tap_huge"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)65"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_suramar_mana_counter"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_trinket_1_duration"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_disintegrate"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_transcendence:_transfer_m2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_prismatic_shield"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)25"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9692,15 +9788,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events122"] = {
+				["WeakAuras_rat_traps"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_10_taeshalach's_technique_timer"] = {
+				["WeakAuras_06_sleep_cannister_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_summon_black_ox_statue_off"] = {
+				["WeakAuras_savage_cleave3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9715,15 +9811,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)45"] = {
+				["WeakAuras_brew_spawn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_trinket_1_duration"] = {
-					["Inherit"] = false,
+				["WeakAuras_fel_beam_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)55"] = {
+				["WeakAuras_capacitor_totem_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9732,7 +9827,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07-obliteration_blast"] = {
+				["WeakAuras_01_decimation_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9748,7 +9843,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)25"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)45"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9759,11 +9854,11 @@ MasqueDB = {
 				["WeakAuras_focused_blast"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sighted_artillery"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)35"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)35"] = {
+				["WeakAuras_deezo_rsham_bottom11"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9787,24 +9882,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rune_tap_huge"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_despair"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)15"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_cloudburst_value"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_raging_gaze"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)65"] = {
+				["WeakAuras_07-obliteration_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9812,23 +9890,40 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_brew_spawn"] = {
+				["WeakAuras_paralysis_m2"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_despair"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_swp__fading"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)55"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_raging_gaze"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08-dark_mark"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_drenched_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ff"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blackout_strike_on_cd"] = {
+				["WeakAuras_fist_of_the_white_tiger_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)32"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_lightning_surge_totem"] = {
+				["WeakAuras_earthgrab_3"] = {
+					["Disabled"] = true,
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9843,7 +9938,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_velen_wait_htt_"] = {
+				["WeakAuras_shattered_defense"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9851,7 +9946,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_drenched_2"] = {
+				["WeakAuras_05-burden_of_pain_taunt_alert"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events65"] = {
@@ -9861,7 +9956,7 @@ MasqueDB = {
 				["WeakAuras_ascendance_cd_resto"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_toxic_chitin"] = {
+				["WeakAuras_demon's_vigor"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__9"] = {
@@ -9872,11 +9967,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_purple_portal_(nathreza)"] = {
+				["WeakAuras_05_spear_of_doom_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_suramar_mana_counter"] = {
+				["WeakAuras_06_shock_lance_\\_empowered_shock_lance_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9888,7 +9983,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_essence_font"] = {
+				["WeakAuras_09_freezing_blood_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9896,8 +9991,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fist_of_the_white_tiger_on_cd"] = {
-					["Inherit"] = false,
+				["WeakAuras_toxic_chitin"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rjw"] = {
@@ -9908,10 +10002,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mark_of_frost_soon"] = {
+				["WeakAuras_05_bursting_lesions"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shattered_defense"] = {
+				["WeakAuras_08-dark_bargain_don't_soak2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -9923,8 +10018,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_tested2"] = {
-					["Inherit"] = false,
+				["WeakAuras_shadow_slash"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_hindering_cleave2"] = {
@@ -9954,15 +10048,16 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_word:salvation"] = {
+				["WeakAuras_healing_tide_totem_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_bursting_lesions"] = {
+				["WeakAuras_essence_font"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_light_of_tuure-cd"] = {
+				["WeakAuras_purify2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events9"] = {
@@ -9973,7 +10068,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unstable_mana"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)26"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_earth_elemental_cd"] = {
@@ -9995,38 +10091,36 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purify2"] = {
+				["WeakAuras_mark_of_frost_soon"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)56"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_trinketslot_1"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)16"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wind_shear_cd"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)66"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-shadow_barrage_cast"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)36"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riot_shield"] = {
+				["WeakAuras_cloudburst_totem_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_10_ravenous_blaze"] = {
-					["Inherit"] = false,
+				["WeakAuras_succulent_feast"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ceaseless_winter"] = {
+				["WeakAuras_unstable_mana"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_transfer_the_power"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_blind_rage2"] = {
+				["WeakAuras_cloudburst_totem_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10034,15 +10128,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancestral_guidance_"] = {
+				["WeakAuras_trinketslot_1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mekkatorque2"] = {
+				["WeakAuras_gr:_throw_target"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_succulent_feast"] = {
+				["WeakAuras_light_of_tuure-cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_deezo_rsham_bottom4"] = {
@@ -10088,14 +10182,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purify-cd"] = {
+				["WeakAuras_jm:_tested2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_revival_ready"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_marked_prey_timer"] = {
+				["WeakAuras_blind_rage2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10103,11 +10198,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)46"] = {
+				["WeakAuras_cbt_timer_+_amount"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_shock_lance_\\_empowered_shock_lance_(tank_only)"] = {
+				["WeakAuras_mekkatorque2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10115,7 +10210,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_throw_target"] = {
+				["WeakAuras_agility"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10138,15 +10233,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_08_marked_prey_timer"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_11_tank_go_help_soulbomb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)16"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_chemical_burn2"] = {
+				["WeakAuras_06-shadow_barrage_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10166,15 +10261,14 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bigicon_when_targeted"] = {
+				["WeakAuras_purify-cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_10_ravenous_blaze"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)56"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)66"] = {
+				["WeakAuras_chemical_burn2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10182,7 +10276,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)36"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)46"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10193,11 +10287,11 @@ MasqueDB = {
 				["WeakAuras_shattering_star"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)26"] = {
+				["WeakAuras_04_transportation_portal"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_spear_of_doom_timer"] = {
+				["WeakAuras_bigicon_when_targeted"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10205,10 +10299,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shadow_slash"] = {
+				["WeakAuras_04_purple_portal_(nathreza)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_torment_of_flames"] = {
+				["WeakAuras_transfer_the_power"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10216,7 +10311,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cbt_timer_+_amount"] = {
+				["WeakAuras_07_essence_shatter"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10224,8 +10319,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earthgrab_3"] = {
-					["Disabled"] = true,
+				["WeakAuras_ancestral_guidance_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10233,60 +10327,59 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_agility"] = {
+				["WeakAuras_08_torment_of_flames"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-dark_mark"] = {
+				["WeakAuras_ceaseless_winter"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_06_enormous"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_paralysis_m2"] = {
+				["WeakAuras_riot_shield"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_totem_cd"] = {
+				["WeakAuras_lightning_surge_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_bottom11"] = {
+				["WeakAuras_wind_shear_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_totem_active"] = {
+				["WeakAuras_blackout_strike_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_frostbrand_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_tide_totem_"] = {
+				["WeakAuras_sighted_artillery"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_capacitor_totem_"] = {
+				["WeakAuras_holy_word:salvation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_transportation_portal"] = {
+				["WeakAuras_frostbitten_announce"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_est_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_essence_shatter"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_demon's_vigor"] = {
+				["WeakAuras_cloudburst_value"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_11_arcane_vulnerability"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-dark_bargain_don't_soak2"] = {
+				["WeakAuras_03_prismatic_shield"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10294,13 +10387,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-burden_of_pain_taunt_alert"] = {
+				["WeakAuras_force_cannon"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_swp__fading"] = {
+				["WeakAuras_summon_black_ox_statue_off"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)42"] = {
+				["WeakAuras_10_taeshalach's_technique_timer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10324,11 +10419,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_decimation_timer"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)32"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_frostbitten_announce"] = {
+				["WeakAuras_festering_rip"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_mt:_world_enlarger_cast"] = {
@@ -10342,19 +10437,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fel_beam_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_force_cannon"] = {
+				["WeakAuras_power_of_the_naaru"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_savage_cleave3"] = {
+				["WeakAuras_dark_omen"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rat_traps"] = {
+				["WeakAuras_11_death_fog"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tyr's_deliverance_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_05_eonar_energy"] = {
@@ -10365,26 +10460,28 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon33"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon63"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon73"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_08_shadow_strike_timer_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fs_timer"] = {
+				["WeakAuras_06_engorged_burst"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon23"] = {
+				["WeakAuras_archive2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events98"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_sb:_kj_orb_2.0?"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_capacitor_2"] = {
+					["Disabled"] = true,
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10392,7 +10489,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tft_duration"] = {
+				["WeakAuras_ch:_blinding_faith2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10400,27 +10497,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu3"] = {
+				["WeakAuras_earthgrab_totem2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_intellect_pot_amount"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)52"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_htt__active"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon43"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)62"] = {
+				["WeakAuras_fire_elemental"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_eye_of_the_tiger_off"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dark_omen"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_blessing_of_t'uure"] = {
+				["WeakAuras_champion2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10428,65 +10524,71 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unerring_shear"] = {
+				["WeakAuras_flask_timer_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-befouling_ink"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_halo_ready"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)12"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__16"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_soul_detonation"] = {
+				["WeakAuras_10_foe_breaker_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)22"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_serenity_2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
 				},
 				["WeakAuras_scan_events68"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_growing_paranoia"] = {
+				["WeakAuras_pain_suppresion"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_astral_shift"] = {
+				["WeakAuras_02_decay_(tank_only)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_virulent_pathogen2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_elixir"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_jagged_shards"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ttp_stacks"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_06_engorged_burst"] = {
+				["WeakAuras_05_lacerating_claws_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_phase_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riptide_cd_0_2"] = {
+				["WeakAuras_ttp_stacks"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_08-corpulent_mass"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flask_timer_2"] = {
+				["WeakAuras_09_spectral_army_of_norgannon_despawn_timer"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elementalblast"] = {
+				["WeakAuras_04_flames_of_punishment"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_numb_hands"] = {
+				["WeakAuras_wicked_dagger"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_fel_vomit"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09_storm_of_darkness"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10494,19 +10596,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__26"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__36"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ring_of_peace"] = {
+				["WeakAuras_consuming_hunger"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_8._blockade_-_get_out"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancient_mindbender"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_eye_of_the_tiger_off"] = {
+				["WeakAuras_savage_cleave_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10514,22 +10615,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rapid_shot"] = {
+				["WeakAuras_02_corrupting_maw_timer_(tank)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_supression_fire"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-call_of_blood_bloodhexer"] = {
-					["Inherit"] = false,
+				["WeakAuras_08-black_winds"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_hst_on_cd_(1_stack,_echo)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ascendance_you_fucking_stupid_addon"] = {
+				["WeakAuras_06-call_of_blood_bloodhexer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10541,47 +10642,46 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hex_cd"] = {
+				["WeakAuras_reinforcing_ward_boss_buff"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_immune_shield2"] = {
+				["WeakAuras_roll_m"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cd:_symbol_of_hope"] = {
+				["WeakAuras_elusive_dance"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_siegebreaker_blast"] = {
+				["WeakAuras_tides_deck_mana_regens"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_burning_brand"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_severing_blade2"] = {
+				["WeakAuras_04_incandescence"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_gem_buffs"] = {
-					["Inherit"] = false,
+				["WeakAuras_legacy_of_the_ravencrest"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rapture_cd"] = {
+				["WeakAuras_stormstrike"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_tm"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_light_of_t'uure_up"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_rest60ancestralprotectiontotem"] = {
+				["WeakAuras_voodoo_totem_cd_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earthen_shield_totem_"] = {
+				["WeakAuras_voodoo_totem_cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_evangilism"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10589,29 +10689,29 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_active_2"] = {
+				["WeakAuras_scan_events132"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events31"] = {
+				["WeakAuras_09_prismatic_image"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-eye_beam_cast2"] = {
+				["WeakAuras_arcane_lockdown"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_reswindrushtotemcd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_crusher_spawn"] = {
+				["WeakAuras_06_pool_of_darkness"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_legacy_of_the_ravencrest"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_riptide_2_set"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_icefall"] = {
+				["WeakAuras_as_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10619,18 +10719,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_void_nova"] = {
+				["WeakAuras_apt_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_incandescence"] = {
+				["WeakAuras_maddening_gaze3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_astral_shift_buff_2"] = {
+				["WeakAuras_rt_2_stack"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tank_debuffs_2"] = {
+				["WeakAuras_06-rupturing_blood2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10641,11 +10741,11 @@ MasqueDB = {
 				["WeakAuras_dancing_rune_weapon"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_surge_of_the_mists"] = {
+				["WeakAuras_09_searing_pitch"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_misery"] = {
+				["WeakAuras_09_howling_winds_(mythic)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10653,7 +10753,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gift_of_the_queen_buff"] = {
+				["WeakAuras_06-rupturing_blood_offtank"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10661,8 +10761,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_as_2"] = {
-					["Inherit"] = false,
+				["WeakAuras_gorefiend's_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rip"] = {
@@ -10673,41 +10772,42 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_song_of_chi-ji_2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon64"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dampenharm"] = {
+				["WeakAuras_deathgrip"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_09-focused_dreadflame_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events64"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon34"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-thrumming_pulse2"] = {
+				["WeakAuras_choking_brine2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon44"] = {
+				["WeakAuras_08-power_matrix"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events113"] = {
+				["WeakAuras_tremor_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_power_strikes_ready"] = {
+				["WeakAuras_hst"] = {
+					["Disabled"] = true,
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_lavaburst_cd_2_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_when_is_my_next_high_tide3"] = {
+				["WeakAuras_song_of_chi-ji_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10727,45 +10827,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_divine_hymn"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon14"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_05_crawling_hex"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_touch_of_death_active"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_gravitational_pull_frost"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon24"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_swg_off_cd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_armageddon"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_guard"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_lingering_dread"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_jadestatue2"] = {
+				["WeakAuras_holy_word:sanctuary"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10773,81 +10835,41 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_10_wrought_in_flame_(mythic)"] = {
+				["WeakAuras_06_radiation_zone"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_earthgrab_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04_transport_portal_timer"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_sef_active"] = {
+				["WeakAuras_touch_of_death_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_raging_gaze2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08_tidal_shroud"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04_earthen_roots"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_borrowed_time"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cloudburst_totem_active_2"] = {
+				["WeakAuras_apt_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_fiery_strike_timer_(tank)"] = {
+				["WeakAuras_cc:_wild_maul_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_essence_font2"] = {
+				["WeakAuras_armageddon"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09_arctic_armor"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ignite_soul"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon72"] = {
+				["WeakAuras_lingering_dread"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_burning_bones"] = {
+				["WeakAuras_twilight_glaive"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cursed_touch"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_venomous_spit"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_rule_of_law_timer"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_healing_stream_totem_s_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon3"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_chi_wave_2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_05_plague_bomb_dot"] = {
+				["WeakAuras_07_reverberating_strike_timer_(melees)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10855,14 +10877,90 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_sea_swell_(mythic)_2"] = {
+				["WeakAuras_earthgrab_cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_icefure_active_2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_sef_active"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_scan_events52"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08_tidal_shroud"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_obliteration_blast_-_boss"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_halo_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09_sense_of_dread"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_hst_timer"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02_siphon_corruption_timer"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ignite_soul"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_healing_stream_totem_s_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_burning_bones"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_gow"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_earthen_wall_totem"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ascendance_timer_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon52"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tft_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon12"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_searing_brand_mark_soon_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon72"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_earth_shield_r"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_suppression_protocol"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_angelic_feather"] = {
+				["WeakAuras_purify_spirit_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10870,7 +10968,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_uldir_defensive_beam"] = {
+				["WeakAuras_darkness"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10880,7 +10978,7 @@ MasqueDB = {
 				["WeakAuras_immolation_aura"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fel_nova"] = {
+				["WeakAuras_thunder_ritual"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_02_weight_of_darkness_slow"] = {
@@ -10899,7 +10997,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - Hide Empties",
 				},
-				["WeakAuras_07_demolished"] = {
+				["WeakAuras_venomous_spit"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10911,18 +11009,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon12"] = {
+				["WeakAuras_power_strikes_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_healing_stream_totem_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_soul_venom"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon52"] = {
+				["WeakAuras_11_sweeping/deadly_scythe_timer_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon42"] = {
+				["WeakAuras_08-gaze_of_g'huun_soon"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10933,7 +11032,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deadeye_target"] = {
+				["WeakAuras_rock_lance"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10941,14 +11040,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gs2"] = {
+				["WeakAuras_expel_light"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_void_seed2"] = {
+				["WeakAuras_09_cosmic_glare_timer_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_slicing_tornado"] = {
+				["WeakAuras_07_decimation_timer"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_05-contagion_6_stacks2"] = {
@@ -10959,22 +11059,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_death_&_decay_blood_glow"] = {
+				["WeakAuras_time_bomb"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_crawling_hex"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_sweeping/deadly_scythe_timer_(tank)"] = {
+				["WeakAuras_chi_wave_mist"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_cake"] = {
+				["WeakAuras_kr:_got_hit_by_toads2"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__2"] = {
+				["WeakAuras_tsu_25"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -10982,25 +11082,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_felflame"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04_collapsing_world_timer"] = {
+				["WeakAuras_fist_of_the_white_tiger"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_expel_light"] = {
+				["WeakAuras_07_scorching_detonation_(tank_only)"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_tsu23"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_hindering_cut2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tsu15"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_scan_events18"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11008,12 +11102,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "Zoomed",
 				},
+				["WeakAuras_scan_events18"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ravenous_leap"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_aura_of_apathy2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_invoke_chi-ji_the_red_crane2"] = {
-					["Inherit"] = false,
+				["WeakAuras_gift_of_the_queen_g_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_intangible_presence"] = {
@@ -11022,50 +11122,49 @@ MasqueDB = {
 				["WeakAuras_riptide_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu14"] = {
+				["WeakAuras_blind_rage"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events48"] = {
-					["Inherit"] = false,
+				["WeakAuras_mark_of_frost_3"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_03_explosion"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_class_neck_-_holy"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_healing_stream_totem_buff"] = {
+				["WeakAuras_rjw_range_tracker"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_consuming_flame"] = {
+				["WeakAuras_whirling_blades"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_07_apocalypse_protocol_(adds_spawn)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-frigid_blows"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_guard_active"] = {
+				["WeakAuras_111_rain"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_when_is_my_next_high_tide"] = {
+				["WeakAuras_light's_wrath_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reincarn_2"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__19"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_9._jaina_-_get_to_fire_(non_tw)"] = {
+				["WeakAuras_decaying_spores"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_fel_bombardment_(tank_only)"] = {
+				["WeakAuras_mana_tea_active"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_03_pod_free"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11073,7 +11172,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_doom_winds"] = {
+				["WeakAuras_scan_events86"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_04-shatter"] = {
@@ -11088,7 +11188,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_111_rain"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__21"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11096,23 +11196,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_annihilation_timer"] = {
-					["Inherit"] = false,
+				["WeakAuras_frostbitten_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ch:_seal_of_retribution"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_pod_free"] = {
-					["Inherit"] = false,
+				["WeakAuras_hydra_acid"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_resspiritwalkersgraceuptime"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__29"] = {
+				["WeakAuras_8"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11124,45 +11222,45 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_psychic_scream_healer"] = {
+				["WeakAuras_lightning_rod_off"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_touch_of_death_cd"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_savage_roar"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__39"] = {
+				["WeakAuras_04-corruptor's_pact"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mindbender2"] = {
+				["WeakAuras_essence_font_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_aura_mastery_2"] = {
+				["WeakAuras_05-consuming_hunger"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healthstone_2"] = {
+				["WeakAuras_anchors_wa_to_spawn_of_g'huun_nameplate_if_it_targets_you2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)11"] = {
+				["WeakAuras_serrated_fangs"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gs"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__31"] = {
+				["WeakAuras_blackout_combo"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07-critical_mass2"] = {
+				["WeakAuras_essence_font_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_whispers_of_power"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ch:_divine_protection"] = {
+				["WeakAuras_maddening_gaze"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11170,11 +11268,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_rending_bite_(tank_only)"] = {
-					["Inherit"] = false,
+				["WeakAuras_elemental_mastery"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon36"] = {
+				["WeakAuras_04_shatter_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11182,22 +11279,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_wind_rush"] = {
-					["Disabled"] = true,
-					["Inherit"] = false,
+				["WeakAuras_mark_of_frost_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cbt_on_cd"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08-desolate"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_blood_plague_missing"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ja:_heart_of_frost"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11205,36 +11290,49 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_06_bloodthirsty_crawg_spawn"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ja:_heart_of_frost"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon28"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_09_frost_nova_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_creeping_rot3"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon9"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_unstable_hex"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_mark_of_frost_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_phoguild_-_raid_ability_timeline_icon38"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_beacon_of_virtue"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_burning_leg_sweep"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tft_up_3"] = {
+				["WeakAuras_08_putrid_blood"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_serrated_fangs2"] = {
+				["WeakAuras_guidance"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_beacon_of_virtue"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["OmniBar"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_09-bursting_dreadflame"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["Bartender4_1"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11242,26 +11340,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_poison_barrage2"] = {
+				["WeakAuras_hangman's_noose"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rest100wellspringcd"] = {
+				["WeakAuras_mt_(m):_enormous2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_piercing_shards"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_death's_door"] = {
+				["WeakAuras_soulrend"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_tantrum_debuffs_[a/h]"] = {
+				["WeakAuras_scan_events47"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["OmniBar"] = {
+				["WeakAuras_flame_shock_not_active_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11273,15 +11371,24 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_witness_of_the_void_myth"] = {
+				["WeakAuras_04_green_portal_(rancora)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_healing_rain_cd_4_set"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_deathly_withering"] = {
+				["ElvUI_ActionBars"] = {
+					["Colors"] = {
+						["Backdrop"] = {
+							1, -- [1]
+							1, -- [2]
+							1, -- [3]
+							1, -- [4]
+						},
+					},
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
+					["SkinID"] = "ElvUIesque - Hide Empties",
 				},
 				["WeakAuras_hr_off_cd"] = {
 					["Inherit"] = false,
@@ -11290,7 +11397,7 @@ MasqueDB = {
 				["WeakAuras_chaotic_shadows"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_cosmic_smash"] = {
+				["WeakAuras_dust_cloud_self2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11298,89 +11405,87 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_avenging_wrath_holy"] = {
+				["WeakAuras_05-delicious_bufferfish"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events41"] = {
-					["Inherit"] = false,
+				["WeakAuras_healing_rain_4_set"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_drenching_waters"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_soulrend"] = {
-					["Inherit"] = false,
+				["WeakAuras_storm_of_the_destroyer_cast4"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ja:_fixated"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_green_portal_(rancora)"] = {
+				["WeakAuras_link_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_thunderfocustea-nocd"] = {
+				["WeakAuras_01_judgment:_reckoning"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_quaking_palm"] = {
+				["WeakAuras_op:_soothing_breeze2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_plague_of_fire"] = {
+				["WeakAuras_mt:_buster_cannon_cast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_undulation_1_2"] = {
+				["WeakAuras_thundering_crash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_frenzied_charge"] = {
+				["WeakAuras_shadowfiend"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_renewingmist"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__3"] = {
+				["WeakAuras_embalming_fluid2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_power_word_shield"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_guidance"] = {
+				["WeakAuras_final_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_forging_strike_(tank_only)"] = {
-					["Inherit"] = false,
+				["WeakAuras_01-shattering_star"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_gr:_reverberating_slam_[h]"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rune_tap_cd"] = {
+				["WeakAuras_04-roiling_deceit2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_slow_time"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-sundering_doom_2"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_maiden_assignment"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_tiw_missed"] = {
+				["WeakAuras_wdp"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon47"] = {
+				["WeakAuras_elemental_blast_2"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_scan_events14"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-echoing_anguish"] = {
+				["WeakAuras_new"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ablation"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_unleash_life_"] = {
@@ -11395,7 +11500,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events14"] = {
+				["WeakAuras_lust"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11403,19 +11508,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_sentence_of_sargeras"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_fortifying_brew_m"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_11_sky_and_sea_spawn"] = {
-					["Inherit"] = false,
+				["WeakAuras_09-shadow_reflection"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__42"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04-roiling_deceit"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_ravaging_leap"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11431,7 +11535,8 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-doomed_sundering"] = {
+				["WeakAuras_04_caustic_slime"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_04_thief's_bane"] = {
@@ -11442,25 +11547,25 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_caustic_slime"] = {
+				["WeakAuras_umbra_suffusion"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_sr:_malignant"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_duelist_dash2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)21"] = {
+				["WeakAuras_06-dark_revelation2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ablation"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bonestorm"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02-spreading_epidemic2"] = {
+				["WeakAuras_ja:_siegebreaker_blast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_purifying_flame"] = {
+				["WeakAuras_04_liquid_gold"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11472,19 +11577,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cursed_slash2"] = {
+				["WeakAuras_op:_brilliant_aura"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_plague2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon40"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blockade"] = {
+				["WeakAuras_03-malodorous_miasma2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_duelist_dash2"] = {
+				["WeakAuras_flametongue_debuff"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11492,11 +11597,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_life_cocoon_on_cd"] = {
+				["WeakAuras_07_zombie_dust_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_felsilk_wrap"] = {
+				["WeakAuras_apt_off_ccd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11504,15 +11609,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_eye_of_the_tiger_on"] = {
+				["WeakAuras_04_flames_of_punishment_dot"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_expel_soul"] = {
+				["WeakAuras_4._opulance_-_swapper"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_burning_explosion_(mythic)"] = {
+				["WeakAuras_swg__2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11520,11 +11625,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_iced_spritzer"] = {
+				["WeakAuras_elem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_smouldering"] = {
+				["WeakAuras_cast_on_you_(tank_only)_-_airhorn_sound_active_(selfcd)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11532,7 +11637,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_icefall"] = {
+				["WeakAuras_ironskin_not_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11540,11 +11645,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancestral_protection_totem"] = {
+				["WeakAuras_life_cocoon_on_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_tailwinds"] = {
+				["WeakAuras_reincarn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11552,29 +11657,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_stuffed"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_op:_brilliant_aura"] = {
+				["WeakAuras_ancestral_protection_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon10"] = {
+				["WeakAuras_gift_of_the_queen_4"] = {
 					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_06-soulbind"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tectonic_smash"] = {
-					["Inherit"] = false,
+				["WeakAuras_dark_rush"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_grace_of_nature"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon20"] = {
-					["Inherit"] = false,
+				["WeakAuras_03-driven_assault"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_taint_of_ghuun2"] = {
+				["WeakAuras_03-malodorous_miasma_m2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11582,18 +11685,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dark_rush"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_champion"] = {
+				["WeakAuras_03-putrid_paroxysm"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_xuen_spawn"] = {
+				["WeakAuras_09_shadow_blades_timer_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end19"] = {
+				["WeakAuras_mark_of_frost_soon_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon48"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11604,13 +11707,29 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
+				["WeakAuras_02_singed"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["Plater Nameplates_Aura Frame 1"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)33"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
 				["WeakAuras_runic_brand_green"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_stinging_swarm"] = {
+				["WeakAuras_dark_revelation2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_energizing_elixir_on_cd"] = {
+				["WeakAuras_sap_soul"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_healing_rain_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11618,44 +11737,28 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dark_revelation2"] = {
-					["Inherit"] = false,
+				["WeakAuras_power_word:_solace_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_new_2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_gust_cd"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_tsu19"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_doomed_sundering"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_7._gnome_wormhole"] = {
+				["WeakAuras_ancestral_protector_totem__2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_holy_avenger_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)31"] = {
+				["WeakAuras_rising_sun_kick_mw_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_rain_"] = {
+				["WeakAuras_08-bursting_boil_spawn"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hooked_snare"] = {
-					["Inherit"] = false,
+				["WeakAuras_shadowfiend_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events80"] = {
+				["WeakAuras_savage_roar_overlay"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11671,7 +11774,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancestral_protector_totem__2"] = {
+				["WeakAuras_scan_events78"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11679,7 +11782,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_torment_2"] = {
+				["WeakAuras_gift_of_the_queen_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_raids_cooldowns_used"] = {
@@ -11694,34 +11797,31 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events78"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon18"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_putrid_blood"] = {
-					["Inherit"] = false,
+				["WeakAuras_ablating_explosion"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_savage_roar_overlay"] = {
-					["Inherit"] = false,
+				["WeakAuras_flaming_orb"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events79"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op_(m):_displacement2"] = {
-					["Inherit"] = false,
+				["WeakAuras_accelerate"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_dargrul_-_molten_crash"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_elem_cd"] = {
+				["WeakAuras_tidal_waves_1_buff_g"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flame_shock_active_2"] = {
+				["WeakAuras_mw_zen_pulse"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11736,49 +11836,48 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flaming_orb"] = {
+				["WeakAuras_eye_beam"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_evangelism"] = {
+				["WeakAuras_06_rupturing_blood_(tank)"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_auramastery"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["TellMeWhen_Group: 1"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - Hide Empties",
-				},
-				["WeakAuras_08-blood_feast_spread"] = {
+				["WeakAuras_storm,_earth,_and_fire"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_velen_htt_ready_"] = {
+				["WeakAuras_evangelism"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_es"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dampen_harm_timer_ww"] = {
+				["WeakAuras_05-bursting_lesions"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tft"] = {
+				["WeakAuras_coronal_ejection"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon66"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_void_echoes_"] = {
+				["WeakAuras_quake"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_10"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_sky_and_sea"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_channel_lightning"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04_eye_beams"] = {
+				["WeakAuras_explosive_keg"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11786,25 +11885,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_frigid_nova"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_earthgrab"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_electroshock"] = {
+				["WeakAuras_03_psychic_assault"] = {
 					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_08_echoes_of_doom"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_penance_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_sb:_catastrophic_tides2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_innervate_buff_priest2"] = {
+				["WeakAuras_flying_serpent_kick_on_cooldown"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ancestral_guidance_3"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)29"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["ElvUI_Pet Bar"] = {
@@ -11815,43 +11916,42 @@ MasqueDB = {
 				["WeakAuras_power_word:_barrier"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_crane"] = {
+				["WeakAuras_reincarn_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dark_command"] = {
+				["WeakAuras_sonic_screech_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shining_force2"] = {
+				["WeakAuras_06-pool_of_darkness_soak2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_consuming_sphere_(non-mythic)"] = {
+				["WeakAuras_02_consuming_sphere_(non_mythic)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_demolish_timer"] = {
+				["WeakAuras_echo_blade3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_volatile_pods"] = {
+				["WeakAuras_04_green_protal_(rancora)_announcer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_whirling_dragon_punch"] = {
+				["WeakAuras_lifecycles_enveloping_mists2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_velen_goooo_"] = {
+				["WeakAuras_melted_armor"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_desperate_prayer"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-gaze_of_g'huun2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)43"] = {
+				["WeakAuras_thunder_focus_tea2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11859,27 +11959,25 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu6"] = {
-					["Inherit"] = false,
+				["WeakAuras_06-sundering_doom"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dancing_rune_weapon_huge"] = {
+				["WeakAuras_delicious_bufferfish"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_stormkeeper_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tarrat"] = {
-					["Disabled"] = true,
+				["WeakAuras_remote_stagger_tracker"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rjw_ready_(mw)"] = {
+				["WeakAuras_02-surgical_beam_top2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sighted_artillery2"] = {
+				["WeakAuras_lingering_nausea"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11891,21 +11989,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sanguine_healing"] = {
+				["WeakAuras_scan_events102"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_felclaws"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)51"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)61"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon31"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)13"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_energy_surge"] = {
+				["WeakAuras_dancing_rune_weapon_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_monastery_tech"] = {
@@ -11916,7 +12015,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_undulation"] = {
+				["WeakAuras_explode_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11929,50 +12028,51 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cyclone_strike"] = {
+				["WeakAuras_sargeras'_rage_bw"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cbt_ready"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)10"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events20"] = {
+				["WeakAuras_08_malignant_growth"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_soul_echoes"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon21"] = {
+				["WeakAuras_07_focused_demise"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sef_ready"] = {
+				["WeakAuras_sb:_electric_/_tidal_shroud2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-rotting_regurgitation"] = {
+				["WeakAuras_sg_cd_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_gift_of_the_sea"] = {
+				["WeakAuras_03_rotting_regurgitation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_haste_brew"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)17"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_bottom3"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)47"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu9"] = {
+				["WeakAuras_aggramar"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_king_kong2"] = {
+				["WeakAuras_diffuse_magic"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_hst_2_stack"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11980,18 +12080,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hydra_shot_2.0"] = {
+				["WeakAuras_divine_star_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_7,_gnome_laser"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jadefire"] = {
+				["WeakAuras_duelist_dash3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bloodlust_cd_"] = {
+				["WeakAuras_blazing_azerite_self2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -11999,15 +12099,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mt:_gigavolt_charge"] = {
+				["WeakAuras_jade_statue_not_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__45"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)34"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_mark_on_me_"] = {
+				["WeakAuras_renewing_mist_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12023,24 +12123,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fire_shock_r"] = {
+				["WeakAuras_hangman's_noose2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)57"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)6"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_high_tide_proc"] = {
+				["WeakAuras_mt:_discombobulation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)17"] = {
+				["WeakAuras_deezo_rsham_bottom"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dh"] = {
-					["Inherit"] = false,
+				["WeakAuras_judgment_of_light"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_riptide_cd_2_set"] = {
@@ -12058,40 +12157,39 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_acidic_web"] = {
+				["OmniBar_Disrupt"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_rain_cd_2"] = {
+				["WeakAuras_severed_soul_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)59"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)6"] = {
+				["WeakAuras_gravitational_pull_fel"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["OmniBar_Pummel"] = {
 					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_unbound_chaos"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_fast_time"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_bosses_too_close2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events87"] = {
+				["WeakAuras_archive"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events39"] = {
-					["Inherit"] = false,
+				["WeakAuras_drenched"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lava_burst_cd_2"] = {
+				["WeakAuras_thunderstrike_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_wave_on_cd_(brm)"] = {
+				["WeakAuras_1._champions_-_buffed_target"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12099,7 +12197,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ch:_raid_damage2"] = {
+				["WeakAuras_06_wormhole_generator"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12107,7 +12205,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["OmniBar_Pummel"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__44"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12115,27 +12213,27 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_bottom"] = {
+				["WeakAuras_scan_events6"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_blood_host"] = {
+				["WeakAuras_scan_events50"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon2"] = {
+				["WeakAuras_when_is_my_next_high_tide_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cocoon"] = {
+				["WeakAuras_scan_events100"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03-malodorous_miasma_m"] = {
+				["WeakAuras_lifecycles_em"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu22"] = {
+				["WeakAuras_savage_tempest2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12151,41 +12249,41 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_life_cycles_(envm)"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__24"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shatter_essence"] = {
+				["WeakAuras_wither"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__44"] = {
+				["WeakAuras_synergistic_growth"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_velens"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_trample2"] = {
+				["WeakAuras_04-void_lash"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_no_swp"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)44"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)24"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu_2"] = {
+				["WeakAuras_gust_of_wind_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bone_shield"] = {
+				["WeakAuras_strength"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lifecycles_vivify"] = {
+				["WeakAuras_fireshock_g"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_revival"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12193,10 +12291,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_blood_boil_2_stacks"] = {
+				["WeakAuras_frigid_blows"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events118"] = {
+				["WeakAuras_01_angelic_renewal"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12204,17 +12302,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-call_of_blood_bloodhexer2"] = {
+				["WeakAuras_cleanse_2"] = {
+					["Disabled"] = true,
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lava_burst_cd_3"] = {
+				["WeakAuras_tectonic_smash2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_ptw_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bursting_boil_2"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__18"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12222,37 +12322,38 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon75"] = {
+				["WeakAuras_3_3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_schism"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-hypergenesis2"] = {
+				["WeakAuras_manatea_buff"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_frigid_blows"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["VuhDo"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_drain_fluids2"] = {
+				["WeakAuras_scan_events89"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_resastralshiftcd"] = {
+				["WeakAuras_ja:_broadside2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_serpentine_gust2"] = {
+				["WeakAuras_08-growing_corruption2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events_-_config_in_actions_-_on_init2"] = {
+				["WeakAuras_riptide_echo"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_02_wind_tunnel"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_background_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12260,22 +12361,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_iron_gaze2"] = {
+				["WeakAuras_high_tide"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lightning_rod_on_target_2"] = {
+				["WeakAuras_09_warmth_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_searing_brand_mark"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__23"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)5"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08-growing_corruption2"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__23"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12284,31 +12385,31 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hand_of_reckoning"] = {
+				["WeakAuras_iron_gaze2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon55"] = {
+				["WeakAuras_07-essence_shear"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_10_searing_tempest"] = {
+				["WeakAuras_04-shatter2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01-enlarged_heart_offtank"] = {
+				["WeakAuras_05-contagion_6_stacks"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__18"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)38"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end25"] = {
+				["WeakAuras_unleash_life2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_transcendence_m"] = {
+				["WeakAuras_02_siphoned"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12316,21 +12417,22 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_clogged_arteries"] = {
+				["WeakAuras_shipbreaker_storm2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)28"] = {
+				["WeakAuras_03-shockwave_stomp"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-fel_squall"] = {
+				["WeakAuras_ascendance_active_underlay_2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_tof_timer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_blades_of_the_eternal_(only_active_for_tanks)"] = {
+				["WeakAuras_astral_shift_cd_"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12342,7 +12444,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_bestial_throw_target"] = {
+				["WeakAuras_reorigination_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12363,7 +12465,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_siphoned"] = {
+				["WeakAuras_reswindshearcd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12375,11 +12477,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__6"] = {
+				["WeakAuras_charge_22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_word:serenity2"] = {
+				["WeakAuras_brew_spawn2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12387,77 +12489,79 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon11"] = {
+				["WeakAuras_lightning_shield2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fade_healer"] = {
+				["WeakAuras_poisoning_strike2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reswindshearcd"] = {
+				["WeakAuras_scan_events5"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_aqueous_burst"] = {
+				["WeakAuras_11_initialization_sequence"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_hooked_snare2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon8"] = {
+				["WeakAuras_02-clinging_corruption"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_desperate_prayer2"] = {
+				["WeakAuras_11_avatar_of_aggramar_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon41"] = {
+				["OmniBar_Solar Beam"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_bottom2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon57"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_plague_of_fire"] = {
+				["Bartender4_MicroMenu"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_tide_totem_buff"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon35"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_resspiritlink(t100hightidetaken)"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end12"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_obliteration_beam_2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon46"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__13"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__10"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_poison_spear"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__12"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cc:_bleeding_wounds2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_red_portal_(xoroth)_announcer"] = {
+				["WeakAuras_02_sanitizing_strike_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rotting_regurgitation"] = {
+				["WeakAuras_lifecycles_enveloping_mists"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon57"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12469,57 +12573,53 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__12"] = {
+				["WeakAuras_scan_events74"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rupture_realiaties"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__10"] = {
+				["WeakAuras_ch:_seal_of_reckoning"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_divine_star"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_cosmic_ray_timer"] = {
+				["WeakAuras_overflowing"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_riptide>=1"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06-call_of_blood_crusher2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_dive_bomb2"] = {
+				["WeakAuras_09_siegebreaker_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_numb_hands2"] = {
+				["OmniBar_Counterspell"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_unstable_runic_mark"] = {
+				["WeakAuras_08-gaze_of_g'huun_soon2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lifecycles_enveloping_mists"] = {
+				["WeakAuras_01-burning_armor_debuff"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_undulation_1"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06_blast_off"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04-orb_of_corruption2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_08-power_matrix_status_22"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_when_is_my_next_high_tide_22"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_sb:_sea_swell_incoming"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_02-surgical_beam_side"] = {
+				["WeakAuras_vile_expulsion2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12527,37 +12627,37 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_anchors_wa_to_spawn_of_g'huun_nameplate_if_it_targets_you3"] = {
+				["WeakAuras_02-surgical_beam_side"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon51"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)49"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_fd_early_warning"] = {
+				["WeakAuras_08_torment_of_fel"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_wellspring"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_slicing_blast2"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__27"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events61"] = {
-					["Inherit"] = false,
+				["WeakAuras_04-embrace_of_the_eclipse_boss"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_scan_events13"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_holy_bulwark"] = {
+				["WeakAuras_htt_3"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)49"] = {
+				["WeakAuras_burning_brush2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12569,30 +12669,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_03_magma_trap"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon61"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-call_of_blood_crusher2"] = {
+				["WeakAuras_hindering_cleave"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09-felclaws"] = {
+				["WeakAuras_9._jaina_-_laser"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_fists_of_fury"] = {
-					["Inherit"] = false,
+				["WeakAuras_devouring_remnant"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_04-orb_of_corruption3"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__4"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__40"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_crit_brew2"] = {
+				["WeakAuras_empowerment2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12603,41 +12703,42 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sb:_new_add_incoming"] = {
+				["WeakAuras_wdp_not_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-bone_saw"] = {
+				["WeakAuras_slt"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__32"] = {
+				["WeakAuras_bloodlust_active"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rain"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)50"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_gr:_bestial_throw_(tank)"] = {
+				["WeakAuras_health_pot_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jagged_nettles2"] = {
+				["WeakAuras_crit_brew2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_armageddon_rain"] = {
+				["WeakAuras_ship"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_01-enlarged_heart_help2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_burning_brush2"] = {
+				["WeakAuras_scan_events53"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_voidform"] = {
+				["WeakAuras_anchors_interruptorder_to_jaina's_tide_elemetal(s)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12649,19 +12750,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon71"] = {
+				["WeakAuras_fire_elemental_cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_earth_link_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_bleeding_wounds"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon77"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__30"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_leg_sweep_m"] = {
+				["Plater Nameplates_Aura Frame 2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12669,12 +12769,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deadeye_target_cast"] = {
-					["Inherit"] = false,
+				["WeakAuras_feed_on_the_weak"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events111"] = {
-					["Inherit"] = false,
+				["WeakAuras_04-discoporate"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_shattered_defenses"] = {
@@ -12692,11 +12790,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bulwark_of_juju"] = {
+				["WeakAuras_scan_events111"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bloodlust_active"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon65"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12704,7 +12802,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02-sundering_scalpel_offtank2"] = {
+				["WeakAuras_op:_flames_dot2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12727,11 +12825,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_5"] = {
+				["WeakAuras_putrid_blood2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healing_stream_totem_cd"] = {
+				["WeakAuras_gravity_squeeze"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_rjw_number"] = {
@@ -12742,23 +12840,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_gnomish_force_shield"] = {
+				["WeakAuras_ja_(m):_freezing_blood"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_time_dilation"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_phoguild_-_raid_ability_timeline_icon76"] = {
+				["WeakAuras_symbol_of_hope"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lava_burst"] = {
-					["Disabled"] = true,
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon26"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bestow_faith"] = {
+				["WeakAuras_divine_steed_holy"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_gr:_zappy_core"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_impaling_shard"] = {
@@ -12768,22 +12866,21 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_thunderstorm_cd"] = {
+				["WeakAuras_blood_plague"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_soulburn2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_tested"] = {
+				["WeakAuras_focused_dreadflame"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_lightning_surge_totem_cd"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_divine_steed_holy"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bad_-_grong_-_discharge_apetagonizer/necrotic_core"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_op:_flames_dot2"] = {
+				["WeakAuras_rising_sun_kick_m2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12791,26 +12888,26 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_oiled_blade2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_breath_of_fire_on_cd"] = {
-					["Inherit"] = false,
+				["WeakAuras_flame_shock_off"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_deadeye_target_debuff"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events33"] = {
+				["WeakAuras_oiled_blade2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scattering_field"] = {
+				["WeakAuras_06-unleashed_shadow2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06-shadow_barrage_cast2"] = {
+				["WeakAuras_ascendance_buff"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)54"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12836,7 +12933,7 @@ MasqueDB = {
 				["WeakAuras_light_of_tuure-up"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_big_red_rocket"] = {
+				["WeakAuras_op:_coin_shower2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12844,19 +12941,17 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_brutal_blackhand3"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_03_entropic_mine_timer"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
 				["WeakAuras_tsu18"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_wild_maul_(tank)2"] = {
+				["WeakAuras_fel_stomp_3"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_velen_active"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_kr:_iskar_mechanic2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12864,11 +12959,10 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_hst_off_cd"] = {
-					["Inherit"] = false,
+				["WeakAuras_plasma_explosion"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_rising_sun_kick_m2"] = {
+				["WeakAuras_04_grossly_incandescent!"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12876,7 +12970,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_decaying_spores2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon58"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12886,23 +12980,23 @@ MasqueDB = {
 				["WeakAuras_down_draft"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_psychic_scream_healer2"] = {
+				["WeakAuras_scan_events10"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_glacial_ray_cast"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)48"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_undertow2"] = {
+				["WeakAuras_phoguild_-_raid_ability_timeline_icon29"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu_210"] = {
+				["WeakAuras_ja:_freezing_blast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_itchy_bite"] = {
+				["WeakAuras_08_bursting_boil_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12917,42 +13011,40 @@ MasqueDB = {
 				["WeakAuras_09-armageddon_rain"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)48"] = {
+				["WeakAuras_circle_of_healing2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_withering_curse2"] = {
-					["Inherit"] = false,
+				["WeakAuras_trash_-_acid_splatter"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sa_-_detonate:_sb"] = {
+				["WeakAuras_tsu21"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_blazing_azerite"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_freezing_blast"] = {
+				["WeakAuras_04-twilight_glaive"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_kr:_focused_demise"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scabrous_bite2"] = {
+				["WeakAuras_ancestral_guidance_cd"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_06_sheep_shrapnel"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tremor"] = {
+				["WeakAuras_sea_spout2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_chi_burst"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_jm:_force_orb"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_op:_hex_of_lethargy"] = {
+				["WeakAuras_jm:_whirling_jade_storm2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12961,11 +13053,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_eonar"] = {
+				["WeakAuras_ancestral_vigor"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_6.__king_-_soaking!"] = {
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -12973,30 +13065,29 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu_212"] = {
+				["WeakAuras_op:_thief's_bane"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_deezo_rsham_main4"] = {
+				["WeakAuras_efflorescence_counter"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_light_of_t'uure_cd"] = {
+				["WeakAuras_02_discharge_shadow/apetagonizer_core"] = {
 					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
+					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end18"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end28"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_fireshock__"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_op:_thief's_bane"] = {
-					["Inherit"] = false,
+				["WeakAuras_rockbiter"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sea_spout2"] = {
+				["WeakAuras_healingelixir"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13004,38 +13095,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flame_shock_"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_electroshock2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_ancestral_vigor"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_furious_quake2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_bone_shield_missing"] = {
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_sheilun_stacks"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_04-corruptor's_pact2"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_plague"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_roll_m2"] = {
+				["WeakAuras_crit_brew"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13043,15 +13103,47 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_cc:_fixated2"] = {
+				["WeakAuras_chastie2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_healingelixir"] = {
+				["WeakAuras_rummy_mancomb's_casts_(captain_eudora_week)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_permeliative_torment"] = {
+				["WeakAuras_07-imminent_ruin_aoe"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)__43"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_04-corruptor's_pact2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_05_thundering_storm"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_roll_m2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_kr:_deathly_withering2"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_serenity_active"] = {
+					["Inherit"] = false,
+					["SkinID"] = "Masque: Shadow 4",
+				},
+				["WeakAuras_tank_debuffs_"] = {
+					["Inherit"] = false,
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_shield"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_lifecycles"] = {
@@ -13070,19 +13162,18 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_kr:_deathly_withering2"] = {
+				["WeakAuras_ch:_seal_of_retribution2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_09_cosmic_glare_others"] = {
+				["WeakAuras_gift_of_the_queen"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)58"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_serenity_active"] = {
-					["Inherit"] = false,
-					["SkinID"] = "Masque: Shadow 4",
-				},
-				["WeakAuras_ravaging_leap2"] = {
+				["WeakAuras_mt:_world_enlarger_cast2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13090,7 +13181,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_frozen_solid2"] = {
+				["WeakAuras_07-oblivion_sphere_timer/rangecheck_m"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13098,34 +13189,33 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05-slicing_tornado"] = {
+				["WeakAuras_swg_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_heart_of_frost2"] = {
+				["WeakAuras_itchy_bite2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_01_hardened_arteries"] = {
+				["WeakAuras_provoke"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_riot_shield2"] = {
+				["WeakAuras_opulence"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_thundering_storm"] = {
+				["WeakAuras_anti-magic_shell_huge"] = {
+					["SkinID"] = "ElvUIesque - No Backdrop",
+				},
+				["WeakAuras_prepot_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_sea_swell"] = {
+				["WeakAuras_cc:_pa'ku's_wrath"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu_211"] = {
-					["Inherit"] = false,
-					["SkinID"] = "ElvUIesque - No Backdrop",
-				},
-				["WeakAuras_power_strikes_up"] = {
+				["WeakAuras_ja:_chilling_touch2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13133,11 +13223,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end26"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end16"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_slam2"] = {
+				["WeakAuras_04_spirits_of_gold"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13149,15 +13239,15 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_touch_of_death_on_cd"] = {
+				["WeakAuras_02_crushed_(tank_only)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_purging_protocol_dot"] = {
+				["WeakAuras_bad_-_jadefire_masters_-_rising_flames"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_warding_candles2"] = {
+				["WeakAuras_tsu_22"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13168,18 +13258,20 @@ MasqueDB = {
 				["WeakAuras_arcane_slicer"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_noxious_breath_trash2"] = {
+				["WeakAuras_08_ire_of_the_deep"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_flames_of_sargeras"] = {
+				["WeakAuras_04_pulse-quickening_toxin"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_neurotoxin"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_purify-up"] = {
+				["WeakAuras_tidal_surge2"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_mana_tea2"] = {
@@ -13189,19 +13281,19 @@ MasqueDB = {
 				["WeakAuras_burning_blast"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_02_bestial_throw_(tank_only)"] = {
+				["WeakAuras_shining_force"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_08_ire_of_the_deep"] = {
+				["WeakAuras_op:_tank_gem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_pulse-quickening_toxin"] = {
+				["WeakAuras_op:_volatile_charge"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_wail_of_greed_channel"] = {
+				["WeakAuras_05_loa's_pact"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13209,19 +13301,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_incandescent_luster_stacks"] = {
+				["WeakAuras_cloudburst_value_2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_05_kimbul's_wrath"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end20"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_shining_force"] = {
+				["WeakAuras_chi_wave_mist2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_jm:_successful_defense"] = {
+				["WeakAuras_06_electroshock_amplification"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13229,7 +13321,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_07_necrotic_smash"] = {
+				["WeakAuras_kr:_iskar_mechanic"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13244,14 +13336,13 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_electroshock_amplification"] = {
-					["Inherit"] = false,
+				["WeakAuras_evocation"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_lightning_bolt_2"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_04_coin_shower"] = {
+				["WeakAuras_04_creeping_blaze"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13271,7 +13362,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_bfa_talents\\items\\azerite_traits_(current_setup)40"] = {
+				["WeakAuras_11_soulbomb"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13290,22 +13381,23 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_lava_lash"] = {
+				["WeakAuras_1._champion_-_turn_around"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end8"] = {
+				["WeakAuras_ap_totem"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end30"] = {
+				["WeakAuras_05_paku's_wrath"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_moonburn"] = {
+				["WeakAuras_widowmaker_toxin"] = {
+					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_infected"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end27"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13313,30 +13405,30 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_terrifying_roar2"] = {
+				["WeakAuras_07_inevitable_end"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
 				["WeakAuras_cbt_tiemr"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_no_talent_selected!"] = {
+				["WeakAuras_09_marked_target"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end5"] = {
+				["WeakAuras_refreshing_jade_wind2"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end13"] = {
+				["WeakAuras_3._jadefire_-_break_wjs"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_sb:_voltaic_flash2"] = {
+				["WeakAuras_kr:_artillery_8.1_(tank)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["OmniBar_Wind Shear"] = {
+				["WeakAuras_5._conclave_fixated_on_nameplate"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13347,7 +13439,7 @@ MasqueDB = {
 				["WeakAuras_stormkeeper_cd"] = {
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_zt_-_nnogga's_party_cd_front_end23"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end31"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13363,7 +13455,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_5._conclave_fixated_on_nameplate"] = {
+				["WeakAuras_zt_-_nnogga's_party_cd_front_end24"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13371,19 +13463,19 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tft_buff"] = {
+				["WeakAuras_ja:_frost_nova_cast"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_ja:_warmth"] = {
+				["WeakAuras_thrash_cat"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_scan_events54"] = {
+				["WeakAuras_incandescent_luster_max_stacks"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_expel_soul_spawn"] = {
+				["WeakAuras_08_sea_swell_(mythic)"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13391,11 +13483,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_soulforged_construct"] = {
+				["WeakAuras_08-dark_bargain"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_06_charged_blast_dot"] = {
+				["WeakAuras_01_annihilation"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13403,11 +13495,11 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_tsu5"] = {
+				["WeakAuras_09_heart_of_frost"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_reap_soul"] = {
+				["WeakAuras_heart_of_frost_targeted"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
@@ -13415,7 +13507,7 @@ MasqueDB = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},
-				["WeakAuras_11_sweeping_\\_deadly_scythe_(tank_only)"] = {
+				["WeakAuras_misdirection"] = {
 					["Inherit"] = false,
 					["SkinID"] = "ElvUIesque - No Backdrop",
 				},

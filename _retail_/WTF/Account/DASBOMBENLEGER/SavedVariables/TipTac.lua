@@ -18,7 +18,12 @@ TipTac_Config = {
 		0.1, -- [3]
 		0.9, -- [4]
 	},
-	["tipBackdropEdge"] = "Interface\\AddOns\\VuhDo\\Images\\white_square_16_16",
+	["colReactBack1"] = {
+		0.2, -- [1]
+		0.2, -- [2]
+		0.2, -- [3]
+		1, -- [4]
+	},
 	["tipBorderColor"] = {
 		1, -- [1]
 		1, -- [2]
@@ -27,49 +32,44 @@ TipTac_Config = {
 	},
 	["classification_normal"] = "%s ",
 	["modifyFonts"] = false,
-	["barTexture"] = "Interface\\AddOns\\VuhDo\\Images\\bar16.tga",
-	["showDebuffs"] = false,
-	["if_showIcon"] = false,
-	["reactColoredBorder"] = false,
+	["powerBar"] = true,
+	["tipBackdropBG"] = "Interface\\Buttons\\WHITE8X8",
 	["classification_minus"] = "-%s ",
+	["reactColoredBorder"] = false,
+	["if_showIcon"] = false,
 	["if_smartIcons"] = true,
 	["if_itemQualityBorder"] = true,
-	["showGuildRank"] = true,
+	["top"] = 176.998657226563,
 	["optionsBottom"] = 492.166564941406,
-	["barsCondenseValues"] = true,
+	["showBuffs"] = false,
 	["if_showItemLevelAndId"] = false,
 	["enableChatHoverTips"] = true,
 	["left"] = 1554.02587890625,
-	["showBuffs"] = false,
+	["barsCondenseValues"] = true,
 	["showBattlePetTip"] = false,
-	["classification_worldboss"] = "%s|r (Boss) ",
-	["classification_rareelite"] = "+%s|r (Rare) ",
+	["fontFace"] = "Interface\\AddOns\\ElvUI\\media\\fonts\\Expressway.ttf",
+	["classColoredBorder"] = true,
 	["reactColoredBackdrop"] = false,
 	["hideAllTipsInCombat"] = false,
 	["classification_trivial"] = "~%s ",
-	["backdropInsets"] = 0,
-	["iconRaid"] = false,
-	["colorNameByClass"] = true,
+	["classification_worldboss"] = "%s|r (Boss) ",
+	["anchorWorldUnitPoint"] = "BOTTOMRIGHT",
+	["manaBar"] = true,
 	["if_borderlessIcons"] = false,
 	["anchorWorldTipPoint"] = "BOTTOMRIGHT",
-	["manaBar"] = true,
-	["anchorWorldUnitPoint"] = "BOTTOMRIGHT",
-	["classColoredBorder"] = true,
-	["fontFace"] = "Interface\\AddOns\\ElvUI\\media\\fonts\\Expressway.ttf",
+	["colorNameByClass"] = true,
+	["iconRaid"] = false,
+	["classification_rareelite"] = "+%s|r (Rare) ",
+	["backdropInsets"] = 0,
 	["fadeTime"] = 0,
 	["targetYouText"] = "<<YOU>>",
 	["hideUFTipsInCombat"] = true,
-	["top"] = 176.998657226563,
+	["showGuildRank"] = true,
 	["classification_rare"] = "%s|r (Rare) ",
 	["gradientTip"] = false,
 	["if_showQuestLevelAndId"] = false,
-	["tipBackdropBG"] = "Interface\\Buttons\\WHITE8X8",
-	["powerBar"] = true,
+	["showDebuffs"] = false,
+	["barTexture"] = "Interface\\AddOns\\VuhDo\\Images\\bar16.tga",
 	["anchorFrameTipPoint"] = "BOTTOMRIGHT",
-	["colReactBack1"] = {
-		0.2, -- [1]
-		0.2, -- [2]
-		0.2, -- [3]
-		1, -- [4]
-	},
+	["tipBackdropEdge"] = "Interface\\AddOns\\VuhDo\\Images\\white_square_16_16",
 }

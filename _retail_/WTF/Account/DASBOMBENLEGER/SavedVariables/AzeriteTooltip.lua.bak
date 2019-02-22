@@ -7,11 +7,11 @@ AzeriteTooltipDB = {
 		["Niseko - Stormscale"] = "Default",
 	},
 	["Compact"] = true,
+	["RemoveBlizzard"] = true,
+	["Bags"] = true,
+	["Flyout"] = true,
 	["profiles"] = {
 		["Default"] = {
 		},
 	},
-	["Bags"] = true,
-	["Flyout"] = true,
-	["RemoveBlizzard"] = true,
 }
