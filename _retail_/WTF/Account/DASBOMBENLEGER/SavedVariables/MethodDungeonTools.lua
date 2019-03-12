@@ -7,10 +7,11 @@ MethodDungeonToolsDB = {
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
 		["Nisepie - Stormscale"] = "Nisepie - Stormscale",
 		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
-		["Seko - Stormscale"] = "Seko - Stormscale",
+		["Donnerbock - Ysera"] = "Donnerbock - Ysera",
+		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
 		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
-		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
+		["Seko - Stormscale"] = "Seko - Stormscale",
 	},
 	["global"] = {
 		["presets"] = {
@@ -38,6 +39,7 @@ MethodDungeonToolsDB = {
 					["objects"] = {
 					},
 					["week"] = 11,
+					["text"] = "Preset 3",
 					["value"] = {
 						["currentPull"] = 1,
 						["currentSublevel"] = 1,
@@ -167,12 +169,12 @@ MethodDungeonToolsDB = {
 							}, -- [1]
 						},
 					},
-					["text"] = "Preset 3",
 				}, -- [2]
 				{
 					["objects"] = {
 					},
 					["week"] = 12,
+					["text"] = "Preset 13 2 3 4",
 					["value"] = {
 						["currentPull"] = 1,
 						["currentSublevel"] = 1,
@@ -348,7 +350,6 @@ MethodDungeonToolsDB = {
 							}, -- [3]
 						},
 					},
-					["text"] = "Preset 13 2 3 4",
 				}, -- [3]
 				{
 					["objects"] = {
@@ -361,14 +362,14 @@ MethodDungeonToolsDB = {
 								"f9ff00", -- [5]
 								-8, -- [6]
 							},
+							["t"] = {
+								-0.663202949523736, -- [1]
+							},
 							["l"] = {
 								"519.0", -- [1]
 								"-147.3", -- [2]
 								"464.1", -- [3]
 								"-104.4", -- [4]
-							},
-							["t"] = {
-								-0.663202949523736, -- [1]
 							},
 						}, -- [1]
 						{
@@ -380,25 +381,17 @@ MethodDungeonToolsDB = {
 								"ff0019", -- [5]
 								-8, -- [6]
 							},
+							["t"] = {
+								1.54223324976921, -- [1]
+							},
 							["l"] = {
 								"448.3", -- [1]
 								"-104.0", -- [2]
 								"447.4", -- [3]
 								"-134.0", -- [4]
 							},
-							["t"] = {
-								1.54223324976921, -- [1]
-							},
 						}, -- [2]
 						{
-							["d"] = {
-								3, -- [1]
-								1.1, -- [2]
-								1, -- [3]
-								true, -- [4]
-								"ffffff", -- [5]
-								[7] = true,
-							},
 							["l"] = {
 								"544.9", -- [1]
 								"-293.1", -- [2]
@@ -409,17 +402,16 @@ MethodDungeonToolsDB = {
 								"544.9", -- [7]
 								"-293.1", -- [8]
 							},
-						}, -- [3]
-						{
 							["d"] = {
 								3, -- [1]
 								1.1, -- [2]
 								1, -- [3]
 								true, -- [4]
 								"ffffff", -- [5]
-								-8, -- [6]
-								true, -- [7]
+								[7] = true,
 							},
+						}, -- [3]
+						{
 							["l"] = {
 								"585.7", -- [1]
 								"-256.7", -- [2]
@@ -522,10 +514,18 @@ MethodDungeonToolsDB = {
 								"569.7", -- [99]
 								"-315.5", -- [100]
 							},
+							["d"] = {
+								3, -- [1]
+								1.1, -- [2]
+								1, -- [3]
+								true, -- [4]
+								"ffffff", -- [5]
+								-8, -- [6]
+								true, -- [7]
+							},
 						}, -- [4]
 					},
 					["week"] = 12,
-					["text"] = "Preset 6 2 2 2",
 					["value"] = {
 						["currentPull"] = 1,
 						["currentSublevel"] = 1,
@@ -664,6 +664,7 @@ MethodDungeonToolsDB = {
 							}, -- [1]
 						},
 					},
+					["text"] = "Preset 6 2 2 2",
 				}, -- [4]
 				{
 					["value"] = 0,
@@ -710,7 +711,6 @@ MethodDungeonToolsDB = {
 					["objects"] = {
 					},
 					["week"] = 2,
-					["text"] = "Preset 2",
 					["value"] = {
 						["currentPull"] = 50,
 						["currentSublevel"] = 2,
@@ -1200,6 +1200,7 @@ MethodDungeonToolsDB = {
 							}, -- [50]
 						},
 					},
+					["text"] = "Preset 2",
 				}, -- [2]
 				{
 					["value"] = 0,
@@ -1226,7 +1227,6 @@ MethodDungeonToolsDB = {
 					["objects"] = {
 					},
 					["week"] = 10,
-					["text"] = "Preset 12",
 					["value"] = {
 						["currentPull"] = 1,
 						["currentSublevel"] = 1,
@@ -1338,10 +1338,20 @@ MethodDungeonToolsDB = {
 							}, -- [1]
 						},
 					},
+					["text"] = "Preset 12",
 				}, -- [2]
 				{
 					["objects"] = {
 						{
+							["d"] = {
+								5, -- [1]
+								1.1, -- [2]
+								1, -- [3]
+								true, -- [4]
+								"ffffff", -- [5]
+								-8, -- [6]
+								true, -- [7]
+							},
 							["l"] = {
 								"384.2", -- [1]
 								"-400.3", -- [2]
@@ -1460,6 +1470,8 @@ MethodDungeonToolsDB = {
 								"384.7", -- [115]
 								"-400.3", -- [116]
 							},
+						}, -- [1]
+						{
 							["d"] = {
 								5, -- [1]
 								1.1, -- [2]
@@ -1469,8 +1481,6 @@ MethodDungeonToolsDB = {
 								-8, -- [6]
 								true, -- [7]
 							},
-						}, -- [1]
-						{
 							["l"] = {
 								"529.1", -- [1]
 								"-315.1", -- [2]
@@ -1681,6 +1691,8 @@ MethodDungeonToolsDB = {
 								"525.4", -- [207]
 								"-315.5", -- [208]
 							},
+						}, -- [2]
+						{
 							["d"] = {
 								5, -- [1]
 								1.1, -- [2]
@@ -1690,14 +1702,14 @@ MethodDungeonToolsDB = {
 								-8, -- [6]
 								true, -- [7]
 							},
-						}, -- [2]
-						{
 							["l"] = {
 								"532.1", -- [1]
 								"-320.2", -- [2]
 								"532.1", -- [3]
 								"-320.6", -- [4]
 							},
+						}, -- [3]
+						{
 							["d"] = {
 								5, -- [1]
 								1.1, -- [2]
@@ -1707,8 +1719,6 @@ MethodDungeonToolsDB = {
 								-8, -- [6]
 								true, -- [7]
 							},
-						}, -- [3]
-						{
 							["l"] = {
 								"448.6", -- [1]
 								"-84.7", -- [2]
@@ -1783,23 +1793,8 @@ MethodDungeonToolsDB = {
 								"446.3", -- [71]
 								"-91.2", -- [72]
 							},
-							["d"] = {
-								5, -- [1]
-								1.1, -- [2]
-								1, -- [3]
-								true, -- [4]
-								"ffffff", -- [5]
-								-8, -- [6]
-								true, -- [7]
-							},
 						}, -- [4]
 						{
-							["l"] = {
-								"426.5", -- [1]
-								"-88.4", -- [2]
-								"426.5", -- [3]
-								"-89.9", -- [4]
-							},
 							["d"] = {
 								5, -- [1]
 								1.1, -- [2]
@@ -1809,8 +1804,23 @@ MethodDungeonToolsDB = {
 								-7, -- [6]
 								true, -- [7]
 							},
+							["l"] = {
+								"426.5", -- [1]
+								"-88.4", -- [2]
+								"426.5", -- [3]
+								"-89.9", -- [4]
+							},
 						}, -- [5]
 						{
+							["d"] = {
+								5, -- [1]
+								1.1, -- [2]
+								1, -- [3]
+								true, -- [4]
+								"ffffff", -- [5]
+								-7, -- [6]
+								true, -- [7]
+							},
 							["l"] = {
 								"423.5", -- [1]
 								"-91.4", -- [2]
@@ -1845,18 +1855,18 @@ MethodDungeonToolsDB = {
 								"384.1", -- [31]
 								"-118.8", -- [32]
 							},
+						}, -- [6]
+						nil, -- [7]
+						{
 							["d"] = {
 								5, -- [1]
 								1.1, -- [2]
 								1, -- [3]
-								true, -- [4]
+								false, -- [4]
 								"ffffff", -- [5]
-								-7, -- [6]
+								-8, -- [6]
 								true, -- [7]
 							},
-						}, -- [6]
-						nil, -- [7]
-						{
 							["l"] = {
 								"417.3", -- [1]
 								"-162.2", -- [2]
@@ -1895,18 +1905,10 @@ MethodDungeonToolsDB = {
 								"418.5", -- [35]
 								"-213.7", -- [36]
 							},
-							["d"] = {
-								5, -- [1]
-								1.1, -- [2]
-								1, -- [3]
-								false, -- [4]
-								"ffffff", -- [5]
-								-8, -- [6]
-								true, -- [7]
-							},
 						}, -- [8]
 					},
 					["week"] = 11,
+					["text"] = "sang griev",
 					["value"] = {
 						["currentPull"] = 1,
 						["currentSublevel"] = 1,
@@ -2023,7 +2025,6 @@ MethodDungeonToolsDB = {
 							}, -- [1]
 						},
 					},
-					["text"] = "sang griev",
 				}, -- [3]
 				{
 					["value"] = 0,

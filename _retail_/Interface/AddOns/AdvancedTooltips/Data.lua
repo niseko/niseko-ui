@@ -13830,7 +13830,7 @@ AdvancedTooltips.Items = {
 			[E_CHANCE] = 1.5,
 			[E_RPPM] = 1,
 			[E_NAME] = "Gift of Wind",
-			[E_ICD] = 15000,
+			[E_ICD] = 0,
 			[E_SPELLID] = 288304,
 		},
 	},
@@ -13911,7 +13911,7 @@ AdvancedTooltips.Items = {
 			[E_CHANCE] = 1.5,
 			[E_RPPM] = 1,
 			[E_NAME] = "Gift of Wind",
-			[E_ICD] = 15000,
+			[E_ICD] = 0,
 			[E_SPELLID] = 288304,
 		},
 	},
@@ -27100,6 +27100,8 @@ AdvancedTooltips.SpellData = {
 			[161789] = {
 			},
 			[161797] = {
+			},
+			[161798] = {
 			},
 			[161800] = {
 			},
@@ -45068,12 +45070,9 @@ AdvancedTooltips.SpellData = {
 				[E_AZERITE_POWER] = 137,
 			},
 			[273005] = {
+},			[273006] = {
 				[E_RPPM] = 0,
-				[E_CHANCE] = 100,
-			},
-			[273006] = {
-				[E_RPPM] = 0,
-				[E_CHANCE] = 100,
+				[E_CHANCE] = 101,
 			},
 			[273007] = {
 				[E_AZERITE_POWER] = 136,
@@ -48185,8 +48184,6 @@ AdvancedTooltips.SpellData = {
 			},
 			[281844] = {
 			},
-			[281847] = {
-			},
 			[281854] = {
 			},
 			[281875] = {
@@ -48597,6 +48594,8 @@ AdvancedTooltips.SpellData = {
 			},
 			[286835] = {
 			},
+			[286836] = {
+			},
 			[286865] = {
 			},
 			[286866] = {
@@ -48619,6 +48618,8 @@ AdvancedTooltips.SpellData = {
 			},
 			[286949] = {
 				[E_AZERITE_POWER] = 417,
+			},
+			[286954] = {
 			},
 			[286976] = {
 				[E_RPPM] = 0,
@@ -48650,14 +48651,10 @@ AdvancedTooltips.SpellData = {
 			},
 			[287080] = {
 },			[287093] = {
-				[E_ICD] = 8000,
-				[E_RPPM] = 1,
-				[E_CHANCE] = 1,
-				[E_AZERITE_POWER] = 365,
-			},
-			[287097] = {
-				[E_RPPM] = 1,
-				[E_CHANCE] = 1,
+				[E_ICD] = 1000,
+},			[287097] = {
+				[E_RPPM] = 0,
+				[E_CHANCE] = 101,
 			},
 			[287110] = {
 			},
@@ -48697,6 +48694,10 @@ AdvancedTooltips.SpellData = {
 			[287303] = {
 				[E_RPPM] = 0,
 				[E_CHANCE] = 100,
+			},
+			[287320] = {
+				[E_RPPM] = 0,
+				[E_CHANCE] = 101,
 			},
 			[287321] = {
 			},
@@ -48830,7 +48831,7 @@ AdvancedTooltips.SpellData = {
 			},
 			[287768] = {
 				[E_RPPM] = 0,
-				[E_CHANCE] = 10,
+				[E_CHANCE] = 8,
 				[E_AZERITE_POWER] = 530,
 			},
 			[287773] = {
@@ -48852,7 +48853,7 @@ AdvancedTooltips.SpellData = {
 			},
 			[287801] = {
 				[E_RPPM] = 0,
-				[E_CHANCE] = 10,
+				[E_CHANCE] = 8,
 			},
 			[287802] = {
 			},
@@ -48890,6 +48891,10 @@ AdvancedTooltips.SpellData = {
 			},
 			[287915] = {
 			},
+			[287916] = {
+				[E_RPPM] = 0,
+				[E_CHANCE] = 101,
+			},
 			[287917] = {
 			},
 			[287938] = {
@@ -48897,13 +48902,13 @@ AdvancedTooltips.SpellData = {
 			},
 			[287940] = {
 			},
+			[287967] = {
+			},
 			[287999] = {
 			},
 			[288006] = {
 			},
 			[288009] = {
-			},
-			[288024] = {
 			},
 			[288029] = {
 			},
@@ -48943,6 +48948,8 @@ AdvancedTooltips.SpellData = {
 			[288085] = {
 				[E_RPPM] = 0,
 				[E_CHANCE] = 100,
+			},
+			[288086] = {
 			},
 			[288087] = {
 			},
@@ -49068,6 +49075,10 @@ AdvancedTooltips.SpellData = {
 			},
 			[288544] = {
 			},
+			[288546] = {
+			},
+			[288548] = {
+			},
 			[288555] = {
 			},
 			[288570] = {
@@ -49110,9 +49121,7 @@ AdvancedTooltips.SpellData = {
 				[E_AZERITE_POWER] = 220,
 			},
 			[288755] = {
-},			[288756] = {
-			},
-			[288757] = {
+},			[288757] = {
 				[E_RPPM] = 1,
 				[E_CHANCE] = 1,
 			},
@@ -49138,6 +49147,7 @@ AdvancedTooltips.SpellData = {
 			[288804] = {
 				[E_RPPM] = 1,
 				[E_CHANCE] = 1,
+				[E_AZERITE_POWER] = 560,
 			},
 			[288826] = {
 			},
@@ -49346,6 +49356,12 @@ AdvancedTooltips.SpellData = {
 			},
 			[290033] = {
 			},
+			[290042] = {
+			},
+			[290051] = {
+			},
+			[290052] = {
+			},
 			[290219] = {
 			},
 			[290224] = {
@@ -49370,15 +49386,25 @@ AdvancedTooltips.SpellData = {
 			},
 			[290255] = {
 			},
+			[290263] = {
+			},
+			[290264] = {
+			},
 			[290267] = {
 			},
 			[290280] = {
 			},
 			[290333] = {
 			},
+			[290362] = {
+				[E_RPPM] = 0,
+				[E_CHANCE] = 101,
+			},
 			[290364] = {
 			},
 			[290365] = {
+			},
+			[290366] = {
 			},
 			[290367] = {
 			},
@@ -49409,6 +49435,8 @@ AdvancedTooltips.SpellData = {
 			[290627] = {
 			},
 			[290636] = {
+			},
+			[290814] = {
 			},
 			[291085] = {
 			},
@@ -49452,6 +49480,12 @@ AdvancedTooltips.SpellData = {
 			[291150] = {
 			},
 			[291170] = {
+			},
+			[293809] = {
+			},
+			[293822] = {
+			},
+			[295643] = {
 			},
 			[0] = {
 			},

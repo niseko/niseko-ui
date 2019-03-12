@@ -330,7 +330,7 @@ RegisterEvent( "ENCOUNTER_END", function () state.inEncounter = false end )
 
 do
     local loc = ItemLocation.CreateEmpty()
-        
+
     local GetAllTierInfoByItemID = C_AzeriteEmpoweredItem.GetAllTierInfoByItemID
     local GetAllTierInfo = C_AzeriteEmpoweredItem.GetAllTierInfo
     local GetPowerInfo = C_AzeriteEmpoweredItem.GetPowerInfo
@@ -427,22 +427,22 @@ function ns.updateGear()
 
     if ItemBuffs and T1 then
         local t1buff = ItemBuffs:GetItemBuffs( T1 )
-        
+
         if type(t1buff) == 'table' then t1buff = t1buff[1] end
-        
+
         class.auras.trinket1 = class.auras[ t1buff ]
         state.trinket.t1.id = T1
     else
         state.trinket.t1.id = 0
     end
-    
+
     local T2 = GetInventoryItemID( "player", 14 )
-    
+
     if ItemBuffs and T2 then
         local t2buff = ItemBuffs:GetItemBuffs( T2 )
-        
+
         if type(t2buff) == 'table' then t2buff = t2buff[1] end
-        
+
         class.auras.trinket2 = class.auras[ t2buff ]
         state.trinket.t2.id = T2
     else
@@ -499,7 +499,7 @@ RegisterEvent( "PLAYER_REGEN_ENABLED", function ()
     state.swings.oh_actual = 0
 
     Hekili:UpdateDisplayVisibility()
-    Hekili:PurgeTTD()
+    Hekili:ExpireTTDs( true )
 end )
 
 
@@ -548,7 +548,7 @@ function state:AddToHistory( spellID, destGUID )
         history[6] = nil
 
         ability.realCast = now
-        ability.lastUnit = destGUID
+        ability.realUnit = destGUID
     end
 end
 
@@ -639,7 +639,7 @@ local autoAuraKey = setmetatable( {}, {
 
             while ( true ) do 
                 local new = key .. '_' .. i
-                
+
                 if not class.auras[ new ] then
                     key = new
                     break
@@ -664,7 +664,7 @@ RegisterUnitEvent( "UNIT_AURA", function( event, unit )
     if UnitIsUnit( unit, 'player' ) and state.player.updated then
         Hekili.ScrapeUnitAuras( "player" )
         state.player.updated = false
-        
+
     elseif UnitIsUnit( unit, "target" ) and state.target.updated then
         Hekili.ScrapeUnitAuras( "target" )
         state.target.updated = false
@@ -676,7 +676,7 @@ RegisterEvent( "PLAYER_TARGET_CHANGED", function( event )
     Hekili.ScrapeUnitAuras( "target", true )
     state.target.updated = false
 
-    Hekili.UpdateTTD( "target" )
+    -- Hekili.UpdateTTD( "target" )
     Hekili:ForceUpdate( event, true )
 end )
 
@@ -726,6 +726,14 @@ local dmg_events = {
 }
 
 
+local death_events = {
+    UNIT_DIED               = true,
+    UNIT_DESTROYED          = true,
+    UNIT_DISSSIPATES        = true,
+    PARTY_KILL              = true,
+    SPELL_INSTAKILL         = true,
+}
+
 local dmg_filtered = {
     [280705] = true, -- Laser Matrix.
 }
@@ -736,7 +744,7 @@ local dmg_filtered = {
 -- Note that this was ported from an unreleased version of Hekili, and is currently only counting damaged enemies.
 local function CLEU_HANDLER( event, _, subtype, _, sourceGUID, sourceName, _, _, destGUID, destName, destFlags, _, spellID, spellName, _, amount, interrupt, a, b, c, d, offhand, multistrike, ... )
 
-    if subtype == 'UNIT_DIED' or subtype == 'UNIT_DESTROYED' or subtype == "UNIT_DISSIPATES" or subtype == "PARTY_KILL" then
+    if death_events[ subtype ] then
         if ns.isTarget( destGUID ) then
             ns.eliminateUnit( destGUID, true )
             ns.forceRecount()
@@ -855,13 +863,21 @@ local function CLEU_HANDLER( event, _, subtype, _, sourceGUID, sourceName, _, _,
         end
 
         local action = class.abilities[ spellID ]
-        
+
         if subtype ~= 'SPELL_CAST_SUCCESS' and action and action.velocity then
             state:Unqueue( action.key )
         end
 
         if hostile and dmg_events[ subtype ] and not dmg_filtered[ spellID ] then
-            ns.updateTarget( destGUID, time, sourceGUID == state.GUID )
+            -- Don't wipe overkill targets in rested areas (it is likely a dummy).
+            if not IsResting( "player" ) and subtype == "SPELL_DAMAGE" and interrupt > 0 and ns.isTarget( destGUID ) then
+                -- Interrupt is actually overkill.
+                ns.eliminateUnit( destGUID, true )
+                ns.forceRecount()
+                Hekili:ForceUpdate( "SPELL_DAMAGE_OVERKILL" )
+            else
+                ns.updateTarget( destGUID, time, sourceGUID == state.GUID )
+            end
 
             if state.spec.enhancement and spellName == class.abilities.fury_of_air.name then
                 state.swings.last_foa_tick = time
@@ -890,7 +906,7 @@ local function UNIT_COMBAT( event, unit, action, descriptor, damage, damageType 
             ns.storeHealing( GetTime(), damage )
         end
     end
-        
+
 end
 ns.cpuProfile.UNIT_COMBAT = UNIT_COMBAT
 
@@ -937,7 +953,7 @@ local function StoreKeybindInfo( page, key, aType, id )
     elseif aType == "macro" then
         local sID = GetMacroSpell( id )
         ability = sID and class.abilities[ sID ] and class.abilities[ sID ].key
-    
+
     elseif aType == "item" then
         ability = GetItemInfo( id )
         ability = class.abilities[ ability ] and class.abilities[ ability ].key
@@ -1025,11 +1041,11 @@ local function ReadKeybindings()
         for i = 1, 12 do
             StoreKeybindInfo( 1, GetBindingKey( "ACTIONBUTTON" .. i ), GetActionInfo( i ) )
         end
-        
+
         for i = 13, 120 do 
             bt4Key = GetBindingKey( "CLICK BT4Button" .. i .. ":LeftButton" )
             bt4Button = _G[ "BT4Button" .. i ]
-        
+
             if bt4Button then
                 local buttonActionType, buttonActionId = GetActionInfo( i )
                 StoreKeybindInfo( 2, bt4Key, buttonActionType, buttonActionId )
@@ -1143,7 +1159,7 @@ if select( 2, UnitClass( "player" ) ) == "DRUID" then
             return db[ 10 ] or db[ 2 ] or db[ 3 ] or db[ 4 ] or db[ 5 ] or db[ 6 ] or db[ 7 ] or db[ 8 ] or db[ 9 ] or db[ 1 ] or ""
 
         end
-    
+
         return db[ 1 ] or db[ 2 ] or db[ 3 ] or db[ 4 ] or db[ 5 ] or db[ 6 ] or db[ 7 ] or db[ 8 ] or db[ 9 ] or db[ 10 ] or ""
     end
 elseif select( 2, UnitClass( "player" ) ) == "ROGUE" then
@@ -1167,7 +1183,7 @@ elseif select( 2, UnitClass( "player" ) ) == "ROGUE" then
             return db[ 7 ] or db[ 8 ] or db[ 1 ] or db[ 2 ] or db[ 3 ] or db[ 4 ] or db[ 5 ] or db[ 6 ] or db[ 9 ] or db[ 10 ] or ""
 
         end
-    
+
         return db[ 1 ] or db[ 2 ] or db[ 3 ] or db[ 4 ] or db[ 5 ] or db[ 6 ] or db[ 7 ] or db[ 8 ] or db[ 9 ] or db[ 10 ] or ""
     end
 

@@ -37,8 +37,7 @@ VER 3 0100000000000019 "earth elemental" "INV_MISC_QUESTIONMARK"
 END
 VER 3 010000000000001E "equipchange" "INV_MISC_QUESTIONMARK"
 /equip Fogbreaker, Light of the Sea
-/equip Leaxa's Thought-Piercer
-/equip Deathspeaker Spire
+/equip Sunburst Crest
 END
 VER 3 010000000000001A "est" "INV_MISC_QUESTIONMARK"
 #showtooltip

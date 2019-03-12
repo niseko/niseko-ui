@@ -1,7 +1,13 @@
-changeset:   207:ddc22a685f25
-tag:         v8.1.0.207
+changeset:   228:1f43828f3709
+tag:         v8.1.0.228
 user:        Tercioo
-date:        Tue Feb 19 14:54:02 2019 -0300
-summary:     - Fixed friendly npc quest color not reseting when calling "RefreshNameplateColor" from a script.
+date:        Fri Mar 08 14:51:54 2019 -0300
+summary:     - Flash for aggro only play inside dungeons and raids.
+
+
+changeset:   227:e1892610092d
+user:        Tercioo
+date:        Thu Mar 07 12:54:23 2019 -0300
+summary:     - Make the healthbar border be in the range of 0.1 to 3.0
 
 

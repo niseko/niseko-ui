@@ -108,7 +108,7 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             value = function () return state.talent.scent_of_blood.enabled and 7 or 5 end,
         },
     } )
-    
+
     -- Talents
     spec:RegisterTalents( {
         killer_instinct = 22291, -- 273887
@@ -481,35 +481,35 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             cast = 0,
             cooldown = 60,
             gcd = "spell",
-            
+
             spend = 30,
             spendType = "focus",
 
             talent = 'a_murder_of_crows',   
-            
+
             startsCombat = true,
             texture = 645217,
-            
+
             handler = function ()
                 applyDebuff( 'target', 'a_murder_of_crows' )
             end,
         },
-        
+
 
         aspect_of_the_cheetah = {
             id = 186257,
             cast = 0,
             cooldown = function () return pvptalent.hunting_pack.enabled and 90 or 180 end,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 132242,
-            
+
             handler = function ()
                 applyBuff( 'aspect_of_the_cheetah' )
             end,
         },
-        
+
 
         aspect_of_the_turtle = {
             id = 186265,
@@ -520,12 +520,12 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
 
             startsCombat = false,
             texture = 132199,
-            
+
             handler = function ()
                 applyBuff( 'aspect_of_the_turtle' )
             end,
         },
-        
+
 
         aspect_of_the_wild = {
             id = 193530,
@@ -534,17 +534,17 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = 'cooldowns',
-            
+
             startsCombat = false,
             texture = 136074,
-            
+
             handler = function ()
                 applyBuff( 'aspect_of_the_wild' )
 
                 if azerite.primal_instincts.enabled then gainCharges( "barbed_shot", 1 ) end
             end,
         },
-        
+
 
         barbed_shot = {
             id = 217200,
@@ -555,10 +555,10 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             velocity = 50,
-            
+
             startsCombat = true,
             texture = 2058007,
-            
+
             handler = function ()
                 if buff.barbed_shot.down then applyBuff( 'barbed_shot' )
                 else
@@ -573,7 +573,7 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
                 applyDebuff( 'target', 'barbed_shot_dot' )
             end,
         },
-        
+
 
         barrage = {
             id = 120360,
@@ -581,66 +581,66 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             cooldown = 20,
             gcd = "spell",
             channeled = true,
-            
+
             spend = 60,
             spendType = "focus",
-            
+
             startsCombat = true,
             texture = 236201,
-            
+
             handler = function ()
             end,
         },
-        
+
 
         bestial_wrath = {
             id = 19574,
             cast = 0,
             cooldown = 90,
             gcd = "spell",
-            
+
             startsCombat = true,
             texture = 132127,
-            
+
             recheck = function () return buff.bestial_wrath.remains end,
             handler = function ()
                 applyBuff( 'bestial_wrath' )
                 if pvptalent.the_beast_within.enabled then applyBuff( "the_beast_within" ) end
             end,
         },
-        
+
 
         binding_shot = {
             id = 109248,
             cast = 0,
             cooldown = 45,
             gcd = "spell",
-            
+
             talent = 'binding_shot',
 
             startsCombat = true,
             texture = 462650,
-            
+
             handler = function ()
                 applyDebuff( 'target', 'binding_shot' )
             end,
         },
-        
+
 
         camouflage = {
             id = 199483,
             cast = 0,
             cooldown = 60,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 461113,
-            
+
             handler = function ()
                 applyBuff( 'camouflage' )
             end,
         },
-        
+
 
         chimaera_shot = {
             id = 53209,
@@ -651,15 +651,15 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             velocity = 50,
 
             talent = 'chimaera_shot',
-            
+
             startsCombat = true,
             texture = 236176,
-            
+
             handler = function ()
                 gain( 10 * min( 2, active_enemies ), 'focus' )                
             end,
         },
-        
+
 
         cobra_shot = {
             id = 193455,
@@ -668,20 +668,20 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             velocity = 45,
-            
+
             spend = 35,
             spendType = "focus",
-            
+
             startsCombat = true,
             texture = 461114,
-            
+
             handler = function ()                
                 if talent.venomous_bite.enabled then setCooldown( 'bestial_wrath', cooldown.bestial_wrath.remains - 1 ) end
                 if talent.killer_cobra.enabled and buff.bestial_wrath.up then setCooldown( 'kill_command', 0 )
                 else setCooldown( 'kill_command', cooldown.kill_command.remains - 1 ) end
             end,
         },
-        
+
 
         concussive_shot = {
             id = 5116,
@@ -690,15 +690,15 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             velocity = 50,
-            
+
             startsCombat = true,
             texture = 135860,
-            
+
             handler = function ()
                 applyDebuff( 'target', 'concussive_shot' )
             end,
         },
-        
+
 
         counter_shot = {
             id = 147362,
@@ -707,10 +707,10 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "off",
 
             toggle = 'interrupts',
-            
+
             startsCombat = true,
             texture = 249170,
-            
+
             debuff = "casting",
             readyTime = state.timeToInterrupt,
 
@@ -718,66 +718,66 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
                 interrupt()
             end,
         },
-        
+
 
         dire_beast = {
             id = 120679,
             cast = 0,
             cooldown = 15,
             gcd = "spell",
-            
+
             spend = 25,
             spendType = "focus",
-            
+
             startsCombat = true,
             texture = 236186,
-            
+
             handler = function ()
                 summonPet( 'dire_beast', 8 )
             end,
         },
-        
+
 
         dire_beast_basilisk = {
             id = 205691,
             cast = 0,
             cooldown = 120,
             gcd = "spell",
-            
+
             spend = 60,
             spendType = "focus",
-            
+
             toggle = "cooldowns",
             pvptalent = "dire_beast_basilisk",
 
             startsCombat = true,
             texture = 1412204,
-            
+
             handler = function ()
                 applyDebuff( "target", "dire_beast_basilisk" )
             end,
         },
-        
+
 
         dire_beast_hawk = {
             id = 208652,
             cast = 0,
             cooldown = 30,
             gcd = "spell",
-            
+
             spend = 30,
             spendType = "focus",
 
             pvptalent = "dire_beast_hawk",
-            
+
             startsCombat = true,
             texture = 612363,
-            
+
             handler = function ()
                 applyDebuff( "target", "dire_beast_hawk" )
             end,
         },
-        
+
 
         disengage = {
             id = 781,
@@ -786,88 +786,88 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             cooldown = 20,
             recharge = 20,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 132294,
-            
+
             handler = function ()
             end,
         },
-        
+
 
         eagle_eye = {
             id = 6197,
             cast = 0,
             cooldown = 0,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 132172,
-            
+
             handler = function ()
                 applyBuff( 'eagle_eye', 60 )
             end,
         },
-        
+
 
         exhilaration = {
             id = 109304,
             cast = 0,
             cooldown = 120,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 461117,
-            
+
             handler = function ()
                 gain( 0.3 * health.max, "health" )
             end,
         },
-        
+
 
         feign_death = {
             id = 5384,
             cast = 0,
             cooldown = 30,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 132293,
-            
+
             handler = function ()
                 applyBuff( 'feign_death' )
             end,
         },
-        
+
 
         flare = {
             id = 1543,
             cast = 0,
             cooldown = 20,
             gcd = "spell",
-            
+
             startsCombat = true,
             texture = 135815,
-            
+
             handler = function ()
             end,
         },
-        
+
 
         freezing_trap = {
             id = 187650,
             cast = 0,
             cooldown = 30,
             gcd = "spell",
-            
+
             startsCombat = true,
             texture = 135834,
-            
+
             handler = function ()
                 applyDebuff( 'target', 'freezing_trap' )
             end,
         },
-        
+
 
         hiexplosive_trap = {
             id = 236776,
@@ -876,14 +876,14 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             pvptalent = "hiexplosive_trap",
-            
+
             startsCombat = false,
             texture = 135826,
-            
+
             handler = function ()
             end,
         },
-        
+
 
         interlope = {
             id = 248518,
@@ -892,61 +892,61 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             pvptalent = "interlope",
-            
+
             startsCombat = false,
             texture = 132180,
-            
+
             handler = function ()
             end,
         },
-        
+
 
         intimidation = {
             id = 19577,
             cast = 0,
             cooldown = 60,
             gcd = "spell",
-            
+
             startsCombat = true,
             texture = 132111,
-            
+
             handler = function ()
                 applyDebuff( 'target', 'intimidation' )
             end,
         },
-        
+
 
         kill_command = {
             id = 34026,
             cast = 0,
             cooldown = function () return 7.5 * haste end,
             gcd = "spell",
-            
+
             spend = 30,
             spendType = "focus",
-            
+
             startsCombat = true,
             texture = 132176,
-            
+
             recheck = function () return buff.barbed_shot.remains end,
             handler = function ()
             end,
         },
-        
+
 
         masters_call = {
             id = 272682,
             cast = 0,
             cooldown = 45,
             gcd = "spell",
-            
+
             startsCombat = true,
             texture = 236189,
-            
+
             handler = function ()
             end,
         },
-        
+
 
         misdirection = {
             id = 34477,
@@ -955,14 +955,14 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             nopvptalent = "interlope",
-            
+
             startsCombat = true,
             texture = 132180,
-            
+
             handler = function ()                
             end,
         },
-        
+
 
         multishot = {
             id = 2643,
@@ -971,13 +971,13 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             velocity = 50,
-            
+
             spend = 40,
             spendType = "focus",
-            
+
             startsCombat = true,
             texture = 132330,
-            
+
             velocity = 40,
 
             recheck = function () return buff.beast_cleave.remains - gcd, buff.beast_cleave.remains end,
@@ -985,7 +985,7 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
                 applyBuff( 'beast_cleave' )
             end,
         },
-        
+
 
         roar_of_sacrifice = {
             id = 53480,
@@ -994,15 +994,15 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             pvptalent = "roar_of_sacrifice",
-            
+
             startsCombat = false,
             texture = 464604,
-            
+
             handler = function ()
                 applyBuff( "roar_of_sacrifice" )
             end,
         },
-        
+
 
         scorpid_sting = {
             id = 202900,
@@ -1011,17 +1011,17 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             pvptalent = "scorpid_sting",
-            
+
             startsCombat = true,
             texture = 132169,
-            
+
             handler = function ()
                 applyDebuff( "target", "scorpid_sting" )
                 setCooldown( "spider_sting", max( 8, cooldown.spider_sting.remains ) )
                 setCooldown( "viper_sting", max( 8, cooldown.viper_sting.remains ) )
             end,
         },
-        
+
 
         spider_sting = {
             id = 202914,
@@ -1030,17 +1030,17 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             pvptalent = "spider_sting",
-            
+
             startsCombat = true,
             texture = 1412206,
-            
+
             handler = function ()
                 applyDebuff( "target", "spider_sting" )
                 setCooldown( "scorpid_sting", max( 8, cooldown.scorpid_sting.remains ) )
                 setCooldown( "viper_sting", max( 8, cooldown.viper_sting.remains ) )
             end,
         },
-        
+
 
         spitting_cobra = {
             id = 194407,
@@ -1050,16 +1050,16 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
 
             talent = 'spitting_cobra',
             toggle = 'cooldowns',
-            
+
             startsCombat = true,
             texture = 236177,
-            
+
             handler = function ()
                 summonPet( 'spitting_cobra', 20 )
                 applyBuff( 'spitting_cobra', 20 )
             end,
         },
-        
+
 
         stampede = {
             id = 201430,
@@ -1069,10 +1069,10 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
 
             toggle = 'cooldowns',
             talent = 'stampede',
-            
+
             startsCombat = true,
             texture = 461112,
-            
+
             recheck = function () return cooldown.bestial_wrath.remains - gcd, target.time_to_die - 15 end,
             handler = function ()
             end,
@@ -1105,10 +1105,10 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             cast = 0,
             cooldown = 30,
             gcd = "spell",
-            
+
             startsCombat = false,
             texture = 576309,
-            
+
             handler = function ()
             end,
         },
@@ -1121,10 +1121,10 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             pvptalent = "viper_sting",
-            
+
             startsCombat = true,
             texture = 236200,
-            
+
             handler = function ()
                 applyDebuff( "target", "spider_sting" )
                 setCooldown( "scorpid_sting", max( 8, cooldown.scorpid_sting.remains ) )
@@ -1132,16 +1132,16 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             end,
         },
 
-        
+
         --[[ wartime_ability = {
             id = 264739,
             cast = 0,
             cooldown = 0,
             gcd = "spell",
-            
+
             startsCombat = true,
             texture = 1518639,
-            
+
             handler = function ()
             end,
         }, ]]
@@ -1156,9 +1156,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1178,9 +1178,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1200,9 +1200,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1222,9 +1222,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1244,9 +1244,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1266,9 +1266,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1288,9 +1288,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1310,9 +1310,9 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             gcd = "spell",
 
             toggle = "interrupts",
-            
+
             startsCombat = true,
-            
+
             usable = function ()
                 if not pet.alive then return false, "requires a living pet" end
                 return debuff.dispellable_enrage.up or debuff.dispellable_magic.up, "requires enrage or magic debuff"
@@ -1323,16 +1323,16 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
             end,
         },
 
-        
+
     } )
 
 
-    spec:RegisterPack( "Beast Mastery", 20190217.0005, [[d0uDRaqiqv8iPISjPO(KssJcuvNcsXQKkk1RavMLuvDlkjTlc)skmmLehtQYYKk8miLMMiuUMuv2Mur13uIW4uIOZbkvRtjsZteCpkv7tjQdcPIfQK6HGQ0ebLIUiOuWgbLc9rkjyKqQkNKscTskLzcPkUjKQ0ovcdfukTurO6Pk1uLkDvPIs(kKkzSqQQolLeTxv(ROgmuhwyXG8yetMQUmQndXNfrJwkDAjRgsL61GsMnvUnr2nWVv1WfPJlvuSCkEostN01jQTtj13PeJxeY5bfRxkY8HK9R4R3192(q5BrhR0d2xPJElHyLvwPVed2VTctkF70GaRijFBqiX3EnhuDWO3GQSbMBNgW4(WFDVn9Lne(2TQMsxAJgjlTvgsqEPg0ss2fA9aIjq0g0sI0aY9qnGqcR6zRBKAEKYX0gWwdN4r5PnGTjEg9jdu2KxZbvZO3GQSbgbTKi3gsUCQveCq32hkFl6yLEW(kD0BjeRSYk9LyDC7qwBFZT3Le8E72Y7zWbDBptj3UtdEnhuDWO3GQSbMbJ(KbkBgBDAWTQMsxAJgjlTvgsqEPg0ss2fA9aIjq0g0sI0aY9qnGqcR6zRBKAEKYX0gWwdN4r5PnGTjEg9jdu2KxZbvZO3GQSbgbTKiJTonyyJmKromWm4Elr)dUJv6b7d2QdELvw6k9n2gBDAWWBBasY0Lo260GT6GrhVN9dgEFzGYMbVBFDW6pypJeYoDWbrRhmyxrvXyRtd2QdUZIYdwljoRF2x8GHV1uXG1WKKvHwsCw)SVy0my9hCa0IuPHYdMb(b)idMbKxgOSrm260GT6GrhVFW(IMYoAJuztsMoyRRyWYA5kfMbheTEWGDfvf32vuLEDVTNrczNEDVf9UU3MbbKJ936BtmLYMkUTNHKrqeKGQfiPqoDWOqnypdjJGi8fnLDUaYXzPizreYPdgfQb7zizeeHVOPSZfqooZatKKfYP3oiA9GBtcNlheTEq2vu92UIQzqiX3wwlxPWC6TOJR7TdIwp42YuoxklrVndcih7V1NElq7192miGCS)wF7GO1dUnjCUCq06bzxr1B7kQMbHeFBINE6TiXUU3MbbKJ936BtmLYMkUDq0YAoZawQy6GtyWDC7GO1dUnjCUCq06bzxr1B7kQMbHeFBQE6TOVR7Tzqa5y)T(2etPSPIBheTSMZmGLkMo4LhCVBheTEWTjHZLdIwpi7kQEBxr1miK4BtCCynF6P3o1WKxck0R7TO3192miGCS)wF6TOJR7Tzqa5y)T(0BbAVU3MbbKJ936tVfj2192brRhCBQSK0dYPSEBgeqo2FRp9w03192miGCS)wF6TOZVU3oiA9GBN(A9GBZGaYX(B9P3IL46EBgeqo2FRVDQHjbvZAjX3UNO3TdIwp42bnLjA(rYAlNTuo)TjMsztf3gEgC0eBkLfPMskC5cq1cquQGbbKJ9NElwYR7Tzqa5y)T(2PgMeunRLeF7EI(UDq06b3gIPAfUSftOT3MykLnvC7Oj2uklsnLu4YfGQfGOubdcih7p90BtCCynFDVf9UU3MbbKJ936BtmLYMkUnKmcIaXWGMGriNo4MhmKmcIaXWGMGryyPOa0bNG9bNK4fsrIUDq06b3gkmqSptBF90Brhx3BZGaYX(B9TjMsztf3ojXlKIenyRoyizeebehuntCCynlmSuua6GxEWRi6OVBheTEWTLKDArBF90BbAVU3MbbKJ936BtmLYMkUnISZLnmPnmj5Sws8GtyWjjEHuKOb38Gj)78VfGaIPAfUSftOTcdlffGE7GO1dUnuyGyFM2(6P3Ie76E7GO1dUDqtzIMFKS2YzlLZFBgeqo2FRp9w03192miGCS)wFBIPu2uXTHKrqebnLjA(rYAlNTuoVqoDWnpyizeebet1kCzlMqBfYPdgfQbRLeN1p7lEWjm4E9D7GO1dUnvdPu2ZNEl68R7Tzqa5y)T(2etPSPIBt(35FlarqtzIMFKS2YzlLZlmSuua6GxEWDSYGrHAWAjXz9Z(IhCcdUxF3oiA9GBdXuTcx2Ij02tVflX192brRhCBsBjfSjY02xVndcih7V1NElwYR7TdIwp42rws24zt(rYeZBHEBgeqo2FRp9wa7x3BheTEWTHcJjsY3MbbKJ936tVf9w56EBgeqo2FRVnXukBQ42brlR5mdyPIPdoHbNydgfQbdpdoAInLYctKw(SHDF4fmiGCS)2brRhCByvoxM8ssbWF6TOxVR7TdIwp42(YWzioO6Tzqa5y)T(0BrVoUU3MbbKJ936BtmLYMkUnKmcIaXWGMGr4FlGb38GH)GjTHjjtZiMGO1dc3GxEW9el5GrHAWqYiiciMQv4YwmH2kKthmAgmkudM8VZ)waIGMYen)izTLZwkNxyyPOa0bNWGHKrqeigg0emcVSj06bd2QdojXp4MhC0eBkLfPMskC5cq1cquQGbbKJ9dgfQbRLeN1p7lEWjmyy)2brRhCBOWaX(mT91tVf9q7192miGCS)wFBIPu2uXTJMytPSWePLpBy3hEbdcih7hCZdoiAznNzalvmDWlp4oUDq06b3ws2PfT91tVf9sSR7Tzqa5y)T(2etPSPIBt(35FlabSkNltEjPa4fgwkkaDWlpyKNitfAjXz9ZsrIgCZdg(doiAznNzalvmDWjmy0oyuOgm8m4Oj2uklmrA5Zg29HxWGaYX(bJMBheTEWTjpKjY02xp9w0RVR7TdIwp4200s1cKmtEitCBgeqo2FRp90Bt80R7TO3192miGCS)wFBIPu2uXTj)78VfGaIPAfUSftOTcdlffGo4LhmAx52brRhC7aqyQAcxMeo3P3IoUU3MbbKJ936BtmLYMkUn5FN)TaeqmvRWLTycTvyyPOa0bV8Gr7k3oiA9GBJuggY9V)0BbAVU3MbbKJ936BtmLYMkUnKmcIiOPmrZpswB5SLY5fYPdU5bd)bRLeN1p7lEWlpyY)o)BbiGydLnWQajfEztO1dgmCd2lBcTEWGrHAWWFWAysYQOLdN2ksj6GtyWOTVbJc1GHNbRHJbQawLZXMCbOAbiQGbbKJ9dgndgndgfQbRLeN1p7lEWjm4EO92brRhCBi2qzdSkqYtVfj2192miGCS)wFBIPu2uXTHKrqebnLjA(rYAlNTuoVqoDWnpy4pyTK4S(zFXdE5bt(35FlabK7FFgr2aJWlBcTEWGHBWEztO1dgmkudg(dwdtswfTC40wrkrhCcdgT9nyuOgm8mynCmqfWQCo2KlavlarfmiGCSFWOzWOzWOqnyTK4S(zFXdoHb3RZVDq06b3gY9VpJiBG50BrFx3BZGaYX(B9TjMsztf3gsgbrGyyqtWiKthCZdgsgbrGyyqtWimSuua6GxEWjjEHuKObJc1GHNbdjJGiqmmOjyeYP3oiA9GB7QKTknJUL9jLyGE6TOZVU3MbbKJ936BtmLYMkUnKmcIaIPAfUSftOTc50b38GHKrqebnLjA(rYAlNTuoVqoDWnpy4pynmjzv0YHtBfPeDWjmy023GrHAWWZG1WXavaRY5ytUauTaevWGaYX(bJMbJc1G1sIZ6N9fp4egCh9D7GO1dUD6R1do90Bt1R7TO3192miGCS)wFBIPu2uXTHKrqeigg0emc50b38GHKrqeigg0emcdlffGo4eSp4KeVqks0GrHAWiYox2WK2WKKZAjXdoHbNK4fsrIgCZdM8VZ)waciMQv4YwmH2kmSuua6GrHAWrtSPuwKAkPWLlavlarPcgeqo2p4Mhm5FN)TaebnLjA(rYAlNTuoVWWsrbOdoHbNK4VDq06b3gkmqSptBF90Brhx3BheTEWTdAkt08JK1woBPC(BZGaYX(B9P3c0EDVDq06b3oYsYgpBYpsMyEl0BZGaYX(B9P3Ie76EBgeqo2FRVnXukBQ42qYiiIGMYen)izTLZwkNxiNo4MhmKmcIaIPAfUSftOTc50bJc1G1sIZ6N9fp4egCV(UDq06b3MQHuk75tVf9DDVndcih7V13MykLnvCBY)o)BbicAkt08JK1woBPCEHHLIcqh8YdUJvgmkudwljoRF2x8GtyW9672brRhCBiMQv4YwmH2E6TOZVU3oiA9GBdRY5YKxska(BZGaYX(B9P3IL46E7GO1dUnPTKc2ezA7R3MbbKJ936tVfl5192brRhCBFz4mehu92miGCS)wF6Ta2VU3MbbKJ936BtmLYMkUnKmcIaXWGMGr4FlGb38GH)GjTHjjtZiMGO1dc3GxEW9el5GrHAWqYiiciMQv4YwmH2kKthmAgmkudM8VZ)waIGMYen)izTLZwkNxyyPOa0bNWGHKrqeigg0emcVSj06bd2QdojXp4MhC0eBkLfPMskC5cq1cquQGbbKJ9dgfQbRLeN1p7lEWjmyy)2brRhCBOWaX(mT91tVf9w56E7GO1dUnuymrs(2miGCS)wF6TOxVR7Tzqa5y)T(2etPSPIBd)bJ8ez6GT6GjpvhmCdg5jYuHHtYGb3zpy4pyY)o)BbiGv5CzYljfaVWWsrbOd2QdU3GrZGxEWbrRhiGv5CzYljfaVG8uDWOqnyY)o)BbiGv5CzYljfaVWWsrbOdE5b3BWWn4Ke)GrZGBEWK)D(3cqaRY5YKxskaEHHLIcqh8YdU3TdIwp42KhYezA7RNEl61X192brRhCBAAPAbsMjpKjUndcih7V1NE6TL1Yvkmx3BrVR7TdIwp42KxgOSjtBF92miGCS)wF6TOJR7TdIwp42u2WGsHj7LP6Tzqa5y)T(0BbAVU3oiA9GBttFdNjUx2FBgeqo2FRp9wKyx3BheTEWTP)RTfiz2sOS52miGCS)wF6TOVR7TdIwp420huKmKlO6Tzqa5y)T(0BrNFDVDq06b3gWAlBY02NaRBZGaYX(B9P3IL46E7GO1dUnPTq3fnRMa0zKlxPWCBgeqo2FRp9wSKx3BheTEWTPPLP0mT9jW62miGCS)wF6Ta2VU3oiA9GBdcv2W0Cstq4BZGaYX(B9PNE6TTMn06b3IowPhSVsh96j6Hw02XTTegqbssVn6cDs8fwXfwHLo4b3TLhCjL(gDWiVzWRsCCynV6GnCNrUmSFW0xIhCiRVuOSFWK2aKKPIXg6Pa8G7T0bdVpWA2OSFWRMYQa9lSsHqS6G1FWRALcHy1bd)oseAeJn0tb4b3Xshm8(aRzJY(bVAkRc0VWkfcXQdw)bVQvkeIvhm87Li0igBONcWdUxhlDWW7dSMnk7h8QPSkq)cRuieRoy9h8QwPqiwDWWVJeHgXyBSHUqNeFHvCHvyPdEWDB5bxsPVrhmYBg8QepD1bB4oJCzy)GPVep4qwFPqz)GjTbijtfJn0tb4b33shm8(aRzJY(bVAkRc0VWkfcXQdw)bVQvkeIvhm8rBIqJySn2qxOtIVWkUWkS0bp4UT8GlP03Odg5ndEvQU6GnCNrUmSFW0xIhCiRVuOSFWK2aKKPIXg6Pa8G7T0bdVpWA2OSFWRMYQa9lSsHqS6G1FWRALcHy1bd)oseAeJn0tb4bd7lDWW7dSMnk7h8QPSkq)cRuieRoy9h8QwPqiwDWWVJeHgXyBSzfLsFJY(b35doiA9Gb7kQsfJTBttzYTOJ(q7Ttnps54B3PbVMdQoy0Bqv2aZGrFYaLnJTon4wvtPlTrJKL2kdjiVudAjj7cTEaXeiAdAjrAa5EOgqiHv9S1nsnps5yAdyRHt8O80gW2epJ(KbkBYR5GQz0Bqv2aJGwsKXwNgmSrgYihgygCVLO)b3Xk9G9bB1bVYklDL(gBJTony4Tnajz6shBDAWwDWOJ3Z(bdVVmqzZG3TVoy9hSNrczNo4GO1dgSROQyS1PbB1b3zr5bRLeN1p7lEWW3AQyWAysYQqljoRF2xmAgS(doaArQ0q5bZa)GFKbZaYldu2igBDAWwDWOJ3pyFrtzhTrQSjjthS1vmyzTCLcZGdIwpyWUIQIX2yRtdg2qIyISY(bdXiVHhm5LGcDWqCYcqfdgDieovPdg8aR2ggjez3GdIwpGo4h4Grm2cIwpGksnm5LGc1oIlOWASfeTEavKAyYlbfkC2BeYjLyGgA9GXwq06burQHjVeuOWzVbY)(Xwq06burQHjVeuOWzVbvws6b5uwhBDAWBqKsBFDWMO8dgsgbH9dMQHshmeJ8gEWKxck0bdXjlaDWbWp4udB10x1cKCWfDW(hWIXwq06burQHjVeuOWzVbfeP02xZunu6yliA9aQi1WKxcku4S3i916bJTony0XJULPkDWAlpyVSj06bdoa(bt(35FlGb)idgDOPmrh8JmyTLhm6QC(bha)GHTMskCd2kcOAbikDWqWmyTLhSx2eA9Gb)idoadwg0guL9d2kaVWMd2sldgS2YWSQHhSmL9do1WKxckuXGrh6GrNxrxdUnOdogCpbAPd2kaVWMdoa(bhiimrPdUuk7qgS2w0bx0b3t0JkgBbrRhqfPgM8sqHcN9gbnLjA(rYAlNTuoF)PgMeunRLeBVNOx)fID4jAInLYIutjfUCbOAbikvWGaYX(XwNgm64r3YuLoyTLhSx2eA9Gbha)Gj)78VfWGFKbVMPAfUbJUmH2o4a4hm6lAIh8Jm4epsYdgcMbRT8G9YMqRhm4hzWbyWYG2GQSFWwb4f2CWwAzWG1wgMvn8GLPSFWPgM8sqHkgBbrRhqfPgM8sqHcN9gqmvRWLTycTT)udtcQM1sIT3t0x)fI9Oj2uklsnLu4YfGQfGOubdcih7hBJTGO1dOczTCLcJDYldu2KPTVo2cIwpGkK1YvkmWzVbLnmOuyYEzQo2cIwpGkK1YvkmWzVbn9nCM4Ez)yliA9aQqwlxPWaN9g0)12cKmBju2m2cIwpGkK1YvkmWzVb9bfjd5cQo2cIwpGkK1YvkmWzVbG1w2KPTpbwJTGO1dOczTCLcdC2BqAl0DrZQjaDg5YvkmJTGO1dOczTCLcdC2BqtltPzA7tG1yliA9aQqwlxPWaN9gGqLnmnN0eeESn260GHnKiMiRSFWS1SbMbRLepyTLhCq03m4Io4W6OCbKJfJTGO1dO2jHZLdIwpi7kQ2piKy7YA5kfM(le7EgsgbrqcQwGKc5uuO8mKmcIWx0u25cihNLIKfriNIcLNHKrqe(IMYoxa54mdmrswiNo2cIwpGcN9gYuoxklrhBbrRhqHZEds4C5GO1dYUIQ9dcj2oXthBbrRhqHZEds4C5GO1dYUIQ9dcj2ov7VqSheTSMZmGLkMMqhJTGO1dOWzVbjCUCq06bzxr1(bHeBN44WAU)cXEq0YAoZawQy6Y9gBJTGO1dOcINApaeMQMWLjHZ1FHyN8VZ)waciMQv4YwmH2kmSuua6YODLXwq06bubXtHZEdKYWqU)99xi2j)78VfGaIPAfUSftOTcdlffGUmAxzSfeTEavq8u4S3aInu2aRcKS)cXoKmcIiOPmrZpswB5SLY5fYPndFTK4S(zFXlt(35FlabeBOSbwfiPWlBcTEaCEztO1dqHc(AysYQOLdN2ksjAcOTpuOGhnCmqfWQCo2KlavlarfmiGCShnObfkTK4S(zFXj0dTJTGO1dOcINcN9gqU)9zezdm9xi2HKrqebnLjA(rYAlNTuoVqoTz4RLeN1p7lEzY)o)BbiGC)7ZiYgyeEztO1dGZlBcTEakuWxdtswfTC40wrkrtaT9Hcf8OHJbQawLZXMCbOAbiQGbbKJ9ObnOqPLeN1p7loHED(yliA9aQG4PWzVHRs2Q0m6w2NuIbA)fI9uwfKqfqYiiceddAcgHCAZPSkiHkGKrqeigg0emcdlffGUCsIxifjcfk4jLvbjubKmcIaXWGMGriNo2cIwpGkiEkC2BK(A9G(le7qYiiciMQv4YwmH2kKtBgsgbre0uMO5hjRTC2s58c50MHVgMKSkA5WPTIuIMaA7dfk4rdhdubSkNJn5cq1cqubdcih7rdkuAjXz9Z(ItOJ(gBJTGO1dOcIJdRz7qHbI9zA7R9xi2tzvqcvajJGiqmmOjyeYPnNYQGeQasgbrGyyqtWimSuuaAc2ts8cPirJTGO1dOcIJdRz4S3qs2PfT91(le7jjEHuKiRMYQGeQasgbraXbvZehhwZcdlffGU8kIo6BSfeTEavqCCyndN9gqHbI9zA7R9xi2rKDUSHjTHjjN1sItijXlKIe1m5FN)TaeqmvRWLTycTvyyPOa0Xwq06bubXXH1mC2Be0uMO5hjRTC2s58JTGO1dOcIJdRz4S3GQHuk75(le7qYiiIGMYen)izTLZwkNxiN2mKmcIaIPAfUSftOTc5uuO0sIZ6N9fNqV(gBbrRhqfehhwZWzVbet1kCzlMqB7VqSt(35FlarqtzIMFKS2YzlLZlmSuua6YDSckuAjXz9Z(ItOxFJTGO1dOcIJdRz4S3G0wsbBImT91Xwq06bubXXH1mC2BezjzJNn5hjtmVf6yliA9aQG44WAgo7nGcJjsYJTGO1dOcIJdRz4S3awLZLjVKua89xi2dIwwZzgWsfttiXqHcEIMytPSWePLpBy3hEbdcih7hBbrRhqfehhwZWzVHVmCgIdQo2cIwpGkiooSMHZEdOWaX(mT91(le7PSkiHkGKrqeigg0emc)Bb0m8jTHjjtZiMGO1dc3Y9eljkuqYiiciMQv4YwmH2kKtrdkuK)D(3cqe0uMO5hjRTC2s58cdlffGMqkRcsOcizeebIHbnbJWlBcTEGvts8nhnXMszrQPKcxUauTaeLkyqa5ypkuAjXz9Z(Ita2hBbrRhqfehhwZWzVHKStlA7R9xi2JMytPSWePLpBy3hEbdcih7BoiAznNzalvmD5ogBbrRhqfehhwZWzVb5HmrM2(A)fIDY)o)BbiGv5CzYljfaVWWsrbOlJ8ezQqljoRFwksuZWpiAznNzalvmnb0Icf8enXMszHjslF2WUp8cgeqo2JMXwq06bubXXH1mC2BqtlvlqYm5HmXyBSfeTEavqv7qHbI9zA7R9xi2tzvqcvajJGiqmmOjyeYPnNYQGeQasgbrGyyqtWimSuuaAc2ts8cPirOqHi7CzdtAdtsoRLeNqsIxifjQzY)o)BbiGyQwHlBXeARWWsrbOOqfnXMszrQPKcxUauTaeLkyqa5yFZK)D(3cqe0uMO5hjRTC2s58cdlffGMqsIFSfeTEavqv4S3iOPmrZpswB5SLY5hBbrRhqfufo7nISKSXZM8JKjM3cDSfeTEavqv4S3GQHuk75(le7qYiiIGMYen)izTLZwkNxiN2mKmcIaIPAfUSftOTc5uuO0sIZ6N9fNqV(gBbrRhqfufo7nGyQwHlBXeAB)fIDY)o)BbicAkt08JK1woBPCEHHLIcqxUJvqHsljoRF2xCc96BSfeTEavqv4S3awLZLjVKua8JTGO1dOcQcN9gK2skytKPTVo2cIwpGkOkC2B4ldNH4GQJTGO1dOcQcN9gqHbI9zA7R9xi2tzvqcvajJGiqmmOjye(3cOz4tAdtsMMrmbrRheUL7jwsuOGKrqeqmvRWLTycTviNIguOi)78VfGiOPmrZpswB5SLY5fgwkkanHuwfKqfqYiiceddAcgHx2eA9aRMK4BoAInLYIutjfUCbOAbikvWGaYXEuO0sIZ6N9fNaSp2cIwpGkOkC2BafgtKKhBbrRhqfufo7nipKjY02x7VqSdFKNitTk5PkCiprMkmCsg0zdFY)o)BbiGv5CzYljfaVWWsrbOwThAwoiA9abSkNltEjPa4fKNQOqr(35FlabSkNltEjPa4fgwkkaD5EWLK4rtZK)D(3cqaRY5YKxskaEHHLIcqxU3yliA9aQGQWzVbnTuTajZKhYeNE6Da]] )
+    spec:RegisterPack( "Beast Mastery", 20190226.2359, [[d0ukSaqiisEKurTjPcFsPkJcIQtbrzvsfP8ki0SKk1TOe1Ui8lPOHre6ykvwMi4zebttesxtPW2Gi6BkfPXPueNJisRtPOMNiY9OuTpPsoireluP0dHi1eHiOlcraBeIa9rkr0ijIQojLizLukZKseUjruANsvnuicTuPI4PkzQsvUQurQ(krumwkrQZkcXEv5VIAWqDyHfdYJrmzQ6YO2mO(Suy0sPtlz1erLxRuvZMk3gs7g43QA4I0XLkswofphPPt66e12Pe(oL04fH68qW6frnFI0(v8T76DlFO81pbjUtsLycjSPcjkrjMGet0BPiKY3kni7hn4Bbcu(wB5GQdwYguLniCR0ab3h(R3TOVSHW3Qv1u6MB2SrPTYqcYJ2KwOYUqRhqmbS2KwOKMqUhQjeCyzpBrZuZdxoM2ejA4ojkpTjsStYsEzGYM8woOAwYguLniiOfk5wqYLtTuGd6w(q5RFcsCNKkXesajfjiHn20DB6TczT9n3AvOi9TAlVNbh0T8mLCRop4TCq1blzdQYgegSKxgOSzS15b3QAkDZnB2O0wzib5rBsluzxO1diMawBslusti3d1ecoSSNTOzQ5HlhtBIenCNeLN2ej2jzjVmqztElhunlzdQYgee0cLm268GrcYqg5WGWGtaj7EWjiXDs6GT8GtqcBEdKCSn268Gr62a0GPBES15bB5bljEp7hms)YaLndE1(6G1FWEgoKD6GdIwpyWUIQIXwNhSLhCNoLhSwOCw)SV4bJClOIbRHPbRcTq5S(zFXiBW6p4aOfPsdLhmd8d(HhmdiVmqzJyS15bB5bljE)G9fnLD0MPYMgmDWwuXGL1YvkcdoiA9Gb7kQkULROk96DlpdhYo96D93D9Ufdcih7VT3IykLnvClpdjddlibvlqdHC6GLkDWEgsggw4lAk7CbKJZOrJIiKthSuPd2ZqYWWcFrtzNlGCCMbMOblKtVvq06b3IeoxoiA9GSRO6TCfvZGaLVLSwUsr40RFcxVBfeTEWTKPCUugLElgeqo2FBp96lHR3Tyqa5y)T9wbrRhCls4C5GO1dYUIQ3Yvundcu(wep90RFIE9Ufdcih7VT3IykLnvCRGOLfCMbmAX0bN0Gt4wbrRhCls4C5GO1dYUIQ3Yvundcu(wu90R)gxVBXGaYX(B7TiMsztf3kiAzbNzaJwmDWDn4D3kiA9GBrcNlheTEq2vu9wUIQzqGY3I44Wc(0tVvQHjpkuOxVR)UR3Tyqa5y)T90RFcxVBXGaYX(B7PxFjC9Ufdcih7VTNE9t0R3TcIwp4wuzu0hKtz9wmiGCS)2E61FJR3Tyqa5y)T90RpsE9Uvq06b3k916b3IbbKJ932tV(B617wmiGCS)2ERudtcQM1cLV1oXUBfeTEWTcAkt08dN1woBTC(BrmLYMkUfsn4iz2uklsnfA4YfGQfGOubdcih7p96VjxVBXGaYX(B7TsnmjOAwlu(w7eBCRGO1dUfet1kCzRMqBVfXukBQ4wrYSPuwKAk0WLlavlarPcgeqo2F6P3I44Wc(6D93D9Ufdcih7VT3IykLnvClizyybSHbjJGqoDWDmyizyybSHbjJGWWOrbOdoj7dUbXlqJeFRGO1dUfuyGyFM2(6Px)eUE3IbbKJ932BrmLYMkUvdIxGgjEWwEWqYWWcioOAM44Wcwyy0Oa0b31GLOiHnUvq06b3cv2PfT91tV(s46Dlgeqo2FBVfXukBQ4wWYox2WK2W0GZAHYdoPb3G4fOrIhChdM8VZ)wbciMQv4YwnH2kmmAua6TcIwp4wqHbI9zA7RNE9t0R3TcIwp4wbnLjA(HZAlNTwo)Tyqa5y)T90R)gxVBXGaYX(B7TiMsztf3csggwe0uMO5hoRTC2A58c50b3XGHKHHfqmvRWLTAcTviNoyPshSwOCw)SV4bN0G3TXTcIwp4wunqtzpF61hjVE3IbbKJ932BrmLYMkUf5FN)TcebnLjA(HZAlNTwoVWWOrbOdURbNGehSuPdwluoRF2x8GtAW724wbrRhCliMQv4YwnH2E61FtVE3kiA9GBrAl0GnrM2(6Tyqa5y)T90R)MC9Uvq06b3kYOYgpBYpCMyER0BXGaYX(B7PxFj96DRGO1dUfuymrd(wmiGCS)2E61FNeVE3IbbKJ932BrmLYMkUvq0YcoZagTy6GtAWj6GLkDWi1GJKztPSWePLpBy3hEbdcih7Vvq06b3A)Y5YKhfna(tV(72D9Uvq06b3YxgodXbvVfdcih7VTNE93LW17wmiGCS)2ElIPu2uXTGKHHfWggKmcc)Bfm4ogmYhmPnmnyAg2eeTEq4gCxdENytgSuPdgsggwaXuTcx2Qj0wHC6Gr2GLkDWK)D(3kqe0uMO5hoRTC2A58cdJgfGo4KgmKmmSa2WGKrq4LnHwpyWwEWni(b3XGJKztPSi1uOHlxaQwaIsfmiGCSFWsLoyTq5S(zFXdoPblP3kiA9GBbfgi2NPTVE61FNeUE3IbbKJ932BrmLYMkUvKmBkLfMiT8zd7(Wlyqa5y)G7yWbrll4mdy0IPdURbNWTcIwp4wOYoTOTVE61FxIE9Ufdcih7VT3IykLnvClY)o)Bfi2VCUm5rrdGxyy0Oa0b31GHFImvOfkN1pJgjEWDmyKp4GOLfCMbmAX0bN0GLWGLkDWi1GJKztPSWePLpBy3hEbdcih7hmYUvq06b3I8qMitBF90R)UnUE3kiA9GBrtlvlqJm5HmXTyqa5y)T90R)oK86Dlgeqo2FBVfXukBQ4wrYSPuwyI0YNnS7dVGbbKJ9dUJbheTSGZmGrlMo4UgCc3kiA9GBHk70I2(6PNElINE9U(7UE3IbbKJ932BrmLYMkUf5FN)TceqmvRWLTAcTvyy0Oa0b31GLGeVvq06b3kaeMQMWLjHZD61pHR3Tyqa5y)T9wetPSPIBr(35FRabet1kCzRMqBfggnkaDWDnyjiXBfeTEWTGldd5(3F61xcxVBXGaYX(B7TiMsztf3csggwe0uMO5hoRTC2A58c50b3XGr(G1cLZ6N9fp4Ugm5FN)TceqSHYM9lqdHx2eA9GbJ4G9YMqRhmyPshmYhSgMgSkA5WPTIuIo4KgSe2yWsLoyKAWA4yGk2VCo2KlavlarfmiGCSFWiBWiBWsLoyTq5S(zFXdoPbVtc3kiA9GBbXgkB2Vano96NOxVBXGaYX(B7TiMsztf3csggwe0uMO5hoRTC2A58c50b3XGr(G1cLZ6N9fp4Ugm5FN)TceqU)9zyzdccVSj06bdgXb7LnHwpyWsLoyKpynmnyv0YHtBfPeDWjnyjSXGLkDWi1G1WXavSF5CSjxaQwaIkyqa5y)Gr2Gr2GLkDWAHYz9Z(IhCsdEhsERGO1dUfK7FFgw2GWPx)nUE3IbbKJ932BrmLYMkUfKmmSa2WGKrqiNo4ogmKmmSa2WGKrqyy0Oa0b31GBq8c0iXdwQ0bJudgsggwaByqYiiKtVvq06b3YvnAvAwYj7BGYa90RpsE9Ufdcih7VT3IykLnvClizyybet1kCzRMqBfYPdUJbdjddlcAkt08dN1woBTCEHC6G7yWiFWAyAWQOLdN2ksj6GtAWsyJblv6GrQbRHJbQy)Y5ytUauTaevWGaYX(bJSblv6G1cLZ6N9fp4KgCcBCRGO1dUv6R1do90Br1R31F317wmiGCS)2ElIPu2uXTGKHHfWggKmcc50b3XGHKHHfWggKmccdJgfGo4KSp4geVans8GLkDWWYox2WK2W0GZAHYdoPb3G4fOrIhChdM8VZ)wbciMQv4YwnH2kmmAua6GLkDWrYSPuwKAk0WLlavlarPcgeqo2p4ogm5FN)TcebnLjA(HZAlNTwoVWWOrbOdoPb3G4Vvq06b3ckmqSptBF90RFcxVBfeTEWTcAkt08dN1woBTC(BXGaYX(B7PxFjC9Uvq06b3kYOYgpBYpCMyER0BXGaYX(B7Px)e96Dlgeqo2FBVfXukBQ4wqYWWIGMYen)WzTLZwlNxiNo4ogmKmmSaIPAfUSvtOTc50blv6G1cLZ6N9fp4Kg8UnUvq06b3IQbAk75tV(BC9Ufdcih7VT3IykLnvClY)o)BficAkt08dN1woBTCEHHrJcqhCxdobjoyPshSwOCw)SV4bN0G3TXTcIwp4wqmvRWLTAcT90RpsE9Uvq06b3A)Y5YKhfna(BXGaYX(B7Px)n96DRGO1dUfPTqd2ezA7R3IbbKJ932tV(BY17wbrRhClFz4mehu9wmiGCS)2E61xsVE3IbbKJ932BrmLYMkUfKmmSa2WGKrq4FRGb3XGr(GjTHPbtZWMGO1dc3G7AW7eBYGLkDWqYWWciMQv4YwnH2kKthmYgSuPdM8VZ)wbIGMYen)WzTLZwlNxyy0Oa0bN0GHKHHfWggKmccVSj06bd2YdUbXp4ogCKmBkLfPMcnC5cq1cquQGbbKJ9dwQ0bRfkN1p7lEWjnyj9wbrRhClOWaX(mT91tV(7K417wbrRhClOWyIg8Tyqa5y)T90R)UDxVBXGaYX(B7TiMsztf3c5dg(jY0bB5btEQoyehm8tKPcd3GbdUtBWiFWK)D(3kqSF5CzYJIgaVWWOrbOd2YdE3Gr2G7AWbrRhi2VCUm5rrdGxqEQoyPshm5FN)Tce7xoxM8OObWlmmAua6G7AW7gmIdUbXpyKn4ogm5FN)Tce7xoxM8OObWlmmAua6G7AW7Uvq06b3I8qMitBF90R)UeUE3kiA9GBrtlvlqJm5HmXTyqa5y)T90tVLSwUsr46D93D9Uvq06b3I8YaLnzA7R3IbbKJ932tV(jC9Uvq06b3IYggukczVmvVfdcih7VTNE9LW17wbrRhClA6B4mX9Y(BXGaYX(B7Px)e96DRGO1dUf9FTTanYwdLn3IbbKJ932tV(BC9Uvq06b3I(GIKHCbvVfdcih7VTNE9rYR3TcIwp4wawBztM2(K9Vfdcih7VTNE930R3TcIwp4wK2sYv0SAcqNsUCLIWTyqa5y)T90R)MC9Uvq06b3IMwMsZ02NS)Tyqa5y)T90RVKE9Uvq06b3ceQSHP5gMGW3IbbKJ932tp90BzbBO1dU(jiXDsQety3MkKOeL4g3YAyafOb9wsgjPt6BP6Bj38GhCVwEWfA6B0bd)MbVhXXHf8Ed2WDk5YW(btFuEWHS(OHY(btAdqdMkgBwIcWdE3Mhms)alyJY(bVxkRclTirecXEdw)bVxIieI9gmYtiXitm2SefGhCcBEWi9dSGnk7h8EPSkS0Ierie7ny9h8EjIqi2BWiFxIrMySzjkap4DjS5bJ0pWc2OSFW7LYQWslseHqS3G1FW7LicHyVbJ8esmYeJTXMKrs6K(wQ(wYnp4b3RLhCHM(gDWWVzW7r809gSH7uYLH9dM(O8Gdz9rdL9dM0gGgmvm2SefGh8gBEWi9dSGnk7h8EPSkS0Ierie7ny9h8EjIqi2BWixcjgzIX2ytYijDsFlvFl5Mh8G71YdUqtFJoy43m49O6Ed2WDk5YW(btFuEWHS(OHY(btAdqdMkgBwIcWdE3Mhms)alyJY(bVxkRclTirecXEdw)bVxIieI9gmYtiXitm2SefGhSKU5bJ0pWc2OSFW7LYQWslseHqS3G1FW7LicHyVbJ8esmYeJTXMLcn9nk7hmso4GO1dgSROkvm2UfnLjx)e2qc3k18WLJVvNh8woO6GLSbvzdcdwYldu2m268GBvnLU5MnBuARmKG8OnPfQSl06betaRnPfkPjK7HAcbhw2Zw0m18WLJPnrIgUtIYtBIe7KSKxgOSjVLdQMLSbvzdccAHsgBDEWibziJCyqyWjGKDp4eK4ojDWwEWjiHnVbso2gBDEWiDBaAW0np268GT8GLeVN9dgPFzGYMbVAFDW6pypdhYoDWbrRhmyxrvXyRZd2YdUtNYdwluoRF2x8GrUfuXG1W0GvHwOCw)SVyKny9hCa0IuPHYdMb(b)WdMbKxgOSrm268GT8GLeVFW(IMYoAZuztdMoylQyWYA5kfHbheTEWGDfvfJTXwNhmsGeZezL9dgIHFdpyYJcf6GH4gfGkgSKqiCQshm4bwUnmOWYUbheTEaDWpWHGySfeTEavKAyYJcfQDyxq3FSfeTEavKAyYJcfkI2BgYnqzGgA9GXwq06burQHjpkuOiAVj8)(Xwq06burQHjpkuOiAVjvgf9b5uwhBDEWlqKsBFDWMO8dgsggM9dMQHshmed)gEWKhfk0bdXnkaDWbWp4udB50x1c0yWfDW(hWIXwq06burQHjpkuOiAVjfeP02xZunu6yliA9aQi1WKhfkueT3m916bJTopyjXl5KPkDWAlpyVSj06bdoa(bt(35FRGb)WdwsOPmrh8dpyTLhSKPC(bha)GrIMcnCd2sbOAbikDWqimyTLhSx2eA9Gb)Wdoadwg0guL9d2sI0iHd2AldgS2YiSNHhSmL9do1WKhfkuXGLe6GLKxLmdUnOdog8oHeOd2sI0iHdoa(bhWWmrPdUuk7GhS2w0bx0bVtSJkgBbrRhqfPgM8OqHIO9MbnLjA(HZAlNTwoF3PgMeunRfkBFNyx3fSDKksMnLYIutHgUCbOAbikvWGaYX(XwNhSK4LCYuLoyTLhSx2eA9Gbha)Gj)78VvWGF4bVLPAfUblzmH2o4a4hSKpsMh8dp4ojAWdgcHbRT8G9YMqRhm4hEWbyWYG2GQSFWwsKgjCWwBzWG1wgH9m8GLPSFWPgM8OqHkgBbrRhqfPgM8OqHIO9MqmvRWLTAcTT7udtcQM1cLTVtSr3fS9iz2uklsnfA4YfGQfGOubdcih7hBJTGO1dOczTCLIGDYldu2KPTVo2cIwpGkK1YvkciAVjLnmOueYEzQo2cIwpGkK1YvkciAVjn9nCM4Ez)yliA9aQqwlxPiGO9M0)12c0iBnu2m2cIwpGkK1YvkciAVj9bfjd5cQo2cIwpGkK1YvkciAVjG1w2KPTpz)Xwq06buHSwUsrar7njTLKROz1eGoLC5kfHXwq06buHSwUsrar7nPPLP0mT9j7p2cIwpGkK1YvkciAVjiuzdtZnmbHhBJTopyKajMjYk7hmBbBqyWAHYdwB5bhe9ndUOdoSikxa5yXyliA9aQDs4C5GO1dYUIQDdcu2USwUsrO7c2UNHKHHfKGQfOHqovQupdjddl8fnLDUaYXz0OrreYPsL6zizyyHVOPSZfqooZat0GfYPJTGO1dOiAVPmLZLYO0Xwq06bueT3KeoxoiA9GSROA3GaLTt80Xwq06bueT3KeoxoiA9GSROA3GaLTt1Uly7brll4mdy0IPjLWyliA9akI2BscNlheTEq2vuTBqGY2jooSG7UGTheTSGZmGrlM21UX2yliA9aQG4P2daHPQjCzs4CDxW2j)78VvGaIPAfUSvtOTcdJgfG2LeK4yliA9aQG4PiAVjCzyi3)(Uly7K)D(3kqaXuTcx2Qj0wHHrJcq7scsCSfeTEavq8ueT3eInu2SFbA0DbBhsggwe0uMO5hoRTC2A58c50oqUwOCw)SV4Ui)78VvGaInu2SFbAi8YMqRhGOx2eA9aPsrUgMgSkA5WPTIuIMKe2qQuKsdhduX(LZXMCbOAbiQGbbKJ9idzsLQfkN1p7loPDsySfeTEavq8ueT3eY9VpdlBqO7c2oKmmSiOPmrZpCwB5S1Y5fYPDGCTq5S(zFXDr(35FRabK7FFgw2GGWlBcTEaIEztO1dKkf5AyAWQOLdN2ksjAssydPsrknCmqf7xohBYfGQfGOcgeqo2JmKjvQwOCw)SV4K2HKJTGO1dOcINIO9MUQrRsZsozFdugODxW2tzvqcvajddlGnmizeeYPDKYQGeQasggwaByqYiimmAuaAxniEbAKyPsrQuwfKqfqYWWcyddsgbHC6yliA9aQG4PiAVz6R1d6UGTdjddlGyQwHlB1eARqoTdizyyrqtzIMF4S2YzRLZlKt7a5AyAWQOLdN2ksjAssydPsrknCmqf7xohBYfGQfGOcgeqo2JmPs1cLZ6N9fNucBm2gBbrRhqfehhwW2Hcde7Z02x7UGTNYQGeQasggwaByqYiiKt7iLvbjubKmmSa2WGKrqyy0Oa0KS3G4fOrIhBbrRhqfehhwWiAVjQStlA7RDxW2Bq8c0iXwoLvbjubKmmSaIdQMjooSGfggnkaTljksyJXwq06bubXXHfmI2Bcfgi2NPTV2DbBhw25YgM0gMgCwluoPgeVansChK)D(3kqaXuTcx2Qj0wHHrJcqhBbrRhqfehhwWiAVzqtzIMF4S2YzRLZp2cIwpGkiooSGr0EtQgOPSN7UGTdjddlcAkt08dN1woBTCEHCAhqYWWciMQv4YwnH2kKtLkvluoRF2xCs72ySfeTEavqCCybJO9MqmvRWLTAcTT7c2o5FN)TcebnLjA(HZAlNTwoVWWOrbODLGeLkvluoRF2xCs72ySfeTEavqCCybJO9MK2cnytKPTVo2cIwpGkiooSGr0EZiJkB8Sj)WzI5TshBbrRhqfehhwWiAVjuymrdESfeTEavqCCybJO9M7xoxM8OObW3DbBpiAzbNzaJwmnPevQuKksMnLYctKw(SHDF4fmiGCSFSfeTEavqCCybJO9M(YWzioO6yliA9aQG44Wcgr7nHcde7Z02x7UGTNYQGeQasggwaByqYii8VvqhiN0gMgmndBcIwpiCDTtSjsLcjddlGyQwHlB1eARqofzsLs(35FRarqtzIMF4S2YzRLZlmmAuaAsPSkiHkGKHHfWggKmccVSj06bwUbX3rKmBkLfPMcnC5cq1cquQGbbKJ9sLQfkN1p7lojjDSfeTEavqCCybJO9MOYoTOTV2DbBpsMnLYctKw(SHDF4fmiGCSVJGOLfCMbmAX0UsySfeTEavqCCybJO9MKhYezA7RDxW2j)78VvGy)Y5YKhfnaEHHrJcq7c(jYuHwOCw)mAK4oqEq0YcoZagTyAssqQuKksMnLYctKw(SHDF4fmiGCShzJTGO1dOcIJdlyeT3KMwQwGgzYdzIXwq06bubXXHfmI2BIk70I2(A3fS9iz2uklmrA5Zg29HxWGaYX(ocIwwWzgWOft7kHX2yliA9aQGQ2Hcde7Z02x7UGTNYQGeQasggwaByqYiiKt7iLvbjubKmmSa2WGKrqyy0Oa0KS3G4fOrILkfw25YgM0gMgCwluoPgeVansChK)D(3kqaXuTcx2Qj0wHHrJcqLknsMnLYIutHgUCbOAbikvWGaYX(oi)78VvGiOPmrZpCwB5S1Y5fggnkanPge)yliA9aQGQiAVzqtzIMF4S2YzRLZp2cIwpGkOkI2BgzuzJNn5hotmVv6yliA9aQGQiAVjvd0u2ZDxW2HKHHfbnLjA(HZAlNTwoVqoTdizyybet1kCzRMqBfYPsLQfkN1p7loPDBm2cIwpGkOkI2BcXuTcx2Qj02Uly7K)D(3kqe0uMO5hoRTC2A58cdJgfG2vcsuQuTq5S(zFXjTBJXwq06bubvr0EZ9lNltEu0a4hBbrRhqfufr7njTfAWMitBFDSfeTEavqveT30xgodXbvhBbrRhqfufr7nHcde7Z02x7UGTNYQGeQasggwaByqYii8VvqhiN0gMgmndBcIwpiCDTtSjsLcjddlGyQwHlB1eARqofzsLs(35FRarqtzIMF4S2YzRLZlmmAuaAsPSkiHkGKHHfWggKmccVSj06bwUbX3rKmBkLfPMcnC5cq1cquQGbbKJ9sLQfkN1p7lojjDSfeTEavqveT3ekmMObp2cIwpGkOkI2BsEitKPTV2DbBh5WprMAzYtveHFImvy4gmOtd5K)D(3kqSF5CzYJIgaVWWOrbOwEhY6kiA9aX(LZLjpkAa8cYtvPsj)78VvGy)Y5YKhfnaEHHrJcq7AhIniEK1b5FN)Tce7xoxM8OObWlmmAuaAx7gBbrRhqfufr7nPPLQfOrM8qM40tVda]] )
 
-    
+
     spec:RegisterOptions( {
         enabled = true,
-    
+
         potion = "potion_of_rising_death",
 
         buffPadding = 0.25,
@@ -1341,10 +1341,10 @@ if UnitClassBase( 'player' ) == 'HUNTER' then
         nameplateRange = 8,
 
         aoe = 3,
-    
+
         damage = true,
         damageExpiration = 3,
-    
+
         package = "Beast Mastery",
     } )
 end

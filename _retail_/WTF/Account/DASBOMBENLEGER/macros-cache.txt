@@ -3,7 +3,7 @@ VER 3 0000000000000037 "/script local _," "INV_MISC_QUESTIONMARK"
 END
 VER 3 0000000000000035 "AAP_MACRO" "INV_MISC_QUESTIONMARK"
 #showtooltip
-/use Rastari Skull Whistle
+/use Ranah's Watering Can
 END
 VER 3 0000000000000021 "arena silence" "INV_MISC_QUESTIONMARK"
 #showtooltip

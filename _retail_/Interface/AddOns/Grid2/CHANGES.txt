@@ -1,4 +1,33 @@
 ------------------------------------------------------------------------
+r875 | michaelspain | 2019-03-04 03:05:03 +0000 (Mon, 04 Mar 2019) | 1 line
+Changed paths:
+   M /trunk/GridRoster.lua
+
+Fixing ticket #652 (Random BGs always return raidsize 40)
+------------------------------------------------------------------------
+r874 | michaelspain | 2019-03-03 16:03:31 +0000 (Sun, 03 Mar 2019) | 2 lines
+Changed paths:
+   M /trunk/GridRoster.lua
+   M /trunk/modules/StatusAurasDebuffs.lua
+   M /trunk/modules/StatusRange.lua
+   M /trunk/modules/StatusRole.lua
+
+- Using a different workaround (a timer instead of UPDATE_RAID_INFO event) to fix ticket #641
+- Fixed Range&Role statuses possible crash when changing profiles (to update indicators inside OnEnable event is not allowed).
+------------------------------------------------------------------------
+r873 | michaelspain | 2019-02-28 18:46:42 +0000 (Thu, 28 Feb 2019) | 4 lines
+Changed paths:
+   M /trunk/GridCore.lua
+   M /trunk/GridRoster.lua
+   M /trunk/Options/modules/general/GridExportImport.lua
+   M /trunk/Options/modules/statuses/StatusAuraNewPredictor.lua
+   M /trunk/Options/modules/statuses/StatusAuraNewSpells.lua
+
+-Fixing ticket #649 (IsAddonMessagePrefixRegistered() does not exists)
+-Trying to fix ticket #641 for a second time (Wrong raid size in pvp)
+-Added mythic+ debuffs to the debuff creation dropdown list (typing "mythic" all debuffs are displayed in the dropdown)
+
+------------------------------------------------------------------------
 r872 | michaelspain | 2019-02-12 08:33:14 +0000 (Tue, 12 Feb 2019) | 1 line
 Changed paths:
    M /trunk/modules/StatusAuras.lua

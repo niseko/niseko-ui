@@ -49,7 +49,6 @@ VER 3 0100000000000007 "HTT" "INV_MISC_QUESTIONMARK"
 #showtooltip Healing Tide Totem
 /cast Berserking(Racial)
 /use Healing Tide Totem
-/equip Deathspeaker Spire
 END
 VER 3 010000000000001D "mount" "INV_MISC_QUESTIONMARK"
 #showtooltip Vulpine Familiar

@@ -140,25 +140,51 @@ end
 
 -- Events to track raid type changes
 do
-	local groupType, instType, instMaxPlayers
+	-- BGs instMapID>RaidSize lookup, fix for ticket #652 (Random BGs return an incorrect raidsize)
+	local pvp_instances = {
+		[489]  = 10, -- Warsong Gulch
+		[726]  = 10, -- Twin Peaks
+		[727]  = 10, -- Silvershard Mines
+		[761]  = 10, -- The Battle for Gilneas
+		[998]  = 10, -- Temple of Kotmogu
+		[1803] = 10, -- Seething Shore
+		[968]  = 10, -- Rated Eye of the Storm
+		[529]  = 15, -- Arathi Basin
+		[566]  = 15, -- Eye of the Storm
+		[1105] = 15, -- Deepwind Gorge
+		[1681] = 15, -- Arathi Blizzard
+		[30]   = 40, -- Alterac Valley
+		[628]  = 40, -- Isle of Conquest
+		[1280] = 40, -- Tarren Mill vs Southshore
+	}
+	-- Local variables
+	local updateCount, groupType, instType, instMaxPlayers = 0
+	-- Used by another modules
 	function Grid2:GetGroupType()
 		return groupType or "solo", instType or "other", instMaxPlayers or 1
 	end
+	-- Workaround to fix maxPlayers in pvp when UI is reloaded (retry every .5 seconds for 2-3 seconds), see ticket #641
+	function Grid2:FixGroupMaxPlayers(newInstType)
+		if updateCount<=5 and (newInstType == 'pvp' or newInstType == 'arena') then
+			updateCount = updateCount + 1001 -- +1000, trick to avoid launching the timer if already launched (updateCount<=5 will fail) 
+			C_Timer.After( .5, function()
+				if instMaxPlayers==40 and (instType=='pvp' or instType=='arena') then
+					updateCount = updateCount - 1000
+					Grid2:GroupChanged('GRID2_TIMER')
+				end
+			end)
+		end
+	end
 	-- needed to trigger an update when switching from one BG directly to another
 	function Grid2:PLAYER_ENTERING_WORLD()
-		groupType = nil
+		groupType, updateCount = nil, 0
 		self:GroupChanged('PLAYER_ENTERING_WORLD')
 	end
-	-- needed to fix maxPlayers in BGs when UI is reloaded, see ticket #641
-	function Grid2:UPDATE_INSTANCE_INFO()
-		self:UnregisterEvent('UPDATE_INSTANCE_INFO')
-		self:GroupChanged('UPDATE_INSTANCE_INFO')
-	end
-	-- partyTypes = solo party arena raid / instTypes  = none pvp lfr flex mythic other
+	-- partyTypes = solo party arena raid / instTypes = none pvp lfr flex mythic other
 	function Grid2:GroupChanged(event)
 		local newGroupType
 		local InInstance, newInstType = IsInInstance()
-		local _, _, difficultyID, _, maxPlayers = GetInstanceInfo()
+		local instName, _, difficultyID, _, maxPlayers, _, _, instMapID = GetInstanceInfo()
 		inRaid = IsInRaid()
 		if newInstType == "arena" then
 			newGroupType = newInstType	-- arena@arena instances
@@ -167,6 +193,7 @@ do
 			if InInstance then
 				if newInstType == "pvp" then
 					-- raid@pvp / PvP battleground instance
+					maxPlayers = pvp_instances[instMapID] or maxPlayers
 				elseif newInstType == "none" then
 					-- raid@none / Not in Instance, in theory its not posible to reach this point
 					maxPlayers = 40
@@ -195,9 +222,10 @@ do
 		end
 		if maxPlayers == nil or maxPlayers == 0 then
 			maxPlayers = 40
+			self:FixGroupMaxPlayers(newInstType)
 		end
 		if groupType ~= newGroupType or instType ~= newInstType or instMaxPlayers ~= maxPlayers then
-			self:Debug("GroupChanged", event, groupType, instType, instMaxPlayers, "=>", newGroupType, newInstType, maxPlayers)
+			self:Debug("GroupChanged", event, instName, instMapID, groupType, instType, instMaxPlayers, "=>", newGroupType, newInstType, maxPlayers)
 			groupType, instType, instMaxPlayers = newGroupType, newInstType, maxPlayers
 			self:SendMessage("Grid_GroupTypeChanged", groupType, instType, maxPlayers)
 		end

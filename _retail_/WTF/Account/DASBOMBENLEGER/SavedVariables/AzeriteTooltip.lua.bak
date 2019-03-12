@@ -2,16 +2,18 @@
 AzeriteTooltipDB = {
 	["OnlySpec"] = false,
 	["profileKeys"] = {
-		["Valdurawr - Stormscale"] = "Default",
 		["Niseko - Twisting Nether"] = "Default",
+		["Nisefy - Stormscale"] = "Default",
+		["Donnerbock - Ysera"] = "Default",
+		["Valdurawr - Stormscale"] = "Default",
 		["Niseko - Stormscale"] = "Default",
 	},
 	["Compact"] = true,
-	["RemoveBlizzard"] = true,
-	["Bags"] = true,
-	["Flyout"] = true,
 	["profiles"] = {
 		["Default"] = {
 		},
 	},
+	["Bags"] = true,
+	["Flyout"] = true,
+	["RemoveBlizzard"] = true,
 }

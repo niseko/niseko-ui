@@ -15,4 +15,4 @@ RaiderIO_Config = {
 	["enableLFGDropdown"] = true,
 	["enableGuildTooltips"] = true,
 }
-RaiderIO_LastCharacter = "eu-Niseko-stormscale"
+RaiderIO_LastCharacter = "eu-Nisefy-stormscale"

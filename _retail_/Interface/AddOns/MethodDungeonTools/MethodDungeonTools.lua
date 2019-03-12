@@ -62,6 +62,8 @@ function SlashCmdList.METHODDUNGEONTOOLS(cmd, editbox)
         MethodDungeonTools:ResetMainFramePos()
 	elseif rqst == "dc" then
         MethodDungeonTools:ToggleDataCollection()
+    elseif rqst == "hptrack" then
+        MethodDungeonTools:ToggleHealthTrack()
     else
 		MethodDungeonTools:ShowInterface()
 	end
@@ -516,6 +518,11 @@ function MethodDungeonTools:ToggleDataCollection()
     print(string.format("%sMDT|r: DataCollection %s. Reload Interface!",methodColor,db.dataCollectionActive and "|cFF00FF00Enabled|r" or "|cFFFF0000Disabled|r"))
 end
 
+function MethodDungeonTools:ToggleHealthTrack()
+    MethodDungeonTools.DataCollection:InitHealthTrack()
+    print(string.format("%sMDT|r: HealthTrack %s.",methodColor,"|cFF00FF00Enabled|r"))
+end
+
 
 function MethodDungeonTools:CreateMenu()
 	-- Close button
@@ -903,6 +910,7 @@ function MethodDungeonTools:MakeSidePanel(frame)
         --MethodDungeonTools:UpdateMap()
         MethodDungeonTools:DungeonEnemies_UpdateTeeming()
         --MethodDungeonTools:DungeonEnemies_UpdateInfested(key)
+        MethodDungeonTools:DungeonEnemies_UpdateReaping()
         MethodDungeonTools:UpdateFreeholdSelector(key)
         MethodDungeonTools:DungeonEnemies_UpdateBlacktoothEvent(key)
         MethodDungeonTools:DungeonEnemies_UpdateBoralusFaction(MethodDungeonTools:GetCurrentPreset().faction)
@@ -966,7 +974,8 @@ function MethodDungeonTools:MakeSidePanel(frame)
 	frame.sidePanel.DifficultySlider:SetValue(db.currentDifficulty)
 	frame.sidePanel.DifficultySlider:SetCallback("OnValueChanged",function(widget,callbackName,value)
 		local difficulty = tonumber(value)
-		db.currentDifficulty = difficulty or db.currentDifficulty
+        db.currentDifficulty = difficulty or db.currentDifficulty
+        MethodDungeonTools:DungeonEnemies_UpdateReaping()
 	end)
 	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanel.DifficultySlider)
 
@@ -2108,6 +2117,26 @@ function MethodDungeonTools:UpdatePullButtonNPCData(idx)
 		end
 	end
 	frame.newPullButtons[idx]:SetNPCData(enemyTable)
+
+    --color pull based on reaping
+    local pullForces = MethodDungeonTools:CountForces(idx,false)
+    local totalForcesMax = MethodDungeonTools:IsCurrentPresetTeeming() and MethodDungeonTools.dungeonTotalCount[db.currentDungeonIdx].teeming or MethodDungeonTools.dungeonTotalCount[db.currentDungeonIdx].normal
+    local currentPercent = pullForces/totalForcesMax
+
+    local oldPullForces
+    if idx == 1 then
+        oldPullForces = 0
+    else
+        oldPullForces =  MethodDungeonTools:CountForces(idx-1,false)
+    end
+    local oldPercent = oldPullForces/totalForcesMax
+
+    if math.floor(currentPercent/0.2)>math.floor(oldPercent/0.2) then
+        frame.newPullButtons[idx].background:SetVertexColor(0.7, 0, 0.3, 0.8)
+    else
+        frame.newPullButtons[idx].background:SetVertexColor(0.5, 0.5, 0.5, 0.25);
+    end
+
 end
 
 

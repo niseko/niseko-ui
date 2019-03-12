@@ -1313,22 +1313,35 @@ L["STRING_OPTIONS_WALLPAPER_GREEN"] = "綠色:"
 --[[ L["STRING_OPTIONS_WALLPAPER_LOAD"] = ""--]] 
 --[[Translation missing --]]
 --[[ L["STRING_OPTIONS_WALLPAPER_LOAD_DESC"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_LOAD_EXCLAMATION"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_LOAD_FILENAME"] = ""--]] 
+L["STRING_OPTIONS_WALLPAPER_LOAD_EXCLAMATION"] = [=[圖片需要：
+
+
+
+-採用Truevision TGA格式（.tga副檔名）
+
+-在WOW / Interface / root資料夾中
+
+-大小必須為256 x 256點數
+
+-在粘貼檔案之前必須關閉遊戲]=]
+L["STRING_OPTIONS_WALLPAPER_LOAD_FILENAME"] = "檔案名稱："
 --[[Translation missing --]]
 --[[ L["STRING_OPTIONS_WALLPAPER_LOAD_FILENAME_DESC"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_LOAD_OKEY"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_LOAD_TITLE"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_LOAD_TROUBLESHOOT"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_LOAD_TROUBLESHOOT_TEXT"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_OPTIONS_WALLPAPER_RED"] = ""--]] 
+L["STRING_OPTIONS_WALLPAPER_LOAD_OKEY"] = "加載"
+L["STRING_OPTIONS_WALLPAPER_LOAD_TITLE"] = "從電腦："
+L["STRING_OPTIONS_WALLPAPER_LOAD_TROUBLESHOOT"] = "排查"
+L["STRING_OPTIONS_WALLPAPER_LOAD_TROUBLESHOOT_TEXT"] = [=[如果桌面得到了全綠色：
+
+
+
+-重啓了魔獸用戶端
+
+-確保影像寬度為256，高度為256
+
+-檢查影像是否為.TGA格式，並確保以32比特/點數保存
+
+-在Interface資料夾中，例如：C:/Program Files/World of Warcraft/Interface/]=]
+L["STRING_OPTIONS_WALLPAPER_RED"] = "红:"
 L["STRING_OPTIONS_WC_ANCHOR"] = "快速視窗控制 (#%s):"
 L["STRING_OPTIONS_WC_BOOKMARK"] = "管理書簽"
 L["STRING_OPTIONS_WC_BOOKMARK_DESC"] = "打開編緝書簽的配置介面(標籤自定捷徑,右鍵計量條切換書簽頁)"
@@ -1404,8 +1417,7 @@ L["STRING_OPTIONSMENU_PERFORMANCE"] = "性能調整"
 L["STRING_OPTIONSMENU_PLUGINS"] = "擴充插件管理"
 L["STRING_OPTIONSMENU_PROFILES"] = "配置檔"
 L["STRING_OPTIONSMENU_RAIDTOOLS"] = "團隊工具"
---[[Translation missing --]]
---[[ L["STRING_OPTIONSMENU_RIGHTMENU"] = ""--]] 
+L["STRING_OPTIONSMENU_RIGHTMENU"] = "-- x -- x --"
 L["STRING_OPTIONSMENU_ROWMODELS"] = "計量列表:高階"
 L["STRING_OPTIONSMENU_ROWSETTINGS"] = "計量列表:一般"
 L["STRING_OPTIONSMENU_ROWTEXTS"] = "計量列表:文本"
@@ -1596,8 +1608,7 @@ L["STRING_UNLOCK"] = [=[在這按鈕上
 ]=]
 L["STRING_UNLOCK_WINDOW"] = "解鎖"
 L["STRING_UPTADING"] = "更新"
---[[Translation missing --]]
---[[ L["STRING_VERSION_AVAILABLE"] = ""--]] 
+L["STRING_VERSION_AVAILABLE"] = "有新版本可用，請從Twitch或Curse上下載。"
 L["STRING_VERSION_UPDATE"] = "新版本:有什麼改變了？點擊這裡"
 L["STRING_VOIDZONE_TOOLTIP"] = "傷害&時間"
 L["STRING_WAITPLUGIN"] = [=[等待
@@ -1693,20 +1704,13 @@ L["STRING_WELCOME_7"] = "用於排名，這個方式會使用已經產生的數�
 L["STRING_WELCOME_70"] = "標題條設定"
 L["STRING_WELCOME_71"] = "列表設定"
 L["STRING_WELCOME_72"] = "視窗設定"
---[[Translation missing --]]
---[[ L["STRING_WELCOME_73"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_WELCOME_74"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_WELCOME_75"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_WELCOME_76"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_WELCOME_77"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_WELCOME_78"] = ""--]] 
---[[Translation missing --]]
---[[ L["STRING_WELCOME_79"] = ""--]] 
+L["STRING_WELCOME_73"] = "選擇字母表或伺服器："
+L["STRING_WELCOME_74"] = "拉丁字母表"
+L["STRING_WELCOME_75"] = "西瑞爾字母表"
+L["STRING_WELCOME_76"] = "中國"
+L["STRING_WELCOME_77"] = "韓國"
+L["STRING_WELCOME_78"] = "台灣"
+L["STRING_WELCOME_79"] = "創建第二個視窗"
 L["STRING_WINDOW_NOTFOUND"] = "沒有找到視窗。"
 L["STRING_WINDOW_NUMBER"] = "視窗數"
 L["STRING_WINDOW1ATACH_DESC"] = "要創建窗口組，請拖拽窗口 #2 到窗口 #1 旁"

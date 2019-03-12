@@ -150,7 +150,7 @@ function SlashCmdList.AdvancedTooltips(msg)
 			AdvancedTooltips_Config.stats = true
 			print("Advanced Tooltips - Stat information |cff00ff00enabled.|r")			
 		else
-			print("Usage: /advancedtooltips stats (on|off)")
+			print("Usage: /att stats (on|off)")
 		end
 
 		_G["AdvancedTooltips_Config.stats"] = AdvancedTooltips_Config.stats
@@ -350,6 +350,16 @@ end
 
 
 function GetSpellChanceInfo(rank)
+
+	-- Bonded Souls hack.
+	-- Bonded Souls IDs report 288802, but the data is held in 288804.
+	if rank == 288802 then
+		rank = 288804
+	-- combined might is hidden under a different spellid
+	elseif rank == 280580 then
+		rank = 280848
+	end
+
 	if AdvancedTooltips.SpellData[rank] == nil then return nil end
 
 	str = ""
@@ -541,19 +551,44 @@ function scanStats(tooltip)
 	end
 end
 
-function ProcessOneOffs(rank, tooltip)
-	if rank == 280580 then
-		 tooltip:AddLine(" ")
-		 tooltip:AddLine([[When this triggers, it will spawn a banner that will 
-grant additional stats to yourself and up to 4 nearby 
-allies. The buff will depend on the banner that spawns, 
-which is random:]], AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
-		 tooltip:AddLine(" ")
-		 tooltip:AddDoubleLine("Might of the Forsaken",  "Critical Strike", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
-		 tooltip:AddDoubleLine("Might of the Orcs",  "Attack/Spell Power", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
-		 tooltip:AddDoubleLine("Might of the Sin'dorei",  "Mastery", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
-		 tooltip:AddDoubleLine("Might of the Tauren",  "Versatility", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
-		 tooltip:AddDoubleLine("Might of the Trolls",  "Haste", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+function ProcessOneOffs(rank, tooltip, full)
+	if rank == 288749 and full == true then
+		-- replace the phrase all stats in the profile with the correct stats.
+		for i = 2,30 do
+			local frame = _G[tooltip:GetName() .. "TextLeft" .. i]
+			local text
+			if frame then text = frame:GetText() end
+			if text then
+				local newtext = string.gsub(text, "all stats", "all stats "..formatWithCurrentColor("(Primary Stat and Stamina)"))
+				frame:SetText(newtext)
+			end
+		end
+
+	-- Ancestral Resonance, add non-lust RPPM
+	elseif rank == 277666 then
+		local englishFaction = UnitFactionGroup("player")
+		local lustString = "Lust"
+		if englishFaction == "Alliance" then
+			lustString = "Heroism"
+		elseif englishFaction == "Horde" then
+			lustString = "Bloodlust"
+		end
+
+		local actualRPPM = 1.0 * (1 + UnitSpellHaste("player")/100)
+		local actualRPPMString = string.format("%.2f", actualRPPM)
+
+		-- Append (..lustString..) to the existing item already in the tooltip
+		for i = 2,30 do
+			local frame = _G[tooltip:GetName() .. "TextLeft" .. i]
+			local text
+			if frame then text = frame:GetText() end
+			if text then
+				local newtext = string.gsub(text, "^Ancestral Resonance$", formatWithCurrentColor("Ancestral Resonance ("..lustString..")"))
+				frame:SetText(newtext)
+			end
+		end
+
+		tooltip:AddDoubleLine("Ancestral Resonance (No "..lustString..")", "RPPM: 1.00 ("..actualRPPMString..")", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
 	end
 end
 
@@ -598,7 +633,7 @@ function SpellTooltip(rank, tooltip)
 	scanStats(tooltip)
 
 	-- Add any hand driven information.
-	ProcessOneOffs(rank, tooltip)
+	ProcessOneOffs(rank, tooltip, true)
 
 end
 
@@ -650,6 +685,29 @@ function AddEnchantInfo(tooltip, itemHeaderAdded, spellID)
 	end
 end
 
+function ProcessItemOneOffs(id, header, tooltip)
+
+	-- Ward of Envelopment
+	-- Increased by 7.5% per ally, up to 30%
+	if id == 165569 then
+
+		if header == false then
+			tooltip:AddLine(" ")
+        end
+
+		tooltip:AddLine("Absorption increased by 7.5% per ally, up to 30%.", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+	elseif id == 165928 or id == 165928 or id == 165926 or id == 152632 then
+		tooltip:AddLine(" ")
+		tooltip:AddDoubleLine("Potion of Replenishment", "35,084", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+		tooltip:AddDoubleLine("Coastal Mana Potion", "15,557", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+		tooltip:AddDoubleLine("Coastal Rejuvenation Potion", "11,668", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+	elseif id == 165567 or id == 165512 then
+		tooltip:AddLine(" ")
+		tooltip:AddLine("The following instances count as in Zuldazar:\nBattle for Dazar'alor, King's Rest, Atal'Dazar", AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)	
+	end
+
+
+end
 
 
 function OnTooltip_Item(self, tooltip)
@@ -683,7 +741,8 @@ function OnTooltip_Item(self, tooltip)
 									tooltip:AddLine(" ")
 									itemHeaderAdded = true
 								end
-                                tooltip:AddDoubleLine(spellInfo["proc_name"], spellInfo["proc_info"], AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+								tooltip:AddDoubleLine(spellInfo["proc_name"], spellInfo["proc_info"], AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B, AdvancedTooltips_Config.R, AdvancedTooltips_Config.G, AdvancedTooltips_Config.B)
+								ProcessOneOffs(GetAzeriteSpellID(v), tooltip, false)
 							end
 						end
 					end
@@ -717,6 +776,9 @@ function OnTooltip_Item(self, tooltip)
 
 	-- collect stat data
 	scanStats(tooltip)
+
+	-- Add any custom tooltip data
+	ProcessItemOneOffs(linkToID(link), itemHeaderAdded, tooltip)
 
 	tooltip:Show()
 end

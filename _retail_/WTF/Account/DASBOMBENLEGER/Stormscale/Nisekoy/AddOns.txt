@@ -91,3 +91,10 @@ LittleWigs: enabled
 !!Warmup: disabled
 RaiderIO: enabled
 RaiderIO_DB_EU_A_R: disabled
+AAP-BfA: disabled
+AAP-Legion: disabled
+AAP-WoD: disabled
+AAP-Cata-MoP: disabled
+AAP-TBC-WotLK: disabled
+AAP-Vanilla: disabled
+AAP-Core: disabled

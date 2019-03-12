@@ -1,5 +1,41 @@
-changeset:   774:d9a02815778e
+changeset:   780:e28b2b09c3f5
 tag:         tip
+user:        Tercioo
+date:        Fri Mar 08 18:57:38 2019 -0300
+summary:     - Fixing the Streamer plugin for the recently changes in details!.
+
+
+changeset:   779:621c761711da
+user:        Tercioo
+date:        Fri Mar 08 12:32:33 2019 -0300
+summary:     - Fixed Raid Check plugin not showing the in plugin management nor in the title bar.
+
+
+changeset:   778:bf6860134626
+user:        Tercioo
+date:        Thu Mar 07 17:49:46 2019 -0300
+summary:     - Fixed plugins initialization broken in latest version.
+
+
+changeset:   777:8c04c5215338
+user:        Tercioo
+date:        Wed Mar 06 15:22:09 2019 -0300
+summary:     - Attempt to fix some plugins loading after details! start and failing to install.
+
+
+changeset:   776:7f45f4fcf75b
+user:        Tercioo
+date:        Sat Feb 23 14:55:50 2019 -0300
+summary:     - Framework update.
+
+
+changeset:   775:fa9b0cd31fb3
+user:        Tercioo
+date:        Thu Feb 21 13:02:22 2019 -0300
+summary:     - Moving Details:Start() to PLAYER_LOGIN.
+
+
+changeset:   774:d9a02815778e
 user:        Tercioo
 date:        Tue Feb 19 21:56:21 2019 -0300
 summary:     - Fixed an issue where some options combinations was making the window unlock after /reload.
@@ -567,41 +603,5 @@ changeset:   680:7ffc9da9aaee
 user:        Tercio
 date:        Sat Oct 14 16:01:59 2017 -0300
 summary:     - framework update to v58 (looks like some author are adding words like 'topleft' and 'top' to the global namespace).
-
-
-changeset:   679:bc5a5e38ecac
-user:        Tercio
-date:        Sat Oct 14 13:04:36 2017 -0300
-summary:     - fixed an issue opening the segments menu.
-
-
-changeset:   678:fb72e955bfed
-user:        Tercio
-date:        Mon Oct 09 22:43:26 2017 -0300
-summary:     - Added several options and tools for streamers and youtubers.
-
-
-changeset:   677:6cf0fca6ebdb
-user:        Tercio
-date:        Sun Oct 01 21:03:47 2017 -0300
-summary:     - lib folder renamed.
-
-
-changeset:   676:8f7230c2e02e
-user:        Tercio
-date:        Wed Sep 27 17:59:04 2017 -0300
-summary:     - Rolling back to Mercurial repository.
-
-
-changeset:   675:899e13d626a1
-user:        Tercio
-date:        Tue Sep 19 12:56:32 2017 -0300
-summary:     - testing the mercurial repo packpager.
-
-
-changeset:   674:3939641c0fe0
-user:        Tercio
-date:        Wed Jul 26 10:14:37 2017 -0300
-summary:     - packpager, hello?
 
 

@@ -268,7 +268,7 @@
 			["141265"] = true,
 		}
 		
-	
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --> internal functions
 
@@ -447,6 +447,23 @@
 				end
 			end
 		
+		elseif (_current_encounter_id == 2087) then --Yazma - Atal'Dazar --REMOVE ON 9.0 LAUNCH
+			--rename the add created by the soulrend ability
+			if (alvo_serial) then
+				local npcid = _select (6, _strsplit ("-", alvo_serial))
+				if (npcid == "125828") then --soulrend add
+					alvo_name = "Soulrend Add"
+				end
+			end
+			
+			if (who_serial) then
+				local npcid = _select (6, _strsplit ("-", who_serial))
+				if (npcid == "125828") then --soulrend add
+					who_name = "Soulrend Add"
+				end
+			end
+		
+		
 		elseif (_current_encounter_id == 2122 or _current_encounter_id == 2135) then --g'huun and mythrax --REMOVE ON 9.0 LAUNCH
 			--if (alvo_serial:match ("^Creature%-0%-%d+%-%d+%-%d+%-103679%-%w+$")) then --soul effigy (warlock) --50% more slow than the method below
 		
@@ -614,7 +631,7 @@
 		
 		--> last event
 		este_jogador.last_event = _tempo
-
+		
 	------------------------------------------------------------------------------------------------
 	--> group checks and avoidance
 
@@ -4224,6 +4241,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		end
 		
 		_current_encounter_id = nil
+		_track_ghuun_bloodshield = nil --REMOVE ON PATCH 9.0
 		
 		local _, instanceType = GetInstanceInfo() --> let's make sure it isn't a dungeon
 		if (_detalhes.zone_type == "party" or instanceType == "party") then
@@ -4306,22 +4324,53 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		_detalhes.tabela_vigente.CombatStartedAt = GetTime()
 	end
 	
-	function _detalhes.parser_functions:PLAYER_REGEN_ENABLED (...)
-	
-		--elapsed combat time
-		_detalhes.LatestCombatDone = GetTime()
-		_detalhes.tabela_vigente.CombatEndedAt = GetTime()
-		_detalhes.tabela_vigente.TotalElapsedCombatTime = _detalhes.tabela_vigente.CombatEndedAt - (_detalhes.tabela_vigente.CombatStartedAt or 0)
-		
-		_current_encounter_id = nil
-		_track_ghuun_bloodshield = nil --REMOVE ON PATCH 9.0
-		
-		--> playing alone, just finish the combat right now
-		if (not _IsInGroup() and not IsInRaid()) then	
-			_detalhes.tabela_vigente.playing_solo = true
-			_detalhes:SairDoCombate()
+	--in case the player left the raid during the encounter
+	local check_for_encounter_end = function()
+		if (not _current_encounter_id) then
+			return
 		end
 		
+		if (IsInRaid()) then
+			--raid
+			local inCombat = false
+			for i = 1, GetNumGroupMembers() do
+				if (UnitAffectingCombat ("raid" .. i)) then
+					inCombat = true
+					break
+				end
+			end
+			
+			if (not inCombat) then
+				_current_encounter_id = nil
+			end
+			
+		elseif (IsInGroup()) then
+			--party (dungeon)
+			local inCombat = false
+			for i = 1, GetNumGroupMembers() -1 do
+				if (UnitAffectingCombat ("party" .. i)) then
+					inCombat = true
+					break
+				end
+			end
+			
+			if (not inCombat) then
+				_current_encounter_id = nil
+			end
+		
+		else
+			_current_encounter_id = nil
+		end
+	end
+	
+	--> this function is guaranteed to run after a combat is done
+	--> can also run when the player leaves combat state (regen enabled)
+	function _detalhes:RunScheduledEventsAfterCombat (OnRegenEnabled)
+	
+		if (_detalhes.debug) then
+			_detalhes:Msg ("(debug) running scheduled events after combat end.")
+		end
+	
 		--> add segments to overall data if any scheduled
 		if (_detalhes.schedule_add_to_overall and #_detalhes.schedule_add_to_overall > 0) then
 			if (_detalhes.debug) then
@@ -4411,7 +4460,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			end
 		end
 		
-		if (_detalhes.wipe_called) then
+		if (_detalhes.wipe_called and false) then --disabled
 			_detalhes.wipe_called = nil
 			_detalhes:CaptureSet (nil, "damage", true)
 			_detalhes:CaptureSet (nil, "energy", true)
@@ -4426,10 +4475,77 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			_detalhes:CaptureSet (false, "spellcast", false, 10)
 		end
 
-		_table_wipe (bitfield_swap_cache)
-		_table_wipe (ignore_actors)
+		if (not OnRegenEnabled) then
+			_table_wipe (bitfield_swap_cache)
+			_table_wipe (ignore_actors)
+			
+			_detalhes:DispatchAutoRunCode ("on_leavecombat")
+		end
+
+	end
+	
+	function _detalhes.parser_functions:PLAYER_REGEN_ENABLED (...)
+
+		if (_detalhes.debug) then
+			_detalhes:Msg ("(debug) |cFFFFFF00PLAYER_REGEN_ENABLED|r event triggered.")
+
+			print ("combat lockdown:", InCombatLockdown())
+			print ("affecting combat:", UnitAffectingCombat ("player"))
+			
+			if (_current_encounter_id and IsInInstance()) then
+				print ("has a encounter ID")
+				print ("player is dead:", UnitHealth ("player") < 1)
+			end
+		end
+
+		--elapsed combat time
+		_detalhes.LatestCombatDone = GetTime()
+		_detalhes.tabela_vigente.CombatEndedAt = GetTime()
+		_detalhes.tabela_vigente.TotalElapsedCombatTime = _detalhes.tabela_vigente.CombatEndedAt - (_detalhes.tabela_vigente.CombatStartedAt or 0)
 		
-		_detalhes:DispatchAutoRunCode ("on_leavecombat")
+		--
+		C_Timer.After (10, check_for_encounter_end)
+
+		--> playing alone, just finish the combat right now
+		if (not _IsInGroup() and not IsInRaid()) then	
+			_detalhes.tabela_vigente.playing_solo = true
+			_detalhes:SairDoCombate()
+			
+		else
+			--is in a raid or party group
+			C_Timer.After (1, function()
+				local inCombat
+				if (IsInRaid()) then
+					--raid
+					local inCombat = false
+					for i = 1, GetNumGroupMembers() do
+						if (UnitAffectingCombat ("raid" .. i)) then
+							inCombat = true
+							break
+						end
+					end
+					
+					if (not inCombat) then
+						_detalhes:RunScheduledEventsAfterCombat (true)
+					end
+					
+				elseif (IsInGroup()) then
+					--party (dungeon)
+					local inCombat = false
+					for i = 1, GetNumGroupMembers() -1 do
+						if (UnitAffectingCombat ("party" .. i)) then
+							inCombat = true
+							break
+						end
+					end
+					
+					if (not inCombat) then
+						_detalhes:RunScheduledEventsAfterCombat (true)
+					end
+				end
+			end)
+		end
+		
 	end
 	
 	function _detalhes.parser_functions:PLAYER_TALENT_UPDATE()
@@ -4631,52 +4747,59 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	end
 
 	-- ~load
-	function _detalhes.parser_functions:ADDON_LOADED (...)
+	local start_details = function()
+		if (not _detalhes.gump) then
+			--> failed to load the framework.
+			
+			if (not _detalhes.instance_load_failed) then
+				_detalhes:CreatePanicWarning()
+			end
+			_detalhes.instance_load_failed.text:SetText ("Framework for Details! isn't loaded.\nIf you just updated the addon, please reboot the game client.\nWe apologize for the inconvenience and thank you for your comprehension.")
+			
+			return
+		end
 	
+		--> cooltip
+		if (not _G.GameCooltip) then
+			_detalhes.popup = _G.GameCooltip
+		else
+			_detalhes.popup = _G.GameCooltip
+		end
+	
+		--> check group
+		_detalhes.in_group = IsInGroup() or IsInRaid()
+	
+		--> write into details object all basic keys and default profile
+		_detalhes:ApplyBasicKeys()
+		--> check if is first run, update keys for character and global data
+		_detalhes:LoadGlobalAndCharacterData()
+		
+		--> details updated and not reopened the game client
+		if (_detalhes.FILEBROKEN) then
+			return
+		end
+		
+		--> load all the saved combats
+		_detalhes:LoadCombatTables()
+		--> load the profiles
+		_detalhes:LoadConfig()
+		
+		_detalhes:UpdateParserGears()
+		--_detalhes:Start()
+	end
+	
+	function _detalhes.parser_functions:ADDON_LOADED (...)
 		local addon_name = _select (1, ...)
-		
 		if (addon_name == "Details") then
-		
-			if (not _detalhes.gump) then
-				--> failed to load the framework.
-				
-				if (not _detalhes.instance_load_failed) then
-					_detalhes:CreatePanicWarning()
-				end
-				_detalhes.instance_load_failed.text:SetText ("Framework for Details! isn't loaded.\nIf you just updated the addon, please reboot the game client.\nWe apologize for the inconvenience and thank you for your comprehension.")
-				
-				return
-			end
-		
-			--> cooltip
-			if (not _G.GameCooltip) then
-				_detalhes.popup = _G.GameCooltip
-			else
-				_detalhes.popup = _G.GameCooltip
-			end
-		
-			--> check group
-			_detalhes.in_group = IsInGroup() or IsInRaid()
-		
-			--> write into details object all basic keys and default profile
-			_detalhes:ApplyBasicKeys()
-			--> check if is first run, update keys for character and global data
-			_detalhes:LoadGlobalAndCharacterData()
-			
-			--> details updated and not reopened the game client
-			if (_detalhes.FILEBROKEN) then
-				return
-			end
-			
-			--> load all the saved combats
-			_detalhes:LoadCombatTables()
-			--> load the profiles
-			_detalhes:LoadConfig()
-			
-			_detalhes:UpdateParserGears()
-			_detalhes:Start()
+			start_details()
 		end	
 	end
+	
+	local playerLogin = CreateFrame ("frame")
+	playerLogin:RegisterEvent ("PLAYER_LOGIN")
+	playerLogin:SetScript ("OnEvent", function()
+		Details:Start()
+	end)
 	
 	function _detalhes.parser_functions:PET_BATTLE_OPENING_START (...)
 		_detalhes.pet_battle = true

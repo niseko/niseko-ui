@@ -3,7 +3,7 @@ VER 3 0000000000000037 "/script local _," "INV_MISC_QUESTIONMARK"
 END
 VER 3 0000000000000035 "AAP_MACRO" "INV_MISC_QUESTIONMARK"
 #showtooltip
-/use Rastari Skull Whistle
+/use Ranah's Watering Can
 END
 VER 3 0000000000000021 "arena silence" "INV_MISC_QUESTIONMARK"
 #showtooltip
@@ -19,6 +19,13 @@ VER 3 000000000000001A "CAM" "Ability_Ambush"
 END
 VER 3 000000000000001D "CameraDistance" "INV_MISC_QUESTIONMARK"
 /run SetCVar("cameraDiformMax",50)
+END
+VER 3 000000000000003A "cancel" "INV_MISC_QUESTIONMARK"
+/cancelaura Riptide
+/cancelaura Power Word: Fortitude
+/cancelaura Rallying Cry
+/cancelaura Power Word: Shield
+/cancelaura Atonement
 END
 VER 3 0000000000000030 "chtestdelete" "INV_MISC_QUESTIONMARK"
 /use [@mouseover,help]Chain Heal
@@ -39,14 +46,14 @@ END
 VER 3 0000000000000028 "ExtraAB" "132383"
 /click ExtraActionButton1
 END
-VER 3 0000000000000008 "Freya" "Ability_Creature_Poison_06"
-/tar Uralter Wassergeist
+VER 3 0000000000000004 "Freya" "Ability_Creature_Poison_05"
+/tar Knall
 END
 VER 3 0000000000000005 "Freya" "Ability_Creature_Disease_01"
 /tar Sturmpeitscher
 END
-VER 3 0000000000000004 "Freya" "Ability_Creature_Poison_05"
-/tar Knall
+VER 3 0000000000000008 "Freya" "Ability_Creature_Poison_06"
+/tar Uralter Wassergeist
 END
 VER 3 0000000000000006 "Freya Baum" "Ability_Druid_ManaTree"
 /tar Eonars Geschenk
@@ -172,6 +179,11 @@ VER 3 0000000000000024 "temp tar" "SPELL_HOLY_SEALOFPROTECTION"
 /cast Hand of Protection
 /target Blackhand
 END
+VER 3 0000000000000032 "test" "INV_MISC_QUESTIONMARK"
+local currentSpec = GetSpecialization()
+local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or "None"
+print("Your current spec:", currentSpecName)
+END
 VER 3 000000000000001C "test" "INV_MISC_QUESTIONMARK"
 /cast [noform] !Shadowform
 /castsequence [nochanneling] reset=target mind blast, vampiric touch, mind flay, mind blast, shadow word: pain, mind flay, mind blast, devouring plague, mind flay
@@ -180,11 +192,6 @@ VER 3 000000000000001C "test" "INV_MISC_QUESTIONMARK"
 END
 VER 3 0000000000000033 "test" "INV_MISC_QUESTIONMARK"
 /cast [@mouseover, help][@target, help][@player] Chain Heal
-END
-VER 3 0000000000000032 "test" "INV_MISC_QUESTIONMARK"
-local currentSpec = GetSpecialization()
-local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or "None"
-print("Your current spec:", currentSpecName)
 END
 VER 3 0000000000000029 "Tier 6" "971076"
 #showtooltip
