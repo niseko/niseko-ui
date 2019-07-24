@@ -1,9 +1,11 @@
 
 RelicInspectorDB = {
 	["profileKeys"] = {
+		["Afwfes - Stormscale"] = "Default",
 		["Nisefy - Stormscale"] = "Default",
 		["Nisepeg - Stormscale"] = "Default",
 		["Valdurawr - Stormscale"] = "Default",
+		["Se - Stormscale"] = "Default",
 		["Yvera - Moonglade"] = "Default",
 		["Niseko - Stormscale"] = "Default",
 		["Nisepie - Stormscale"] = "Default",
@@ -13,16 +15,17 @@ RelicInspectorDB = {
 		["Niseniseko - Stormscale"] = "Default",
 		["Nise - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
-		["Seko - Stormscale"] = "Default",
-		["Nisearw - Stormscale"] = "Default",
-		["Mondeko - Blackmoore"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
+		["Awfrsdg - Stormscale"] = "Default",
+		["Zelda - Mal'Ganis"] = "Default",
+		["Yoshicakes - Stormscale"] = "Default",
 		["Nisecakes - Stormscale"] = "Default",
 		["Nisegob - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Yoshicakes - Stormscale"] = "Default",
-		["Zelda - Mal'Ganis"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
+		["Mondeko - Blackmoore"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
+		["Seko - Stormscale"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

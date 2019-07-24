@@ -9,6 +9,9 @@ local state = Hekili.State
 
 local FindUnitBuffByID, FindUnitDebuffByID = ns.FindUnitBuffByID, ns.FindUnitDebuffByID
 
+-- Atlas/Textures
+local AddTexString, GetTexString, AtlasToString, GetAtlasFile, GetAtlasCoords = ns.AddTexString, ns.GetTexString, ns.AtlasToString, ns.GetAtlasFile, ns.GetAtlasCoords
+
 local getInverseDirection = ns.getInverseDirection
 local multiUnpack = ns.multiUnpack
 local orderedPairs = ns.orderedPairs
@@ -16,11 +19,10 @@ local round = ns.round
 
 local format = string.format
 
-local Masque, MasqueGroup
+local HasVehicleActionBar, HasOverrideActionBar, IsInPetBattle, UnitHasVehicleUI, UnitOnTaxi = HasVehicleActionBar, HasOverrideActionBar, C_PetBattles.IsInBattle, UnitHasVehicleUI, UnitOnTaxi
 
-local UIDropDownMenuTemplate = L_UIDropDownMenuTemplate
-local UIDropDownMenu_AddButton = L_UIDropDownMenu_AddButton
-local UIDropDownMenu_AddSeparator = L_UIDropDownMenu_AddSeparator
+
+local Masque, MasqueGroup
 
 
 function Hekili:GetScale()
@@ -71,11 +73,13 @@ local function stopScreenMovement(frame)
 end
 
 local function Mover_OnMouseUp(self, btn)
-    if (btn == "LeftButton" and self.Moving) then
-        stopScreenMovement(self)
+    local obj = self.moveObj or self
+
+    if (btn == "LeftButton" and obj.Moving) then
+        stopScreenMovement(obj)
     elseif (btn == "RightButton" and not Hekili.Config) then
-        if self.Moving then
-            stopScreenMovement(self)
+        if obj.Moving then
+            stopScreenMovement(obj)
         end
         local mouseInteract = Hekili.Pause or Hekili.Config
         for i = 1, #ns.UI.Buttons do
@@ -90,8 +94,10 @@ local function Mover_OnMouseUp(self, btn)
 end
 
 local function Mover_OnMouseDown( self, btn )
-    if Hekili.Config and btn == "LeftButton" and not self.Moving then
-        startScreenMovement(self)
+    local obj = self.moveObj or self
+
+    if Hekili.Config and btn == "LeftButton" and not obj.Moving then
+        startScreenMovement(obj)
     end
 end
 
@@ -141,7 +147,7 @@ function ns.StartConfiguration( external )
     -- Notification Panel
     ns.UI.Notification:EnableMouse( true )
     ns.UI.Notification:SetMovable( true )
-    ns.UI.Notification.Mover = ns.UI.Notification.Mover or CreateFrame("Frame", "HekiliNotificationMover", ns.UI.Notification)
+    ns.UI.Notification.Mover = ns.UI.Notification.Mover or CreateFrame( "Frame", "HekiliNotificationMover", ns.UI.Notification )
     ns.UI.Notification.Mover:SetAllPoints(HekiliNotification)
     ns.UI.Notification.Mover:SetBackdrop( {
         bgFile = "Interface/Buttons/WHITE8X8",
@@ -152,12 +158,16 @@ function ns.StartConfiguration( external )
         insets = { left = 0, right = 0, top = 0, bottom = 0 }
     } )
 
-    ns.UI.Notification.Mover:SetBackdropColor( .1, .1, .1, .8 )
+    ns.UI.Notification.Mover:SetBackdropColor( 0, 0, 0, .8 )
     ns.UI.Notification.Mover:SetBackdropBorderColor( ccolor.r, ccolor.g, ccolor.b, 1 )
     ns.UI.Notification.Mover:Show()
 
     f = ns.UI.Notification.Mover
-    f.Header = f.Header or f:CreateFontString( "HekiliNotificationHeader", "OVERLAY", "GameFontNormal" )
+    if not f.Header then
+        f.Header = f:CreateFontString( "HekiliNotificationHeader", "OVERLAY", "GameFontNormal" )
+        local path, size = f.Header:GetFont()
+        f.Header:SetFont( path, size, "OUTLINE" )
+    end
     f.Header:SetAllPoints( HekiliNotificationMover )
     f.Header:SetText( "Notifications" )
     f.Header:SetJustifyH( "CENTER" )
@@ -185,8 +195,8 @@ function ns.StartConfiguration( external )
     end )
 
     for i, v in pairs( ns.UI.Displays ) do
-        if v.Mover then
-            v.Mover:Hide()
+        if v.Backdrop then
+            v.Backdrop:Hide()
         end
 
         if v.Header then
@@ -199,39 +209,43 @@ function ns.StartConfiguration( external )
             v:EnableMouse( true )
             v:SetMovable( true )
 
-            v.Backdrop = v.Backdrop or CreateFrame( "Frame", v:GetName().. "_Backdrop", v )
+            v.Backdrop = v.Backdrop or CreateFrame( "Frame", v:GetName().. "_Backdrop", UIParent ) --, v )
             v.Backdrop:ClearAllPoints()
-            v.Backdrop:SetWidth( v:GetWidth() + 2 )
-            v.Backdrop:SetHeight( v:GetHeight() + 2 )
-    
-            local framelevel = v:GetFrameLevel()
-            if framelevel > 0 then
-                v.Backdrop:SetFrameStrata("MEDIUM")
-                v.Backdrop:SetFrameLevel( framelevel - 1 )
+            
+            local left, right, top, bottom = v:GetPerimeterButtons()
+            if left and right and top and bottom then
+                v.Backdrop:SetPoint( "LEFT", left, "LEFT", -2, 0 )
+                v.Backdrop:SetPoint( "RIGHT", right, "RIGHT", 2, 0 )
+                v.Backdrop:SetPoint( "TOP", top, "TOP", 0, 2 )
+                v.Backdrop:SetPoint( "BOTTOM", bottom, "BOTTOM", 0, -2 )
             else
-                v.Backdrop:SetFrameStrata("LOW")
+                v.Backdrop:SetWidth( v:GetWidth() + 2 )
+                v.Backdrop:SetHeight( v:GetHeight() + 2 )
+                v.Backdrop:SetPoint( "CENTER", v, "CENTER" )
             end
-    
-            v.Backdrop:SetPoint( "CENTER", v, "CENTER" )
-            v.Backdrop:Show()            
 
+            v.Backdrop:SetFrameStrata("MEDIUM")
+            v.Backdrop:SetFrameLevel( 5 )
+
+            v.Backdrop.moveObj = v
+    
             v.Backdrop:SetBackdrop( {
-                bgFile = nil,
+                bgFile = "Interface/Buttons/WHITE8X8",
                 edgeFile = "Interface/Buttons/WHITE8X8",
                 tile = false,
                 tileSize = 0,
                 edgeSize = 1,
-                insets = { left = -1, right = -1, top = -1, bottom = -1 }
+                insets = { left = 0, right = 0, top = 0, bottom = 0 }
             } )
 
             local ccolor = RAID_CLASS_COLORS[ select(2, UnitClass("player")) ]
-
             v.Backdrop:SetBackdropBorderColor( ccolor.r, ccolor.g, ccolor.b, 1 )
             v.Backdrop:SetBackdropColor( 0, 0, 0, 0.8 )
+            v.Backdrop:Show()
 
-            v:SetScript( "OnMouseDown", Mover_OnMouseDown )
-            v:SetScript( "OnMouseUp", Mover_OnMouseUp )
-            v:SetScript( "OnEnter", function( self )
+            v.Backdrop:SetScript( "OnMouseDown", Mover_OnMouseDown )
+            v.Backdrop:SetScript( "OnMouseUp", Mover_OnMouseUp )
+            v.Backdrop:SetScript( "OnEnter", function( self )
                 local H = Hekili
         
                 if not H.Pause and H.Config then
@@ -241,9 +255,6 @@ function ns.StartConfiguration( external )
                     GameTooltip:AddLine( "Left-click and hold to move.", 1, 1, 1 )
                     GameTooltip:Show()
         
-                elseif ( H.Pause and ns.queue[ dispID ] and ns.queue[ dispID ][ id ] ) then
-                    H:ShowDiagnosticTooltip( ns.queue[ dispID ][ id ] )
-        
                 end
             end )
             v:SetScript( "OnLeave", function(self)
@@ -251,12 +262,18 @@ function ns.StartConfiguration( external )
             end )
             v:Show()
 
-            v.Header = v.Header or v:CreateFontString( "HekiliDisplay" .. i .. "Header", "OVERLAY", "GameFontNormal" )
-            local path, size, flags = v.Header:GetFont()
-            v.Header:SetFont( path, size, "OUTLINE" )
+            if not v.Header then
+                v.Header = v.Backdrop:CreateFontString( "HekiliDisplay" .. i .. "Header", "OVERLAY", "GameFontNormal" )            
+                local path, size = v.Header:GetFont()
+                v.Header:SetFont( path, size, "OUTLINE" )
+            end
             v.Header:ClearAllPoints()
-            v.Header:SetPoint( "BOTTOM", v, "TOP", 0, 2 )
-            v.Header:SetText( i )
+            v.Header:SetAllPoints( v.Backdrop )
+
+            if i == "Defensives" then v.Header:SetText( AtlasToString( "nameplates-InterruptShield", 20, 20 ) )
+            elseif i == "Interrupts" then v.Header:SetText( AtlasToString( "communities-icon-redx", 20, 20 ) )
+            else v.Header:SetText( i ) end
+            
             v.Header:SetJustifyH("CENTER")
             v.Header:Show()
         else
@@ -270,8 +287,12 @@ function ns.StartConfiguration( external )
         local ACD = LibStub( "AceConfigDialog-3.0" )
         ACD:SetDefaultSize( "Hekili", 800, 600 )
         ACD:Open( "Hekili" )
-        ns.OnHideFrame = ns.OnHideFrame or CreateFrame( "Frame", nil )
-        ns.OnHideFrame:SetParent( ACD.OpenFrames["Hekili"].frame )
+
+        local oFrame = ACD.OpenFrames["Hekili"].frame
+        oFrame:SetMinResize(800,600)
+
+        ns.OnHideFrame = ns.OnHideFrame or CreateFrame( "Frame" )
+        ns.OnHideFrame:SetParent( oFrame )
         ns.OnHideFrame:SetScript( "OnHide", function(self)
             ns.StopConfiguration()
             self:SetScript( "OnHide", nil )
@@ -287,7 +308,6 @@ function ns.StopConfiguration()
     Hekili.Config = false
 
     local scaleFactor = Hekili:GetScale()
-
     local mouseInteract = Hekili.Pause
 
     for i, v in ipairs( ns.UI.Buttons ) do
@@ -345,8 +365,6 @@ local function menu_Auto()
 
     p.toggles.mode.value = 'automatic'
 
-    if p.toggles.mode.type:sub(4) ~= "Auto" then p.toggles.mode.type = "AutoDual" end
-    
     if WeakAuras then WeakAuras.ScanEvents( "HEKILI_TOGGLE", "mode", p.toggles.mode.value ) end
     if ns.UI.Minimap then ns.UI.Minimap:RefreshDataText() end
     Hekili:UpdateDisplayVisibility()
@@ -360,12 +378,10 @@ local function menu_Single()
 
     p.toggles.mode.value = 'single'
 
-    if not p.toggles.mode.type:find("Single") then p.toggles.mode.type = "AutoSingle" end
-    
     if WeakAuras then WeakAuras.ScanEvents( "HEKILI_TOGGLE", "mode", p.toggles.mode.value ) end
     if ns.UI.Minimap then ns.UI.Minimap:RefreshDataText() end
-    Hekili:UpdateDisplayVisibility()
 
+    Hekili:UpdateDisplayVisibility()
     Hekili:ForceUpdate( "HEKILI_TOGGLE", true )
 end
 
@@ -373,10 +389,10 @@ local function menu_AOE()
     local p = Hekili.DB.profile
 
     p.toggles.mode.value = "aoe"
-    p.toggles.mode.type = "SingleAOE"
 
     if WeakAuras then WeakAuras.ScanEvents( "HEKILI_TOGGLE", "mode", p.toggles.mode.value ) end
     if ns.UI.Minimap then ns.UI.Minimap:RefreshDataText() end
+
     Hekili:UpdateDisplayVisibility()
     Hekili:ForceUpdate( "HEKILI_TOGGLE", true )
 end
@@ -385,29 +401,33 @@ local function menu_Dual()
     local p = Hekili.DB.profile
 
     p.toggles.mode.value = "dual"
-    p.toggles.mode.type = "AutoDual"
     
     if WeakAuras then WeakAuras.ScanEvents( "HEKILI_TOGGLE", "mode", p.toggles.mode.value ) end
     if ns.UI.Minimap then ns.UI.Minimap:RefreshDataText() end
-    Hekili:UpdateDisplayVisibility()
 
+    Hekili:UpdateDisplayVisibility()
     Hekili:ForceUpdate( "HEKILI_TOGGLE", true )
 end
 
 local function menu_Reactive()
     local p = Hekili.DB.profile
+
     p.toggles.mode.value = "reactive"
-    p.toggles.mode.type = "ReactiveDual"
 
     if WeakAuras then WeakAuras.ScanEvents( "HEKILI_TOGGLE", "mode", p.toggles.mode.value ) end
     if ns.UI.Minimap then ns.UI.Minimap:RefreshDataText() end
-    Hekili:UpdateDisplayVisibility()
 
+    Hekili:UpdateDisplayVisibility()
     Hekili:ForceUpdate( "HEKILI_TOGGLE", true )
 end
 
 local function menu_Cooldowns()
     Hekili:FireToggle( "cooldowns" )
+    ns.UI.Minimap:RefreshDataText()
+end
+
+local function menu_Essences()
+    Hekili:FireToggle( "essences" )
     ns.UI.Minimap:RefreshDataText()
 end
 
@@ -515,6 +535,11 @@ Hekili_Menu.initialize = function(self, level)
         i.checked = p.toggles.cooldowns.value
         UIDropDownMenu_AddButton(i, level)
 
+        i.text = "Essences"
+        i.func = menu_Essences
+        i.checked = p.toggles.essences.value
+        UIDropDownMenu_AddButton(i, level)
+
         i.text = "Interrupts"
         i.func = menu_Interrupts
         i.checked = p.toggles.interrupts.value
@@ -560,15 +585,18 @@ do
 
         PLAYER_GAINS_VEHICLE_DATA = 1,
         PLAYER_LOSES_VEHICLE_DATA = 1,        
+        UNIT_ENTERING_VEHICLE = 1,
         UNIT_ENTERED_VEHICLE = 1,
         UNIT_EXITED_VEHICLE = 1,
         UNIT_EXITING_VEHICLE = 1,
         VEHICLE_ANGLE_SHOW = 1,
         VEHICLE_UPDATE = 1,
         UPDATE_VEHICLE_ACTIONBAR = 1,
+        UNIT_FLAGS = 1,
 
         PLAYER_TARGET_CHANGED = 1,
 
+        PLAYER_ENTERING_WORLD = 1,
         PLAYER_REGEN_ENABLED = 1,
         PLAYER_REGEN_DISABLED = 1,
 
@@ -586,9 +614,9 @@ do
         UPDATE_ALL_UI_WIDGETS = 1,
     }
 
-
+    
     local function CalculateAlpha( id )
-        if C_PetBattles.IsInBattle() or UnitOnTaxi("player") or Hekili.Barber or HasVehicleActionBar() or not Hekili:IsDisplayActive( id ) then
+        if IsInPetBattle() or Hekili.Barber or UnitHasVehicleUI("player") or HasVehicleActionBar() or HasOverrideActionBar() or UnitOnTaxi("player") or not Hekili:IsDisplayActive( id ) then
             return 0
         end
 
@@ -605,22 +633,18 @@ do
             return 0
 
         elseif zoneType == "pvp" or zoneType == "arena" then
-            if not conf.visibility.advanced then
-                return conf.visibility.pvp.alpha
-            
-            else                
-                if conf.visibility.pvp.combat > 0 and UnitAffectingCombat( "player" ) then return conf.visibility.pvp.combat
-                elseif conf.visibility.pvp.target > 0 and UnitExists( "target" ) and not UnitIsDead( "target" ) and UnitCanAttack( "player", "target" ) then return conf.visibility.pvp.target
-                elseif conf.visibility.pvp.always > 0 then return conf.visibility.pvp.always end
+            if not conf.visibility.advanced then return conf.visibility.pvp.alpha end
 
-                return 0
-            end
-            
+            if conf.visibility.pvp.combat > 0 and state.combat > 0 then return conf.visibility.pvp.combat
+            elseif conf.visibility.pvp.target > 0 and UnitExists( "target" ) and not UnitIsDead( "target" ) and UnitCanAttack( "player", "target" ) then return conf.visibility.pvp.target
+            elseif conf.visibility.pvp.always > 0 then return conf.visibility.pvp.always end
+
+            return 0            
         end
 
         if not conf.visibility.advanced then return conf.visibility.pve.alpha end
         
-        if conf.visibility.pve.combat > 0 and UnitAffectingCombat( "player" ) then return conf.visibility.pve.combat
+        if conf.visibility.pve.combat > 0 and state.combat > 0 then return conf.visibility.pve.combat
         elseif conf.visibility.pve.target > 0 and UnitExists( "target" ) and not UnitIsDead( "target" ) and UnitCanAttack( "player", "target" ) then return conf.visibility.pve.target
         elseif conf.visibility.pve.always > 0 then return conf.visibility.pve.always end
 
@@ -639,16 +663,18 @@ do
         local conf = Hekili.DB.profile.displays[ self.id ]
 
         if conf.keybindings and conf.keybindings.enabled then
+            local cPort = conf.keybindings.cPortOverride and ConsolePort ~= nil
+
             for i, b in ipairs( self.Buttons ) do
                 local r = self.Recommendations[i]
                 if r then
                     local a = r.actionName
 
-                    if a then
-                        r.keybind = Hekili:GetBindingForAction( r.actionName, not conf.keybindings.lowercase == true )
+                    if a then                        
+                        r.keybind = Hekili:GetBindingForAction( r.actionName, conf )
                     end
 
-                    if i == 1 or conf.keybindings.queued then
+                    if i == 1 or ( conf.keybindings.queued and not cPort ) then
                         b.Keybinding:SetText( r.keybind )
                     else
                         b.Keybinding:SetText( nil )
@@ -666,13 +692,12 @@ do
     local pulseFlash = 0.5
 
     local oocRefresh = 0.5
-    local icRefresh = 0.2
-
-    local refreshPulse = 10
+    local icRefresh = 0.25
 
     local LRC = LibStub("LibRangeCheck-2.0")
     local LSF = SpellFlashCore
     local LSR = LibStub("SpellRange-1.0")
+    local Glower = LibStub("LibCustomGlow-1.0")
 
     local function Display_OnUpdate( self, elapsed )
         if not self.Recommendations or not Hekili.PLAYER_ENTERING_WORLD then
@@ -682,7 +707,13 @@ do
         local profile = Hekili.DB.profile
         local conf = profile.displays[ self.id ]
 
+        self.alphaCheck = self.alphaCheck - elapsed
+
         if self.alpha == 0 then
+            if self.alphaCheck <= 0 then
+                self.alphaCheck = 0.5
+                self:UpdateAlpha()
+            end
             return
         end
 
@@ -699,21 +730,7 @@ do
         local now = GetTime()
 
 
-        self.refreshTimer = self.refreshTimer - elapsed
-
-        local spec = Hekili.DB.profile.specs[ state.spec.id ]
-        local throttle = spec.throttleUpdates and ( 1 / spec.maxRefresh ) or 0
-        local refreshRate = max( throttle, state.combat == 0 and oocRefresh or icRefresh )
-
-        if not Hekili.UpdatedThisFrame and ( self.criticalUpdate and now - self.lastUpdate > throttle ) or self.refreshTimer < 0 then
-            Hekili:ProcessHooks( self.id )
-            self.criticalUpdate = false
-            self.lastUpdate = now
-            self.refreshTimer = refreshRate
-        end
-
-
-        self.recTimer = ( self.recTimer or 0 ) - elapsed
+        self.recTimer = self.recTimer - elapsed
 
         if self.NewRecommendations or self.recTimer < 0 then
             local alpha = self.alpha
@@ -732,7 +749,7 @@ do
                     if ( conf.flash.enabled and conf.flash.suppress ) then b:Hide()
                     else b:Show() end
 
-                    if action ~= b.lastAction then
+                    if action ~= b.lastAction or self.NewRecommendations then
                         b.Texture:SetTexture( rec.texture or ability.texture or GetSpellTexture( ability.id ) )
                         b.Texture:SetTexCoord( unpack( b.texCoords ) )
                         b.lastAction = action
@@ -752,29 +769,45 @@ do
                         b.Icon:Hide()
                     end
 
-                    if conf.captions.enabled and ( i == 1 or conf.captions.queued ) then
+                    if ( conf.captions.enabled or ability.caption ) and ( i == 1 or conf.captions.queued ) then
                         b.Caption:SetText( caption )
                     else
                         b.Caption:SetText(nil)
                     end
 
-                    if conf.keybindings.enabled and ( i == 1 or conf.keybindings.queued ) then
+                    if conf.keybindings.enabled and ( i == 1 or conf.keybindings.queued and not ( conf.keybindings.cPortOverride and ConsolePort ~= nil ) ) then
                         b.Keybinding:SetText( keybind )
                     else
                         b.Keybinding:SetText(nil)
                     end
 
                     if conf.glow.enabled and ( i == 1 or conf.glow.queued ) and IsSpellOverlayed( ability.id ) then
-                        if conf.glow.shine then AutoCastShine_AutoCastStart( b.Shine )
-                        else ActionButton_ShowOverlayGlow( b ) end
+                        b.glowColor = b.glowColor or {}
+
+                        if conf.glow.coloring == "class" then
+                            b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = RAID_CLASS_COLORS[ class.file ]:GetRGBA()
+                        elseif conf.glow.coloring == "custom" then
+                            b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = unpack(conf.glow.color)
+                        else
+                            b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = 0.95, 0.95, 0.32, 1
+                        end
+
+                        if conf.glow.mode == "default" then
+                            Glower.ButtonGlow_Start( b, b.glowColor )
+                            b.glowStop = Glower.ButtonGlow_Stop
+                        elseif conf.glow.mode == "autocast" then
+                            Glower.AutoCastGlow_Start( b, b.glowColor )
+                            b.glowStop = Glower.AutoCastGlow_Stop
+                        elseif conf.glow.mode == "pixel" then
+                            Glower.PixelGlow_Start( b, b.glowColor )
+                            b.glowStop = Glower.PixelGlow_Stop
+                        end
+                        
                         b.glowing = true
                     elseif b.glowing then
-                        if conf.glow.shine then AutoCastShine_AutoCastStop( b.Shine )
-                        else ActionButton_HideOverlayGlow( b ) end
+                        if b.glowStop then b:glowStop() end
                         b.glowing = false
                     end
-
-                    self.NewRecommendations = false
                 else
                     b:Hide()
                 end
@@ -786,9 +819,27 @@ do
             self.flashTimer = -1
             self.delayTimer = -1
 
-            self:RefreshCooldowns()
-
             self.recTimer = 1
+            self.alphaCheck = 0.5
+
+            self:RefreshCooldowns()
+            self.NewRecommendations = false
+        end
+
+
+        self.refreshTimer = self.refreshTimer - elapsed
+
+        if not Hekili.Pause then
+            local spec = Hekili.DB.profile.specs[ state.spec.id ]
+            local throttle = spec.throttleRefresh and ( 1 / spec.maxRefresh ) or ( 1 / 60 )
+            local refreshRate = max( throttle, state.combat == 0 and oocRefresh or icRefresh )
+
+            if self.refreshTimer < 0 or ( Hekili.freshFrame and self.criticalUpdate and ( now - self.lastUpdate > throttle ) ) then
+                Hekili:ProcessHooks( self.id )
+                self.lastUpdate = now
+                self.criticalUpdate = false
+                self.refreshTimer = refreshRate
+            end
         end
 
 
@@ -809,18 +860,35 @@ do
                         local glowing = not a.item and IsSpellOverlayed( a.id )
 
                         if glowing and not b.glowing then
-                            if conf.glow.shine then AutoCastShine_AutoCastStart( b.Shine )
-                            else ActionButton_ShowOverlayGlow( b ) end
+                            b.glowColor = b.glowColor or {}
+
+                            if conf.glow.coloring == "class" then
+                                b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = RAID_CLASS_COLORS[ class.file ]:GetRGBA()
+                            elseif conf.glow.coloring == "custom" then
+                                b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = unpack(conf.glow.color)
+                            else
+                                b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = 0.95, 0.95, 0.32, 1
+                            end
+    
+                            if conf.glow.mode == "default" then
+                                Glower.ButtonGlow_Start( b, b.glowColor )
+                                b.glowStop = Glower.ButtonGlow_Stop
+                            elseif conf.glow.mode == "autocast" then
+                                Glower.AutoCastGlow_Start( b, b.glowColor )
+                                b.glowStop = Glower.AutoCastGlow_Stop
+                            elseif conf.glow.mode == "pixel" then
+                                Glower.PixelGlow_Start( b, b.glowColor )
+                                b.glowStop = Glower.PixelGlow_Stop
+                            end
+                            
                             b.glowing = true
                         elseif not glowing and b.glowing then
-                            if conf.glow.shine then AutoCastShine_AutoCastStop( b.Shine )
-                            else ActionButton_HideOverlayGlow( b ) end
+                            b:glowStop()
                             b.glowing = false
                         end
                     else
                         if b.glowing then
-                            AutoCastShine_AutoCastStop( b.Shine )
-                            ActionButton_HideOverlayGlow( b )
+                            b:glowStop()
                             b.glowing = false
                         end
                     end
@@ -829,7 +897,7 @@ do
         end
 
 
-        self.rangeTimer = ( self.rangeTimer or 0 ) - elapsed
+        self.rangeTimer = self.rangeTimer - elapsed
 
         if self.rangeTimer < 0 then
             for i, b in ipairs( self.Buttons ) do
@@ -837,7 +905,7 @@ do
                 local a = class.abilities[ r.actionName ]
 
                 if a and a.id then
-                    local outOfRange
+                    local outOfRange = false
 
                     if conf.range.enabled then
                         if conf.range.type == "melee" and UnitExists( "target" ) then
@@ -866,8 +934,8 @@ do
                     if not b.outOfRange then
                         local unusable
 
-                        if a.item then
-                            unusable = not IsUsableItem(a.item)
+                        if a.itemCd or a.item then
+                            unusable = not IsUsableItem(a.itemCd or a.item)
                         else
                             _, unusable = IsUsableSpell(a.actualName or a.name)
                         end
@@ -910,10 +978,10 @@ do
         end
 
         
-        self.flashTimer = ( self.flashTimer or 0 ) - elapsed
+        if conf.flash.enabled and LSF then
+            self.flashTimer = self.flashTimer - elapsed
 
-        if self.flashTimer < 0 then
-            if conf.flash.enabled and LSF then
+            if self.flashTimer < 0 then
                 local a = self.Recommendations and self.Recommendations[ 1 ] and self.Recommendations[ 1 ].actionName
 
                 if a then
@@ -922,18 +990,26 @@ do
                     self.flashColor = self.flashColor or {}
                     self.flashColor.r, self.flashColor.g, self.flashColor.b = unpack( conf.flash.color )
 
-                    if ability.item then
-                        local iname = LSF.ItemName( ability.item )
-                        LSF.FlashItem( iname, self.flashColor )
-                    else
-                        local id = ability.known
-                        
-                        if id == nil or type( id ) ~= "number" then
-                            id = ability.id
+                    if self.lastFlash ~= a or now - self.lastFlashTime > 0.5 then
+                        if ability.item then
+                            local iname = LSF.ItemName( ability.item )
+                            LSF.FlashItem( iname, self.flashColor )
+                        else
+                            if ability.flash then
+                                LSF.FlashAction( ability.flash, self.flashColor )
+                            else
+                                local id = ability.known
+                                
+                                if id == nil or type( id ) ~= "number" then
+                                    id = ability.id
+                                end
+
+                                local sname = LSF.SpellName( id )
+                                LSF.FlashAction( sname, self.flashColor )
+                            end
                         end
-                        
-                        local sname = LSF.SpellName( id )
-                        LSF.FlashAction( sname, self.flashColor )
+                        self.lastFlash = a
+                        self.lastFlashTime = now
                     end
                 end
             end
@@ -1010,45 +1086,43 @@ do
                 if rStart > 0 then moment = max( moment, rStart + rDuration - now ) end
             end
 
-            if conf.delays.type ~= "NONE" and conf.delays.type ~= "FADE" then
-                if conf.delays.type == "TEXT" then
-                    if self.delayIconShown then
-                        b.DelayIcon:Hide()
-                        self.delayIconShown = false
-                    end
+            if conf.delays.type == "TEXT" then
+                if self.delayIconShown then
+                    b.DelayIcon:Hide()
+                    self.delayIconShown = false
+                end
 
-                    if delay > moment + 0.05 then
-                        b.DelayText:SetText( format( "%.1f", delay ) )
-                        self.delayTextShown = true
+                if delay > moment + 0.05 then
+                    b.DelayText:SetText( format( "%.1f", delay ) )
+                    self.delayTextShown = true
+                else
+                    b.DelayText:SetText( nil )
+                    self.delayTextShown = false
+                end
+
+            elseif conf.delays.type == "ICON" then
+                if self.delayTextShown then
+                    b.DelayText:SetText(nil)
+                    self.delayTextShown = false
+                end
+
+                if delay > moment + 0.05 then
+                    b.DelayIcon:Show()
+                    b.DelayIcon:SetAlpha( self.alpha )
+
+                    self.delayIconShown = true
+
+                    if delay < 0.5 then
+                        b.DelayIcon:SetVertexColor( 0.0, 1.0, 0.0, 1.0 )
+                    elseif delay < 1.5 then
+                        b.DelayIcon:SetVertexColor( 1.0, 1.0, 0.0, 1.0 )
                     else
-                        b.DelayText:SetText( nil )
-                        self.delayTextShown = false
-                    end
+                        b.DelayIcon:SetVertexColor( 1.0, 0.0, 0.0, 1.0)
+                    end                       
+                else
+                    b.DelayIcon:Hide()
+                    b.delayIconShown = false
 
-                elseif conf.delays.type == "ICON" then
-                    if self.delayTextShown then
-                        b.DelayText:SetText(nil)
-                        self.delayTextShown = false
-                    end
-
-                    if delay > moment + 0.05 then
-                        b.DelayIcon:Show()
-                        b.DelayIcon:SetAlpha( self.alpha )
-
-                        self.delayIconShown = true
-
-                        if delay < 0.5 then
-                            b.DelayIcon:SetVertexColor( 0.0, 1.0, 0.0, 1.0 )
-                        elseif delay < 1.5 then
-                            b.DelayIcon:SetVertexColor( 1.0, 1.0, 0.0, 1.0 )
-                        else
-                            b.DelayIcon:SetVertexColor( 1.0, 0.0, 0.0, 1.0)
-                        end                       
-                    else
-                        b.DelayIcon:Hide()
-                        b.delayIconShown = false
-
-                    end
                 end
             else
                 if self.delayTextShown then
@@ -1064,6 +1138,7 @@ do
             self.delayTimer = pulseDelay
         end        
     end
+    ns.cpuProfile.Display_OnUpdate = Display_OnUpdate
 
     local function Display_UpdateAlpha( self )
         if not self.Active then
@@ -1079,8 +1154,9 @@ do
         if preAlpha > 0 and newAlpha == 0 then
             -- self:Deactivate()
             self:SetAlpha( 0 )
+            self.alphaCheck = 0.5
         else
-            if preAlpha == 0 and newAlpha > 0 then
+            if preAlpha == 0 and newAlpha > 0 then                
                 Hekili:ForceUpdate( "DISPLAY_ALPHA_CHANGED" )
             end
             self:SetAlpha( newAlpha )
@@ -1093,6 +1169,9 @@ do
     local function Display_RefreshCooldowns( self )
         local gStart, gDuration = GetSpellCooldown( 61304 )
         local gExpires = gStart + gDuration
+
+        local now = GetTime()
+        local conf = Hekili.DB.profile.displays[ self.id ]
 
         for i, rec in ipairs( self.Recommendations ) do
             if not rec.actionName then
@@ -1115,6 +1194,11 @@ do
 
                 if ability.gcd ~= "off" and ( expires < gExpires ) then
                     start, duration = gStart, gDuration
+                end
+
+                if i == 1 and conf.delays.extend and rec.exact_time and rec.exact_time > now then
+                    start = state.gcd.lastStart
+                    duration = rec.exact_time - start
                 end
 
                 if cd.lastStart ~= start or cd.lastDuration ~= duration then
@@ -1150,8 +1234,27 @@ do
                     local a = class.abilities[ r.actionName ]
 
                     if not b.glowing and a and not a.item and IsSpellOverlayed( a.id ) then
-                        if conf.glow.shine then AutoCastShine_AutoCastStart( b.Shine )
-                        else ActionButton_ShowOverlayGlow( b ) end
+                        b.glowColor = b.glowColor or {}
+
+                        if conf.glow.coloring == "class" then
+                            b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = RAID_CLASS_COLORS[ class.file ]:GetRGBA()
+                        elseif conf.glow.coloring == "custom" then
+                            b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = unpack(conf.glow.color)
+                        else
+                            b.glowColor[1], b.glowColor[2], b.glowColor[3], b.glowColor[4] = 0.95, 0.95, 0.32, 1
+                        end
+
+                        if conf.glow.mode == "default" then
+                            Glower.ButtonGlow_Start( b, b.glowColor )
+                            b.glowStop = Glower.ButtonGlow_Stop
+                        elseif conf.glow.mode == "autocast" then
+                            Glower.AutoCastGlow_Start( b, b.glowColor )
+                            b.glowStop = Glower.AutoCastGlow_Stop
+                        elseif conf.glow.mode == "pixel" then
+                            Glower.PixelGlow_Start( b, b.glowColor )
+                            b.glowStop = Glower.PixelGlow_Stop
+                        end
+                        
                         b.glowing = true
                     end
                 end
@@ -1171,8 +1274,7 @@ do
                     local a = class.abilities[ r.actionName ]
 
                     if b.glowing and ( not a or a.item or not IsSpellOverlayed( a.id ) ) then
-                        if conf.glow.shine then AutoCastShine_AutoCastStop( b.Shine )
-                        else ActionButton_HideOverlayGlow( b ) end
+                        b:glowStop()
                         b.glowing = false
                     end
                 end
@@ -1183,8 +1285,16 @@ do
         elseif alphaUpdateEvents[ event ] then
             self:UpdateAlpha()
 
+        elseif event == "SPELLS_CHANGED" then
+            for i, rec in ipairs( self.Recommendations ) do                
+                rec.texture = nil
+            end
+            self.NewRecommendations = true
+
         end
     end
+    ns.cpuProfile.Display_OnEvent = Display_OnEvent
+
 
     local function Display_Activate( self )
         if not self.Active then
@@ -1193,9 +1303,13 @@ do
             self.Recommendations = self.Recommendations or ( ns.queue and ns.queue[ self.id ] )
             self.NewRecommendations = true
 
+            self.alphaCheck = 0
             self.auraTimer = 0
             self.delayTimer = 0
+            self.flashTimer = 0
+            self.lastFlashTime = 0
             self.glowTimer = 0
+            self.rangeTimer = 0
             self.recTimer = 0
             self.refreshTimer = 0
             self.targetTimer = 0
@@ -1221,6 +1335,9 @@ do
                     self:RegisterEvent( e )
                 end
 
+                -- Recheck spell displays if spells have changed.
+                self:RegisterEvent( "SPELLS_CHANGED" )
+
                 -- Update keybindings.
                 for k in pairs( kbEvents ) do
                     self:RegisterEvent( k )
@@ -1245,6 +1362,50 @@ do
     end
 
 
+    function Display_GetPerimeterButtons( self )
+        local left, right, top, bottom
+        local lPos, rPos, tPos, bPos
+
+        for i = 1, self.numIcons do
+            local button = self.Buttons[ i ]
+
+            if i == 1 then
+                lPos = button:GetLeft()
+                rPos = button:GetRight()
+                tPos = button:GetTop()
+                bPos = button:GetBottom()
+
+                left = button
+                right = button
+                top = button
+                bottom = button
+            else
+                if button:GetLeft() < lPos then
+                    lPos = button:GetLeft()
+                    left = button
+                end
+
+                if button:GetRight() > rPos then
+                    rPos = button:GetRight()
+                    right = button
+                end
+
+                if button:GetTop() > tPos then
+                    tPos = button:GetTop()
+                    top = button
+                end
+
+                if button:GetBottom() < bPos then
+                    bPos = button:GetBottom()
+                    bottom = button
+                end
+            end
+        end
+
+        return left, right, top, bottom
+    end    
+
+
     function Hekili:CreateDisplay( id )
         local conf = rawget( self.DB.profile.displays, id )
         if not conf then return end
@@ -1254,6 +1415,8 @@ do
 
         d.id = id
         d.alpha = 0
+        d.numIcons = conf.numIcons
+        d.firstForce = 0
 
         local scale = self:GetScale()
         local border = 2
@@ -1267,11 +1430,11 @@ do
 
         d.Activate = Display_Activate
         d.Deactivate = Display_Deactivate
+        d.GetPerimeterButtons = Display_GetPerimeterButtons
         d.RefreshCooldowns = Display_RefreshCooldowns
         d.UpdateAlpha = Display_UpdateAlpha
         d.UpdateKeybindings = Display_UpdateKeybindings
 
-        
         ns.queue[id] = ns.queue[id] or {}
         d.Recommendations = ns.queue[id]
 
@@ -1378,7 +1541,7 @@ do
                         elseif i == 'Interrupts' then
                             dispActive[i] = profile.toggles.interrupts.value and profile.toggles.interrupts.separate
                         elseif i == 'Defensives' then
-                            dispActive[i] = state.role.tank and profile.toggles.defensives.value and profile.toggles.defensives.separate
+                            dispActive[i] = profile.toggles.defensives.value and profile.toggles.defensives.separate
                         else
                             dispActive[i] = true 
                         end
@@ -1460,9 +1623,12 @@ do
     end
 
 
-    function Hekili:ForceUpdate( event )
+    local firstForceRequest = 0
+
+    function Hekili:ForceUpdate( event, ... )
         for i, d in pairs( ns.UI.Displays ) do        
             d.criticalUpdate = true
+            if d.firstForce == 0 then d.firstForce = GetTime() end
         end
     end    
 
@@ -1537,14 +1703,13 @@ do
         end
 
 
-        -- Shine
-        b.Shine = b.Shine or CreateFrame( "Frame", bName .. "_Shine", b, "AutoCastShineTemplate" )
-        b.Shine:Show()
-        b.Shine:SetAllPoints()
+        -- Initialize glow/noop if button has not yet been glowed.
+        b.glowing = b.glowing or false
+        b.glowStop = b.glowStop or function () end
 
 
         -- Indicator Icons.
-        b.Icon = b.Icon or b.Shine:CreateTexture( nil, "OVERLAY" )
+        b.Icon = b.Icon or b:CreateTexture( nil, "OVERLAY" )
         b.Icon: SetSize( max( 10, b:GetWidth() / 3 ), max( 10, b:GetHeight() / 3 ) )
         
         if conf.keepAspectRatio and b.Icon:GetHeight() ~= b.Icon:GetWidth() then
@@ -1560,19 +1725,19 @@ do
         local iconAnchor = conf.indicators.anchor or "RIGHT"
         
         b.Icon:ClearAllPoints()
-        b.Icon:SetPoint( iconAnchor, b.Shine, iconAnchor, conf.indicators.x or 0, conf.indicators.y or 0 )
+        b.Icon:SetPoint( iconAnchor, b, iconAnchor, conf.indicators.x or 0, conf.indicators.y or 0 )
         b.Icon:Hide()
 
 
         -- Caption Text.
-        b.Caption = b.Caption or b.Shine:CreateFontString( bName .. "_Caption", "OVERLAY" )
+        b.Caption = b.Caption or b:CreateFontString( bName .. "_Caption", "OVERLAY" )
 
         local captionFont = conf.captions.font or conf.font
         b.Caption:SetFont( LSM:Fetch("font", captionFont), conf.captions.fontSize or 12, conf.captions.fontStyle or "OUTLINE" )
 
         local capAnchor = conf.captions.anchor or "BOTTOM"
         b.Caption:ClearAllPoints()
-        b.Caption:SetPoint( capAnchor, b.Shine, capAnchor, conf.captions.x or 0, conf.captions.y or 0 )
+        b.Caption:SetPoint( capAnchor, b, capAnchor, conf.captions.x or 0, conf.captions.y or 0 )
         b.Caption:SetSize( b:GetWidth(), max( 12, b:GetHeight() / 2 ) )
         b.Caption:SetJustifyV( capAnchor )
         b.Caption:SetJustifyH( conf.captions.align or "CENTER" )
@@ -1584,23 +1749,21 @@ do
 
 
         -- Keybinding Text
-        b.Keybinding = b.Keybinding or b.Shine:CreateFontString(bName .. "_KB", "OVERLAY")
+        b.Keybinding = b.Keybinding or b:CreateFontString(bName .. "_KB", "OVERLAY")
         local kbFont = conf.keybindings.font or conf.font
         b.Keybinding:SetFont( LSM:Fetch("font", kbFont), conf.keybindings.fontSize or 12, conf.keybindings.fontStyle or "OUTLINE" )
 
         local kbAnchor = conf.keybindings.anchor or "TOPRIGHT"
         b.Keybinding:ClearAllPoints()
-        b.Keybinding:SetPoint( kbAnchor, b.Shine, kbAnchor, conf.keybindings.x or 0, conf.keybindings.y or 0 )
-        b.Keybinding:SetSize( b:GetWidth(), b:GetHeight() / 2 )
-        b.Keybinding:SetJustifyH( kbAnchor:match("RIGHT") and "RIGHT" or ( kbAnchor:match("LEFT") and "LEFT" or "CENTER" ) )
-        b.Keybinding:SetJustifyV( kbAnchor:match("TOP") and "TOP" or ( kbAnchor:match("BOTTOM") and "BOTTOM" or "MIDDLE" ) )
+        b.Keybinding:SetPoint( kbAnchor, b, kbAnchor, conf.keybindings.x or 0, conf.keybindings.y or 0 )
+        b.Keybinding:SetSize( 0, 0 )
         b.Keybinding:SetTextColor( 1, 1, 1, 1 )
 
         local kbText = b.Keybinding:GetText()
         b.Keybinding:SetText( nil )
         b.Keybinding:SetText( kbText )
 
-
+        
         -- Cooldown Wheel
         b.Cooldown = b.Cooldown or CreateFrame( "Cooldown", bName .. "_Cooldown", b, "CooldownFrameTemplate" )
         b.Cooldown:ClearAllPoints()
@@ -1636,7 +1799,11 @@ do
                 edgeSize = 1,
                 insets = { left = -1, right = -1, top = -1, bottom = -1 }
             } )
-            b.Backdrop:SetBackdropBorderColor( unpack( conf.border.color ) )
+            if conf.border.coloring == 'custom' then
+                b.Backdrop:SetBackdropBorderColor( unpack( conf.border.color ) )
+            else
+                b.Backdrop:SetBackdropBorderColor( RAID_CLASS_COLORS[ class.file ]:GetRGBA() )
+            end
             b.Backdrop:Show()
         else
             b.Backdrop:SetBackdrop( nil )
@@ -1652,14 +1819,14 @@ do
             b:SetPoint( "CENTER", d, "CENTER" )
 
             -- Target Counter
-            b.Targets = b.Targets or b.Shine:CreateFontString( bName .. "_Targets", "OVERLAY" )
+            b.Targets = b.Targets or b:CreateFontString( bName .. "_Targets", "OVERLAY" )
 
             local tarFont = conf.targets.font or conf.font
             b.Targets:SetFont( LSM:Fetch( "font", tarFont ), conf.targets.fontSize or 12, conf.targets.fontStyle or "OUTLINE" )
 
             local tarAnchor = conf.targets.anchor or "BOTTOM"
             b.Targets:ClearAllPoints()
-            b.Targets:SetPoint( tarAnchor, b.Shine, tarAnchor, conf.targets.x or 0, conf.targets.y or 0 )
+            b.Targets:SetPoint( tarAnchor, b, tarAnchor, conf.targets.x or 0, conf.targets.y or 0 )
             b.Targets:SetSize( b:GetWidth(), b:GetHeight() / 2 )
             b.Targets:SetJustifyH( tarAnchor:match("RIGHT") and "RIGHT" or ( tarAnchor:match( "LEFT" ) and "LEFT" or "CENTER" ) )
             b.Targets:SetJustifyV( tarAnchor:match("TOP") and "TOP" or ( tarAnchor:match( "BOTTOM" ) and "BOTTOM" or "MIDDLE" ) )
@@ -1691,14 +1858,14 @@ do
 
 
             -- Delay Counter
-            b.DelayText = b.DelayText or b.Shine:CreateFontString( bName .. "_DelayText", "OVERLAY" )
+            b.DelayText = b.DelayText or b:CreateFontString( bName .. "_DelayText", "OVERLAY" )
 
             local delayFont = conf.delays.font or conf.font
             b.DelayText:SetFont( LSM:Fetch("font", delayFont), conf.delays.fontSize or 12, conf.delays.fontStyle or "OUTLINE" )
 
             local delayAnchor = conf.delays.anchor or "TOPLEFT"
             b.DelayText:ClearAllPoints()
-            b.DelayText:SetPoint( delayAnchor, b.Shine, delayAnchor, conf.delays.x, conf.delays.y or 0 )
+            b.DelayText:SetPoint( delayAnchor, b, delayAnchor, conf.delays.x, conf.delays.y or 0 )
             b.DelayText:SetSize( b:GetWidth(), b:GetHeight() / 2 )
 
             b.DelayText:SetJustifyH( delayAnchor:match( "RIGHT" ) and "RIGHT" or ( delayAnchor:match( "LEFT" ) and "LEFT" or "CENTER") )
@@ -1711,18 +1878,18 @@ do
             
 
             -- Delay Icon
-            b.DelayIcon = b.DelayIcon or b.Shine:CreateTexture( bName .. "_DelayIcon", "OVERLAY" )
+            b.DelayIcon = b.DelayIcon or b:CreateTexture( bName .. "_DelayIcon", "OVERLAY" )
             b.DelayIcon:SetSize( min( 20, max( 10, b:GetSize() / 3 ) ), min( 20, max( 10, b:GetSize() / 3 ) ) )
             b.DelayIcon:SetTexture( "Interface\\FriendsFrame\\StatusIcon-Online" )
             b.DelayIcon:SetDesaturated( true )
             b.DelayIcon:SetVertexColor( 1, 0, 0, 1 )
 
             b.DelayIcon:ClearAllPoints()
-            b.DelayIcon:SetPoint( delayAnchor, b.Shine, delayAnchor, conf.delays.x or 0, conf.delays.y or 0 )
+            b.DelayIcon:SetPoint( delayAnchor, b, delayAnchor, conf.delays.x or 0, conf.delays.y or 0 )
             b.DelayIcon:Hide()
 
             -- Overlay (for Pause)
-            b.Overlay = b.Overlay or b.Shine:CreateTexture( nil, "OVERLAY" )
+            b.Overlay = b.Overlay or b:CreateTexture( nil, "OVERLAY" )
             b.Overlay:SetAllPoints( b )
             b.Overlay:SetTexture( "Interface\\Addons\\Hekili\\Textures\\Pause.blp" )
             b.Overlay:SetTexCoord( unpack( b.texCoords ) )
@@ -1851,7 +2018,7 @@ function Hekili:BuildUI()
     -- End Notification Panel
 
     -- Dropdown Menu.
-    ns.UI.Menu = ns.UI.Menu or CreateFrame("Frame", "Hekili_Menu", UIParent, "L_UIDropDownMenuTemplate")
+    ns.UI.Menu = ns.UI.Menu or CreateFrame("Frame", "Hekili_Menu", UIParent, "UIDropDownMenuTemplate")
 
 
     -- Displays
@@ -2012,9 +2179,12 @@ function Hekili:ShowDiagnosticTooltip( q )
 
     -- Grab the default backdrop and copy it with a solid background.
     local backdrop = GameTooltip:GetBackdrop()
-    backdrop.bgFile = [[Interface\Buttons\WHITE8X8]]
-    tt:SetBackdrop(backdrop)
-    tt:SetBackdropColor(0, 0, 0, 1)
+
+    if backdrop then
+        backdrop.bgFile = [[Interface\Buttons\WHITE8X8]]
+        tt:SetBackdrop(backdrop)
+        tt:SetBackdropColor(0, 0, 0, 1)
+    end
 
     tt:SetOwner(UIParent, "ANCHOR_CURSOR")
     tt:SetText(class.abilities[q.actionName].name)
@@ -2043,7 +2213,9 @@ function Hekili:ShowDiagnosticTooltip( q )
                     tt:AddLine("Values")
                     applied = true
                 end
-                tt:AddDoubleLine( key_cache[ k ], ns.formatValue(v), 1, 1, 1, 1, 1, 1)
+                if not key_cache[k]:find( "safebool" ) and not key_cache[k]:find( "safenum" ) then
+                    tt:AddDoubleLine( key_cache[ k ], ns.formatValue(v), 1, 1, 1, 1, 1, 1)
+                end
             end
         end
     end
@@ -2057,7 +2229,9 @@ function Hekili:ShowDiagnosticTooltip( q )
         if q.ReadyElements then
             tt:AddLine("Values")
             for k, v in orderedPairs(q.ReadyElements) do
-                tt:AddDoubleLine( key_cache[ k ], ns.formatValue(v), 1, 1, 1, 1, 1, 1)
+                if not key_cache[k]:find( "safebool" ) and not key_cache[k]:find( "safenum" ) then
+                    tt:AddDoubleLine( key_cache[ k ], ns.formatValue(v), 1, 1, 1, 1, 1, 1)
+                end
             end
         end
     end
@@ -2071,7 +2245,9 @@ function Hekili:ShowDiagnosticTooltip( q )
         if q.ActElements then
             tt:AddLine("Values")
             for k, v in orderedPairs(q.ActElements) do
-                tt:AddDoubleLine( key_cache[ k ], ns.formatValue(v), 1, 1, 1, 1, 1, 1)
+                if not key_cache[k]:find( "safebool" ) and not key_cache[k]:find( "safenum" ) then
+                    tt:AddDoubleLine( key_cache[ k ], ns.formatValue(v), 1, 1, 1, 1, 1, 1)
+                end
             end
         end
     end

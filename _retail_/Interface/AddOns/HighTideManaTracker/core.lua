@@ -45,6 +45,7 @@ function HTMT:OnEnable()
     self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    -- self:RegisterEvent("UNIT_AURA")
 end
 
 -- register slash commands
@@ -78,6 +79,36 @@ function HTMT:ADDON_LOADED()
     if textFormatOptions == nil or table.getn(textFormatOptions) < 10 then
         textFormatOptions = {"25,350", "25350 : 40k", "25350 / 40k", "25.35k", "25.35k : 40k", "25.35k / 40k","25.4k", "25.4k : 40k", "25.4k / 40k"}
     end
+    if shamanSpellCosts == nil then
+        shamanSpellCosts = {
+            ["Riptide"] = 1600,
+            ["Healing Wave"] = 1800,
+            ["Chain Heal"] = 5000,
+            ["Healing Surge"] = 3800,
+            ["Healing Rain"] = 4320,
+            ["Healing Steam Totem"] = 2200,
+            ["Earth Shield"] = 2000,
+            ["Unleash Life"] = 800,
+            ["Earthgrab Totem"] = 500,
+            ["Earthen Wall Totem"] = 2200,
+            ["Ancestral Protection Totem"] = 2200,
+            ["Downpour"] = 3000,
+            ["Cloudburst Totem"] = 1720,
+            ["Flame Shock"] = 3000,
+            ["Lava Burst"] = 1200,
+            ["Chain Lightning"] = 200,
+            ["Bloodlust"] = 4300,
+            ["Spirit Link Totem"] = 2200,
+            ["Healing Tide Totem"] = 1120,
+            ["Spiritwalker's Grace"] = 2820,
+            ["Earthbind Totem"] = 500,
+            ["Tremor Totem"] = 460,
+            ["Capacitor Totem"] = 2000,
+            ["Purify Spirit"] = 1300,
+            ["Purge"] = 1600,
+            ["Heroism"] = 4300,
+        }
+    end 
 end
 
 function HTMT:UpdateUsedMedia(event, mediatype, key)
@@ -103,19 +134,18 @@ end
 function HTMT:Encounter_Start(...)
     local difficultyID = select(4,...)
     if select(1, GetSpecializationInfo(GetSpecialization())) ~= 264 then return end
-    if difficultyID ~= 14 or difficultyID ~= 15 or difficultyID ~= 16 or difficultyID ~= 17 then
-        return  
-    end
-    if menuOptions.inverseCheckButton then
-        manaCount = 0
-        manaUsed = 0
-        HTMT_UpdateTextNonProgressBar(manaCount, menuOptions.dropdownValue, 1)
-        self:Print(L["Mana count has been reset!"])
-    else
-        manaCountInverse = 40000
-        manaUsedInverse = 40000
-        HTMT_UpdateTextNonProgressBar(manaCountInverse, menuOptions.dropdownValue, 1)
-        self:Print(L["Mana count has been reset!"])  
+    if (difficultyID == 14) or (difficultyID == 15) or (difficultyID == 16) or (difficultyID == 17) then
+        if not menuOptions.inverseCheckButton then
+            manaCount = 0
+            manaUsed = 0
+            HTMT_UpdateTextNonProgressBar(manaCount, menuOptions.dropdownValue, 1)
+            self:Print(L["Mana count has been reset!"])
+        else
+            manaCountInverse = 40000
+            manaUsedInverse = 40000
+            HTMT_UpdateTextNonProgressBar(manaCountInverse, menuOptions.dropdownValue, 1)
+            self:Print(L["Mana count has been reset!"])  
+        end
     end
 end
 
@@ -178,6 +208,9 @@ function HTMT:COMBAT_LOG_EVENT_UNFILTERED()
     local subevent = select(2, CombatLogGetCurrentEventInfo())
     local sourceGUID = select(4, CombatLogGetCurrentEventInfo())
     local spellID = select(12, CombatLogGetCurrentEventInfo())
+    local spellName = select(13,CombatLogGetCurrentEventInfo())
+    --print(spellName)
+
 
     if subevent == "SPELL_CAST_SUCCESS" and (sourceGUID == UnitGUID("player")) and learned then
         local costs = GetSpellPowerCost(spellID)
@@ -196,6 +229,22 @@ function HTMT:COMBAT_LOG_EVENT_UNFILTERED()
                             manaUsed = manaCount
                             HTMT_UpdateTextNonProgressBar(manaCount, menuOptions.dropdownValue, 1)
                         end
+                    elseif HTMT_InnervateBuff() then
+                        for k,v in pairs(shamanSpellCosts) do
+                            if k == spellName then
+                                if menuOptions.inverseCheckButton then
+                                    manaCountInverse = manaCountInverse - v
+                                    manaUsedInverse = manaCountInverse
+                                    HTMT_UpdateTextNonProgressBar(manaCountInverse, menuOptions.dropdownValue, 1)
+                                else
+                                    manaCount = manaCount + v
+                                    manaUsed = manaCount
+                                    HTMT_UpdateTextNonProgressBar(manaCount, menuOptions.dropdownValue, 1)
+                                end
+                                break
+                            end
+                        end
+                        
                     end
                 end
             end
@@ -212,6 +261,17 @@ function HTMT:COMBAT_LOG_EVENT_UNFILTERED()
             manaCount = manaCount - manaTrigger
             manaUsed = manaCount
             HTMT_UpdateTextNonProgressBar(manaCount, menuOptions.dropdownValue, 1)
+        end
+    end
+end
+
+-- funtion to check for innervate
+function HTMT_InnervateBuff()
+    --innervate spell id 29166
+    for i=1,40 do 
+        local B=UnitBuff("player",i); 
+        if B == "Innervate" then
+             return true
         end
     end
 end
@@ -501,7 +561,7 @@ function HTMT:CreateOptionsMenu()
     -- main menu frame
     local menu = AceGUI:Create("Frame")
     menu:SetTitle("High Tide Mana Tracker Options")
-    menu:SetStatusText("v2.6.3")
+    menu:SetStatusText("v"..GetAddOnMetadata("HighTideManaTracker", "Version"))
     menu:SetWidth(250)
     menu:SetHeight(300)
     menu:SetLayout("Flow")
@@ -538,7 +598,7 @@ function HTMT:CreateOptionsMenu()
     lockFrameCheckButton:SetPoint("TOPLEFT", menu.frame, "TOPLEFT",6,-25)
     lockFrameCheckButton:SetCallback("OnValueChanged",HTMT_LockFrameCheckBoxState)
     menu:AddChild(lockFrameCheckButton)
-    menu.inverseCheckButton = inverseCheckButton
+    menu.lockFrameCheckButton = lockFrameCheckButton
 
     -- colorpicker for changing the color of the text
     local textColorPicker = AceGUI:Create("ColorPicker")

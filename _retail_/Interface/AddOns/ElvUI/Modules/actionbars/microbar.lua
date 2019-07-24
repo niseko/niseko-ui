@@ -63,7 +63,7 @@ function AB:HandleMicroButton(button)
 	local f = CreateFrame("Frame", nil, button)
 	f:SetFrameLevel(1)
 	f:SetFrameStrata("BACKGROUND")
-	f:SetTemplate("Default", true)
+	f:SetTemplate(nil, true)
 	f:SetOutside(button)
 	button.backdrop = f
 
@@ -161,8 +161,8 @@ function AB:UpdateMicroPositionDimensions()
 		ElvUI_MicroBar:SetAlpha(self.db.microbar.alpha)
 	end
 
-	AB.MicroWidth = (((_G["CharacterMicroButton"]:GetWidth() + spacing) * self.db.microbar.buttonsPerRow) - spacing) + (offset * 2)
-	AB.MicroHeight = (((_G["CharacterMicroButton"]:GetHeight() + spacing) * numRows) - spacing) + (offset * 2)
+	AB.MicroWidth = (((_G.CharacterMicroButton:GetWidth() + spacing) * self.db.microbar.buttonsPerRow) - spacing) + (offset * 2)
+	AB.MicroHeight = (((_G.CharacterMicroButton:GetHeight() + spacing) * numRows) - spacing) + (offset * 2)
 	ElvUI_MicroBar:Size(AB.MicroWidth, AB.MicroHeight)
 
 	if ElvUI_MicroBar.mover then
@@ -201,7 +201,7 @@ function AB:SetupMicroBar()
 	microBar.visibility:SetScript("OnShow", function() microBar:Show() end)
 	microBar.visibility:SetScript("OnHide", function() microBar:Hide() end)
 
-	E.FrameLocks["ElvUI_MicroBar"] = true
+	E.FrameLocks.ElvUI_MicroBar = true
 	for _, x in pairs(_G.MICRO_BUTTONS) do
 		self:HandleMicroButton(_G[x])
 	end

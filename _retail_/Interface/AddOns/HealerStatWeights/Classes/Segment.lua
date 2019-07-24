@@ -27,13 +27,7 @@ local function getStatTable()
 end
 
 --shallow table copy
-local function copy(t) 
-	local new_t = {};
-	local mt = getmetatable(t);
-	for k,v in pairs(t) do new_t[k] = v; end
-	setmetatable(new_t,mt);
-	return new_t;
-end
+local copy = addon.Util.CopyTable;
 
 
 
@@ -60,6 +54,7 @@ function Segment.Create(id)
 	self.casts = {};
 	self.buckets = {};
 	self.casts_hst = {};
+	self.azerite = {};
 	self.instance = {};
 	self.instance.id = -1;
 	self.instance.name = "";
@@ -157,7 +152,7 @@ end
 --[[----------------------------------------------------------------------------
 	AllocateHeal - increment cumulative healing totals for the given stats
 ------------------------------------------------------------------------------]]
-function Segment:AllocateHeal(int,crit,haste_hpm,haste_hpct,vers,mast,leech,spellId)
+function Segment:AllocateHeal(int,crit,haste_hpm,haste_hpct,vers,mast,leech,spellId,azeriteAdded)
 	self.t.int		 	= self.t.int		 + int;
 	self.t.crit			= self.t.crit	 	 + crit;
 	self.t.haste_hpm	= self.t.haste_hpm	 + haste_hpm;
@@ -169,6 +164,7 @@ function Segment:AllocateHeal(int,crit,haste_hpm,haste_hpct,vers,mast,leech,spel
 	
 	if HSW_ENABLE_FOR_TESTING and spellId then
 		self.debug[spellId] = self.debug[spellId] and self.debug[spellId]+int or int;
+		self.azerite[spellId] = self.azerite[spellId] and self.azerite[spellId]+azeriteAdded or azeriteAdded;
 	end
 end
 
@@ -305,13 +301,18 @@ function Segment:MergeSegmentHelper(other,tableKey)
 end
 	
 function Segment:MergeSegment(other)
+	local skip = {
+		["totalDuration"]=true,
+		["startTime"]=true
+	}
+	
 	self:MergeSegmentHelper(other,"t");
 	self:MergeSegmentHelper(other,"casts");
 	self:MergeSegmentHelper(other,"casts_hst");
 	self:MergeSegmentHelper(other,"buckets");
 	
 	for k,v in pairs(self) do
-		if ( type(v) == "number" ) then
+		if ( type(v) == "number" and not skip[k] ) then
 			self[k] = self[k] + other[k];
 		end
 	end
@@ -356,15 +357,28 @@ function Segment:Debug()
 	
 	print("Int SpellID Buckets");
 	tbl_header();
+	local intMainSum = 0;
 	for k,v in pairs(self.debug) do
 		print(string.format("%s = %.5f", k, v));
-
+		intMainSum = intMainSum + v;
 	end
 	
+	print("Azerite SpellID Buckets");
+	tbl_header();
+	local intAzeriteSum = 0;
+	for k,v in pairs(self.azerite) do
+		print(string.format("%s = %.5f", k, v));
+		intAzeriteSum = intAzeriteSum + v;
+	end
+	
+	print("Calculated Values");
+	tbl_header();	
 	local mp5 = self:GetMP5();
 	local duration = self:GetDuration();
+	local azeritePercentOfInt = intAzeriteSum/(intMainSum+intAzeriteSum+0.0001)*100;
 	print("mp5 =",mp5);
 	print(string.format("duration = %.5f",duration));
+	print(string.format("azerite = %.5f",azeritePercentOfInt));
 end
 
 addon.Segment = Segment;

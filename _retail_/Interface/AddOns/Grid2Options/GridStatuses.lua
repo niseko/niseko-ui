@@ -85,6 +85,8 @@ function Grid2Options:GetStatusDescription(status)
 				return tip[count]:GetText()
 			end
 		end
+	elseif dbx.type == 'buffs' and dbx.subType == "blizzard" then
+		return L["Show relevant buffs for each unit frame (the same buffs displayed by the Blizzard raid frames)."]
 	end
 end
 
@@ -136,19 +138,20 @@ end
 
 -- Generates a text with the status compatible indicators icons
 function Grid2Options:GetStatusCompIndicatorsText(status)
-	local icons, text = self.statusTypesIcons, ""
+	local icons, text, flag = self.statusTypesIcons, ""
 	for type,statuses in pairs(Grid2.statusTypes) do
 		local icon = icons[type]
 		if icon then
 			for i=1,#statuses do
 				if status==statuses[i] then
 					text = fmt( "%s|T%s:0|t", text, icon )
+					flag = flag or type=='color'
 					break
 				end
 			end
 		end
 	end
-	return fmt( "%s|T%s:0|t", text, icons.generic )
+	return flag and fmt( "%s|T%s:0|t", text, icons.generic ) or text
 end
 
 -- Add a title option to the status options
@@ -156,7 +159,7 @@ function Grid2Options:MakeStatusTitleOptions(status, options, optionParams)
 	if not (options.title or (optionParams and optionParams.hideTitle) ) then
 		local name, desc, icon, iconCoords, _
 		local group = self:GetStatusGroup(status)
-		if group then
+		if group and false then
 			name, desc, icon, iconCoords = group.name, group.desc, group.icon, group.iconCoords
 		else
 			_, name, desc, icon, iconCoords = self:GetStatusInfo(status)
@@ -221,22 +224,23 @@ end
 function Grid2Options:MakeStatusOptions(status)
 	local catGroup, name, desc, icon, coords, params = self:GetStatusInfo(status)
 	if catGroup then
+		local order = params and params.groupOrder
 		local group = catGroup.args[status.name]
-		if not group then
-			local order = params and params.groupOrder
-			group = {
-				type  = "group",
-				order = (type(order)=='function' and order(status) or order) or (status.name~=status.dbx.type and 200) or nil,
-				name  = name,
-				desc  = desc,
-				icon  = icon,
-				iconCoords = coords,
-				childGroups = params and params.childGroups or "tab",
-				args  = {},
-			}
-			catGroup.args[status.name] = group
-		else
+		if group then
 			wipe(group.args)
+		else
+			group = { type = "group", args = {} }
+			catGroup.args[status.name] = group
+		end
+		group.name = name
+		group.desc = desc
+		group.icon = icon
+		group.iconCoords = coords
+		group.childGroups = params and params.childGroups or "tab"
+		group.order = (type(order)=='function' and order(status) or order) or (status.name==status.dbx.type and 100 or 200)
+		if status:IsSuspended() then
+			group.order = group.order+500
+			group.name  = string.format('|cFF808080%s|r',group.name)	
 		end
 		self:MakeStatusChildOptions(status, group.args)
 	end

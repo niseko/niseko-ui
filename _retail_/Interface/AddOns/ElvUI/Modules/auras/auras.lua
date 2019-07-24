@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
-local A = E:NewModule('Auras', 'AceHook-3.0', 'AceEvent-3.0');
+local A = E:GetModule('Auras');
 local LSM = E.Libs.LSM
 
 --Lua functions
@@ -86,7 +86,7 @@ function A:UpdateTime(elapsed)
 		end
 
 		self.timeLeft = nil
-		self.time:SetText("")
+		self.time:SetText('')
 		self:SetScript("OnUpdate", nil)
 	else
 		local timeColors, timeThreshold = (self.timerOptions and self.timerOptions.timeColors) or E.TimeColors, (self.timerOptions and self.timerOptions.timeThreshold) or E.db.cooldown.threshold
@@ -218,14 +218,14 @@ function A:UpdateAura(button, index)
 			A.UpdateTime(button, 0)
 		else
 			button.timeLeft = nil
-			button.time:SetText("")
+			button.time:SetText('')
 			button:SetScript("OnUpdate", nil)
 		end
 
 		if count and (count > 1) then
 			button.count:SetText(count)
 		else
-			button.count:SetText("")
+			button.count:SetText('')
 		end
 
 		if filter == "HARMFUL" then
@@ -265,7 +265,7 @@ function A:UpdateTempEnchant(button, index)
 		button.offset = nil
 		button.timeLeft = nil
 		button:SetScript("OnUpdate", nil)
-		button.time:SetText("")
+		button.time:SetText('')
 	end
 end
 
@@ -273,7 +273,7 @@ function A:CooldownText_Update(button)
 	if not button then return end
 
 	-- cooldown override settings
-	button.alwaysEnabled = true
+	button.forceEnabled = true
 
 	if not button.timerOptions then
 		button.timerOptions = {}
@@ -353,7 +353,7 @@ function A:UpdateHeader(header)
 	local child = select(index, header:GetChildren())
 	while child do
 		if (floor(child:GetWidth() * 100 + 0.5) / 100) ~= db.size then
-			child:SetSize(db.size, db.size)
+			child:Size(db.size, db.size)
 		end
 
 		child.auraType = auraType -- used to update cooldown text
@@ -414,8 +414,8 @@ function A:Initialize()
 
 	if not E.private.auras.enable then return end
 
+	self.Initialized = true
 	self.db = E.db.auras
-
 	self.BuffFrame = self:CreateAuraHeader("HELPFUL")
 	self.BuffFrame:Point("TOPRIGHT", _G.MMHolder, "TOPLEFT", -(6 + E.Border), -E.Border - E.Spacing)
 	E:CreateMover(self.BuffFrame, "BuffsMover", L["Player Buffs"], nil, nil, nil, nil, nil, 'auras,buffs')

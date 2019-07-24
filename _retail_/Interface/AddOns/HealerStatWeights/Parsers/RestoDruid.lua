@@ -24,8 +24,13 @@ local hots = { --spells that count towards druid mastery stacks
 	[addon.Druid.Cultivation]=true,
 	[addon.Druid.CenarionWard]=true,
 	[addon.Druid.DreamerHoT]=true,
-	[addon.Druid.FrenziedRegen]=true 
+	[addon.Druid.FrenziedRegen]=true,
+	[addon.Druid.GroveTending]=true
 }
+
+function addon.Druid:IsHOT(spellID)
+	return hots[spellID];
+end
 
 local function hotCount(unit)
 	local count = 0;

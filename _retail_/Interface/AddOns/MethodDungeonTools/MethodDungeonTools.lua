@@ -82,6 +82,7 @@ local defaultSavedVars = {
 		currentDifficulty = 10,
 		xoffset = 0,
 		yoffset = -150,
+        defaultColor = "228b22",
 		anchorFrom = "TOP",
 		anchorTo = "TOP",
         tooltipInCorner = false,
@@ -162,13 +163,23 @@ do
                     if v <= 0 then db.currentPreset[k] = 1 end
                 end
             end
+            --register AddOn Options
+            MethodDungeonTools:RegisterOptions()
             self:UnregisterEvent("ADDON_LOADED")
         end
     end
+    local last = 0
     function MethodDungeonTools.GROUP_ROSTER_UPDATE(self,addon)
-        if not MethodDungeonTools.main_frame then return end
-        local inGroup = UnitInRaid("player") or IsInGroup()
-        MethodDungeonTools.main_frame.LinkToChatButton:SetDisabled(not inGroup)
+        --check not more than once per second (blizzard event spam)
+        local now = GetTime()
+        if last < now - 1 then
+            if not MethodDungeonTools.main_frame then return end
+            local inGroup = UnitInRaid("player") or IsInGroup()
+            MethodDungeonTools.main_frame.LinkToChatButton:SetDisabled(not inGroup)
+            MethodDungeonTools.main_frame.LiveSessionButton:SetDisabled(not inGroup)
+            MethodDungeonTools:LiveSession_RequestSessions()
+            last = now
+        end
     end
     function MethodDungeonTools.PLAYER_ENTERING_WORLD(self,addon)
         MethodDungeonTools:GetCurrentAffixWeek()
@@ -182,6 +193,7 @@ end
 MethodDungeonTools.dungeonTotalCount = {}
 MethodDungeonTools.scaleMultiplier = {}
 
+--[[8.1.5 old data
 local affixWeeks = { --affixID as used in C_ChallengeMode.GetAffixInfo(affixID)
     [1] = {[1]=6,[2]=3,[3]=9,[4]=117},
     [2] = {[1]=5,[2]=13,[3]=10,[4]=117},
@@ -194,7 +206,22 @@ local affixWeeks = { --affixID as used in C_ChallengeMode.GetAffixInfo(affixID)
     [9] = {[1]=5,[2]=3,[3]=9,[4]=117},
     [10] = {[1]=8,[2]=12,[3]=10,[4]=117},
     [11] = {[1]=7,[2]=13,[3]=9,[4]=117},
-    [12] = {[1]=11,[2]=14,[3]=10,[4]=117},
+    [12] = {[1]=11,[2]=3,[3]=10,[4]=117},
+}
+]]
+local affixWeeks = { --affixID as used in C_ChallengeMode.GetAffixInfo(affixID)
+    [1] = {[1]=5,[2]=3,[3]=9,[4]=117},
+    [2] = {[1]=7,[2]=2,[3]=10,[4]=117},
+    [3] = {[1]=6,[2]=4,[3]=9,[4]=117},
+    [4] = {[1]=5,[2]=14,[3]=10,[4]=117},
+    [5] = {[1]=11,[2]=2,[3]=9,[4]=117},
+    [6] = {[1]=8,[2]=4,[3]=10,[4]=117},
+    [7] = {[1]=7,[2]=12,[3]=9,[4]=117},
+    [8] = {[1]=5,[2]=13,[3]=10,[4]=117},
+    [9] = {[1]=6,[2]=3,[3]=9,[4]=117},
+    [10] = {[1]=11,[2]=3,[3]=10,[4]=117},
+    [11] = {[1]=7,[2]=13,[3]=9,[4]=117},
+    [12] = {[1]=8,[2]=12,[3]=10,[4]=117},
 }
 
 local dungeonList = {
@@ -498,7 +525,7 @@ function MethodDungeonTools:ShowInterface(force)
 		MethodDungeonTools:HideInterface()
 	else
 		self.main_frame:Show()
-		--MethodDungeonTools:UpdateToDungeon(db.currentDungeonIdx)
+        self:LiveSession_RequestSessions()
 		self.main_frame.HelpButton:Show()
 	end
 end
@@ -828,7 +855,7 @@ function MethodDungeonTools:MakeSidePanel(frame)
 	frame.LinkToChatButton.frame:SetHighlightFontObject(fontInstance)
 	frame.LinkToChatButton.frame:SetDisabledFontObject(fontInstance)
 	frame.LinkToChatButton:SetCallback("OnClick",function(widget,callbackName,value)
-        local distribution = (UnitInRaid("player") and "RAID") or (IsInGroup() and "PARTY")
+        local distribution = MethodDungeonTools:IsPlayerInGroup()
         if not distribution then return end
         frame.LinkToChatButton:SetDisabled(true)
         frame.LinkToChatButton:SetText("Sending")
@@ -837,12 +864,51 @@ function MethodDungeonTools:MakeSidePanel(frame)
     local inGroup = UnitInRaid("player") or IsInGroup()
     MethodDungeonTools.main_frame.LinkToChatButton:SetDisabled(not inGroup)
 
+
+    frame.ClearPresetButton = AceGUI:Create("Button")
+    frame.ClearPresetButton:SetText("Clear")
+    frame.ClearPresetButton:SetWidth(buttonWidth)
+    frame.ClearPresetButton.frame:SetNormalFontObject(fontInstance)
+    frame.ClearPresetButton.frame:SetHighlightFontObject(fontInstance)
+    frame.ClearPresetButton.frame:SetDisabledFontObject(fontInstance)
+    frame.ClearPresetButton:SetCallback("OnClick",function(widget,callbackName,value)
+        MethodDungeonTools:OpenClearPresetDialog()
+    end)
+
+    frame.LiveSessionButton = AceGUI:Create("Button")
+    frame.LiveSessionButton:SetText("Live")
+    frame.LiveSessionButton:SetWidth(buttonWidth)
+    frame.LiveSessionButton.frame:SetNormalFontObject(fontInstance)
+    frame.LiveSessionButton.frame:SetHighlightFontObject(fontInstance)
+    frame.LiveSessionButton.frame:SetDisabledFontObject(fontInstance)
+    local c1,c2,c3 = frame.LiveSessionButton.text:GetTextColor()
+    frame.LiveSessionButton.normalTextColor = {
+        r = c1,
+        g = c2,
+        b = c3,
+    }
+    frame.LiveSessionButton:SetCallback("OnClick",function(widget,callbackName,value)
+        if MethodDungeonTools.liveSessionActive then
+            widget.text:SetTextColor(widget.normalTextColor.r,widget.normalTextColor.g,widget.normalTextColor.b)
+            widget.text:SetText("Live")
+            MethodDungeonTools:LiveSession_Disable()
+        else
+            widget.text:SetTextColor(0,1,0)
+            widget.text:SetText("*Live*")
+            MethodDungeonTools:LiveSession_Enable()
+        end
+    end)
+    MethodDungeonTools.main_frame.LiveSessionButton:SetDisabled(not inGroup)
+
 	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelNewButton)
+    frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelRenameButton)
+    frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelDeleteButton)
+    frame.sidePanel.WidgetGroup:AddChild(frame.ClearPresetButton)
 	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelImportButton)
 	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelExportButton)
-	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelRenameButton)
 	frame.sidePanel.WidgetGroup:AddChild(frame.LinkToChatButton)
-	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanelDeleteButton)
+
+	--frame.sidePanel.WidgetGroup:AddChild(frame.LiveSessionButton)
 
 
 
@@ -877,7 +943,8 @@ function MethodDungeonTools:MakeSidePanel(frame)
         for week,affixes in ipairs(affixWeeks) do
             tinsert(affixWeekMarkups,makeAffixString(week,affixes))
         end
-        affixDropdown:SetList(affixWeekMarkups)
+        local order = {1,2,3,4,5,6,7,8,9,10,11,12}
+        affixDropdown:SetList(affixWeekMarkups,order)
         --mouseover list items
         for itemIdx,item in ipairs(affixDropdown.pullout.items) do
             item:SetOnEnter(function()
@@ -910,10 +977,11 @@ function MethodDungeonTools:MakeSidePanel(frame)
         --MethodDungeonTools:UpdateMap()
         MethodDungeonTools:DungeonEnemies_UpdateTeeming()
         --MethodDungeonTools:DungeonEnemies_UpdateInfested(key)
-        MethodDungeonTools:DungeonEnemies_UpdateReaping()
+        --MethodDungeonTools:DungeonEnemies_UpdateReaping()
         MethodDungeonTools:UpdateFreeholdSelector(key)
         MethodDungeonTools:DungeonEnemies_UpdateBlacktoothEvent(key)
         MethodDungeonTools:DungeonEnemies_UpdateBoralusFaction(MethodDungeonTools:GetCurrentPreset().faction)
+        MethodDungeonTools:DungeonEnemies_UpdateBeguiling()
         MethodDungeonTools:POI_UpdateAll()
         if not ignoreUpdateProgressBar then
             MethodDungeonTools:UpdateProgressbar()
@@ -975,7 +1043,7 @@ function MethodDungeonTools:MakeSidePanel(frame)
 	frame.sidePanel.DifficultySlider:SetCallback("OnValueChanged",function(widget,callbackName,value)
 		local difficulty = tonumber(value)
         db.currentDifficulty = difficulty or db.currentDifficulty
-        MethodDungeonTools:DungeonEnemies_UpdateReaping()
+        --MethodDungeonTools:DungeonEnemies_UpdateReaping()
 	end)
 	frame.sidePanel.WidgetGroup:AddChild(frame.sidePanel.DifficultySlider)
 
@@ -1101,6 +1169,8 @@ function MethodDungeonTools:ZoomMap(delta,resetZoom)
 	scrollFrame:SetHorizontalScroll(newScrollH);
 	scrollFrame:SetVerticalScroll(newScrollV);
 
+    MethodDungeonTools:SetPingOffsets(newScale)
+
 end
 
 
@@ -1131,6 +1201,8 @@ function MethodDungeonTools:UpdatePullTooltip(tooltip)
         tooltip:Hide()
 	else
 		if frame.sidePanel.newPullButtons and tooltip.currentPull and frame.sidePanel.newPullButtons[tooltip.currentPull] then
+            --enemy portraits
+            local showData
 			for k,v in pairs(frame.sidePanel.newPullButtons[tooltip.currentPull].enemyPortraits) do
 				if MouseIsOver(v) then
 					if v:IsShown() then
@@ -1139,12 +1211,10 @@ function MethodDungeonTools:UpdatePullTooltip(tooltip)
 							tooltip.Model:SetDisplayInfo(v.enemyData.displayId)
 							tooltip.modelNpcId = v.enemyData.displayId
 						end
-						tooltip.Model:Show()
                         --topString
                         local newLine = "\n"
                         local text = newLine..newLine..newLine..v.enemyData.name.." x"..v.enemyData.quantity..newLine
                         text = text.."Level "..v.enemyData.level.." "..v.enemyData.creatureType..newLine
-                        --ViragDevTool_AddData(v.enemyData)
                         local boss = v.enemyData.isBoss or false
                         local health = MethodDungeonTools:CalculateEnemyHealth(boss,v.enemyData.baseHealth,db.currentDifficulty)
                         text = text..MethodDungeonTools:FormatEnemyHealth(health).." HP"..newLine
@@ -1152,18 +1222,52 @@ function MethodDungeonTools:UpdatePullTooltip(tooltip)
                         local totalForcesMax = MethodDungeonTools:IsCurrentPresetTeeming() and MethodDungeonTools.dungeonTotalCount[db.currentDungeonIdx].teeming or MethodDungeonTools.dungeonTotalCount[db.currentDungeonIdx].normal
                         text = text.."Forces: "..MethodDungeonTools:FormatEnemyForces(v.enemyData.count,totalForcesMax,false)
 
-                        tooltip.topString:SetText(text)
-                        tooltip.topString:Show()
 
-					else
-                        --model
-						tooltip.Model:Hide()
-                        --topString
-                        tooltip.topString:Hide()
+                        local reapingText = ''
+                        if v.enemyData.reaping then
+                            local reapingIcon = CreateTextureMarkup(MethodDungeonTools.reapingStatic[tostring(v.enemyData.reaping)].iconTexture, 32, 32, 16, 16, 0, 1, 0, 1,0,0) or ""
+                            reapingText = "Reaping: "..reapingIcon.." "..MethodDungeonTools.reapingStatic[tostring(v.enemyData.reaping)].name .. "\n"
+                        end
+                        text = text.."\n"..reapingText
+
+                        tooltip.topString:SetText(text)
+                        showData = true
 					end
 					break;
 				end
 			end
+            --reaping icon
+            --[[
+            local reapingIcon = frame.sidePanel.newPullButtons[tooltip.currentPull].reapingIcon
+            if MouseIsOver(reapingIcon) and reapingIcon:IsShown() then
+                --model
+                local bwomsamdiId = 75961
+                if not tooltip.modelNpcId or (tooltip.modelNpcId ~= bwomsamdiId) then
+                    tooltip.Model:SetDisplayInfo(bwomsamdiId)
+                    tooltip.modelNpcId = bwomsamdiId
+                end
+                --topString
+                local risenIcon = CreateTextureMarkup(MethodDungeonTools.reapingStatic["148716"].iconTexture, 32, 32, 16, 16, 0, 1, 0, 1,0,0) or ""
+                local tormentedIcon = CreateTextureMarkup(MethodDungeonTools.reapingStatic["148893"].iconTexture, 32, 32, 16, 16, 0, 1, 0, 1,0,0) or ""
+                local lostIcon = CreateTextureMarkup(MethodDungeonTools.reapingStatic["148894"].iconTexture, 32, 32, 16, 16, 0, 1, 0, 1,0,0) or ""
+                local risenCount,tormentedCount,lostCount = MethodDungeonTools:GetReapingTypesForPull(tooltip.currentPull)
+                local newLine = "\n"
+                local text = newLine..newLine..risenCount.."x "..risenIcon.." Risen Soul"
+                text = text..newLine..newLine..tormentedCount.."x "..tormentedIcon.." Tormented Soul"
+                text = text..newLine..newLine..lostCount.."x "..lostIcon.." Lost Soul"
+                tooltip.topString:SetText(text)
+                showData = true
+            end
+            ]]
+
+            if showData then
+                tooltip.topString:Show()
+                tooltip.Model:Show()
+            else
+                tooltip.topString:Hide()
+                tooltip.Model:Hide()
+            end
+
             local countEnemies = 0
             for k,v in pairs(frame.sidePanel.newPullButtons[tooltip.currentPull].enemyPortraits) do
                 if v:IsShown() then countEnemies = countEnemies + 1 end
@@ -1196,22 +1300,10 @@ function MethodDungeonTools:CountForces(currentPull,currentOnly)
         if not currentOnly or (currentOnly and pullIdx == currentPull) then
             if pullIdx <= currentPull then
                 for enemyIdx,clones in pairs(pull) do
-                    for k,v in pairs(clones) do
-                        local isCloneBlacktoothEvent = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][v].blacktoothEvent
-                        local week = preset.week%3
-                        if week == 0 then week = 3 end
-                        local isBlacktoothWeek = week == 1
-                        local cloneFaction = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][v].faction
-
-                        if not isCloneBlacktoothEvent or isBlacktoothWeek then
-                            if not (cloneFaction and cloneFaction~= preset.faction) then
-                                local isCloneTeeming = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][v].teeming
-                                local isCloneNegativeTeeming = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][v].negativeTeeming
-                                if MethodDungeonTools:IsCurrentPresetTeeming() or ((isCloneTeeming and isCloneTeeming == false) or (not isCloneTeeming)) then
-                                    if not(MethodDungeonTools:IsCurrentPresetTeeming() and isCloneNegativeTeeming) then
-                                        pullCurrent = pullCurrent + MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx].count
-                                    end
-                                end
+                    if tonumber(enemyIdx) then
+                        for k,v in pairs(clones) do
+                            if MethodDungeonTools:IsCloneIncluded(enemyIdx,v) then
+                                pullCurrent = pullCurrent + MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx].count
                             end
                         end
                     end
@@ -1222,6 +1314,35 @@ function MethodDungeonTools:CountForces(currentPull,currentOnly)
         end
     end
     return pullCurrent
+end
+
+---Checks if the specified clone is part of the current map configuration
+function MethodDungeonTools:IsCloneIncluded(enemyIdx,cloneIdx)
+    local preset = MethodDungeonTools:GetCurrentPreset()
+    local isCloneBlacktoothEvent = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].blacktoothEvent
+
+    --beguiling weekly configuration
+    local weekData = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].week
+    if weekData then
+        if weekData[preset.week] then return true else return false end
+    end
+
+    local week = preset.week%3
+    if week == 0 then week = 3 end
+    local isBlacktoothWeek = week == 1
+    local cloneFaction = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].faction
+
+    if not isCloneBlacktoothEvent or isBlacktoothWeek then
+        if not (cloneFaction and cloneFaction~= preset.faction) then
+            local isCloneTeeming = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].teeming
+            local isCloneNegativeTeeming = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].negativeTeeming
+            if MethodDungeonTools:IsCurrentPresetTeeming() or ((isCloneTeeming and isCloneTeeming == false) or (not isCloneTeeming)) then
+                if not(MethodDungeonTools:IsCurrentPresetTeeming() and isCloneNegativeTeeming) then
+                    return true
+                end
+            end
+        end
+    end
 end
 
 ---IsCurrentPresetTeeming
@@ -1251,20 +1372,32 @@ MethodDungeonTools.OnMouseDown = function(self,button)
 	end
 end
 
---local here to be used for dev context menu
-local cursorX, cursorY
 ---MethodDungeonTools.OnMouseUp
 ---handles mouse-up events on the map scrollframe
 MethodDungeonTools.OnMouseUp = function(self,button)
 	local scrollFrame = MethodDungeonTools.main_frame.scrollFrame
-	--local frame = MethodDungeonTools.main_frame
-    --frame.contextDropdown:Hide()
     if scrollFrame.panning then scrollFrame.panning = false end
-        --cursorX, cursorY = GetCursorPosition()
-        --L_EasyMenu(MethodDungeonTools.contextMenuList, frame.contextDropdown, "cursor", 0 , -15, "MENU",5)
-        --frame.contextDropdown:Show()
-        --dont need context menu for now
 
+    --play minimap ping on right click at cursor position
+    if button == "RightButton" then
+        local x,y = MethodDungeonTools:GetCursorPosition()
+        MethodDungeonTools.ping:ClearAllPoints()
+        MethodDungeonTools.ping:SetPoint("CENTER",MethodDungeonTools.main_frame.mapPanelTile1,"TOPLEFT",x,y)
+        MethodDungeonTools.ping:SetModel("interface/minimap/ping/minimapping.m2")
+        local mainFrame = MethodDungeonToolsMapPanelFrame
+        local mapScale = mainFrame:GetScale()
+        MethodDungeonTools:SetPingOffsets(mapScale)
+        MethodDungeonTools.ping:Show()
+        UIFrameFadeOut(MethodDungeonTools.ping, 2, 1, 0)
+        MethodDungeonTools.ping:SetSequence(0)
+    end
+
+end
+
+function MethodDungeonTools:SetPingOffsets(mapScale)
+    local scale = 0.35
+    local offset = (10.25/1000)*mapScale
+    MethodDungeonTools.ping:SetTransform(offset,offset,0,0,0,0,scale)
 end
 
 ---SetCurrentSubLevel
@@ -1292,11 +1425,11 @@ function MethodDungeonTools:GetCurrentPreset()
     return db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]]
 end
 
----GetCurrentTeeming
+---IsWeekTeeming
 ---Returns if the current week has an affix week set that inlcludes the teeming affix
 function MethodDungeonTools:IsWeekTeeming(week)
     if not week then week = MethodDungeonTools:GetCurrentAffixWeek() or 1 end
-    return week == 2 or week == 6 or week == 9
+    return week == 1 or week == 4 or week == 8
 end
 
 ---IsPresetTeeming
@@ -1382,9 +1515,10 @@ function MethodDungeonTools:CalculateEnemyHealth(boss,baseHealth,level)
 	local mult = 1
 	if boss == false and fortified == true then mult = 1.2 end
 	if boss == true and tyrannical == true then mult = 1.4 end
-	mult = round((1.08^(level-2))*mult,2)
+	mult = round((1.10^(level-2))*mult,2)
 	return round(mult*baseHealth,0)
 end
+--613437
 
 function MethodDungeonTools:FormatEnemyHealth(amount)
 	amount = tonumber(amount)
@@ -1423,6 +1557,7 @@ end
 
 function MethodDungeonTools:OpenImportPresetDialog()
 	MethodDungeonTools:HideAllDialogs()
+    MethodDungeonTools.main_frame.presetImportFrame:ClearAllPoints()
 	MethodDungeonTools.main_frame.presetImportFrame:SetPoint("CENTER",MethodDungeonTools.main_frame,"CENTER",0,50)
 	MethodDungeonTools.main_frame.presetImportFrame:Show()
 	MethodDungeonTools.main_frame.presetImportBox:SetText("")
@@ -1444,6 +1579,7 @@ function MethodDungeonTools:OpenNewPresetDialog()
 	MethodDungeonTools.main_frame.PresetCreationDropDown:SetList(presetList)
 	MethodDungeonTools.main_frame.PresetCreationDropDown:SetValue(1)
 	MethodDungeonTools.main_frame.PresetCreationEditbox:SetText("Preset "..countPresets+1)
+    MethodDungeonTools.main_frame.presetCreationFrame:ClearAllPoints()
 	MethodDungeonTools.main_frame.presetCreationFrame:SetPoint("CENTER",MethodDungeonTools.main_frame,"CENTER",0,50)
 	MethodDungeonTools.main_frame.presetCreationFrame:SetStatusText("")
 	MethodDungeonTools.main_frame.presetCreationFrame:Show()
@@ -1455,6 +1591,7 @@ end
 
 function MethodDungeonTools:OpenClearPresetDialog()
     MethodDungeonTools:HideAllDialogs()
+    MethodDungeonTools.main_frame.ClearConfirmationFrame:ClearAllPoints()
     MethodDungeonTools.main_frame.ClearConfirmationFrame:SetPoint("CENTER",MethodDungeonTools.main_frame,"CENTER",0,50)
     local currentPresetName = db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].text
     MethodDungeonTools.main_frame.ClearConfirmationFrame.label:SetText("Clear "..currentPresetName.."?")
@@ -1532,7 +1669,15 @@ function MethodDungeonTools:EnsureDBTables()
 	db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentSublevel = db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentSublevel or 1
 	db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull = db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull or 1
 	db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls = db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls or {}
-	db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls[db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull] = db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls[db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull] or {}
+    -- make sure, that at least 1 pull exists
+    if #db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls == 0 then
+        db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls[1] = {}
+    end
+
+    -- Set current pull to last pull, if the actual current pull does not exists anymore
+    if not db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls[db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull] then
+        db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull = #db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls
+    end
 
 	for k,v in pairs(db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls) do
 		if k ==0  then
@@ -1544,12 +1689,22 @@ function MethodDungeonTools:EnsureDBTables()
     --removed clones: remove data from presets
     for pullIdx,pull in pairs(preset.value.pulls) do
         for enemyIdx,clones in pairs(pull) do
-            for k,v in pairs(clones) do
-                if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][v] then
-                    clones[k] = nil
+
+            if tonumber(enemyIdx) then
+                --enemy does not exist at all anymore
+                if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx] then
+                    pull[enemyIdx] = nil
+                else
+                    --only clones
+                    for k,v in pairs(clones) do
+                        if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][v] then
+                            clones[k] = nil
+                        end
+                    end
                 end
             end
         end
+        pull["color"] = pull["color"] or db.defaultColor
     end
 
     MethodDungeonTools:GetCurrentPreset().week = MethodDungeonTools:GetCurrentPreset().week or MethodDungeonTools:GetCurrentAffixWeek()
@@ -1566,6 +1721,7 @@ function MethodDungeonTools:EnsureDBTables()
         preset.freeholdCrew = week
         preset.freeholdCrewSelected = true
     end
+
 
 end
 
@@ -1729,12 +1885,13 @@ end
 function MethodDungeonTools:OpenChatImportPresetDialog(sender,preset)
     MethodDungeonTools:HideAllDialogs()
     local chatImport = MethodDungeonTools.main_frame.chatPresetImportFrame
+    chatImport:ClearAllPoints()
     chatImport:SetPoint("CENTER",MethodDungeonTools.main_frame,"CENTER",0,50)
     chatImport.currentPreset = preset
     local dungeon = MethodDungeonTools:GetDungeonName(preset.value.currentDungeonIdx)
     local name = preset.text
-    chatImport.importLabel:SetText(chatImport.defaultText..sender.. ": "..dungeon.." - "..name)
     chatImport:Show()
+    chatImport.importLabel:SetText(chatImport.defaultText..sender.. ": "..dungeon.." - "..name)
 end
 
 function MethodDungeonTools:MakePresetImportFrame(frame)
@@ -1911,6 +2068,7 @@ function MethodDungeonTools:PresetsAddPull(index, data)
 	else
 		tinsert(MethodDungeonTools:GetCurrentPreset().value.pulls,data)
 	end
+    MethodDungeonTools:EnsureDBTables()
 end
 
 ---MethodDungeonTools:PresetsMergePulls
@@ -1935,6 +2093,7 @@ function MethodDungeonTools:PresetsMergePulls(pulls, destination)
 
     local newPull = {}
     local removed_pulls = {}
+
     for _, pullIdx in ipairs(pulls) do
         local offset = count_if(removed_pulls, function(entry)
             return entry < pullIdx
@@ -1944,18 +2103,28 @@ function MethodDungeonTools:PresetsMergePulls(pulls, destination)
         local pull = MethodDungeonTools:GetCurrentPreset().value.pulls[index]
 
         for enemyIdx,clones in pairs(pull) do
-            if not newPull[enemyIdx] then
-                newPull[enemyIdx] = clones
-            else
-                for k,v in pairs(clones) do
-                    if newPull[enemyIdx][k] ~= nil then
-                        local newIndex = #newPull[enemyIdx] + 1
-                        newPull[enemyIdx][newIndex] = v
+            if string.match(enemyIdx, "^%d+$") then
+                -- it's really an enemy index
+                if tonumber(enemyIdx) then
+                    if not newPull[enemyIdx] then
+                        newPull[enemyIdx] = clones
                     else
-                        newPull[enemyIdx][k] = v
-                    end
+                        for k,v in pairs(clones) do
+                            if newPull[enemyIdx][k] ~= nil then
+                                local newIndex = #newPull[enemyIdx] + 1
+                                newPull[enemyIdx][newIndex] = v
+                            else
+                                newPull[enemyIdx][k] = v
+                            end
 
+                        end
+                    end
                 end
+            else
+                -- it's another pull option like color
+                local optionName = enemyIdx
+                local optionValue = clones
+                newPull[optionName] = optionValue
             end
         end
 
@@ -1973,6 +2142,10 @@ function MethodDungeonTools:PresetsMergePulls(pulls, destination)
 end
 
 function MethodDungeonTools:PresetsDeletePull(p,j)
+    if p == db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull then
+        db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentPull = math.max(p - 1, 1)
+    end
+
 	tremove(MethodDungeonTools:GetCurrentPreset().value.pulls,p)
 end
 
@@ -1998,11 +2171,13 @@ function MethodDungeonTools:SetMapSublevel(pull)
 	local shouldResetZoom = false
 	local lastSubLevel
 	for enemyIdx,clones in pairs(db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls[pull]) do
-		for idx,cloneIdx in pairs(clones) do
-			if MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx] then
-				lastSubLevel = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].sublevel
-			end
-		end
+        if tonumber(enemyIdx) then
+            for idx,cloneIdx in pairs(clones) do
+                if MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx] then
+                    lastSubLevel = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].sublevel
+                end
+            end
+        end
 	end
 	if lastSubLevel then
 		shouldResetZoom = db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.currentSublevel ~= lastSubLevel
@@ -2059,56 +2234,65 @@ function MethodDungeonTools:UpdatePullButtonNPCData(idx)
 	if preset.value.pulls[idx] then
 		local enemyTableIdx = 0
 		for enemyIdx,clones in pairs(preset.value.pulls[idx]) do
-            --check if enemy exists, remove if not
-            if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx] then
+            if tonumber(enemyIdx) then
+                --check if enemy exists, remove if not
+                if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx] then
 
-            else
-                local incremented = false
-                local npcId = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["id"]
-                local name = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["name"]
-                local creatureType = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["creatureType"]
-                local level = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["level"]
-                local baseHealth = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["health"]
-                for k,cloneIdx in pairs(clones) do
-                    --check if clone exists, remove if not
-                    if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx] then
+                else
+                    local incremented = false
+                    local npcId = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["id"]
+                    local name = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["name"]
+                    local creatureType = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["creatureType"]
+                    local level = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["level"]
+                    local baseHealth = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["health"]
+                    for k,cloneIdx in pairs(clones) do
+                        --check if clone exists, remove if not
+                        if not MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx] then
 
-                    else
-                        --check for teeming
-                        local cloneIsTeeming = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].teeming
-                        if (cloneIsTeeming and teeming) or (not cloneIsTeeming and not teeming) or (not cloneIsTeeming and teeming) then
+                        else
+                            --check for teeming
+                            local cloneIsTeeming = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].teeming
+                            if (cloneIsTeeming and teeming) or (not cloneIsTeeming and not teeming) or (not cloneIsTeeming and teeming) then
 
-                            local isCloneBlacktoothEvent = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].blacktoothEvent
-                            local continue = false
-                            local week = preset.week%3
-                            if week == 0 then week = 3 end
-                            local isBlacktoothWeek = week == 1
-                            if isCloneBlacktoothEvent then
-                                if isBlacktoothWeek then
+                                local isCloneBlacktoothEvent = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].blacktoothEvent
+                                local continue = false
+                                local week = preset.week%3
+                                if week == 0 then week = 3 end
+                                local isBlacktoothWeek = week == 1
+                                if isCloneBlacktoothEvent then
+                                    if isBlacktoothWeek then
+                                        continue = true
+                                    end
+                                else
                                     continue = true
                                 end
-                            else
-                                continue = true
-                            end
 
-                            --check for faction
-                            local cloneFaction = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].faction
-                            if cloneFaction then
-                                if cloneFaction ~= preset.faction then continue = false end
-                            end
+                                --beguiling weekly configuration
+                                local weekData = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].week
+                                if weekData then
+                                    if weekData[preset.week] then continue = true else continue = false end
+                                end
 
-                            if continue then
-                                if not incremented then enemyTableIdx = enemyTableIdx + 1; incremented = true end
-                                if not enemyTable[enemyTableIdx] then enemyTable[enemyTableIdx] = {} end
-                                enemyTable[enemyTableIdx].quantity = enemyTable[enemyTableIdx].quantity or 0
-                                enemyTable[enemyTableIdx].npcId = npcId
-                                enemyTable[enemyTableIdx].count = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["count"]
-                                enemyTable[enemyTableIdx].displayId = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["displayId"]
-                                enemyTable[enemyTableIdx].quantity = enemyTable[enemyTableIdx].quantity + 1
-                                enemyTable[enemyTableIdx].name = name
-                                enemyTable[enemyTableIdx].level = level
-                                enemyTable[enemyTableIdx].creatureType = creatureType
-                                enemyTable[enemyTableIdx].baseHealth = baseHealth
+                                --check for faction
+                                local cloneFaction = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["clones"][cloneIdx].faction
+                                if cloneFaction then
+                                    if cloneFaction ~= preset.faction then continue = false end
+                                end
+
+                                if continue then
+                                    if not incremented then enemyTableIdx = enemyTableIdx + 1; incremented = true end
+                                    if not enemyTable[enemyTableIdx] then enemyTable[enemyTableIdx] = {} end
+                                    enemyTable[enemyTableIdx].quantity = enemyTable[enemyTableIdx].quantity or 0
+                                    enemyTable[enemyTableIdx].npcId = npcId
+                                    enemyTable[enemyTableIdx].count = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["count"]
+                                    enemyTable[enemyTableIdx].displayId = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["displayId"]
+                                    enemyTable[enemyTableIdx].quantity = enemyTable[enemyTableIdx].quantity + 1
+                                    enemyTable[enemyTableIdx].name = name
+                                    enemyTable[enemyTableIdx].level = level
+                                    enemyTable[enemyTableIdx].creatureType = creatureType
+                                    enemyTable[enemyTableIdx].baseHealth = baseHealth
+                                    enemyTable[enemyTableIdx].reaping = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx]["reaping"]
+                                end
                             end
                         end
                     end
@@ -2118,7 +2302,7 @@ function MethodDungeonTools:UpdatePullButtonNPCData(idx)
 	end
 	frame.newPullButtons[idx]:SetNPCData(enemyTable)
 
-    --color pull based on reaping
+    --display reaping icon
     local pullForces = MethodDungeonTools:CountForces(idx,false)
     local totalForcesMax = MethodDungeonTools:IsCurrentPresetTeeming() and MethodDungeonTools.dungeonTotalCount[db.currentDungeonIdx].teeming or MethodDungeonTools.dungeonTotalCount[db.currentDungeonIdx].normal
     local currentPercent = pullForces/totalForcesMax
@@ -2131,12 +2315,11 @@ function MethodDungeonTools:UpdatePullButtonNPCData(idx)
     end
     local oldPercent = oldPullForces/totalForcesMax
 
-    if math.floor(currentPercent/0.2)>math.floor(oldPercent/0.2) then
-        frame.newPullButtons[idx].background:SetVertexColor(0.7, 0, 0.3, 0.8)
+    if (math.floor(currentPercent/0.2)>math.floor(oldPercent/0.2)) and oldPercent<1 then
+        frame.newPullButtons[idx]:ShowReapingIcon(true,currentPercent,oldPercent)
     else
-        frame.newPullButtons[idx].background:SetVertexColor(0.5, 0.5, 0.5, 0.25);
+        frame.newPullButtons[idx]:ShowReapingIcon(false,currentPercent,oldPercent)
     end
-
 end
 
 
@@ -2211,6 +2394,7 @@ end
 ---Clears all the npcs out of a pull
 function MethodDungeonTools:ClearPull(index)
 	table.wipe(db.presets[db.currentDungeonIdx][db.currentPreset[db.currentDungeonIdx]].value.pulls[index])
+    MethodDungeonTools:EnsureDBTables()
 	MethodDungeonTools:ReloadPullButtons()
 	MethodDungeonTools:SetSelectionToPull(index)
 end
@@ -2433,6 +2617,7 @@ end
 ---Creates the tutorial button and sets up the help plate frames
 function MethodDungeonTools:CreateTutorialButton(parent)
     local button = CreateFrame("Button",parent,parent,"MainHelpPlateButton")
+    button:ClearAllPoints()
     button:SetPoint("TOPLEFT",parent,"TOPLEFT",0,48)
 	button:SetScale(0.8)
 	button:SetFrameStrata(mainFrameStrata)
@@ -2471,6 +2656,65 @@ end
 ---RegisterOptions
 ---Register the options of the addon to the blizzard options
 function MethodDungeonTools:RegisterOptions()
+    MethodDungeonTools.blizzardOptionsMenuTable = {
+        name = "Method Dungeon Tools",
+        type = 'group',
+        args = {
+            enable = {
+                type = 'toggle',
+                name = "Enable Minimap Button",
+                desc = "If the Minimap Button is enabled.",
+                get = function() return not db.minimap.hide end,
+                set = function(_, newValue)
+                    db.minimap.hide = not newValue
+                    if not db.minimap.hide then
+                        icon:Show("MethodDungeonTools")
+                    else
+                        icon:Hide("MethodDungeonTools")
+                    end
+                end,
+                order = 1,
+                width = "full",
+            },
+            tooltipSelect ={
+                type = 'select',
+                name = "Choose NPC tooltip position",
+                values = {
+                    [1] = "Next to the NPC",
+                    [2] = "In the bottom right corner",
+                },
+                get = function() return db.tooltipInCorner and 2 or 1 end,
+                set = function(_,newValue)
+                    if newValue == 1 then db.tooltipInCorner = false end
+                    if newValue == 2 then db.tooltipInCorner = true end
+                end,
+                style = 'dropdown',
+            },
+            enemyForcesFormat = {
+                type = "select",
+                name = "Choose Enemy Forces Format",
+                values = {
+                    [1] = "Forces only: 5/200",
+                    [2] = "Forces+%: 5/200 (2.5%)",
+                },
+                get = function() return db.enemyForcesFormat end,
+                set = function(_,newValue) db.enemyForcesFormat = newValue end,
+                style = "dropdown",
+            },
+            enemyStyle = {
+                type = "select",
+                name = "Choose Enemy Style. Requires Reload",
+                values = {
+                    [1] = "Portrait",
+                    [2] = "Plain Texture",
+                },
+                get = function() return db.enemyStyle end,
+                set = function(_,newValue) db.enemyStyle = newValue end,
+                style = "dropdown",
+            },
+
+        }
+    }
 	LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MethodDungeonTools", MethodDungeonTools.blizzardOptionsMenuTable);
 	self.blizzardOptionsMenu = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("MethodDungeonTools", "MethodDungeonTools");
 end
@@ -2709,7 +2953,15 @@ function MethodDungeonTools:GetCurrentAffixWeek()
     end
 end
 
+---IsPlayerInGroup
+---Checks if the players is in a group/raid and returns the type
+function MethodDungeonTools:IsPlayerInGroup()
+    local inGroup = (UnitInRaid("player") and "RAID") or (IsInGroup() and "PARTY")
+    return inGroup
+end
+
 function MethodDungeonTools:ResetMainFramePos()
+    if not framesInitialized then initFrames() end
     local f = MethodDungeonTools.main_frame
     db.xoffset = 0
     db.yoffset = -150
@@ -2732,6 +2984,7 @@ function MethodDungeonTools:DropIndicator()
         texture:SetTexture("Interface\\PaperDollInfoFrame\\UI-Character-Tab-Highlight")
 
         local icon = indicator:CreateTexture(nil, "OVERLAY")
+        icon:ClearAllPoints()
         icon:SetSize(16, 16)
         icon:SetPoint("CENTER", indicator)
 
@@ -2799,6 +3052,45 @@ function MethodDungeonTools:ScrollToPull(pullIdx)
     scrollFrame:FixScroll()
 end
 
+function MethodDungeonTools:CopyPullOptions(sourceIdx, destinationIdx)
+    local preset = MethodDungeonTools:GetCurrentPreset()
+    local pulls = preset.value.pulls
+    local source = pulls[sourceIdx]
+    local destination = pulls[destinationIdx]
+
+    if source and destination then
+        for optionName, optionValue in pairs(source) do
+            -- Assure, that it is an option and not an enemy index
+            if not string.match(optionName, "^%d+$") then
+                destination[optionName] = optionValue
+            end
+        end
+    end
+end
+
+function MethodDungeonTools:GetPullButton(pullIdx)
+    local frame = MethodDungeonTools.main_frame.sidePanel
+    return frame.newPullButtons[pullIdx]
+end
+
+function MethodDungeonTools:UpdatePullButtonColor(pullIdx, r, g, b)
+    local button = MethodDungeonTools:GetPullButton(pullIdx)
+
+    local function updateSwatch(t)
+        for k,v in pairs(t) do
+            if v.hasColorSwatch then
+                v.r,v.g,v.b = r,g,b
+                return
+            end
+        end
+    end
+
+    button.color.r, button.color.g, button.color.b = r, g, b
+    updateSwatch(button.menu)
+    updateSwatch(button.multiselectMenu)
+    button:UpdateColor()
+end
+
 function initFrames()
     local main_frame = CreateFrame("frame", "MethodDungeonToolsFrame", UIParent)
     tinsert(UISpecialFrames,"MethodDungeonToolsFrame")
@@ -2813,6 +3105,15 @@ function initFrames()
 	main_frame:SetSize(sizex, sizey)
 	MethodDungeonTools.main_frame = main_frame
 
+    -- reset frame position after 8.1.5 scaling changes
+    if not db.version or db.version<250 then
+        db.xoffset = 0
+        db.yoffset = -150
+        db.anchorFrom = "TOP"
+        db.anchorTo = "TOP"
+    end
+    local version = GetAddOnMetadata(AddonName, "Version"):gsub("%.","")
+    db.version = tonumber(version)
 	-- Set frame position
 	main_frame:ClearAllPoints();
 	main_frame:SetPoint(db.anchorTo, UIParent,db.anchorFrom, db.xoffset, db.yoffset)
@@ -2868,7 +3169,7 @@ function initFrames()
         local tooltip = MethodDungeonTools.tooltip
         tooltip:SetClampedToScreen(true)
         tooltip:SetFrameStrata("TOOLTIP")
-        tooltip.mySizes ={x=270,y=120}
+        tooltip.mySizes ={x=290,y=120}
 
         tooltip:SetSize(tooltip.mySizes.x, tooltip.mySizes.y)
         tooltip.Model = CreateFrame("PlayerModel", nil, tooltip)
@@ -2888,10 +3189,10 @@ function initFrames()
         tooltip.String:SetFont(tooltip.String:GetFont(),10)
         tooltip.String:SetTextColor(1, 1, 1, 1);
         tooltip.String:SetJustifyH("LEFT")
-        tooltip.String:SetJustifyV("CENTER")
+        --tooltip.String:SetJustifyV("CENTER")
         tooltip.String:SetWidth(tooltip:GetWidth())
         tooltip.String:SetHeight(90)
-        tooltip.String:SetWidth(140)
+        tooltip.String:SetWidth(175)
         tooltip.String:SetText(" ");
         tooltip.String:SetPoint("TOPLEFT", tooltip, "TOPLEFT", 110, -10)
         tooltip.String:Show();
@@ -2963,68 +3264,26 @@ function initFrames()
         skinTooltip(pullTT)
 	end
 
-	--Blizzard Options
-	MethodDungeonTools.blizzardOptionsMenuTable = {
-		name = "Method Dungeon Tools",
-		type = 'group',
-		args = {
-			enable = {
-				type = 'toggle',
-				name = "Enable Minimap Button",
-				desc = "If the Minimap Button is enabled.",
-				get = function() return not db.minimap.hide end,
-				set = function(_, newValue)
-					db.minimap.hide = not newValue
-					if not db.minimap.hide then
-						icon:Show("MethodDungeonTools")
-					else
-						icon:Hide("MethodDungeonTools")
-					end
-				end,
-				order = 1,
-				width = "full",
-			},
-            tooltipSelect ={
-                type = 'select',
-                name = "Choose NPC tooltip position",
-                values = {
-                    [1] = "Next to the NPC",
-                    [2] = "In the bottom right corner",
-                },
-                get = function() return db.tooltipInCorner and 2 or 1 end,
-                set = function(_,newValue)
-                    if newValue == 1 then db.tooltipInCorner = false end
-                    if newValue == 2 then db.tooltipInCorner = true end
-                end,
-                style = 'dropdown',
-            },
-            enemyForcesFormat = {
-              type = "select",
-              name = "Choose Enemy Forces Format",
-              values = {
-                [1] = "Forces only: 5/200",
-                [2] = "Forces+%: 5/200 (2.5%)",
-              },
-              get = function() return db.enemyForcesFormat end,
-              set = function(_,newValue) db.enemyForcesFormat = newValue end,
-              style = "dropdown",
-            },
-            enemyStyle = {
-              type = "select",
-              name = "Choose Enemy Style. Requires Reload",
-              values = {
-                [1] = "Portrait",
-                [2] = "Plain Texture",
-              },
-              get = function() return db.enemyStyle end,
-              set = function(_,newValue) db.enemyStyle = newValue end,
-              style = "dropdown",
-            },
 
-		}
-	}
-	MethodDungeonTools:RegisterOptions()
 	MethodDungeonTools:initToolbar(main_frame)
+
+    --ping
+    MethodDungeonTools.ping = CreateFrame("PlayerModel", nil, MethodDungeonTools.main_frame.mapPanelFrame)
+    local ping = MethodDungeonTools.ping
+    --ping:SetModel("interface/minimap/ping/minimapping.m2")
+    ping:SetModel(120590);
+    ping:SetPortraitZoom(1)
+    ping:SetCamera(1)
+    ping:SetFrameLevel(50)
+    ping:SetFrameStrata("DIALOG")
+    ping.mySize = 45
+    ping:SetSize(ping.mySize,ping.mySize)
+    ping:Hide()
+
+    --temporary background
+    --ping.background = ping:CreateTexture(nil,"BACKGROUND")
+    --ping.background:SetAllPoints()
+    --ping.background:SetColorTexture(0,0,0,1)
 
     --Set affix dropdown to preset week
     --gotta set the list here, as affixes are not ready to be retrieved yet on login

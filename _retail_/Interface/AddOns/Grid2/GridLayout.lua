@@ -185,22 +185,16 @@ function Grid2Layout:OnModuleInitialize()
 	self.frame:SetScript("OnMouseDown", function (_, button) self:StartMoveFrame(button) end)
 	-- extra frame for background and border textures, to be able to resize in combat
 	self.frameBack = CreateFrame("Frame", "Grid2LayoutFrameBack", self.frame)
-	-- add custom layouts
+	-- custom defaults
 	self.customDefaults = self.db.global.customDefaults
-	self.customLayouts  = self.db.global.customLayouts 
-	for n,l in pairs(self.customLayouts) do
-		for _,h in ipairs(l) do
-			h.type = strmatch(h.type or '', 'pet') -- conversion of old format
-		end
-		self:AddLayout(n,l)
-	end
+	-- add custom layouts
+	self:AddCustomLayouts()
 end
 
 function Grid2Layout:OnModuleEnable()
 	self:FixLayouts()
 	self:UpdateFrame()
 	self:UpdateTextures()
-	self:RestorePosition()
 	self:RegisterMessage("Grid_RosterUpdate")
 	self:RegisterMessage("Grid_GroupTypeChanged")
 	self:RegisterMessage("Grid_UpdateLayoutSize")
@@ -577,6 +571,9 @@ function Grid2Layout:UpdateFramesSize()
 		Grid2Frame:LayoutFrames()
 		self:UpdateHeaders() -- Force headers size update because this triggers a "Grid_UpdateLayoutSize" message.
 	end
+	if self.frame:GetWidth()==0 then
+		self.frame:SetSize(1,1) -- assign a default size, to make frame visible if we are in combat after a UI reload
+	end
 end
 
 function Grid2Layout:UpdateSize()
@@ -676,6 +673,7 @@ function Grid2Layout:AddLayout(layoutName, layout)
 	self.layoutSettings[layoutName] = layout
 end
 
+-- Fix non existent layouts for a theme
 function Grid2Layout:FixLayoutsTable(db)
 	local defaults = self.defaultDB.profile.layouts
 	for groupType,layoutName in pairs(db) do
@@ -685,11 +683,25 @@ function Grid2Layout:FixLayoutsTable(db)
 	end
 end
 
+-- Fix non existent layouts for all themes
 function Grid2Layout:FixLayouts()
 	self:FixLayoutsTable(self.dba.profile.layouts)
 	for _,theme in ipairs(self.dba.profile.extraThemes or {}) do
 		self:FixLayoutsTable(theme.layouts)
 	end
+end
+
+-- Register user defined layouts (called from Grid2Options do not remove)
+function Grid2Layout:AddCustomLayouts()
+	self.customLayouts = self.db.global.customLayouts
+	if self.customLayouts then
+		for n,l in pairs(self.customLayouts) do
+			for _,h in ipairs(l) do
+				h.type = strmatch(h.type or '', 'pet') -- conversion of old format
+			end
+			self:AddLayout(n,l)
+		end
+	end	
 end
 
 --}}}

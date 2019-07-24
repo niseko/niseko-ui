@@ -1,4 +1,4 @@
-## Interface: 80100
+## Interface: 80200
 ## Title: BigWigs |cffff7f3f+|r|cffffffffCountdown: Overwatch|r
 ## Title-deDE: BigWigs |cffff7f3f+|r|cffffffffCountdown: Overwatch|r
 ## Title-esES: BigWigs |cffff7f3f+|r|cffffffffCuenta Atrás: Overwatch|r
@@ -11,7 +11,7 @@
 ## Title-zhCN: BigWigs |cffff7f3f+|r|cffffffff倒数：守望先锋|r
 ## Title-zhTW: BigWigs |cffff7f3f+|r|cffffffff倒數：鬥陣特攻|r
 ## Author: Neb
-## Version: 1.1.0
+## Version: 1.2.2
 ## Dependencies: BigWigs
 
 Locales.lua

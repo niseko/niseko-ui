@@ -1,34 +1,46 @@
 
 SimulationCraftDB = {
 	["profileKeys"] = {
+		["Afwfes - Stormscale"] = "Afwfes - Stormscale",
+		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
+		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
+		["Se - Stormscale"] = "Se - Stormscale",
+		["Niseko - Stormscale"] = "Niseko - Stormscale",
 		["Nisepie - Stormscale"] = "Nisepie - Stormscale",
 		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
-		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Niseko - Stormscale"] = "Niseko - Stormscale",
-		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
-		["Seko - Stormscale"] = "Seko - Stormscale",
-		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
 		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
+		["Awfrsdg - Stormscale"] = "Awfrsdg - Stormscale",
+		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
+		["Seko - Stormscale"] = "Seko - Stormscale",
 	},
 	["profiles"] = {
-		["Nisepie - Stormscale"] = {
-		},
-		["Yoshicakes - Stormscale"] = {
+		["Afwfes - Stormscale"] = {
 		},
 		["Nisefy - Stormscale"] = {
+		},
+		["Valdurawr - Stormscale"] = {
+		},
+		["Se - Stormscale"] = {
+			["minimap"] = {
+				["minimapPos"] = 171.285256549401,
+			},
 		},
 		["Niseko - Stormscale"] = {
 			["minimap"] = {
 				["hide"] = true,
 			},
 		},
-		["Valdurawr - Stormscale"] = {
+		["Nisepie - Stormscale"] = {
 		},
-		["Seko - Stormscale"] = {
+		["Yoshicakes - Stormscale"] = {
+		},
+		["Nisearw - Stormscale"] = {
+		},
+		["Awfrsdg - Stormscale"] = {
 		},
 		["Nyanporo - Blackmoore"] = {
 		},
-		["Nisearw - Stormscale"] = {
+		["Seko - Stormscale"] = {
 		},
 	},
 }

@@ -1,4 +1,5 @@
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
+local Skins = E:GetModule("Skins")
 
 --Lua functions
 --WoW API / Variables
@@ -23,7 +24,7 @@ local function AreOtherAddOnsEnabled()
 	local name
 	for i = 1, GetNumAddOns() do
 		name = GetAddOnInfo(i)
-		if ((name ~= "ElvUI" and name ~= "ElvUI_Config") and IsAddOnEnabled(name)) then --Loaded or load on demand
+		if ((name ~= "ElvUI" and name ~= "ElvUI_OptionsUI") and IsAddOnEnabled(name)) then --Loaded or load on demand
 			return "Yes"
 		end
 	end
@@ -125,7 +126,7 @@ function E:CreateStatusFrame()
 		section.Header.Text:SetJustifyH("CENTER")
 		section.Header.Text:SetJustifyV("MIDDLE")
 		local font, height, flags = section.Header.Text:GetFont()
-		section.Header.Text:SetFont(font, height*1.3, flags)
+		section.Header.Text:FontTemplate(font, height*1.3, flags)
 
 		section.Header.LeftDivider = section.Header:CreateTexture(nil, "ARTWORK")
 		section.Header.LeftDivider:Height(8)
@@ -183,7 +184,7 @@ function E:CreateStatusFrame()
 	StatusFrame.TitleLogoFrame:Size(128, 64)
 	StatusFrame.TitleLogoFrame:Point("CENTER", StatusFrame, "TOP", 0, 0)
 	StatusFrame.TitleLogoFrame.Texture = StatusFrame.TitleLogoFrame:CreateTexture(nil, "ARTWORK")
-	StatusFrame.TitleLogoFrame.Texture:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\logo")
+	StatusFrame.TitleLogoFrame.Texture:SetTexture(E.Media.Textures.Logo)
 	StatusFrame.TitleLogoFrame.Texture:SetAllPoints()
 
 	--Sections
@@ -229,13 +230,13 @@ function E:CreateStatusFrame()
 	StatusFrame.Section4.Content.Button1:Point("LEFT", StatusFrame.Section4.Content, "LEFT")
 	StatusFrame.Section4.Content.Button1:SetText("Forum")
 	StatusFrame.Section4.Content.Button1:SetButtonState("DISABLED")
-	E:GetModule("Skins"):HandleButton(StatusFrame.Section4.Content.Button1, true)
+	Skins:HandleButton(StatusFrame.Section4.Content.Button1, true)
 	StatusFrame.Section4.Content.Button2 = CreateFrame("Button", nil, StatusFrame.Section4.Content, "UIPanelButtonTemplate")
 	StatusFrame.Section4.Content.Button2:Size(100, 25)
 	StatusFrame.Section4.Content.Button2:Point("RIGHT", StatusFrame.Section4.Content, "RIGHT")
 	StatusFrame.Section4.Content.Button2:SetText("Ticket")
 	StatusFrame.Section4.Content.Button2:SetButtonState("DISABLED")
-	E:GetModule("Skins"):HandleButton(StatusFrame.Section4.Content.Button2, true)
+	Skins:HandleButton(StatusFrame.Section4.Content.Button2, true)
 
 	E.StatusFrame = StatusFrame
 end

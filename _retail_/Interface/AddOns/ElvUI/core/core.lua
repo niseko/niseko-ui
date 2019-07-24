@@ -1,49 +1,65 @@
 local ElvUI = select(2, ...)
-local E, _, V, P, G = unpack(ElvUI); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
+
+local gameLocale
+do -- Locale doesn't exist yet, make it exist.
+	local convert = {['enGB'] = 'enUS', ['esES'] = 'esMX', ['itIT'] = 'enUS'}
+	local lang = GetLocale()
+
+	gameLocale = convert[lang] or lang or 'enUS'
+	ElvUI[2] = ElvUI[1].Libs.ACL:GetLocale('ElvUI', gameLocale)
+end
+
+local E, L, V, P, G = unpack(ElvUI); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
+
+local ActionBars = E:GetModule('ActionBars')
+local AFK = E:GetModule('AFK')
+local Auras = E:GetModule('Auras')
+local Bags = E:GetModule('Bags')
+local Blizzard = E:GetModule('Blizzard')
+local Chat = E:GetModule('Chat')
+local DataBars = E:GetModule('DataBars')
+local DataTexts = E:GetModule('DataTexts')
+local Layout = E:GetModule('Layout')
+local Minimap = E:GetModule('Minimap')
+local NamePlates = E:GetModule('NamePlates')
+local Threat = E:GetModule('Threat')
+local Tooltip = E:GetModule('Tooltip')
+local Totems = E:GetModule('Totems')
+local UnitFrames = E:GetModule('UnitFrames')
+
 local LSM = E.Libs.LSM
 local Masque = E.Libs.Masque
-
--- Locale doesn't exist yet, make it exist.
-local L = E.Libs.ACL:GetLocale('ElvUI', false)
-ElvUI[2] = L
 
 --Lua functions
 local _G = _G
 local tonumber, pairs, ipairs, error, unpack, select, tostring = tonumber, pairs, ipairs, error, unpack, select, tostring
-local assert, type, collectgarbage, pcall, date = assert, type, collectgarbage, pcall, date
+local assert, type, pcall, date, print = assert, type, pcall, date, print
 local twipe, tinsert, tremove, next = wipe, tinsert, tremove, next
-local floor, gsub, strmatch, strjoin = floor, gsub, match, strjoin
+local gsub, strmatch, strjoin = gsub, strmatch, strjoin
 local format, find, strrep, len, sub = format, strfind, strrep, strlen, strsub
 --WoW API / Variables
 local CreateFrame = CreateFrame
 local GetCVar, SetCVar, GetCVarBool = GetCVar, SetCVar, GetCVarBool
-local GetChannelName = GetChannelName
-local GetCombatRatingBonus = GetCombatRatingBonus
-local GetDodgeChance, GetParryChance = GetDodgeChance, GetParryChance
 local GetFunctionCPUUsage = GetFunctionCPUUsage
 local GetNumGroupMembers = GetNumGroupMembers
-local GetSpecialization, GetActiveSpecGroup = GetSpecialization, GetActiveSpecGroup
+local GetSpecialization = GetSpecialization
 local GetSpecializationRole = GetSpecializationRole
 local InCombatLockdown = InCombatLockdown
 local IsAddOnLoaded = IsAddOnLoaded
 local IsInInstance, IsInGuild = IsInInstance, IsInGuild
 local IsInRaid, IsInGroup = IsInRaid, IsInGroup
-local JoinChannelByName = JoinChannelByName
-local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local RequestBattlefieldScoreData = RequestBattlefieldScoreData
 local UnitFactionGroup = UnitFactionGroup
 local UnitGUID = UnitGUID
+local GetAddOnEnableState = GetAddOnEnableState
+local UIParentLoadAddOn = UIParentLoadAddOn
 local UnitGroupRolesAssigned = UnitGroupRolesAssigned
 local UnitHasVehicleUI = UnitHasVehicleUI
-local UnitLevel, UnitStat, UnitAttackPower = UnitLevel, UnitStat, UnitAttackPower
+local UnitStat, UnitAttackPower = UnitStat, UnitAttackPower
 local hooksecurefunc = hooksecurefunc
-local COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN = COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN
 local LE_PARTY_CATEGORY_HOME = LE_PARTY_CATEGORY_HOME
 local LE_PARTY_CATEGORY_INSTANCE = LE_PARTY_CATEGORY_INSTANCE
-local MAX_PLAYER_LEVEL = MAX_PLAYER_LEVEL
-local MAX_WOW_CHAT_CHANNELS = MAX_WOW_CHAT_CHANNELS
 local ERR_NOT_IN_COMBAT = ERR_NOT_IN_COMBAT
-local C_ChatInfo_GetNumActiveChannels = C_ChatInfo.GetNumActiveChannels
 local C_ChatInfo_SendAddonMessage = C_ChatInfo.SendAddonMessage
 local C_PetBattles_IsInBattle = C_PetBattles.IsInBattle
 local C_Timer_After = C_Timer.After
@@ -65,6 +81,7 @@ E.resolution = ({GetScreenResolutions()})[GetCurrentResolution()] or GetCVar('gx
 E.screenwidth, E.screenheight = GetPhysicalScreenSize()
 E.isMacClient = IsMacClient()
 E.NewSign = '|TInterface\\OptionsFrame\\UI-OptionsFrame-NewFeatureIcon:14:14|t' -- not used by ElvUI yet, but plugins like BenikUI and MerathilisUI use it.
+E.InfoColor = '|cfffe7b2c'
 
 --Tables
 E.media = {}
@@ -123,14 +140,6 @@ E.DispelClasses = {
 	['MAGE'] = {
 		['Curse'] = true
 	}
-}
-
-E.HealingClasses = {
-	PALADIN = 1,
-	SHAMAN = 3,
-	DRUID = 4,
-	MONK = 2,
-	PRIEST = {1, 2}
 }
 
 E.ClassRole = {
@@ -195,6 +204,20 @@ E.PriestColors = {
 	colorStr = 'fcfcfc'
 }
 
+-- Socket Type info from 8.2
+E.GemTypeInfo = {
+	Yellow = {r = 0.97, g = 0.82, b = 0.29},
+	Red = {r = 1, g = 0.47, b = 0.47},
+	Blue = {r = 0.47, g = 0.67, b = 1},
+	Hydraulic = {r = 1, g = 1, b = 1},
+	Cogwheel = {r = 1, g = 1, b = 1},
+	Meta = {r = 1, g = 1, b = 1},
+	Prismatic = {r = 1, g = 1, b = 1},
+	PunchcardRed = {r = 1, g = 0.47, b = 0.47},
+	PunchcardYellow = {r = 0.97, g = 0.82, b = 0.29},
+	PunchcardBlue = {r = 0.47, g = 0.67, b = 1},
+}
+
 function E:GetPlayerRole()
 	local assignedRole = UnitGroupRolesAssigned('player')
 	if assignedRole == 'NONE' then
@@ -204,14 +227,36 @@ function E:GetPlayerRole()
 	return assignedRole
 end
 
+function E:GrabColorPickerValues(r, g, b)
+	-- we must block the execution path to `ColorCallback` in `AceGUIWidget-ColorPicker-ElvUI`
+	-- in order to prevent an infinite loop from `OnValueChanged` when passing into `E.UpdateMedia` which eventually leads here again.
+	_G.ColorPickerFrame.noColorCallback = true
+
+	-- grab old values
+	local oldR, oldG, oldB = _G.ColorPickerFrame:GetColorRGB()
+
+	-- set and define the new values
+	_G.ColorPickerFrame:SetColorRGB(r, g, b)
+	r, g, b = _G.ColorPickerFrame:GetColorRGB()
+
+	-- swap back to the old values
+	if oldR then _G.ColorPickerFrame:SetColorRGB(oldR, oldG, oldB) end
+
+	-- free it up..
+	_G.ColorPickerFrame.noColorCallback = nil
+
+	return r, g, b
+end
+
 --Basically check if another class border is being used on a class that doesn't match. And then return true if a match is found.
 function E:CheckClassColor(r, g, b)
-	r, g, b = floor(r*100+.5)/100, floor(g*100+.5)/100, floor(b*100+.5)/100
+	r, g, b = E:GrabColorPickerValues(r, g, b)
 	local matchFound = false
-	for class in pairs(RAID_CLASS_COLORS) do
+	for class in pairs(_G.RAID_CLASS_COLORS) do
 		if class ~= E.myclass then
-			local colorTable = class == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class])
-			if colorTable.r == r and colorTable.g == g and colorTable.b == b then
+			local colorTable = class == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[class] or _G.RAID_CLASS_COLORS[class])
+			local red, green, blue = E:GrabColorPickerValues(colorTable.r, colorTable.g, colorTable.b)
+			if red == r and green == g and blue == b then
 				matchFound = true
 			end
 		end
@@ -283,7 +328,7 @@ function E:UpdateMedia()
 	--Border Color
 	local border = E.db.general.bordercolor
 	if self:CheckClassColor(border.r, border.g, border.b) then
-		local classColor = E.myclass == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass] or RAID_CLASS_COLORS[E.myclass])
+		local classColor = E.myclass == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass] or _G.RAID_CLASS_COLORS[E.myclass])
 		E.db.general.bordercolor.r = classColor.r
 		E.db.general.bordercolor.g = classColor.g
 		E.db.general.bordercolor.b = classColor.b
@@ -294,7 +339,7 @@ function E:UpdateMedia()
 	--UnitFrame Border Color
 	border = E.db.unitframe.colors.borderColor
 	if self:CheckClassColor(border.r, border.g, border.b) then
-		local classColor = E.myclass == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass] or RAID_CLASS_COLORS[E.myclass])
+		local classColor = E.myclass == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass] or _G.RAID_CLASS_COLORS[E.myclass])
 		E.db.unitframe.colors.borderColor.r = classColor.r
 		E.db.unitframe.colors.borderColor.g = classColor.g
 		E.db.unitframe.colors.borderColor.b = classColor.b
@@ -311,7 +356,7 @@ function E:UpdateMedia()
 	local value = self.db.general.valuecolor
 
 	if self:CheckClassColor(value.r, value.g, value.b) then
-		value = E.myclass == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass] or RAID_CLASS_COLORS[E.myclass])
+		value = E.myclass == 'PRIEST' and E.PriestColors or (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass] or _G.RAID_CLASS_COLORS[E.myclass])
 		self.db.general.valuecolor.r = value.r
 		self.db.general.valuecolor.g = value.g
 		self.db.general.valuecolor.b = value.b
@@ -320,14 +365,13 @@ function E:UpdateMedia()
 	self.media.hexvaluecolor = self:RGBToHex(value.r, value.g, value.b)
 	self.media.rgbvaluecolor = {value.r, value.g, value.b}
 
-	local LeftChatPanel = _G.LeftChatPanel
-	local RightChatPanel = _G.RightChatPanel
+	local LeftChatPanel, RightChatPanel = _G.LeftChatPanel, _G.RightChatPanel
 	if LeftChatPanel and LeftChatPanel.tex and RightChatPanel and RightChatPanel.tex then
 		LeftChatPanel.tex:SetTexture(E.db.chat.panelBackdropNameLeft)
+		RightChatPanel.tex:SetTexture(E.db.chat.panelBackdropNameRight)
+
 		local a = E.db.general.backdropfadecolor.a or 0.5
 		LeftChatPanel.tex:SetAlpha(a)
-
-		RightChatPanel.tex:SetTexture(E.db.chat.panelBackdropNameRight)
 		RightChatPanel.tex:SetAlpha(a)
 	end
 
@@ -440,15 +484,6 @@ function E:PLAYER_ENTERING_WORLD()
 		self:CancelTimer(self.BGTimer)
 		self.BGTimer = nil
 	end
-
-	if not E.global.uiScaleInformed then
-		E.clippedUiScaleCVar = E:PixelClip(GetCVar("uiScale"))
-		E:StaticPopup_Show("UI_SCALE_CHANGES_INFORM", WrapTextInColorCode(E.clippedUiScaleCVar, "fffe7b2c"))
-	end
-
-	if not E.global.nameplatesResetInformed then
-		E:StaticPopup_Show("MAJOR_RELEASE_NAMEPLATES")
-	end
 end
 
 function E:ValueFuncCall()
@@ -461,7 +496,7 @@ function E:UpdateFrameTemplates()
 	for frame in pairs(self.frames) do
 		if frame and frame.template and not frame.ignoreUpdates then
 			if not frame.ignoreFrameTemplates then
-				frame:SetTemplate(frame.template, frame.glossTex)
+				frame:SetTemplate(frame.template, frame.glossTex, nil, frame.forcePixelMode)
 			end
 		else
 			self.frames[frame] = nil
@@ -471,7 +506,7 @@ function E:UpdateFrameTemplates()
 	for frame in pairs(self.unitFrameElements) do
 		if frame and frame.template and not frame.ignoreUpdates then
 			if not frame.ignoreFrameTemplates then
-				frame:SetTemplate(frame.template, frame.glossTex)
+				frame:SetTemplate(frame.template, frame.glossTex, nil, frame.forcePixelMode, frame.isUnitFrameElement)
 			end
 		else
 			self.unitFrameElements[frame] = nil
@@ -481,9 +516,9 @@ end
 
 function E:UpdateBorderColors()
 	for frame in pairs(self.frames) do
-		if frame and not frame.ignoreUpdates then
+		if frame and frame.template and not frame.ignoreUpdates then
 			if not frame.ignoreBorderColors then
-				if frame.template == 'Default' or frame.template == 'Transparent' or frame.template == nil then
+				if frame.template == 'Default' or frame.template == 'Transparent' then
 					frame:SetBackdropBorderColor(unpack(self.media.bordercolor))
 				end
 			end
@@ -493,9 +528,9 @@ function E:UpdateBorderColors()
 	end
 
 	for frame in pairs(self.unitFrameElements) do
-		if frame and not frame.ignoreUpdates then
+		if frame and frame.template and not frame.ignoreUpdates then
 			if not frame.ignoreBorderColors then
-				if frame.template == 'Default' or frame.template == 'Transparent' or frame.template == nil then
+				if frame.template == 'Default' or frame.template == 'Transparent' then
 					frame:SetBackdropBorderColor(unpack(self.media.unitframeBorderColor))
 				end
 			end
@@ -507,9 +542,9 @@ end
 
 function E:UpdateBackdropColors()
 	for frame in pairs(self.frames) do
-		if frame then
+		if frame and frame.template and not frame.ignoreUpdates then
 			if not frame.ignoreBackdropColors then
-				if frame.template == 'Default' or frame.template == nil then
+				if frame.template == 'Default' then
 					frame:SetBackdropColor(unpack(self.media.backdropcolor))
 				elseif frame.template == 'Transparent' then
 					frame:SetBackdropColor(unpack(self.media.backdropfadecolor))
@@ -521,9 +556,9 @@ function E:UpdateBackdropColors()
 	end
 
 	for frame in pairs(self.unitFrameElements) do
-		if frame then
+		if frame and frame.template and not frame.ignoreUpdates then
 			if not frame.ignoreBackdropColors then
-				if frame.template == 'Default' or frame.template == nil then
+				if frame.template == 'Default' then
 					frame:SetBackdropColor(unpack(self.media.backdropcolor))
 				elseif frame.template == 'Transparent' then
 					frame:SetBackdropColor(unpack(self.media.backdropfadecolor))
@@ -570,23 +605,6 @@ E.snapBars[#E.snapBars + 1] = E.UIParent
 E.HiddenFrame = CreateFrame('Frame')
 E.HiddenFrame:Hide()
 
-function E:CheckTalentTree(tree)
-	local activeSpec = GetActiveSpecGroup()
-	local currentSpec = activeSpec and GetSpecialization(false, false, activeSpec)
-
-	if currentSpec and type(tree) == 'number' then
-		return tree == currentSpec
-	elseif currentSpec and type(tree) == 'table' then
-		for _, index in pairs(tree) do
-			if index == currentSpec then
-				return true
-			end
-		end
-	end
-
-	return false
-end
-
 function E:IsDispellableByMe(debuffType)
 	if not self.DispelClasses[self.myclass] then return end
 
@@ -596,25 +614,17 @@ function E:IsDispellableByMe(debuffType)
 end
 
 function E:CheckRole()
-	local talentTree = GetSpecialization()
-	self.myspec = talentTree
+	self.myspec = GetSpecialization()
+	self.myrole = E:GetPlayerRole()
 
-	local IsInPvPGear, role = false
+	-- myrole = group role; TANK, HEALER, DAMAGER
+	-- role   = class role; Tank, Melee, Caster
 
-	local resilperc = GetCombatRatingBonus(COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN)
-	if resilperc > GetDodgeChance() and resilperc > GetParryChance() and UnitLevel('player') == MAX_PLAYER_LEVEL then
-		IsInPvPGear = true
-	end
-
+	local role
 	if type(self.ClassRole[self.myclass]) == 'string' then
 		role = self.ClassRole[self.myclass]
-	elseif talentTree then
-		role = self.ClassRole[self.myclass][talentTree]
-	end
-
-	--Check for PvP gear
-	if role == 'Tank' and IsInPvPGear then
-		role = 'Melee'
+	elseif self.myspec then
+		role = self.ClassRole[self.myclass][self.myspec]
 	end
 
 	if not role then
@@ -635,20 +645,26 @@ function E:CheckRole()
 		self.callbacks:Fire('RoleChanged')
 	end
 
-	if self.HealingClasses[self.myclass] ~= nil and self.myclass ~= 'PRIEST' then
-		if self:CheckTalentTree(self.HealingClasses[self.myclass]) then
-			self.DispelClasses[self.myclass].Magic = true
-		else
-			self.DispelClasses[self.myclass].Magic = false
-		end
+	if self.myrole and self.DispelClasses[self.myclass] ~= nil then
+		self.DispelClasses[self.myclass].Magic = (self.myrole == 'HEALER')
+	end
+end
+
+do -- other non-english locales require this
+	E.UnlocalizedClasses = {}
+	for k,v in pairs(_G.LOCALIZED_CLASS_NAMES_MALE) do E.UnlocalizedClasses[v] = k end
+	for k,v in pairs(_G.LOCALIZED_CLASS_NAMES_FEMALE) do E.UnlocalizedClasses[v] = k end
+
+	function E:UnlocalizedClassName(className)
+		return (className and className ~= "") and E.UnlocalizedClasses[className]
 	end
 end
 
 function E:IncompatibleAddOn(addon, module)
-	E.PopupDialogs['INCOMPATIBLE_ADDON'].button1 = addon
-	E.PopupDialogs['INCOMPATIBLE_ADDON'].button2 = 'ElvUI '..module
-	E.PopupDialogs['INCOMPATIBLE_ADDON'].addon = addon
-	E.PopupDialogs['INCOMPATIBLE_ADDON'].module = module
+	E.PopupDialogs.INCOMPATIBLE_ADDON.button1 = addon
+	E.PopupDialogs.INCOMPATIBLE_ADDON.button2 = 'ElvUI '..module
+	E.PopupDialogs.INCOMPATIBLE_ADDON.addon = addon
+	E.PopupDialogs.INCOMPATIBLE_ADDON.module = module
 	E:StaticPopup_Show('INCOMPATIBLE_ADDON', addon, module)
 end
 
@@ -942,13 +958,8 @@ function E:SendMessage()
 		C_ChatInfo_SendAddonMessage('ELVUI_VERSIONCHK', E.version, (not IsInRaid(LE_PARTY_CATEGORY_HOME) and IsInRaid(LE_PARTY_CATEGORY_INSTANCE)) and 'INSTANCE_CHAT' or 'RAID')
 	elseif IsInGroup() then
 		C_ChatInfo_SendAddonMessage('ELVUI_VERSIONCHK', E.version, (not IsInGroup(LE_PARTY_CATEGORY_HOME) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE)) and 'INSTANCE_CHAT' or 'PARTY')
-	else
-		local ElvUIGVC = GetChannelName('ElvUIGVC')
-		if ElvUIGVC and ElvUIGVC > 0 then
-			C_ChatInfo_SendAddonMessage('ELVUI_VERSIONCHK', E.version, 'CHANNEL', ElvUIGVC)
-		elseif IsInGuild() then
-			C_ChatInfo_SendAddonMessage('ELVUI_VERSIONCHK', E.version, 'GUILD')
-		end
+	elseif IsInGuild() then
+		C_ChatInfo_SendAddonMessage('ELVUI_VERSIONCHK', E.version, 'GUILD')
 	end
 
 	SendMessageWaiting = nil
@@ -962,19 +973,23 @@ local function SendRecieve(_, event, prefix, message, _, sender)
 		if sender == myName then return end
 		if prefix == 'ELVUI_VERSIONCHK' then
 			local msg, ver = tonumber(message), tonumber(E.version)
-			if (msg and (msg > ver)) or not E.yep then -- you're outdated D:
+			local inCombat = InCombatLockdown()
+
+			if ver ~= G.general.version then
+				if not E.shownUpdatedWhileRunningPopup and not inCombat then
+					E:StaticPopup_Show('ELVUI_UPDATED_WHILE_RUNNING', nil, nil, {mismatch = ver > G.general.version})
+
+					E.shownUpdatedWhileRunningPopup = true
+				end
+			elseif msg and (msg > ver) then -- you're outdated D:
 				if not E.recievedOutOfDateMessage then
 					E:Print(L["ElvUI is out of date. You can download the newest version from www.tukui.org. Get premium membership and have ElvUI automatically updated with the Tukui Client!"])
 
-					if (msg and ((msg - ver) >= 0.05)) or not E.yep then
+					if msg and ((msg - ver) >= 0.05) and not inCombat then
 						E:StaticPopup_Show('ELVUI_UPDATE_AVAILABLE')
 					end
 
 					E.recievedOutOfDateMessage = true
-				end
-			elseif (msg and (msg < ver)) then -- Send Message Back
-				if not SendMessageWaiting then
-					SendMessageWaiting = E:Delay(10, E.SendMessage)
 				end
 			end
 		end
@@ -1002,34 +1017,19 @@ f:RegisterEvent('CHAT_MSG_ADDON')
 f:RegisterEvent('GROUP_ROSTER_UPDATE')
 f:RegisterEvent('PLAYER_ENTERING_WORLD')
 f:SetScript('OnEvent', SendRecieve)
-f:SetScript('OnUpdate', function(self, elapsed)
-	self.delayed = (self.delayed or 0) + elapsed
-	if self.delayed > 25 then
-		local numActiveChannels = C_ChatInfo_GetNumActiveChannels()
 
-		if numActiveChannels and (numActiveChannels >= 1) then
-			if GetChannelName('ElvUIGVC') == 0 and numActiveChannels < MAX_WOW_CHAT_CHANNELS then
-				JoinChannelByName('ElvUIGVC', nil, nil, true)
-
-				if not SendMessageWaiting then
-					SendMessageWaiting = E:Delay(10, E.SendMessage)
-				end
-
-				self:SetScript('OnUpdate', nil)
-			end
-		end
-	elseif self.delayed > 45 then
-		self:SetScript('OnUpdate', nil)
+function E:UpdateStart(skipCallback, skipUpdateDB)
+	if not skipUpdateDB then
+		E:UpdateDB()
 	end
-end)
 
-function E:UpdateStart()
-	E:UpdateDB()
 	E:UpdateMoverPositions()
 	E:UpdateMediaItems()
 	E:UpdateUnitFrames()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
 function E:UpdateDB()
@@ -1040,17 +1040,17 @@ function E:UpdateDB()
 	E.db.install_complete = nil
 
 	E:DBConversions()
-	E:GetModule('Auras').db = E.db.auras
-	E:GetModule('ActionBars').db = E.db.actionbar
-	E:GetModule('Bags').db = E.db.bags
-	E:GetModule('Chat').db = E.db.chat
-	E:GetModule('DataBars').db = E.db.databars
-	E:GetModule('DataTexts').db = E.db.datatexts
-	E:GetModule('NamePlates').db = E.db.nameplates
-	E:GetModule('Tooltip').db = E.db.tooltip
-	E:GetModule('UnitFrames').db = E.db.unitframe
-	E:GetModule('Threat').db = E.db.general.threat
-	E:GetModule('Totems').db = E.db.general.totems
+	Auras.db = E.db.auras
+	ActionBars.db = E.db.actionbar
+	Bags.db = E.db.bags
+	Chat.db = E.db.chat
+	DataBars.db = E.db.databars
+	DataTexts.db = E.db.datatexts
+	NamePlates.db = E.db.nameplates
+	Tooltip.db = E.db.tooltip
+	UnitFrames.db = E.db.unitframe
+	Threat.db = E.db.general.threat
+	Totems.db = E.db.general.totems
 
 	--Not part of staggered update
 end
@@ -1067,124 +1067,131 @@ end
 
 function E:UpdateUnitFrames()
 	if E.private.unitframe.enable then
-		local UnitFrames = E:GetModule('UnitFrames')
 		UnitFrames:Update_AllFrames()
 	end
 
 	--Not part of staggered update
 end
 
-function E:UpdateMediaItems()
+function E:UpdateMediaItems(skipCallback)
 	E:UpdateMedia()
-	E:UpdateBorderColors()
-	E:UpdateBackdropColors()
 	E:UpdateFrameTemplates()
 	E:UpdateStatusBars()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateLayout()
-	local Layout = E:GetModule('Layout')
+function E:UpdateLayout(skipCallback)
 	Layout:ToggleChatPanels()
 	Layout:BottomPanelVisibility()
 	Layout:TopPanelVisibility()
 	Layout:SetDataPanelStyle()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateActionBars()
-	local ActionBars = E:GetModule('ActionBars')
+function E:UpdateActionBars(skipCallback)
 	ActionBars:Extra_SetAlpha()
 	ActionBars:Extra_SetScale()
-	ActionBars:ToggleDesaturation()
+	ActionBars:ToggleCooldownOptions()
 	ActionBars:UpdateButtonSettings()
 	ActionBars:UpdateMicroPositionDimensions()
 	ActionBars:UpdatePetCooldownSettings()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateNamePlates()
-	local NamePlates = E:GetModule('NamePlates')
+function E:UpdateNamePlates(skipCallback)
 	NamePlates:ConfigureAll()
-	NamePlates:StyleFilterInitializeAllFilters()
+	NamePlates:StyleFilterInitialize()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
 function E:UpdateTooltip()
-	--Placeholder?
-	--local Tooltip = E:GetModule('Tooltip')
+	-- for plugins :3
 end
 
-function E:UpdateBags()
-	local Bags = E:GetModule('Bags')
+function E:UpdateBags(skipCallback)
 	Bags:Layout()
 	Bags:Layout(true)
 	Bags:SizeAndPositionBagBar()
 	Bags:UpdateCountDisplay()
 	Bags:UpdateItemLevelDisplay()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateChat()
-	local Chat = E:GetModule('Chat')
+function E:UpdateChat(skipCallback)
 	Chat:PositionChat(true)
 	Chat:SetupChat()
 	Chat:UpdateAnchors()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateDataBars()
-	local DataBars = E:GetModule('DataBars')
+function E:UpdateDataBars(skipCallback)
 	DataBars:EnableDisable_AzeriteBar()
 	DataBars:EnableDisable_ExperienceBar()
 	DataBars:EnableDisable_HonorBar()
 	DataBars:EnableDisable_ReputationBar()
 	DataBars:UpdateDataBarDimensions()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateDataTexts()
-	local DataTexts = E:GetModule('DataTexts')
+function E:UpdateDataTexts(skipCallback)
 	DataTexts:LoadDataTexts()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateMinimap()
-	local Minimap = E:GetModule('Minimap')
+function E:UpdateMinimap(skipCallback)
 	Minimap:UpdateSettings()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateAuras()
-	local Auras = E:GetModule('Auras')
+function E:UpdateAuras(skipCallback)
 	if ElvUIPlayerBuffs then Auras:UpdateHeader(ElvUIPlayerBuffs) end
 	if ElvUIPlayerDebuffs then Auras:UpdateHeader(ElvUIPlayerDebuffs) end
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
-function E:UpdateMisc()
-	E:GetModule('AFK'):Toggle()
-	E:GetModule('Blizzard'):SetObjectiveFrameHeight()
+function E:UpdateMisc(skipCallback)
+	AFK:Toggle()
+	Blizzard:SetObjectiveFrameHeight()
 
-	local Threat = E:GetModule('Threat')
 	Threat:ToggleEnable()
 	Threat:UpdatePosition()
 
-	local Totems = E:GetModule('Totems')
 	Totems:PositionAndSize()
 	Totems:ToggleEnable()
 
-	E.callbacks:Fire("StaggeredUpdate")
+	if not skipCallback then
+		E.callbacks:Fire("StaggeredUpdate")
+	end
 end
 
 function E:UpdateEnd()
@@ -1196,10 +1203,8 @@ function E:UpdateEnd()
 
 	E:SetMoversClampedToScreen(true) -- Go back to using clamp after resizing has taken place.
 
-	collectgarbage('collect')
-
-	if (E.ignoreInstall ~= true) and (E.private.install_complete == nil or (E.private.install_complete and type(E.private.install_complete) == 'boolean') or (E.private.install_complete and type(tonumber(E.private.install_complete)) == 'number' and tonumber(E.private.install_complete) <= 3.83)) then
-		E.ignoreInstall = nil
+	if (E.installSetup ~= true) and (E.private.install_complete == nil or (E.private.install_complete and type(E.private.install_complete) == 'boolean') or (E.private.install_complete and type(tonumber(E.private.install_complete)) == 'number' and tonumber(E.private.install_complete) <= 3.83)) then
+		E.installSetup = nil
 		E:Install()
 	end
 
@@ -1230,18 +1235,17 @@ end
 
 E:RegisterCallback("StaggeredUpdate", CallStaggeredUpdate)
 
-function E:StaggeredUpdateAll(event, ignoreInstall)
+function E:StaggeredUpdateAll(event, installSetup)
 	if not self.initialized then
 		C_Timer_After(1, function()
-			E:StaggeredUpdateAll(event, ignoreInstall)
+			E:StaggeredUpdateAll(event, installSetup)
 		end)
 
 		return
 	end
 
-	self.ignoreInstall = ignoreInstall
-
-	if event and (event == "OnProfileChanged" or event == "OnProfileCopied") and not self.staggerUpdateRunning then
+	self.installSetup = installSetup
+	if (installSetup or event and event == "OnProfileChanged" or event == "OnProfileCopied") and not self.staggerUpdateRunning then
 		tinsert(staggerTable, "UpdateLayout")
 		if E.private.actionbar.enable then
 			tinsert(staggerTable, "UpdateActionBars")
@@ -1277,12 +1281,8 @@ end
 
 function E:UpdateAll(doUpdates)
 	if doUpdates then
-		-- this block should mimic `E:UpdateStart`
-		self:UpdateDB()
-		self:UpdateMoverPositions()
-		self:UpdateMediaItems()
-		self:UpdateUnitFrames()
-		--
+		E:UpdateStart(true)
+
 		self:UpdateLayout()
 		self:UpdateTooltip()
 		self:UpdateActionBars()
@@ -1596,9 +1596,8 @@ function E:InitializeInitialModules()
 end
 
 function E:RefreshModulesDB()
-	local UF = self:GetModule('UnitFrames')
-	twipe(UF.db)
-	UF.db = self.db.unitframe
+	twipe(UnitFrames.db)
+	UnitFrames.db = self.db.unitframe
 end
 
 function E:InitializeModules()
@@ -1623,6 +1622,18 @@ function E:InitializeModules()
 end
 
 function E:DBConversions()
+	--Fix issue where UIScale was incorrectly stored as string
+	E.global.general.UIScale = tonumber(E.global.general.UIScale)
+
+	--Not sure how this one happens, but prevent it in any case
+	if E.global.general.UIScale <= 0 then
+		E.global.general.UIScale = G.general.UIScale
+	end
+
+	if gameLocale and E.global.general.locale == 'auto' then
+		E.global.general.locale = gameLocale
+	end
+
 	--Combat & Resting Icon options update
 	if E.db.unitframe.units.player.combatIcon ~= nil then
 		E.db.unitframe.units.player.CombatIcon.enable = E.db.unitframe.units.player.combatIcon
@@ -1631,6 +1642,42 @@ function E:DBConversions()
 	if E.db.unitframe.units.player.restIcon ~= nil then
 		E.db.unitframe.units.player.RestIcon.enable = E.db.unitframe.units.player.restIcon
 		E.db.unitframe.units.player.restIcon = nil
+	end
+
+	-- [Fader] Combat Fade options for Player
+	if E.db.unitframe.units.player.combatfade ~= nil then
+		local enabled = E.db.unitframe.units.player.combatfade
+		E.db.unitframe.units.player.fader.enable = enabled
+
+		if enabled then -- use the old min alpha too
+			E.db.unitframe.units.player.fader.minAlpha = 0
+		end
+
+		E.db.unitframe.units.player.combatfade = nil
+	end
+
+	-- [Fader] Range check options for Units
+	do
+		local outsideAlpha
+		if E.db.unitframe.OORAlpha ~= nil then
+			outsideAlpha = E.db.unitframe.OORAlpha
+			E.db.unitframe.OORAlpha = nil
+		end
+
+		local rangeCheckUnits = { 'target', 'targettarget', 'targettargettarget', 'focus', 'focustarget', 'pet', 'pettarget', 'boss', 'arena', 'party', 'raid', 'raid40', 'raidpet', 'tank', 'assist' }
+		for _, unit in pairs(rangeCheckUnits) do
+			if E.db.unitframe.units[unit].rangeCheck ~= nil then
+				local enabled = E.db.unitframe.units[unit].rangeCheck
+				E.db.unitframe.units[unit].fader.enable = enabled
+				E.db.unitframe.units[unit].fader.range = enabled
+
+				if outsideAlpha then
+					E.db.unitframe.units[unit].fader.minAlpha = outsideAlpha
+				end
+
+				E.db.unitframe.units[unit].rangeCheck = nil
+			end
+		end
 	end
 
 	--Convert old "Buffs and Debuffs" font size option to individual options
@@ -1654,6 +1701,20 @@ function E:DBConversions()
 		E.db.nameplates.durationFontOutline = nil
 	end
 
+	if E.db.nameplates.lowHealthThreshold > 0.8 then
+		E.db.nameplates.lowHealthThreshold = 0.8
+	end
+
+	if E.db.nameplates.units.TARGET.nonTargetTransparency ~= nil then
+		E.global.nameplate.filters.ElvUI_NonTarget.actions.alpha = E.db.nameplates.units.TARGET.nonTargetTransparency * 100
+		E.db.nameplates.units.TARGET.nonTargetTransparency = nil
+	end
+
+	if E.db.nameplates.units.TARGET.scale ~= nil then
+		E.global.nameplate.filters.ElvUI_Target.actions.scale = E.db.nameplates.units.TARGET.scale
+		E.db.nameplates.units.TARGET.scale = nil
+	end
+
 	if not E.db.chat.panelColorConverted then
 		local color = E.db.general.backdropfadecolor
 		E.db.chat.panelColor = {r = color.r, g = color.g, b = color.b, a = color.a}
@@ -1661,10 +1722,10 @@ function E:DBConversions()
 	end
 
 	--Vendor Greys option is now in bags table
-	if E.db.general.vendorGrays then
+	if E.db.general.vendorGrays ~= nil then
 		E.db.bags.vendorGrays.enable = E.db.general.vendorGrays
-		E.db.general.vendorGrays = nil
 		E.db.general.vendorGraysDetails = nil
+		E.db.general.vendorGrays = nil
 	end
 
 	--Heal Prediction is now a table instead of a bool
@@ -1677,19 +1738,69 @@ function E:DBConversions()
 		end
 	end
 
-	--Fix issue where UIScale was incorrectly stored as string
-	E.global.general.UIScale = tonumber(E.global.general.UIScale)
+	--Health Backdrop Multiplier
+	if E.db.unitframe.colors.healthmultiplier ~= nil then
+		if E.db.unitframe.colors.healthmultiplier > 0.75 then
+			E.db.unitframe.colors.healthMultiplier = 0.75
+		else
+			E.db.unitframe.colors.healthMultiplier = E.db.unitframe.colors.healthmultiplier
+		end
 
-	--Not sure how this one happens, but prevent it in any case
-	if E.global.general.UIScale <= 0 then
-		E.global.general.UIScale = G.general.UIScale
+		E.db.unitframe.colors.healthmultiplier = nil
+	end
+
+	--Tooltip FactionColors Setting
+	for i=1, 8 do
+		local oldTable = E.db.tooltip.factionColors[''..i]
+		if oldTable then
+			local newTable = E:CopyTable({}, P.tooltip.factionColors[i]) -- import full table
+			E.db.tooltip.factionColors[i] = E:CopyTable(newTable, oldTable)
+			E.db.tooltip.factionColors[''..i] = nil
+		end
+	end
+
+	--v11 Nameplates Reset
+	if not E.db.v11NamePlateReset and E.private.nameplates.enable then
+		local styleFilters = E:CopyTable({}, E.db.nameplates.filters)
+		E.db.nameplates = E:CopyTable({}, P.nameplates)
+		E.db.nameplates.filters = E:CopyTable({}, styleFilters)
+		NamePlates:CVarReset()
+		E.db.v11NamePlateReset = true
+	end
+
+	-- Wipe some old variables off profiles
+	if E.global.uiScaleInformed then E.global.uiScaleInformed = nil end
+	if E.global.nameplatesResetInformed then E.global.nameplatesResetInformed = nil end
+	if E.global.userInformedNewChanges1 then E.global.userInformedNewChanges1 = nil end
+
+	-- cvar nameplate visibility stuff
+	if E.db.nameplates.visibility.nameplateShowAll ~= nil then
+		E.db.nameplates.visibility.showAll = E.db.nameplates.visibility.nameplateShowAll
+		E.db.nameplates.visibility.nameplateShowAll = nil
+	end
+	if E.db.nameplates.units.FRIENDLY_NPC.showAlways ~= nil then
+		E.db.nameplates.visibility.friendly.npcs = E.db.nameplates.units.FRIENDLY_NPC.showAlways
+		E.db.nameplates.units.FRIENDLY_NPC.showAlways = nil
+	end
+	if E.db.nameplates.units.FRIENDLY_PLAYER.minions ~= nil then
+		E.db.nameplates.visibility.friendly.minions = E.db.nameplates.units.FRIENDLY_PLAYER.minions
+		E.db.nameplates.units.FRIENDLY_PLAYER.minions = nil
+	end
+	if E.db.nameplates.units.ENEMY_NPC.minors ~= nil then
+		E.db.nameplates.visibility.enemy.minus = E.db.nameplates.units.ENEMY_NPC.minors
+		E.db.nameplates.units.ENEMY_NPC.minors = nil
+	end
+	if E.db.nameplates.units.ENEMY_PLAYER.minions ~= nil or E.db.nameplates.units.ENEMY_NPC.minions ~= nil then
+		E.db.nameplates.visibility.enemy.minions = E.db.nameplates.units.ENEMY_PLAYER.minions or E.db.nameplates.units.ENEMY_NPC.minions
+		E.db.nameplates.units.ENEMY_PLAYER.minions = nil
+		E.db.nameplates.units.ENEMY_NPC.minions = nil
 	end
 end
 
 local CPU_USAGE = {}
 local function CompareCPUDiff(showall, minCalls)
 	local greatestUsage, greatestCalls, greatestName, newName, newFunc
-	local greatestDiff, lastModule, mod, newUsage, calls, differance = 0
+	local greatestDiff, lastModule, mod, usage, calls, diff = 0
 
 	for name, oldUsage in pairs(CPU_USAGE) do
 		newName, newFunc = strmatch(name, '^([^:]+):(.+)$')
@@ -1700,19 +1811,19 @@ local function CompareCPUDiff(showall, minCalls)
 				mod = E:GetModule(newName, true) or E
 				lastModule = newName
 			end
-			newUsage, calls = GetFunctionCPUUsage(mod[newFunc], true)
-			differance = newUsage - oldUsage
+			usage, calls = GetFunctionCPUUsage(mod[newFunc], true)
+			diff = usage - oldUsage
 			if showall and (calls > minCalls) then
-				E:Print('Name('..name..')  Calls('..calls..') Diff('..(differance > 0 and format('%.3f', differance) or 0)..')')
+				E:Print('Name('..name..')  Calls('..calls..') MS('..(usage or 0)..') Diff('..(diff > 0 and format('%.3f', diff) or 0)..')')
 			end
-			if (differance > greatestDiff) and calls > minCalls then
-				greatestName, greatestUsage, greatestCalls, greatestDiff = name, newUsage, calls, differance
+			if (diff > greatestDiff) and calls > minCalls then
+				greatestName, greatestUsage, greatestCalls, greatestDiff = name, usage, calls, diff
 			end
 		end
 	end
 
 	if greatestName then
-		E:Print(greatestName.. ' had the CPU usage difference of: '..(greatestUsage > 0 and format('%.3f', greatestUsage) or 0)..'ms. And has been called '.. greatestCalls..' times.')
+		E:Print(greatestName.. ' had the CPU usage of: '..(greatestUsage > 0 and format('%.3f', greatestUsage) or 0)..'ms. And has been called '.. greatestCalls..' times.')
 	else
 		E:Print('CPU Usage: No CPU Usage differences found.')
 	end
@@ -1796,6 +1907,27 @@ local function HandleCommandBar()
 	end
 end
 
+function E:Dump(object, inspect)
+	if GetAddOnEnableState(E.myname, 'Blizzard_DebugTools') == 0 then
+		E:Print('Blizzard_DebugTools is disabled.')
+		return
+	end
+
+	local debugTools = IsAddOnLoaded('Blizzard_DebugTools')
+	if not debugTools then UIParentLoadAddOn('Blizzard_DebugTools') end
+
+	if inspect then
+		local tableType = type(object)
+		if tableType == 'table' then
+			_G.DisplayTableInspectorWindow(object)
+		else
+			E:Print('Failed: ', tostring(object), ' is type: ', tableType,'. Requires table object.')
+		end
+	else
+		_G.DevTools_Dump(object)
+	end
+end
+
 function E:Initialize()
 	twipe(self.db)
 	twipe(self.global)
@@ -1815,15 +1947,18 @@ function E:Initialize()
 	self:DBConversions()
 	self:UIScale()
 
-	if not E.db.general.cropIcon then
-		E.TexCoords = {0, 1, 0, 1}
-	end
+	if not E.db.general.cropIcon then E.TexCoords = {0, 1, 0, 1} end
+	self:BuildPrefixValues()
 
 	self:LoadCommands() --Load Commands
 	self:InitializeModules() --Load Modules
 	self:LoadMovers() --Load Movers
 	self:UpdateCooldownSettings('all')
 	self.initialized = true
+
+	if E.db.general.smoothingAmount and (E.db.general.smoothingAmount ~= 0.33) then
+		E:SetSmoothingAmount(E.db.general.smoothingAmount)
+	end
 
 	if self.private.install_complete == nil then
 		self:Install()
@@ -1854,16 +1989,17 @@ function E:Initialize()
 	end
 
 	self:Tutorials()
-	self:GetModule('Minimap'):UpdateSettings()
 	self:RefreshModulesDB()
-	collectgarbage('collect')
+	Minimap:UpdateSettings()
 
 	if GetCVarBool("scriptProfile") then
 		E:StaticPopup_Show('SCRIPT_PROFILE')
 	end
 
 	if self.db.general.loginmessage then
-		E:Print(select(2, E:GetModule('Chat'):FindURL('CHAT_MSG_DUMMY', format(L["LOGIN_MSG"], self.media.hexvaluecolor, self.media.hexvaluecolor, self.version)))..'.')
+		local msg = format(L["LOGIN_MSG"], self.media.hexvaluecolor, self.media.hexvaluecolor, self.version)
+		if Chat.Initialized then msg = select(2, Chat:FindURL('CHAT_MSG_DUMMY', msg)) end
+		print(msg)
 	end
 
 	if _G.OrderHallCommandBar then

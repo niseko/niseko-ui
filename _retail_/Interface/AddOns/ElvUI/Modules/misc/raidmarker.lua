@@ -1,6 +1,6 @@
 --Credit Baudzilla
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
-local M = E:GetModule('Misc');
+local M = E:GetModule('Misc')
 
 --Lua functions
 local sin, cos, rad = math.sin, math.cos, math.rad
@@ -16,8 +16,6 @@ local PlaySound = PlaySound
 local SetRaidTarget = SetRaidTarget
 local SetRaidTargetIconTexture = SetRaidTargetIconTexture
 local UIErrorsFrame = UIErrorsFrame
-
---Global variables that we don't cache, list them here for mikk's FindGlobals script
 -- GLOBALS: RaidMark_HotkeyPressed
 
 local ButtonIsDown;
@@ -85,7 +83,7 @@ local ANG_RAD = rad(360) / 7
 function M:LoadRaidMarker()
 	local marker = CreateFrame("Frame", nil, E.UIParent);
 	marker:EnableMouse(true);
-	marker:SetSize(100, 100);
+	marker:Size(100, 100);
 	marker:SetFrameStrata("DIALOG");
 
 	for i = 1, 8 do

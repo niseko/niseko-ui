@@ -13,13 +13,11 @@ local function SkinOjectiveTrackerHeaders()
 		for i = 1, #frame do
 			local modules = frame[i]
 			if modules then
-				local header = modules.Header
-				local background = modules.Header.Background
-				background:SetAtlas(nil)
+				modules.Header.Background:SetAtlas(nil)
 
 				local text = modules.Header.Text
 				text:FontTemplate()
-				text:SetParent(header)
+				text:SetParent(modules.Header)
 			end
 		end
 	end
@@ -33,7 +31,7 @@ end
 local function SkinItemButton(_, block)
 	local item = block.itemButton
 	if item and not item.skinned then
-		item:SetSize(25, 25)
+		item:Size(25, 25)
 		item:SetTemplate("Transparent")
 		item:StyleButton()
 		item:SetNormalTexture(nil)
@@ -41,8 +39,8 @@ local function SkinItemButton(_, block)
 		item.icon:SetInside()
 		item.Cooldown:SetInside()
 		item.Count:ClearAllPoints()
-		item.Count:SetPoint("TOPLEFT", 1, -1)
-		item.Count:SetFont(E.media.normFont, 14, "OUTLINE")
+		item.Count:Point("TOPLEFT", 1, -1)
+		item.Count:FontTemplate(E.media.normFont, 14, "OUTLINE")
 		item.Count:SetShadowOffset(5, -5)
 		E:RegisterCooldown(item.Cooldown)
 		item.skinned = true
@@ -101,6 +99,21 @@ local function SkinProgressBars(_, _, line)
 	end
 end
 
+local function SkinTimerBars(_, _, line)
+	local timerBar = line and line.TimerBar
+	local bar = timerBar and timerBar.Bar
+
+	if not timerBar.isSkinned then
+		bar:Height(18)
+		bar:StripTextures()
+		bar:CreateBackdrop("Transparent")
+		bar:SetStatusBarTexture(E.media.normTex)
+		E:RegisterStatusBar(bar)
+
+		timerBar.isSkinned = true
+	end
+end
+
 local function PositionFindGroupButton(block, button)
 	if button and button.GetPoint then
 		local a, b, c, d, e = button:GetPoint()
@@ -134,14 +147,14 @@ local function LoadSkin()
 	minimizeButton:StripTextures()
 	minimizeButton:Size(16, 16)
 	minimizeButton.tex = minimizeButton:CreateTexture(nil, "OVERLAY")
-	minimizeButton.tex:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\MinusButton")
+	minimizeButton.tex:SetTexture(E.Media.Textures.MinusButton)
 	minimizeButton.tex:SetInside()
 	minimizeButton:SetHighlightTexture("Interface\\Buttons\\UI-PlusButton-Hilight", "ADD")
 	minimizeButton:HookScript("OnClick", function()
 		if ObjectiveTrackerFrame.collapsed then
-			minimizeButton.tex:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\PlusButton")
+			minimizeButton.tex:SetTexture(E.Media.Textures.PlusButton)
 		else
-			minimizeButton.tex:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\MinusButton")
+			minimizeButton.tex:SetTexture(E.Media.Textures.MinusButton)
 		end
 	end)
 
@@ -153,8 +166,11 @@ local function LoadSkin()
 	hooksecurefunc("QuestObjectiveSetupBlockButton_FindGroup",SkinFindGroupButton)			--[Skin]: The eye
 	hooksecurefunc(_G.BONUS_OBJECTIVE_TRACKER_MODULE,"AddProgressBar",SkinProgressBars)		--[Skin]: Bonus Objective Progress Bar
 	hooksecurefunc(_G.WORLD_QUEST_TRACKER_MODULE,"AddProgressBar",SkinProgressBars)			--[Skin]: World Quest Progress Bar
-	hooksecurefunc(_G.DEFAULT_OBJECTIVE_TRACKER_MODULE,"AddProgressBar",SkinProgressBars)		--[Skin]: Quest Progress Bar
-	hooksecurefunc(_G.SCENARIO_TRACKER_MODULE,"AddProgressBar",SkinProgressBars)				--[Skin]: Scenario Progress Bar
+	hooksecurefunc(_G.DEFAULT_OBJECTIVE_TRACKER_MODULE,"AddProgressBar",SkinProgressBars)	--[Skin]: Quest Progress Bar
+	hooksecurefunc(_G.SCENARIO_TRACKER_MODULE,"AddProgressBar",SkinProgressBars)			--[Skin]: Scenario Progress Bar
+	hooksecurefunc(_G.QUEST_TRACKER_MODULE,"AddTimerBar",SkinTimerBars)						--[Skin]: Quest Timer Bar
+	hooksecurefunc(_G.SCENARIO_TRACKER_MODULE,"AddTimerBar",SkinTimerBars)					--[Skin]: Scenario Timer Bar
+	hooksecurefunc(_G.ACHIEVEMENT_TRACKER_MODULE,"AddTimerBar",SkinTimerBars)				--[Skin]: Achievement Timer Bar
 	hooksecurefunc(_G.QUEST_TRACKER_MODULE,"SetBlockHeader",SkinItemButton)					--[Skin]: Quest Item Buttons
 	hooksecurefunc(_G.WORLD_QUEST_TRACKER_MODULE,"AddObjective",SkinItemButton)				--[Skin]: World Quest Item Buttons
 end

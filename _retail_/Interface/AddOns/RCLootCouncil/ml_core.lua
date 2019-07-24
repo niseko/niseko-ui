@@ -607,6 +607,7 @@ function RCLootCouncilML:HandleReceivedTradeable (item, sender)
 end
 
 function RCLootCouncilML:HandleNonTradeable(link, owner, reason)
+	if not (addon.handleLoot and link and link ~= "") then return end -- Auto fail criterias
 	local responseID
 	if reason == "not_tradeable" then
 		responseID = "PL"
@@ -988,7 +989,7 @@ end
 
 local function registerAndAnnounceBagged(session)
 	local self = RCLootCouncilML
-	local Item = addon.ItemStorage:StoreItem(self.lootTable[session].link, "award_later", {bop = addon:IsItemBoP(self.lootTable[session].link)})
+	local Item = addon.ItemStorage:New(self.lootTable[session].link, "award_later", {bop = addon:IsItemBoP(self.lootTable[session].link)}):Store()
 	if self.lootTable[session].lootSlot or self.running then -- Item is looted by ML, announce it.
 															-- Also announce if the item is awarded later in voting frame.
 		self:AnnounceAward(L["The loot master"], self.lootTable[session].link, L["Store in bag and award later"], nil, session)

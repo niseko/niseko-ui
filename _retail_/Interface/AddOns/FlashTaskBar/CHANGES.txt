@@ -1,7 +1,7 @@
-changeset:   84:426e6c20b0e5
-tag:         v8.1.0.084
+changeset:   88:b235e9d41148
+tag:         v8.2.0.088
 user:        Tercioo
-date:        Fri Feb 22 11:41:23 2019 -0300
-summary:     - Localization and Framework updates.
+date:        Mon Jul 22 13:54:50 2019 -0300
+summary:     - Increased the minimum delay between flashes from 4 to 5.
 
 

@@ -1,6 +1,11 @@
 # BigWigs
 
-## [v138.1](https://github.com/BigWigsMods/BigWigs/tree/v138.1) (2019-03-07)
-[Full Changelog](https://github.com/BigWigsMods/BigWigs/compare/v138...v138.1)
+## [v158](https://github.com/BigWigsMods/BigWigs/tree/v158) (2019-07-19)
+[Full Changelog](https://github.com/BigWigsMods/BigWigs/compare/v157.1...v158)
 
-- Plugins/InfoBox: Fix the bars showing when displayed for the first time.  
+- bump version  
+- EternalPalace/QueenAzshara: Remove stray commas  
+- EternalPalace/QueenAzshara: Fix option key  
+- EternalPalace/QueenAzshara: Clarify the decrees and add a yell for stand together.  
+- EternalPalace/QueenAzshara: Sort the InfoBox in reverse.  
+- Plugins/InfoBox: Add reverse order functionality for setting the list via a table.  

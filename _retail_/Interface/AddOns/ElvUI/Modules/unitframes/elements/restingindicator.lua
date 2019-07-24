@@ -2,15 +2,14 @@ local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, Private
 local UF = E:GetModule('UnitFrames');
 
 --Lua functions
-
 --WoW API / Variables
 local C_Timer_NewTimer = C_Timer.NewTimer
 local IsResting = IsResting
 
 local RestingTextures = {
 	["DEFAULT"] = [[Interface\CharacterFrame\UI-StateIcon]],
-	["RESTING"] = [[Interface\AddOns\ElvUI\media\textures\resting]],
-	["RESTING1"] = [[Interface\AddOns\ElvUI\media\textures\resting1]]
+	["RESTING"] = E.Media.Textures.Resting,
+	["RESTING1"] = E.Media.Textures.Resting1
 }
 
 function UF:Construct_RestingIndicator(frame)

@@ -1,18 +1,12 @@
-tag abaff3459750156a3370eea0d357c665325ca8f8 1.2.2
+tag 445bede71f126538303e7406d8fcc2c29a21d372 1.2.5
 Author:	Kyle Buller <bullerk@gmail.com>
-Date:	Tue Dec 18 00:56:15 2018 -0600
+Date:	Mon Jul 8 21:27:42 2019 -0500
 
-Tagging as 1.2.2
+Tagging as 1.2.5
 
-commit 820592306945826ede864beb59f0254e9f26a6a7
+commit e25cfbeded761a12a694e0a8ab2bc30e35342a30
 Author: Kyle Buller <bullerk@gmail.com>
-Date:   Tue Dec 18 00:52:44 2018 -0600
+Date:   Mon Jul 8 21:27:12 2019 -0500
 
-    Update TOC for 8.1
-
-commit 6154dab7d347564dd2cdf367f5388a6b5f8430db
-Author: Kyle Buller <bullerk@gmail.com>
-Date:   Tue Dec 18 00:50:31 2018 -0600
-
-    Add Mal'Ganis and "The Kid"
+    Update TOC for 8.2
 

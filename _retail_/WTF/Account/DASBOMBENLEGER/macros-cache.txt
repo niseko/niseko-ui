@@ -193,6 +193,10 @@ END
 VER 3 0000000000000033 "test" "INV_MISC_QUESTIONMARK"
 /cast [@mouseover, help][@target, help][@player] Chain Heal
 END
+VER 3 000000000000003B "test" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [@mouseover, exists, help, nodead][help] healing wave; lightning bolt
+END
 VER 3 0000000000000029 "Tier 6" "971076"
 #showtooltip
 /cast [talent:6/2] Divine Star; [talent:6/3] Halo; [spec:1,talent:6/1,@mouseover,exists,help][spec:1,talent:6/1] Clarity of Will
@@ -200,9 +204,9 @@ END
 VER 3 000000000000002E "toggletest" "INV_MISC_QUESTIONMARK"
 /run if GetCVar("countdownForCooldowns")=="1" then SetCVar("countdownForCooldowns","0");else SetCVar("countdownForCooldowns","1");end
 END
-VER 3 000000000000000A "XT-Hard" "Ability_Druid_Dreamstate"
-/tar Lebensfunke
-END
 VER 3 0000000000000011 "XT-Hard" "Ability_Hunter_SniperTraining"
 /tar Herz
+END
+VER 3 000000000000000A "XT-Hard" "Ability_Druid_Dreamstate"
+/tar Lebensfunke
 END

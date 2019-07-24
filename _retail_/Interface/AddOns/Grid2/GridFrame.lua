@@ -252,13 +252,13 @@ function Grid2Frame:UpdateTheme()
 end
 
 function Grid2Frame:RefreshTheme()
-	self:RefreshIndicators()
+	self:RefreshIndicators(true)
 	self:LayoutFrames()
 	self:UpdateIndicators()
 end
 
 -- wakeup/suspend indicators according to the current theme
-function Grid2Frame:RefreshIndicators()
+function Grid2Frame:RefreshIndicators(update)
 	local _, _, suspended = Grid2:GetCurrentTheme()
 	for _,indicator in ipairs(Grid2.indicatorSorted) do
 		if not indicator.parentName then
@@ -270,6 +270,8 @@ function Grid2Frame:RefreshIndicators()
 				else
 					Grid2:WakeUpIndicator(indicator)
 				end
+			elseif not s1 and update and indicator.UpdateDB then 
+				indicator:UpdateDB()			
 			end
 		end	
 	end
@@ -433,3 +435,5 @@ _G.Grid2Frame = Grid2Frame
 
 -- Allow other modules/addons to easily modify the grid unit frames
 Grid2Frame.Prototype = GridFramePrototype
+-- Allow other modules to access the variable for speed optimization
+Grid2.frames_of_unit = frames_of_unit

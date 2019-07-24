@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
-local D = E:NewModule('Distributor', "AceEvent-3.0","AceTimer-3.0","AceComm-3.0","AceSerializer-3.0")
+local D = E:GetModule('Distributor')
 local LibCompress = E.Libs.Compress
 local LibBase64 = E.Libs.Base64
 
@@ -30,6 +30,7 @@ local Downloads = {}
 local Uploads = {}
 
 function D:Initialize()
+	self.Initialized = true
 	self:RegisterComm(REQUEST_PREFIX)
 	self:RegisterEvent("CHAT_MSG_ADDON")
 
@@ -117,7 +118,7 @@ function D:OnCommReceived(prefix, msg, dist, sender)
 			textString = format(L["%s is attempting to share his filters with you. Would you like to accept the request?"], sender)
 		end
 
-		E.PopupDialogs['DISTRIBUTOR_RESPONSE'] = {
+		E.PopupDialogs.DISTRIBUTOR_RESPONSE = {
 			text = textString,
 			OnAccept = function()
 				self.statusBar:SetMinMaxValues(0, length)
@@ -174,7 +175,7 @@ function D:OnCommReceived(prefix, msg, dist, sender)
 					ElvDB.profiles[profileKey] = data
 				else
 					textString = format(L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."], sender, profileKey)
-					E.PopupDialogs['DISTRIBUTOR_CONFIRM'] = {
+					E.PopupDialogs.DISTRIBUTOR_CONFIRM = {
 						text = textString,
 						button1 = ACCEPT,
 						hasEditBox = 1,
@@ -200,7 +201,7 @@ function D:OnCommReceived(prefix, msg, dist, sender)
 				end
 			end
 
-			E.PopupDialogs['DISTRIBUTOR_CONFIRM'] = {
+			E.PopupDialogs.DISTRIBUTOR_CONFIRM = {
 				text = textString,
 				OnAccept = function()
 					if profileKey == "global" then
@@ -238,39 +239,30 @@ end
 
 --Keys that should not be exported
 local blacklistedKeys = {
-	["profile"] = {
-		["general"] = {
-			["numberPrefixStyle"] = true,
+	profile = {
+		general = {
+			numberPrefixStyle = true,
 		},
-		["actionbar"] = {
-		--[[
-			["bar1"] = {["paging"] = true},
-			["bar2"] = {["paging"] = true},
-			["bar3"] = {["paging"] = true},
-			["bar4"] = {["paging"] = true},
-			["bar5"] = {["paging"] = true},
-			["bar6"] = {["paging"] = true},
-			["bar7"] = {["paging"] = true},
-			["bar8"] = {["paging"] = true},
-			["bar9"] = {["paging"] = true},
-			["bar10"] = {["paging"] = true},
-		--]]
+		chat = {
+			hideVoiceButtons = true,
 		},
 	},
-	["private"] = {},
-	["global"] = {
-		["userInformedNewChanges1"] = true,
-		["general"] = {
-			["UIScale"] = true,
-			["eyefinity"] = true,
-			["disableTutorialButtons"] = true,
-			["showMissingTalentAlert"] = true,
+	private = {},
+	global = {
+		general = {
+			UIScale = true,
+			locale = true,
+			version = true,
+			eyefinity = true,
+			ignoreScalePopup = true,
+			disableTutorialButtons = true,
+			showMissingTalentAlert = true,
 		},
-		["chat"] = {
-			["classColorMentionExcludedNames"] = true,
+		chat = {
+			classColorMentionExcludedNames = true,
 		},
-		["unitframe"] = {
-			["spellRangeCheck"] = true,
+		unitframe = {
+			spellRangeCheck = true,
 		},
 	},
 }
@@ -516,38 +508,38 @@ function D:ImportProfile(dataString)
 	return true
 end
 
-E.PopupDialogs['DISTRIBUTOR_SUCCESS'] = {
+E.PopupDialogs.DISTRIBUTOR_SUCCESS = {
 	text = L["Your profile was successfully recieved by the player."],
 	whileDead = 1,
 	hideOnEscape = 1,
 	button1 = _G.OKAY,
 }
 
-E.PopupDialogs['DISTRIBUTOR_WAITING'] = {
+E.PopupDialogs.DISTRIBUTOR_WAITING = {
 	text = L["Profile request sent. Waiting for response from player."],
 	whileDead = 1,
 	hideOnEscape = 1,
 	timeout = 35,
 }
 
-E.PopupDialogs['DISTRIBUTOR_REQUEST_DENIED'] = {
+E.PopupDialogs.DISTRIBUTOR_REQUEST_DENIED = {
 	text = L["Request was denied by user."],
 	whileDead = 1,
 	hideOnEscape = 1,
 	button1 = _G.OKAY,
 }
 
-E.PopupDialogs['DISTRIBUTOR_FAILED'] = {
+E.PopupDialogs.DISTRIBUTOR_FAILED = {
 	text = L["Lord! It's a miracle! The download up and vanished like a fart in the wind! Try Again!"],
 	whileDead = 1,
 	hideOnEscape = 1,
 	button1 = _G.OKAY,
 }
 
-E.PopupDialogs['DISTRIBUTOR_RESPONSE'] = {}
-E.PopupDialogs['DISTRIBUTOR_CONFIRM'] = {}
+E.PopupDialogs.DISTRIBUTOR_RESPONSE = {}
+E.PopupDialogs.DISTRIBUTOR_CONFIRM = {}
 
-E.PopupDialogs['IMPORT_PROFILE_EXISTS'] = {
+E.PopupDialogs.IMPORT_PROFILE_EXISTS = {
 	text = L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."],
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -574,7 +566,7 @@ E.PopupDialogs['IMPORT_PROFILE_EXISTS'] = {
 	preferredIndex = 3
 }
 
-E.PopupDialogs["IMPORT_RL"] = {
+E.PopupDialogs.IMPORT_RL = {
 	text = L["You have imported settings which may require a UI reload to take effect. Reload now?"],
 	button1 = ACCEPT,
 	button2 = CANCEL,

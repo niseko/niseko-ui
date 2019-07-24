@@ -1,6 +1,6 @@
-		------------------------------------------------
-		-- Paragon Reputation 1.21 by Sev US-Drakkari --
-		------------------------------------------------
+		-------------------------------------------------
+		-- Paragon Reputation 1.24 by Fail US-Ragnaros --
+		-------------------------------------------------
 
 		  --[[	  Special thanks to Ammako for
 				  helping me with the vars and
@@ -16,7 +16,7 @@ PR.L = {}
 if LOCALE == "esES" or LOCALE == "esMX" then
 	PR.L["PARAGON"] = "Paragón"
 	PR.L["OPTIONDESC"] = "Estas opciones te permiten personalizar algunas cosas de Paragon Reputation."
-	PR.L["TOASTDESC"] = "Activa o desactiva una ventana que te avisara cuando tengas una recompensa Paragón."
+	PR.L["TOASTDESC"] = "Activa o desactiva una ventana que te avisara cuando tengas una Recompensa Paragón."
 	PR.L["LABEL001"] = "Colores de las Barras"
 	PR.L["LABEL002"] = "Formato del Texto"
 	PR.L["LABEL003"] = "Aviso de Recompensa"
@@ -29,22 +29,23 @@ if LOCALE == "esES" or LOCALE == "esMX" then
 	PR.L["SOUND"] = "Sonido de Advertencia"
 	PR.L["ANCHOR"] = "Posicionar el Ancla"
 	
--- Italian (MISSING  TRANSLATIONS)
+-- Italian (Google Translated this ones... should work because I speak spanish and they are similar to some extent)
 elseif LOCALE == "itIT" then
 	PR.L["PARAGON"] = "Eccellenza"
-	PR.L["OPTIONDESC"] = "This options allow you to customize some settings of Paragon Reputation."
-	PR.L["TOASTDESC"] = "Toggle a toast window that will warn you when you have a Paragon Reward."
-	PR.L["LABEL001"] = "Bars Color"
-	PR.L["LABEL002"] = "Text Format"
-	PR.L["LABEL003"] = "Reward Toast"
-	PR.L["BLUE"] = "Paragon Blue"
-	PR.L["GREEN"] = "Default Green"
-	PR.L["YELLOW"] = "Neutral Yellow"
-	PR.L["ORANGE"] = "Unfriendly Orange"
-	PR.L["RED"] = "Lightish Red"
-	PR.L["DEFICIT"] = "Reputation Deficit"
-	PR.L["SOUND"] = "Sound Warning"
-	PR.L["ANCHOR"] = "Toggle Anchor"
+	PR.L["OPTIONDESC"] = "Queste opzioni ti consentono di personalizzare alcune cose di Paragon Reputation."
+	PR.L["TOASTDESC"] = "Attiva o disattiva una finestra che ti avviserà quando hai una Ricompensa Eccellenza."
+	PR.L["LABEL001"] = "Colori delle Barre"
+	PR.L["LABEL002"] = "Formato di Testo"
+	PR.L["LABEL003"] = "Avviso di Ricompensa"
+	PR.L["BLUE"] = "Blue Eccellenza"
+	PR.L["GREEN"] = "Verde Predefinito"
+	PR.L["YELLOW"] = "Giallo Neutro"
+	PR.L["ORANGE"] = "Arancione Avverso"
+	PR.L["RED"] = "Clarito Rosso"
+	PR.L["DEFICIT"] = "Deficit di Reputazione"
+	PR.L["SOUND"] = "Suono di Avviso"
+	PR.L["ANCHOR"] = "Posiziona l'Ancora"
+	--Also, apparently nobody speaks Italian :(
 
 -- Portuguese (Thanks tiagopl)
 elseif LOCALE == "ptBR" then

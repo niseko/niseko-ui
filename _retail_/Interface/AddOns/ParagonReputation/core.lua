@@ -1,6 +1,6 @@
-		------------------------------------------------
-		-- Paragon Reputation 1.21 by Sev US-Drakkari --
-		------------------------------------------------
+		-------------------------------------------------
+		-- Paragon Reputation 1.24 by Fail US-Ragnaros --
+		-------------------------------------------------
 
 		  --[[	  Special thanks to Ammako for
 				  helping me with the vars and
@@ -10,32 +10,39 @@ local ADDON_NAME,ParagonReputation = ...
 local PR = ParagonReputation
 
 local ACTIVE_TOAST = false
+local WAITING_TOAST = {}
 
 local PARAGON_QUEST_ID = { --[QuestID] = {factionID,rewardID}
 	--Legion
-	[48976] = {2170,152922}, -- Argussian Reach
-	[46777] = {2045,152108}, -- Armies of Legionfall
-	[48977] = {2165,152923}, -- Army of the Light
-	[46745] = {1900,152102}, -- Court of Farondis
-	[46747] = {1883,152103}, -- Dreamweavers
-	[46743] = {1828,152104}, -- Highmountain Tribes
-	[46748] = {1859,152105}, -- The Nightfallen
-	[46749] = {1894,152107}, -- The Wardens
-	[46746] = {1948,152106}, -- Valarjar
+		[48976] = {2170,152922}, -- Argussian Reach
+		[46777] = {2045,152108}, -- Armies of Legionfall
+		[48977] = {2165,152923}, -- Army of the Light
+		[46745] = {1900,152102}, -- Court of Farondis
+		[46747] = {1883,152103}, -- Dreamweavers
+		[46743] = {1828,152104}, -- Highmountain Tribes
+		[46748] = {1859,152105}, -- The Nightfallen
+		[46749] = {1894,152107}, -- The Wardens
+		[46746] = {1948,152106}, -- Valarjar
 	
 	--Battle for Azeroth
-	[54453] = {2164,166298}, --Champions of Azeroth
-	[54451] = {2163,166245}, --Tortollan Seekers
-	
-	[54460] = {2156,166282}, --Talanji's Expedition
-	[54455] = {2157,166299}, --The Honorbound
-	[54461] = {2158,166290}, --Voldunai
-	[54462] = {2103,166292}, --Zandalari Empire
-	
-	[54456] = {2161,166297}, --Orber of Embers
-	[54458] = {2160,166295}, --Proudmoore Admiralty
-	[54457] = {2162,166294}, --Storm's Wake
-	[54454] = {2159,166300}, --The 7th Legion
+		--Neutral
+		[54453] = {2164,166298}, --Champions of Azeroth
+		[55348] = {2391,170061}, --Rustbolt Resistance
+		[54451] = {2163,166245}, --Tortollan Seekers
+		
+		--Horde
+		[54460] = {2156,166282}, --Talanji's Expedition
+		[54455] = {2157,166299}, --The Honorbound
+		[53982] = {2373,169940}, --The Unshackled
+		[54461] = {2158,166290}, --Voldunai
+		[54462] = {2103,166292}, --Zandalari Empire
+		
+		--Alliance
+		[54456] = {2161,166297}, --Orber of Embers
+		[54458] = {2160,166295}, --Proudmoore Admiralty
+		[54457] = {2162,166294}, --Storm's Wake
+		[54454] = {2159,166300}, --The 7th Legion
+		[55976] = {2400,169939}, --Waveblade Ankoan
 }
 
 -- [Reputation Watchbar] Color the Reputation Watchbar by the settings. (Thanks Hoalz)
@@ -94,36 +101,55 @@ function ParagonReputation:HookScript()
 end
 
 -- [Paragon Toast] Show the Paragon Toast if a Paragon Reward Quest is accepted.
+function ParagonReputation:ShowToast(name,text)
+	ACTIVE_TOAST = true
+	if PR.DB.sound then PlaySound(44295,"master",true) end
+	PR.toast:EnableMouse(false)
+	PR.toast.title:SetText(name)
+	PR.toast.title:SetAlpha(0)
+	PR.toast.description:SetText(text)
+	PR.toast.description:SetAlpha(0)
+	PR.toast.reset:Hide()
+	PR.toast.lock:Hide()
+	UIFrameFadeIn(PR.toast,.5,0,1)
+	C_Timer.After(.5,function()
+		UIFrameFadeIn(PR.toast.title,.5,0,1)
+	end)
+	C_Timer.After(.75,function()
+		UIFrameFadeIn(PR.toast.description,.5,0,1)
+	end)
+	C_Timer.After(PR.DB.fade,function()
+		UIFrameFadeOut(PR.toast,1,1,0)
+	end)
+	C_Timer.After(PR.DB.fade+1.25,function()
+		PR.toast:Hide()
+		ACTIVE_TOAST = false
+		if #WAITING_TOAST > 0 then
+			PR:WaitToast()
+		end
+	end)
+end
+
+-- [Paragon Toast] Get next Paragon Reward Quest if more than two are accepted at the same time.
+function ParagonReputation:WaitToast()
+	local name,text = unpack(WAITING_TOAST[1])
+	table.remove(WAITING_TOAST,1)
+	PR:ShowToast(name,text)
+end
+
+-- [Paragon Toast] Handle the QUEST_ACCEPTED event.
 local reward = CreateFrame("FRAME")
 reward:RegisterEvent("QUEST_ACCEPTED")
 reward:SetScript("OnEvent",function(self,event,...)
 	local questIndex,questID = ...
-	if PR.DB.toast and PARAGON_QUEST_ID[questID] and not ACTIVE_TOAST then
-		ACTIVE_TOAST = true
-		if PR.DB.sound then PlaySound(44295,"master",true) end
+	if PR.DB.toast and PARAGON_QUEST_ID[questID] then
 		local name = GetFactionInfoByID(PARAGON_QUEST_ID[questID][1])
 		local text = GetQuestLogCompletionText(questIndex)
-		PR.toast:EnableMouse(false)
-		PR.toast.title:SetText(name)
-		PR.toast.title:SetAlpha(0)
-		PR.toast.description:SetText(text)
-		PR.toast.description:SetAlpha(0)
-		PR.toast.reset:Hide()
-		PR.toast.lock:Hide()
-		UIFrameFadeIn(PR.toast,.5,0,1)
-		C_Timer.After(.5,function()
-			UIFrameFadeIn(PR.toast.title,.5,0,1)
-		end)
-		C_Timer.After(.75,function()
-			UIFrameFadeIn(PR.toast.description,.5,0,1)
-		end)
-		C_Timer.After(PR.DB.fade,function()
-			UIFrameFadeOut(PR.toast,1,1,0)
-		end)
-		C_Timer.After(PR.DB.fade+1,function()
-			ACTIVE_TOAST = false
-			PR.toast:Hide()
-		end)
+		if ACTIVE_TOAST then
+			WAITING_TOAST[#WAITING_TOAST+1] = {name,text} --Toast is already active, put this info on the line.
+		else
+			PR:ShowToast(name,text)
+		end
 	end
 end)
 
@@ -146,7 +172,7 @@ hooksecurefunc("ReputationFrame_Update",function()
 					if hasRewardPending then
 						local paragonFrame = ReputationFrame.paragonFramesPool:Acquire()
 						paragonFrame.factionID = factionID
-						paragonFrame:SetPoint("RIGHT", factionRow, 11, 0)
+						paragonFrame:SetPoint("RIGHT",factionRow,11,0)
 						paragonFrame.Glow:SetShown(true)
 						paragonFrame.Check:SetShown(true)
 						paragonFrame:Show()

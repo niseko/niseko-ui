@@ -16,6 +16,8 @@ local function LoadSkin()
 	S:HandleButton(ArchaeologyFrame.artifactPage.backButton, true)
 
 	S:HandleDropDownBox(_G.ArchaeologyFrame.raceFilterDropDown)
+	_G.ArchaeologyFrame.raceFilterDropDown.Text:ClearAllPoints()
+	_G.ArchaeologyFrame.raceFilterDropDown.Text:Point("LEFT", _G.ArchaeologyFrame.raceFilterDropDown.backdrop, "LEFT", 4, 0)
 
 	if E.private.skins.parchmentRemover.enable then
 		_G.ArchaeologyFrameBgLeft:Kill()
@@ -71,7 +73,7 @@ local function LoadSkin()
 	_G.ArcheologyDigsiteProgressBar:Point("TOP", _G.UIParent, "TOP", 0, -400)
 	E:RegisterStatusBar(_G.ArcheologyDigsiteProgressBar.FillBar)
 
-	_G.UIPARENT_MANAGED_FRAME_POSITIONS["ArcheologyDigsiteProgressBar"] = nil
+	_G.UIPARENT_MANAGED_FRAME_POSITIONS.ArcheologyDigsiteProgressBar = nil
 	E:CreateMover(_G.ArcheologyDigsiteProgressBar, "DigSiteProgressBarMover", L["Archeology Progress Bar"])
 end
 

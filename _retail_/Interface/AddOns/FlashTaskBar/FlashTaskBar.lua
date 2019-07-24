@@ -103,7 +103,7 @@ FlashTaskBar.last_flash = 0
 
 function FlashTaskBar:DoFlash (config_key)
 
-	if (FlashTaskBar.last_flash + 4 < GetTime()) then
+	if (FlashTaskBar.last_flash + 5 < GetTime()) then
 		if (FlashDebug) then
 			FlashTaskBar:Msg ("Flash Reason: " .. (config_key or "unknown"))
 		end
@@ -133,16 +133,19 @@ function FlashTaskBar.OnInit (self)
 		InterfaceOptionsFrame_OpenToCategory ("FlashTaskBar")
 		InterfaceOptionsFrame_OpenToCategory ("FlashTaskBar")
 	end
-
+	
 	--invite
 	function FlashTaskBar:DelayInviteCheck()
+		--if already in a group, ignore the invite call
+		--but the player might have received a request to join the group
+		--may be in the future this might need a flash as well
 		if (IsInGroup() or IsInRaid()) then
 			return
 		else
 			FlashTaskBar:DoFlash("invite")
 		end
 	end
-
+	
 	--> wait 2 seconds before flash, other addons may auto answer the group invite
 	function FlashTaskBar:CheckForGroupInvite()
 		if (StaticPopup1 and StaticPopup1:IsShown()) then
@@ -1166,7 +1169,7 @@ function FlashTaskBar.OnInit (self)
 		f:SetBackdropColor (0, 0, 0, 1)
 		
 		local close_sound_settings = FlashTaskBar:CreateButton (f, function() f:Hide() end, 160, 20, L["STRING_CLOSESOUNDPANEL"], _, _, _, _, _, _, FlashTaskBar:GetTemplate ("dropdown", "OPTIONS_DROPDOWN_TEMPLATE"), FlashTaskBar:GetTemplate ("font", "OPTIONS_FONT_TEMPLATE"))
-		close_sound_settings:SetPoint ("topleft", f, "topleft", 10, -500)
+		close_sound_settings:SetPoint ("topleft", f, "topleft", 10, -520)
 		close_sound_settings:SetIcon ([[Interface\Scenarios\ScenarioIcon-Check]], 16, 16, "overlay", {0, 1, 0, 1}, nil, 6, nil, 1)
 		
 		local sound_title = FlashTaskBar:CreateLabel (f, L["STRING_SOUNDSETTINGS"] .. ":", FlashTaskBar:GetTemplate ("font", "ORANGE_FONT_TEMPLATE"))

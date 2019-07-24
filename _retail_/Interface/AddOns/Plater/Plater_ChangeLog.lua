@@ -7,13 +7,36 @@ local _
 function Plater.GetChangelogTable()
 	if (not Plater.ChangeLogTable) then
 		Plater.ChangeLogTable = {
+
+			{1562097297,  "Bug Fix", "July 2nd, 2019", "Fixed spell animations."},
+			{1562097297,  "Bug Fix", "July 2nd, 2019", "Fixed script errors which was spamming in the chat."},
+			{1562097297,  "Bug Fix", "July 2nd, 2019", "Fixed buffs sometimes not showing in the aura frame 2."},
+			{1562097297,  "Bug Fix", "July 2nd, 2019", "Fixed more bugs with quest mobs detection."},
+			{1562097297,  "Bug Fix", "July 2nd, 2019", "Unit Highlight is now placed below the unit name and unit health."},
+			
+			{1557674970,  "New Feature", "May 12, 2019", "Added an option to stack auras with the same name."},
+			{1557674970,  "New Feature", "May 12, 2019", "Added an option to change the space between each aura icon."},
+			{1557674970,  "New Feature", "May 12, 2019", "Added an option to hide the nameplate when the unit dies."},
+			{1557674970,  "New Feature", "May 12, 2019", "Added an option to automatically track enrage effects."},
+			{1557674970,  "New Feature", "May 12, 2019", "Experimental tab got renamed to 'Level and Statra'."},
+			
+			{1554737982,  "Buf Fix", "April 8, 2019", "Fixed 'Only Show Player Name' not overriding the 'Only Damaged Players' setting."},
+			{1554737982,  "Buf Fix", "April 8, 2019", "Fixed Paladin's Hammer of Wrath execute range."},
+			{1554222484,  "Buf Fix", "April 4, 2019", "Fixed an issue with NameplateHasAura() API not checking Special Auras."},
+			{1554222484,  "New Feature", "April 2, 2019", "Language localization has been started: https://wow.curseforge.com/projects/plater-nameplates/localization."},
+			{1554222484,  "New Feature", "April 2, 2019", "Added Pet Indicator."},
+			
+			{1553180406,  "New Feature", "March 21, 2019", "Added Indicator Scale."},
+			
+			{1553016092,  "New Feature", "March 19, 2019", "Added Number System selector (western/east asia) at the Advanced tab."},
+			{1552762100,  "New Feature", "March 16, 2019", "Added Show Interrupt Author option (enabled by default)."},
 		
 			{1551553169,  "New Feature", "March 02, 2019", "Npc Colors tab now offers an easy way to set colors to different npcs, works on dungeons and raids."},
 			{1551553169,  "New Feature", "March 02, 2019", "Added an alpha slider for resources in the Personal Bar tab."},
 			{1551553169,  "New Feature", "March 02, 2019", "Added 'No Spell Name Length Limitation' option."},
 			
 			{1550774255,  "New Feature", "February 21, 2019", "Added checkbox to disable the health bar in the Personal Bar. Now it is possible to use the Personal Bar as just a regular Cast Bar that follows your character."},
-			{1550774255,  "Buf Fix", "February 21, 2019", "Fixed RefreshNameplateColor not applying the correct color when the unit is a quest mob."},
+			{1550774255,  "Bug Fix", "February 21, 2019", "Fixed RefreshNameplateColor not applying the correct color when the unit is a quest mob."},
 			{1550410653,  "Scripting", "February 17, 2019", "Added 'M+ Bwonsamdi Reaping' (enabled by default) hook script for the mobs from the affix without aggro tables."},
 			{1550410653,  "Scripting", "February 17, 2019", "Added 'Dont Have Aura' hook script."},
 			{1550410653,  "Bug Fix", "February 17, 2019", "Fixed cast bar border sometimes showing as white color above the spell name cast."},

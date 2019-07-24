@@ -11,6 +11,11 @@ local DISABLED = "|cffff0000"..VIDEO_OPTIONS_DISABLED.."|r"
 local UNKNOWN_ZONE = UNKNOWN.." (%d)"
 
 local mapData = nil
+local mapOverrides = {
+	-- For when EJ_GetInstanceInfo and GetRealZoneText don't use the same name /wrists
+	[320] = 531, -- Temple of Ahn'Qiraj -> Ahn'Qiraj Temple
+	[334] = 550, -- The Eye -> Tempest Keep
+}
 
 local function getMapIDs(tier, isRaid)
 	EJ_SelectTier(tier)
@@ -20,11 +25,12 @@ local function getMapIDs(tier, isRaid)
 		EJ_SelectInstance(instanceID)
 		local instanceName, _, _, _, _, _, mapID = EJ_GetInstanceInfo()
 		if mapID and mapID > 0 then
-			local info = C_Map.GetMapInfo(mapID)
-			mapData[info.name] = tier
-			if info.name ~= instanceName then -- just in case
-				mapData[instanceName] = tier
+			-- local info = C_Map.GetMapInfo(mapID)
+			-- mapData[info.name] = tier
+			if mapOverrides[mapID] then
+				instanceName = GetRealZoneText(mapOverrides[mapID])
 			end
+			mapData[instanceName] = tier
 		end
 		index = index + 1
 		instanceID = EJ_GetInstanceByIndex(index, isRaid)
@@ -61,11 +67,18 @@ local function GetOptions()
 				desc = L["Prompt to enable logging when entering a new raid instance."],
 				order = 1,
 			},
+			partial = {
+				type = "toggle",
+				name = L["Ignore partial group"],
+				desc = L["Skip the prompt if your instance group has less than five players."],
+				disabled = function() return not db.prompt end,
+				order = 2,
+			},
 			chat = {
 				type = "toggle",
 				name = L["Log chat"],
 				desc = L["Enable chat logging when combat logging is enabled."],
-				order = 2,
+				order = 3,
 			},
 			minimap = {
 				type = "toggle",
@@ -103,19 +116,45 @@ local function GetOptions()
 
 			local values = {}
 			for diff in next, difficulties do
+				if diff == 8 then
+					values = nil
+					break
+				end
 				values[diff] = GetDifficultyInfo(diff)
 			end
 
-			options.args[tier].args[name] = {
-				type = "multiselect",
-				name = name,
-				values = values,
-				get = function(info, key) return difficulties[key] end,
-				set = function(info, key, value)
-					difficulties[key] = value
-					addon:CheckInstance()
-				end,
-			}
+			if values then
+				options.args[tier].args[name] = {
+					type = "multiselect",
+					name = name,
+					values = values,
+					get = function(info, key) return difficulties[key] end,
+					set = function(info, key, value)
+						difficulties[key] = value
+						addon:CheckInstance()
+					end,
+					order = 0,
+				}
+			else
+				if not options.args[tier].args["keystone"] then
+					options.args[tier].args["keystone"] = {
+						type = "group", inline = true,
+						name = GetDifficultyInfo(8),
+						get = function(info) return db.zones[info.arg][8] end,
+						set = function(info, value)
+							db.zones[info.arg][8] = value
+							addon:CheckInstance()
+						end,
+						order = 1,
+						args = {},
+					}
+				end
+				options.args[tier].args["keystone"].args[name] = {
+					type = "toggle",
+					name = name,
+					arg = id,
+				}
+			end
 		end
 
 	else

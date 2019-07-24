@@ -20,10 +20,13 @@ local AuraFrame_OnEvent
 do
 	local indicators = {}
 	local val = {0, 0, 0}
-	local myUnits = Grid2.roster_my_units
-	AuraFrame_OnEvent = function(_, _, u)
-		local frames = Grid2:GetUnitFrames(u)
-		if not next(frames) then return end
+	local myUnits  = Grid2.roster_my_units
+	local myFrames = Grid2.frames_of_unit
+	AuraFrame_OnEvent = function(_, event, u)
+		-- Usually if no frames exists for the unit this function returns and do nothing (we ignore units not displayed by Grid2 like nameplates or units filtered by the active layout)
+		-- except if "event" is nil, in this case we are in a "Grid_UnitUpdated" event and the frames maybe were not created yet, so we need to save the auras states for future use.
+		local frames = myFrames[u]
+		if event and not next(frames) then return end
 		-- Scan Debuffs, Debuff Types, Debuff Groups
 		local i = 1
 		while true do
@@ -73,7 +76,7 @@ do
 				for s in next, statuses do
 					local mine = s.isMine
 					if mine==false or mine==myUnits[cas] then
-						if exp~=s.exp[u] or s.cnt[u]~=cnt or val[s.vId]~=s.val[u] or s.spells then 
+						if exp~=s.exp[u] or s.cnt[u]~=cnt or val[s.vId]~=s.val[u] or s.spells then
 							s.seen, s.idx[u], s.tex[u], s.cnt[u], s.dur[u], s.exp[u], s.val[u], s.tkr[u] = 1, i, tex, cnt, dur, exp, val[s.vId], 1
 						else
 							s.seen, s.idx[u] = -1, i 
@@ -94,11 +97,13 @@ do
 			s.seen = false
 		end
 		-- Update indicators that needs updating only once.
-		for indicator in next, indicators do
-			for frame in next, frames do
-				indicator:Update(frame, u)
+		if frames then
+			for indicator in next, indicators do
+				for frame in next, frames do
+					indicator:Update(frame, u)
+				end
 			end
-		end
+		end	
 		wipe(indicators)
 	end
 end
@@ -181,8 +186,8 @@ local function UnregisterStatusAura(status, auraType, subType)
 	local handler = (auraType=="buff" and Buffs) or (auraType=="debuff" and Debuffs)
 	if handler then
 		for key,statuses in pairs(handler) do
-			if statuses[self] then
-				statuses[self] = nil
+			if statuses[status] then
+				statuses[status] = nil
 				if not next(statuses) then handler[key] = nil end
 			end
 		end
@@ -193,12 +198,6 @@ local function UnregisterStatusAura(status, auraType, subType)
 	Statuses[status] = nil
 	DisableAuraEvents()
 end
-
-local function RefreshAuras() 
-	for unit in Grid2:IterateRosterUnits() do
-		AuraFrame_OnEvent(nil,nil,unit) 
-	end
-end	
 
 -- MakeStatusColorHandler()
 local MakeStatusColorHandler
@@ -229,6 +228,12 @@ local CreateStatusAura
 do
 	local fmt = string.format
 	local UnitHealthMax = UnitHealthMax
+	local unit_is_pet   = Grid2.owner_of_unit
+	local function Refresh() 
+		for unit in Grid2:IterateRosterUnits() do
+			AuraFrame_OnEvent(nil,nil,unit) 
+		end
+	end	
 	local function Reset(self, unit) 
 		-- multibar indicator needs val[unit]=nil because due to a speed optimization it does not check if status is active before calling GetPercent()
 		self.idx[unit], self.exp[unit], self.val[unit] = nil, nil, nil
@@ -249,7 +254,7 @@ do
 		return self.tkr[unit]==1 or "blink" 
 	end
 	local function IsInactive(self, unit)
-		return not (self.idx[unit] or Grid2:UnitIsPet(unit)) 
+		return not (self.idx[unit] or unit_is_pet[unit]) 
 	end
 	local function IsInactiveBlink(self, unit) 
 		return not self.idx[unit] and "blink" 
@@ -340,13 +345,14 @@ do
 	local function OnDisable(self)
 		UnregisterStatusAura(self, self.handlerType, self.dbx.subType)
 		UnregisterTimeTrackerStatus(self)
+		wipe(self.idx);	wipe(self.exp); wipe(self.val)
 	end
 	local function UpdateDB(self,dbx)
 		if self.enabled then self:OnDisable() end
 		local dbx = dbx or self.dbx
 		self.vId = dbx.valueIndex or 0
 		self.valMax = dbx.valueMax
-		self.GetPercent = dbx.valueMax and GetPercentMax or GetPercentHealth
+		self.GetPercent = dbx.valueIndex and (dbx.valueMax and GetPercentMax or GetPercentHealth) or Grid2.statusLibrary.GetPercent
 		if dbx.auras then -- multiple spells
 			self.spells = self.spells or {}
 			wipe(self.spells)
@@ -417,6 +423,7 @@ do
 		status.typ = {}
 		status.val = {}
 		status.tkr = {}
+		status.Refresh     = Refresh
 		status.Reset       = Reset
 		status.GetText     = GetText
 		status.GetDuration = GetDuration
@@ -455,7 +462,6 @@ Grid2:DbSetStatusDefaultValue( "debuff-Disease", {type = "debuffType", subType =
 -- Publish some functions & tables
 --===============================================================================
 
-Grid2.RefreshAuras      = RefreshAuras
 Grid2.CreateStatusAura  = CreateStatusAura
 Grid2.debuffTypeColors  = debuffTypeColors
 Grid2.debuffDispelTypes = debuffDispelTypes

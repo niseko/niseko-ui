@@ -14,8 +14,6 @@ local UnitExists = UnitExists
 local UnitIsPlayer = UnitIsPlayer
 local UnitIsUnit = UnitIsUnit
 local UnitReaction = UnitReaction
-local FACTION_BAR_COLORS = FACTION_BAR_COLORS
-local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 
 function UF:FrameGlow_MouseOnUnit(frame)
 	if frame and frame:IsVisible() and UnitExists('mouseover') then
@@ -105,7 +103,7 @@ function UF:FrameGlow_PositionGlow(frame, mainGlow, powerGlow)
 	local power = frame.Power and frame.Power.backdrop
 	local health = frame.Health and frame.Health.backdrop
 	local portrait = (frame.USE_PORTRAIT and not frame.USE_PORTRAIT_OVERLAY) and (frame.Portrait and frame.Portrait.backdrop)
-	local offset = (E.PixelMode and E.mult*3) or E.mult*4 -- edgeSize is 3
+	local offset = (E.PixelMode and 3) or 4 -- edgeSize is 3
 
 	mainGlow:ClearAllPoints()
 	mainGlow:Point('TOPLEFT', (frame.ORIENTATION == "LEFT" and portrait) or health, -offset, offset)
@@ -196,13 +194,13 @@ function UF:FrameGlow_SetGlowColor(glow, unit, which)
 		if isPlayer then
 			local _, class = UnitClass(unit)
 			if class then
-				local color = _G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
+				local color = _G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[class] or _G.RAID_CLASS_COLORS[class]
 				if color then
 					r, g, b = color.r, color.g, color.b
 				end
 			end
 		elseif reaction then
-			local color = FACTION_BAR_COLORS[reaction]
+			local color = _G.FACTION_BAR_COLORS[reaction]
 			if color then
 				r, g, b = color.r, color.g, color.b
 			end

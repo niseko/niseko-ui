@@ -23,9 +23,8 @@ local lastFullCount = 0
 local formatKey = ns.formatKey
 local orderedPairs = ns.orderedPairs
 local FeignEvent = ns.FeignEvent
-local RegisterEvent = ns.RegisterEvent
 
-local tinsert, tremove, twipe = table.insert, table.remove, table.wipe
+local insert, remove, wipe = table.insert, table.remove, table.wipe
 
 
 local unitIDs = { "target", "targettarget", "focus", "focustarget", "boss1", "boss2", "boss3", "boss4", "boss5" }
@@ -51,9 +50,14 @@ local RC = LibStub( "LibRangeCheck-2.0" )
 
 -- New Nameplate Proximity System
 function ns.getNumberTargets()
+    --[[ local ability = state.this_action and class.abilities[ state.this_action ]
+    if ability and ability.cluster then
+        return GetClusterCount( state.this_action )
+    end ]]
+
     local showNPs = GetCVar( 'nameplateShowEnemies' ) == "1"
 
-    twipe( nameplates )
+    wipe( nameplates )
     fullCount = 0
     Hekili.TargetDebug = ""
 
@@ -76,8 +80,10 @@ function ns.getNumberTargets()
             nameplates[ guid ] = true
         end
 
-        for unit, guid in pairs( unitIDs ) do
-            if UnitExists( unit ) and not UnitIsDead( unit ) and UnitCanAttack( "player", unit ) and UnitInPhase( unit ) and ( UnitIsPVP( "player" ) or not UnitIsPlayer( unit ) ) then
+        for _, unit in ipairs( unitIDs ) do
+            local guid = UnitGUID( unit )
+
+            if guid and not nameplates[ guid ] and UnitExists( unit ) and not UnitIsDead( unit ) and UnitCanAttack( "player", unit ) and UnitInPhase( unit ) and ( UnitIsPVP( "player" ) or not UnitIsPlayer( unit ) ) then
                 local _, range = RC:GetRange( unit )
 
                 local rate, n = Hekili:GetTTD( unit )
@@ -86,9 +92,9 @@ function ns.getNumberTargets()
                 if range and range <= spec.nameplateRange then
                     fullCount = fullCount + 1
                 end
+    
+                nameplates[ guid ] = true
             end
-
-            nameplates[ guid ] = true
         end
     end
 
@@ -227,6 +233,9 @@ function Hekili:DumpMinions()
 end
 
 
+
+
+
 local debuffs = {}
 local debuffCount = {}
 local debuffMods = {}
@@ -246,7 +255,6 @@ end
 
 
 ns.trackDebuff = function( spell, target, time, application )
-
   debuffs[ spell ] = debuffs[ spell ] or {}
   debuffCount[ spell ] = debuffCount[ spell ] or 0
 
@@ -274,7 +282,6 @@ ns.trackDebuff = function( spell, target, time, application )
         debuff.pmod = debuff.pmod or 1
     end
   end
-
 end
 
 
@@ -352,24 +359,22 @@ end
 local incomingDamage = {}
 local incomingHealing = {}
 
-ns.storeDamage = function( time, damage, damageType ) table.insert( incomingDamage, { t = time, damage = damage, damageType = damageType } ) end
+ns.storeDamage = function( time, damage, physical ) if damage and damage > 0 then table.insert( incomingDamage, { t = time, damage = damage, physical = physical } ) end end
 ns.storeHealing = function( time, healing ) table.insert( incomingHealing, { t = time, healing = healing } ) end
 
-ns.damageInLast = function( t )
+ns.damageInLast = function( t, physical )
+    local dmg = 0
+    local start = GetTime() - min( t, 15 )
 
-  local dmg = 0
-  local start = GetTime() - min( t, 15 )
+    for k, v in pairs( incomingDamage ) do
 
-  for k, v in pairs( incomingDamage ) do
-
-    if v.t > start then
-      dmg = dmg + v.damage
+    if v.t > start and ( physical == nil or v.physical == physical ) then
+        dmg = dmg + v.damage
     end
 
-  end
+    end
 
-  return dmg
-
+    return dmg
 end
 
 
@@ -450,24 +455,26 @@ do
         if not enemy then return end
 
         db[ guid ] = nil
-        twipe( enemy )
-        tinsert( recycle, enemy )
+        wipe( enemy )
+        insert( recycle, enemy )
     end
 
 
-    local function UpdateEnemy( guid, healthPct, time )
+    local function UpdateEnemy( guid, healthPct, unit, time )
         local enemy = db[ guid ]
         time = time or GetTime()
 
         if not enemy then
             -- This is the first time we've seen the enemy.
-            enemy = tremove( recycle, 1 ) or {}
+            enemy = remove( recycle, 1 ) or {}
             db[ guid ] = enemy
 
             enemy.firstSeen = time
             enemy.firstHealth = healthPct
             enemy.lastSeen = time
             enemy.lastHealth = healthPct
+
+            enemy.unit = unit
 
             enemy.rate = 0
             enemy.n = 0
@@ -493,6 +500,7 @@ do
             end
         end
 
+        enemy.unit = unit
         enemy.lastHealth = healthPct
         enemy.lastSeen = time
     end
@@ -516,6 +524,7 @@ do
         if enemy.n < 3 or enemy.rate == 0 then return default, enemy.n end
 
         local health, healthMax = UnitHealth( unit ), UnitHealthMax( unit )
+        health = health + UnitGetTotalAbsorbs( unit )
         local healthPct = health / healthMax
 
         if healthPct == 0 then return 0, enemy.n end
@@ -525,13 +534,63 @@ do
 
 
     function Hekili:GetGreatestTTD()
-        local time = 0
+        local time, validUnit = 0, false
 
         for k, v in pairs( db ) do
-            if v.n > 0 then time = max( time, ceil( v.lastHealth / v.rate ) ) end
+            if v.n > 3 then
+                time = max( time, ceil( v.lastHealth / v.rate ) )
+                validUnit = true
+            end
         end
 
+        if not validUnit then return FOREVER end
+
         return time
+    end
+
+
+    function Hekili:GetLowestTTD()
+        local time, validUnit = 3600, false
+
+        for k, v in pairs( db ) do
+            if v.n > 3 then
+                time = min( time, ceil( v.lastHealth / v.rate ) )
+                validUnit = true
+            end
+        end
+
+        if not validUnit then return FOREVER end
+
+        return time
+    end
+
+
+    function Hekili:GetNumTTDsWithin( x )
+        if x <= 3 then return 1 end
+
+        local count = 0
+
+        for k, v in pairs( db ) do
+            if v.n > 3 then
+                if ceil( v.lastHealth / v.rate ) <= x then count = count + 1 end
+            end
+        end
+
+        return count
+    end
+    Hekili.GetNumTTDsBefore = Hekili.GetNumTTDsWithin
+
+
+    function Hekili:GetNumTTDsAfter( x )
+        local count = 0
+
+        for k, v in pairs( db ) do
+            if v.n > 3 then
+                if ceil( v.lastHealth / v.rate ) > x then count = count + 1 end
+            end
+        end
+
+        return count
     end
 
 
@@ -540,7 +599,7 @@ do
     function Hekili:GetAddWaveTTD()
         if not UnitExists( "boss1" ) then return self:GetGreatestTTD() end
 
-        twipe( bosses )
+        wipe( bosses )
 
         for i = 1, 5 do
             local unit = "boss" .. i
@@ -573,7 +632,7 @@ do
     local UpdateTTDs
 
     UpdateTTDs = function()
-        twipe( seen )
+        wipe( seen )
 
         local now = GetTime()
 
@@ -585,7 +644,8 @@ do
                     EliminateEnemy( guid )
                 else
                     local health, healthMax = UnitHealth( unit ), UnitHealthMax( unit )
-                    UpdateEnemy( guid, health / healthMax, now )
+                    health = health + UnitGetTotalAbsorbs( unit )
+                    UpdateEnemy( guid, health / healthMax, unit, now )
                 end
                 seen[ guid ] = true
             end
@@ -596,14 +656,13 @@ do
                 EliminateEnemy( guid )
             elseif not seen[ guid ] then
                 local health, healthMax = UnitHealth( unit ), UnitHealthMax( unit )
-                UpdateEnemy( guid, health / healthMax, now )
+                UpdateEnemy( guid, health / healthMax, unit, now )
             end
             seen[ guid ] = true
         end
 
         C_Timer.After( 0.5, UpdateTTDs )
     end
-
 
     C_Timer.After( 0.5, UpdateTTDs )
 

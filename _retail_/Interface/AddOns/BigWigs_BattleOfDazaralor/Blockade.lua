@@ -43,10 +43,10 @@ function mod:GetOptions()
 		-- Sister Katherine
 		287995, -- Electric Shroud
 		284262, -- Voltaic Flash
-		284106, -- Crackling Lightning
+		{288205, "PROXIMITY", "SAY", "SAY_COUNTDOWN", "ME_ONLY_EMPHASIZE"}, -- Crackling Lightning
 		-- Brother Joseph
 		286558, -- Tidal Shroud
-		284362, -- Sea Storm
+		{284362, "SAY", "FLASH"}, -- Sea Storm
 		284383, -- Sea's Temptation XXX Rename bar to "Add"?
 		284405, -- Tempting Song
 		-- Stage 2
@@ -77,11 +77,14 @@ function mod:OnBossEnable()
 	self:Log("SPELL_CAST_START", "ElectricShroud", 287995)
 	self:Log("SPELL_CAST_START", "VoltaicFlash", 284262)
 	self:Log("SPELL_CAST_START", "CracklingLightning", 284106)
+	self:Log("SPELL_AURA_APPLIED", "CracklingLightningApplied", 288205)
+	self:Log("SPELL_AURA_REMOVED", "CracklingLightningRemoved", 288205)
 	self:Death("SisterDeath", 146251) -- Sister Katherine
 
 	-- Brother Joseph
 	self:Log("SPELL_CAST_START", "TidalShroud", 286558)
 	self:Log("SPELL_CAST_START", "SeaStorm", 284362)
+	self:Log("SPELL_AURA_APPLIED", "SeaStormApplied", 284361)
 	self:Log("SPELL_CAST_START", "SeasTemptation", 284383)
 	self:Log("SPELL_CAST_SUCCESS", "SirenSpawn", 289795) -- Zuldazar Reuse Spell 06
 	self:Log("SPELL_AURA_APPLIED", "TemptingSongApplied", 284405)
@@ -111,7 +114,7 @@ function mod:OnEngage()
 	wipe(mobCollector)
 
 	self:CDBar(284362, 7) -- Sea Storm
-	self:CDBar(284106, 10.5) -- Crackling Lightning
+	self:CDBar(288205, 10.5) -- Crackling Lightning
 	self:CDBar(284383, 18) -- Sea's Temptation
 	self:CDBar(284262, 24) -- Voltaic Flash
 	self:CDBar(287995, 30) -- Electric Shroud
@@ -149,7 +152,7 @@ do
 
 	local sisterAbilities = {
 		[284262] = true, -- Voltaic Flash
-		[284106] = true, -- Crackling Lightning
+		[288205] = true, -- Crackling Lightning
 		[287995] = true, -- Electric Shroud
 	}
 
@@ -248,7 +251,7 @@ end
 function mod:Translocate(args)
 	if self:MobId(args.sourceGUID) == 146251 then -- Sister
 		cracklingLightningCount = 1
-		self:CDBar(284106, 14.5) -- Crackling Lightning
+		self:CDBar(288205, 14.5) -- Crackling Lightning
 		self:CDBar(284262, 19.5) -- Voltaic Flash
 		self:CDBar(287995, 36.5) -- Electric Shroud
 	else -- Brother
@@ -287,12 +290,28 @@ function mod:VoltaicFlash(args)
 end
 
 function mod:CracklingLightning(args)
-	if self:IsSisterOnPlatform() then
-		self:Message2(args.spellId, "yellow")
-		self:PlaySound(args.spellId, "alert")
-	end
 	cracklingLightningCount = cracklingLightningCount + 1
-	self:CDBar(args.spellId, cracklingLightningCount % 2 == 0 and 12.1 or 22)
+	self:CDBar(288205, cracklingLightningCount % 2 == 0 and 12.1 or 22)
+end
+
+function mod:CracklingLightningApplied(args)
+	if self:Me(args.destGUID) then
+		self:TargetMessage2(args.spellId, "yellow", args.destName)
+		self:PlaySound(args.spellId, "warning")
+		self:Say(args.spellId)
+		self:SayCountdown(args.spellId, 4)
+		self:OpenProximity(args.spellId, 6)
+	elseif self:IsSisterOnPlatform() then
+		self:TargetMessage2(args.spellId, "yellow", args.destName)
+		self:PlaySound(args.spellId, "warning")
+	end
+end
+
+function mod:CracklingLightningRemoved(args)
+	if self:Me(args.destGUID) then
+		self:CancelSayCountdown(args.spellId)
+		self:CloseProximity(args.spellId)
+	end
 end
 
 function mod:SisterDeath(args)
@@ -300,7 +319,7 @@ function mod:SisterDeath(args)
 	self:PlaySound("stages", "long")
 	self:StopBar(287995) -- Electric Shroud
 	self:StopBar(284262) -- Voltaic Flash
-	self:StopBar(284106) -- Crackling Lightning
+	self:StopBar(288205) -- Crackling Lightning
 end
 
 -- Brother Joseph
@@ -313,11 +332,22 @@ function mod:TidalShroud(args)
 end
 
 function mod:SeaStorm(args)
-	if self:IsBrotherOnPlatform() then
-		self:Message2(args.spellId, "yellow")
-		self:PlaySound(args.spellId, "alert")
-	end
 	self:CDBar(args.spellId, 11)
+end
+
+do
+	local playerList = mod:NewTargetList()
+	function mod:SeaStormApplied(args)
+		if self:IsBrotherOnPlatform() then
+			playerList[#playerList+1] = args.destName
+			if self:Me(args.destGUID) then
+				self:Say(284362)
+				self:Flash(284362)
+			end
+			self:PlaySound(284362, "alert", nil, playerList)
+			self:TargetsMessage(284362, "yellow", playerList, 3)
+		end
+	end
 end
 
 function mod:SeasTemptation(args)

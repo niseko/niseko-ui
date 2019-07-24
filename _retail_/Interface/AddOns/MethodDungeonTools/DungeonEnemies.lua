@@ -127,11 +127,13 @@ function MDTDungeonEnemyMixin:OnClick(button, down)
 
     if button == "LeftButton" then
         if IsShiftKeyDown() then
-            MethodDungeonTools:PresetsAddPull(MethodDungeonTools:GetCurrentPull() + 1)
+            local newPullIdx = MethodDungeonTools:GetCurrentPull() + 1
+            MethodDungeonTools:PresetsAddPull(newPullIdx)
             MethodDungeonTools:ReloadPullButtons()
-            MethodDungeonTools:SetSelectionToPull(MethodDungeonTools:GetCurrentPull() + 1)
+            MethodDungeonTools:GetCurrentPreset().value.selection = {newPullIdx}
+            MethodDungeonTools:SetSelectionToPull(newPullIdx)
             MethodDungeonTools:DungeonEnemies_AddOrRemoveBlipToCurrentPull(self,not self.selected,isCTRLKeyDown)
-            MethodDungeonTools:DungeonEnemies_UpdateSelected(MethodDungeonTools:GetCurrentPull())
+            MethodDungeonTools:DungeonEnemies_UpdateSelected(newPullIdx)
             MethodDungeonTools:UpdateProgressbar()
             if false then
                 -- Add to current pull
@@ -148,14 +150,6 @@ function MDTDungeonEnemyMixin:OnClick(button, down)
             MethodDungeonTools:DungeonEnemies_UpdateSelected(MethodDungeonTools:GetCurrentPull())
             MethodDungeonTools:UpdateProgressbar()
             if false then
-
-                local pull = MethodDungeonTools:GetCurrentPreset().value.pulls[MethodDungeonTools:GetCurrentPull()]
-                local enemyCount = MethodDungeonTools.U.count_if(pull, function(entry)
-                    return #entry > 0
-                end)
-
-                --print("Enemy Count", enemyCount)
-
                 if not self.selected then
                     -- Add new Pull, if the current one isn't empty
                     local pull = MethodDungeonTools:GetCurrentPreset().value.pulls[MethodDungeonTools:GetCurrentPull()]
@@ -165,7 +159,6 @@ function MDTDungeonEnemyMixin:OnClick(button, down)
 
                     if enemyCount > 0 then
                         MethodDungeonTools:PresetsAddPull(MethodDungeonTools:GetCurrentPull() + 1)
-                        MethodDungeonTools:ReloadPullButtons()
                         MethodDungeonTools:SetSelectionToPull(MethodDungeonTools:GetCurrentPull() + 1)
                         MethodDungeonTools:ScrollToPull(MethodDungeonTools:GetCurrentPull())
                     end
@@ -186,20 +179,16 @@ function MDTDungeonEnemyMixin:OnClick(button, down)
 
                         if enemyCount == 0 then
                             MethodDungeonTools:DeletePull(pullIdx)
-                            MethodDungeonTools:ReloadPullButtons()
-
                             if pullIdx > #MethodDungeonTools:GetCurrentPreset().value.pulls then
                                 MethodDungeonTools:SetSelectionToPull(#MethodDungeonTools:GetCurrentPreset().value.pulls)
                             end
                         end
-
                         MethodDungeonTools:UpdateProgressbar()
                     end
                 end
             end
-
         end
-
+        MethodDungeonTools:ReloadPullButtons()
 
     elseif button == "RightButton" then
         if db.devMode then
@@ -252,6 +241,7 @@ function MDTDungeonEnemyMixin:DisplayPatrol(shown)
             patrolPoints[patrolIdx]:SetTexture("Interface\\Worldmap\\X_Mark_64Grey")
             patrolPoints[patrolIdx]:SetSize(4,4)
             patrolPoints[patrolIdx]:SetVertexColor(0,0.2,0.5,0.6)
+            patrolPoints[patrolIdx]:ClearAllPoints()
             patrolPoints[patrolIdx]:SetPoint("CENTER",MethodDungeonTools.main_frame.mapPanelTile1,"TOPLEFT",waypoint.x,waypoint.y)
             patrolPoints[patrolIdx].x = waypoint.x
             patrolPoints[patrolIdx].y = waypoint.y
@@ -299,6 +289,7 @@ local ranOnce
 function MethodDungeonTools:DisplayBlipTooltip(blip,shown)
     if not ranOnce then
         --fix elvui skinning
+        MethodDungeonTools.tooltip:ClearAllPoints()
         MethodDungeonTools.tooltip:SetPoint("TOPLEFT",UIParent,"BOTTOMRIGHT")
         MethodDungeonTools.tooltip:SetPoint("BOTTOMRIGHT",UIParent,"BOTTOMRIGHT")
         MethodDungeonTools.tooltip:Show()
@@ -321,7 +312,8 @@ function MethodDungeonTools:DisplayBlipTooltip(blip,shown)
     local boss = blip.data.isBoss or false
     local reapingText = ''
     if blip.data.reaping then
-        reapingText = "Reaping: " .. MethodDungeonTools.reapingStatic[tostring(blip.data.reaping)].name .. "\n"
+        local reapingIcon = CreateTextureMarkup(MethodDungeonTools.reapingStatic[tostring(blip.data.reaping)].iconTexture, 32, 32, 16, 16, 0, 1, 0, 1,0,0) or ""
+        reapingText = "Reaping: "..reapingIcon.." "..MethodDungeonTools.reapingStatic[tostring(blip.data.reaping)].name .. "\n"
     end
     local health = MethodDungeonTools:CalculateEnemyHealth(boss,data.health,db.currentDifficulty)
     local group = blip.clone.g and " (G "..blip.clone.g..")" or ""
@@ -337,11 +329,13 @@ function MethodDungeonTools:DisplayBlipTooltip(blip,shown)
     text = text .."\n\n[Right click for more info]"
     tooltip.String:SetText(text)
 
+    tooltip:ClearAllPoints()
     if db.tooltipInCorner then
         tooltip:SetPoint("BOTTOMRIGHT",MethodDungeonTools.main_frame,"BOTTOMRIGHT",0,0)
         tooltip:SetPoint("TOPLEFT",MethodDungeonTools.main_frame,"BOTTOMRIGHT",-tooltip.mySizes.x,tooltip.mySizes.y)
     else
         --check for bottom clipping
+        tooltip:ClearAllPoints()
         tooltip:SetPoint("TOPLEFT",blip,"BOTTOMRIGHT",30,0)
         tooltip:SetPoint("BOTTOMRIGHT",blip,"BOTTOMRIGHT",30+tooltip.mySizes.x,-tooltip.mySizes.y)
         local bottomOffset = 0
@@ -405,6 +399,7 @@ local function blipDevModeSetup(blip)
 end
 
 function MDTDungeonEnemyMixin:SetUp(data,clone)
+    self:ClearAllPoints()
     self:SetPoint("CENTER",MethodDungeonTools.main_frame.mapPanelTile1,"TOPLEFT",clone.x,clone.y)
     self.normalScale = data.scale*(data.isBoss and 1.7 or 1)*(MethodDungeonTools.scaleMultiplier[db.currentDungeonIdx] or 1)
     self.normalScale = self.normalScale * 0.6
@@ -439,7 +434,11 @@ function MDTDungeonEnemyMixin:SetUp(data,clone)
     if db.enemyStyle == 2 then
         self.texture_Portrait:SetTexture("Interface\\Worldmap\\WorldMapPartyIcon")
     else
-        SetPortraitTextureFromCreatureDisplayID(self.texture_Portrait,data.displayId or 39490)
+        if data.iconTexture then
+            SetPortraitToTexture(self.texture_Portrait,data.iconTexture);
+        else
+            SetPortraitTextureFromCreatureDisplayID(self.texture_Portrait,data.displayId or 39490)
+        end
     end
     self:Show()
     self.texture_Indicator:Hide()
@@ -533,7 +532,30 @@ function MethodDungeonTools:DungeonEnemies_AddOrRemoveBlipToCurrentPull(blip,add
     MethodDungeonTools:UpdatePullButtonNPCData(pull)
 end
 
-
+---DungeonEnemies_UpdateBlipColors
+---Updates the colors of all selected blips of the specified pull
+function MethodDungeonTools:DungeonEnemies_UpdateBlipColors(pull,r,g,b)
+    local p = preset.value.pulls[pull]
+    for enemyIdx,clones in pairs(p) do
+        if tonumber(enemyIdx) then
+            for _,cloneIdx in pairs(clones) do
+                for _,blip in pairs(blips) do
+                    if (blip.enemyIdx == enemyIdx) and (blip.cloneIdx == cloneIdx) then
+                        if not db.devMode then
+                            if db.enemyStyle == 2 then
+                                blip.texture_Portrait:SetVertexColor(r,g,b,1)
+                            else
+                                blip.texture_Portrait:SetVertexColor(r,g,b,1)
+                                blip.texture_SelectedHighlight:SetVertexColor(r,g,b,0.7)
+                            end
+                        end
+                        break
+                    end
+                end
+            end
+        end
+    end
+end
 
 ---DungeonEnemies_UpdateSelected
 ---Updates the selected Enemies on the map and marks them green
@@ -554,28 +576,50 @@ function MethodDungeonTools:DungeonEnemies_UpdateSelected(pull)
     end
     --highlight all pull enemies
     for pullIdx,p in pairs(preset.value.pulls) do
+        local r,g,b = MethodDungeonTools:DungeonEnemies_GetPullColor(pullIdx)
         for enemyIdx,clones in pairs(p) do
-            for _,cloneIdx in pairs(clones) do
-                for _,blip in pairs(blips) do
-                    if (blip.enemyIdx == enemyIdx) and (blip.cloneIdx == cloneIdx) then
-                        blip.texture_SelectedHighlight:Show()
-                        blip.selected = true
-                        if not db.devMode then
-                            if db.enemyStyle == 2 then
-                                blip.texture_Portrait:SetVertexColor(0,1,0,1)
-                            else
-                                blip.texture_Portrait:SetVertexColor(0,0.8,0,1)
+            if tonumber(enemyIdx) then
+                for _,cloneIdx in pairs(clones) do
+                    for _,blip in pairs(blips) do
+                        if (blip.enemyIdx == enemyIdx) and (blip.cloneIdx == cloneIdx) then
+                            blip.texture_SelectedHighlight:Show()
+                            blip.selected = true
+                            if not db.devMode then
+                                if db.enemyStyle == 2 then
+                                    blip.texture_Portrait:SetVertexColor(0,1,0,1)
+                                else
+                                    blip.texture_Portrait:SetVertexColor(r,g,b,1)
+                                    blip.texture_SelectedHighlight:SetVertexColor(r,g,b,0.7)
+                                end
                             end
+                            if pullIdx == pull then
+                                blip.texture_PullIndicator:Show()
+                            end
+                            break
                         end
-                        if pullIdx == pull then
-                            blip.texture_PullIndicator:Show()
-                        end
-                        break
                     end
                 end
             end
         end
     end
+end
+
+---DungeonEnemies_SetPullColor
+---Sets a custom color for a pull
+function MethodDungeonTools:DungeonEnemies_SetPullColor(pull,r,g,b)
+    preset = MethodDungeonTools:GetCurrentPreset()
+    preset.value.pulls[pull]["color"] = MethodDungeonTools:RGBToHex(r,g,b)
+end
+
+---DungeonEnemies_GetPullColor
+---Returns the custom color for a pull (if specified)
+function MethodDungeonTools:DungeonEnemies_GetPullColor(pull)
+    local r,g,b = MethodDungeonTools:HexToRGB(preset.value.pulls[pull]["color"])
+    if not r then
+        r,g,b = MethodDungeonTools:HexToRGB(db.defaultColor)
+        MethodDungeonTools:DungeonEnemies_SetPullColor(pull,r,g,b)
+    end
+    return r,g,b
 end
 
 ---DungeonEnemies_UpdateTeeming
@@ -599,6 +643,22 @@ function MethodDungeonTools:DungeonEnemies_UpdateTeeming()
         end
     end
     MethodDungeonTools:DungeonEnemies_UpdateBlacktoothEvent()
+end
+
+---DungeonEnemies_UpdateBeguiling
+---Updates visibility state of Beguiling NPCs
+function MethodDungeonTools:DungeonEnemies_UpdateBeguiling()
+    local week = preset.week
+    for _,blip in pairs(blips) do
+        local weekData =  blip.clone.week
+        if weekData and not weekData[week] then
+            blip:Disable()
+            blip:Hide()
+        elseif weekData and weekData[week] then
+            blip:Enable()
+            blip:Show()
+        end
+    end
 end
 
 ---DungeonEnemies_UpdateBlacktoothEvent
@@ -722,4 +782,27 @@ function MethodDungeonTools:GetEnemyForces(npcId)
             end
         end
     end
+end
+
+---returns how many of each reaping type are in the specified pull
+local reapingTypeCount = {}
+function MethodDungeonTools:GetReapingTypesForPull(pullIdx)
+    preset = MethodDungeonTools:GetCurrentPreset()
+    db = db or MethodDungeonTools:GetDB()
+    table.wipe(reapingTypeCount)
+
+    for enemyIdx,clones in pairs(preset.value.pulls[pullIdx]) do
+        if tonumber(enemyIdx) then
+            local reapingType = MethodDungeonTools.dungeonEnemies[db.currentDungeonIdx][enemyIdx].reaping
+            if reapingType then
+                for _,cloneIdx in pairs(clones) do
+                    if MethodDungeonTools:IsCloneIncluded(enemyIdx,cloneIdx) then
+                        reapingTypeCount[reapingType] = reapingTypeCount[reapingType] and reapingTypeCount[reapingType]+1 or 1
+                    end
+                end
+            end
+        end
+    end
+
+    return reapingTypeCount[148716] or 0,reapingTypeCount[148893] or 0,reapingTypeCount[148894] or 0
 end

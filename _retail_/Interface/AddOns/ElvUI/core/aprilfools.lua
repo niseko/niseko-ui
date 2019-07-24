@@ -6,6 +6,8 @@
 ]]
 
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
+local UF = E:GetModule('UnitFrames')
+local AB = E:GetModule('ActionBars')
 
 --Lua functions
 local _G = _G
@@ -23,7 +25,6 @@ local SendChatMessage = SendChatMessage
 --Harlem Shake (Activate with command: /harlemshake)
 --People really seemed to like this one. We got a lot of positive responses.
 do
-	E.yep = tonumber(E.version) == 10.92
 	function E:StopHarlemShake()
 		E.isMassiveShaking = nil
 		StopMusic()
@@ -70,11 +71,9 @@ do
 
 		SetCVar("Sound_EnableAllSound", 1)
 		SetCVar("Sound_EnableMusic", 1)
-		PlayMusic([[Interface\AddOns\ElvUI\media\sounds\harlemshake.ogg]])
+		PlayMusic(E.Media.Sounds.HarlemShake)
 		E:ScheduleTimer("DoTheHarlemShake", 15.5)
 
-		local UF = E:GetModule("UnitFrames")
-		local AB = E:GetModule("ActionBars")
 		self.massiveShakeObjects = {}
 		tinsert(self.massiveShakeObjects, _G.GameTooltip)
 		tinsert(self.massiveShakeObjects, _G.Minimap)
@@ -85,7 +84,6 @@ do
 		for unit in pairs(UF.units) do
 			tinsert(self.massiveShakeObjects, UF[unit])
 		end
-
 		for _, header in pairs(UF.headers) do
 			tinsert(self.massiveShakeObjects, header)
 		end
@@ -194,8 +192,8 @@ do
 			self.db.general.bordercolor = {r = 223/255, g = 217/255, b = 47/255}
 			self.db.general.valuecolor = {r = 223/255, g = 217/255, b = 47/255}
 
-			self.db.chat.panelBackdropNameLeft = [[Interface\AddOns\ElvUI\media\textures\helloKittyChat]]
-			self.db.chat.panelBackdropNameRight = [[Interface\AddOns\ElvUI\media\textures\helloKittyChat]]
+			self.db.chat.panelBackdropNameLeft = E.Media.Textures.HelloKittyChat
+			self.db.chat.panelBackdropNameRight = E.Media.Textures.HelloKittyChat
 
 			self.db.unitframe.colors.castColor = {r = 223/255, g = 76/255, b = 188/255}
 			self.db.unitframe.colors.transparentCastbar = true
@@ -208,7 +206,7 @@ do
 
 			SetCVar("Sound_EnableAllSound", 1)
 			SetCVar("Sound_EnableMusic", 1)
-			PlayMusic([[Interface\AddOns\ElvUI\media\sounds\helloKitty.ogg]])
+			PlayMusic(E.Media.Sounds.HelloKitty)
 			E:StaticPopup_Show("HELLO_KITTY_END")
 
 			self.db.general.kittys = true
@@ -278,7 +276,7 @@ do
 		helloKittyLeft:Point("BOTTOMLEFT", _G.LeftChatPanel, "BOTTOMRIGHT", 2, -4)
 		helloKittyLeft.tex = helloKittyLeft:CreateTexture(nil, "OVERLAY")
 		helloKittyLeft.tex:SetAllPoints()
-		helloKittyLeft.tex:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\helloKitty")
+		helloKittyLeft.tex:SetTexture(E.Media.Textures.HelloKitty)
 		helloKittyLeft.tex:SetTexCoord(0, 0, 0, 1, 0, 0, 0, 1)
 		helloKittyLeft.curFrame = 1
 		helloKittyLeft.countUp = true
@@ -295,7 +293,7 @@ do
 		helloKittyRight:Point("BOTTOMRIGHT", _G.RightChatPanel, "BOTTOMLEFT", -2, -4)
 		helloKittyRight.tex = helloKittyRight:CreateTexture(nil, "OVERLAY")
 		helloKittyRight.tex:SetAllPoints()
-		helloKittyRight.tex:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\helloKitty")
+		helloKittyRight.tex:SetTexture(E.Media.Textures.HelloKitty)
 		helloKittyRight.tex:SetTexCoord(0, 0, 0, 1, 0, 0, 0, 1)
 		helloKittyRight.curFrame = 10
 		helloKittyRight.countUp = false

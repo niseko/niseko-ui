@@ -7,16 +7,26 @@ local L = Grid2Options.L
 -- Grid2Options:MakeIndicatorStatusOptions()
 -- Grid2Options:MakeStatusIndicatorOptions()
 do
+	local function GetIndicatorNewPriority(indicator)
+		local priority = 50
+		local map = Grid2:DbGetValue('statusMap', indicator.name)
+		if map then
+			for _,p in pairs(map) do
+				p = tonumber(p)
+				if p and p>=priority then
+					priority = p+1
+				end
+			end
+		end
+		return priority
+	end
+
 	local function RegisterIndicatorStatus(indicator, status, value)
 		if value then
-			local priority = #indicator.statuses>0 and indicator.priorities[indicator.statuses[1]] + 1 or 50
+			local priority = GetIndicatorNewPriority(indicator)
 			Grid2:DbSetMap(indicator.name, status.name, priority)
 			indicator:RegisterStatus(status, priority)
-			-- special case for auras
-			local type = status.dbx.type
-			if type=="buff" or type=="debuff" or type=="debuffType" then
-				Grid2:RefreshAuras()
-			end
+			status:Refresh()
 		else
 			Grid2:DbSetMap(indicator.name, status.name, nil)
 			indicator:UnregisterStatus(status)
@@ -82,14 +92,21 @@ do
 		if indicator.statuses then
 			local arg  = { indicator = indicator, options = options }
 			local more = #indicator.statuses>1
+			local count, group, root = 0
+			if #indicator.statuses>15 then
+				count, group, root = 1, 0, options
+			end
 			for index, status in ipairs(indicator.statuses) do
-				local statusKey = status.name
-				local order = 5 * index
-				local passValue = {indicator = indicator, status = status}
+				count = count - 1
+				if count==0 then -- Using groups AceGUI performance is much better when a lot of statuses are displayed
+					options, count, group = {}, 15, group+1
+					root['S'..group] = { type = "group", order = group, inline = true, name = "", args = options }
+				end
+				local statusKey, order = status.name, index*5
 				options[statusKey] = {
 					type = "toggle",
 					order = order,
-					width = 1.5,
+					width = 1.7,
 					name =  Grid2Options.LocalizeStatus(status),
 					desc = L["Select statuses to display with the indicator"],
 					get = function() return true end,
@@ -122,9 +139,9 @@ do
 						arg = arg,
 					}
 					options[statusKey .."S"] = {
-					  type = "description",
-					  name = "",
-					  order = order + 3
+						type = "description",
+						name = "",
+						order = order + 3
 					}
 				end
 			end
@@ -171,12 +188,13 @@ do
 				local indicator = Grid2.indicators[key]
 				if indicator.dbx.type ~= 'multibar' then
 					RegisterIndicatorStatus(indicator, status, value)
-					self:MakeIndicatorOptions( Grid2.indicatorTypes.color[indicator.name] and Grid2.indicators[indicator.parentName] or indicator )
+					self:RefreshIndicatorOptions(indicator) 
 				end
 			end,
 			confirm = function(info,key)
 				return Grid2.indicators[key].dbx.type == 'multibar' and L['This indicator cannot be changed from here: go to "indicators" section to assign/unassign statuses to this indicator.']
 			end,
+			disabled = function() return status:IsSuspended() end,
 		}
 	end
 end
@@ -482,7 +500,7 @@ function Grid2Options:MakeIndicatorLocationOptions(indicator, options)
 		order = 7,
 		name = L["X Offset"],
 		desc = L["X - Horizontal Offset"],
-		min = -50, max = 50, step = 1, bigStep = 1,
+		softMin = -50, softMax = 50, step = 1, bigStep = 1,
 		get = function() return location.x end,
 		set = function(_, v)
 			location.x = v
@@ -494,7 +512,7 @@ function Grid2Options:MakeIndicatorLocationOptions(indicator, options)
 		order = 8,
 		name = L["Y Offset"],
 		desc = L["Y - Vertical Offset"],
-		min = -50, max = 50, step = 1, bigStep = 1,
+		softMin = -50, softMax = 50, step = 1, bigStep = 1,
 		get = function() return location.y end,
 		set = function(_, v)
 			location.y = v

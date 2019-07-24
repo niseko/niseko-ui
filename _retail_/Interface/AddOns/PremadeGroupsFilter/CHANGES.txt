@@ -1,16 +1,28 @@
-lightweight tag bcd4772f51d3d5377ea45467445bb78675e920ac 1.26
+lightweight tag 4b85a2c34ce2b901ddea207337fa2174ee451eb6 1.28
 Author:	Bernhard Saumweber <b.saumweber@gmail.com>
-Date:	Tue Feb 26 21:22:41 2019 +0100
+Date:	Sat Jul 13 18:03:18 2019 +0200
 
-commit bcd4772f51d3d5377ea45467445bb78675e920ac
+commit 4b85a2c34ce2b901ddea207337fa2174ee451eb6
 Author: Bernhard Saumweber <b.saumweber@gmail.com>
-Date:   Tue Feb 26 21:21:28 2019 +0100
+Date:   Sat Jul 13 18:03:18 2019 +0200
 
-    Fixed RaiderIO keywords rio and riomain, removed riodps, rioheal and riotank and added rioprev (last season), riomainprev (last season on main char) and riokey20plus
+    Set version to next release version: 1.28
 
-commit e3686f7de089f6a5e05eccfa189f2ca1cd4760ab
+commit 6f6786557ccf42e2847d4a63a38c5d15ba203137
 Author: Bernhard Saumweber <b.saumweber@gmail.com>
-Date:   Sun Jan 27 17:10:52 2019 +0100
+Date:   Sat Jul 13 18:01:37 2019 +0200
 
-    Set version to next release version: 1.26
+    Update help tooltip with latest dungeon keywords
+
+commit 760edb42eeb8794263900b7cd150a87805637be7
+Author: Bernhard Saumweber <b.saumweber@gmail.com>
+Date:   Sat Jul 13 17:52:05 2019 +0200
+
+    Raise interface version to 80200
+
+commit dedc6febe8eb706d83941b5b03aa7b81e3e59450
+Author: Rhino <6531393+srhinos@users.noreply.github.com>
+Date:   Sat Jul 13 08:46:56 2019 -0700
+
+    Update Addon to Include  Palace and Mechagon (#22)
 

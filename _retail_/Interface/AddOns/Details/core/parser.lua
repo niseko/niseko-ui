@@ -18,7 +18,7 @@
 	local _IsInRaid = IsInRaid --wow api local
 	local _IsInGroup = IsInGroup --wow api local
 	local _GetNumGroupMembers = GetNumGroupMembers --wow api local
-	local _UnitGroupRolesAssigned = UnitGroupRolesAssigned --wow api local
+	local _UnitGroupRolesAssigned = DetailsFramework.UnitGroupRolesAssigned
 	local _GetTime = GetTime
 	local _select = select
 	local _UnitBuff = UnitBuff
@@ -62,6 +62,8 @@
 	
 	--> current combat and overall pointers
 		local _current_combat = _detalhes.tabela_vigente or {} --> placeholder table
+		local _current_combat_cleu_events = {n = 1} --> placeholder
+
 	--> total container pointers
 		local _current_total = _current_combat.totals
 		local _current_gtotal = _current_combat.totals_grupo
@@ -89,6 +91,8 @@
 		local raid_members_cache = setmetatable ({}, _detalhes.weaktable)
 	--> tanks
 		local tanks_members_cache = setmetatable ({}, _detalhes.weaktable)
+	--> auto regen
+		local auto_regen_cache = setmetatable ({}, _detalhes.weaktable)
 	--> bitfield swap cache
 		local bitfield_swap_cache = {}
 	--> damage and heal last events
@@ -108,6 +112,8 @@
 	local container_damage_target = _detalhes.container_type.CONTAINER_DAMAGETARGET_CLASS
 	local container_misc = _detalhes.container_type.CONTAINER_MISC_CLASS
 	local duel_candidates = _detalhes.duel_candidates
+	
+	local _token_ids = _detalhes.TokenID
 	
 	local OBJECT_TYPE_ENEMY	=	0x00000040
 	local OBJECT_TYPE_PLAYER 	=	0x00000400
@@ -142,6 +148,7 @@
 		[201363] = 218617, --warrior rampage
 		[85384] = 96103, --warrior raging blow
 		[85288] = 96103, --warrior raging blow
+		[280849] = 5308, --warrior execute
 		[163558] = 5308, --warrior execute
 		[217955] = 5308, --warrior execute
 		[217956] = 5308, --warrior execute
@@ -207,6 +214,8 @@
 	--> discharge apetagonizer core
 	local SPELLNAME_GRONG_CORE = GetSpellInfo (285660)
 	local SPELLNAME_GRONG_CORE_ALLIANCE = GetSpellInfo (286435)
+	--> storm of annihilation
+	local SPELLANAME_STORM_OF_ANNIHILATION = GetSpellInfo (284601)
 	
 	--> spells with special treatment
 	local special_damage_spells = {
@@ -237,6 +246,7 @@
 	--> in combat flag
 		local _in_combat = false
 		local _current_encounter_id
+		local _is_storing_cleu = false
 		
 	--> deathlog
 		local _death_event_amt = 16
@@ -268,6 +278,20 @@
 			["141265"] = true,
 		}
 		
+	--> regen overflow
+		local auto_regen_power_specs = {
+			[103] = Enum.PowerType.Energy, --druid feral
+			[259] = Enum.PowerType.Energy, --rogue ass
+			[260] = Enum.PowerType.Energy, --rogue outlaw
+			[261] = Enum.PowerType.Energy, --rogue sub
+			[254] = Enum.PowerType.Focus, --hunter mm
+			[253] = Enum.PowerType.Focus, --hunter bm
+			[255] = Enum.PowerType.Focus, --hunter survival
+			[268] = Enum.PowerType.Energy, --monk brewmaster
+			[269] = Enum.PowerType.Energy, --monk windwalker
+		}
+		local _auto_regen_thread
+		local AUTO_REGEN_PRECISION = 2
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --> internal functions
@@ -337,7 +361,7 @@
 			else
 				local db = _detalhes.GetStorage()
 				
-				local role = UnitGroupRolesAssigned ("player")
+				local role = _UnitGroupRolesAssigned ("player")
 				local isDamage = (role == "DAMAGER") or (role == "TANK") --or true
 				local bestRank, encounterTable = _detalhes.storage:GetBestFromPlayer (diff, encounterID, isDamage and "damage" or "healing", _detalhes.playername, true)
 				
@@ -427,8 +451,13 @@
 		--end
 		
 		--rules of specific encounters
-
-		if (_current_encounter_id == 2263 or _current_encounter_id == 2284) then --grong --REMOVE ON 9.0 LAUNCH
+		
+		if (_current_encounter_id == 2273) then --Uu'nat  --REMOVE ON 9.0 LAUNCH
+			if (spellname == SPELLANAME_STORM_OF_ANNIHILATION or spellid == 284601) then
+				--return --this is parsed as friendly fire
+			end
+		
+		elseif (_current_encounter_id == 2263 or _current_encounter_id == 2284) then --grong --REMOVE ON 9.0 LAUNCH
 			if (spellid == 285660 or spellname == SPELLNAME_GRONG_CORE or spellid == 286435 or spellname == SPELLNAME_GRONG_CORE_ALLIANCE) then
 				return
 			end
@@ -921,6 +950,11 @@
 			if (_current_combat.is_boss and who_flags and _bit_band (who_flags, OBJECT_TYPE_ENEMY) ~= 0) then
 				_detalhes.spell_school_cache [spellname] = spelltype or school
 			end
+		end
+		
+		if (_is_storing_cleu) then
+			_current_combat_cleu_events [_current_combat_cleu_events.n] = {_tempo, _token_ids [token] or 0, who_name, alvo_name or "", spellid, amount}
+			_current_combat_cleu_events.n = _current_combat_cleu_events.n + 1
 		end
 		
 		return spell_damage_func (spell, alvo_serial, alvo_name, alvo_flags, amount, who_name, resisted, blocked, absorbed, critical, glacing, token, isoffhand)
@@ -1786,6 +1820,11 @@
 			if (_current_combat.is_boss and who_flags and _bit_band (who_flags, OBJECT_TYPE_ENEMY) ~= 0) then
 				_detalhes.spell_school_cache [spellname] = spelltype or school
 			end
+		end
+		
+		if (_is_storing_cleu) then
+			_current_combat_cleu_events [_current_combat_cleu_events.n] = {_tempo, _token_ids [token] or 0, who_name, alvo_name or "", spellid, amount}
+			_current_combat_cleu_events.n = _current_combat_cleu_events.n + 1
 		end
 		
 		if (is_shield) then
@@ -2727,7 +2766,27 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		end
 	end)
 
-	function parser:energize (token, time, who_serial, who_name, who_flags, alvo_serial, alvo_name, alvo_flags, alvo_flags2, spellid, spellname, spelltype, amount, powertype, p6, p7)
+	local regen_power_overflow_check = function()
+		if (not _in_combat) then
+			return
+		end
+		
+		for playerName, powerType in _pairs (auto_regen_cache) do 
+			local currentPower = UnitPower (playerName, powerType) or 0
+			local maxPower = UnitPowerMax (playerName, powerType) or 1
+			
+			if (currentPower == maxPower) then
+				--power overflow
+				local energyObject = energy_cache [playerName]
+				if (energyObject) then
+					energyObject.passiveover = energyObject.passiveover + AUTO_REGEN_PRECISION
+				end
+			end
+		end
+	end
+	
+	-- ~energy ~resource
+	function parser:energize (token, time, who_serial, who_name, who_flags, alvo_serial, alvo_name, alvo_flags, alvo_flags2, spellid, spellname, spelltype, amount, overpower, powertype, altpower)
 	
 	------------------------------------------------------------------------------------------------
 	--> early checks and fixes
@@ -2749,10 +2808,13 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		--> check if is valid
 		if (not energy_types [powertype] and not is_resource) then
 			return
+			
 		elseif (is_resource) then
 			powertype = is_resource
 			amount = 0
 		end
+		
+		overpower = overpower or 0
 		
 		--[[statistics]]-- _detalhes.statistics.energy_calls = _detalhes.statistics.energy_calls + 1
 
@@ -2809,6 +2871,8 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	
 		if (not is_resource) then
 		
+			--amount = amount - overpower
+		
 			--> add to targets
 			este_jogador.targets [alvo_name] = (este_jogador.targets [alvo_name] or 0) + amount
 		
@@ -2821,6 +2885,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 
 			--> regen produced amount
 			este_jogador.total = este_jogador.total + amount
+			este_jogador.totalover = este_jogador.totalover + overpower
 	
 			--> target regenerated amount
 			jogador_alvo.received = jogador_alvo.received + amount
@@ -2837,7 +2902,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			end
 		
 			--return spell:Add (alvo_serial, alvo_name, alvo_flags, amount, who_name, powertype)
-			return spell_energy_func (spell, alvo_serial, alvo_name, alvo_flags, amount, who_name, powertype)
+			return spell_energy_func (spell, alvo_serial, alvo_name, alvo_flags, amount, who_name, powertype, overpower)
 			
 		else
 			--> is a resource
@@ -2851,7 +2916,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 -----------------------------------------------------------------------------------------------------------------------------------------
 	--> MISC 	search key: ~cooldown											|
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+	
 	function parser:add_defensive_cooldown (token, time, who_serial, who_name, who_flags, alvo_serial, alvo_name, alvo_flags, alvo_flags2, spellid, spellname)
 	
 	------------------------------------------------------------------------------------------------
@@ -2954,7 +3019,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	end
 
 	
-	--serach key: ~interrupt
+	--serach key: ~interrupts
 	function parser:interrupt (token, time, who_serial, who_name, who_flags, alvo_serial, alvo_name, alvo_flags, alvo_flags2, spellid, spellname, spelltype, extraSpellID, extraSpellName, extraSchool)
 
 	------------------------------------------------------------------------------------------------
@@ -3571,7 +3636,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 				_table_insert (_current_combat.last_events_tables, #_current_combat.last_events_tables+1, t)
 				
 				--> check if this is a mythic+ run
-				local mythicLevel = C_ChallengeMode.GetActiveKeystoneInfo()
+				local mythicLevel = C_ChallengeMode and C_ChallengeMode.GetActiveKeystoneInfo() --classic wow doesn't not have C_ChallengeMode API
 				if (mythicLevel and type (mythicLevel) == "number" and mythicLevel >= 2) then --several checks to be future proof
 					--> more checks for integrity
 					if (_detalhes.tabela_overall and _detalhes.tabela_overall.last_events_tables) then
@@ -4170,6 +4235,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		end
 
 		_current_encounter_id = encounterID
+		_detalhes.boss1_health_percent = 1
 		
 		if (_current_encounter_id == 2122) then --g'huun --REMOVE ON 9,0 PATCH
 			C_Timer.After (1, function()
@@ -4196,7 +4262,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		--store the encounter time inside the encounter table for the encounter plugin
 		_detalhes.encounter_table ["start"] = _GetTime()
 		_detalhes.encounter_table ["end"] = nil
-		
+--		local encounterID = Details.encounter_table.id
 		_detalhes.encounter_table.id = encounterID
 		_detalhes.encounter_table.name = encounterName
 		_detalhes.encounter_table.diff = difficultyID
@@ -4232,6 +4298,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			_detalhes.encounter_table.index = boss_index
 		end
 		
+		_detalhes:SendEvent ("COMBAT_ENCOUNTER_START", nil, ...)
 	end
 	
 	function _detalhes.parser_functions:ENCOUNTER_END (...)
@@ -4248,7 +4315,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			if (_detalhes.debug) then
 				_detalhes:Msg ("(debug) the zone type is 'party', ignoring ENCOUNTER_END.")
 			end
-			return
+			--return --rnu encounter end for dungeons as well
 		end
 	
 		local encounterID, encounterName, difficultyID, raidSize, endStatus = _select (1, ...)
@@ -4285,6 +4352,8 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			end
 		end
 
+		_detalhes:SendEvent ("COMBAT_ENCOUNTER_END", nil, ...)
+		
 		_table_wipe (_detalhes.encounter_table)
 		
 		return true
@@ -4371,60 +4440,13 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			_detalhes:Msg ("(debug) running scheduled events after combat end.")
 		end
 	
-		--> add segments to overall data if any scheduled
-		if (_detalhes.schedule_add_to_overall and #_detalhes.schedule_add_to_overall > 0) then
-			if (_detalhes.debug) then
-				_detalhes:Msg ("(debug) adding ", #_detalhes.schedule_add_to_overall, "combats in queue to overall data.")
-			end
-			
-			for i = #_detalhes.schedule_add_to_overall, 1, -1 do
-				local CombatToAdd = tremove (_detalhes.schedule_add_to_overall, i)
-				if (CombatToAdd) then
-					_detalhes.historico:adicionar_overall (CombatToAdd)
-				end
-			end
-		end
-		
-		if (_detalhes.schedule_mythicdungeon_trash_merge) then
-			_detalhes.schedule_mythicdungeon_trash_merge = nil
-			DetailsMythicPlusFrame.MergeTrashCleanup (true)
-		end
-		
-		if (_detalhes.schedule_mythicdungeon_endtrash_merge) then
-			_detalhes.schedule_mythicdungeon_endtrash_merge = nil
-			DetailsMythicPlusFrame.MergeRemainingTrashAfterAllBossesDone()
-		end
-		
-		if (_detalhes.schedule_mythicdungeon_overallrun_merge) then
-			_detalhes.schedule_mythicdungeon_overallrun_merge = nil
-			DetailsMythicPlusFrame.MergeSegmentsOnEnd()
-		end
-		
-		--> aqui, tentativa de fazer o timer da janela do Solo funcionar corretamente:
-		if (_detalhes.solo and _detalhes.PluginCount.SOLO > 0) then
-			if (_detalhes.SoloTables.Plugins [_detalhes.SoloTables.Mode].Stop) then
-				_detalhes.SoloTables.Plugins [_detalhes.SoloTables.Mode].Stop()
-			end
-		end
-		
+		--when the user requested data from the storage but is in combat lockdown
 		if (_detalhes.schedule_storage_load) then
 			_detalhes.schedule_storage_load = nil
 			_detalhes.ScheduleLoadStorage()
 		end
 		
-		if (_detalhes.schedule_flag_boss_components) then
-			_detalhes.schedule_flag_boss_components = false
-			_detalhes:FlagActorsOnBossFight()
-		end
-		
-		if (_detalhes.schedule_remove_overall) then
-			if (_detalhes.debug) then
-				_detalhes:Msg ("(debug) found schedule overall data clean up.")
-			end
-			_detalhes.schedule_remove_overall = false
-			_detalhes.tabela_historico:resetar_overall()
-		end
-		
+		--store a boss encounter when out of combat since it might need to load the storage
 		if (_detalhes.schedule_store_boss_encounter) then
 			if (not _detalhes.logoff_saving_data) then
 				--_detalhes.StoreEncounter()
@@ -4436,16 +4458,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			_detalhes.schedule_store_boss_encounter = nil
 		end
 		
-		if (_detalhes.schedule_boss_function_run) then
-			if (not _detalhes.logoff_saving_data) then
-				local successful, errortext = pcall (_detalhes.schedule_boss_function_run, _detalhes.tabela_vigente)
-				if (not successful) then
-					_detalhes:Msg ("error occurred on Encounter Boss Function:", errortext)
-				end
-			end
-			_detalhes.schedule_boss_function_run = nil
-		end
-		
+		--when a large amount of data has been removed and the player is in combat, schedule to run the hard garbage collector (the blizzard one, not the details! internal)
 		if (_detalhes.schedule_hard_garbage_collect) then
 			if (_detalhes.debug) then
 				_detalhes:Msg ("(debug) found schedule collectgarbage().")
@@ -4460,30 +4473,98 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			end
 		end
 		
-		if (_detalhes.wipe_called and false) then --disabled
-			_detalhes.wipe_called = nil
-			_detalhes:CaptureSet (nil, "damage", true)
-			_detalhes:CaptureSet (nil, "energy", true)
-			_detalhes:CaptureSet (nil, "aura", true)
-			_detalhes:CaptureSet (nil, "energy", true)
-			_detalhes:CaptureSet (nil, "spellcast", true)
-			
-			_detalhes:CaptureSet (false, "damage", false, 10)
-			_detalhes:CaptureSet (false, "energy", false, 10)
-			_detalhes:CaptureSet (false, "aura", false, 10)
-			_detalhes:CaptureSet (false, "energy", false, 10)
-			_detalhes:CaptureSet (false, "spellcast", false, 10)
-		end
-
 		if (not OnRegenEnabled) then
 			_table_wipe (bitfield_swap_cache)
 			_table_wipe (ignore_actors)
-			
 			_detalhes:DispatchAutoRunCode ("on_leavecombat")
 		end
+		
+		if (_detalhes.solo and _detalhes.PluginCount.SOLO > 0) then --code too old and I don't have documentation for it
+			if (_detalhes.SoloTables.Plugins [_detalhes.SoloTables.Mode].Stop) then
+				_detalhes.SoloTables.Plugins [_detalhes.SoloTables.Mode].Stop()
+			end
+		end
+	
+		--deprecated shcedules
+		do
+			if (_detalhes.schedule_add_to_overall and #_detalhes.schedule_add_to_overall > 0) then --deprecated (combat are now added immediatelly since there's no script run too long)
+				if (_detalhes.debug) then
+					_detalhes:Msg ("(debug) adding ", #_detalhes.schedule_add_to_overall, "combats in queue to overall data.")
+				end
+				
+				for i = #_detalhes.schedule_add_to_overall, 1, -1 do
+					local CombatToAdd = tremove (_detalhes.schedule_add_to_overall, i)
+					if (CombatToAdd) then
+						_detalhes.historico:adicionar_overall (CombatToAdd)
+					end
+				end
+			end
+			
+			if (_detalhes.schedule_mythicdungeon_trash_merge) then --deprecated (combat are now added immediatelly since there's no script run too long)
+				_detalhes.schedule_mythicdungeon_trash_merge = nil
+				DetailsMythicPlusFrame.MergeTrashCleanup (true)
+			end
+			
+			if (_detalhes.schedule_mythicdungeon_endtrash_merge) then --deprecated (combat are now added immediatelly since there's no script run too long)
+				_detalhes.schedule_mythicdungeon_endtrash_merge = nil
+				DetailsMythicPlusFrame.MergeRemainingTrashAfterAllBossesDone()
+			end
+			
+			if (_detalhes.schedule_mythicdungeon_overallrun_merge) then --deprecated (combat are now added immediatelly since there's no script run too long)
+				_detalhes.schedule_mythicdungeon_overallrun_merge = nil
+				DetailsMythicPlusFrame.MergeSegmentsOnEnd()
+			end
+		
+			if (_detalhes.schedule_flag_boss_components) then --deprecated (combat are now added immediatelly since there's no script run too long)
+				_detalhes.schedule_flag_boss_components = false
+				_detalhes:FlagActorsOnBossFight()
+			end
+			
+			if (_detalhes.schedule_remove_overall) then --deprecated (combat are now added immediatelly since there's no script run too long)
+				if (_detalhes.debug) then
+					_detalhes:Msg ("(debug) found schedule overall data clean up.")
+				end
+				_detalhes.schedule_remove_overall = false
+				_detalhes.tabela_historico:resetar_overall()
+			end
+
+			if (_detalhes.wipe_called and false) then --disabled
+				_detalhes.wipe_called = nil
+				_detalhes:CaptureSet (nil, "damage", true)
+				_detalhes:CaptureSet (nil, "energy", true)
+				_detalhes:CaptureSet (nil, "aura", true)
+				_detalhes:CaptureSet (nil, "energy", true)
+				_detalhes:CaptureSet (nil, "spellcast", true)
+				
+				_detalhes:CaptureSet (false, "damage", false, 10)
+				_detalhes:CaptureSet (false, "energy", false, 10)
+				_detalhes:CaptureSet (false, "aura", false, 10)
+				_detalhes:CaptureSet (false, "energy", false, 10)
+				_detalhes:CaptureSet (false, "spellcast", false, 10)
+			end
+		end
+
 
 	end
 	
+	function _detalhes.parser_functions:CHALLENGE_MODE_START (...)
+		--> send mythic dungeon start event
+		local zoneName, instanceType, difficultyID, difficultyName, maxPlayers, dynamicDifficulty, isDynamic, instanceMapID, instanceGroupSize = GetInstanceInfo()
+		if (difficultyID == 8) then
+			_detalhes:SendEvent ("COMBAT_MYTHICDUNGEON_START")
+		end
+	
+	end
+	
+	function _detalhes.parser_functions:CHALLENGE_MODE_COMPLETED (...)
+		--> send mythic dungeon end event
+		local zoneName, instanceType, difficultyID, difficultyName, maxPlayers, dynamicDifficulty, isDynamic, instanceMapID, instanceGroupSize = GetInstanceInfo()
+		if (difficultyID == 8) then
+			_detalhes:SendEvent ("COMBAT_MYTHICDUNGEON_END")
+		end
+		
+	end
+
 	function _detalhes.parser_functions:PLAYER_REGEN_ENABLED (...)
 
 		if (_detalhes.debug) then
@@ -4560,9 +4641,15 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	end
 	
 	function _detalhes.parser_functions:PLAYER_SPECIALIZATION_CHANGED()
-		local specIndex = GetSpecialization()
+	
+		--some parts of details! does call this function, check first for past expansions
+		if (DetailsFramework.IsClassicWow()) then
+			return
+		end
+	
+		local specIndex = DetailsFramework.GetSpecialization()
 		if (specIndex) then
-			local specID = GetSpecializationInfo (specIndex)
+			local specID = DetailsFramework.GetSpecializationInfo (specIndex)
 			if (specID and specID ~= 0) then
 				local guid = UnitGUID ("player")
 				if (guid) then
@@ -5045,6 +5132,7 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	
 		_table_wipe (raid_members_cache)
 		_table_wipe (tanks_members_cache)
+		_table_wipe (auto_regen_cache)
 		_table_wipe (bitfield_swap_cache)
 		_table_wipe (ignore_actors)
 		
@@ -5061,6 +5149,10 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 				if (role == "TANK") then
 					tanks_members_cache [_UnitGUID ("raid"..i)] = true
 				end
+				
+				if (auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("raid" .. i)]]) then
+					auto_regen_cache [name] = auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("raid" .. i)]]
+				end
 			end
 			
 		elseif (_IsInGroup()) then
@@ -5075,6 +5167,10 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 				if (role == "TANK") then
 					tanks_members_cache [_UnitGUID ("party"..i)] = true
 				end
+				
+				if (auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("party" .. i)]]) then
+					auto_regen_cache [name] = auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("party" .. i)]]
+				end
 			end
 			
 			--player
@@ -5087,6 +5183,10 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			if (role == "TANK") then
 				tanks_members_cache [_UnitGUID ("player")] = true
 			end
+			
+			if (auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("player")]]) then
+				auto_regen_cache [name] = auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("player")]]
+			end
 		else
 			local name = GetUnitName ("player", true)
 			
@@ -5097,12 +5197,16 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 			if (role == "TANK") then
 				tanks_members_cache [_UnitGUID ("player")] = true
 			else
-				local spec = GetSpecialization()
+				local spec = DetailsFramework.GetSpecialization()
 				if (spec and spec ~= 0) then
-					if (GetSpecializationRole (spec) == "TANK") then
+					if (DetailsFramework.GetSpecializationRole (spec) == "TANK") then
 						tanks_members_cache [_UnitGUID ("player")] = true
 					end
 				end
+			end
+			
+			if (auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("player")]]) then
+				auto_regen_cache [name] = auto_regen_power_specs [_detalhes.cached_specs [_UnitGUID ("player")]]
 			end
 		end
 		
@@ -5124,14 +5228,15 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 	
 	--serach key: ~cache
 	function _detalhes:UpdateParserGears()
-
+	
 		--> refresh combat tables
 		_current_combat = _detalhes.tabela_vigente
+		_current_combat_cleu_events = _current_combat and _current_combat.cleu_events
 		
 		--> last events pointer
 		last_events_cache = _current_combat.player_last_events
 		_death_event_amt = _detalhes.deadlog_events
-
+		
 		--> refresh total containers
 		_current_total = _current_combat.totals
 		_current_gtotal = _current_combat.totals_grupo
@@ -5149,6 +5254,17 @@ local SPELL_POWER_PAIN = SPELL_POWER_PAIN or (PowerEnum and PowerEnum.Pain) or 1
 		--_recording_took_damage = _detalhes.RecordRealTimeTookDamage
 		_recording_ability_with_buffs = _detalhes.RecordPlayerAbilityWithBuffs
 		_in_combat = _detalhes.in_combat
+		
+		if (_in_combat) then
+			if (not _auto_regen_thread or _auto_regen_thread._cancelled) then
+				_auto_regen_thread = C_Timer.NewTicker (AUTO_REGEN_PRECISION / 10, regen_power_overflow_check)
+			end
+		else
+			if (_auto_regen_thread and not _auto_regen_thread._cancelled) then
+				_auto_regen_thread:Cancel()
+				_auto_regen_thread = nil
+			end
+		end
 		
 		if (_detalhes.hooks ["HOOK_COOLDOWN"].enabled) then
 			_hook_cooldowns = true

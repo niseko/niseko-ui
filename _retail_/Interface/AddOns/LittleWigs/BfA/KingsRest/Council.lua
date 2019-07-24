@@ -21,15 +21,19 @@ local stage = 1
 function mod:GetOptions()
 	return {
 		"stages",
-		-- Zanazal the Wise
-		267273, -- Poison Nova
-		267060, -- Call of the Elements
 		-- Kula the Butcher
 		266206, -- Whirling Axes
 		266231, -- Severing Axe
 		-- Aka'ali the Conqueror
 		{266951, "SAY", "SAY_COUNTDOWN"}, -- Barrel Through
 		{266237, "TANK"}, -- Debilitating Backhand
+		-- Zanazal the Wise
+		267273, -- Poison Nova
+		267060, -- Call of the Elements
+	}, {
+		[266206] = -18261, -- Kula the Butcher
+		[266951] = -18264, -- Aka'ali the Conqueror
+		[267273] = -18267, -- Zanazal the Wise
 	}
 end
 
@@ -61,9 +65,9 @@ end
 function mod:CHAT_MSG_RAID_BOSS_EMOTE(_, msg, _, _, _, destName)
 	if msg:find("266951") then -- Barrel Through
 		self:TargetMessage2(266951, "red", destName)
+		self:PlaySound(266951, "warning", nil, destName)
 		local guid = UnitGUID(destName)
 		if self:Me(guid) then
-			self:PlaySound(266951, "warning", "runaway")
 			self:Say(266951)
 			self:SayCountdown(266951, 8)
 		end

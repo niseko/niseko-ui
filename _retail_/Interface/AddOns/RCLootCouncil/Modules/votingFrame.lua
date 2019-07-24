@@ -572,9 +572,7 @@ function RCVotingFrame:SwitchSession(s)
 		self.frame.ownerString.owner:Hide()
 	end
 
-	-- Update the session buttons
-	sessionButtons[s] = self:UpdateSessionButton(s, t.texture, t.link, t.awarded)
-	sessionButtons[old] = self:UpdateSessionButton(old, lootTable[old].texture, lootTable[old].link, lootTable[old].awarded)
+	self:UpdateSessionButtons()
 
 	-- Since we switched sessions, we want to sort by response
 	local j = 1
@@ -904,7 +902,14 @@ function RCVotingFrame:UpdateLootStatus()
 		if addon.debug then
 			GameTooltip:AddLine("Debug")
 			for id, v in pairs(addon.lootStatus) do
-				GameTooltip:AddDoubleLine(id, v.num,1,1,1,1,1,1)
+				if id ~= addon.lastEncounterID then
+					GameTooltip:AddDoubleLine(id, v.num,1,1,1,1,1,1)
+				else
+					GameTooltip:AddLine("EncounterID: " .. addon.lastEncounterID)
+					for player, item in pairs(v) do
+						GameTooltip:AddDoubleLine(player, item)
+					end
+				end
 			end
 			GameTooltip:AddLine(" ")
 		end
@@ -941,6 +946,12 @@ function RCVotingFrame:UpdatePeopleToVote()
 		addon:CreateTooltip(L["The following council members have voted"], unpack(voters))
 	end)
 	self.frame.rollResult:SetWidth(self.frame.rollResult.text:GetStringWidth())
+end
+
+function RCVotingFrame:UpdateSessionButtons()
+	for i, t in ipairs(lootTable) do
+		sessionButtons[i] = self:UpdateSessionButton(i, t.texture, t.link, t.awarded)
+	end
 end
 
 function RCVotingFrame:UpdateSessionButton(i, texture, link, awarded)

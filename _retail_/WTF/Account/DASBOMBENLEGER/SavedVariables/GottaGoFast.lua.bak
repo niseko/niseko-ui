@@ -1,23 +1,26 @@
 
 GottaGoFastDB = {
 	["profileKeys"] = {
+		["Afwfes - Stormscale"] = "Default",
 		["Zelda - Mal'Ganis"] = "Default",
 		["Valdurawr - Stormscale"] = "Default",
+		["Se - Stormscale"] = "Default",
 		["Yvera - Moonglade"] = "Default",
 		["Niseko - Stormscale"] = "Default",
 		["Niseko - Twisting Nether"] = "Default",
 		["Nyanporo - Blackmoore"] = "Default",
 		["Nise - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
-		["Nedoka - Antonidas"] = "Default",
-		["Yoshicakes - Stormscale"] = "Default",
+		["Seko - Stormscale"] = "Default",
+		["Awfrsdg - Stormscale"] = "Default",
+		["Nisefy - Stormscale"] = "Default",
 		["Nisecakes - Stormscale"] = "Default",
-		["Mondeko - Blackmoore"] = "Default",
+		["Nisearw - Stormscale"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Nisearw - Stormscale"] = "Default",
-		["Nisefy - Stormscale"] = "Default",
-		["Seko - Stormscale"] = "Default",
+		["Yoshicakes - Stormscale"] = "Default",
+		["Mondeko - Blackmoore"] = "Default",
+		["Nedoka - Antonidas"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

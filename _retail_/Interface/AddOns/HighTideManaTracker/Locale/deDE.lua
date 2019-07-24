@@ -1,5 +1,6 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("htmtMenuTranslations", "deDE")
 if not L then return end
+
 L["Inverse"] = "Invertiert "
 L["Lock"] = "Sperren"
 L["Text Color"] = "Textfarbe"

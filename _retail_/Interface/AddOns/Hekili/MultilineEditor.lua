@@ -239,7 +239,7 @@ local function GenerateDiagnosticTooltip( widget, event )
     local appName = user.appName
 
     local name    = GetOptionsMemberValue( "name",  opt, options, path, appName )
-    local arg, listName, actID = GetOptionsMemberValue( "arg",   opt, options, path, appName )
+    local arg, listName, actID = GetOptionsMemberValue( "arg", opt, options, path, appName )
     local desc    = GetOptionsMemberValue( "desc",  opt, options, path, appName )
     local usage   = GetOptionsMemberValue( "usage", opt, options, path, appName )
     local descStyle = opt.descStyle
@@ -285,12 +285,16 @@ local function GenerateDiagnosticTooltip( widget, event )
         tested = true
     end
 
-    if arg then -- and #arg > 0 then        
+    local has_args = arg and ( next(arg) ~= nil )
+
+    if has_args then
         if tested then GameTooltip:AddLine(" ") end
 
         GameTooltip:AddLine( "Values" )
         for k, v in orderedPairs( arg ) do
+          if not key_cache[k]:find( "safebool" ) and not key_cache[k]:find( "safenum" ) then
             GameTooltip:AddDoubleLine( key_cache[ k ], ns.formatValue( v ), 1, 1, 1, 1, 1, 1 )
+          end
         end
     end
 
@@ -634,7 +638,31 @@ local function Constructor()
   end
   button.obj, editBox.obj, scrollFrame.obj = widget, widget, widget
 
-  return AceGUI:RegisterAsWidget(widget)
+  local hcv = AceGUI:RegisterAsWidget(widget)
+
+  if ElvUI then
+    local E = ElvUI[1]
+
+    if E.private.skins.ace3.enable then
+      local S = E:GetModule('Skins')
+
+      local frame = hcv.frame
+
+      if not hcv.scrollBG.template then
+        hcv.scrollBG:SetTemplate()
+      end
+
+      S:HandleButton(hcv.button)
+      S:HandleScrollBar(hcv.scrollBar)
+      hcv.scrollBar:Point('RIGHT', frame, 'RIGHT', 0 -4)
+      hcv.scrollBG:Point('TOPRIGHT', hcv.scrollBar, 'TOPLEFT', -2, 19)
+      hcv.scrollBG:Point('BOTTOMLEFT', hcv.button, 'TOPLEFT')
+      hcv.scrollFrame:Point('BOTTOMRIGHT', hcv.scrollBG, 'BOTTOMRIGHT', -4, 8)
+    end
+  end
+
+  return hcv
 end
+
 
 AceGUI:RegisterWidgetType(Type, Constructor, Version)

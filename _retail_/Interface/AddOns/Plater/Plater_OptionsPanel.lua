@@ -5,6 +5,30 @@ local DF = DetailsFramework
 local LibSharedMedia = LibStub:GetLibrary ("LibSharedMedia-3.0")
 local _
 
+--localization
+local L = LibStub ("AceLocale-3.0"):GetLocale ("PlaterNameplates", true)
+
+--credits text -- ~todo - take colaborators character names?
+local creditsText = [=[
+Plater Nameplates Credits
+
+--todo: build brackets
+--bracket Plater Core Programmers and Contributors
+
+--bracket Plater Community Constributors
+
+--bracket Script Contributors
+
+--bracket Discord Moderators
+
+--bracket Discord Assistants
+
+--bracket World Wide Localization 
+
+--bracket Special Thanks
+
+]=]
+
 --templates
 local options_text_template = DF:GetTemplate ("font", "OPTIONS_FONT_TEMPLATE")
 local options_dropdown_template = DF:GetTemplate ("dropdown", "OPTIONS_DROPDOWN_TEMPLATE")
@@ -97,6 +121,9 @@ function Plater.CheckOptionsTab()
 	end
 end
 
+local TAB_INDEX_UIPARENTING = 4
+local TAB_INDEX_PROFILES = 20
+
 -- ~options �ptions
 function Plater.OpenOptionsPanel()
 	
@@ -137,34 +164,32 @@ function Plater.OpenOptionsPanel()
 	local mainFrame = DF:CreateTabContainer (f, "Plater Options", "PlaterOptionsPanelContainer", 
 	{
 		--when chaging these indexes also need to change the function f.CopySettings
-		{name = "FrontPage", title = "General Settings"},
-		{name = "ThreatConfig", title = "Threat / Aggro"},
-		{name = "TargetConfig", title = "Target"},
-		{name = "PersonalBar", title = "Personal Bar"},
-		{name = "EnemyNpc", title = "Enemy Npc"},
-		{name = "EnemyPlayer", title = "Enemy Player"},
-		{name = "FriendlyNpc", title = "Friendly Npc"},
-		{name = "FriendlyPlayer", title = "Friendly Player"},
+		{name = "FrontPage", title = L["OPTIONS_TABNAME_GENERALSETTINGS"]},
+		{name = "ThreatConfig", title = L["OPTIONS_TABNAME_THREAT"]},
+		{name = "TargetConfig", title = L["OPTIONS_TABNAME_TARGET"]},
+		{name = "LevelStrataConfig", title = L["OPTIONS_TABNAME_STRATA"]},
+		{name = "Scripting", title = L["OPTIONS_TABNAME_SCRIPTING"]},
+		{name = "AutoRunCode", title = L["OPTIONS_TABNAME_MODDING"]},
+		{name = "PersonalBar", title = L["OPTIONS_TABNAME_PERSONAL"]},
+		{name = "AdvancedConfig", title = L["OPTIONS_TABNAME_ADVANCED"]},
 		
-		{name = "DebuffConfig", title = "Buff Settings"},
-		{name = "DebuffBlacklist", title = "Buff Tracking"},
-		{name = "DebuffSpecialContainer", title = "Buff Special"},
-		{name = "DebuffLastEvent", title = "Buff List"},
-		{name = "Scripting", title = "Scripting"},
-		{name = "AutoRunCode", title = "Modding"},
-		{name = "AnimationPanel", title = "Animations"},
-		{name = "AdvancedConfig", title = "Advanced"},
-		
-		{name = "ColorManagement", title = "Npc Colors"},
-		{name = "Automation", title = "Auto"},
-		{name = "ProfileManagement", title = "Profiles"},
-		
-		{name = "ExperimentalFeatures", title = "Experimental"},
-		{name = "CreditsFrame", title = "Credits"},
-		
+		{name = "DebuffConfig", title = L["OPTIONS_TABNAME_BUFF_SETTINGS"]},
+		{name = "DebuffBlacklist", title = L["OPTIONS_TABNAME_BUFF_TRACKING"]},
+		{name = "DebuffSpecialContainer", title = L["OPTIONS_TABNAME_BUFF_SPECIAL"]},
+		{name = "DebuffLastEvent", title = L["OPTIONS_TABNAME_BUFF_LIST"]},
+		{name = "EnemyNpc", title = L["OPTIONS_TABNAME_NPCENEMY"]},
+		{name = "EnemyPlayer", title = L["OPTIONS_TABNAME_PLAYERENEMY"]},
+		{name = "FriendlyNpc", title = L["OPTIONS_TABNAME_NPCFRIENDLY"]},
+		{name = "FriendlyPlayer", title = L["OPTIONS_TABNAME_PLAYERFRIENDLY"]},
+
+		{name = "ColorManagement", title = L["OPTIONS_TABNAME_COLORSNPC"]},
+		{name = "AnimationPanel", title = L["OPTIONS_TABNAME_ANIMATIONS"]},
+		{name = "Automation", title = L["OPTIONS_TABNAME_AUTO"]},
+		{name = "ProfileManagement", title = L["OPTIONS_TABNAME_PROFILES"]},
+		{name = "CreditsFrame", title = L["OPTIONS_TABNAME_CREDITS"]},
 	}, 
 	frame_options)
-	
+
 	--> when any setting is changed, call this function
 	local globalCallback = function()
 		Plater.IncreaseRefreshID()
@@ -176,30 +201,33 @@ function Plater.OpenOptionsPanel()
 	local frontPageFrame = mainFrame.AllFrames [1]
 	local threatFrame = mainFrame.AllFrames [2]
 	local targetFrame = mainFrame.AllFrames [3]
-	local personalPlayerFrame = mainFrame.AllFrames [4]
-	local enemyNPCsFrame = mainFrame.AllFrames [5]
-	local enemyPCsFrame = mainFrame.AllFrames [6]
-	local friendlyNPCsFrame = mainFrame.AllFrames [7]
-	local friendlyPCsFrame = mainFrame.AllFrames [8]
-
+	local uiParentFeatureFrame = mainFrame.AllFrames [4]
+	local scriptingFrame = mainFrame.AllFrames [5]
+	local runCodeFrame = mainFrame.AllFrames [6]
+	local personalPlayerFrame = mainFrame.AllFrames [7]
+	local advancedFrame = mainFrame.AllFrames [8]
+	
 	--2nd row
 	local auraOptionsFrame = mainFrame.AllFrames [9]
 	local auraFilterFrame = mainFrame.AllFrames [10]
 	local auraSpecialFrame = mainFrame.AllFrames [11]
 	local auraLastEventFrame = mainFrame.AllFrames [12]
-	local scriptingFrame = mainFrame.AllFrames [13]
-	local runCodeFrame = mainFrame.AllFrames [14]
-	local animationFrame = mainFrame.AllFrames [15]
-	local advancedFrame = mainFrame.AllFrames [16]
+	local enemyNPCsFrame = mainFrame.AllFrames [13]
+	local enemyPCsFrame = mainFrame.AllFrames [14]
+	local friendlyNPCsFrame = mainFrame.AllFrames [15]
+	local friendlyPCsFrame = mainFrame.AllFrames [16]
 	
 	--3rd row
 	local colorsFrame = mainFrame.AllFrames [17]
-	local autoFrame = mainFrame.AllFrames [18]
-	local profilesFrame = mainFrame.AllFrames [19]
-	local experimentalFrame = mainFrame.AllFrames [20]
+	local animationFrame = mainFrame.AllFrames [18]
+	local autoFrame = mainFrame.AllFrames [19]
+	local profilesFrame = mainFrame.AllFrames [20]
 	local creditsFrame = mainFrame.AllFrames [21]
 	
+	--
 	local colorNpcsButton = mainFrame.AllButtons [17]
+	
+	--[=[ --tab highlight
 	local colorNpcsButtonNew = colorNpcsButton:CreateTexture (nil, "overlay")
 	colorNpcsButtonNew:SetPoint ("bottomleft", colorNpcsButton.widget, "bottomleft", -4, 0)
 	colorNpcsButtonNew:SetPoint ("bottomright", colorNpcsButton.widget, "bottomright", 4, 0)
@@ -211,16 +239,8 @@ function Plater.OpenOptionsPanel()
 	DF:CreateAnimation (colorNpcsButtonNew.Anim, "alpha", 2, 3, .6, 0)
 	colorNpcsButtonNew.Anim:SetLooping ("repeat")
 	colorNpcsButtonNew.Anim:Play()
+	--]=]
 	
---[=[	
-
-	[Add Color Button] [Dropdown Zone Name?] [Search by Name]
-
-	[ ] enabled check box | [] bypass threat color | [      ] npc ID text field | [     ] npcName Upper | [     ] npcName Lower | Color selector by Name 
-
-	
-	
---]=]
 	local generalOptionsAnchor = CreateFrame ("frame", "$parentOptionsAnchor", frontPageFrame)
 	generalOptionsAnchor:SetSize (1, 1)
 	generalOptionsAnchor:SetPoint ("topleft", frontPageFrame, "topleft", 10, -230)
@@ -235,15 +255,16 @@ function Plater.OpenOptionsPanel()
 	DF:BuildStatusbarAuthorInfo (statusBar)
 	
 	--wago.io support
-	local wagoDesc = DF:CreateLabel (statusBar, "BREAKING NEWS: |cFFFFFF00WAGO.IO|r released support for Plater! You can get and share profiles and scripts right now!")
+	local wagoDesc = DF:CreateLabel (statusBar, L["OPTIONS_STATUSBAR_TEXT"])
 	wagoDesc.textcolor = "white"
+	wagoDesc.textsize = 11
 	wagoDesc:SetPoint ("left", statusBar.DiscordTextBox, "right", 10, 0)
 	
 	wagoDesc.Anim = DF:CreateAnimationHub (wagoDesc)
 	wagoDesc.Anim:SetLooping ("repeat")
 	DF:CreateAnimation (wagoDesc.Anim, "alpha", 1, 1, .3, .7)
 	DF:CreateAnimation (wagoDesc.Anim, "alpha", 2, 1, 1, .3)
-	wagoDesc.Anim:Play()
+	--wagoDesc.Anim:Play()
 	
 	f.AllMenuFrames = {}
 	for _, frame in ipairs (mainFrame.AllFrames) do
@@ -264,22 +285,22 @@ function Plater.OpenOptionsPanel()
 	function f.CopySettingsConfirmed()
 		DF.table.copy (Plater.db.profile.plate_config [f.CopyingTo], Plater.db.profile.plate_config [f.CopyingFrom])
 		PlaterOptionsPanelFrame.RefreshOptionsFrame()
-		Plater:Msg ("settings copied.")
+		Plater:Msg (L["OPTIONS_SETTINGS_COPIED"])
 	end
 	
 	--> copy settings from one actor type to another
 	function f.CopySettings (_, _, from)
 		local currentTab = mainFrame.CurrentIndex
 		local settingsTo
-		if (currentTab == 4) then
+		if (currentTab == 7) then
 			settingsTo = "player"
-		elseif (currentTab == 5) then
+		elseif (currentTab == 13) then
 			settingsTo = "enemynpc"
-		elseif (currentTab == 6) then
+		elseif (currentTab == 14) then
 			settingsTo = "enemyplayer"
-		elseif (currentTab == 7) then
+		elseif (currentTab == 15) then
 			settingsTo = "friendlynpc"
-		elseif (currentTab == 8) then
+		elseif (currentTab == 16) then
 			settingsTo = "friendlyplayer"
 		end
 		
@@ -288,16 +309,16 @@ function Plater.OpenOptionsPanel()
 			f.CopyingTo = settingsTo
 			DF:ShowPromptPanel ("Copy setting from '" .. from .. "' to '" .. settingsTo .. "' ?", f.CopySettingsConfirmed, function() f.CopyingFrom = nil; f.CopyingTo = nil; end)
 		else
-			Plater:Msg ("failed to get the settings for the current selected tab.")
+			Plater:Msg (L["OPTIONS_SETTINGS_FAIL_COPIED"])
 		end
 	end
 	
 	local copy_settings_options = {
-		{label = "Personal Bar", value = "player", onclick = f.CopySettings},
-		{label = "Enemy Npc", value = "enemynpc", onclick = f.CopySettings},
-		{label = "Enemy Player", value = "enemyplayer", onclick = f.CopySettings},
-		{label = "Friendly Npc", value = "friendlynpc", onclick = f.CopySettings},
-		{label = "Friendly Player", value = "friendlyplayer", onclick = f.CopySettings},
+		{label = L["OPTIONS_TABNAME_PERSONAL"], value = "player", onclick = f.CopySettings},
+		{label = L["OPTIONS_TABNAME_NPCENEMY"], value = "enemynpc", onclick = f.CopySettings},
+		{label = L["OPTIONS_TABNAME_PLAYERENEMY"], value = "enemyplayer", onclick = f.CopySettings},
+		{label = L["OPTIONS_TABNAME_NPCFRIENDLY"], value = "friendlynpc", onclick = f.CopySettings},
+		{label = L["OPTIONS_TABNAME_PLAYERFRIENDLY"], value = "friendlyplayer", onclick = f.CopySettings},
 	}
 	
 ------------------------------------------------------------------------------------------------------------
@@ -318,8 +339,8 @@ function Plater.OpenOptionsPanel()
 					DF:ApplyStandardBackdrop (profilesFrame.ImportingProfileAlert)
 					profilesFrame.ImportingProfileAlert:SetBackdropBorderColor (1, 0.8, 0.1)
 					
-					profilesFrame.ImportingProfileAlert.IsLoadingLabel1 = DF:CreateLabel (profilesFrame.ImportingProfileAlert, "Plater is exporting the current profile")
-					profilesFrame.ImportingProfileAlert.IsLoadingLabel2 = DF:CreateLabel (profilesFrame.ImportingProfileAlert, "This may take only a few seconds")
+					profilesFrame.ImportingProfileAlert.IsLoadingLabel1 = DF:CreateLabel (profilesFrame.ImportingProfileAlert, L["OPTIONS_PROFILE_CONFIG_EXPORTINGTASK"])
+					profilesFrame.ImportingProfileAlert.IsLoadingLabel2 = DF:CreateLabel (profilesFrame.ImportingProfileAlert, L["OPTIONS_PLEASEWAIT"])
 					profilesFrame.ImportingProfileAlert.IsLoadingImage1 = DF:CreateImage (profilesFrame.ImportingProfileAlert, [[Interface\DialogFrame\UI-Dialog-Icon-AlertOther]], 32, 32)
 					profilesFrame.ImportingProfileAlert.IsLoadingLabel1.align = "center"
 					profilesFrame.ImportingProfileAlert.IsLoadingLabel2.align = "center"
@@ -343,7 +364,7 @@ function Plater.OpenOptionsPanel()
 					Plater.db.profile.aura_cache_by_name = {}
 					
 					--export to string
-					profilesFrame.ImportStringField:SetText (Plater.ExportProfileToString() or "failed to export")
+					profilesFrame.ImportStringField:SetText (Plater.ExportProfileToString() or L["OPTIONS_ERROR_EXPORTSTRINGERROR"])
 					
 					--set back again the cache data
 					Plater.db.profile.captured_spells = captured_spells
@@ -380,7 +401,8 @@ function Plater.OpenOptionsPanel()
 				profilesFrame.NewProfileTextEntry:Hide()
 			end
 			
-			function profilesFrame.ConfirmImportScript()
+			--importing a profile in the profiles tab
+			function profilesFrame.ConfirmImportProfile()
 				if (profilesFrame.IsExporting) then
 					profilesFrame.HideStringField()
 					return
@@ -391,10 +413,22 @@ function Plater.OpenOptionsPanel()
 
 				profilesFrame.HideStringField()
 				
-				if (profile) then
+				if (profile and type (profile == "table")) then
+				
+					--decompress success, need to see if this is a real profile and not a script
+					if (not profile.plate_config) then
+						local scriptType = Plater.GetDecodedScriptType (profile)
+						if (scriptType == "hook" or scriptType == "script") then
+							DF:ShowErrorMessage (L["OPTIONS_PROFILE_ERROR_WRONGTAB"], "Plater Nameplates")
+						else
+							DF:ShowErrorMessage (L["OPTIONS_PROFILE_ERROR_STRINGINVALID"], "Plater Nameplates")
+						end
+						return
+					end
+				
 					local profileName = profilesFrame.NewProfileTextEntry:GetText()
 					if (profileName == "") then
-						Plater:Msg ("Invalid profile name")
+						Plater:Msg (L["OPTIONS_PROFILE_ERROR_PROFILENAME"])
 						return
 					end
 					
@@ -406,9 +440,18 @@ function Plater.OpenOptionsPanel()
 					Plater.db:SetProfile (profileName)
 					DF.table.copy (Plater.db.profile, profile)
 					
-					C_Timer.After (.2, function()
-						Plater:RefreshConfig()
-					end)
+					--make the option reopen after the reload
+					Plater.db.profile.reopoen_options_panel_on_tab = TAB_INDEX_PROFILES
+					
+					--check if parent to UIParent is enabled and calculate the new scale
+					if (Plater.db.profile.use_ui_parent) then
+						Plater.db.profile.ui_parent_scale_tune = 1 / UIParent:GetEffectiveScale()
+					else
+						Plater.db.profile.ui_parent_scale_tune = 0
+					end
+					
+					--automatically reload the user UI
+					ReloadUI()
 				end
 			end
 			
@@ -427,16 +470,30 @@ function Plater.OpenOptionsPanel()
 		
 		--frames
 			--export profile button
-			local exportProfileButton = DF:CreateButton (profilesFrame, profilesFrame.ExportCurrentProfile, 160, 20, "Export Profile", -1, nil, nil, "ExportButton", nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+			local exportProfileButton = DF:CreateButton (profilesFrame, profilesFrame.ExportCurrentProfile, 160, 20, L["OPTIONS_PROFILE_CONFIG_EXPORTPROFILE"], -1, nil, nil, "ExportButton", nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 			exportProfileButton:SetPoint ("topleft", profilesFrame, "topleft", 10, startY)
 			
 			--import profile button
-			local importProfileButton = DF:CreateButton (profilesFrame, profilesFrame.ImportProfile, 160, 20, "Import Profile", -1, nil, nil, "ImportButton", nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+			local importProfileButton = DF:CreateButton (profilesFrame, profilesFrame.ImportProfile, 160, 20, L["OPTIONS_PROFILE_CONFIG_IMPORTPROFILE"], -1, nil, nil, "ImportButton", nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 			importProfileButton:SetPoint ("topleft", exportProfileButton, "bottomleft", 0, -2)
 			
 			--import profile button
-			local openManagementProfileButton = DF:CreateButton (profilesFrame, profilesFrame.OpenProfileManagement, 160, 20, "Open Profile Settings", -1, nil, nil, "ProfileSettingsButton", nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+			local openManagementProfileButton = DF:CreateButton (profilesFrame, profilesFrame.OpenProfileManagement, 160, 20, L["OPTIONS_PROFILE_CONFIG_OPENSETTINGS"], -1, nil, nil, "ProfileSettingsButton", nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 			openManagementProfileButton:SetPoint ("topleft", importProfileButton, "bottomleft", 0, -10)
+			
+			local moreProfilesLabel = DF:CreateLabel (profilesFrame, L["OPTIONS_PROFILE_CONFIG_MOREPROFILES"] .. ":", DF:GetTemplate ("font", "PLATER_BUTTON"))
+			moreProfilesLabel:SetPoint ("topleft", openManagementProfileButton, "bottomleft", 0, -20)
+			
+			local moreProfilesTextEntry = DF:CreateTextEntry (profilesFrame, function()end, 160, 20, "moreProfilesTextEntry", _, _, options_dropdown_template)
+			moreProfilesTextEntry:SetPoint ("topleft", moreProfilesLabel, "bottomleft", 0, -2)
+			moreProfilesTextEntry:SetText ("https://wago.io/plater")
+			
+			moreProfilesTextEntry:SetHook ("OnEditFocusGained", function()
+				moreProfilesTextEntry:HighlightText()
+			end)
+			
+			profilesFrame.moreProfilesLabel = moreProfilesLabel
+			profilesFrame.moreProfilesTextEntry = moreProfilesTextEntry
 			
 			--text editor
 			local luaeditor_backdrop_color = {.2, .2, .2, .5}
@@ -453,11 +510,11 @@ function Plater.OpenOptionsPanel()
 			DF:ReskinSlider (importStringField.scroll)
 			
 			--import button
-			local okayButton = DF:CreateButton (importStringField, profilesFrame.ConfirmImportScript, buttons_size[1], buttons_size[2], "Okay", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+			local okayButton = DF:CreateButton (importStringField, profilesFrame.ConfirmImportProfile, buttons_size[1], buttons_size[2], L["OPTIONS_OKAY"], -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 			okayButton:SetIcon ([[Interface\BUTTONS\UI-Panel-BiggerButton-Up]], 20, 20, "overlay", {0.1, .9, 0.1, .9})
 			
 			--cancel button
-			local cancelButton = DF:CreateButton (importStringField, profilesFrame.HideStringField, buttons_size[1], buttons_size[2], "Cancel", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+			local cancelButton = DF:CreateButton (importStringField, profilesFrame.HideStringField, buttons_size[1], buttons_size[2], L["OPTIONS_CANCEL"], -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 			cancelButton:SetIcon ([[Interface\BUTTONS\UI-Panel-MinimizeButton-Up]], 20, 20, "overlay", {0.1, .9, 0.1, .9})
 			
 			importStringField:SetPoint ("topleft", profilesFrame, "topleft", 220, startY)
@@ -465,10 +522,10 @@ function Plater.OpenOptionsPanel()
 			cancelButton:SetPoint ("right", okayButton, "left", -20, 0)
 			
 			--new profile name
-			local newProfileNameLabel = DF:CreateLabel (profilesFrame, "New Profile Name:", DF:GetTemplate ("font", "OPTIONS_FONT_TEMPLATE"))
+			local newProfileNameLabel = DF:CreateLabel (profilesFrame, L["OPTIONS_PROFILE_CONFIG_PROFILENAME"] .. ":", DF:GetTemplate ("font", "OPTIONS_FONT_TEMPLATE"))
 			local newProfileNameTextEntry = DF:CreateTextEntry (profilesFrame, function()end, 160, 20, "ProfileNameTextEntry", _, _, options_dropdown_template)
 			newProfileNameTextEntry:SetText ("MyNewProfile")
-			newProfileNameTextEntry.tooltip = "A new profile is created with the imported string.\n\nInserting the name of a profile that already exists will overwrite it."
+			newProfileNameTextEntry.tooltip = L["OPTIONS_PROFILE_CONFIG_PROFILENAME_DESC"]
 			newProfileNameLabel:SetPoint ("topleft", importStringField, "bottomleft", 0, -16)
 			newProfileNameTextEntry:SetPoint ("left", newProfileNameLabel, "right", 2, 0)
 			
@@ -476,6 +533,10 @@ function Plater.OpenOptionsPanel()
 			profilesFrame.NewProfileTextEntry = newProfileNameTextEntry
 			profilesFrame.NewProfileLabel:Hide()
 			profilesFrame.NewProfileTextEntry:Hide()
+			
+			
+			
+			
 	end
 -------------------------
 -- fun��es gerais dos dropdowns ~dropdowns
@@ -512,7 +573,22 @@ function Plater.OpenOptionsPanel()
 	end	
 	
 	--anchor table
-	local anchor_names = {"Top Left", "Left", "Bottom Left", "Bottom", "Bottom Right", "Right", "Top Right", "Top", "Center", "Inner Left", "Inner Right", "Inner Top", "Inner Bottom"}
+	local anchor_names = {
+		L["OPTIONS_ANCHOR_TOPLEFT"],
+		L["OPTIONS_ANCHOR_LEFT"],
+		L["OPTIONS_ANCHOR_BOTTOMLEFT"],
+		L["OPTIONS_ANCHOR_BOTTOM"],
+		L["OPTIONS_ANCHOR_BOTTOMRIGHT"],
+		L["OPTIONS_ANCHOR_RIGHT"],
+		L["OPTIONS_ANCHOR_TOPRIGHT"],
+		L["OPTIONS_ANCHOR_TOP"],
+		L["OPTIONS_ANCHOR_CENTER"],
+		L["OPTIONS_ANCHOR_INNERLEFT"],
+		L["OPTIONS_ANCHOR_INNERRIGHT"],
+		L["OPTIONS_ANCHOR_INNERTOP"],
+		L["OPTIONS_ANCHOR_INNERBOTTOM"],
+	}
+	
 	local build_anchor_side_table = function (actorType, member)
 		local t = {}
 		for i = 1, 13 do
@@ -650,7 +726,7 @@ local interface_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowSelf", math.abs (tonumber (GetCVar ("nameplateShowSelf"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowSelf") == CVAR_ENABLED)
 				end
 			end,
@@ -665,7 +741,7 @@ local interface_options = {
 				if (not InCombatLockdown()) then
 					SetCVar (CVAR_RESOURCEONTARGET, math.abs (tonumber (GetCVar (CVAR_RESOURCEONTARGET))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar (CVAR_RESOURCEONTARGET) == CVAR_ENABLED)
 				end
 			end,
@@ -680,7 +756,7 @@ local interface_options = {
 				if (not InCombatLockdown()) then
 					SetCVar (CVAR_SHOWALL, math.abs (tonumber (GetCVar (CVAR_SHOWALL))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar (CVAR_SHOWALL) == CVAR_ENABLED)
 				end
 			end,
@@ -699,7 +775,7 @@ local interface_options = {
 					SetCVar (CVAR_PLATEMOTION, value and "1" or "0")
 					Plater.db.profile.stacking_nameplates_enabled = value
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar (CVAR_PLATEMOTION) == CVAR_ENABLED)
 				end
 			end,
@@ -715,7 +791,7 @@ local interface_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateOverlapV", value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.2,
@@ -735,7 +811,7 @@ local interface_options = {
 				if (not InCombatLockdown()) then
 					SetCVar (CVAR_CULLINGDISTANCE, value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 1,
@@ -750,53 +826,52 @@ local interface_options = {
 		
 		{
 			type = "toggle",
-			get = function() return GetCVar (CVAR_ENEMY_MINIONS) == CVAR_ENABLED end,
+			get = function() return GetCVarBool ("nameplateShowEnemies") end,
 			set = function (self, fixedparam, value) 
 				if (not InCombatLockdown()) then
-					SetCVar (CVAR_ENEMY_MINIONS, math.abs (tonumber (GetCVar (CVAR_ENEMY_MINIONS))-1))
+					SetCVar ("nameplateShowEnemies", value and "1" or "0")
 				else
-					Plater:Msg ("you are in combat.")
-					self:SetValue (GetCVar (CVAR_ENEMY_MINIONS) == CVAR_ENABLED)
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
+					self:SetValue (GetCVarBool ("nameplateShowEnemies"))
 				end
 			end,
-			name = "Enemy Units (" .. (GetBindingKey ("NAMEPLATES") or "") .. "): Minions" .. CVarIcon,
-			desc = "Show nameplate for enemy pets, totems and guardians." .. CVarDesc,
+			name = "Show Enemy Nameplates" .. CVarIcon,
+			desc = "Show nameplate for enemy and neutral units." .. CVarDesc,
 			nocombat = true,
 		},
 		
 		{
 			type = "toggle",
-			get = function() return GetCVar (CVAR_ENEMY_MINUS) == CVAR_ENABLED end,
+			get = function() return GetCVarBool ("nameplateShowFriends") end,
 			set = function (self, fixedparam, value) 
 				if (not InCombatLockdown()) then
-					SetCVar (CVAR_ENEMY_MINUS, math.abs (tonumber (GetCVar (CVAR_ENEMY_MINUS))-1))
+					SetCVar ("nameplateShowFriends", value and "1" or "0")
 				else
-					Plater:Msg ("you are in combat.")
-					self:SetValue (GetCVar (CVAR_ENEMY_MINUS) == CVAR_ENABLED)
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
+					self:SetValue (GetCVarBool ("nameplateShowFriends"))
 				end
 			end,
-			name = "Enemy Units (V): Minor" .. CVarIcon,
-			desc = "Show nameplate for minor enemies." .. CVarDesc,
+			name = "Show Friendly Nameplates" .. CVarIcon,
+			desc = "Show nameplate for friendly players." .. CVarDesc,
 			nocombat = true,
 		},
+		
 		{
 			type = "toggle",
-			get = function() return GetCVar (CVAR_FRIENDLY_GUARDIAN) == CVAR_ENABLED end,
+			get = function() return GetCVarBool ("nameplateShowOnlyNames") end,
 			set = function (self, fixedparam, value) 
 				if (not InCombatLockdown()) then
-					SetCVar (CVAR_FRIENDLY_GUARDIAN, math.abs (tonumber (GetCVar (CVAR_FRIENDLY_GUARDIAN))-1))
-					SetCVar (CVAR_FRIENDLY_PETS, 	GetCVar (CVAR_FRIENDLY_GUARDIAN))
-					SetCVar (CVAR_FRIENDLY_TOTEMS, GetCVar (CVAR_FRIENDLY_GUARDIAN))
-					SetCVar (CVAR_FRIENDLY_MINIONS, GetCVar (CVAR_FRIENDLY_GUARDIAN))
+					SetCVar ("nameplateShowOnlyNames", value and "1" or "0")
 				else
-					Plater:Msg ("you are in combat.")
-					self:SetValue (GetCVar (CVAR_FRIENDLY_GUARDIAN) == CVAR_ENABLED)
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
+					self:SetValue (GetCVarBool ("nameplateShowOnlyNames"))
 				end
 			end,
-			name = "Friendly Units (" .. (GetBindingKey ("FRIENDNAMEPLATES") or "") .. "): Minions" .. CVarIcon,
-			desc = "Show nameplate for friendly pets, totems and guardians.\n\nAlso check the Enabled box below Friendly Npc Config." .. CVarDesc,
+			name = "Hide Friendly Health Bar in Dungeons" .. CVarIcon,
+			desc = "While in dungeons or raids, if friendly nameplates are enabled it'll show only the player name." .. CVarDesc,
 			nocombat = true,
 		},
+
 }
 
 local interface_title = Plater:CreateLabel (frontPageFrame, "Interface Options (from the client):", Plater:GetTemplate ("font", "ORANGE_FONT_TEMPLATE"))
@@ -876,6 +951,37 @@ end
 -------------------------------------------------------------------------------
 -- painel para configurar debuffs e buffs
 
+
+local build_number_format_options = function()
+	local number_format_options = {"Western (1K - 1KK)"}
+	local number_format_options_config = {"western", "eastasia"}
+
+	local eastAsiaMyriads_1k, eastAsiaMyriads_10k, eastAsiaMyriads_1B
+	if (GetLocale() == "koKR") then
+		tinsert (number_format_options, "East Asia (1천 - 1만)")
+	elseif (GetLocale() == "zhCN") then
+		tinsert (number_format_options, "East Asia (1千 - 1万)")
+	elseif (GetLocale() == "zhTW") then
+		tinsert (number_format_options, "East Asia (1千 - 1萬)")
+	else
+		tinsert (number_format_options, "East Asia (1천 - 1만)")
+	end
+
+	local t = {}
+	for i = 1, #number_format_options do
+		tinsert (t, {
+			label = number_format_options [i], 
+			value = number_format_options_config [i],
+			onclick = function (_, _, value)
+				Plater.db.profile.number_region = value
+				Plater.RefreshDBUpvalues()
+				Plater.UpdateAllPlates()
+			end
+		})
+	end
+	return t
+end
+
 local grow_direction_names = {"Left", "Center", "Right"}
 local build_grow_direction_options = function (memberName)
 	local t = {}
@@ -944,7 +1050,7 @@ local debuff_options = {
 				end
 			end
 		end,
-		name = "Enabled",
+		name = L["OPTIONS_ENABLED"],
 		desc = "Enabled",
 	},
 	
@@ -971,8 +1077,35 @@ local debuff_options = {
 		step = 0.01,
 		usedecimals = true,
 		thumbscale = 1.8,
-		name = "Alpha",
+		name = L["OPTIONS_ALPHA"],
 		desc = "Alpha",
+	},
+	
+	{
+		type = "range",
+		get = function() return Plater.db.profile.aura_padding end,
+		set = function (self, fixedparam, value) 
+			Plater.db.profile.aura_padding = value
+			Plater.RefreshDBUpvalues()
+		end,
+		min = 0,
+		max = 10,
+		step = 0.01,
+		usedecimals = true,
+		thumbscale = 1.8,
+		name = "Icon Spacing",
+		desc = "Icon Spacing",
+	},
+	
+	{
+		type = "toggle",
+		get = function() return Plater.db.profile.aura_consolidate end,
+		set = function (self, fixedparam, value) 
+			Plater.db.profile.aura_consolidate = value
+			Plater.UpdateAllPlates()
+		end,
+		name = "Stack Similar Auras",
+		desc = "Auras with the same name (e.g. warlock's unstable affliction debuff) get stacked together.",
 	},
 	
 	{type = "blank"},
@@ -986,8 +1119,8 @@ local debuff_options = {
 			Plater.RefreshAuras()
 			Plater.UpdateAllPlates()
 		end,
-		min = 8,
-		max = 40,
+		min = 4,
+		max = 80,
 		step = 1,
 		name = "Width",
 		desc = "Debuff's icon width.",
@@ -1001,8 +1134,8 @@ local debuff_options = {
 			Plater.RefreshAuras()
 			Plater.UpdateAllPlates()
 		end,
-		min = 8,
-		max = 40,
+		min = 4,
+		max = 80,
 		step = 1,
 		name = "Height",
 		desc = "Debuff's icon height.",
@@ -1029,10 +1162,11 @@ local debuff_options = {
 			Plater.RefreshDBUpvalues()
 			Plater.UpdateAllPlates()
 		end,
-		min = -100,
-		max = 100,
+		min = -200,
+		max = 200,
 		step = 1,
-		name = "X Offset",
+		usedecimals = true,
+		name = L["OPTIONS_XOFFSET"],
 		desc = "X Offset",
 	},
 	{
@@ -1043,10 +1177,11 @@ local debuff_options = {
 			Plater.RefreshDBUpvalues()
 			Plater.UpdateAllPlates()
 		end,
-		min = -100,
-		max = 100,
+		min = -200,
+		max = 200,
 		step = 1,
-		name = "Y Offset",
+		usedecimals = true,
+		name = L["OPTIONS_YOFFSET"],
 		desc = "Y Offset",
 	},
 	
@@ -1061,7 +1196,7 @@ local debuff_options = {
 			Plater.RefreshDBUpvalues()
 			Plater.UpdateAllPlates()
 		end,
-		name = "Enabled",
+		name = L["OPTIONS_ENABLED"],
 		desc = "When enabled auras are separated: Buffs are placed on this second frame, Debuffs on the first.\n\n|cFFFFFF00Important|r: require /reload when disabling this feature.",
 	},
 	--> grow direction
@@ -1081,10 +1216,11 @@ local debuff_options = {
 			Plater.RefreshDBUpvalues()
 			Plater.UpdateAllPlates()
 		end,
-		min = -100,
-		max = 100,
+		min = -200,
+		max = 200,
 		step = 1,
-		name = "X Offset",
+		usedecimals = true,
+		name = L["OPTIONS_XOFFSET"],
 		desc = "X Offset",
 	},
 	{
@@ -1095,10 +1231,11 @@ local debuff_options = {
 			Plater.RefreshDBUpvalues()
 			Plater.UpdateAllPlates()
 		end,
-		min = -100,
-		max = 100,
+		min = -200,
+		max = 200,
 		step = 1,
-		name = "Y Offset",
+		usedecimals = true,
+		name = L["OPTIONS_YOFFSET"],
 		desc = "Y Offset",
 	},
 	
@@ -1114,7 +1251,7 @@ local debuff_options = {
 			Plater.RefreshAuras()
 			Plater.UpdateAllPlates()
 		end,
-		name = "Enabled",
+		name = L["OPTIONS_ENABLED"],
 		desc = "Time left on buff or debuff.",
 	},
 
@@ -1133,7 +1270,7 @@ local debuff_options = {
 		type = "select",
 		get = function() return Plater.db.profile.aura_timer_text_font end,
 		values = function() return DF:BuildDropDownFontList (on_select_auratimer_text_font) end,
-		name = "Font",
+		name = L["OPTIONS_FONT"],
 		desc = "Font of the text.",
 	},
 	{
@@ -1147,7 +1284,7 @@ local debuff_options = {
 		min = 7,
 		max = 40,
 		step = 1,
-		name = "Size",
+		name = L["OPTIONS_SIZE"],
 		desc = "Size",
 	},
 	
@@ -1156,7 +1293,7 @@ local debuff_options = {
 		type = "select",
 		get = function() return Plater.db.profile.aura_timer_text_outline end,
 		values = function() return build_outline_modes_table (nil, "aura_timer_text_outline") end,
-		name = "Outline",
+		name = L["OPTIONS_OUTLINE"],
 		desc = "Outline",
 	},
 	
@@ -1172,7 +1309,7 @@ local debuff_options = {
 			color[1], color[2], color[3], color[4] = r, g, b, a
 			Plater.UpdateAllPlates()
 		end,
-		name = "Shadow Color",
+		name = L["OPTIONS_SHADOWCOLOR"],
 		desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 	},
 
@@ -1188,14 +1325,14 @@ local debuff_options = {
 			color[1], color[2], color[3], color[4] = r, g, b, a
 			Plater.UpdateAllPlates()
 		end,
-		name = "Color",
+		name = L["OPTIONS_COLOR"],
 		desc = "Color",
 	},
 	{
 		type = "select",
 		get = function() return Plater.db.profile.aura_timer_text_anchor.side end,
 		values = function() return build_anchor_side_table (nil, "aura_timer_text_anchor") end,
-		name = "Anchor",
+		name = L["OPTIONS_ANCHOR"],
 		desc = "Which side of the buff icon the timer should attach to.",
 	},
 	{
@@ -1208,8 +1345,9 @@ local debuff_options = {
 		min = -20,
 		max = 20,
 		step = 1,
-		name = "X Offset",
-		desc = "Slightly move the text horizontally.",
+		usedecimals = true,
+		name = L["OPTIONS_XOFFSET"],
+		desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 	},
 	--y offset
 	{
@@ -1222,8 +1360,9 @@ local debuff_options = {
 		min = -20,
 		max = 20,
 		step = 1,
-		name = "Y Offset",
-		desc = "Slightly move the text vertically.",
+		usedecimals = true,
+		name = L["OPTIONS_YOFFSET"],
+		desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 	},
 	
 	{type = "blank"},
@@ -1234,7 +1373,7 @@ local debuff_options = {
 		type = "select",
 		get = function() return Plater.db.profile.aura_stack_font end,
 		values = function() return DF:BuildDropDownFontList (on_select_stack_text_font) end,
-		name = "Font",
+		name = L["OPTIONS_FONT"],
 		desc = "Font of the text.",
 	},
 
@@ -1248,7 +1387,7 @@ local debuff_options = {
 		min = 6,
 		max = 24,
 		step = 1,
-		name = "Size",
+		name = L["OPTIONS_SIZE"],
 		desc = "Size",
 	},
 	
@@ -1257,7 +1396,7 @@ local debuff_options = {
 		type = "select",
 		get = function() return Plater.db.profile.aura_stack_outline end,
 		values = function() return build_outline_modes_table (nil, "aura_stack_outline") end,
-		name = "Outline",
+		name = L["OPTIONS_OUTLINE"],
 		desc = "Outline",
 	},
 	
@@ -1273,7 +1412,7 @@ local debuff_options = {
 			color[1], color[2], color[3], color[4] = r, g, b, a
 			Plater.UpdateAllPlates()
 		end,
-		name = "Shadow Color",
+		name = L["OPTIONS_SHADOWCOLOR"],
 		desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 	},
 
@@ -1288,14 +1427,14 @@ local debuff_options = {
 			color[1], color[2], color[3], color[4] = r, g, b, a
 			Plater.UpdateAllPlates()
 		end,
-		name = "Color",
+		name = L["OPTIONS_COLOR"],
 		desc = "Color",
 	},
 	{
 		type = "select",
 		get = function() return Plater.db.profile.aura_stack_anchor.side end,
 		values = function() return build_anchor_side_table (nil, "aura_stack_anchor") end,
-		name = "Anchor",
+		name = L["OPTIONS_ANCHOR"],
 		desc = "Which side of the buff icon the stack counter should attach to.",
 	},
 	{
@@ -1308,8 +1447,9 @@ local debuff_options = {
 		min = -20,
 		max = 20,
 		step = 1,
-		name = "X Offset",
-		desc = "Slightly move the text horizontally.",
+		usedecimals = true,
+		name = L["OPTIONS_XOFFSET"],
+		desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 	},
 	--y offset
 	{
@@ -1322,8 +1462,9 @@ local debuff_options = {
 		min = -20,
 		max = 20,
 		step = 1,
-		name = "Y Offset",
-		desc = "Slightly move the text vertically.",
+		usedecimals = true,
+		name = L["OPTIONS_YOFFSET"],
+		desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 	},
 	
 	{type = "breakline"},
@@ -1399,6 +1540,34 @@ local debuff_options = {
 	},
 	
 	{type = "blank"},
+	
+	{
+		type = "toggle",
+		get = function() return Plater.db.profile.aura_show_enrage end,
+		set = function (self, fixedparam, value) 
+			Plater.db.profile.aura_show_enrage = value
+			Plater.RefreshDBUpvalues()
+			Plater.UpdateAllPlates()
+		end,
+		name = "Show Enrage Buffs",
+		desc = "Show auras which are in the enrage category.",
+	},
+	{
+		type = "color",
+		get = function()
+			local color = Plater.db.profile.aura_border_colors.enrage
+			return {color[1], color[2], color[3], color[4]}
+		end,
+		set = function (self, r, g, b, a) 
+			local color = Plater.db.profile.aura_border_colors.enrage
+			color[1], color[2], color[3], color[4] = r, g, b, a
+			Plater.UpdateAllPlates()
+		end,
+		name = "Enrage Buffs Border Color",
+		desc = "Enrage Buffs Border Color",
+	},
+	
+	{type = "blank"},
 
 	{
 		type = "toggle",
@@ -1426,6 +1595,20 @@ local debuff_options = {
 		name = "Buffs Border Color",
 		desc = "Buffs Border Color",
 	},	
+	
+	{type = "blank"},
+
+	{
+		type = "toggle",
+		get = function() return Plater.db.profile.aura_border_colors_by_type end,
+		set = function (self, fixedparam, value) 
+			Plater.db.profile.aura_border_colors_by_type = value
+			Plater.RefreshDBUpvalues()
+			Plater.UpdateAllPlates()
+		end,
+		name = "Use type based aura border colors",
+		desc = "Use the Blizzard debuff type colors for borders",
+	},
 	
 	{type = "blank"},
 	{type = "label", get = function() return "Swipe Animation:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
@@ -1470,6 +1653,7 @@ auraOptionsFrame.AuraTesting = {
 			Count = 1,
 			Duration = 7,
 			SpellID = 589,
+			Type = "Magic",
 		},
 		{
 			SpellName = "Vampiric Touch",
@@ -1477,6 +1661,7 @@ auraOptionsFrame.AuraTesting = {
 			Count = 1,
 			Duration = 5,
 			SpellID = 34914,
+			Type = "Magic",
 		},
 		{
 			SpellName = "Mind Flay",
@@ -1484,6 +1669,15 @@ auraOptionsFrame.AuraTesting = {
 			Count = 3,
 			Duration = 5,
 			SpellID = 15407,
+			Type = "Magic",
+		},
+		{
+			SpellName = "Enrage",
+			SpellTexture = 132345,
+			Count = 1,
+			Duration = 0,
+			SpellID = 228318,
+			Type = "",
 		},
 	},
 	
@@ -1555,7 +1749,7 @@ Plater.CreateAuraTesting()
 			--options
 			local scroll_width = 1050
 			local scroll_height = 442
-			local scroll_lines = 21
+			local scroll_lines = 20
 			local scroll_line_height = 20
 			local backdrop_color = {.2, .2, .2, 0.2}
 			local backdrop_color_on_enter = {.8, .8, .8, 0.4}
@@ -2063,7 +2257,7 @@ Plater.CreateAuraTesting()
 				help_button.tooltip = "|cFFFFFF00Help:|r\n\n- Run dungeons and raids to fill the npc list.\n\n- |cFFFFEE00Scripts Only|r aren't automatically applied, scripts can import the color set here using |cFFFFEE00local colorTable = Plater.GetNpcColor (unitFrame)|r.\n\n- Colors set here override threat colors.\n\n- Colors set in scripts override colors set here.\n\n- |TInterface\\AddOns\\Plater\\media\\star_empty_64:16:16|t icon indicates the color is favorite, so you can use it across dungeons to keep color consistency."                                               
 				help_button:SetFrameLevel (colorsFrame.Header:GetFrameLevel() + 20)
 				
-			--reefresh button
+			--refresh button
 				local refresh_button = DF:CreateButton (colorsFrame, function() colorsFrame.RefreshScroll() end, 70, 20, "refresh", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 				refresh_button:SetPoint ("right", help_button, "left", -2, 0)
 				refresh_button.tooltip = "refresh the list the npcs"
@@ -2285,6 +2479,46 @@ Plater.CreateAuraTesting()
 				local export_button = DF:CreateButton (colorsFrame, export_func, 70, 20, "export", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
 				export_button:SetPoint ("right", import_button, "left", -2, 0)
 				export_button:SetFrameLevel (colorsFrame.Header:GetFrameLevel() + 20)
+			
+			--disable all button
+				local disableAllColors = function()
+					for npcId, colorTable in pairs (Plater.db.profile.npc_colors) do
+						colorTable[1] = false
+						colorTable[2] = false
+					end
+					colorsFrame.RefreshScroll()
+				end
+				local disableall_button = DF:CreateButton (colorsFrame, disableAllColors, 140, 20, "Disable All Colors", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+				disableall_button:SetPoint ("bottomleft", spells_scroll, "bottomleft", 1, 0)
+				disableall_button:SetFrameLevel (colorsFrame.Header:GetFrameLevel() + 20)
+			
+			--set all scripts only
+				local setAllAsScriptOnly = function()
+					for npcId, colorTable in pairs (Plater.db.profile.npc_colors) do
+						if (colorTable[1]) then
+							colorTable[2] = true
+						end
+					end
+					colorsFrame.RefreshScroll()
+				end
+				local scriptsall_button = DF:CreateButton (colorsFrame, setAllAsScriptOnly, 200, 20, "Set All Enabled as 'Scripts Only'", -1, nil, nil, nil, nil, nil, DF:GetTemplate ("button", "OPTIONS_BUTTON_TEMPLATE"), DF:GetTemplate ("font", "PLATER_BUTTON"))
+				scriptsall_button:SetPoint ("left", disableall_button, "right", 0, 0)
+				scriptsall_button:SetFrameLevel (colorsFrame.Header:GetFrameLevel() + 20)
+				
+				local addnpc_text = DF:CreateLabel (scriptsall_button, "Use '/plater addnpc' to add a npc in open world.")
+				addnpc_text.fontsize = 12
+				addnpc_text.fontcolor = "gray"
+				addnpc_text:SetPoint ("left", scriptsall_button, "right", 10, 0)
+			
+			-- buttons backdrop
+				local backdropFoot = CreateFrame ("frame", nil, spells_scroll)
+				backdropFoot:SetHeight (20)
+				backdropFoot:SetPoint ("bottomleft", spells_scroll, "bottomleft", 0, 0)
+				backdropFoot:SetPoint ("bottomright", colorsFrame.ModelFrame, "bottomleft", -3, 0)
+				backdropFoot:SetBackdrop ({edgeFile = [[Interface\Buttons\WHITE8X8]], edgeSize = 1, bgFile = [[Interface\Tooltips\UI-Tooltip-Background]], tileSize = 64, tile = true})
+				backdropFoot:SetBackdropColor (.52, .52, .52, .7)
+				backdropFoot:SetBackdropBorderColor (0, 0, 0, 1)
+				backdropFoot:SetFrameLevel (colorsFrame.Header:GetFrameLevel() + 19)
 			
 			--empty label
 				local empty_text = DF:CreateLabel (colorsFrame, "this list is automatically filled when\nyou see enemies inside a dungeon or raid\n\nthen you may select colors here or directly\nin the dropdown below the nameplate")
@@ -2548,7 +2782,6 @@ Plater.CreateAuraTesting()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 --> last event auras
 
-	--local auraLastEventFrame = mainFrame.AllFrames [8]
 	do
 		--options
 		local scroll_width = 1050
@@ -2900,6 +3133,16 @@ Plater.CreateAuraTesting()
 						line.AddSpecial.AuraType = spellData.type
 						line.AddSpecial.EncounterID = spellData.encounterID
 						
+						if (spellData.type) then
+							line.AddTrackList:Enable()
+							line.AddIgnoreList:Enable()
+							line.AddSpecial:Enable()
+						else
+							line.AddTrackList:Disable()
+							line.AddIgnoreList:Disable()
+							line.AddSpecial:Disable()
+						end
+						
 						line.CreateAura.SpellID = spellID
 						line.CreateAura.AuraType = spellData.type
 						line.CreateAura.IsCast = spellData.event == "SPELL_CAST_START"
@@ -2910,7 +3153,9 @@ Plater.CreateAuraTesting()
 						
 						--manual tracking doesn't have a black list
 						if (Plater.db.profile.aura_tracker.track_method == 0x1) then
-							line.AddIgnoreList:Enable()
+							if (spellData.type) then
+								line.AddIgnoreList:Enable()
+							end
 							
 						elseif (Plater.db.profile.aura_tracker.track_method == 0x2) then
 							line.AddIgnoreList:Disable()
@@ -3018,8 +3263,8 @@ Plater.CreateAuraTesting()
 		--DF:ApplyStandardBackdrop (specialAuraFrame, false, 0.6)
 		
 		local scroll_width = 280
-		local scroll_height = 440
-		local scroll_lines = 15
+		local scroll_height = 442
+		local scroll_lines = 21
 		local scroll_line_height = 20
 		local backdrop_color = {.8, .8, .8, 0.2}
 		local backdrop_color_on_enter = {.8, .8, .8, 0.4}
@@ -3061,7 +3306,9 @@ Plater.CreateAuraTesting()
 				GameTooltip:AddLine (" ")
 				GameTooltip:Show()
 				
-				showSpellWithSameName (self, spellid)
+				if not tonumber (self.value) then
+					showSpellWithSameName (self, spellid)
+				end
 			end
 		end
 		
@@ -3216,13 +3463,13 @@ Plater.CreateAuraTesting()
 			end
 			
 			--get the spell ID from the spell name
-			text = lower (text)
-			local spellID = new_buff_entry.SpellHashTable [text]
+			local lowertext = lower (text)
+			local spellID = new_buff_entry.SpellHashTable [lowertext]
 			if (not spellID) then
 				return
 			end
 			
-			return spellID
+			return text
 		end		
 		
 		--> add aura button
@@ -3275,7 +3522,7 @@ Plater.CreateAuraTesting()
 				type = "select",
 				get = function() return Plater.db.profile.extra_icon_anchor.side end,
 				values = function() return build_anchor_side_table (false, "extra_icon_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--x offset
@@ -3289,7 +3536,8 @@ Plater.CreateAuraTesting()
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
 				desc = "Slightly move horizontally.",
 			},
 			--y offset
@@ -3303,7 +3551,8 @@ Plater.CreateAuraTesting()
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
 				desc = "Slightly move vertically.",
 			},
 			--show timer
@@ -3367,6 +3616,17 @@ Plater.CreateAuraTesting()
 				end,
 				name = "Wide Icons",
 				desc = "Wide Icons",
+			},
+			--use blizzard border colors
+			{
+				type = "toggle",
+				get = function() return Plater.db.profile.extra_icon_use_blizzard_border_color end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.extra_icon_use_blizzard_border_color = value
+					Plater.UpdateAllPlates()
+				end,
+				name = "Use Blizzard border colors",
+				desc = "Use Blizzard border colors if enabled or the below defined default border color if disabled.",
 			},
 			--border color
 			{
@@ -3444,6 +3704,36 @@ Plater.CreateAuraTesting()
 				end,
 				name = "Dispellable Border Color",
 				desc = "Dispellable Border Color",
+			},
+			
+			{type = "blank"},
+			
+			--show enrages
+			{
+				type = "toggle",
+				get = function() return Plater.db.profile.extra_icon_show_enrage end,
+				set = function (self, fixedparam, value) 
+					Plater.db.profile.extra_icon_show_enrage = value
+					Plater.RefreshDBUpvalues()
+					Plater.UpdateAllPlates()
+				end,
+				name = "Enrage",
+				desc = "When the unit has an enrage effect on it, show it.",
+			},
+			--purge border color
+			{
+				type = "color",
+				get = function()
+					local color = Plater.db.profile.extra_icon_show_enrage_border
+					return {color[1], color[2], color[3], color[4]}
+				end,
+				set = function (self, r, g, b, a) 
+					local color = Plater.db.profile.extra_icon_show_enrage_border
+					color[1], color[2], color[3], color[4] = r, g, b, a
+					Plater.UpdateAllPlates()
+				end,
+				name = "Enrage Border Color",
+				desc = "Enrage Border Color",
 			},
 		
 		}
@@ -3621,7 +3911,7 @@ do
 					if (not InCombatLockdown()) then
 						SetCVar ("nameplateSelfAlpha", value)
 					else
-						Plater:Msg ("you are in combat.")
+						Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					end
 				end,
 				min = 0.1,
@@ -3629,7 +3919,7 @@ do
 				step = 0.1,
 				thumbscale = 1.7,
 				usedecimals = true,
-				name = "Alpha" .. CVarIcon,
+				name = L["OPTIONS_ALPHA"] .. CVarIcon,
 				desc = "Alpha" .. CVarDesc,
 				nocombat = true,
 			},
@@ -3640,7 +3930,7 @@ do
 					if (not InCombatLockdown()) then
 						SetCVar ("nameplateSelfScale", value)
 					else
-						Plater:Msg ("you are in combat.")
+						Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					end
 				end,
 				min = 0.5,
@@ -3689,8 +3979,8 @@ do
 					Plater.RefreshAuras()
 					Plater.UpdateAllPlates()
 				end,
-				min = 8,
-				max = 40,
+				min = 4,
+				max = 80,
 				step = 1,
 				name = "Width",
 				desc = "Debuff's icon width.",
@@ -3703,8 +3993,8 @@ do
 					Plater.RefreshAuras()
 					Plater.UpdateAllPlates()
 				end,
-				min = 8,
-				max = 40,
+				min = 4,
+				max = 80,
 				step = 1,
 				name = "Height",
 				desc = "Debuff's icon height.",
@@ -3721,8 +4011,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Adjusts the position on the Y axis.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			
 			{type = "blank"},
@@ -3740,73 +4031,6 @@ do
 				nocombat = true,
 			},
 			
-			--[=[ --removed top and bottom constrain options
-			{
-				type = "range",
-				get = function() return tonumber (GetCVar ("nameplateSelfTopInset")*100) end,
-				set = function (self, fixedparam, value) 
-					--Plater.db.profile.plate_config.player.y_position_offset = value
-
-					if (InCombatLockdown()) then
-						Plater:Msg ("you are in combat.")
-						self:SetValue (tonumber (GetCVar ("nameplateSelfTopInset")*100))
-						return
-					end
-
-					--SetCVar ("nameplateSelfBottomInset", value / 100)
-					SetCVar ("nameplateSelfTopInset", abs (value - 99) / 100)
-					
-					if (not Plater.PersonalAdjustLocationTop) then
-						Plater.PersonalAdjustLocationTop = CreateFrame ("frame", "PlaterPersonalBarLocation", UIParent)
-						local frame = Plater.PersonalAdjustLocationTop
-						frame:SetWidth (GetScreenWidth())
-						frame:SetHeight (20)
-						frame.Texture = frame:CreateTexture (nil, "background")
-						frame.Texture:SetTexture ([[Interface\AddOns\Plater\images\bar4_vidro]], true)
-						frame.Texture:SetAllPoints()
-						frame.Shadow = frame:CreateTexture (nil, "border")
-						frame.Shadow:SetTexture ([[Interface\ACHIEVEMENTFRAME\UI-Achievement-RecentHeader]], true)
-						frame.Shadow:SetPoint ("center")
-						frame.Shadow:SetSize (256, 18)
-						frame.Shadow:SetTexCoord (0, 1, 0, 22/32)
-						frame.Shadow:SetVertexColor (0, 0, 0, 1)
-						frame.Text = frame:CreateFontString (nil, "artwork", "GameFontNormal")
-						frame.Text:SetText ("Plater: Top Constraint")
-						frame.Text:SetPoint ("center")
-						
-						frame.HideAnimation = DF:CreateAnimationHub (frame, nil, function() frame:Hide() end)
-						DF:CreateAnimation (frame.HideAnimation, "Alpha", 1, 1, 1, 0)
-						
-						frame.CancelFunction = function()
-							frame.HideAnimation:Play()
-						end
-					end
-					
-					if (Plater.PersonalAdjustLocationTop.HideAnimation:IsPlaying()) then
-						Plater.PersonalAdjustLocationTop.HideAnimation:Stop()
-						Plater.PersonalAdjustLocationTop:SetAlpha (1)
-					end
-					Plater.PersonalAdjustLocationTop:Show()
-					
-					local percentValue = GetScreenHeight()/100
-					Plater.PersonalAdjustLocationTop:SetPoint ("bottom", UIParent, "bottom", 0, percentValue * value)
-					
-					if (Plater.PersonalAdjustLocationTop.Timer) then
-						Plater.PersonalAdjustLocationTop.Timer:Cancel()
-					end
-					Plater.PersonalAdjustLocationTop.Timer = C_Timer.NewTimer (10, Plater.PersonalAdjustLocationTop.CancelFunction)
-					
-					Plater.UpdateAllPlates()
-					Plater.UpdateSelfPlate()
-				end,
-				min = 2,
-				max = 51,
-				step = 1,
-				nocombat = true,
-				name = "Top Constrain" .. CVarIcon,
-				desc = "Adjust the top constrain position where the personal bar cannot pass.\n\n|cFFFFFFFFDefault: 50|r" .. CVarDesc,
-			},
-			
 			{
 				type = "range",
 				get = function() return tonumber (GetCVar ("nameplateSelfBottomInset")*100) end,
@@ -3814,74 +4038,7 @@ do
 					--Plater.db.profile.plate_config.player.y_position_offset = value
 
 					if (InCombatLockdown()) then
-						Plater:Msg ("you are in combat.")
-						self:SetValue (tonumber (GetCVar ("nameplateSelfBottomInset")*100))
-						return
-					end
-
-					SetCVar ("nameplateSelfBottomInset", value / 100)
-					--SetCVar ("nameplateSelfTopInset", value / 100)
-					
-					if (not Plater.PersonalAdjustLocationBottom) then
-						Plater.PersonalAdjustLocationBottom = CreateFrame ("frame", "PlaterPersonalBarLocation", UIParent)
-						local frame = Plater.PersonalAdjustLocationBottom
-						frame:SetWidth (GetScreenWidth())
-						frame:SetHeight (20)
-						frame.Texture = frame:CreateTexture (nil, "background")
-						frame.Texture:SetTexture ([[Interface\AddOns\Plater\images\bar4_vidro]], true)
-						frame.Texture:SetAllPoints()
-						frame.Shadow = frame:CreateTexture (nil, "border")
-						frame.Shadow:SetTexture ([[Interface\ACHIEVEMENTFRAME\UI-Achievement-RecentHeader]], true)
-						frame.Shadow:SetPoint ("center")
-						frame.Shadow:SetSize (256, 18)
-						frame.Shadow:SetTexCoord (0, 1, 0, 22/32)
-						frame.Shadow:SetVertexColor (0, 0, 0, 1)
-						frame.Text = frame:CreateFontString (nil, "artwork", "GameFontNormal")
-						frame.Text:SetText ("Plater: Bottom Constraint")
-						frame.Text:SetPoint ("center")
-						
-						frame.HideAnimation = DF:CreateAnimationHub (frame, nil, function() frame:Hide() end)
-						DF:CreateAnimation (frame.HideAnimation, "Alpha", 1, 1, 1, 0)
-						
-						frame.CancelFunction = function()
-							frame.HideAnimation:Play()
-						end
-					end
-					
-					if (Plater.PersonalAdjustLocationBottom.HideAnimation:IsPlaying()) then
-						Plater.PersonalAdjustLocationBottom.HideAnimation:Stop()
-						Plater.PersonalAdjustLocationBottom:SetAlpha (1)
-					end
-					Plater.PersonalAdjustLocationBottom:Show()
-					
-					local percentValue = GetScreenHeight()/100
-					Plater.PersonalAdjustLocationBottom:SetPoint ("bottom", UIParent, "bottom", 0, percentValue * value)
-					
-					if (Plater.PersonalAdjustLocationBottom.Timer) then
-						Plater.PersonalAdjustLocationBottom.Timer:Cancel()
-					end
-					Plater.PersonalAdjustLocationBottom.Timer = C_Timer.NewTimer (10, Plater.PersonalAdjustLocationBottom.CancelFunction)
-					
-					Plater.UpdateAllPlates()
-					Plater.UpdateSelfPlate()
-				end,
-				min = 2,
-				max = 51,
-				step = 1,
-				nocombat = true,
-				name = "Bottom Constrain" .. CVarIcon,
-				desc = "Adjust the bottom constrain position where the personal bar cannot pass.\n\n|cFFFFFFFFDefault: 20|r" .. CVarDesc,
-			},
-			--]=] --end of top and bottom constrain
-			
-			{
-				type = "range",
-				get = function() return tonumber (GetCVar ("nameplateSelfBottomInset")*100) end,
-				set = function (self, fixedparam, value) 
-					--Plater.db.profile.plate_config.player.y_position_offset = value
-
-					if (InCombatLockdown()) then
-						Plater:Msg ("you are in combat.")
+						Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 						self:SetValue (tonumber (GetCVar ("nameplateSelfBottomInset")*100))
 						return
 					end
@@ -3954,7 +4111,7 @@ do
 					Plater.RefreshDBUpvalues()
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show health bar",
 			},
 			{
@@ -4000,7 +4157,7 @@ do
 					Plater.RefreshDBUpvalues()
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show power bar",
 			},
 			{
@@ -4046,7 +4203,7 @@ do
 					Plater.RefreshDBUpvalues()
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show cast bar",
 			},
 			{
@@ -4090,8 +4247,9 @@ do
 				min = -128,
 				max = 128,
 				step = 1,
-				name = "Y Offset",
-				desc = "Adjusts the cast bar position on the Y axis.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--hide castbar from blizzard
 			{
@@ -4118,7 +4276,7 @@ do
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--cast text font
@@ -4126,7 +4284,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.spellname_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_player_npccastname_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			--cast text color
@@ -4141,7 +4299,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 	
@@ -4150,7 +4308,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.spellname_text_outline end,
 				values = function() return build_outline_modes_table ("player", "spellname_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -4166,7 +4324,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -4175,7 +4333,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.spellname_text_anchor.side end,
 				values = function() return build_anchor_side_table ("player", "spellname_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--spell name text anchor x offset
@@ -4189,8 +4347,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--spell name text anchor x offset
 			{
@@ -4203,8 +4362,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			
 			{type = "breakline"},
@@ -4217,7 +4377,7 @@ do
 					Plater.db.profile.plate_config.player.spellpercent_text_enabled = value
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show the cast time progress.",
 			},
 			--cast time text
@@ -4231,7 +4391,7 @@ do
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--cast time text font
@@ -4239,7 +4399,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.spellpercent_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_player_spellpercent_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -4248,7 +4408,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.spellpercent_text_outline end,
 				values = function() return build_outline_modes_table ("player", "spellpercent_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -4264,7 +4424,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -4280,7 +4440,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 			
@@ -4289,7 +4449,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.spellpercent_text_anchor.side end,
 				values = function() return build_anchor_side_table ("player", "spellpercent_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--cast time anchor x offset
@@ -4303,8 +4463,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--cast time anchor x offset
 			{
@@ -4317,8 +4478,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			
 			
@@ -4334,7 +4496,7 @@ do
 					Plater.db.profile.plate_config.player.power_percent_text_enabled = value
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show the percent text.",
 			},
 			--percent text size
@@ -4348,7 +4510,7 @@ do
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--percent text font
@@ -4356,7 +4518,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.power_percent_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_player_power_percent_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -4379,7 +4541,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.power_percent_text_outline end,
 				values = function() return build_outline_modes_table ("player", "power_percent_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -4395,7 +4557,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -4425,7 +4587,7 @@ do
 				min = 0,
 				max = 1,
 				step = 0.1,
-				name = "Alpha",
+				name = L["OPTIONS_ALPHA"],
 				desc = "Set the transparency of the text.",
 				usedecimals = true,
 			},
@@ -4434,7 +4596,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.power_percent_text_anchor.side end,
 				values = function() return build_anchor_side_table ("player", "power_percent_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--percent anchor x offset
@@ -4448,8 +4610,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--percent anchor x offset
 			{
@@ -4462,8 +4625,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},			
 			
 			{type = "breakline"},
@@ -4478,7 +4642,7 @@ do
 					Plater.db.profile.plate_config.player.percent_text_enabled = value
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show the percent text.",
 			},
 			
@@ -4493,7 +4657,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "Color",
 			},
 			
@@ -4566,7 +4730,7 @@ do
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--percent text font
@@ -4574,7 +4738,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.percent_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_player_percent_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -4583,7 +4747,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.percent_text_outline end,
 				values = function() return build_outline_modes_table ("player", "percent_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -4599,7 +4763,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -4615,7 +4779,7 @@ do
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 			--percent text alpha
@@ -4629,7 +4793,7 @@ do
 				min = 0,
 				max = 1,
 				step = 0.1,
-				name = "Alpha",
+				name = L["OPTIONS_ALPHA"],
 				desc = "Set the transparency of the text.",
 				usedecimals = true,
 			},
@@ -4638,7 +4802,7 @@ do
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.player.percent_text_anchor.side end,
 				values = function() return build_anchor_side_table ("player", "percent_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--percent anchor x offset
@@ -4652,8 +4816,9 @@ do
 				min = -20,
 				max = 20,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--percent anchor x offset
 			{
@@ -4666,8 +4831,9 @@ do
 				min = -20,
 				max = 20,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			
 			--class resources
@@ -4685,7 +4851,7 @@ do
 				max = 1,
 				step = 0.01,
 				usedecimals = true,
-				name = "Alpha",
+				name = L["OPTIONS_ALPHA"],
 				desc = "Resource Alpha",
 			},
 			
@@ -4715,8 +4881,9 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
+				usedecimals = true,
 				nocombat = true,
-				name = "Y OffSet",
+				name = L["OPTIONS_YOFFSET"],
 				desc = "Y Offset when resource bar are anchored to your personal bar",
 			},
 			
@@ -4730,6 +4897,7 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
+				usedecimals = true,
 				nocombat = true,
 				name = "Y OffSet on Target",
 				desc = "Y Offset when the resource are anchored on your current target",
@@ -4745,6 +4913,7 @@ do
 				min = -100,
 				max = 100,
 				step = 1,
+				usedecimals = true,
 				nocombat = true,
 				name = "Offset if Buff is Shown",
 				desc = "Add this to 'Y OffSet on Target' if there is buffs or debuffs shown in the nameplate",
@@ -4930,7 +5099,7 @@ local targetOptions = {
 						SetCVar ("nameplateLargeTopInset", value)
 					end
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.000,
@@ -4950,7 +5119,7 @@ local targetOptions = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateTargetBehindMaxDistance", value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 5,
@@ -4969,7 +5138,7 @@ local targetOptions = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateSelectedScale", value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.75,
@@ -5062,14 +5231,14 @@ local targetOptions = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.OnPlayerTargetChanged()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "Focus Color",
 		},
 		{
 			type = "select",
 			get = function() return Plater.db.profile.focus_texture end,
 			values = function() return focus_indicator_texture_options end,
-			name = "Texture",
+			name = L["OPTIONS_TEXTURE"],
 			desc = "Focus Texture",
 		},
 }
@@ -5082,12 +5251,20 @@ DF:BuildMenu (targetFrame, targetOptions, startX, startY, heightSize, true, opti
 --OP��ES NO PAINEL PRINCIPAL
 
 function Plater.ChangeNpcRelavance (_, _, value)
-	if (value == 3) then
+	if (value == 1) then
+		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].only_names = false
+		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].all_names = false
+		
+	elseif (value == 2) then
+		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].only_names = false
+		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].all_names = true
+		
+	elseif (value == 3) then
 		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].only_names = true
 		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].all_names = false
 		
 	elseif (value == 4) then
-		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].only_names = false
+		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].only_names = true
 		Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_NPC].all_names = true
 	end
 	
@@ -5096,8 +5273,10 @@ function Plater.ChangeNpcRelavance (_, _, value)
 	Plater.UpdateAllPlates()
 end
 local relevance_options = {
-	{label = "All Professions", value = 3, onclick = Plater.ChangeNpcRelavance},
-	{label = "All Npcs", value = 4, onclick = Plater.ChangeNpcRelavance},
+	{label = "All Professions (Healthbars)", value = 1, onclick = Plater.ChangeNpcRelavance},
+	{label = "All Npcs (Healthbars)", value = 2, onclick = Plater.ChangeNpcRelavance},
+	{label = "All Professions (Name)", value = 3, onclick = Plater.ChangeNpcRelavance},
+	{label = "All Npcs (Name)", value = 4, onclick = Plater.ChangeNpcRelavance},
 }
 
 --
@@ -5109,20 +5288,20 @@ local relevance_options = {
 	--menu 1 ~general ~geral
 	local options_table1 = {
 	
-		{type = "label", get = function() return "Health Bar Appearance:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		{type = "label", get = function() return L["OPTIONS_GENERALSETTINGS_HEALTHBAR_ANCHOR_TITLE"] end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		{
 			type = "select",
 			get = function() return Plater.db.profile.health_statusbar_texture end,
 			values = function() return health_bar_texture_options end,
-			name = "Health Bar Texture",
-			desc = "Texture used on the health bar",
+			name = L["OPTIONS_GENERALSETTINGS_HEALTHBAR_TEXTURE"],
+			desc = L["OPTIONS_GENERALSETTINGS_HEALTHBAR_TEXTURE"],
 		},
 		{
 			type = "select",
 			get = function() return Plater.db.profile.health_statusbar_bgtexture end,
 			values = function() return health_bar_bgtexture_options end,
-			name = "Health Bar Background Texture",
-			desc = "Texture used on the health bar background",
+			name = L["OPTIONS_GENERALSETTINGS_HEALTHBAR_BGTEXTURE"],
+			desc = L["OPTIONS_GENERALSETTINGS_HEALTHBAR_BGTEXTURE"],
 		},
 		{
 			type = "color",
@@ -5135,14 +5314,14 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Health Bar Background Color and Alpha",
-			desc = "Color used to paint the health bar background.",
+			name = L["OPTIONS_GENERALSETTINGS_HEALTHBAR_BGCOLOR"],
+			desc = L["OPTIONS_GENERALSETTINGS_HEALTHBAR_BGCOLOR"],
 		},
 		
 		{type = "blank"},
 		
 		--alpha and range check
-		{type = "label", get = function() return "Alpha Control:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		{type = "label", get = function() return L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_ANCHOR_TITLE"] end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 
 		{
 			type = "toggle",
@@ -5152,8 +5331,8 @@ local relevance_options = {
 				Plater.RefreshDBUpvalues()
 				Plater.UpdateAllPlates()
 			end,
-			name = "Use Range Check",
-			desc = "Units that are out of range has their nameplates more transparent (adjust the amount in the slider below).\n\n|cFFFFFF00Important|r: check which spell you want to use to check the range.",
+			name = L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_RANGECHECK_ENABLED"],
+			desc = L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_RANGECHECK_ENABLED_DESC"],
 		},
 		{
 			type = "range",
@@ -5166,8 +5345,8 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Out of Range Alpha",
-			desc = "Amount of alpha to apply when the unit is out of range.\n\n|cFFFFFF001.0|r: full opaque.\n|cFFFFFF00Zero|r: full transparent.",
+			name = L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_RANGECHECK_ALPHA"],
+			desc = L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_RANGECHECK_ALPHA"],
 			usedecimals = true,
 		},
 	}
@@ -5205,8 +5384,8 @@ local relevance_options = {
 				end
 				return t
 			end,
-			name = "|T" .. spec_icon .. ":16:16|t Range Check",
-			desc = "Spell to range check on this specializartion.",
+			name = "|T" .. spec_icon .. ":16:16|t " .. L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_RANGECHECK"],
+			desc = L["OPTIONS_GENERALSETTINGS_TRANSPARENCY_RANGECHECK_SPEC_DESC"],
 		})
 		i = i + 1
 	end	
@@ -5301,6 +5480,43 @@ local relevance_options = {
 			end,
 			name = "No Spell Name Length Limitation",
 			desc = "Spell name text won't be cut to fit within the cast bar width.",
+		},
+
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.show_interrupt_author end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.show_interrupt_author = value
+				Plater.RefreshDBUpvalues()
+			end,
+			name = "Show Interrupt Author",
+			desc = "Show Interrupt Author",
+		},
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.hide_friendly_castbars end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.hide_friendly_castbars = value
+				Plater.RefreshDBUpvalues()
+			end,
+			name = "Hide Friendly Cast Bar",
+			desc = "Hide Friendly Cast Bar",
+		},		
+
+		{type = "blank"},
+		
+		{
+			type = "execute",
+			func = function() 
+				if (Plater.IsShowingCastBarTest) then
+					Plater.StopCastBarTest()
+					Plater:Msg ("Test loop for cast bar stopped.")
+				else
+					Plater.StartCastBarTest()
+				end
+			end,
+			desc = "Start cast bar test, press again to stop.",
+			name = "Toggle Cast Bar Test",
 		},
 		
 		{type = "blank"},
@@ -5418,23 +5634,7 @@ local relevance_options = {
 			name = "Fade Out Time",
 			desc = "When a cast ends, this is the amount of time the cast bar takes to go from 100% transparency to not be visible at all.",
 		},
-		
-		{type = "blank"},
-		
-		{
-			type = "execute",
-			func = function() 
-				if (Plater.IsShowingCastBarTest) then
-					Plater.StopCastBarTest()
-					Plater:Msg ("Test loop for cast bar stopped.")
-				else
-					Plater.StartCastBarTest()
-				end
-			end,
-			desc = "Start cast bar test, press again to stop.",
-			name = "Toggle Cast Bar Test",
-		},
-			
+
 		{type = "breakline"},
 		
 		{type = "label", get = function() return "Cast Bar Colors:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
@@ -5539,7 +5739,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size",
 		},
 		--text font
@@ -5547,7 +5747,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.castbar_target_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_castbar_target_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font",
 		},
 		--cast text color
@@ -5562,8 +5762,8 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
-			desc = "Color",
+			name = L["OPTIONS_COLOR"],
+			desc = L["OPTIONS_COLOR"],
 		},
 		
 		--text outline options
@@ -5571,7 +5771,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.castbar_target_outline end,
 			values = function() return build_outline_modes_table (nil, "castbar_target_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -5587,7 +5787,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -5595,7 +5795,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.castbar_target_anchor.side end,
 			values = function() return build_anchor_side_table (nil, "castbar_target_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the cast bar this widget is attach to.",
 		},
 		{
@@ -5608,7 +5808,8 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
 			desc = "X Offset",
 		},
 		{
@@ -5621,7 +5822,8 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
 			desc = "Y Offset",
 		},
 
@@ -5637,6 +5839,17 @@ local relevance_options = {
 			end,
 			name = "Enemy Faction Icon",
 			desc = "Show horde or alliance icon.",
+		},
+		
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.indicator_pet end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.indicator_pet = value
+				Plater.UpdateAllPlates()
+			end,
+			name = "Pet Icon",
+			desc = "Pet Icon",
 		},
 		
 		{
@@ -5702,6 +5915,22 @@ local relevance_options = {
 			name = "Enemy Spec",
 			desc = "Enemy player spec icon.\n\n|cFFFFFF00Important|r: must have Details! Damage Meter installed.",
 		},
+		{
+			type = "range",
+			get = function() return Plater.db.profile.indicator_scale end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.indicator_scale = value
+				Plater.UpdateAllPlates()
+			end,
+			min = 0.2,
+			max = 3,
+			step = 0.01,
+			usedecimals = true,
+			name = "Scale",
+			desc = "Scale",
+		},
+		
+		
 		--
 
 		--indicator icon anchor
@@ -5709,7 +5938,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.indicator_anchor.side end,
 			values = function() return build_anchor_side_table (nil, "indicator_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--indicator icon anchor x offset
@@ -5723,7 +5952,8 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
 			desc = "Slightly move horizontally.",
 		},
 		--indicator icon anchor y offset
@@ -5737,7 +5967,8 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
 			desc = "Slightly move vertically.",
 		},
 		
@@ -5765,7 +5996,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.indicator_raidmark_anchor.side end,
 			values = function() return build_anchor_side_table (nil, "indicator_raidmark_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--indicator icon anchor x offset
@@ -5779,7 +6010,8 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
 			desc = "Slightly move horizontally.",
 		},
 		--indicator icon anchor y offset
@@ -5793,7 +6025,8 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
 			desc = "Slightly move vertically.",
 		},
 		
@@ -5880,11 +6113,24 @@ local relevance_options = {
 			get = function() return Plater.db.profile.use_playerclass_color end,
 			set = function (self, fixedparam, value) 
 				Plater.db.profile.use_playerclass_color = value
-				Plater.UpdateUseClassColors()
 				Plater.UpdateAllPlates()
 			end,
 			name = "Use Class Colors",
 			desc = "Player name plates uses the player class color",
+		},
+		{
+			type = "color",
+			get = function()
+				local color = Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].fixed_class_color
+				return {color[1], color[2], color[3], color[4]}
+			end,
+			set = function (self, r, g, b, a) 
+				local color = Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].fixed_class_color
+				color[1], color[2], color[3], color[4] = r, g, b, a
+				Plater.UpdateAllPlates()
+			end,
+			name = "Fixed Color",
+			desc = "Use this color for health-bars and guild/friend text when not using class colors.\nGuild and friend colors for the name/guild texts can be overwritten with their respective color settings below.",
 		},
 		{
 			type = "toggle",
@@ -5904,7 +6150,7 @@ local relevance_options = {
 				Plater.UpdateAllPlates()
 			end,
 			name = "Only Show Player Name",
-			desc = "Hide the health bar, only show the character name.\n\n|cFFFFFF00Important|r: overrides 'Only Damaged Players'.",
+			desc = "Hide the health bar, only show the character name.\n\n|cFFFFFF00Important|r: If 'Only Damaged Players' is selected and the player is damaged, this setting will be overwritten and the health bar will be shown.",
 		},
 		{
 			type = "toggle",
@@ -5940,8 +6186,85 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Adjusts the position on the Y axis.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
+		},
+		
+		{type = "blank"},
+		{type = "label", get = function() return "Player Name Text Colors" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		--player name color
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_use_class_color end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_use_class_color = value
+				Plater.UpdateAllPlates()
+			end,
+			name = "Use Class Colors",
+			desc = "Player name/guild text uses the class color instead of the selected color. Guild or Friend colors will overwrite this, if used.",
+		},
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_use_friends_color end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_use_friends_color = value
+				Plater.UpdateAllPlates()
+			end,
+			name = "Use Friends Colors",
+			desc = "Player name/guild text uses the selected friend color, if the player is on your friend list.",
+		},
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_use_guild_color end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_use_guild_color = value
+				Plater.UpdateAllPlates()
+			end,
+			name = "Use Guild Colors",
+			desc = "Player name/guild text uses the selected guild color, if it is a guild mate.",
+		},
+		{
+			type = "color",
+			get = function()
+				local color = Plater.db.profile.plate_config.friendlyplayer.actorname_text_color
+				return {color[1], color[2], color[3], color[4]}
+			end,
+			set = function (self, r, g, b, a) 
+				local color = Plater.db.profile.plate_config.friendlyplayer.actorname_text_color
+				color[1], color[2], color[3], color[4] = r, g, b, a
+				Plater.UpdateAllPlates()
+			end,
+			name = L["OPTIONS_COLOR"],
+			desc = "The color of the text, if neither class, friend or guild colors are used.",
+		},
+		{
+			type = "color",
+			get = function()
+				local color = Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_friend_color
+				return {color[1], color[2], color[3], color[4]}
+			end,
+			set = function (self, r, g, b, a) 
+				local color = Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_friend_color
+				color[1], color[2], color[3], color[4] = r, g, b, a
+				Plater.UpdateAllPlates()
+			end,
+			name = "Friend Color",
+			desc = "Use this color for name/guild texts if the player is your friend.",
+		},
+		{
+			type = "color",
+			get = function()
+				local color = Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_guild_color
+				return {color[1], color[2], color[3], color[4]}
+			end,
+			set = function (self, r, g, b, a) 
+				local color = Plater.db.profile.plate_config [ACTORTYPE_FRIENDLY_PLAYER].actorname_guild_color
+				color[1], color[2], color[3], color[4] = r, g, b, a
+				Plater.UpdateAllPlates()
+			end,
+			name = "Guild Color",
+			desc = "Use this color for name/guild texts if the player is in your guild.",
 		},
 		
 		{type = "breakline"},
@@ -6077,7 +6400,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--player name font
@@ -6085,23 +6408,8 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.actorname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendly_playername_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
-		},
-		--player name color
-		{
-			type = "color",
-			get = function()
-				local color = Plater.db.profile.plate_config.friendlyplayer.actorname_text_color
-				return {color[1], color[2], color[3], color[4]}
-			end,
-			set = function (self, r, g, b, a) 
-				local color = Plater.db.profile.plate_config.friendlyplayer.actorname_text_color
-				color[1], color[2], color[3], color[4] = r, g, b, a
-				Plater.UpdateAllPlates()
-			end,
-			name = "Color",
-			desc = "The color of the text.",
 		},
 		
 		--text outline options
@@ -6109,7 +6417,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.actorname_text_outline end,
 			values = function() return build_outline_modes_table ("friendlyplayer", "actorname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -6125,7 +6433,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -6134,7 +6442,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.actorname_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlyplayer", "actorname_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--npc name anchor x offset
@@ -6148,8 +6456,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--npc name anchor x offset
 		{
@@ -6162,8 +6471,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},	
 		
 		--cast text size
@@ -6181,7 +6491,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--cast text font
@@ -6189,7 +6499,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendly_playercastname_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		--cast text color
@@ -6204,7 +6514,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		
@@ -6213,7 +6523,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellname_text_outline end,
 			values = function() return build_outline_modes_table ("friendlyplayer", "spellname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -6229,7 +6539,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 
@@ -6238,7 +6548,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellname_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlyplayer", "spellname_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--spell name text anchor x offset
@@ -6252,8 +6562,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--spell name text anchor x offset
 		{
@@ -6266,8 +6577,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 		
@@ -6280,7 +6592,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.friendlyplayer.spellpercent_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Show the cast time progress.",
 		},
 		--cast time text
@@ -6294,7 +6606,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--cast time text font
@@ -6302,7 +6614,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellpercent_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlyplayer_spellpercent_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -6311,7 +6623,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellpercent_text_outline end,
 			values = function() return build_outline_modes_table ("friendlyplayer", "spellpercent_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -6327,7 +6639,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -6343,7 +6655,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		
@@ -6352,7 +6664,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.spellpercent_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlyplayer", "spellpercent_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--cast time anchor x offset
@@ -6366,8 +6678,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--cast time anchor x offset
 		{
@@ -6380,8 +6693,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},		
 
 		{type = "breakline"},
@@ -6396,7 +6710,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.friendlyplayer.percent_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Show the percent text.",
 		},
 		--out of combat
@@ -6456,7 +6770,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--percent text font
@@ -6464,7 +6778,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.percent_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlyplayer_percent_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 
@@ -6473,7 +6787,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.percent_text_outline end,
 			values = function() return build_outline_modes_table ("friendlyplayer", "percent_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -6489,7 +6803,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -6505,7 +6819,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		--percent text alpha
@@ -6519,7 +6833,7 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Alpha",
+			name = L["OPTIONS_ALPHA"],
 			desc = "Set the transparency of the text.",
 			usedecimals = true,
 		},
@@ -6528,7 +6842,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.percent_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlyplayer", "percent_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--percent anchor x offset
@@ -6542,8 +6856,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--percent anchor x offset
 		{
@@ -6556,8 +6871,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 
@@ -6572,7 +6888,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.friendlyplayer.level_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Check this box to show the level of the actor.",
 		},
 		--level text size
@@ -6586,7 +6902,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--level text font
@@ -6594,7 +6910,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.level_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlyplayer_level_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -6603,7 +6919,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.level_text_outline end,
 			values = function() return build_outline_modes_table ("friendlyplayer", "level_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -6619,7 +6935,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -6634,7 +6950,7 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Alpha",
+			name = L["OPTIONS_ALPHA"],
 			desc = "Set the transparency of the text.",
 			usedecimals = true,
 		},
@@ -6643,7 +6959,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlyplayer.level_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlyplayer", "level_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--level anchor x offset
@@ -6657,8 +6973,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--level anchor x offset
 		{
@@ -6671,8 +6988,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 		
@@ -6768,8 +7086,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Adjusts the position on the Y axis.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},		
 		
 		{type = "blank"},
@@ -6786,8 +7105,9 @@ local relevance_options = {
 			min = -128,
 			max = 128,
 			step = 1,
-			name = "Y Offset",
-			desc = "Adjusts the cast bar position on the Y axis.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},			
 		
 		{type = "breakline"},
@@ -6924,7 +7244,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--player name font
@@ -6932,7 +7252,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.actorname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_enemy_playername_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		--player name color
@@ -6947,7 +7267,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		
@@ -6956,7 +7276,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.actorname_text_outline end,
 			values = function() return build_outline_modes_table ("enemyplayer", "actorname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -6972,7 +7292,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -6981,7 +7301,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.actorname_text_anchor.side end,
 			values = function() return build_anchor_side_table ("enemyplayer", "actorname_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--npc name anchor x offset
@@ -6995,8 +7315,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--npc name anchor x offset
 		{
@@ -7009,8 +7330,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},	
 		
 		{type = "breakline"},
@@ -7027,7 +7349,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--cast text font
@@ -7035,7 +7357,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.spellname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_enemy_playercastname_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		--cast text color
@@ -7050,7 +7372,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 
@@ -7059,7 +7381,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.spellname_text_outline end,
 			values = function() return build_outline_modes_table ("enemyplayer", "spellname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -7075,7 +7397,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -7084,7 +7406,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.spellname_text_anchor.side end,
 			values = function() return build_anchor_side_table ("enemyplayer", "spellname_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--spell name text anchor x offset
@@ -7098,8 +7420,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--spell name text anchor x offset
 		{
@@ -7112,8 +7435,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 		--level text settings
@@ -7127,7 +7451,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.enemyplayer.spellpercent_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Show the cast time progress.",
 		},
 		--cast time text
@@ -7141,7 +7465,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--cast time text font
@@ -7149,7 +7473,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.spellpercent_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_enemyplayer_spellpercent_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -7158,7 +7482,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.spellpercent_text_outline end,
 			values = function() return build_outline_modes_table ("enemyplayer", "spellpercent_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -7174,7 +7498,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -7190,7 +7514,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		
@@ -7199,7 +7523,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.spellpercent_text_anchor.side end,
 			values = function() return build_anchor_side_table ("enemyplayer", "spellpercent_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--cast time anchor x offset
@@ -7213,8 +7537,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--cast time anchor x offset
 		{
@@ -7227,8 +7552,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 
 		{type = "breakline"},
@@ -7243,7 +7569,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.enemyplayer.percent_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Show the percent text.",
 		},
 		--out of combat
@@ -7304,7 +7630,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--percent text font
@@ -7312,7 +7638,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.percent_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_enemyplayer_percent_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -7321,7 +7647,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.percent_text_outline end,
 			values = function() return build_outline_modes_table ("enemyplayer", "percent_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -7337,7 +7663,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -7353,7 +7679,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		--percent text alpha
@@ -7367,7 +7693,7 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Alpha",
+			name = L["OPTIONS_ALPHA"],
 			desc = "Set the transparency of the text.",
 			usedecimals = true,
 		},
@@ -7376,7 +7702,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.percent_text_anchor.side end,
 			values = function() return build_anchor_side_table ("enemyplayer", "percent_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--percent anchor x offset
@@ -7390,8 +7716,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--percent anchor x offset
 		{
@@ -7404,8 +7731,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 		{type = "breakline"},
@@ -7419,7 +7747,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.enemyplayer.level_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Check this box to show the level of the actor.",
 		},
 		--level text size
@@ -7433,7 +7761,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--level text font
@@ -7441,7 +7769,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.level_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_enemyplayer_level_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -7450,7 +7778,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.level_text_outline end,
 			values = function() return build_outline_modes_table ("enemyplayer", "level_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -7466,7 +7794,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -7482,7 +7810,7 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Alpha",
+			name = L["OPTIONS_ALPHA"],
 			desc = "Set the transparency of the text.",
 			usedecimals = true,
 		},
@@ -7491,7 +7819,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.enemyplayer.level_text_anchor.side end,
 			values = function() return build_anchor_side_table ("enemyplayer", "level_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--level anchor x offset
@@ -7505,8 +7833,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--level anchor x offset
 		{
@@ -7519,8 +7848,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},		
 
 	}
@@ -7587,7 +7917,7 @@ local relevance_options = {
 				end
 			end,
 			nocombat = true,
-			name = "Enabled" .. CVarIcon,
+			name = L["OPTIONS_ENABLED"] .. CVarIcon,
 			desc = "Show nameplate for friendly npcs.\n\n|cFFFFFF00Important|r: This option is dependent on the client`s nameplate state (on/off).\n\n|cFFFFFF00Important|r: when disabled but enabled on the client through (" .. (GetBindingKey ("FRIENDNAMEPLATES") or "") .. ") the healthbar isn't visible but the nameplate is still clickable." .. CVarDesc,
 		},
 
@@ -7638,8 +7968,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Adjusts the position on the Y axis.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 		{type = "blank"},
@@ -7657,7 +7988,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--profession text font
@@ -7665,7 +7996,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.big_actorname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlynpc_bignametext_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -7674,7 +8005,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.big_actorname_text_outline end,
 			values = function() return build_outline_modes_table ("friendlynpc", "big_actorname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -7690,7 +8021,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -7706,7 +8037,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		--profession text color
@@ -7859,7 +8190,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--player name font
@@ -7867,7 +8198,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.actorname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendly_npcname_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		--player name color
@@ -7882,7 +8213,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		
@@ -7891,7 +8222,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.actorname_text_outline end,
 			values = function() return build_outline_modes_table ("friendlynpc", "actorname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -7907,7 +8238,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 		
@@ -7916,7 +8247,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.actorname_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlynpc", "actorname_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--npc name anchor x offset
@@ -7930,8 +8261,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--npc name anchor x offset
 		{
@@ -7944,8 +8276,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},	
 		
 		{type = "breakline"},
@@ -7962,7 +8295,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--cast text font
@@ -7970,7 +8303,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.spellname_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendly_npccastname_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		--cast text color
@@ -7985,7 +8318,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		
@@ -7994,7 +8327,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.spellname_text_outline end,
 			values = function() return build_outline_modes_table ("friendlynpc", "spellname_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -8010,7 +8343,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},
 	
@@ -8019,7 +8352,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.spellname_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlynpc", "spellname_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--spell name text anchor x offset
@@ -8033,8 +8366,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--spell name text anchor x offset
 		{
@@ -8047,8 +8381,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 
 		{type = "blank"},
@@ -8060,7 +8395,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.friendlynpc.spellpercent_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Show the cast time progress.",
 		},
 		--cast time text
@@ -8074,7 +8409,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--cast time text font
@@ -8082,7 +8417,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.spellpercent_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlynpc_spellpercent_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -8091,7 +8426,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.spellpercent_text_outline end,
 			values = function() return build_outline_modes_table ("friendlynpc", "spellpercent_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -8107,7 +8442,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -8123,7 +8458,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		--cast time anchor
@@ -8131,7 +8466,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.spellpercent_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlynpc", "spellpercent_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--cast time anchor x offset
@@ -8145,8 +8480,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--cast time anchor x offset
 		{
@@ -8159,8 +8495,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 
 		{type = "breakline"},
@@ -8175,7 +8512,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.friendlynpc.percent_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Show the percent text.",
 		},
 		--out of combat
@@ -8236,7 +8573,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--percent text font
@@ -8244,7 +8581,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.percent_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlynpc_percent_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 		
@@ -8253,7 +8590,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.percent_text_outline end,
 			values = function() return build_outline_modes_table ("friendlynpc", "percent_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -8269,7 +8606,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -8285,7 +8622,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Color",
+			name = L["OPTIONS_COLOR"],
 			desc = "The color of the text.",
 		},
 		--percent text alpha
@@ -8299,7 +8636,7 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Alpha",
+			name = L["OPTIONS_ALPHA"],
 			desc = "Set the transparency of the text.",
 			usedecimals = true,
 		},
@@ -8308,7 +8645,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.percent_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlynpc", "percent_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--percent anchor x offset
@@ -8322,8 +8659,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--percent anchor x offset
 		{
@@ -8336,8 +8674,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 	
 		{type = "breakline"},
@@ -8352,7 +8691,7 @@ local relevance_options = {
 				Plater.db.profile.plate_config.friendlynpc.level_text_enabled = value
 				Plater.UpdateAllPlates()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "Check this box to show the level of the actor.",
 		},
 		--level text size
@@ -8366,7 +8705,7 @@ local relevance_options = {
 			min = 6,
 			max = 99,
 			step = 1,
-			name = "Size",
+			name = L["OPTIONS_SIZE"],
 			desc = "Size of the text.",
 		},
 		--level text font
@@ -8374,7 +8713,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.level_text_font end,
 			values = function() return DF:BuildDropDownFontList (on_select_friendlynpc_level_text_font) end,
-			name = "Font",
+			name = L["OPTIONS_FONT"],
 			desc = "Font of the text.",
 		},
 
@@ -8383,7 +8722,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.level_text_outline end,
 			values = function() return build_outline_modes_table ("friendlynpc", "level_text_outline") end,
-			name = "Outline",
+			name = L["OPTIONS_OUTLINE"],
 			desc = "Outline",
 		},
 		
@@ -8399,7 +8738,7 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllPlates()
 			end,
-			name = "Shadow Color",
+			name = L["OPTIONS_SHADOWCOLOR"],
 			desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 		},		
 		
@@ -8414,7 +8753,7 @@ local relevance_options = {
 			min = 0,
 			max = 1,
 			step = 0.1,
-			name = "Alpha",
+			name = L["OPTIONS_ALPHA"],
 			desc = "Set the transparency of the text.",
 			usedecimals = true,
 		},
@@ -8423,7 +8762,7 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.plate_config.friendlynpc.level_text_anchor.side end,
 			values = function() return build_anchor_side_table ("friendlynpc", "level_text_anchor") end,
-			name = "Anchor",
+			name = L["OPTIONS_ANCHOR"],
 			desc = "Which side of the nameplate this widget is attach to.",
 		},
 		--level anchor x offset
@@ -8437,8 +8776,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "X Offset",
-			desc = "Slightly move the text horizontally.",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
+			desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		--level anchor x offset
 		{
@@ -8451,8 +8791,9 @@ local relevance_options = {
 			min = -100,
 			max = 100,
 			step = 1,
-			name = "Y Offset",
-			desc = "Slightly move the text vertically.",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
+			desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 		},
 		
 	}
@@ -8557,8 +8898,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Adjusts the position on the Y axis.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 
 			{type = "blank"},
@@ -8575,8 +8917,9 @@ local relevance_options = {
 				min = -128,
 				max = 128,
 				step = 1,
-				name = "Y Offset",
-				desc = "Adjusts the cast bar position on the Y axis.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},				
 			
 			{type = "blank"},
@@ -8594,7 +8937,7 @@ local relevance_options = {
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--profession text font
@@ -8602,7 +8945,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.big_actorname_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_enemynpc_bignametext_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -8611,7 +8954,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.big_actorname_text_outline end,
 				values = function() return build_outline_modes_table ("enemynpc", "big_actorname_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -8627,7 +8970,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -8644,7 +8987,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 			--profession text color
@@ -8795,7 +9138,7 @@ local relevance_options = {
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--player name font
@@ -8803,7 +9146,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.actorname_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_enemy_npcname_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			--player name color
@@ -8818,7 +9161,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 			
@@ -8827,7 +9170,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.actorname_text_outline end,
 				values = function() return build_outline_modes_table ("enemynpc", "actorname_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -8843,7 +9186,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -8852,7 +9195,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.actorname_text_anchor.side end,
 				values = function() return build_anchor_side_table ("enemynpc", "actorname_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--npc name anchor x offset
@@ -8866,8 +9209,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--npc name anchor x offset
 			{
@@ -8880,8 +9224,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},	
 			
 			{type = "breakline"},
@@ -8898,7 +9243,7 @@ local relevance_options = {
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--cast text font
@@ -8906,7 +9251,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.spellname_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_enemy_npccastname_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			--cast text color
@@ -8921,7 +9266,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 
@@ -8930,7 +9275,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.spellname_text_outline end,
 				values = function() return build_outline_modes_table ("enemynpc", "spellname_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -8946,7 +9291,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -8955,7 +9300,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.spellname_text_anchor.side end,
 				values = function() return build_anchor_side_table ("enemynpc", "spellname_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--spell name text anchor x offset
@@ -8969,8 +9314,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--spell name text anchor x offset
 			{
@@ -8983,8 +9329,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			
 			{type = "blank"},
@@ -8996,7 +9343,7 @@ local relevance_options = {
 					Plater.db.profile.plate_config.enemynpc.spellpercent_text_enabled = value
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show the cast time progress.",
 			},
 			--cast time text
@@ -9010,7 +9357,7 @@ local relevance_options = {
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--cast time text font
@@ -9018,7 +9365,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.spellpercent_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_enemy_spellpercent_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -9027,7 +9374,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.spellpercent_text_outline end,
 				values = function() return build_outline_modes_table ("enemynpc", "spellpercent_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -9043,7 +9390,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -9060,7 +9407,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 			
@@ -9069,7 +9416,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.spellpercent_text_anchor.side end,
 				values = function() return build_anchor_side_table ("enemynpc", "spellpercent_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--cast time anchor x offset
@@ -9083,8 +9430,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--cast time anchor x offset
 			{
@@ -9097,8 +9445,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},			
 			
 			{type = "breakline"},
@@ -9113,7 +9462,7 @@ local relevance_options = {
 					Plater.db.profile.plate_config.enemynpc.percent_text_enabled = value
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Show the percent text.",
 			},
 			--out of combat
@@ -9174,7 +9523,7 @@ local relevance_options = {
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--percent text font
@@ -9182,7 +9531,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.percent_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_enemy_percent_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -9191,7 +9540,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.percent_text_outline end,
 				values = function() return build_outline_modes_table ("enemynpc", "percent_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -9207,7 +9556,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -9224,7 +9573,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Color",
+				name = L["OPTIONS_COLOR"],
 				desc = "The color of the text.",
 			},
 			--percent text alpha
@@ -9238,7 +9587,7 @@ local relevance_options = {
 				min = 0,
 				max = 1,
 				step = 0.1,
-				name = "Alpha",
+				name = L["OPTIONS_ALPHA"],
 				desc = "Set the transparency of the text.",
 				usedecimals = true,
 			},
@@ -9247,7 +9596,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.percent_text_anchor.side end,
 				values = function() return build_anchor_side_table ("enemynpc", "percent_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--percent anchor x offset
@@ -9261,8 +9610,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--percent anchor x offset
 			{
@@ -9275,8 +9625,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 
 			--level text settings
@@ -9290,7 +9641,7 @@ local relevance_options = {
 					Plater.db.profile.plate_config.enemynpc.level_text_enabled = value
 					Plater.UpdateAllPlates()
 				end,
-				name = "Enabled",
+				name = L["OPTIONS_ENABLED"],
 				desc = "Check this box to show the level of the actor.",
 			},
 			--level text size
@@ -9304,7 +9655,7 @@ local relevance_options = {
 				min = 6,
 				max = 99,
 				step = 1,
-				name = "Size",
+				name = L["OPTIONS_SIZE"],
 				desc = "Size of the text.",
 			},
 			--level text font
@@ -9312,7 +9663,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.level_text_font end,
 				values = function() return DF:BuildDropDownFontList (on_select_enemy_level_text_font) end,
-				name = "Font",
+				name = L["OPTIONS_FONT"],
 				desc = "Font of the text.",
 			},
 			
@@ -9321,7 +9672,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.level_text_outline end,
 				values = function() return build_outline_modes_table ("enemynpc", "level_text_outline") end,
-				name = "Outline",
+				name = L["OPTIONS_OUTLINE"],
 				desc = "Outline",
 			},
 			
@@ -9337,7 +9688,7 @@ local relevance_options = {
 					color[1], color[2], color[3], color[4] = r, g, b, a
 					Plater.UpdateAllPlates()
 				end,
-				name = "Shadow Color",
+				name = L["OPTIONS_SHADOWCOLOR"],
 				desc = "|cFFFFFF00Important|r: hide and show nameplates to see changes.",
 			},
 			
@@ -9352,7 +9703,7 @@ local relevance_options = {
 				min = 0,
 				max = 1,
 				step = 0.1,
-				name = "Alpha",
+				name = L["OPTIONS_ALPHA"],
 				desc = "Set the transparency of the text.",
 				usedecimals = true,
 			},
@@ -9361,7 +9712,7 @@ local relevance_options = {
 				type = "select",
 				get = function() return Plater.db.profile.plate_config.enemynpc.level_text_anchor.side end,
 				values = function() return build_anchor_side_table ("enemynpc", "level_text_anchor") end,
-				name = "Anchor",
+				name = L["OPTIONS_ANCHOR"],
 				desc = "Which side of the nameplate this widget is attach to.",
 			},
 			--level anchor x offset
@@ -9375,8 +9726,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "X Offset",
-				desc = "Slightly move the text horizontally.",
+				usedecimals = true,
+				name = L["OPTIONS_XOFFSET"],
+				desc = "Adjust the position on the X axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 			--level anchor x offset
 			{
@@ -9389,8 +9741,9 @@ local relevance_options = {
 				min = -100,
 				max = 100,
 				step = 1,
-				name = "Y Offset",
-				desc = "Slightly move the text vertically.",
+				usedecimals = true,
+				name = L["OPTIONS_YOFFSET"],
+				desc = "Adjust the position on the Y axis.\n\n|cFFFFFF00Important|r: right click to type the value.",
 			},
 
 		}
@@ -9431,6 +9784,19 @@ local relevance_options = {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --> experimental frame ~experimental
 
+	--overlay frame to indicate the feature is disabled
+	uiParentFeatureFrame.disabledOverlayFrame = CreateFrame ("frame", nil, uiParentFeatureFrame)
+	uiParentFeatureFrame.disabledOverlayFrame:SetPoint ("topleft", uiParentFeatureFrame, "topleft", 1, -155)
+	uiParentFeatureFrame.disabledOverlayFrame:SetPoint ("bottomright", uiParentFeatureFrame, "bottomright", -1, 21)
+	uiParentFeatureFrame.disabledOverlayFrame:SetBackdrop ({bgFile = [[Interface\Tooltips\UI-Tooltip-Background]], tileSize = 64, tile = true})
+	uiParentFeatureFrame.disabledOverlayFrame:SetFrameLevel (uiParentFeatureFrame:GetFrameLevel() + 100)
+	uiParentFeatureFrame.disabledOverlayFrame:SetBackdropColor (.1, .1, .1, 1)
+	uiParentFeatureFrame.disabledOverlayFrame:EnableMouse (true)
+	
+	if (Plater.db.profile.use_ui_parent) then
+		uiParentFeatureFrame.disabledOverlayFrame:Hide()
+	end
+
 	local on_select_strata_level = function (self, fixedParameter, value)
 		Plater.db.profile.ui_parent_base_strata = value
 		Plater.RefreshDBUpvalues()
@@ -9462,8 +9828,6 @@ local relevance_options = {
 		end
 		return t
 	end
-	
-	
 
 	local experimental_options = {
 		
@@ -9471,27 +9835,56 @@ local relevance_options = {
 			type = "toggle",
 			get = function() return Plater.db.profile.use_ui_parent end,
 			set = function (self, fixedparam, value) 
-				Plater.db.profile.use_ui_parent = value
-				
+			
+				if (value) then
+					--user is enabling the feature
+					DF:ShowPromptPanel ("Click okay to confirm using this feature (will force a /reload)", function()
+					Plater.db.profile.use_ui_parent = true
+					Plater.db.profile.use_ui_parent_just_enabled = true
+					Plater.db.profile.reopoen_options_panel_on_tab = TAB_INDEX_UIPARENTING
+					ReloadUI()
+					end, function()
+						PlaterOptionsPanelFrame.RefreshOptionsFrame()
+					end)
+				else
+					Plater.db.profile.use_ui_parent = false
+					Plater.db.profile.use_ui_parent_just_enabled = false
+					Plater.db.profile.reopoen_options_panel_on_tab = TAB_INDEX_UIPARENTING
+					--reset the scale fine tune, so next time the ui parent feature is enabled it can be recalculated
+					Plater.db.profile.ui_parent_scale_tune = 0
+					ReloadUI()
+				end
+
 				Plater:Msg ("this setting require a /reload to take effect.")
 			end,
-			name = "Parent to UIParent",
-			desc = "Nameplates anchor into the UIParent instead of the 3D World Frame.\n\nThis allow having cast bars and debuffs in front of other frames.\n\n|cFFFFFF00Important|r: require /reload after changing this setting.",
+			name = "Use Custom Strata Channels",
+			desc = "Allow nameplates to be placed in custom frame strata channels.\n\n|cFFFFFF00Important|r: a /reload will be triggered on changing this setting.",
+		},
+		
+		{type = "blank"},
+		{type = "label", get = function() return "Strata Channels:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		
+		{
+			type = "select",
+			get = function() return Plater.db.profile.ui_parent_target_strata end,
+			values = function() return build_framelevel_table ("ui_parent_target_strata") end,
+			name = "Current Target",
+			desc = "Which strata the nameplate of the current target is placed in.",
 		},
 		
 		{
 			type = "select",
 			get = function() return Plater.db.profile.ui_parent_base_strata end,
 			values = function() return build_framelevel_table ("ui_parent_base_strata") end,
-			name = "Base Strata",
+			name = "Health Bar",
 			desc = "Which strata the unit frame will be placed in.",
 		},
-
+		
 		{
 			type = "select",
 			get = function() return Plater.db.profile.ui_parent_cast_strata end,
 			values = function() return build_framelevel_table ("ui_parent_cast_strata") end,
-			name = "Cast Bar Strata",
+			name = "Cast Bar",
 			desc = "Which strata the cast bar will be placed in.",
 		},
 		
@@ -9499,8 +9892,34 @@ local relevance_options = {
 			type = "select",
 			get = function() return Plater.db.profile.ui_parent_buff_strata end,
 			values = function() return build_framelevel_table ("ui_parent_buff_strata") end,
-			name = "Aura Frames Strata",
-			desc = "Which strata aura frames will be placed in.",
+			name = "Aura Frame 1",
+			desc = "Which strata aura frame 1 will be placed in.",
+		},
+		
+		{
+			type = "select",
+			get = function() return Plater.db.profile.ui_parent_buff2_strata end,
+			values = function() return build_framelevel_table ("ui_parent_buff2_strata") end,
+			name = "Aura Frame 2",
+			desc = "Which strata aura frame 2 will be placed in.",
+		},		
+		
+		{type = "blank"},
+		{type = "label", get = function() return "Frame Levels:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		
+		{
+			type = "range",
+			get = function() return Plater.db.profile.ui_parent_cast_level end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.ui_parent_cast_level = value
+				Plater.RefreshDBUpvalues()
+				Plater.UpdateAllPlates()
+			end,
+			min = 1,
+			max = 5000,
+			step = 1,
+			name = "Cast Bar",
+			desc = "Move frames up or down within the strata channel.",
 		},
 		
 		{
@@ -9514,24 +9933,27 @@ local relevance_options = {
 			min = 1,
 			max = 5000,
 			step = 1,
-			name = "Aura Level",
-			desc = "Level of the Aura frames, affect frames within the same frame strata.",
+			name = "Aura Frame 1",
+			desc = "Move frames up or down within the strata channel.",
 		},
-	
+		
 		{
 			type = "range",
-			get = function() return Plater.db.profile.ui_parent_cast_level end,
+			get = function() return Plater.db.profile.ui_parent_buff2_level end,
 			set = function (self, fixedparam, value) 
-				Plater.db.profile.ui_parent_cast_level = value
+				Plater.db.profile.ui_parent_buff2_level = value
 				Plater.RefreshDBUpvalues()
 				Plater.UpdateAllPlates()
 			end,
 			min = 1,
 			max = 5000,
 			step = 1,
-			name = "Cast Bar Level",
-			desc = "Level of the Aura frames, affect frames within the same frame strata.",
+			name = "Aura Frame 2",
+			desc = "Move frames up or down within the strata channel.",
 		},
+		
+		{type = "blank"},
+		{type = "label", get = function() return "Scaling:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		
 		{
 			type = "range",
@@ -9541,8 +9963,8 @@ local relevance_options = {
 				Plater.RefreshDBUpvalues()
 				Plater.UpdateAllPlates()
 			end,
-			min = -0.5,
-			max = 0.5,
+			min = -2.5,
+			max = 2.5,
 			step = 0.01,
 			usedecimals = true,
 			name = "Fine Tune Scale",
@@ -9551,9 +9973,9 @@ local relevance_options = {
 	}
 
 	
-	DF:BuildMenu (experimentalFrame, experimental_options, startX, startY, heightSize, true, options_text_template, options_dropdown_template, options_switch_template, true, options_slider_template, options_button_template, globalCallback)	
-	
+	DF:BuildMenu (uiParentFeatureFrame, experimental_options, startX, startY, heightSize, true, options_text_template, options_dropdown_template, options_switch_template, true, options_slider_template, options_button_template, globalCallback)	
 
+	
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --> ~auto ~�uto
 
@@ -9572,7 +9994,7 @@ local relevance_options = {
 				Plater.UpdateAllPlates()
 				Plater.RefreshAutoToggle()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "When enabled, Plater will enable or disable friendly plates based on the settings below.",
 		},
 		
@@ -9641,7 +10063,7 @@ local relevance_options = {
 				Plater.UpdateAllPlates()
 				Plater.RefreshAutoToggle()
 			end,
-			name = "Enabled",
+			name = L["OPTIONS_ENABLED"],
 			desc = "When enabled, Plater will enable or disable stacking nameplates based on the settings below.\n\n|cFFFFFF00Important|r: only toggle on if 'Stacking Nameplates' is enabled in the General Settings tab.",
 		},
 		
@@ -9701,12 +10123,35 @@ local relevance_options = {
 	DF:BuildMenu (autoFrame, auto_options, startX, startY, heightSize, true, options_text_template, options_dropdown_template, options_switch_template, true, options_slider_template, options_button_template, globalCallback)	
 	
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---> ~threat �ggro ~aggro
+--> credits
+
+	local creditsTextEditor = DF:NewSpecialLuaEditorEntry (creditsFrame, 100, 100, "CreditsTextEditor", "$parentCreditsEditor", true)
+	creditsTextEditor:SetBackdrop ({edgeFile = [[Interface\Buttons\WHITE8X8]], edgeSize = 1, bgFile = [[Interface\Tooltips\UI-Tooltip-Background]], tileSize = 64, tile = true})
+	
+	local luaeditor_backdrop_color = {.2, .2, .2, .5}
+	local luaeditor_border_color = {0, 0, 0, 1}
+	local edit_script_size = {620, 431}
+	local buttons_size = {120, 20}
+	
+	creditsTextEditor:SetBackdropBorderColor (unpack (luaeditor_border_color))
+	creditsTextEditor:SetBackdropColor (unpack (luaeditor_backdrop_color))
+	creditsTextEditor.editbox:SetJustifyH ("center")
+	creditsFrame.creditsStringField = creditsTextEditor
+	DF:ReskinSlider (creditsTextEditor.scroll)
+	
+	creditsTextEditor:SetPoint ("topleft", creditsFrame, "topleft", 0, 0 + startY)
+	creditsTextEditor:SetPoint ("bottomright", creditsFrame, "bottomright", 0, 20)
+	
+	creditsTextEditor:SetText (creditsText)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--> ~threat ~aggro
 	
 
 	local thread_options = {
 	
-		{type = "label", get = function() return "Threat Modifies:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		{type = "label", get = function() return L["OPTIONS_THREAT_MODIFIERS_ANCHOR_TITLE"] .. ":" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 	
 		{
 			type = "toggle",
@@ -9719,8 +10164,8 @@ local relevance_options = {
 					Plater.UpdateAllNameplateColors()
 				end
 			end,
-			name = "Health Bar Color",
-			desc = "Health Bar Color",
+			name = L["OPTIONS_THREAT_MODIFIERS_HEALTHBARCOLOR"],
+			desc = L["OPTIONS_THREAT_MODIFIERS_HEALTHBARCOLOR"],
 		},
 		{
 			type = "toggle",
@@ -9730,8 +10175,8 @@ local relevance_options = {
 				Plater.RefreshDBUpvalues()
 				Plater.UpdateAllPlates()
 			end,
-			name = "Border Color",
-			desc = "Border Color",
+			name = L["OPTIONS_THREAT_MODIFIERS_BORDERCOLOR"],
+			desc = L["OPTIONS_THREAT_MODIFIERS_BORDERCOLOR"],
 		},
 		{
 			type = "toggle",
@@ -9741,13 +10186,13 @@ local relevance_options = {
 				Plater.RefreshDBUpvalues()
 				Plater.UpdateAllPlates()
 			end,
-			name = "Name Color",
-			desc = "Name Color",
+			name = L["OPTIONS_THREAT_MODIFIERS_NAMECOLOR"],
+			desc = L["OPTIONS_THREAT_MODIFIERS_NAMECOLOR"],
 		},
 
 		{type = "blank"},
 	
-		{type = "label", get = function() return "Color When Playing as TANK:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		{type = "label", get = function() return L["OPTIONS_THREAT_COLOR_TANK_ANCHOR_TITLE"] .. ":" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		{
 			type = "color",
 			get = function()
@@ -9758,8 +10203,8 @@ local relevance_options = {
 				local color = Plater.db.profile.tank.colors.aggro
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "Aggro on You",
-			desc = "When you are tanking with solid aggro.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_ONYOU_SOLID"],
+			desc =  L["OPTIONS_THREAT_COLOR_TANK_ONYOU_SOLID_DESC"],
 		},
 		{
 			type = "color",
@@ -9771,8 +10216,8 @@ local relevance_options = {
 				local color = Plater.db.profile.tank.colors.anothertank
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "Aggro on Another Tank",
-			desc = "The enemy is being tanked by another tank in the raid.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_ANOTHERTANK"],
+			desc =  L["OPTIONS_THREAT_COLOR_TANK_ANOTHERTANK_DESC"],
 		},
 		{
 			type = "color",
@@ -9784,8 +10229,8 @@ local relevance_options = {
 				local color = Plater.db.profile.tank.colors.pulling
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "Aggro on You But is Low",
-			desc = "When you are tanking but others are close to pull the aggro from you.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_ONYOU_LOWAGGRO"],
+			desc = L["OPTIONS_THREAT_AGGROSTATE_ONYOU_LOWAGGRO_DESC"],
 		},
 		{
 			type = "color",
@@ -9797,8 +10242,8 @@ local relevance_options = {
 				local color = Plater.db.profile.tank.colors.noaggro
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "No Aggro",
-			desc = "The enemy is attacking a player that isn't a tank!.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_NOAGGRO"],
+			desc = L["OPTIONS_THREAT_COLOR_TANK_NOAGGRO_DESC"],
 		},
 		{
 			type = "color",
@@ -9810,14 +10255,27 @@ local relevance_options = {
 				local color = Plater.db.profile.tank.colors.nocombat
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "Unit Not in Combat",
-			desc = "When you are in combat and the enemy isn't in combat with you or with a member of your group.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_NOTINCOMBAT"],
+			desc = L["OPTIONS_THREAT_COLOR_TANK_NOTINCOMBAT_DESC"],
 		},
-			
-		{type = "blank"},
-		{type = "label", get = function() return "Color When Playing as DPS or HEALER:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		
---		{type = "label", get = function() return "Plate Color As a Dps:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		{
+			type = "color",
+			get = function()
+				local color = Plater.db.profile.tank.colors.pulling_from_tank
+				return {color[1], color[2], color[3], color[4]}
+			end,
+			set = function (self, r, g, b, a) 
+				local color = Plater.db.profile.tank.colors.pulling_from_tank
+				color[1], color[2], color[3], color[4] = r, g, b, a
+			end,
+			name = "Pulling From Another Tank",
+			desc = "The unit has aggro on another tank and you're about to pull it.",
+		},
+		
+		{type = "blank"},
+		{type = "label", get = function() return L["OPTIONS_THREAT_COLOR_DPS_ANCHOR_TITLE"] .. ":" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+
 		{
 			type = "color",
 			get = function()
@@ -9828,8 +10286,8 @@ local relevance_options = {
 				local color = Plater.db.profile.dps.colors.aggro
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "Aggro",
-			desc = "The name plate is painted with this color when you are a Dps (or healer) and have aggro.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_ONYOU_SOLID"],
+			desc = L["OPTIONS_THREAT_COLOR_DPS_ONYOU_SOLID_DESC"],
 		},
 		{
 			type = "color",
@@ -9841,8 +10299,32 @@ local relevance_options = {
 				local color = Plater.db.profile.dps.colors.pulling
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "High Threat",
-			desc = "When you are neat to pull the aggro.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_HIGHTHREAT"],
+			desc = L["OPTIONS_THREAT_COLOR_DPS_HIGHTHREAT_DESC"],
+		},
+		{
+			type = "color",
+			get = function()
+				local color = Plater.db.profile.dps.colors.noaggro
+				return {color[1], color[2], color[3], color[4]}
+			end,
+			set = function (self, r, g, b, a) 
+				local color = Plater.db.profile.dps.colors.noaggro
+				color[1], color[2], color[3], color[4] = r, g, b, a
+			end,
+			name = L["OPTIONS_THREAT_AGGROSTATE_NOAGGRO"],
+			desc = L["OPTIONS_THREAT_COLOR_DPS_NOAGGRO_DESC"],
+		},
+		
+		{type = "blank"},
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.aggro_can_check_notank end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.aggro_can_check_notank = value
+			end,
+			name = L["OPTIONS_THREAT_DPS_CANCHECKNOTANK"],
+			desc = L["OPTIONS_THREAT_DPS_CANCHECKNOTANK_DESC"],
 		},
 		{
 			type = "color",
@@ -9854,22 +10336,10 @@ local relevance_options = {
 				local color = Plater.db.profile.dps.colors.notontank
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "No Tank Aggro",
-			desc = "When another healer or dps has aggro.",
+			name = L["OPTIONS_THREAT_AGGROSTATE_NOTANK"],
+			desc = L["OPTIONS_THREAT_COLOR_DPS_NOTANK_DESC"],
 		},		
-		{
-			type = "color",
-			get = function()
-				local color = Plater.db.profile.dps.colors.noaggro
-				return {color[1], color[2], color[3], color[4]}
-			end,
-			set = function (self, r, g, b, a) 
-				local color = Plater.db.profile.dps.colors.noaggro
-				color[1], color[2], color[3], color[4] = r, g, b, a
-			end,
-			name = "No Aggro",
-			desc = "When the mob is not attacking you.",
-		},
+
 
 		
 		{type = "blank"},
@@ -9884,13 +10354,13 @@ local relevance_options = {
 				local color = Plater.db.profile.tap_denied_color
 				color[1], color[2], color[3], color[4] = r, g, b, a
 			end,
-			name = "Unit Tapped",
-			desc = "When someone else has claimed the unit (when you don't receive experience or loot for killing it).",
+			name = L["OPTIONS_THREAT_AGGROSTATE_TAPPED"],
+			desc = L["OPTIONS_THREAT_COLOR_TAPPED_DESC"],
 		},
 		
 		{type = "breakline"},
 		
-		{type = "label", get = function() return "Color Overriding:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+		{type = "label", get = function() return L["OPTIONS_THREAT_COLOR_OVERRIDE_ANCHOR_TITLE"] .. ":" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		
 		{
 			type = "toggle",
@@ -9899,8 +10369,8 @@ local relevance_options = {
 				Plater.db.profile.color_override = value
 				Plater.RefreshColorOverride()
 			end,
-			name = "Override Default Colors",
-			desc = "Override Default Colors.\n\n|cFFFFFF00Important|r: override colors when out of combat and in combat when threat color are not set to modify the health bar color.",
+			name = L["OPTIONS_ENABLED"],
+			desc = L["OPTIONS_THREAT_COLOR_OVERRIDE_DESC"],
 		},
 		
 		{
@@ -9914,10 +10384,9 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllNameplateColors()
 			end,
-			name = "Hostile",
-			desc = "Hostile",
+			name = L["OPTIONS_HOSTILE"],
+			desc = L["OPTIONS_HOSTILE"],
 		},
-		
 		{
 			type = "color",
 			get = function()
@@ -9929,10 +10398,9 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllNameplateColors()
 			end,
-			name = "Neutral",
-			desc = "Neutral",
+			name = L["OPTIONS_NEUTRAL"],
+			desc = L["OPTIONS_NEUTRAL"],
 		},
-		
 		{
 			type = "color",
 			get = function()
@@ -9944,8 +10412,8 @@ local relevance_options = {
 				color[1], color[2], color[3], color[4] = r, g, b, a
 				Plater.UpdateAllNameplateColors()
 			end,
-			name = "Friendly",
-			desc = "Friendly",
+			name = L["OPTIONS_FRIENDLY"],
+			desc = L["OPTIONS_FRIENDLY"],
 		},
 		
 	}
@@ -9977,6 +10445,17 @@ local relevance_options = {
 			desc = "Time interval in seconds between each update on the nameplate.\n\n|cFFFFFFFFDefault: 0.25|r (4 updates every second).",
 		},
 		
+		{
+			type = "toggle",
+			get = function() return Plater.db.profile.quick_hide end,
+			set = function (self, fixedparam, value) 
+				Plater.db.profile.quick_hide = value
+				Plater.UpdateAllPlates()
+			end,
+			name = "Quick Hide on Death",
+			desc = "When the unit dies, immediately hide the nameplates without playing the shrink animation.",
+		},
+		
 		{type = "blank"},
 		
 		{type = "label", get = function() return "Client Settings (CVars):" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
@@ -9994,7 +10473,7 @@ local relevance_options = {
 						SetCVar ("nameplateLargeTopInset", value)
 					end
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.000,
@@ -10014,7 +10493,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateOverlapV", value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.2,
@@ -10034,7 +10513,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar (CVAR_MOVEMENT_SPEED, value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.02,
@@ -10053,7 +10532,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateGlobalScale", value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.75,
@@ -10073,7 +10552,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateMinScale", value)
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 				end
 			end,
 			min = 0.3,
@@ -10081,7 +10560,7 @@ local relevance_options = {
 			step = 0.1,
 			thumbscale = 1.7,
 			usedecimals = true,
-			name = "Distance Scale" .. CVarIcon,
+			name = "Min Scale" .. CVarIcon,
 			desc = "Scale applied when the nameplate is far away from the camera.\n\n|cFFFFFF00Important|r: is the distance from the camera and |cFFFF4444not|r the distance from your character.\n\n|cFFFFFFFFDefault: 0.8|r" .. CVarDesc,
 			nocombat = true,
 		},
@@ -10104,7 +10583,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowEnemyGuardians", math.abs (tonumber (GetCVar ("nameplateShowEnemyGuardians"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowEnemyGuardians") == CVAR_ENABLED)
 				end
 			end,
@@ -10120,7 +10599,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowEnemyMinions", math.abs (tonumber (GetCVar ("nameplateShowEnemyMinions"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowEnemyMinions") == CVAR_ENABLED)
 				end
 			end,
@@ -10136,7 +10615,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowEnemyMinus", math.abs (tonumber (GetCVar ("nameplateShowEnemyMinus"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowEnemyMinus") == CVAR_ENABLED)
 				end
 			end,
@@ -10152,7 +10631,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowEnemyPets", math.abs (tonumber (GetCVar ("nameplateShowEnemyPets"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowEnemyPets") == CVAR_ENABLED)
 				end
 			end,
@@ -10168,7 +10647,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowEnemyTotems", math.abs (tonumber (GetCVar ("nameplateShowEnemyTotems"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowEnemyTotems") == CVAR_ENABLED)
 				end
 			end,
@@ -10186,7 +10665,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowFriendlyNPCs", math.abs (tonumber (GetCVar ("nameplateShowFriendlyNPCs"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowFriendlyNPCs") == CVAR_ENABLED)
 				end
 			end,
@@ -10202,7 +10681,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowFriendlyGuardians", math.abs (tonumber (GetCVar ("nameplateShowFriendlyGuardians"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowFriendlyGuardians") == CVAR_ENABLED)
 				end
 			end,
@@ -10218,7 +10697,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowFriendlyMinions", math.abs (tonumber (GetCVar ("nameplateShowFriendlyMinions"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowFriendlyMinions") == CVAR_ENABLED)
 				end
 			end,
@@ -10234,7 +10713,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowFriendlyPets", math.abs (tonumber (GetCVar ("nameplateShowFriendlyPets"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowFriendlyPets") == CVAR_ENABLED)
 				end
 			end,
@@ -10250,7 +10729,7 @@ local relevance_options = {
 				if (not InCombatLockdown()) then
 					SetCVar ("nameplateShowFriendlyTotems", math.abs (tonumber (GetCVar ("nameplateShowFriendlyTotems"))-1))
 				else
-					Plater:Msg ("you are in combat.")
+					Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
 					self:SetValue (GetCVar ("nameplateShowFriendlyTotems") == CVAR_ENABLED)
 				end
 			end,
@@ -10355,7 +10834,8 @@ local relevance_options = {
 			min = -20,
 			max = 20,
 			step = 1,
-			name = "X OffSet",
+			usedecimals = true,
+			name = L["OPTIONS_XOFFSET"],
 			desc = "Slightly adjust the entire nameplate.",
 		},
 		{
@@ -10369,7 +10849,8 @@ local relevance_options = {
 			min = -20,
 			max = 20,
 			step = 1,
-			name = "Y OffSet",
+			usedecimals = true,
+			name = L["OPTIONS_YOFFSET"],
 			desc = "Slightly adjust the entire nameplate.",
 		},
 		
@@ -10437,60 +10918,6 @@ local relevance_options = {
 		{type = "breakline"},
 		{type = "label", get = function() return "Misc:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		
-		--[=
-		{
-			type = "toggle",
-			get = function() return Plater.db.profile.hide_enemy_castbars end,
-			set = function (self, fixedparam, value) 
-				Plater.db.profile.hide_enemy_castbars = value
-				Plater.RefreshDBUpvalues()
-			end,
-			name = "Hide Enemy Cast Bar",
-			desc = "Hide Enemy Cast Bar",
-		},
-		{
-			type = "toggle",
-			get = function() return Plater.db.profile.hide_friendly_castbars end,
-			set = function (self, fixedparam, value) 
-				Plater.db.profile.hide_friendly_castbars = value
-				Plater.RefreshDBUpvalues()
-			end,
-			name = "Hide Friendly Cast Bar",
-			desc = "Hide Friendly Cast Bar",
-		},
-		--]=]
-		
-		--[=
-		--{type = "label", get = function() return "Border Settings:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
-		
-		{
-			type = "range",
-			get = function() return Plater.db.profile.healthbar_framelevel end,
-			set = function (self, fixedparam, value) 
-				Plater.db.profile.healthbar_framelevel = value
-				Plater.RefreshDBUpvalues()
-				Plater.UpdateAllPlates()
-			end,
-			min = 0,
-			max = 75,
-			step = 1,
-			name = "HealthBar Frame Level",
-			desc = "Add this to the default frame level of the healthbar",
-		},
-		{
-			type = "range",
-			get = function() return Plater.db.profile.castbar_framelevel end,
-			set = function (self, fixedparam, value) 
-				Plater.db.profile.castbar_framelevel = value
-				Plater.RefreshDBUpvalues()
-				Plater.UpdateAllPlates()
-			end,
-			min = 0,
-			max = 75,
-			step = 1,
-			name = "CastBar Frame Level",
-			desc = "Add this to the default frame level of the castbar",
-		},
 		{
 			type = "toggle",
 			get = function() return Plater.db.profile.show_health_prediction end,
@@ -10530,6 +10957,143 @@ local relevance_options = {
 			name = "Masque Support",
 			desc = "If the Masque addon is installed, enabling this will make Plater to use Masque borders.\n\n|cFFFFFF00Important|r: require /reload after changing this setting.",
 		},
+		
+			--=[ --removed top and bottom constrain options
+			--added back for debug
+			{type = "blank"},
+			{type = "label", get = function() return "Personal Bar Custom Position:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
+			{
+				type = "range",
+				get = function() return tonumber (GetCVar ("nameplateSelfTopInset")*100) end,
+				set = function (self, fixedparam, value) 
+					--Plater.db.profile.plate_config.player.y_position_offset = value
+
+					if (InCombatLockdown()) then
+						Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
+						self:SetValue (tonumber (GetCVar ("nameplateSelfTopInset")*100))
+						return
+					end
+
+					--SetCVar ("nameplateSelfBottomInset", value / 100)
+					SetCVar ("nameplateSelfTopInset", abs (value - 99) / 100)
+					
+					if (not Plater.PersonalAdjustLocationTop) then
+						Plater.PersonalAdjustLocationTop = CreateFrame ("frame", "PlaterPersonalBarLocation", UIParent)
+						local frame = Plater.PersonalAdjustLocationTop
+						frame:SetWidth (GetScreenWidth())
+						frame:SetHeight (20)
+						frame.Texture = frame:CreateTexture (nil, "background")
+						frame.Texture:SetTexture ([[Interface\AddOns\Plater\images\bar4_vidro]], true)
+						frame.Texture:SetAllPoints()
+						frame.Shadow = frame:CreateTexture (nil, "border")
+						frame.Shadow:SetTexture ([[Interface\ACHIEVEMENTFRAME\UI-Achievement-RecentHeader]], true)
+						frame.Shadow:SetPoint ("center")
+						frame.Shadow:SetSize (256, 18)
+						frame.Shadow:SetTexCoord (0, 1, 0, 22/32)
+						frame.Shadow:SetVertexColor (0, 0, 0, 1)
+						frame.Text = frame:CreateFontString (nil, "artwork", "GameFontNormal")
+						frame.Text:SetText ("Plater: Top Constraint")
+						frame.Text:SetPoint ("center")
+						
+						frame.HideAnimation = DF:CreateAnimationHub (frame, nil, function() frame:Hide() end)
+						DF:CreateAnimation (frame.HideAnimation, "Alpha", 1, 1, 1, 0)
+						
+						frame.CancelFunction = function()
+							frame.HideAnimation:Play()
+						end
+					end
+					
+					if (Plater.PersonalAdjustLocationTop.HideAnimation:IsPlaying()) then
+						Plater.PersonalAdjustLocationTop.HideAnimation:Stop()
+						Plater.PersonalAdjustLocationTop:SetAlpha (1)
+					end
+					Plater.PersonalAdjustLocationTop:Show()
+					
+					local percentValue = GetScreenHeight()/100
+					Plater.PersonalAdjustLocationTop:SetPoint ("bottom", UIParent, "bottom", 0, percentValue * value)
+					
+					if (Plater.PersonalAdjustLocationTop.Timer) then
+						Plater.PersonalAdjustLocationTop.Timer:Cancel()
+					end
+					Plater.PersonalAdjustLocationTop.Timer = C_Timer.NewTimer (10, Plater.PersonalAdjustLocationTop.CancelFunction)
+					
+					Plater.UpdateAllPlates()
+					Plater.UpdateSelfPlate()
+				end,
+				min = 2,
+				max = 51,
+				step = 1,
+				nocombat = true,
+				name = "Top Constrain" .. CVarIcon,
+				desc = "Adjust the top constrain position where the personal bar cannot pass.\n\n|cFFFFFFFFDefault: 50|r" .. CVarDesc,
+			},
+			
+			{
+				type = "range",
+				get = function() return tonumber (GetCVar ("nameplateSelfBottomInset")*100) end,
+				set = function (self, fixedparam, value) 
+					--Plater.db.profile.plate_config.player.y_position_offset = value
+
+					if (InCombatLockdown()) then
+						Plater:Msg (L["OPTIONS_ERROR_CVARMODIFY"])
+						self:SetValue (tonumber (GetCVar ("nameplateSelfBottomInset")*100))
+						return
+					end
+
+					SetCVar ("nameplateSelfBottomInset", value / 100)
+					--SetCVar ("nameplateSelfTopInset", value / 100)
+					
+					if (not Plater.PersonalAdjustLocationBottom) then
+						Plater.PersonalAdjustLocationBottom = CreateFrame ("frame", "PlaterPersonalBarLocation", UIParent)
+						local frame = Plater.PersonalAdjustLocationBottom
+						frame:SetWidth (GetScreenWidth())
+						frame:SetHeight (20)
+						frame.Texture = frame:CreateTexture (nil, "background")
+						frame.Texture:SetTexture ([[Interface\AddOns\Plater\images\bar4_vidro]], true)
+						frame.Texture:SetAllPoints()
+						frame.Shadow = frame:CreateTexture (nil, "border")
+						frame.Shadow:SetTexture ([[Interface\ACHIEVEMENTFRAME\UI-Achievement-RecentHeader]], true)
+						frame.Shadow:SetPoint ("center")
+						frame.Shadow:SetSize (256, 18)
+						frame.Shadow:SetTexCoord (0, 1, 0, 22/32)
+						frame.Shadow:SetVertexColor (0, 0, 0, 1)
+						frame.Text = frame:CreateFontString (nil, "artwork", "GameFontNormal")
+						frame.Text:SetText ("Plater: Bottom Constraint")
+						frame.Text:SetPoint ("center")
+						
+						frame.HideAnimation = DF:CreateAnimationHub (frame, nil, function() frame:Hide() end)
+						DF:CreateAnimation (frame.HideAnimation, "Alpha", 1, 1, 1, 0)
+						
+						frame.CancelFunction = function()
+							frame.HideAnimation:Play()
+						end
+					end
+					
+					if (Plater.PersonalAdjustLocationBottom.HideAnimation:IsPlaying()) then
+						Plater.PersonalAdjustLocationBottom.HideAnimation:Stop()
+						Plater.PersonalAdjustLocationBottom:SetAlpha (1)
+					end
+					Plater.PersonalAdjustLocationBottom:Show()
+					
+					local percentValue = GetScreenHeight()/100
+					Plater.PersonalAdjustLocationBottom:SetPoint ("bottom", UIParent, "bottom", 0, percentValue * value)
+					
+					if (Plater.PersonalAdjustLocationBottom.Timer) then
+						Plater.PersonalAdjustLocationBottom.Timer:Cancel()
+					end
+					Plater.PersonalAdjustLocationBottom.Timer = C_Timer.NewTimer (10, Plater.PersonalAdjustLocationBottom.CancelFunction)
+					
+					Plater.UpdateAllPlates()
+					Plater.UpdateSelfPlate()
+				end,
+				min = 2,
+				max = 51,
+				step = 1,
+				nocombat = true,
+				name = "Bottom Constrain" .. CVarIcon,
+				desc = "Adjust the bottom constrain position where the personal bar cannot pass.\n\n|cFFFFFFFFDefault: 20|r" .. CVarDesc,
+			},
+			--]= --end of top and bottom constrain		
 		
 		{type = "blank"},
 		{type = "label", get = function() return "Animation Settings:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
@@ -10589,9 +11153,19 @@ local relevance_options = {
 			thumbscale = 1.7,
 			name = "Smooth Health Transition Speed",
 			desc = "How fast is the transition animation.",
-		},		
+		},	
+
+		{type = "blank"},
+		{type = "label", get = function() return "Region:" end, text_template = DF:GetTemplate ("font", "ORANGE_FONT_TEMPLATE")},
 		
-		--]=]		
+		{
+			type = "select",
+			get = function() return Plater.db.profile.number_region end,
+			values = function() return build_number_format_options() end,
+			name = "Number Format",
+			desc = "Number format",
+		},
+		
 	}
 	
 	DF:BuildMenu (advancedFrame, advanced_options, startX, startY, heightSize, true, options_text_template, options_dropdown_template, options_switch_template, true, options_slider_template, options_button_template, globalCallback)

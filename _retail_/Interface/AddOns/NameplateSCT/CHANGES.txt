@@ -1,11 +1,12 @@
-lightweight tag c037e58d32232718e8ad68f966446893baffebb3 1.15
+tag 739f69557d5b959434b022cbc862801caeae638e 1.16.2
 Author:	Justwait <justwait@method.gg>
-Date:	Sun Oct 21 14:36:03 2018 +0200
+Date:	Tue Jun 11 21:51:48 2019 +0200
 
-commit c037e58d32232718e8ad68f966446893baffebb3
+Fix Animations not always following settings
+
+commit 26ebd7e67d9defb3379a6846590608ac134127e9
 Author: Justwait <justwait@method.gg>
-Date:   Sun Oct 21 14:36:03 2018 +0200
+Date:   Fri May 24 00:10:07 2019 +0200
 
-    * Diplay pet damage with dark orange if colour by spell types is enabled
-    * Allow font outline to be changed
+    Fix auto attack animations
 

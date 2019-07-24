@@ -12,6 +12,7 @@ To load the AddOn engine inside another addon add this to the top of your file:
 
 --Lua functions
 local _G = _G
+local min = min
 local format = format
 local pairs = pairs
 local strsplit = strsplit
@@ -21,12 +22,12 @@ local wipe = wipe
 --WoW API / Variables
 local hooksecurefunc = hooksecurefunc
 local issecurevariable = issecurevariable
-
 local CreateFrame = CreateFrame
 local GetAddOnInfo = GetAddOnInfo
 local GetAddOnMetadata = GetAddOnMetadata
 local GetTime = GetTime
 local HideUIPanel = HideUIPanel
+local GetAddOnEnableState = GetAddOnEnableState
 local InCombatLockdown = InCombatLockdown
 local IsAddOnLoaded = IsAddOnLoaded
 local LoadAddOn = LoadAddOn
@@ -47,11 +48,31 @@ local AddOnName, Engine = ...;
 local AddOn = AceAddon:NewAddon(AddOnName, "AceConsole-3.0", "AceEvent-3.0", 'AceTimer-3.0', 'AceHook-3.0');
 AddOn.callbacks = AddOn.callbacks or CallbackHandler:New(AddOn)
 AddOn.DF = {}; AddOn.DF.profile = {}; AddOn.DF.global = {}; AddOn.privateVars = {}; AddOn.privateVars.profile = {}; -- Defaults
-AddOn.Options = {
-	type = "group",
-	name = AddOnName,
-	args = {},
-}
+AddOn.Options = {type = "group", name = AddOnName, args = {}}
+
+AddOn.ActionBars = AddOn:NewModule('ActionBars','AceHook-3.0','AceEvent-3.0')
+AddOn.AFK = AddOn:NewModule('AFK','AceEvent-3.0','AceTimer-3.0')
+AddOn.Auras = AddOn:NewModule('Auras','AceHook-3.0','AceEvent-3.0')
+AddOn.Bags = AddOn:NewModule('Bags','AceHook-3.0','AceEvent-3.0','AceTimer-3.0')
+AddOn.Blizzard = AddOn:NewModule('Blizzard','AceEvent-3.0','AceHook-3.0')
+AddOn.Chat = AddOn:NewModule('Chat','AceTimer-3.0','AceHook-3.0','AceEvent-3.0')
+AddOn.DataBars = AddOn:NewModule('DataBars','AceEvent-3.0')
+AddOn.DataTexts = AddOn:NewModule('DataTexts','AceTimer-3.0','AceHook-3.0','AceEvent-3.0')
+AddOn.DebugTools = AddOn:NewModule('DebugTools','AceEvent-3.0','AceHook-3.0')
+AddOn.Distributor = AddOn:NewModule('Distributor','AceEvent-3.0','AceTimer-3.0','AceComm-3.0','AceSerializer-3.0')
+AddOn.Layout = AddOn:NewModule('Layout','AceEvent-3.0')
+AddOn.Minimap = AddOn:NewModule('Minimap','AceHook-3.0','AceEvent-3.0','AceTimer-3.0')
+AddOn.Misc = AddOn:NewModule('Misc','AceEvent-3.0','AceTimer-3.0')
+AddOn.ModuleCopy = AddOn:NewModule('ModuleCopy','AceEvent-3.0','AceTimer-3.0','AceComm-3.0','AceSerializer-3.0')
+AddOn.NamePlates = AddOn:NewModule('NamePlates','AceHook-3.0','AceEvent-3.0','AceTimer-3.0')
+AddOn.PluginInstaller = AddOn:NewModule('PluginInstaller')
+AddOn.RaidUtility = AddOn:NewModule('RaidUtility','AceEvent-3.0')
+AddOn.Skins = AddOn:NewModule('Skins','AceTimer-3.0','AceHook-3.0','AceEvent-3.0')
+AddOn.Threat = AddOn:NewModule('Threat','AceEvent-3.0')
+AddOn.Tooltip = AddOn:NewModule('Tooltip','AceTimer-3.0','AceHook-3.0','AceEvent-3.0')
+AddOn.TotemBar = AddOn:NewModule('Totems','AceEvent-3.0')
+AddOn.UnitFrames = AddOn:NewModule('UnitFrames','AceTimer-3.0','AceEvent-3.0','AceHook-3.0')
+AddOn.WorldMap = AddOn:NewModule('WorldMap','AceHook-3.0','AceEvent-3.0','AceTimer-3.0')
 
 Engine[1] = AddOn;
 Engine[2] = {};
@@ -67,7 +88,7 @@ AddOn.Libs = {
 	AceDB = _G.LibStub('AceDB-3.0'),
 	EP = _G.LibStub('LibElvUIPlugin-1.0'),
 	LSM = _G.LibStub('LibSharedMedia-3.0'),
-	ACL = _G.LibStub('AceLocale-3.0'),
+	ACL = _G.LibStub('AceLocale-3.0-ElvUI'),
 	LAB = _G.LibStub('LibActionButton-1.0-ElvUI'),
 	LDB = _G.LibStub('LibDataBroker-1.1'),
 	DualSpec = _G.LibStub('LibDualSpec-1.0'),
@@ -77,8 +98,9 @@ AddOn.Libs = {
 	ItemSearch = _G.LibStub('LibItemSearch-1.2-ElvUI'),
 	Compress = _G.LibStub('LibCompress'),
 	Base64 = _G.LibStub('LibBase64-1.0-ElvUI'),
-	Masque = _G.LibStub('Masque', true)
-} -- added on ElvUI_Config load: AceGUI, AceConfig, AceConfigDialog, AceConfigRegistry, AceDBOptions
+	Masque = _G.LibStub('Masque', true),
+	Translit = _G.LibStub('LibTranslit-1.0')
+} -- added on ElvUI_OptionsUI load: AceGUI, AceConfig, AceConfigDialog, AceConfigRegistry, AceDBOptions
 
 -- backwards compatible for plugins
 AddOn.LSM = AddOn.Libs.LSM
@@ -145,22 +167,23 @@ function AddOn:OnInitialize()
 		end
 	end
 
+	self.twoPixelsPlease = false
 	self.ScanTooltip = CreateFrame("GameTooltip", "ElvUI_ScanTooltip", _G.UIParent, "GameTooltipTemplate")
-	self.PixelMode = self.private.general.pixelPerfect -- keep this over `UIScale`
+	self.PixelMode = self.twoPixelsPlease or self.private.general.pixelPerfect -- keep this over `UIScale`
 	self:UIScale(true)
 	self:UpdateMedia()
 	self:RegisterEvent('PLAYER_REGEN_DISABLED')
 	self:Contruct_StaticPopups()
 	self:InitializeInitialModules()
 
-	if IsAddOnLoaded("Tukui") then
+	if GetAddOnEnableState(self.myname, "Tukui") == 2 then
 		self:StaticPopup_Show("TUKUI_ELVUI_INCOMPATIBLE")
 	end
 
 	local GameMenuButton = CreateFrame("Button", nil, GameMenuFrame, "GameMenuButtonTemplate")
 	GameMenuButton:SetText(format("|cfffe7b2c%s|r", AddOnName))
 	GameMenuButton:SetScript("OnClick", function()
-		AddOn:ToggleConfig()
+		AddOn:ToggleOptionsUI()
 		HideUIPanel(GameMenuFrame)
 	end)
 	GameMenuFrame[AddOnName] = GameMenuButton
@@ -192,14 +215,14 @@ LoadUI:SetScript("OnEvent", function()
 end)
 
 function AddOn:PLAYER_REGEN_ENABLED()
-	self:ToggleConfig()
+	self:ToggleOptionsUI()
 	self:UnregisterEvent('PLAYER_REGEN_ENABLED');
 end
 
 function AddOn:PLAYER_REGEN_DISABLED()
 	local err = false;
 
-	if IsAddOnLoaded("ElvUI_Config") then
+	if IsAddOnLoaded("ElvUI_OptionsUI") then
 		local ACD = self.Libs.AceConfigDialog
 		if ACD and ACD.OpenFrames and ACD.OpenFrames[AddOnName] then
 			self:RegisterEvent('PLAYER_REGEN_ENABLED');
@@ -242,27 +265,54 @@ function AddOn:OnProfileReset()
 	self:StaticPopup_Show("RESET_PROFILE_PROMPT")
 end
 
+function AddOn:ResetConfigSettings()
+	AddOn.configSavedPositionTop, AddOn.configSavedPositionLeft = nil, nil
+	AddOn.global.general.AceGUI = AddOn:CopyTable({}, AddOn.DF.global.general.AceGUI)
+end
+
+function AddOn:GetConfigPosition()
+	return AddOn.configSavedPositionTop, AddOn.configSavedPositionLeft
+end
+
+function AddOn:GetConfigSize()
+	return AddOn.global.general.AceGUI.width, AddOn.global.general.AceGUI.height
+end
+
+function AddOn:GetConfigDefaultSize()
+	local width, height = AddOn:GetConfigSize()
+	local maxWidth, maxHeight = AddOn.UIParent:GetSize()
+	width, height = min(maxWidth-50, width), min(maxHeight-50, height)
+	return width, height
+end
+
+function AddOn:ConfigStopMovingOrSizing()
+	if self.obj and self.obj.status then
+		AddOn.configSavedPositionTop, AddOn.configSavedPositionLeft = AddOn:Round(self:GetTop(), 2), AddOn:Round(self:GetLeft(), 2)
+		AddOn.global.general.AceGUI.width, AddOn.global.general.AceGUI.height = AddOn:Round(self:GetWidth(), 2), AddOn:Round(self:GetHeight(), 2)
+	end
+end
+
 local pageNodes = {}
-function AddOn:ToggleConfig(msg)
+function AddOn:ToggleOptionsUI(msg)
 	if InCombatLockdown() then
 		self:Print(ERR_NOT_IN_COMBAT)
 		self:RegisterEvent('PLAYER_REGEN_ENABLED')
 		return;
 	end
 
-	if not IsAddOnLoaded("ElvUI_Config") then
+	if not IsAddOnLoaded("ElvUI_OptionsUI") then
 		local noConfig
-		local _, _, _, _, reason = GetAddOnInfo("ElvUI_Config")
+		local _, _, _, _, reason = GetAddOnInfo("ElvUI_OptionsUI")
 		if reason ~= "MISSING" and reason ~= "DISABLED" then
 			self.GUIFrame = false
-			LoadAddOn("ElvUI_Config")
+			LoadAddOn("ElvUI_OptionsUI")
 
 			--For some reason, GetAddOnInfo reason is "DEMAND_LOADED" even if the addon is disabled.
 			--Workaround: Try to load addon and check if it is loaded right after.
-			if not IsAddOnLoaded("ElvUI_Config") then noConfig = true end
+			if not IsAddOnLoaded("ElvUI_OptionsUI") then noConfig = true end
 
-			-- version check elvui config if it's actually enabled
-			if (not noConfig) and GetAddOnMetadata("ElvUI_Config", "Version") ~= "1.06" then
+			-- version check elvui options if it's actually enabled
+			if (not noConfig) and GetAddOnMetadata("ElvUI_OptionsUI", "Version") ~= "1.06" then
 				self:StaticPopup_Show("CLIENT_UPDATE_REQUEST")
 			end
 		else
@@ -270,7 +320,7 @@ function AddOn:ToggleConfig(msg)
 		end
 
 		if noConfig then
-			self:Print("|cffff0000Error -- Addon 'ElvUI_Config' not found or is disabled.|r")
+			self:Print("|cffff0000Error -- Addon 'ElvUI_OptionsUI' not found or is disabled.|r")
 			return
 		end
 	end
@@ -295,7 +345,7 @@ function AddOn:ToggleConfig(msg)
 				local main, mainNode, mainSelStr, sub, subNode, subSel
 				for i = 1, pageCount do
 					if i == 1 then
-						main = pages[i] and ACD.Status and ACD.Status.ElvUI
+						main = pages[i] and ACD and ACD.Status and ACD.Status.ElvUI
 						mainSel = main and main.status and main.status.groups and main.status.groups.selected
 						mainSelStr = mainSel and ('^'..mainSel:gsub('([%(%)%.%%%+%-%*%?%[%^%$])','%%%1')..'\001')
 						mainNode = main and main.children and main.children[pages[i]]
@@ -309,7 +359,7 @@ function AddOn:ToggleConfig(msg)
 					index = index + 2
 				end
 			else
-				local main = pages[1] and ACD.Status and ACD.Status.ElvUI
+				local main = pages[1] and ACD and ACD.Status and ACD.Status.ElvUI
 				mainSel = main and main.status and main.status.groups and main.status.groups.selected
 			end
 
@@ -322,10 +372,40 @@ function AddOn:ToggleConfig(msg)
 			mode = 'Open'
 		end
 	end
-	ACD[mode](ACD, AddOnName)
 
-	if pages and (mode == 'Open') then
-		ACD:SelectGroup(AddOnName, unpack(pages))
+	if ACD then
+		ACD[mode](ACD, AddOnName)
+	end
+
+	if mode == 'Open' then
+		ConfigOpen = ACD and ACD.OpenFrames and ACD.OpenFrames[AddOnName]
+		if ConfigOpen then
+			local frame = ConfigOpen.frame
+			if frame and not self.GUIFrame then
+				self.GUIFrame = frame
+				_G.ElvUIGUIFrame = self.GUIFrame
+
+				local maxWidth, maxHeight = self.UIParent:GetSize()
+				frame:SetMinResize(600, 500)
+				frame:SetMaxResize(maxWidth-50, maxHeight-50)
+
+				local status = frame.obj and frame.obj.status
+				if status then
+					local top, left = self:GetConfigPosition()
+					if top and left then
+						status.top, status.left = top, left
+
+						ConfigOpen:ApplyStatus()
+					end
+				end
+
+				hooksecurefunc(frame, "StopMovingOrSizing", AddOn.ConfigStopMovingOrSizing)
+			end
+		end
+
+		if ACD and pages then
+			ACD:SelectGroup(AddOnName, unpack(pages))
+		end
 	end
 
 	_G.GameTooltip:Hide() --Just in case you're mouseovered something and it closes.

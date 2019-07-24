@@ -1,4 +1,189 @@
 ------------------------------------------------------------------------
+r893 | michaelspain | 2019-07-10 17:38:50 +0000 (Wed, 10 Jul 2019) | 1 line
+Changed paths:
+   M /trunk/Options/modules/indicators/Indicator.lua
+
+Fixing a crash when opening configuration (Ticket #684)
+------------------------------------------------------------------------
+r892 | michaelspain | 2019-07-10 02:58:37 +0000 (Wed, 10 Jul 2019) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+-Grid2 repackage with an AceGUI library alpha version (see ticket #683)
+------------------------------------------------------------------------
+r891 | michaelspain | 2019-07-10 02:29:56 +0000 (Wed, 10 Jul 2019) | 3 lines
+Changed paths:
+   M /trunk/Options/modules/indicators/Indicator.lua
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+
+-Added Eternal Palace raid debuffs.
+-Added Operation: Mechagon instance debuffs
+-Workaround for ticket #682
+------------------------------------------------------------------------
+r890 | michaelspain | 2019-07-01 03:29:39 +0000 (Mon, 01 Jul 2019) | 1 line
+Changed paths:
+   M /trunk/GridFrame.lua
+   M /trunk/GridRoster.lua
+   M /trunk/modules/StatusAuras.lua
+
+Fixing: wrong auras displayed just when new unit frames are added (ticket #681)
+------------------------------------------------------------------------
+r889 | michaelspain | 2019-06-26 17:07:08 +0000 (Wed, 26 Jun 2019) | 1 line
+Changed paths:
+   M /trunk/Grid2.toc
+   M /trunk/LDB/Grid2LDB.toc
+   M /trunk/Options/Grid2Options.toc
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/RaidDebuffs/Grid2RaidDebuffs.toc
+   M /trunk/RaidDebuffsOptions/Grid2RaidDebuffsOptions.toc
+   M /trunk/modules/IndicatorAlpha.lua
+
+TOC Update
+------------------------------------------------------------------------
+r888 | michaelspain | 2019-06-23 03:18:06 +0000 (Sun, 23 Jun 2019) | 4 lines
+Changed paths:
+   M /trunk/GridDefaults.lua
+   M /trunk/Options/GridStatuses.lua
+   M /trunk/Options/modules/indicators/IndicatorAlpha.lua
+   M /trunk/Options/modules/indicators/IndicatorIcons.lua
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/Options/modules/statuses/StatusRange.lua
+   M /trunk/modules/IndicatorAlpha.lua
+
+-Alpha indicator: Minor speed optimization.
+-Alpha indicator: Now a global opacity can be specified (will be used instead of the opacity provided by the statuses) (see last comments on ticket #671).
+-Icons indicator: now a negative value can be set for the icons spacing option (must by typed manually) (ticket #678)
+-Buffs/Debuffs statuses: Now the buff/debuff Name or spellID can be changed for single buffs/debuffs.
+------------------------------------------------------------------------
+r887 | michaelspain | 2019-06-21 04:42:15 +0000 (Fri, 21 Jun 2019) | 1 line
+Changed paths:
+   M /trunk/GridLayout.lua
+
+-Fixing ticket (#677) Frames move with every UI reload when ElvUI is enabled
+------------------------------------------------------------------------
+r886 | michaelspain | 2019-06-17 00:22:58 +0000 (Mon, 17 Jun 2019) | 2 lines
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/RaidDebuffsOptions/OptionsAdvanced.lua
+
+-Fixing minor issue in raiddebuffs config.
+-Now unit frames are visible if UI is reloaded in combat.
+------------------------------------------------------------------------
+r885 | michaelspain | 2019-06-06 02:03:40 +0000 (Thu, 06 Jun 2019) | 8 lines
+Changed paths:
+   M /trunk/Options/modules/indicators/IndicatorSquare.lua
+   M /trunk/modules/IndicatorSquare.lua
+
+-Square indicator: Now indicator border color can be swapped with the main square/rectangle color.
+This allows to create extra border indicators, in this way:
+1. Create a new square indicator, and adjust position/size/framelevel, enabling rectangle option if necessary. 
+2. Link the statuses we want to track to the indicator.
+3. Set a border size higher than 0
+4. Set a transparent color for the border (move down the opacity slider).
+5. Enable "Swap Colors" option, so the square will be filled with the transparent color (instead of the border).
+6. Ready, now the linked statuses colors will be used to draw the square border, and the square will remain transparent.
+------------------------------------------------------------------------
+r884 | michaelspain | 2019-06-05 21:14:26 +0000 (Wed, 05 Jun 2019) | 2 lines
+Changed paths:
+   M /trunk/RaidDebuffs/Grid2RaidDebuffs.lua
+   M /trunk/modules/StatusPhased.lua
+
+-Phased status, little optimization now timer is paused inside instances.
+-RaidDebuffs statuses now can be mapped to text indicators.
+------------------------------------------------------------------------
+r883 | michaelspain | 2019-06-02 08:16:16 +0000 (Sun, 02 Jun 2019) | 1 line
+Changed paths:
+   M /trunk/modules/IndicatorIcon.lua
+   M /trunk/modules/StatusAuras.lua
+
+Fixing ticket #671 (now auras can be used with the alpha indicator)
+------------------------------------------------------------------------
+r882 | michaelspain | 2019-05-28 14:12:59 +0000 (Tue, 28 May 2019) | 1 line
+Changed paths:
+   M /trunk/GridFrame.lua
+   M /trunk/modules/IndicatorBar.lua
+   M /trunk/modules/IndicatorIcon.lua
+   M /trunk/modules/IndicatorIcons.lua
+   M /trunk/modules/IndicatorMultiBar.lua
+
+-Fixing first part of ticket #669 (indicator sizes specified in themes were not used on theme changes).
+------------------------------------------------------------------------
+r881 | michaelspain | 2019-05-26 11:20:33 +0000 (Sun, 26 May 2019) | 9 lines
+Changed paths:
+   M /trunk/GridSetup.lua
+   M /trunk/GridStatus.lua
+   M /trunk/Options/GridIndicators.lua
+   M /trunk/Options/GridStatuses.lua
+   M /trunk/Options/GridUtils.lua
+   M /trunk/Options/locales/esES.lua
+   M /trunk/Options/modules/indicators/Indicator.lua
+   M /trunk/Options/modules/indicators/IndicatorBar.lua
+   M /trunk/Options/modules/indicators/IndicatorMultiBar.lua
+   M /trunk/Options/modules/statuses/Status.lua
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/Options/modules/statuses/StatusAuraNew.lua
+   M /trunk/Options/modules/statuses/StatusHealsAoe.lua
+   M /trunk/Options/modules/statuses/StatusMisc.lua
+   M /trunk/modules/StatusAuras.lua
+   A /trunk/modules/StatusPhased.lua
+   M /trunk/modules.xml
+
+-Added "Phased" status (in miscellaneos category)
+-Fixed a bug in auras management (auras were not disabled correctly)
+-Now values higher than 75 can be used for bars width and height (ticket #668)
+-Fixed a minor bug in debuffs creation window.
+-Now Buffs and Debuffs can be class specific (ticket #659):
+  All buffs and debuffs have a new "Enabled for" option where one can select a toon class, if
+  an aura is enabled for a class, the aura will be disabled for the rest of classes,
+  this allows to use the same profile for several classes and to link a lot of auras to the 
+  same indicators without cpu performance cost.
+------------------------------------------------------------------------
+r880 | michaelspain | 2019-05-21 07:20:11 +0000 (Tue, 21 May 2019) | 1 line
+Changed paths:
+   M /trunk/Options/modules/indicators/IndicatorIcon.lua
+   M /trunk/modules/IndicatorIcon.lua
+   M /trunk/modules/StatusAuras.lua
+
+Icon Indicator: Added and option to activate animations only when the indicator is activated (not on updates) (see ticket #665)
+------------------------------------------------------------------------
+r879 | michaelspain | 2019-04-30 17:49:19 +0000 (Tue, 30 Apr 2019) | 2 lines
+Changed paths:
+   M /trunk/GridLayout.lua
+   M /trunk/Options/modules/general/GridExportImport.lua
+   M /trunk/Options/modules/general/GridLayoutsEditor.lua
+   M /trunk/RaidDebuffsOptions/RaidDebuffsBfA.lua
+
+-Add some Crucible of Storm Raid Debuffs.
+-Fixing ticket #658 (Profile import crash if imported profile has custom layouts)
+------------------------------------------------------------------------
+r878 | michaelspain | 2019-03-23 19:21:51 +0000 (Sat, 23 Mar 2019) | 3 lines
+Changed paths:
+   M /trunk/Options/GridStatuses.lua
+   M /trunk/Options/GridUtils.lua
+   M /trunk/Options/modules/statuses/Status.lua
+   M /trunk/Options/modules/statuses/StatusAura.lua
+   M /trunk/Options/modules/statuses/StatusAuraNew.lua
+   M /trunk/modules/IndicatorSquare.lua
+   M /trunk/modules/StatusAurasBuffs.lua
+
+A new special buffs group status can be created (buffs:Blizzard), this status displays the same buffs
+than the blizzard default raid frames, can be linked only to an "icons" (plural) indicator.
+
+------------------------------------------------------------------------
+r877 | michaelspain | 2019-03-21 00:23:59 +0000 (Thu, 21 Mar 2019) | 2 lines
+Changed paths:
+   M /trunk/Options/modules/indicators/Indicator.lua
+   M /trunk/Options/modules/indicators/IndicatorTooltip.lua
+
+- Using softMin&softMax for indicator coordinates in config (allowing to bypass the 50 pixels limit).
+- Now a disabled Tooltip indicator is not reenabled when a config option is changed (see last comment on ticket #655).
+------------------------------------------------------------------------
+r876 | michaelspain | 2019-03-16 13:07:44 +0000 (Sat, 16 Mar 2019) | 1 line
+Changed paths:
+   M /trunk/GridRoster.lua
+
+-Fixing Arathi Basin and Warsong Gulch BGs mapIds (ids changed in patch 8.1.5) (ticket #654)
+------------------------------------------------------------------------
 r875 | michaelspain | 2019-03-04 03:05:03 +0000 (Mon, 04 Mar 2019) | 1 line
 Changed paths:
    M /trunk/GridRoster.lua
@@ -1077,41 +1262,5 @@ Changed paths:
    M /trunk/modules/StatusHealth.lua
 
 Fixed ticket #461 (health instant updates doesn't update on pet resummons)
-------------------------------------------------------------------------
-r792 | michaelspain | 2016-08-28 02:29:26 +0000 (Sun, 28 Aug 2016) | 2 lines
-Changed paths:
-   M /trunk/RaidDebuffsOptions/Grid2RaidDebuffsOptions.toc
-   A /trunk/RaidDebuffsOptions/RaidDebuffsLegion.lua
-
-RaidDebuffs: Added Legion raiddebuffs for raids, world bosses and 5man instances. 
-The Legion module must be enabled in raiddebuffs configuration options.
-------------------------------------------------------------------------
-r791 | michaelspain | 2016-08-27 16:28:40 +0000 (Sat, 27 Aug 2016) | 5 lines
-Changed paths:
-   M /trunk/.pkgmeta
-   D /trunk/AoeHeals
-   A /trunk/Options/modules/statuses/StatusHealsAoe.lua
-   M /trunk/Options/modules/statuses/StatusRange.lua
-   M /trunk/Options/modules.xml
-   D /trunk/modules/StatusDirection.lua
-   A /trunk/modules/StatusHealsAoe.lua
-   M /trunk/modules/StatusRange.lua
-   M /trunk/modules.xml
-
--Moved Healing spells tracking status from AOE-Heals module to Grid2 Core.
--Removed AOE-Heals module (motive: Blizzard disabled unit position tracking in Legion)
--Removed Direction Status (motive: Blizzard disabled unit position tracking in Legion)
--Range Status:  Added a new option in configuration to track units checking a healing spell range, this must fix range issues for some healing clases (goto Statuses>Target&Distances>Range to select the new option)
-
-------------------------------------------------------------------------
-r790 | michaelspain | 2016-07-20 18:51:09 +0000 (Wed, 20 Jul 2016) | 3 lines
-Changed paths:
-   M /trunk/AoeHeals/AoeHeals.lua
-   M /trunk/GridLayoutLayouts.lua
-   M /trunk/Options/modules/indicators/IndicatorSquare.lua
-
-- Fixed AoeHeals crash
-- Added a new by role x10 layout.
-- Minor changes in configuration options.
 ------------------------------------------------------------------------
 

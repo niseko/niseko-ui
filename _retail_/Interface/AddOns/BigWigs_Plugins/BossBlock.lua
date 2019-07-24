@@ -15,6 +15,8 @@ plugin.defaultDB = {
 	blockGarrison = true,
 	blockGuildChallenge = true,
 	blockSpellErrors = true,
+	blockTooltipQuests = true,
+	blockObjectiveTracker = true,
 	disableSfx = false,
 }
 
@@ -25,7 +27,8 @@ plugin.defaultDB = {
 local L = BigWigsAPI:GetLocale("BigWigs: Plugins")
 plugin.displayName = L.bossBlock
 local GetBestMapForUnit = BigWigsLoader.GetBestMapForUnit
-local SetCVar = C_CVar and C_CVar.SetCVar or SetCVar -- XXX 8.1.5 compat
+local GetSubZoneText = GetSubZoneText
+local SetCVar = C_CVar.SetCVar
 
 -------------------------------------------------------------------------------
 -- Options
@@ -67,8 +70,8 @@ plugin.pluginOptions = {
 		},
 		blockGarrison = {
 			type = "toggle",
-			name = L.blockGarrison,
-			desc = L.blockGarrisonDesc,
+			name = L.blockFollowerMission,
+			desc = L.blockFollowerMissionDesc,
 			width = "full",
 			order = 3,
 		},
@@ -86,12 +89,26 @@ plugin.pluginOptions = {
 			width = "full",
 			order = 5,
 		},
+		blockTooltipQuests = {
+			type = "toggle",
+			name = L.blockTooltipQuests,
+			desc = L.blockTooltipQuestsDesc,
+			width = "full",
+			order = 6,
+		},
+		blockObjectiveTracker = {
+			type = "toggle",
+			name = L.blockObjectiveTracker,
+			desc = L.blockObjectiveTrackerDesc,
+			width = "full",
+			order = 7,
+		},
 		disableSfx = {
 			type = "toggle",
 			name = L.disableSfx,
 			desc = L.disableSfxDesc,
 			width = "full",
-			order = 6,
+			order = 8,
 		},
 	},
 }
@@ -105,8 +122,12 @@ function plugin:OnPluginEnable()
 	self:RegisterMessage("BigWigs_OnBossWin")
 	self:RegisterMessage("BigWigs_OnBossWipe", "BigWigs_OnBossWin")
 
+	-- Enable these CVars every time we load just in case some kind of disconnect/etc during the fight left it permanently disabled
 	if self.db.profile.disableSfx then
-		SetCVar("Sound_EnableSFX", "1") -- Enable this every time we load just in case some kind of DC during the fight left it disabled
+		SetCVar("Sound_EnableSFX", "1")
+	end
+	if self.db.profile.blockTooltipQuests then
+		SetCVar("showQuestTrackingTooltips", "1")
 	end
 
 	if IsEncounterInProgress() then -- Just assume we logged into an encounter after a DC
@@ -117,6 +138,14 @@ function plugin:OnPluginEnable()
 	self:RegisterEvent("PLAY_MOVIE")
 	self:SiegeOfOrgrimmarCinematics() -- Sexy hack until cinematics have an id system (never)
 	self:ToyCheck() -- Sexy hack until cinematics have an id system (never)
+
+	-- XXX temp 8.1.5
+	for id in next, BigWigs.db.global.watchedMovies do
+		if type(id) == "string" then
+			BigWigs.db.global.watchedMovies[id] = nil
+		end
+	end
+	BigWigs.db.global.watchedMovies[-593] = nil -- Auchindoun temp reset
 end
 
 -------------------------------------------------------------------------------
@@ -140,6 +169,7 @@ do
 		end
 	end
 
+	local restoreObjectiveTracker = false
 	function plugin:BigWigs_OnBossEngage()
 		if self.db.profile.blockEmotes and not IsTestBuild() then -- Don't block emotes on WoW beta.
 			KillEvent(RaidBossEmoteFrame, "RAID_BOSS_EMOTE")
@@ -159,6 +189,22 @@ do
 		end
 		if self.db.profile.disableSfx then
 			SetCVar("Sound_EnableSFX", "0")
+		end
+		if self.db.profile.blockTooltipQuests then
+			SetCVar("showQuestTrackingTooltips", "0")
+		end
+		-- Never hide when tracking achievements or in Mythic+
+		local _, _, diff = GetInstanceInfo()
+		if self.db.profile.blockObjectiveTracker and not GetTrackedAchievements() and diff ~= 8
+		and ObjectiveTrackerFrame and ObjectiveTrackerFrame:IsShown() and not ObjectiveTrackerFrame.collapsed then
+			restoreObjectiveTracker = true
+			ObjectiveTrackerFrame.HeaderMenu.MinimizeButton:Click()
+			local _, id = PlaySound(856, nil, false)
+			if id then -- Sounds might not even be enabled
+				StopSound(id - 1) -- Stop the click sound
+				StopSound(id)
+			end
+			ObjectiveTrackerFrame.HeaderMenu:SetAlpha(0)
 		end
 	end
 
@@ -181,6 +227,19 @@ do
 		end
 		if self.db.profile.disableSfx then
 			SetCVar("Sound_EnableSFX", "1")
+		end
+		if self.db.profile.blockTooltipQuests then
+			SetCVar("showQuestTrackingTooltips", "1")
+		end
+		if restoreObjectiveTracker then
+			restoreObjectiveTracker = false
+			ObjectiveTrackerFrame.HeaderMenu.MinimizeButton:Click()
+			local _, id = PlaySound(856, nil, false)
+			if id then -- Sounds might not even be enabled
+				StopSound(id - 1) -- Stop the click sound
+				StopSound(id)
+			end
+			ObjectiveTrackerFrame.HeaderMenu:SetAlpha(1)
 		end
 	end
 end
@@ -231,7 +290,10 @@ do
 		[-567] = true, -- Mythic Garrosh Phase 4
 		[-573] = true, -- Bloodmaul Slag Mines, activating bridge to Roltall
 		[-575] = true, -- Shadowmoon Burial Grounds, final boss introduction
-		[-593] = {false, -1, true}, -- Auchindoun has 2 cinematics. One before the 1st boss (false) and one after the 3rd boss (true), 2nd arg is garbage for the iterator to work.
+		[-593] = { -- Auchindoun
+			"", -- "": Before the 1st boss, the tunnel doesn't have a sub zone
+			L.subzone_eastern_transept, -- Eastern Transept: After the 3rd boss, Teren'gor porting in
+		},
 		[-607] = true, -- Grimrail Depot, boarding the train
 		[-609] = true, -- Grimrail Depot, destroying the train
 		[-612] = true, -- Highmaul, Kargath Death
@@ -244,9 +306,12 @@ do
 		[-1151] = true, -- Uldir, raising stairs for Zul (Zek'voz)
 		[-1152] = true, -- Uldir, raising stairs for Zul (Vectis)
 		[-1153] = true, -- Uldir, raising stairs for Zul (Fetid Devourer)
-		[-1358] = true, -- Battle of Dazar'alor, after killing 1st boss, Bwonsamdi (Horde side)
-		--[-1352] = true, -- Battle of Dazar'alor, after killing 2nd boss, Bwonsamdi (Alliance side)
-		--[-1352] = true, -- Battle of Dazar'alor, after killing blockade
+		[-1345] = true, -- Crucible of Storms, after killing first boss
+		[-1352] = { -- Battle of Dazar'alor
+			L.subzone_grand_bazaar, -- Grand Bazaar: After killing 2nd boss, Bwonsamdi (Alliance side only)
+			L.subzone_port_of_zandalar, -- Port of Zandalar: After killing blockade, boat arriving
+		},
+		[-1358] = true, -- Battle of Dazar'alor, after killing 1st boss, Bwonsamdi (Horde side only)
 		--[-1364] = true, -- Battle of Dazar'alor, Jaina stage 1 intermission (unskippable)
 	}
 
@@ -299,11 +364,11 @@ do
 			local id = -(GetBestMapForUnit("player") or 0)
 
 			if cinematicZones[id] then
-				if type(cinematicZones[id]) == "table" then -- For zones with more than 1 cinematic per floor
+				if type(cinematicZones[id]) == "table" then -- For zones with more than 1 cinematic per map id
 					if type(BigWigs.db.global.watchedMovies[id]) ~= "table" then BigWigs.db.global.watchedMovies[id] = {} end
-					for i=#cinematicZones[id], 1, -1 do -- In reverse so for example: we don't trigger off the first boss when at the third boss
-						local _, _, done = C_Scenario.GetCriteriaInfoByStep(1,i)
-						if done == cinematicZones[id][i] then
+					for i = 1, #cinematicZones[id] do
+						local subZone = cinematicZones[id][i]
+						if subZone == GetSubZoneText() then
 							if BigWigs.db.global.watchedMovies[id][i] then
 								BigWigs:Print(L.movieBlocked)
 								CinematicFrame_CancelCinematic()

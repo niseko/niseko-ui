@@ -21,7 +21,7 @@ TellMeWhen_Options: disabled
 LoggerHeadLite: enabled
 BagSync: enabled
 VuhDo: disabled
-VuhDoOptions: disabled
+VuhDoOptions: enabled
 WeakAuras: enabled
 Dominos: enabled
 Bartender4: disabled
@@ -34,7 +34,7 @@ GottaGoFastHistory: enabled
 GottaGoFast: enabled
 PremadeGroupsFilter: enabled
 WorldQuestAssistant: disabled
-MoveAnything: enabled
+MoveAnything: disabled
 TipTac: enabled
 TipTacItemRef: enabled
 TipTacTalents: disabled
@@ -60,7 +60,7 @@ AdvancedTooltips: enabled
 AdventureGuideLockouts: enabled
 Auctionator: enabled
 AzeriteTooltip: enabled
-BigWigs: enabled
+BigWigs: disabled
 BlizzMove: enabled
 !BugGrabber: enabled
 Clique: enabled
@@ -87,4 +87,10 @@ AAP-WoD: disabled
 AAP-Cata-MoP: disabled
 AAP-TBC-WotLK: disabled
 AAP-Vanilla: disabled
-AAP-Core: disabled
+Grid2Options: enabled
+LucyRaidFrames: disabled
+NameplateSCT: disabled
+FloatIndicators_Uldir: enabled
+FloatIndicators: disabled
+DBM-Core: enabled
+DBM-StatusBarTimers: enabled

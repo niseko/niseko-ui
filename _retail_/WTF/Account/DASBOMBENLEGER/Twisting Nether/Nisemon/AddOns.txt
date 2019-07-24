@@ -25,7 +25,7 @@ BlizzMove: disabled
 BugSack: enabled
 !BugGrabber: enabled
 Clique: enabled
-DejaCharacterStats: disabled
+DejaCharacterStats: enabled
 ExRT: disabled
 OmniCC: disabled
 OmniCC_Config: disabled
@@ -73,7 +73,7 @@ Masque_Elegance: disabled
 Masque_ElvUIesque: disabled
 Masque_FlatSquares: disabled
 Masque_Shadow: disabled
-MoveAnything: disabled
+MoveAnything: enabled
 mRunes: disabled
 NameplateSCT: enabled
 OptionHouse: disabled
@@ -100,4 +100,4 @@ SunnArt: disabled
 OmniBar: disabled
 GladiatorlosSA2: disabled
 Gladius: disabled
-Azeroth Auto Pilot: disabled
+AAP-Core: disabled

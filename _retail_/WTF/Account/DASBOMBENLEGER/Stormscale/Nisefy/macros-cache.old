@@ -6,6 +6,11 @@ VER 3 0100000000000002 "3" "INV_MISC_QUESTIONMARK"
 #showtooltip Renewing Mist
 /cast [harm] Blackout Kick; Renewing Mist
 END
+VER 3 0100000000000007 "4" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [channeling: Essence Font]
+/cast Rising Sun Kick
+END
 VER 3 0100000000000004 "calekk" "136048"
 /w calekk Innervate me!
 END

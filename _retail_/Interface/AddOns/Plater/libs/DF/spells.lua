@@ -677,6 +677,7 @@ DF.CrowdControlSpells = {
 	[217832] = "DEMONHUNTER", --Imprison
 	[200166] = "DEMONHUNTER", --Metamorphosis
 	[207685] = "DEMONHUNTER", --Sigil of Misery
+	[211881] = "DEMONHUNTER", -- Fel Eruption
 }
 
 DF.SpecIds = {
@@ -833,8 +834,8 @@ DF.RuneIDs = {
 
 function DF:GetSpellsForEncounterFromJournal (instanceEJID, encounterEJID)
 
-	EJ_SelectInstance (instanceEJID) 
-	local name, description, encounterID, rootSectionID, link = EJ_GetEncounterInfo (encounterEJID) --taloc (primeiro boss de Uldir)
+	DetailsFramework.EncounterJournal.EJ_SelectInstance (instanceEJID) 
+	local name, description, encounterID, rootSectionID, link = DetailsFramework.EncounterJournal.EJ_GetEncounterInfo (encounterEJID) --taloc (primeiro boss de Uldir)
 	
 	if (not name) then
 		print ("DetailsFramework: Encounter Info Not Found!", instanceEJID, encounterEJID)

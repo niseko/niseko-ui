@@ -44,7 +44,7 @@ end
 
 
 function ns.SpaceOut( str )
-    str = str:gsub( "([!<>=|&()*%-%+%%])", " %1 " ):gsub("%s+", " ")
+    str = str:gsub( "([!<>=|&()*%-%+%%][?]?)", " %1 " ):gsub("%s+", " ")
 
     str = str:gsub( "%.%s+%(", ".(" )
     str = str:gsub( "%)%s+%.", ")." )
@@ -166,6 +166,13 @@ end
 
 local orderedIndex = {}
 
+local sortHelper = function( a, b )
+    local a1, b1 = tostring(a), tostring(b)
+
+    return a1 < b1
+end
+
+
 local function __genOrderedIndex( t )
 
     for i = #orderedIndex, 1, -1 do
@@ -175,7 +182,7 @@ local function __genOrderedIndex( t )
     for key in pairs( t ) do
         table.insert( orderedIndex, key )
     end
-    table.sort( orderedIndex )
+    table.sort( orderedIndex, sortHelper )
     return orderedIndex
 end
 
@@ -324,4 +331,50 @@ end
 function ns.CachedGetItemInfo( id )
     if itemCache[ id ] then return unpack( itemCache[ id ] ) end
     return itemCacheHelper( id, GetItemInfo( id ) )
+end
+
+
+-- Atlas -> Texture Stuff
+do
+    local db = {}
+
+    local function AddTexString( name, file, width, height, left, right, top, bottom )
+        local pctWidth = right - left
+        local realWidth = width / pctWidth
+        local lPoint = left * realWidth
+
+        local pctHeight = bottom - top
+        local realHeight = height / pctHeight
+        local tPoint = top * realHeight
+
+        db[ name ] = format( "|T%s:%%d:%%d:%%d:%%d:%d:%d:%d:%d:%d:%d|t", file, realWidth, realHeight, lPoint, lPoint + width, tPoint, tPoint + height )
+    end
+
+    local function GetTexString( name, width, height, x, y )
+        return db[ name ] and format( db[ name ], width or 0, height or 0, x or 0, y or 0 ) or ""
+    end
+
+    local function AtlasToString( atlas, width, height, x, y )
+        if db[ atlas ] then
+            return GetTexString( atlas, width, height, x, y )
+        end
+
+        local a = C_Texture.GetAtlasInfo( atlas )
+        if not a then return atlas end
+
+        AddTexString( atlas, a.file, a.width, a.height, a.leftTexCoord, a.rightTexCoord, a.topTexCoord, a.bottomTexCoord )
+        return GetTexString( atlas, width, height, x, y )
+    end
+
+    local function GetAtlasFile( atlas )
+        local a = C_Texture.GetAtlasInfo( atlas )
+        return a and a.file or atlas
+    end
+
+    local function GetAtlasCoords( atlas )
+        local a = C_Texture.GetAtlasInfo( atlas )
+        return a and { a.leftTexCoord, a.rightTexCoord, a.topTexCoord, a.bottomTexCoord }
+    end
+
+    ns.AddTexString, ns.GetTexString, ns.AtlasToString, ns.GetAtlasFile, ns.GetAtlasCoords = AddTexString, GetTexString, AtlasToString, GetAtlasFile, GetAtlasCoords
 end

@@ -6,6 +6,7 @@ local _G = _G
 local ipairs, pairs, select, unpack = ipairs, pairs, select, unpack
 --WoW API / Variables
 local C_CreatureInfo_GetClassInfo = C_CreatureInfo.GetClassInfo
+local C_GuildInfo_GetGuildNewsInfo = C_GuildInfo.GetGuildNewsInfo
 local FRIENDS_BNET_BACKGROUND_COLOR = FRIENDS_BNET_BACKGROUND_COLOR
 local CreateFrame = CreateFrame
 local hooksecurefunc = hooksecurefunc
@@ -25,6 +26,21 @@ local function UpdateNames(self)
 			self.Class:SetTexCoord(tcoords[1] + .022, tcoords[2] - .025, tcoords[3] + .022, tcoords[4] - .025)
 		end
 	end
+end
+
+-- Maybe deprecated. Blizzards changes the Community Code every 3 builds -.-
+local function HandleRoleChecks(button, ...)
+	button:StripTextures()
+	button:DisableDrawLayer("ARTWORK")
+	button:DisableDrawLayer("OVERLAY")
+
+	button.bg = button:CreateTexture(nil, 'BACKGROUND', nil, -7)
+	button.bg:SetTexture("Interface\\LFGFrame\\UI-LFG-ICONS-ROLEBACKGROUNDS")
+	button.bg:SetTexCoord(...)
+	button.bg:Point("CENTER")
+	button.bg:Size(40)
+	button.bg:SetAlpha(0.6)
+	S:HandleCheckBox(button.CheckBox)
 end
 
 local function LoadSkin()
@@ -47,7 +63,7 @@ local function LoadSkin()
 
 	hooksecurefunc(_G.CommunitiesListEntryMixin, "SetClubInfo", function(self, clubInfo)
 		if clubInfo then
-			self:SetSize(166, 67)
+			self:Size(166, 67)
 
 			--select(13, self:GetRegions()):Hide() -- Hide the mouseover texture
 			self.Background:Hide()
@@ -83,7 +99,7 @@ local function LoadSkin()
 	end)
 
 	hooksecurefunc(_G.CommunitiesListEntryMixin, "SetAddCommunity", function(self)
-		self:SetSize(166, 67)
+		self:Size(166, 67)
 
 		--select(13, self:GetRegions()):Hide() -- Hide the mouseover texture (needs some love)
 		self.Background:Hide()
@@ -108,7 +124,7 @@ local function LoadSkin()
 	end)
 
 	S:HandleItemButton(CommunitiesFrame.ChatTab)
-	CommunitiesFrame.ChatTab:SetPoint('TOPLEFT', '$parent', 'TOPRIGHT', E.PixelMode and 0 or E.Border + E.Spacing, -36)
+	CommunitiesFrame.ChatTab:Point('TOPLEFT', '$parent', 'TOPRIGHT', E.PixelMode and 0 or E.Border + E.Spacing, -36)
 	S:HandleItemButton(CommunitiesFrame.RosterTab)
 	S:HandleItemButton(CommunitiesFrame.GuildBenefitsTab)
 	S:HandleItemButton(CommunitiesFrame.GuildInfoTab)
@@ -116,21 +132,26 @@ local function LoadSkin()
 	S:HandleInsetFrame(CommunitiesFrame.CommunitiesList)
 	S:HandleMaxMinFrame(CommunitiesFrame.MaximizeMinimizeFrame)
 	CommunitiesFrame.MaximizeMinimizeFrame:ClearAllPoints()
-	CommunitiesFrame.MaximizeMinimizeFrame:SetPoint("RIGHT", CommunitiesFrame.CloseButton, "LEFT", 12, 0)
-
+	CommunitiesFrame.MaximizeMinimizeFrame:Point("RIGHT", CommunitiesFrame.CloseButton, "LEFT", 12, 0)
 
 	S:HandleButton(CommunitiesFrame.InviteButton)
 	CommunitiesFrame.AddToChatButton:ClearAllPoints()
-	CommunitiesFrame.AddToChatButton:SetPoint("BOTTOM", CommunitiesFrame.ChatEditBox, "BOTTOMRIGHT", -5, -30) -- needs probably adjustment
+	CommunitiesFrame.AddToChatButton:Point("BOTTOM", CommunitiesFrame.ChatEditBox, "BOTTOMRIGHT", -5, -30) -- needs probably adjustment
 	S:HandleButton(CommunitiesFrame.AddToChatButton)
-	S:HandleButton(CommunitiesFrame.GuildFinderFrame.FindAGuildButton)
 
 	S:HandleScrollBar(CommunitiesFrame.MemberList.ListScrollFrame.scrollBar)
 	S:HandleScrollBar(CommunitiesFrame.Chat.MessageFrame.ScrollBar)
 	S:HandleScrollBar(_G.CommunitiesFrameCommunitiesListListScrollFrame.ScrollBar)
 
 	S:HandleDropDownBox(CommunitiesFrame.StreamDropDownMenu)
-	S:HandleDropDownBox(CommunitiesFrame.CommunitiesListDropDownMenu)
+	S:HandleDropDownBox(CommunitiesFrame.CommunitiesListDropDownMenu, nil, true) -- use an override here to adjust the damn text position >.>
+
+	hooksecurefunc(_G.CommunitiesNotificationSettingsStreamEntryMixin, "SetFilter", function(self)
+		self.ShowNotificationsButton:SetSize(20, 20)
+		self.HideNotificationsButton:SetSize(20, 20)
+		S:HandleCheckBox(self.ShowNotificationsButton)
+		S:HandleCheckBox(self.HideNotificationsButton)
+	end)
 
 	-- [[ CHAT TAB ]]
 	CommunitiesFrame.MemberList:StripTextures()
@@ -140,10 +161,25 @@ local function LoadSkin()
 	CommunitiesFrame.Chat:StripTextures()
 	CommunitiesFrame.Chat.InsetFrame:SetTemplate("Transparent")
 
-	CommunitiesFrame.GuildFinderFrame:StripTextures()
-
 	S:HandleEditBox(CommunitiesFrame.ChatEditBox)
-	CommunitiesFrame.ChatEditBox:SetSize(120, 20)
+	CommunitiesFrame.ChatEditBox:Size(120, 20)
+
+	-- GuildFinder Frame
+	CommunitiesFrame.GuildFinderFrame:StripTextures()
+	S:HandleButton(CommunitiesFrame.GuildFinderFrame.FindAGuildButton)
+	--S:HandleDropDownBox(CommunitiesFrame.GuildFinderFrame.OptionsList.ClubFocusDropdown)
+	--S:HandleDropDownBox(CommunitiesFrame.GuildFinderFrame.OptionsList.ClubSizeDropdown)
+
+	--HandleRoleChecks(CommunitiesFrame.GuildFinderFrame.OptionsList.TankRoleFrame, _G.LFDQueueFrameRoleButtonTank.background:GetTexCoord())
+	--HandleRoleChecks(CommunitiesFrame.GuildFinderFrame.OptionsList.HealerRoleFrame, _G.LFDQueueFrameRoleButtonHealer.background:GetTexCoord())
+	--HandleRoleChecks(CommunitiesFrame.GuildFinderFrame.OptionsList.DpsRoleFrame, _G.LFDQueueFrameRoleButtonDPS.background:GetTexCoord())
+
+	--S:HandleEditBox(CommunitiesFrame.GuildFinderFrame.OptionsList.SearchBox)
+	--CommunitiesFrame.GuildFinderFrame.OptionsList.SearchBox:SetSize(118, 20)
+	--CommunitiesFrame.GuildFinderFrame.OptionsList.Search:ClearAllPoints()
+	--CommunitiesFrame.GuildFinderFrame.OptionsList.Search:SetPoint("TOP", CommunitiesFrame.GuildFinderFrame.OptionsList.SearchBox, "BOTTOM", 0, -3)
+	--S:HandleButton(CommunitiesFrame.GuildFinderFrame.OptionsList.Search)
+	--S:HandleButton(CommunitiesFrame.GuildFinderFrame.PendingClubs)
 
 	-- Member Details
 	CommunitiesFrame.GuildMemberDetailFrame:StripTextures()
@@ -154,7 +190,11 @@ local function LoadSkin()
 	S:HandleCloseButton(CommunitiesFrame.GuildMemberDetailFrame.CloseButton)
 	S:HandleButton(CommunitiesFrame.GuildMemberDetailFrame.RemoveButton)
 	S:HandleButton(CommunitiesFrame.GuildMemberDetailFrame.GroupInviteButton)
-	S:HandleDropDownBox(CommunitiesFrame.GuildMemberDetailFrame.RankDropdown)
+	local DropDown = CommunitiesFrame.GuildMemberDetailFrame.RankDropdown
+	S:HandleDropDownBox(DropDown, 160)
+	DropDown.backdrop:Point("TOPLEFT", 0, -6)
+	DropDown.backdrop:Point("BOTTOMRIGHT", -12, 6)
+	DropDown:Point('LEFT', CommunitiesFrame.GuildMemberDetailFrame.RankLabel, 'RIGHT', 2, 0)
 
 	-- [[ ROSTER TAB ]]
 	local MemberList = CommunitiesFrame.MemberList
@@ -171,7 +211,7 @@ local function LoadSkin()
 	S:HandleButton(CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton)
 	S:HandleButton(CommunitiesFrame.CommunitiesControlFrame.CommunitiesSettingsButton)
 	S:HandleCheckBox(CommunitiesFrame.MemberList.ShowOfflineButton)
-	CommunitiesFrame.MemberList.ShowOfflineButton:SetSize(25, 25)
+	CommunitiesFrame.MemberList.ShowOfflineButton:Size(25, 25)
 
 	hooksecurefunc(CommunitiesFrame.MemberList, "RefreshListDisplay", function(self)
 		for i = 1, self.ColumnDisplay:GetNumChildren() do
@@ -281,8 +321,8 @@ local function LoadSkin()
 	E:RegisterStatusBar(StatusBar)
 
 	local bg = CreateFrame("Frame", nil, StatusBar)
-	bg:SetPoint("TOPLEFT", 0, -3)
-	bg:SetPoint("BOTTOMRIGHT", 0, 1)
+	bg:Point("TOPLEFT", 0, -3)
+	bg:Point("BOTTOMRIGHT", 0, 1)
 	bg:SetFrameLevel(StatusBar:GetFrameLevel())
 	bg:CreateBackdrop()
 
@@ -308,9 +348,14 @@ local function LoadSkin()
 		_G[frame]:StripTextures()
 	end
 
-	hooksecurefunc("CommunitiesGuildNewsButton_SetNews", function(button)
-		if button.header:IsShown() then
-			button.header:SetAlpha(0)
+	S:HandleScrollBar(_G.CommunitiesFrameGuildDetailsFrameInfoMOTDScrollFrameScrollBar)
+
+	hooksecurefunc("GuildNewsButton_SetNews", function(button, news_id)
+		local newsInfo = C_GuildInfo_GetGuildNewsInfo(news_id)
+		if newsInfo then
+			if button.header:IsShown() then
+				button.header:SetAlpha(0)
+			end
 		end
 	end)
 
@@ -425,8 +470,7 @@ local function LoadSkin()
 	S:HandleButton(CommunitiesGuildRecruitmentFrameApplicants.DeclineButton)
 
 	for i = 1, 5 do
-		local bu = _G["CommunitiesGuildRecruitmentFrameApplicantsContainerButton"..i]
-		bu:SetBackdrop(nil)
+		_G["CommunitiesGuildRecruitmentFrameApplicantsContainerButton"..i]:SetBackdrop(nil)
 	end
 
 	-- Notification Settings Dialog
@@ -450,7 +494,7 @@ local function LoadSkin()
 	EditStreamDialog.backdrop:SetAllPoints()
 
 	S:HandleEditBox(EditStreamDialog.NameEdit)
-	EditStreamDialog.NameEdit:SetSize(280, 20)
+	EditStreamDialog.NameEdit:Size(280, 20)
 	S:HandleEditBox(EditStreamDialog.Description)
 	S:HandleCheckBox(EditStreamDialog.TypeCheckBox)
 

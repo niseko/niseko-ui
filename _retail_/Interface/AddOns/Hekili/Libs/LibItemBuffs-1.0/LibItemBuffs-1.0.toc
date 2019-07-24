@@ -4,7 +4,7 @@
 ## Author: Adirelle
 ## Version: e9412c3
 ## LoadOnDemand: 1
-## X-Date: 2018-09-09T08:21:07+0000
+## X-Date: 2018-09-09T08:21:07Z
 ## X-Category: Library
 ## X-License: GPL v3
 ## X-eMail: adirelle@gmail.com

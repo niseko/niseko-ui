@@ -2,7 +2,7 @@ local Type, Version = "MethodDungeonToolsPullButton", 1
 local AceGUI = LibStub and LibStub("AceGUI-3.0", true)
 
 local width,height = 248,32
-local maxPortraitCount = 7
+local maxPortraitCount = 8
 local tinsert,SetPortraitToTexture,SetPortraitTextureFromCreatureDisplayID,GetItemQualityColor,MouseIsOver = table.insert,SetPortraitToTexture,SetPortraitTextureFromCreatureDisplayID,GetItemQualityColor,MouseIsOver
 local next = next
 
@@ -175,6 +175,24 @@ local methods = {
             else
                 MethodDungeonTools:EnsureDBTables()
                 if(mouseButton == "RightButton") then
+                    -- Add current pull to selection, if not already selected
+                    if not MethodDungeonTools.U.contains(MethodDungeonTools:GetSelection(), self.index) then
+                        if #MethodDungeonTools:GetSelection() == 1 then
+                            MethodDungeonTools:SetSelectionToPull(self.index)
+                        else
+                            tinsert(MethodDungeonTools:GetSelection(), self.index)
+                            self:Pick()
+                        end
+                    end
+
+                    -- Backup color for every selected pull
+                    for _, pullIdx in ipairs(MethodDungeonTools:GetSelection()) do
+                        local button = MethodDungeonTools:GetPullButton(pullIdx)
+                        if button then
+                            button:BackupColor()
+                        end
+                    end
+
                     if #MethodDungeonTools:GetSelection() > 1 then
                         L_EasyMenu(self.multiselectMenu,MethodDungeonTools.main_frame.sidePanel.optionsDropDown, "cursor", 0 , -15, "MENU")
                     else
@@ -257,6 +275,7 @@ local methods = {
                 func = function() MethodDungeonTools:MovePullDown(self.index) end
             })
         end
+        --[[
         if self.index ~= 1 or self.index < self.maxPulls then
             tinsert(self.menu, {
                 text = " ",
@@ -265,6 +284,7 @@ local methods = {
                 func = nil
             })
         end
+        ]]--
         tinsert(self.menu, {
             text = "Insert before",
             notCheckable = 1,
@@ -283,12 +303,6 @@ local methods = {
                 MethodDungeonTools:ReloadPullButtons()
                 MethodDungeonTools:SetSelectionToPull(self.index + 1)
             end
-        })
-        tinsert(self.menu, {
-            text = " ",
-            notClickable = 1,
-            notCheckable = 1,
-            func = nil
         })
         if self.index ~= 1 then
             tinsert(self.menu, {
@@ -320,6 +334,62 @@ local methods = {
                 func = nil
             })
         end
+        local function swatchFunc()
+            local r,g,b = ColorPickerFrame:GetColorRGB()
+            local colorHex = MethodDungeonTools:RGBToHex(r,g,b)
+            if colorHex == "228b22" then
+                r,g,b = 2*r,2*g,2*b
+                ColorPickerFrame:SetColorRGB(r,g,b)
+            end
+
+            MethodDungeonTools:DungeonEnemies_SetPullColor(self.index,r,g,b)
+            MethodDungeonTools:UpdatePullButtonColor(self.index, r, g, b)
+            MethodDungeonTools:DungeonEnemies_UpdateBlipColors(self.index,r,g,b)
+            L_CloseDropDownMenus()
+        end
+        local function cancelFunc()
+            self:RevertColor()
+            MethodDungeonTools:DungeonEnemies_SetPullColor(self.index, self.color.r, self.color.g, self.color.b)
+            MethodDungeonTools:UpdatePullButtonColor(self.index, self.color.r, self.color.g, self.color.b)
+            MethodDungeonTools:DungeonEnemies_UpdateBlipColors(self.index, self.color.r, self.color.g, self.color.b)
+        end
+        tinsert(self.menu, {
+            text = "Color: ",
+            notCheckable = 1,
+            hasColorSwatch = true,
+            r = self.color.r,
+            g = self.color.g,
+            b = self.color.b,
+            func = function()
+                ColorPickerFrame.func = swatchFunc
+                ColorPickerFrame.opacityFunc = nil
+                ColorPickerFrame.cancelFunc = cancelFunc
+                ColorPickerFrame:SetColorRGB(self.color.r, self.color.g, self.color.b)
+                ColorPickerFrame.hasOpacity = false
+                ColorPickerFrame.previousValues = {self.color.r, self.color.g, self.color.b}
+                ColorPickerFrame:Hide() -- Need to run the OnShow
+                ColorPickerFrame:Show()
+                L_CloseDropDownMenus()
+            end,
+            swatchFunc = swatchFunc,
+            cancelFunc = cancelFunc,
+        })
+        tinsert(self.menu, {
+            text = "Reset Color",
+            notCheckable = 1,
+            func = function()
+                local r,g,b = 34/255,139/255,34/255
+                MethodDungeonTools:DungeonEnemies_SetPullColor(self.index,r,g,b)
+                MethodDungeonTools:UpdatePullButtonColor(self.index, r, g, b)
+                MethodDungeonTools:DungeonEnemies_UpdateBlipColors(self.index,r,g,b)
+            end
+        })
+        tinsert(self.menu, {
+            text = " ",
+            notClickable = 1,
+            notCheckable = 1,
+            func = nil
+        })
         tinsert(self.menu, {
             text = "Clear",
             notCheckable = 1,
@@ -329,12 +399,6 @@ local methods = {
             text = "Clear Preset",
             notCheckable = 1,
             func = function() MethodDungeonTools:OpenClearPresetDialog() end
-        })
-        tinsert(self.menu, {
-            text = " ",
-            notClickable = 1,
-            notCheckable = 1,
-            func = nil
         })
         if self.maxPulls > 1 then
             tinsert(self.menu, {
@@ -353,7 +417,8 @@ local methods = {
         tinsert(self.menu, {
             text = "Close",
             notCheckable = 1,
-            func = MethodDungeonTools.main_frame.sidePanel.optionsDropDown:Hide()
+            --func = MethodDungeonTools.main_frame.sidePanel.optionsDropDown:Hide()
+            func = nil
         })
 
 
@@ -397,16 +462,15 @@ local methods = {
             end
         })
         tinsert(self.multiselectMenu, {
-            text = " ",
-            notClickable = 1,
-            notCheckable = 1,
-            func = nil
-        })
-        tinsert(self.multiselectMenu, {
             text = "Merge",
             notCheckable = 1,
             func = function()
                 local selected_pulls = MethodDungeonTools.U.copy(MethodDungeonTools:GetSelection())
+                -- Assure, that the destination is always the last selected_pull, to copy it's options at last
+                MethodDungeonTools.U.iremove_if(selected_pulls, function(pullIdx)
+                    return pullIdx == self.index
+                end)
+
                 if not MethodDungeonTools.U.contains(selected_pulls, self.index) then
                     tinsert(selected_pulls, self.index)
                 end
@@ -415,6 +479,99 @@ local methods = {
                 MethodDungeonTools:ReloadPullButtons()
                 MethodDungeonTools:GetCurrentPreset().value.selection = { newIndex }
                 MethodDungeonTools:SetSelectionToPull(newIndex)
+            end
+        })
+        tinsert(self.multiselectMenu, {
+            text = " ",
+            notClickable = 1,
+            notCheckable = 1,
+            func = nil
+        })
+        local function swatchMultiFunc()
+            local r,g,b = ColorPickerFrame:GetColorRGB()
+            local colorHex = MethodDungeonTools:RGBToHex(r,g,b)
+            if colorHex == "228b22" then
+                r,g,b = 2*r,2*g,2*b
+                ColorPickerFrame:SetColorRGB(r,g,b)
+            end
+
+            if not MethodDungeonTools.U.contains(MethodDungeonTools:GetSelection(), self.index) then
+                tinsert(MethodDungeonTools:GetSelection(), self.index)
+                self:Pick()
+            end
+
+            for _, pullIdx in ipairs(MethodDungeonTools:GetSelection()) do
+                MethodDungeonTools:DungeonEnemies_SetPullColor(pullIdx,r,g,b)
+                MethodDungeonTools:UpdatePullButtonColor(pullIdx, r, g, b)
+                MethodDungeonTools:DungeonEnemies_UpdateBlipColors(pullIdx,r,g,b)
+            end
+
+            L_CloseDropDownMenus()
+        end
+        local function cancelMultiFunc()
+            if not MethodDungeonTools.U.contains(MethodDungeonTools:GetSelection(), self.index) then
+                tinsert(MethodDungeonTools:GetSelection(), self.index)
+                self:Pick()
+            end
+
+            for _, pullIdx in ipairs(MethodDungeonTools:GetSelection()) do
+                local button = MethodDungeonTools:GetPullButton(pullIdx)
+                if button then
+                    button:RevertColor()
+                    local color = {
+                        r = button.color.r,
+                        g = button.color.g,
+                        b = button.color.b
+                    }
+                    MethodDungeonTools:DungeonEnemies_SetPullColor(pullIdx, color.r, color.g, color.b)
+                    MethodDungeonTools:UpdatePullButtonColor(pullIdx, color.r, color.g, color.b)
+                    MethodDungeonTools:DungeonEnemies_UpdateBlipColors(pullIdx, color.r, color.g, color.b)
+                end
+            end
+
+            self:RevertColor()
+            MethodDungeonTools:DungeonEnemies_SetPullColor(self.index, self.color.r, self.color.g, self.color.b)
+            MethodDungeonTools:UpdatePullButtonColor(self.index, self.color.r, self.color.g, self.color.b)
+            MethodDungeonTools:DungeonEnemies_UpdateBlipColors(self.index, self.color.r, self.color.g, self.color.b)
+        end
+        tinsert(self.multiselectMenu, {
+            text = "Color: ",
+            notCheckable = 1,
+            hasColorSwatch = true,
+            r = self.color.r,
+            g = self.color.g,
+            b = self.color.b,
+            func = function()
+                ColorPickerFrame.func = swatchMultiFunc
+                ColorPickerFrame.opacityFunc = nil
+                ColorPickerFrame.cancelFunc = cancelMultiFunc
+                ColorPickerFrame:SetColorRGB(self.color.r, self.color.g, self.color.b)
+                ColorPickerFrame.hasOpacity = false
+                ColorPickerFrame.previousValues = {self.color.r, self.color.g, self.color.b}
+                ColorPickerFrame:Hide() -- Need to run the OnShow
+                ColorPickerFrame:Show()
+                L_CloseDropDownMenus()
+            end,
+            swatchFunc = swatchMultiFunc,
+            cancelFunc = cancelMultiFunc
+        })
+        tinsert(self.multiselectMenu, {
+            text = "Reset Color",
+            notCheckable = 1,
+            func = function()
+                local r,g,b = 34/255,139/255,34/255
+
+                if not MethodDungeonTools.U.contains(MethodDungeonTools:GetSelection(), self.index) then
+                    tinsert(MethodDungeonTools:GetSelection(), self.index)
+                    self:Pick()
+                end
+
+                for _, pullIdx in ipairs(MethodDungeonTools:GetSelection()) do
+                    MethodDungeonTools:DungeonEnemies_SetPullColor(pullIdx,r,g,b)
+                    MethodDungeonTools:UpdatePullButtonColor(pullIdx, r, g, b)
+                    MethodDungeonTools:DungeonEnemies_UpdateBlipColors(pullIdx,r,g,b)
+                    L_CloseDropDownMenus()
+                end
             end
         })
         if self.index ~= 1 or self.index < self.maxPulls then
@@ -443,12 +600,6 @@ local methods = {
             text = "Clear Preset",
             notCheckable = 1,
             func = function() MethodDungeonTools:OpenClearPresetDialog() end
-        })
-        tinsert(self.multiselectMenu, {
-            text = " ",
-            notClickable = 1,
-            notCheckable = 1,
-            func = nil
         })
         if self.maxPulls > 1 then
             tinsert(self.multiselectMenu, {
@@ -495,6 +646,12 @@ local methods = {
                 func = nil
             })
         end
+        tinsert(self.multiselectMenu, {
+            text = " ",
+            notClickable = 1,
+            notCheckable = 1,
+            func = nil
+        })
 
         tinsert(self.multiselectMenu, {
             text = "Close",
@@ -518,7 +675,6 @@ local methods = {
         self.frame:SetScript("OnDragStart", self.callbacks.OnDragStart);
         self.frame:SetScript("OnDragStop", self.callbacks.OnDragStop);
         self:Enable();
-        --self:SetRenameAction(self.callbacks.OnRenameAction);
 
         self:InitializeScrollHover()
     end,
@@ -813,6 +969,7 @@ local methods = {
                 --print("correctPullIndex", correctPullIndex)
 
                 MethodDungeonTools:PresetsAddPull(pos)
+                MethodDungeonTools:CopyPullOptions(correctPullIndex, pos)
                 local newID =  MethodDungeonTools:PresetsMergePulls(correctPullIndex, pos)
                 --print("newID", newID)
 
@@ -830,6 +987,7 @@ local methods = {
             end
 
             MethodDungeonTools:PresetsAddPull(insertID)
+            MethodDungeonTools:CopyPullOptions(index, insertID)
             local newIndex = MethodDungeonTools:PresetsMergePulls(index, insertID)
             MethodDungeonTools:ReloadPullButtons()
             MethodDungeonTools:SetSelectionToPull(newIndex)
@@ -837,10 +995,6 @@ local methods = {
 
         MethodDungeonTools:Hide_DropIndicator()
         MethodDungeonTools.pullTooltip:Show()
-    end,
-    ["SetTitle"] = function(self, title)
-        self.titletext = title;
-        self.title:SetText(title);
     end,
     ["Disable"] = function(self)
         self.background:Hide();
@@ -864,6 +1018,9 @@ local methods = {
     end,
     ["SetIndex"] = function(self, index)
         self.index = index
+        --set custom pull color
+        self.color.r,self.color.g,self.color.b = MethodDungeonTools:DungeonEnemies_GetPullColor(self.index)
+        self:UpdateColor()
     end,
     ["SetMaxPulls"] = function(self, maxPulls)
         self.maxPulls = maxPulls
@@ -892,21 +1049,69 @@ local methods = {
             end
             self.enemyPortraits[idx]:Show()
             self.enemyPortraits[idx].overlay:Show()
-            local quality = 0
-            if data.count>0 then quality = 1 end
-            if data.count>2 then quality = 2 end
-            if data.count>3 then quality = 3 end
-            if data.count>6 then quality = 4 end
-            if data.count>9 then quality = 5 end
-            local r, g, b, hex = GetItemQualityColor(quality)
-            if quality == 0 then r,g,b = 0,0,0 end
-            self.enemyPortraits[idx].overlay:SetVertexColor(r,g,b)
             self.enemyPortraits[idx].fontString:SetText("x"..data.quantity)
             self.enemyPortraits[idx].fontString:Show()
         end
     end,
-}
+    ["ShowReapingIcon"] = function(self,show,currentPercent,oldPercent)
+        --set percentage here
+        self.percentageFontString:Show()
+        local perc = string.format("%.1f%%",currentPercent*100)
+        if show  then
+            self.reapingIcon:Show()
+            self.reapingIcon.overlay:Show()
+            perc = "|cFF00FF00"..perc
 
+            local currentReaps = math.floor(currentPercent/0.2)
+            local oldReaps = math.floor(oldPercent/0.2)
+            local reapings = math.min(5,currentReaps-oldReaps)
+
+            if reapings>1 then
+                self.multiReapingFontString:SetText(reapings.."x")
+                self.multiReapingFontString:Show()
+            else
+                self.multiReapingFontString:Hide()
+            end
+        else
+            self.reapingIcon:Hide()
+            self.reapingIcon.overlay:Hide()
+            self.multiReapingFontString:Hide()
+            perc = "|cFFFFFFFF"..perc
+        end
+        local pullForces = MethodDungeonTools:CountForces(self.index,true)
+        if pullForces>0 then
+            self.percentageFontString:SetText(perc)
+            self.percentageFontString:Show()
+        else
+            self.percentageFontString:Hide()
+        end
+    end,
+    ["UpdateColor"] = function(self)
+        local colorHex = MethodDungeonTools:RGBToHex(self.color.r,self.color.g,self.color.b)
+        local db = MethodDungeonTools:GetDB()
+        if colorHex == db.defaultColor then
+            self.background:SetVertexColor(0.5,0.5,0.5,0.25)
+        else
+            self.background:SetVertexColor(self.color.r,self.color.g,self.color.b, 0.75)
+        end
+    end,
+    ["BackupColor"] = function(self)
+        -- Explicitly copy values, to avoid storing a reference
+        self.colorBackup = {
+            r = self.color.r,
+            g = self.color.g,
+            b = self.color.b
+        }
+    end,
+    ["RevertColor"] = function(self)
+        -- Explicitly copy values, to avoid storing a reference
+        self.color = {
+            r = self.colorBackup.r,
+            g = self.colorBackup.g,
+            b = self.colorBackup.b
+        }
+    end
+}
 --Constructor
 local function Constructor()
     local name = "MethodDungeonToolsPullButton"..AceGUI:GetNextWidgetNum(Type);
@@ -926,27 +1131,10 @@ local function Constructor()
     background:SetPoint("LEFT", button, "LEFT");
     background:SetPoint("RIGHT", button, "RIGHT");
 
-    local icon = button:CreateTexture(nil, "OVERLAY");
-    button.icon = icon;
-    icon:SetWidth(height);
-    icon:SetHeight(height);
-    icon:SetPoint("LEFT", button, "LEFT");
-
-
     local pullNumber = button:CreateFontString(nil,"OVERLAY", "GameFontNormal")
     pullNumber:SetHeight(14)
     pullNumber:SetJustifyH("CENTER");
     pullNumber:SetPoint("LEFT", button, "LEFT",5,0);
-
-    local title = button:CreateFontString(nil, "OVERLAY", "GameFontNormal");
-    button.title = title;
-    title:SetHeight(14);
-    title:SetJustifyH("LEFT");
-    title:SetPoint("TOP", button, "TOP", 0, -2);
-    title:SetPoint("LEFT", icon, "RIGHT", 2, 0);
-    title:SetPoint("RIGHT", button, "RIGHT");
-
-    button.description = {};
 
     button:SetScript("OnEnter", function()
 
@@ -955,55 +1143,23 @@ local function Constructor()
 
     end);
 
-
-
-
-
-
-    local renamebox = CreateFrame("EDITBOX", nil, button, "InputBoxTemplate");
-    renamebox:SetHeight(height/2);
-    renamebox:SetPoint("TOP", button, "TOP");
-    renamebox:SetPoint("LEFT", icon, "RIGHT", 6, 0);
-    renamebox:SetPoint("RIGHT", button, "RIGHT", -4, 0);
-    renamebox:SetFont("Fonts\\FRIZQT__.TTF", 10);
-    renamebox:Hide();
-
-    renamebox.func = function() --[[By default, do nothing!]] end;
-    renamebox:SetScript("OnEnterPressed", function()
-        local oldid = button.title:GetText();
-        local newid = renamebox:GetText();
-        if(newid == "" or (newid ~= oldid --[[and WeakAuras.GetData(newid)]] )) then
-            --if name exists
-            renamebox:SetText(button.title:GetText());
-        else
-            renamebox.func();
-            title:SetText(renamebox:GetText());
-            title:Show();
-            renamebox:Hide();
-        end
-    end);
-
-    renamebox:SetScript("OnEscapePressed", function()
-        title:Show();
-        renamebox:Hide();
-    end);
-
     --enemy portraits
     local enemyPortraits = {}
-
+    local portraitSize = height-9
     for i=1,maxPortraitCount do
         enemyPortraits[i] = button:CreateTexture(nil, "BACKGROUND", nil, 2)
-        enemyPortraits[i]:SetSize(height-2,height-2)
+        enemyPortraits[i]:SetSize(portraitSize,portraitSize)
         if i == 1 then
-            enemyPortraits[i]:SetPoint("LEFT",icon,"RIGHT",-5,0)
+            enemyPortraits[i]:SetPoint("LEFT", button, "LEFT",portraitSize,0)
         else
             enemyPortraits[i]:SetPoint("LEFT",enemyPortraits[i-1],"RIGHT",-2,0)
         end
         enemyPortraits[i]:Hide()
         enemyPortraits[i].overlay = button:CreateTexture(nil, "BACKGROUND", nil, 1)
         enemyPortraits[i].overlay:SetTexture("Interface\\Addons\\MethodDungeonTools\\Textures\\Circle_White")
+        enemyPortraits[i].overlay:SetVertexColor(0.7,0.7,0.7)
         enemyPortraits[i].overlay:SetPoint("CENTER",enemyPortraits[i],"CENTER")
-        enemyPortraits[i].overlay:SetSize(height+2,height+2)
+        enemyPortraits[i].overlay:SetSize(portraitSize+3,portraitSize+3)
         enemyPortraits[i].overlay:Hide()
 
         enemyPortraits[i].fontString = button:CreateFontString(nil,"BACKGROUND",nil)
@@ -1011,22 +1167,55 @@ local function Constructor()
         enemyPortraits[i].fontString:SetTextColor(1, 1, 1, 1);
         enemyPortraits[i].fontString:SetWidth(25)
         enemyPortraits[i].fontString:SetHeight(10)
-        enemyPortraits[i].fontString:SetPoint("BOTTOM", enemyPortraits[i], "BOTTOM", 0, 0);
-        enemyPortraits[i].fontString:Hide();
-
+        enemyPortraits[i].fontString:SetPoint("BOTTOM", enemyPortraits[i], "BOTTOM", 0, 0)
+        enemyPortraits[i].fontString:Hide()
 
     end
 
+    --reaping icon
+    local reapingIcon = button:CreateTexture(nil, "BACKGROUND", nil, 2)
+    reapingIcon:SetSize(height-2,height-2)
+    reapingIcon:SetPoint("RIGHT", button, "RIGHT",-10,0)
+    reapingIcon:SetAlpha(1)
+    SetPortraitToTexture(reapingIcon,"Interface\\Icons\\ability_racial_embraceoftheloa_bwonsomdi")
+    reapingIcon:Hide()
+    reapingIcon.overlay = button:CreateTexture(nil, "BACKGROUND", nil, 1)
+    reapingIcon.overlay:SetTexture("Interface\\Addons\\MethodDungeonTools\\Textures\\Circle_White")
+    reapingIcon.overlay:SetVertexColor(0.7,0.7,0.7)
+    reapingIcon.overlay:SetPoint("CENTER",reapingIcon,"CENTER")
+    reapingIcon.overlay:SetSize(height+1,height+1)
+    reapingIcon.overlay:Hide()
 
+    --pull percentage
+    local percentageFontString = button:CreateFontString(nil,"BACKGROUND",nil)
+    percentageFontString:SetFont("Fonts\\FRIZQT__.TTF", 12,"OUTLINE")
+    percentageFontString:SetTextColor(1, 1, 1, 1);
+    percentageFontString:SetWidth(50)
+    percentageFontString:SetHeight(10)
+    percentageFontString:SetPoint("RIGHT", button, "RIGHT",2,0)
+    percentageFontString:Hide()
+
+    --multiple reaping wave indicator
+    local multiReapingFontString = button:CreateFontString(nil,"BACKGROUND",nil)
+    multiReapingFontString:SetFont("Fonts\\FRIZQT__.TTF", 10,"OUTLINE")
+    multiReapingFontString:SetTextColor(1, 1, 1, 1);
+    multiReapingFontString:SetWidth(50)
+    multiReapingFontString:SetHeight(10)
+    multiReapingFontString:SetPoint("RIGHT", button, "RIGHT",1,-12)
+    multiReapingFontString:Hide()
+
+    --custom colors
+    local color = {}
 
     local widget = {
         frame = button,
-        title = title,
-        icon = icon,
         pullNumber = pullNumber,
-        renamebox = renamebox,
         background = background,
         enemyPortraits = enemyPortraits,
+        reapingIcon = reapingIcon,
+        percentageFontString = percentageFontString,
+        multiReapingFontString = multiReapingFontString,
+        color = color,
         type = Type
     }
     for method, func in pairs(methods) do

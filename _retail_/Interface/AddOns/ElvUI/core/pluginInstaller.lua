@@ -50,7 +50,7 @@
 ]]
 
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB, Localize Underscore
-local PI = E:NewModule("PluginInstaller")
+local PI = E:GetModule("PluginInstaller")
 
 --Lua functions
 local _G = _G
@@ -59,12 +59,10 @@ local tinsert, tremove = tinsert, tremove
 local format = string.format
 --WoW API / Variables
 local CreateFrame = CreateFrame
-local PlaySoundFile = PlaySoundFile
+local PlaySound = PlaySound
 local UIFrameFadeOut = UIFrameFadeOut
 local CreateAnimationGroup = CreateAnimationGroup
 local CONTINUE, PREVIOUS, UNKNOWN = CONTINUE, PREVIOUS, UNKNOWN
-
---Global variables that we don't cache, list them here for the mikk's Find Globals script
 -- GLOBALS: PluginInstallFrame
 
 --Installation Functions
@@ -77,7 +75,7 @@ local function ResetAll()
 	f.Prev:Disable()
 	f.Option1:Hide()
 	f.Option1:SetScript("OnClick", nil)
-	f.Option1:SetText("")
+	f.Option1:SetText('')
 	f.Option2:Hide()
 	f.Option2:SetScript('OnClick', nil)
 	f.Option2:SetText('')
@@ -87,14 +85,14 @@ local function ResetAll()
 	f.Option4:Hide()
 	f.Option4:SetScript('OnClick', nil)
 	f.Option4:SetText('')
-	f.SubTitle:SetText("")
-	f.Desc1:SetText("")
-	f.Desc2:SetText("")
-	f.Desc3:SetText("")
-	f.Desc4:SetText("")
+	f.SubTitle:SetText('')
+	f.Desc1:SetText('')
+	f.Desc2:SetText('')
+	f.Desc3:SetText('')
+	f.Desc4:SetText('')
 	f:Size(550, 400)
 	if f.StepTitles then
-		for i = 1, #f.side.Lines do f.side.Lines[i].text:SetText("") end
+		for i = 1, #f.side.Lines do f.side.Lines[i].text:SetText('') end
 	end
 end
 
@@ -156,15 +154,15 @@ function PI:CreateStepComplete()
 	imsg:Size(418, 72)
 	imsg:Point("TOP", 0, -190)
 	imsg:Hide()
-	imsg:SetScript('OnShow', function(self)
-		if self.message then
-			PlaySoundFile([[Sound\Interface\LevelUp.wav]])
-			self.text:SetText(self.message)
-			UIFrameFadeOut(self, 3.5, 1, 0)
-			E:Delay(4, function() self:Hide() end)
-			self.message = nil
+	imsg:SetScript('OnShow', function(frame)
+		if frame.message then
+			PlaySound(888) -- LevelUp Sound
+			frame.text:SetText(frame.message)
+			UIFrameFadeOut(frame, 3.5, 1, 0)
+			E:Delay(4, frame.Hide, frame)
+			frame.message = nil
 		else
-			self:Hide()
+			frame:Hide()
 		end
 	end)
 
@@ -216,7 +214,7 @@ function PI:CreateFrame()
 
 	f.Next = CreateFrame("Button", "PluginInstallNextButton", f, "UIPanelButtonTemplate")
 	f.Next:StripTextures()
-	f.Next:SetTemplate("Default", true)
+	f.Next:SetTemplate(nil, true)
 	f.Next:Size(110, 25)
 	f.Next:Point("BOTTOMRIGHT", -5, 5)
 	f.Next:SetText(CONTINUE)
@@ -226,7 +224,7 @@ function PI:CreateFrame()
 
 	f.Prev = CreateFrame("Button", "PluginInstallPrevButton", f, "UIPanelButtonTemplate")
 	f.Prev:StripTextures()
-	f.Prev:SetTemplate("Default", true)
+	f.Prev:SetTemplate(nil, true)
 	f.Prev:Size(110, 25)
 	f.Prev:Point("BOTTOMLEFT", 5, 5)
 	f.Prev:SetText(PREVIOUS)
@@ -236,7 +234,7 @@ function PI:CreateFrame()
 
 	f.Status = CreateFrame("StatusBar", "PluginInstallStatus", f)
 	f.Status:SetFrameLevel(f.Status:GetFrameLevel() + 2)
-	f.Status:CreateBackdrop("Default", true)
+	f.Status:CreateBackdrop(nil, true)
 	f.Status:SetStatusBarTexture(E.media.normTex)
 	f.Status:SetStatusBarColor(unpack(E.media.rgbvaluecolor))
 	f.Status:Point("TOPLEFT", f.Prev, "TOPRIGHT", 6, -2)
@@ -255,7 +253,7 @@ function PI:CreateFrame()
 	f.Option1:StripTextures()
 	f.Option1:Size(160, 30)
 	f.Option1:Point("BOTTOM", 0, 45)
-	f.Option1:SetText("")
+	f.Option1:SetText('')
 	f.Option1:Hide()
 	E.Skins:HandleButton(f.Option1, true)
 
@@ -263,7 +261,7 @@ function PI:CreateFrame()
 	f.Option2:StripTextures()
 	f.Option2:Size(110, 30)
 	f.Option2:Point('BOTTOMLEFT', f, 'BOTTOM', 4, 45)
-	f.Option2:SetText("")
+	f.Option2:SetText('')
 	f.Option2:Hide()
 	f.Option2:SetScript('OnShow', function() f.Option1:SetWidth(110); f.Option1:ClearAllPoints(); f.Option1:Point('BOTTOMRIGHT', f, 'BOTTOM', -4, 45) end)
 	f.Option2:SetScript('OnHide', function() f.Option1:SetWidth(160); f.Option1:ClearAllPoints(); f.Option1:Point("BOTTOM", 0, 45) end)
@@ -273,7 +271,7 @@ function PI:CreateFrame()
 	f.Option3:StripTextures()
 	f.Option3:Size(100, 30)
 	f.Option3:Point('LEFT', f.Option2, 'RIGHT', 4, 0)
-	f.Option3:SetText("")
+	f.Option3:SetText('')
 	f.Option3:Hide()
 	f.Option3:SetScript('OnShow', function() f.Option1:SetWidth(100); f.Option1:ClearAllPoints(); f.Option1:Point('RIGHT', f.Option2, 'LEFT', -4, 0); f.Option2:SetWidth(100); f.Option2:ClearAllPoints(); f.Option2:Point('BOTTOM', f, 'BOTTOM', 0, 45)  end)
 	f.Option3:SetScript('OnHide', function() f.Option1:SetWidth(160); f.Option1:ClearAllPoints(); f.Option1:Point("BOTTOM", 0, 45); f.Option2:SetWidth(110); f.Option2:ClearAllPoints(); f.Option2:Point('BOTTOMLEFT', f, 'BOTTOM', 4, 45) end)
@@ -283,7 +281,7 @@ function PI:CreateFrame()
 	f.Option4:StripTextures()
 	f.Option4:Size(100, 30)
 	f.Option4:Point('LEFT', f.Option3, 'RIGHT', 4, 0)
-	f.Option4:SetText("")
+	f.Option4:SetText('')
 	f.Option4:Hide()
 	f.Option4:SetScript('OnShow', function()
 		f.Option1:Width(100)
@@ -335,16 +333,16 @@ function PI:CreateFrame()
 	f.pending.tex:SetTexture([[Interface\OptionsFrame\UI-OptionsFrame-NewFeatureIcon]])
 	f.pending:CreateBackdrop("Transparent")
 	f.pending:SetScript("OnEnter", function(self)
-		_G["GameTooltip"]:SetOwner(self, "ANCHOR_BOTTOMLEFT", E.PixelMode and -7 or -9);
-		_G["GameTooltip"]:AddLine(L["List of installations in queue:"], 1, 1, 1)
-		_G["GameTooltip"]:AddLine(" ")
+		_G.GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", E.PixelMode and -7 or -9);
+		_G.GameTooltip:AddLine(L["List of installations in queue:"], 1, 1, 1)
+		_G.GameTooltip:AddLine(" ")
 		for i = 1, #PI.Installs do
-			_G["GameTooltip"]:AddDoubleLine(format("%d. %s", i, (PI.Installs[i].Name or UNKNOWN)), i == 1 and format("|cff00FF00%s|r", L["In Progress"]) or format("|cffFF0000%s|r", L["Pending"]))
+			_G.GameTooltip:AddDoubleLine(format("%d. %s", i, (PI.Installs[i].Name or UNKNOWN)), i == 1 and format("|cff00FF00%s|r", L["In Progress"]) or format("|cffFF0000%s|r", L["Pending"]))
 		end
-		_G["GameTooltip"]:Show()
+		_G.GameTooltip:Show()
 	end)
 	f.pending:SetScript("OnLeave", function()
-		_G["GameTooltip"]:Hide()
+		_G.GameTooltip:Hide()
 	end)
 
 	f.tutorialImage = f:CreateTexture('PluginInstallTutorialImage', 'OVERLAY')
@@ -358,7 +356,7 @@ function PI:CreateFrame()
 	f.side:Width(140)
 	f.side.text = f.side:CreateFontString(nil, "OVERLAY")
 	f.side.text:SetPoint("TOP", f.side, "TOP", 0, -4)
-	f.side.text:SetFont(E.media.normFont, 18, "OUTLINE")
+	f.side.text:FontTemplate(E.media.normFont, 18, "OUTLINE")
 	f.side.text:SetText(L["Steps"])
 	f.side.Lines = {} --Table to keep shown lines
 	f.side:Hide()
@@ -373,9 +371,9 @@ function PI:CreateFrame()
 		button.text = button:CreateFontString(nil, "OVERLAY")
 		button.text:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
 		button.text:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
-		button.text:SetFont(E.media.normFont, 14, "OUTLINE")
+		button.text:FontTemplate(E.media.normFont, 14, "OUTLINE")
 		button:SetScript("OnClick", function() if i <= f.MaxPage then SetPage(i, f.CurrentPage) end end)
-		button.text:SetText("")
+		button.text:SetText('')
 		f.side.Lines[i] = button
 		button:Hide()
 	end
@@ -403,15 +401,17 @@ function PI:CloseInstall()
 	tremove(self.Installs, 1)
 	f.side:Hide()
 	for i = 1, #f.side.Lines do
-		f.side.Lines[i].text:SetText("")
+		f.side.Lines[i].text:SetText('')
 		f.side.Lines[i]:Hide()
 	end
-	if #(self.Installs) > 0 then E:Delay(1, function() PI:RunInstall() end) end
+	if #self.Installs > 0 then
+		E:Delay(1, PI.RunInstall, PI)
+	end
 end
 
 function PI:RunInstall()
 	if not E.private.install_complete then return end
-	if self.Installs[1] and not PluginInstallFrame:IsShown() and not (_G["ElvUIInstallFrame"] and _G["ElvUIInstallFrame"]:IsShown()) then
+	if self.Installs[1] and not PluginInstallFrame:IsShown() and not (_G.ElvUIInstallFrame and _G.ElvUIInstallFrame:IsShown()) then
 		f.StepTitles = nil
 		f.StepTitlesColor = nil
 		f.StepTitlesColorSelected = nil
@@ -422,7 +422,7 @@ function PI:RunInstall()
 		f.Title:SetText(db.Title or L["ElvUI Plugin Installation"])
 		f.Status:SetMinMaxValues(0, f.MaxPage)
 		f.Status.text:SetText(f.CurrentPage.." / "..f.MaxPage)
-		f.tutorialImage:SetTexture(db.tutorialImage or [[Interface\AddOns\ElvUI\media\textures\logo]])
+		f.tutorialImage:SetTexture(db.tutorialImage or E.Media.Textures.Logo)
 
 		f.Pages = db.Pages
 
@@ -457,6 +457,7 @@ function PI:RunInstall()
 end
 
 function PI:Initialize()
+	PI.Initialized = true
 	PI:CreateStepComplete()
 	PI:CreateFrame()
 end

@@ -12,3 +12,9 @@ if L then
 	L.defiler = "Blutverschworener Schänder"
 	L.corruptor = "Gesichtsloser Verderber"
 end
+
+L = BigWigs:NewBossLocale("Infested Crawg", "deDE")
+if L then
+	L.random_cast = "Ansturm oder Verdauungsstörung"
+	L.random_cast_desc = "Der erste Zauber nach jedem Tobsuchtanfall ist zufällig."
+end

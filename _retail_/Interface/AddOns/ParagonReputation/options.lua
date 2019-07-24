@@ -1,6 +1,6 @@
-		------------------------------------------------
-		-- Paragon Reputation 1.21 by Sev US-Drakkari --
-		------------------------------------------------
+		-------------------------------------------------
+		-- Paragon Reputation 1.24 by Fail US-Ragnaros --
+		-------------------------------------------------
 
 		  --[[	  Special thanks to Ammako for
 				  helping me with the vars and
@@ -79,65 +79,23 @@ local DB = {
 local vars = CreateFrame("FRAME")
 vars:RegisterEvent("ADDON_LOADED")
 vars:SetScript("OnEvent",function(self,event,name)
-	if event == "ADDON_LOADED" and name == "ParagonReputation" then
+	if event == "ADDON_LOADED" and name == ADDON_NAME then
 		self:UnregisterEvent("ADDON_LOADED")
 		if ParagonReputationDB == nil then
 			ParagonReputationDB = DB
 		else
-			for k,v in pairs(DB) do
-				if ParagonReputationDB[k] == nil then
-					ParagonReputationDB[k] = v
+			for key,value in pairs(DB) do
+				if ParagonReputationDB[key] == nil then
+					ParagonReputationDB[key] = value
 				end
 			end
 		end
 		PR.DB = ParagonReputationDB
-		if not PR.DB.conversion then PR:ConvertOldValues() end -- Will remove this in a version or two. (v1.20)
 		PR:SetToastPosition()
 		PR:CreateOptions()
 		PR:HookScript()
 	end
 end)
-
--- [Temp] Convert old values to new ones, some are just name changes... i'm picky, sorry.
-function ParagonReputation:ConvertOldValues()
-	PR.DB.conversion = true
-	
-	--[PR.DB.value] Convert Old Values
-	if PR.DB.r and PR.DB.g and PR.DB.b then
-		PR.DB.value = {PR.DB.r,PR.DB.g,PR.DB.b,1}
-	end
-	
-	--[PR.DB.color] Convert Old Values
-	if PR.DB.bluecheck then
-		PR.DB.color = "BLUE"
-	elseif PR.DB.greencheck then
-		PR.DB.color = "GREEN"
-	elseif PR.DB.yellowcheck then
-		PR.DB.color = "YELLOW"
-	elseif PR.DB.orangecheck then
-		PR.DB.color = "ORANGE"
-	elseif PR.DB.redcheck then
-		PR.DB.color = "RED"
-	end
-	
-	--[PR.DB.text] Convert Old Values
-	if PR.DB.default then
-		PR.DB.text = "PARAGON"
-	elseif PR.DB.exalted then
-		PR.DB.text = "EXALTED"
-	elseif PR.DB.total then
-		PR.DB.text = "CURRENT"
-	elseif PR.DB.value then
-		PR.DB.text = "VALUE"
-	elseif PR.DB.deficit then
-		PR.DB.text = "DEFICIT"
-	end
-	
-	--[PR.DB.toast] Convert Old Values
-	if PR.DB.enable then
-		PR.DB.toast = true
-	end
-end
 
 -- [Toast] Set Toast Position
 function ParagonReputation:SetToastPosition()
@@ -156,7 +114,7 @@ function ParagonReputation:CreateOptions()
 	-- [Interface Options] Title
 	PR.options.title = PR.options:CreateFontString(nil,"ARTWORK","GameFontNormalLarge")
 	PR.options.title:SetPoint("TOPLEFT",16,-16)
-	PR.options.title:SetText("|cff0088eeParagon|r Reputation |cff0088eev"..GetAddOnMetadata("ParagonReputation","Version").."|r")
+	PR.options.title:SetText("|cff0088eeParagon|r Reputation |cff0088eev"..GetAddOnMetadata(ADDON_NAME,"Version").."|r")
 
 	-- [Interface Options] Title Description
 	PR.options.description1 = PR.options:CreateFontString(nil,"ARTWORK","GameFontHighlightSmall")
@@ -342,7 +300,7 @@ function ParagonReputation:LockButton()
 	local point,_,relative,x,y = PR.toast:GetPoint()
 	PR.DB.point = {point,relative,x,y}
 	InterfaceOptionsFrame_OpenToCategory("Paragon Reputation")
-	InterfaceOptionsFrame_OpenToCategory("Paragon Reputation")
+	InterfaceOptionsFrame_OpenToCategory("Paragon Reputation") --Done twice just because of an odd glitch on this function.
 	PR.toast:Hide()
 	PR.toast.reset:Hide()
 	PR.toast.lock:Hide()

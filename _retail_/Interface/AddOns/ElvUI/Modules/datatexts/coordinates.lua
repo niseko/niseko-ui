@@ -2,12 +2,9 @@ local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, Private
 local DT = E:GetModule('DataTexts')
 
 --Lua functions
-local join = string.join
---WoW API / Variables
-local ToggleFrame = ToggleFrame
-
---Global variables that we don't cache, list them here for mikk's FindGlobals script
--- GLOBALS: WorldMapFrame
+local _G = _G
+local strjoin = strjoin
+local InCombatLockdown = InCombatLockdown
 
 local displayString = ""
 local inRestrictedArea = false
@@ -31,16 +28,17 @@ local function OnEvent(self)
 		self.text:SetFormattedText(displayString, E.MapInfo.xText or 0, E.MapInfo.yText or 0)
 	else
 		inRestrictedArea = true
-		self.text:SetText("N/A")
+		self.text:SetText('')
 	end
 end
 
 local function Click()
-	ToggleFrame(WorldMapFrame)
+	if InCombatLockdown() then _G.UIErrorsFrame:AddMessage(E.InfoColor.._G.ERR_NOT_IN_COMBAT) return end
+	_G.ToggleFrame(_G.WorldMapFrame)
 end
 
 local function ValueColorUpdate(hex)
-	displayString = join("", hex, "%.2f|r", " , ", hex, "%.2f|r")
+	displayString = strjoin("", hex, "%.2f|r", " , ", hex, "%.2f|r")
 end
 E.valueColorUpdateFuncs[ValueColorUpdate] = true
 

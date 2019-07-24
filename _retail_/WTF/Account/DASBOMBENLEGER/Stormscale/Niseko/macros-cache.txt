@@ -35,10 +35,6 @@ VER 3 0100000000000019 "earth elemental" "INV_MISC_QUESTIONMARK"
 /focus
 /targetlasttarget
 END
-VER 3 010000000000001E "equipchange" "INV_MISC_QUESTIONMARK"
-/equip Fogbreaker, Light of the Sea
-/equip Sunburst Crest
-END
 VER 3 010000000000001A "est" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [talent:6/1] Healing Stream Totem
@@ -58,18 +54,19 @@ VER 3 0100000000000017 "Mystch" "136048"
 /whisper Mystch innervate
 END
 VER 3 010000000000001B "primal" "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cast [talent:6/3]Icefury;[talent:4/2,talent:6/2]Eye of the Storm;[notalent:4/2,talent:6/2]Meteor
+/cast [@mouseover,help][@target,help][@targettarget,help][] Chain Heal
 END
 VER 3 010000000000001C "SE" "INV_MISC_QUESTIONMARK"
-#showtooltip Storm Elemental
-/use Ignition Mage's Fuse
+#showtooltip Fire Elemental
 /cast Berserking(Racial)
 /cast Storm Elemental
 /cast Fire Elemental
+/cast Call Lightning
+/cast [talent:6/2] Meteor
+/cast [talent:6/2] Eye of the Storm
 END
-VER 3 010000000000000A "slth" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover, help, nodead] Purify Spirit; [@mouseover, harm, nodead][@target, harm, nodead] Purge; [@target, help, nodead][@player]Purify Spirit
+VER 3 010000000000001F "test" "INV_MISC_QUESTIONMARK"
+/wm 4
 END
 VER 3 0100000000000009 "tier100" "INV_MISC_QUESTIONMARK"
 #showtooltip
@@ -78,4 +75,8 @@ END
 VER 3 0100000000000008 "tier75" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [talent:4/3] Ancestral Protection Totem; [talent:4/2] Earthen Wall Totem
+END
+VER 3 010000000000001E "trinket" "INV_MISC_QUESTIONMARK"
+#showtooltip 13
+/use [@mouseover] 13
 END

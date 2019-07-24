@@ -466,7 +466,11 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             toggle = "defensives",
             defensive = true,
 
-            usable = function () return tanking or incoming_damage_3s > 0 end,
+            usable = function ()
+                if not tanking then return false, "player is not tanking right now"
+                elseif incoming_damage_3s == 0 then return false, "player has taken no damage in 3s" end
+                return true
+            end,
             handler = function ()
                 applyBuff( "barkskin" )
 
@@ -484,9 +488,13 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             cooldown = 0,
             gcd = "spell",
 
+            spend = -25,
+            spendType = "rage",
+
             startsCombat = false,
             texture = 132276,
 
+            essential = true,
             noform = "bear_form",
 
             handler = function ()
@@ -506,7 +514,10 @@ if UnitClassBase( 'player' ) == 'DRUID' then
 
             talent = "bristling_fur",
 
-            usable = function () return incoming_damage_3s > health.max * 0.1 end,
+            usable = function ()
+                if incoming_damage_3s < health.max * 0.1 then return false, "player has not taken 10% health in dmg in 3s" end
+                return true
+            end,
             handler = function ()
                 applyBuff( "bristling_fur" )
             end,
@@ -599,7 +610,12 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             texture = 132127,
 
             form = "cat_form",
-            usable = function () return combo_points.current > 0 end,
+            
+            usable = function ()
+                if combo_points.current == 0 then return false, "player has no combo points" end
+                return true
+            end,
+
             handler = function ()
                 if args.max_energy == 1 then gain( 25, "energy" ) end
                 spend( min( 5, combo_points.current ), "combo_points" )
@@ -706,7 +722,7 @@ if UnitClassBase( 'player' ) == 'DRUID' then
                 applyBuff( "incarnation" )
             end,
 
-            copy = "incarnation_guardian_of_ursoc"            
+            copy = { "incarnation_guardian_of_ursoc", "Incarnation" }
         },
 
 
@@ -742,7 +758,12 @@ if UnitClassBase( 'player' ) == 'DRUID' then
 
             form = "bear_form",
 
-            usable = function () return tanking or incoming_damage_3s > 0 end,
+            usable = function ()
+                if not tanking then return false, "player is not tanking right now"
+                elseif incoming_damage_3s == 0 then return false, "player has taken no damage in 3s" end
+                return true
+            end,
+
             handler = function ()
                 applyBuff( "ironfur" )
                 removeBuff( "guardian_of_elune" )
@@ -795,7 +816,7 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             cooldown = 6,
             gcd = "spell",
 
-            spend = function () return -8 + ( buff.gore.up and -4 or 0 ) end,
+            spend = function () return -10 + ( buff.gore.up and -4 or 0 ) end,
             spendType = "rage",
 
             startsCombat = true,
@@ -842,7 +863,7 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             cooldown = 0,
             gcd = "spell",
 
-            spend = 45,
+            spend = 40,
             spendType = "rage",
 
             startsCombat = true,
@@ -850,8 +871,13 @@ if UnitClassBase( 'player' ) == 'DRUID' then
 
             form = "bear_form",
 
+            usable = function ()
+                if settings.maul_rage > 0 and rage.current - cost < settings.maul_rage then return false, "not enough additional rage" end
+                return true
+            end,
+
             handler = function ()
-                if pvptalent.sharpened_claws.enabled then applyBuff( "sharpened_claws" ) end
+                if pvptalent.sharpened_claws.enabled or essence.conflict_and_strife.major then applyBuff( "sharpened_claws" ) end
             end,
         },
 
@@ -941,7 +967,12 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             startsCombat = false,
             texture = 514640,
 
-            usable = function () return ( time == 0 or boss ) and not buff.prowl.up end,
+            usable = function ()
+                if time > 0 and not boss then return false, "cannot stealth in combat"
+                elseif buff.prowl.up then return false, "player is already prowling" end
+                return true
+            end,
+
             handler = function ()
                 shift( "cat_form" )
                 applyBuff( "prowl" )
@@ -961,7 +992,11 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             talent = "pulverize",
             form = "bear_form",
 
-            usable = function () return debuff.thrash_bear.stack >= 2 end,
+            usable = function ()
+                if debuff.thrash_bear.stack < 2 then return false, "target has fewer than 2 thrash stacks" end
+                return true
+            end,
+
             handler = function ()
                 if debuff.thrash_bear.count > 2 then debuff.thrash_bear.count = debuff.thrash_bear.count - 2
                 else removeDebuff( "target", "thrash_bear" ) end
@@ -1023,7 +1058,10 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             texture = 136085,
 
             talent = "restoration_affinity",
-            usable = function () return buff.bear_form.down and buff.cat_form.down and buff.travel_form.down and buff.moonkin_form.down end,
+            usable = function ()
+                if not ( buff.bear_form.down and buff.cat_form.down and buff.travel_form.down and buff.moonkin_form.down ) then return false, "player is in a form" end
+                return true
+            end,
 
             handler = function ()
                 applyBuff( "regrowth" )
@@ -1045,7 +1083,10 @@ if UnitClassBase( 'player' ) == 'DRUID' then
 
             talent = "restoration_affinity",            
 
-            usable = function () return buff.bear_form.down and buff.cat_form.down and buff.travel_form.down and buff.moonkin_form.down end,           
+            usable = function ()
+                if not ( buff.bear_form.down and buff.cat_form.down and buff.travel_form.down and buff.moonkin_form.down ) then return false, "player is in a form" end
+                return true
+            end,
             handler = function ()
                 applyBuff( "rejuvenation" )
             end,
@@ -1064,10 +1105,13 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             startsCombat = false,
             texture = 135952,
 
-            usable = function () return debuff.dispellable_poison.up or debuff.dispellable_curse.up end,
+            usable = function ()
+                if buff.dispellable_poison.down and buff.dispellable_curse.down then return false, "player has no dispellable auras" end
+                return true
+            end,
             handler = function ()
-                removeDebuff( "player", "dispellable_poison" )
-                removeDebuff( "player", "dispellable_curse" )
+                removeBuff( "dispellable_poison" )
+                removeBuff( "dispellable_curse" )
             end,
         },
 
@@ -1104,7 +1148,11 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             talent = "feral_affinity",
             form = "cat_form",
 
-            usable = function () return combo_points.current > 0 end,
+            usable = function ()
+                if combo_points.current == 0 then return false, "player has no combo points" end
+                return true
+            end,
+
             handler = function ()
                 applyDebuff( "target", "rip" )
             end,
@@ -1235,8 +1283,8 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             id = 61336,
             cast = 0,
             charges = function () return ( ( level < 116 and equipped.dual_determination ) and 3 or 2 ) end,
-            cooldown = function () return ( ( level < 116 and equipped.dual_determination ) and 0.85 or 1 ) * 240 end,
-            recharge = function () return ( ( level < 116 and equipped.dual_determination ) and 0.85 or 1 ) * 240 end,
+            cooldown = function () return ( essence.vision_of_perfection.enabled and 0.87 or 1 ) * ( ( level < 116 and equipped.dual_determination ) and 0.85 or 1 ) * 240 end,
+            recharge = function () return ( essence.vision_of_perfection.enabled and 0.87 or 1 ) * ( ( level < 116 and equipped.dual_determination ) and 0.85 or 1 ) * 240 end,
             gcd = "off",
 
             startsCombat = false,
@@ -1245,7 +1293,12 @@ if UnitClassBase( 'player' ) == 'DRUID' then
             toggle = "defensives",
             defensive = true,
 
-            usable = function () return tanking or incoming_damage_3s > 0 end,
+            usable = function ()
+                if not tanking then return false, "player is not tanking right now"
+                elseif incoming_damage_3s == 0 then return false, "player has taken no damage in 3s" end
+                return true
+            end,
+
             handler = function ()
                 applyBuff( "survival_instincts" )
             end,
@@ -1474,7 +1527,18 @@ if UnitClassBase( 'player' ) == 'DRUID' then
         package = "Guardian",
     } )
 
+    spec:RegisterSetting( "maul_rage", 20, {
+        name = "Excess Rage for |T132136:0|t Maul",
+        desc = "If set above zero, the addon will not recommend |T132136:0|t Maul only if you have at least this much excess Rage.",
+        icon = 132136,
+        iconCoords = { 0.1, 0.9, 0.1, 0.9 },
+        type = "range",
+        min = 0,
+        max = 60,
+        step = 0.1,
+        width = 1.5
+    } )    
 
-    spec:RegisterPack( "Guardian", 20181023.2243, [[duKSuaWifrBcbnkIqofrOwLquVsrzwcPUfru7sv9laggcCmfPLju9mvrnnfHRjKSnIaFtvKY4as6CQIeRdiX8uu19uL2NKuhusclus8qHimrHiDrvrsBuvKQpseXjLKOwjGUjrq7uO8tHiAOssAPer6PcMkrAVu9xenyjomQfRupgQjRKltzZq6Za1OLuNM0QLKiVwimBfUne7wQFRYWrOLJ0ZjmDrxNO2UQW3bIXdK68kQy9QIy(kQ0(bTp1L6HfNMhlobtb1Pee)5F84t8Cup7HCoenpqKXrWGnp0mI5bjrMPlLBpqKNZ44Ll1dItMInpuNjrbOaaaynRL3F8HaqOiYdo1RXugnbiuemG942a2OSKx2daePhQombGQsnjL1LaqvLuYiLkRlsjrMPlL7VqrWEylRJSk3(2dlonpwCcMcQtji(Z)4XN45OI7bwoRpQhcksKWd16AzTV9WYeypmjSijYmDPCdlrkvwxqGtcl1zsuakaaawZA59hFiaekI8Gt9AmLrtacfbdypUnGnkl5L9aar6HQdtaOQutszDjauvjLmsPY6IusKz6s5(lueme4KWsKeN32OWs8NJgwItWuqfwKmSmLaqzI4WsvLqiqiWjHLirn3GnbOabojSizyPkwlBblsOMkyo1RHfERdnvt8HaNewKmSufRLTGLqeYJbSuHf1FpmurkCPEaF3yDG0cxQhBQl1dmo1R9aXl1R9G18EylVINES4UupW4uV2d7XDlsuz6C8G18EylVINESNDPEGXPETh2gvy0i0gShSM3dB5v80JnHl1dmo1R9atXCBK5rPwNEWAEpSLxXtpwuUupW4uV2ddfCDkiRsYlWiwNEWAEpSLxXtpMe4s9aJt9ApGQuBpUB5bR59WwEfp9ypnxQhyCQx7bUXMiP8GeZJHhSM3dB5v80JbQUupynVh2YR4bmvtJQSh2YOO)TXus0JI8Lj6bgN61Eyi3mLCBmINESNIl1dwZ7HT8kEat10Ok7HTmk6FBmLe9OiFzIEGXPETh2uvKdTbtIkt90JnLaxQhyCQx7bzHrQPHi8G18EylVINE6benvWCQx7s9ytDPEWAEpSLxXdyQMgvzpOn(q0gm5IryWgzucyPAyHG)uyjYWsTXJS(JWGgwiew2YOOFLEnQm9tnewBbSmpSagVGLidlX9aJt9ApO0RrLPE6XI7s9G18EylVIhWunnQYEO24rw)XYuQ1jSmpSqWxcGLidl1gpY6pcdApW4uV2dOuRFIAlsQb2AJYPETNESNDPEWAEpSLxXdyQMgvzpuB8iR)eXjSmpSefbWcHWI24drBWKlgHbBKrjGLQHfc(XJcwImSuB8iR)imO9aJt9ApSzAeIi02tp2eUupynVh2YR4bmvtJQSh2YOOFHm9H(GhKAlsTXP4VoqAyHqyP24rw)jItyzEy55OGfcHfTXhI2Gjxmcd2iJsalvdle8JhfSezyP24rw)ryq7bgN61EqitFOp4bP2IuBCk80tpSmuwEKUup2uxQhyCQx7breYJb5Mf1EWAEpSLxXtpwCxQhSM3dB5v8aJt9ApG5XGKXPEn5qfPhgQijBgX8aIMkyo1R90J9Sl1dwZ7HT8kEGXPEThW8yqY4uVMCOI0ddvKKnJyEaF3yDG0cp9yt4s9G18EylVIhWunnQYEGYGT)YqvSMWY8WYucGfcHfgN6dJ0AdrnbSmpSmHhyCQx7bewE4PhlkxQhSM3dB5v8aMQPrv2d4tKWYlSqaSm35clseSqzWgSunSGprclecl8tmQM2FWZXO2IeHB7BnVh2cwiewyCQpmsRne1eWs1WsCyrI9aJt9ApO0RrLPE6XKaxQhSM3dB5v8aMQPrv2dRl)znLf1KBJPFrY4iGLxyzD5pRPSOMCBm9JWGMuKmocHhyCQx7bIYJhgvFI5Ph7P5s9G18EylVIhWunnQYEyD5h5UgvP2NAOutuZ7Hbleclmo1hgP1gIAcyzEyjUhyCQx7bK7AuLAE6XavxQhyCQx7bTXmT5uV2dwZ7HT8kE6XEkUupynVh2YR4bmvtJQShKiyzlJI(1gZ0Mt96)6aPHfcHfgN6dJ0AdrnbSunSmfwKyyzUZfwKiyzlJI(1gZ0Mt96VmryHqyHXP(WiT2qutalvdltalsShyCQx7HSMYIAYTXup9ytjWL6bR59WwEfpGPAAuL9Wwgf9RnMPnN61)1bsdleclmo1hgP1gIAcyPAyzcpW4uV2dcquIg52yQNESPtDPEWAEpSLxXdyQMgvzpSU8N1uwutUnM(tfhH2G9aJt9ApGWn4H5PhBACxQhSM3dB5v8aMQPrv2dBzu0pyEW4uXKGLz6s5(ltewiewyCQpmsRne1eWY8WsCpW4uV2di31Ok180Jn9zxQhyCQx7HSMYIAYTXupynVh2YR4PhB6eUupW4uV2diS8WdwZ7HT8kE6XMgLl1dwZ7HT8kEat10Ok7b(jgvt7t8aXOKhkzwBKi31Fk3ralvdltHfcHfgN6dJ0AdrnbS8clt9aJt9ApGCxJQuZtp2ujWL6bgN61EqaIs0i3gt9G18EylVINE6bIudFiBoDPESPUupynVh2YR4PhlUl1dwZ7HT8kE6XE2L6bR59WwEfp9yt4s9aJt9ApSnMsIEuepynVh2YR4PhlkxQhSM3dB5v80JjbUupW4uV2deVuV2dwZ7HT8kE6PNE4Hrf61ES4emfuNsq8N)XJprCpactBTbl8qvgH4rtBbltalmo1RHLHksXhc0dcIg2JnLGj8ar6HQdZdtclsImtxk3WsKsL1fe4KWsDMefGcaaG1SwE)XhcaHIip4uVgtz0eGqrWa2JBdyJYsEzpaqKEO6WeaQk1KuwxcavvsjJuQSUiLezMUuU)cfbdbojSejX5TnkSe)5OHL4emfuHfjdltjauMioSuvjececCsyjsuZnytakqGtclsgwQI1YwWIeQPcMt9AyH36qt1eFiWjHfjdlvXAzlyjeH8yalvyr9hcecCsy5PcAdlN2cw2g6rnybFiBoHLTbwBXhwQcm2iMcyPVwY1mfbvEalmo1RfWY1J58HazCQxl(ePg(q2C(IoyreqGmo1RfFIudFiBoN9ca9UfeiJt9AXNi1WhYMZzVayzWiwNCQxdbY4uVw8jsn8HS5C2lGTXus0JIabojSeAMOO(syHY6cw2YOO2cwejNcyzBOh1Gf8HS5ew2gyTfWc3lyHi1KmXltTbdlQawwxBFiqgN61IprQHpKnNZEbiAMOO(ssrYPacKXPET4tKA4dzZ5SxaeVuVgcecCsy5PcAdlN2cwShgDoWsQigSK1gSW48OWIkGf(bRdEpSpeiJt9AXRic5XGCZIAiqgN61IzVaW8yqY4uVMCOIm6MrSxenvWCQxdbY4uVwm7faMhdsgN61KdvKr3mI9IVBSoqAbeiJt9AXSxaiS8iAf9LYGT)YqvSMZpLaczCQpmsRne1eZpbeiJt9AXSxak9AuzA0k6l(e5lbZDUseLbBvJprsi)eJQP9h8CmQTir42(wZ7HTiKXP(WiT2qutuDCjgcKXPETy2laIYJhgvFIfTI(UU8N1uwutUnM(fjJJ4DD5pRPSOMCBm9JWGMuKmocbeiJt9AXSxai31Ok1IwrFxx(rURrvQ9Pgk1e18EyeY4uFyKwBiQjMpoeiJt9AXSxaAJzAZPEneiJt9AXSxaznLf1KBJPrROVs0wgf9RnMPnN61)1bstiJt9HrATHOMO6Ps8CNReTLrr)AJzAZPE9xMiHmo1hgP1gIAIQNqIHazCQxlM9cqaIs0i3gtJwrF3YOOFTXmT5uV(VoqAczCQpmsRne1evpbeiJt9AXSxaiCdEyrROVRl)znLf1KBJP)uXrOnyiqgN61IzVaqURrvQfTI(ULrr)G5bJtftcwMPlL7VmrczCQpmsRne1eZhhcKXPETy2lGSMYIAYTXuiqgN61IzVaqy5be4KWYtxhdybenRHfj8UgvPgSaIM1WsvVucbDCiqgN61IzVaqURrvQfTI(YpXOAAFIhigL8qjZAJe5U(t5oIQNsiJt9HrATHOM4DkeiJt9AXSxacquIg52ykeieiJt9AXhrtfmN61Vk9AuzA0k6R24drBWKlgHbBKrjQMG)0ixB8iR)imOjClJI(v61OY0p1qyTfZdgVICCiqgN61IpIMkyo1RN9caLA9tuBrsnWwBuo1RJwrFRnEK1FSmLADopbFjiY1gpY6pcdAiqgN61IpIMkyo1RN9cyZ0ierOD0k6BTXJS(teNZhfbeQn(q0gm5IryWgzuIQj4hpQixB8iR)imOHazCQxl(iAQG5uVE2laHm9H(GhKAlsTXPiAf9DlJI(fY0h6dEqQTi1gNI)6aPjS24rw)jIZ5Fokc1gFiAdMCXimyJmkr1e8JhvKRnEK1Feg0qGqGmo1RfF8DJ1bslEjEPEneiJt9AXhF3yDG0IzVa2J7wKOY05abY4uVw8X3nwhiTy2lGTrfgncTbdbY4uVw8X3nwhiTy2laMI52iZJsToHazCQxl(47gRdKwm7fWqbxNcYQK8cmI1jeiJt9AXhF3yDG0IzVaqvQTh3TGazCQxl(47gRdKwm7fa3ytKuEqI5XacCsyHXPET4JVBSoqAXSxaBMgHicTJwrF3YOO)TXus0JI8LjcbY4uVw8X3nwhiTy2lGHCZuYTXirROVBzu0)2ykj6rr(YeHazCQxl(47gRdKwm7fWMQICOnysuzA0k67wgf9VnMsIEuKVmriqgN61Ip(UX6aPfZEbilmsnneHNE6o]] )
+    spec:RegisterPack( "Guardian", 20190707.2145, [[du0uwaqivQcpscSjvvnkvvYPuvHvjj4vQuMfQu3ssODPOFHiddKCmvILjj9mjOMMkvUMKkBdvs(MQkACOIW5qfP1HkO5jPQ7PQSpjrhevsTqvspevenrvQkxevGSrubQpkbXjvPkALG4MQuL2PKYqLG0srfWtfAQsO9k6VimybhMyXaEmutwfxMYMb1NvLgTeDAsRwLQQxdsnBfUnq7wQFR0WrulhPNJY0P66OQTRk8DvrJhvOZJkQ1RQsnFuj2pKZlzXmEe3YAvH6cNc1pH6NZQxUJRQw4m6CMSLrYcgA51YylGwgleEHEuPZizHZJvozXmYwEk2YyP7KzCijsVQxYdmXlijMcYpex3gtfyNetbXKaglajayPIh7bjY0fwhgJuHsnoGOhgPcLdqCFuE9qui8c9OspzkioJa86WVNDcKXJ4wwRkux4uO(ju)Cw9YDCv1lzu49YLMXOcYjZyPEowNaz8ymCglafkeEHEuPrH7JYRheKcqHs3jZ4qsKEvVKhyIxqsmfKFiUUnMkWojMcIjbmwasaWsfp2dsKPlSomgPcLACarpmsfkhG4(O86HOq4f6rLEYuqmcsbOae(bNrHFYnkufQlCkkuruO6fo8oOqqqqkaf4KLs)AmoebPauOIOaxFo2bfUx11xX1TrbbqhQRgBIGuakuruGRph7GcrO5hdu4QWkNzCOmNLfZiE3XzF2SSyw7swmJc21TZi511TZO1cWWo510ZAvZIzuWUUDgbg7EiG5PCoJwlad7KxtpRv4SygfSRBNraJYmk0A)MrRfGHDYRPN1UllMrb762zuOyPncFPuR9mATamStEn9SwDzXmkyx3oJd9T0ze3p)5f0ApJwlad7KxtpRXvzXmkyx3oJWk1ag7EYO1cWWo510ZA)mlMrb762zuASXCQmiWYyKrRfGHDYRPN14ezXmATamStEnJyQ6gvLmcWddpbmHsaVuWjp5mkyx3oJacfAg0ANEwJtZIz0AbyyN8AgXu1nQkzeGhgEcycLaEPGtEYzuWUUDgh8Tqjambm9S2fOYIz0AbyyN8AgXu1nQkzeGhgEcycLaEPGtEYzuWUUDgbOkZhA)saZttpRD5swmJwlad7KxZiMQUrvjJ)cfoRpb3THvQnDfdT2VOax4ckiyxFyewBGQXqHkrHlOWpqH)OWz9PxsfwjbGj0PRyO1(nJc21TZO2yH2IRBNEw7s1SygfSRBNrEMrOUbYYO1cWWo510tpJGQRVIRBNfZAxYIz0AbyyN8AgXu1nQkzuB8cQ9lXraLxJOogkujka1SADOqfqHstgE5eu4ik8hfa4HHNkDByE6KAGI2muOEu4fFqHkGcvZOGDD7mQ0TH5PPN1QMfZO1cWWo51mIPQBuvYyPjdVCI5PuRDuOEuaQjxHcvafknz4LtqHJzuWUUDgHPw)B1oeu71AJkUUD6zTcNfZO1cWWo51mIPQBuvYyPjdVCsg7Oq9OqDqHc)rbTXlO2VehbuEnI6yOqLOauZQ1Hcvafknz4LtqHJzuWUUDgbek0mO1o9S2DzXmATamStEnJyQ6gvLmcWddpz80h6dzqOnZ1g7S5zF2OWFuO0KHxojJDuOEuOW1Hc)rbTXlO2VehbuEnI6yOqLOauZQ1Hcvafknz4LtqHJzuWUUDgz80h6dzqOnZ1g7S0tpJhdw4hEwmRDjlMrb762zKbn)yqaiSYmATamStEn9Sw1SygTwag2jVMrb762zelJbHGDDBIHY8mouMt0cOLrq11xX1TtpRv4SygTwag2jVMrb762zelJbHGDDBIHY8mouMt0cOLr8UJZ(SzPN1UllMrRfGHDYRzetv3OQKrQ8AZJbRy1rH6rHQqHc)rbb76dJWAdungkupkCxgfSRBNrqHFKEwRUSygTwag2jVMrmvDJQsgPYRnpgSIvhfQhfQcfk8hfmgZASnXBdpuSti9HG5uf2MGY9Vuu4pkCpqbaEy4jRuOKT2oe4H8Kn5jNrb762zeu4hPN14QSygTwag2jVMrmvDJQsgXlZrHpuakuGlCbf(fkqLxdfQefWlZrH)OG8BJQUnhcNnQDiaL2Mwlad7Gc)rbb76dJWAdungkujkuff(rgfSRBNrLUnmpn9S2pZIz0AbyyN8AgXu1nQkz8S(0lPcRKaWe6K5cgAu4dfoRp9sQWkjamHobfosWCbdnlJc21TZiz(XdJQ)2spRXjYIz0AbyyN8AgXu1nQkz8S(eC3gwP2KAWuJvkaddf(Jcc21hgH1gOAmuOEuOAgfSRBNrWDByLAPN140SygTwag2jVMrmvDJQsg)fkaWddp1gl0wCD75zF2OWFuqWU(WiS2avJHcvIcxqHFGcCHlOWVqbaEy4P2yH2IRBp5jJc)rbb76dJWAdungkujkChk8Jmkyx3oJEjvyLeaMqtpRDbQSygTwag2jVMrmvDJQsgb4HHNAJfAlUU98SpBu4pkiyxFyewBGQXqHkrH7YOGDD7mYEQKncatOPN1UCjlMrRfGHDYRzetv3OQKXZ6tVKkSscatOtxXqR9BgfSRBNrqPFhw6zTlvZIz0AbyyN8AgXu1nQkzeGhgE(kdb7kM4LxOhv6jpzu4pkiyxFyewBGQXqH6rHQzuWUUDgb3THvQLEw7sHZIzuWUUDg9sQWkjamHMrRfGHDYRPN1UCxwmJwlad7KxZiMQUrvjJYVnQ62K8(0OelmHxAeG72tQ0qJcvIcxqH)OGGD9HryTbQgdf(qHlzuWUUDgb3THvQLEw7sDzXmkyx3oJSNkzJaWeAgTwag2jVME6zKm1WliG4zXS2LSygfSRBNrqdCPCMyHjg8y9qCOMaYYO1cWWo510ZAvZIzuWUUDgbmHsaVuWmATamStEn9SwHZIzuWUUDgjVUUDgTwag2jVME6PNXhgLPBN1Qc1foXfOQw4z1Q3v4m(uOT2VSmEpbjVu3oOWDOGGDDBuyOmNnrqYiJSHZAxG6UmsMUW6WYybOqHWl0JknkCFuE9GGuaku6ozghsI0R6L8at8csIPG8dX1TXub2jXuqmjeKcqbi8doJc)KBuOkux4uuOIOq1lC4DqHGGGuakWjlL(1yCicsbOqfrbU(CSdkCVQRVIRBJccGouxn2ebPauOIOaxFo2bfIqZpgOWvHvorqqqkaf4G4OH5D7Gcag8snuaVGaIJca2R2SjkW1ySr2zOqVDflfkim)afeSRBZqHThCEIGuakiyx3Mnjtn8cci(h8qyqJGuakiyx3Mnjtn8cci(TpsW7EqqkafeSRBZMKPgEbbe)2hjH)f0AxCDBeeb762SjzQHxqaXV9rc0axkNjwyIbpwpehQjGmeeb762SjzQHxqaXV9rcWekb8sbrqkafITqMvUokqf9Gca8WW2bfyU4muaWGxQHc4feqCuaWE1MHcsFqbYuRIKx31(ffugkC22MiifGcc21TztYudVGaIF7JeRfYSY1jyU4meeb762SjzQHxqaXV9rI8662iiiifGcCqC0W8UDqb7Hr5mk4kOHcEPHcc2xkkOmuqEi6qag2ebrWUUn7Jbn)yqaiSseeb762SBFKWYyqiyx3MyOmN7waTpq11xX1TrqeSRBZU9rclJbHGDDBIHYCUBb0(W7oo7ZMHGiyx3MD7JeOWp4wH)OYRnpgSIvV(Qq9xWU(WiS2avJv)Diic21Tz3(ibk8dUv4pQ8AZJbRy1RVku)ngZASnXBdpuSti9HG5uf2MGY9V0)3daEy4jRuOKT2oe4H8Kn5jJGiyx3MD7JKs3gMNYTc)HxM)bfx4YVOYRvjEz(F53gvDBoeoBu7qakTnTwag25VGD9HryTbQgRYQ)abrWUUn72hjY8Jhgv)TXTl0xZju4VZ6tVKkSscatOtMlyO)oRp9sQWkjamHobfosWCbdndbrWUUn72hjWDByLAC7c91Ccf(7S(eC3gwP2KAWuJvkad7VGD9HryTbQgR(Qiic21Tz3(i5LuHvYTc)9laEy4P2yH2IRBpp7Z(VGD9HryTbQgRYl)GlC5xa8WWtTXcTfx3EYt(VGD9HryTbQgRY7(bcIGDDB2TpsSNkzJBf(dGhgEQnwOT462ZZ(S)lyxFyewBGQXQ8oeeb762SBFKaL(DyCRWFN1NEjvyLeaMqNUIHw7xeeb762SBFKa3THvQXTl0xZju4paEy45RmeSRyIxEHEuPN8K)lyxFyewBGQXQVkcIGDDB2TpsEjvyLiifGcCW6yGcpvVefU3DByLAOWt1lrHcD97LJvrqeSRBZU9rcC3gwPg3k8N8BJQUnjVpnkXct4Lgb4U9Kkn0vE5VGD9HryTbQg77ccIGDDB2TpsSNkzdbbbrWUUnBcQU(kUU9Ns3gMNYTc)PnEb1(L4iGYRruhRsOMvRRcLMm8YjOWX)a8WWtLUnmpDsnqrBw9V4tfQIGiyx3MnbvxFfx3(2hjyQ1)wTdb1ET2OIRBZTc)vAYWlNyEk1AVEOMCvfknz4LtqHJiic21Tztq11xX1TV9rcqOqZGwBUv4VstgE5Km2RVoO(RnEb1(L4iGYRruhRsOMvRRcLMm8YjOWreeb762SjO66R4623(iX4Pp0hYGqBMRn2zCRWFa8WWtgp9H(qgeAZCTXoBE2N9)stgE5Km2RVW19xB8cQ9lXraLxJOowLqnRwxfknz4LtqHJiiiic21Tzt8UJZ(SzFKxx3gbPauqWUUnBI3DC2Nn72hPstOoHXywJneeb762SjE3XzF2SBFKag7EiG5PCgbrWUUnBI3DC2Nn72hjaJYmk0A)IGiyx3MnX7oo7ZMD7JKqXsBe(sPw7iic21Tzt8UJZ(Sz3(in03sNrC)8NxqRDeeb762SjE3XzF2SBFKGvQbm29GGiyx3MnX7oo7ZMD7JK0yJ5uzqGLXabrWUUnBI3DC2Nn72hjaHcndAT5wH)a4HHNaMqjGxk4KNmcIGDDB2eV74SpB2Tpsd(wOeaMaYTc)bWddpbmHsaVuWjpzeeb762SjE3XzF2SBFKaOkZhA)saZt5wH)a4HHNaMqjGxk4KNmcIGDDB2eV74SpB2TpsAJfAlUUn3k83VoRpb3THvQnDfdT2VCHlc21hgH1gOASkV8J)N1NEjvyLeaMqNUIHw7xeeb762SjE3XzF2SBFK4zgH6gil90Ze]] )
 
 end

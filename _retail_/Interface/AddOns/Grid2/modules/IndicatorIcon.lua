@@ -117,7 +117,7 @@ local function Icon_OnUpdate(self, parent, unit, status)
 		end
 	end	
 
-	if self.animEnabled and (not Frame.animElapsed) then
+	if self.animEnabled and (not Frame.animElapsed) and (self.animOnUpdate or not Frame:IsVisible()) then
 		Frame.status = self
 		Frame.animElapsed = 0
 		Frame:SetScript("OnUpdate", Icon_AnimationOnUpdate )
@@ -154,7 +154,7 @@ local function Icon_Layout(self, parent)
 		local justifyH = self.dbx.fontJustifyH or "CENTER"
 		local justifyV = self.dbx.fontJustifyV or "MIDDLE"
 		CooldownText:SetJustifyH( justifyH )
-		CooldownText:SetJustifyV( justifyV  )
+		CooldownText:SetJustifyV( justifyV )
 		CooldownText:ClearAllPoints()
 		CooldownText:SetPoint("TOP")
 		CooldownText:SetPoint("BOTTOM")
@@ -172,6 +172,7 @@ end
 
 local function Icon_UpdateDB(self)
 	local dbx = self.dbx
+	local theme = Grid2Frame.db.profile
 	-- location
 	local l = dbx.location
 	self.anchor    = l.point
@@ -184,14 +185,15 @@ local function Icon_UpdateDB(self)
 	self.frameLevel      = dbx.level
 	self.borderSize      = dbx.borderSize
 	self.useStatusColor  = dbx.useStatusColor
-	self.iconSize        = dbx.size or Grid2Frame.db.profile.iconSize or 14
+	self.iconSize        = dbx.size or theme.iconSize or 14
 	self.color           = Grid2:MakeColor(dbx.color1)
-	self.textfont        = Grid2:MediaFetch("font", dbx.font or Grid2Frame.db.profile.font) or STANDARD_TEXT_FONT
+	self.textfont        = Grid2:MediaFetch("font", dbx.font or theme.font) or STANDARD_TEXT_FONT
 	-- animation
 	self.animEnabled  = dbx.animEnabled
 	if dbx.animEnabled then
 		self.animScale    = ((dbx.animScale or 1.5)-1) * 2
 		self.animDuration = dbx.animDuration or 0.7
+		self.animOnUpdate = not dbx.animOnEnabled
 	end
 	-- ignore icon and use a solid square texture
 	self.disableIcon  = dbx.disableIcon

@@ -1,6 +1,7 @@
 
 NameplateSCTDB = {
 	["profileKeys"] = {
+		["Afwfes - Stormscale"] = "Default",
 		["Nisefy - Stormscale"] = "Default",
 		["Nisepeg - Stormscale"] = "Default",
 		["Valdurawr - Stormscale"] = "Default",
@@ -14,12 +15,13 @@ NameplateSCTDB = {
 		["Niseniseko - Stormscale"] = "Default",
 		["Nisetest - Stormscale"] = "Default",
 		["Nedoka - Antonidas"] = "Default",
+		["Awfrsdg - Stormscale"] = "Default",
 		["Niseko - Twisting Nether"] = "Default",
-		["Yoshicakes - Stormscale"] = "Default",
+		["Nisegob - Stormscale"] = "Default",
 		["Zelda - Mal'Ganis"] = "Default",
 		["Donnerbock - Ysera"] = "Default",
 		["Vordt - Twisting Nether"] = "Default",
-		["Nisegob - Stormscale"] = "Default",
+		["Yoshicakes - Stormscale"] = "Default",
 		["Nisearw - Stormscale"] = "Default",
 		["Seko - Stormscale"] = "Default",
 	},

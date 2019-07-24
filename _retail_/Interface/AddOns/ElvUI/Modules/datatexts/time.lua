@@ -2,6 +2,7 @@ local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, Private
 local DT = E:GetModule('DataTexts')
 
 --Lua functions
+local _G = _G
 local next, unpack = next, unpack
 local format, strjoin = format, strjoin
 local sort, tinsert = sort, tinsert
@@ -23,14 +24,12 @@ local GetSavedWorldBossInfo = GetSavedWorldBossInfo
 local GetWorldPVPAreaInfo = GetWorldPVPAreaInfo
 local RequestRaidInfo = RequestRaidInfo
 local SecondsToTime = SecondsToTime
+local InCombatLockdown = InCombatLockdown
 local QUEUE_TIME_UNAVAILABLE = QUEUE_TIME_UNAVAILABLE
 local TIMEMANAGER_TOOLTIP_LOCALTIME = TIMEMANAGER_TOOLTIP_LOCALTIME
 local TIMEMANAGER_TOOLTIP_REALMTIME = TIMEMANAGER_TOOLTIP_REALMTIME
 local VOICE_CHAT_BATTLEGROUND = VOICE_CHAT_BATTLEGROUND
 local WINTERGRASP_IN_PROGRESS = WINTERGRASP_IN_PROGRESS
-
---Global variables that we don't cache, list them here for mikk's FindGlobals script
--- GLOBALS: GameTimeFrame
 
 local WORLD_BOSSES_TEXT = RAID_INFO_WORLD_BOSS.."(s)"
 local APM = { TIMEMANAGER_PM, TIMEMANAGER_AM }
@@ -83,7 +82,8 @@ local function CalculateTimeValues(tooltip)
 end
 
 local function Click()
-	GameTimeFrame:Click();
+	if InCombatLockdown() then _G.UIErrorsFrame:AddMessage(E.InfoColor.._G.ERR_NOT_IN_COMBAT) return end
+	_G.GameTimeFrame:Click();
 end
 
 local function OnLeave()
@@ -92,7 +92,7 @@ local function OnLeave()
 end
 
 -- use these to convert "The Eye" into "Tempest Keep"
-local DUNGEON_FLOOR_TEMPESTKEEP1 = DUNGEON_FLOOR_TEMPESTKEEP1
+local DUNGEON_FLOOR_TEMPESTKEEP1 = _G.DUNGEON_FLOOR_TEMPESTKEEP1
 local TempestKeep = select(2, GetAchievementInfo(1088)):match('%((.-)%)$')
 
 local instanceIconByName = {}
@@ -112,10 +112,10 @@ end
 local locale = GetLocale()
 local krcntw = locale == "koKR" or locale == "zhCN" or locale == "zhTW"
 local difficultyTag = { -- Raid Finder, Normal, Heroic, Mythic
-	(krcntw and PLAYER_DIFFICULTY3) or utf8sub(PLAYER_DIFFICULTY3, 1, 1), -- R
-	(krcntw and PLAYER_DIFFICULTY1) or utf8sub(PLAYER_DIFFICULTY1, 1, 1), -- N
-	(krcntw and PLAYER_DIFFICULTY2) or utf8sub(PLAYER_DIFFICULTY2, 1, 1), -- H
-	(krcntw and PLAYER_DIFFICULTY6) or utf8sub(PLAYER_DIFFICULTY6, 1, 1)  -- M
+	(krcntw and _G.PLAYER_DIFFICULTY3) or utf8sub(_G.PLAYER_DIFFICULTY3, 1, 1), -- R
+	(krcntw and _G.PLAYER_DIFFICULTY1) or utf8sub(_G.PLAYER_DIFFICULTY1, 1, 1), -- N
+	(krcntw and _G.PLAYER_DIFFICULTY2) or utf8sub(_G.PLAYER_DIFFICULTY2, 1, 1), -- H
+	(krcntw and _G.PLAYER_DIFFICULTY6) or utf8sub(_G.PLAYER_DIFFICULTY6, 1, 1)  -- M
 }
 
 local function sortFunc(a,b) return a[1] < b[1] end
@@ -281,7 +281,7 @@ function Update(self, t)
 
 	if int > 0 then return end
 
-	if GameTimeFrame.flashInvite then
+	if _G.GameTimeFrame.flashInvite then
 		E:Flash(self, 0.53, true)
 	else
 		E:StopFlash(self)

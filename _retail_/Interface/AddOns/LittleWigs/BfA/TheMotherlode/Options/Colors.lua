@@ -4,6 +4,8 @@ BigWigs:AddColors("Coin-Operated Crowd Pummeler", {
 	[257337] = "orange",
 	[262347] = "yellow",
 	[269493] = "cyan",
+	[271784] = "yellow",
+	[271867] = {"blue","red"},
 })
 
 BigWigs:AddColors("Tik'ali", {
@@ -11,18 +13,20 @@ BigWigs:AddColors("Tik'ali", {
 	[257593] = "cyan",
 	[258622] = "orange",
 	[271698] = "yellow",
+	[275907] = "red",
 })
 
 BigWigs:AddColors("Rixxa Fluxflame", {
 	[259853] = {"blue","orange"},
 	[260669] = {"blue","yellow"},
-	[270042] = "red",
+	[270028] = "red",
 })
 
 BigWigs:AddColors("Mogul Razzdunk", {
 	[260280] = "yellow",
 	[260829] = {"blue","red"},
-	[271456] = "orange",
+	[271456] = {"blue","orange"},
+	[276229] = "red",
 	["stages"] = "cyan",
 })
 

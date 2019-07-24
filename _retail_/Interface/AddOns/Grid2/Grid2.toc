@@ -1,4 +1,4 @@
-## Interface: 80100
+## Interface: 80200
 ## Title: Grid2
 ## Notes: A modular, lightweight and screen-estate saving grid of party/raid unit frames
 ## Notes-esES: Marcos de unidades de raid compactos y ligeros.
@@ -12,8 +12,8 @@
 ## DefaultState: enabled
 ## LoadOnDemand: 0
 
-## Version: r875
-## X-ReleaseDate: "$Date: 2018-12-22 17:55:41 +0000 (Sat, 22 Dec 2018) $"
+## Version: r893
+## X-ReleaseDate: "$Date: 2019-06-26 17:07:08 +0000 (Wed, 26 Jun 2019) $"
 ## X-Category: UnitFrame
 
 # Ace Libraries

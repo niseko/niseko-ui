@@ -2,6 +2,8 @@ local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, Private
 local _, ns = ...
 local ElvUF = ns.oUF
 assert(ElvUF, "ElvUI was unable to locate oUF.")
+local Translit = E.Libs.Translit
+local translitMark = "!"
 
 --Lua functions
 local _G = _G
@@ -9,7 +11,7 @@ local wipe = wipe
 local floor = floor
 local unpack, pairs = unpack, pairs
 local gmatch, gsub, format = gmatch, gsub, format
-local strfind, strlower, strmatch, strsub = strfind, strlower, strmatch, strsub
+local strfind, strmatch, utf8lower, utf8sub = strfind, strmatch, string.utf8lower, string.utf8sub
 --WoW API / Variables
 local GetGuildInfo = GetGuildInfo
 local GetNumGroupMembers = GetNumGroupMembers
@@ -64,10 +66,7 @@ local SPELL_POWER_MANA = Enum.PowerType.Mana
 local SPELL_POWER_SOUL_SHARDS = Enum.PowerType.SoulShards
 local UNITNAME_SUMMON_TITLE17 = UNITNAME_SUMMON_TITLE17
 local UNKNOWN = UNKNOWN
-
 local C_PetJournal_GetPetTeamAverageLevel = C_PetJournal.GetPetTeamAverageLevel
-
---Global variables that we don't cache, list them here for mikk's FindGlobals script
 -- GLOBALS: Hex, PowerBarColor, _TAGS
 
 ------------------------------------------------------------------------
@@ -612,8 +611,8 @@ local function abbrev(name)
 	local letters, lastWord = '', strmatch(name, '.+%s(.+)$')
 	if lastWord then
 		for word in gmatch(name, '.-%s') do
-			local firstLetter = strsub(gsub(word, '^[%s%p]*', ''), 1, 1)
-			if firstLetter ~= strlower(firstLetter) then
+			local firstLetter = utf8sub(gsub(word, '^[%s%p]*', ''), 1, 1)
+			if firstLetter ~= utf8lower(firstLetter) then
 				letters = format('%s%s. ', letters, firstLetter)
 			end
 		end
@@ -677,6 +676,30 @@ ElvUF.Tags.Methods['name:long:status'] = function(unit)
 	end
 end
 
+ElvUF.Tags.Events['name:veryshort:translit'] = 'UNIT_NAME_UPDATE'
+ElvUF.Tags.Methods['name:veryshort:translit'] = function(unit)
+	local name = Translit:Transliterate(UnitName(unit), translitMark)
+	return name ~= nil and E:ShortenString(name, 5) or nil
+end
+
+ElvUF.Tags.Events['name:short:translit'] = 'UNIT_NAME_UPDATE'
+ElvUF.Tags.Methods['name:short:translit'] = function(unit)
+	local name = Translit:Transliterate(UnitName(unit), translitMark)
+	return name ~= nil and E:ShortenString(name, 10) or nil
+end
+
+ElvUF.Tags.Events['name:medium:translit'] = 'UNIT_NAME_UPDATE'
+ElvUF.Tags.Methods['name:medium:translit'] = function(unit)
+	local name = Translit:Transliterate(UnitName(unit), translitMark)
+	return name ~= nil and E:ShortenString(name, 15) or nil
+end
+
+ElvUF.Tags.Events['name:long:translit'] = 'UNIT_NAME_UPDATE'
+ElvUF.Tags.Methods['name:long:translit'] = function(unit)
+	local name = Translit:Transliterate(UnitName(unit), translitMark)
+	return name ~= nil and E:ShortenString(name, 20) or nil
+end
+
 ElvUF.Tags.Events['realm'] = 'UNIT_NAME_UPDATE'
 ElvUF.Tags.Methods['realm'] = function(unit)
 	local _, realm = UnitName(unit)
@@ -700,6 +723,31 @@ ElvUF.Tags.Methods['realm:dash'] = function(unit)
 
 	return realm
 end
+
+ElvUF.Tags.Events['realm:translit'] = 'UNIT_NAME_UPDATE'
+ElvUF.Tags.Methods['realm:translit'] = function(unit)
+	local _, realm = Translit:Transliterate(UnitName(unit), translitMark)
+
+	if realm and realm ~= "" then
+		return realm
+	else
+		return nil
+	end
+end
+
+ElvUF.Tags.Events['realm:dash:translit'] = 'UNIT_NAME_UPDATE'
+ElvUF.Tags.Methods['realm:dash:translit'] = function(unit)
+	local _, realm = Translit:Transliterate(UnitName(unit), translitMark)
+
+	if realm and (realm ~= "" and realm ~= E.myrealm) then
+		realm = format("-%s", realm)
+	elseif realm == "" then
+		realm = nil
+	end
+
+	return realm
+end
+
 
 ElvUF.Tags.Events['threat:percent'] = 'UNIT_THREAT_LIST_UPDATE GROUP_ROSTER_UPDATE'
 ElvUF.Tags.Methods['threat:percent'] = function(unit)
@@ -837,13 +885,13 @@ local function GetClassPower(class)
 	return min, max, r, g, b
 end
 
-ElvUF.Tags.Events['classpowercolor'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpowercolor'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpowercolor'] = function()
 	local _, _, r, g, b = GetClassPower(E.myclass)
 	return Hex(r, g, b)
 end
 
-ElvUF.Tags.Events['classpower:current'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpower:current'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpower:current'] = function()
 	local min, max = GetClassPower(E.myclass)
 	if min == 0 then
@@ -853,7 +901,7 @@ ElvUF.Tags.Methods['classpower:current'] = function()
 	end
 end
 
-ElvUF.Tags.Events['classpower:deficit'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpower:deficit'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpower:deficit'] = function()
 	local min, max = GetClassPower(E.myclass)
 	if min == 0 then
@@ -863,7 +911,7 @@ ElvUF.Tags.Methods['classpower:deficit'] = function()
 	end
 end
 
-ElvUF.Tags.Events['classpower:current-percent'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpower:current-percent'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpower:current-percent'] = function()
 	local min, max = GetClassPower(E.myclass)
 	if min == 0 then
@@ -873,7 +921,7 @@ ElvUF.Tags.Methods['classpower:current-percent'] = function()
 	end
 end
 
-ElvUF.Tags.Events['classpower:current-max'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpower:current-max'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpower:current-max'] = function()
 	local min, max = GetClassPower(E.myclass)
 	if min == 0 then
@@ -883,7 +931,7 @@ ElvUF.Tags.Methods['classpower:current-max'] = function()
 	end
 end
 
-ElvUF.Tags.Events['classpower:current-max-percent'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpower:current-max-percent'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpower:current-max-percent'] = function()
 	local min, max = GetClassPower(E.myclass)
 	if min == 0 then
@@ -893,7 +941,7 @@ ElvUF.Tags.Methods['classpower:current-max-percent'] = function()
 	end
 end
 
-ElvUF.Tags.Events['classpower:percent'] = 'UNIT_POWER_FREQUENT PLAYER_TALENT_UPDATE UPDATE_SHAPESHIFT_FORM'
+ElvUF.Tags.Events['classpower:percent'] = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER'
 ElvUF.Tags.Methods['classpower:percent'] = function()
 	local min, max = GetClassPower(E.myclass)
 	if min == 0 then
@@ -901,6 +949,16 @@ ElvUF.Tags.Methods['classpower:percent'] = function()
 	else
 		return E:GetFormattedText('PERCENT', min, max)
 	end
+end
+
+if E.myclass == 'MONK' then
+	local events = 'UNIT_POWER_FREQUENT UNIT_DISPLAYPOWER UNIT_AURA'
+	ElvUF.Tags.Events['classpower:current'] = events
+	ElvUF.Tags.Events['classpower:deficit'] = events
+	ElvUF.Tags.Events['classpower:current-percent'] = events
+	ElvUF.Tags.Events['classpower:current-max'] = events
+	ElvUF.Tags.Events['classpower:current-max-percent'] = events
+	ElvUF.Tags.Events['classpower:percent'] = events
 end
 
 ElvUF.Tags.Events['absorbs'] = 'UNIT_ABSORB_AMOUNT_CHANGED'
@@ -1119,14 +1177,30 @@ end
 
 ElvUF.Tags.SharedEvents.PLAYER_GUILD_UPDATE = true
 
-ElvUF.Tags.Events['guild'] = 'PLAYER_GUILD_UPDATE'
+ElvUF.Tags.Events['guild'] = 'UNIT_NAME_UPDATE PLAYER_GUILD_UPDATE'
 ElvUF.Tags.Methods['guild'] = function(unit)
-	return GetGuildInfo(unit) or nil
+	if (UnitIsPlayer(unit)) then
+		return GetGuildInfo(unit) or nil
+	end
 end
 
 ElvUF.Tags.Events['guild:brackets'] = 'PLAYER_GUILD_UPDATE'
 ElvUF.Tags.Methods['guild:brackets'] = function(unit)
 	local guildName = GetGuildInfo(unit)
+
+	return guildName and format("<%s>", guildName) or nil
+end
+
+ElvUF.Tags.Events['guild:translit'] = 'UNIT_NAME_UPDATE PLAYER_GUILD_UPDATE'
+ElvUF.Tags.Methods['guild:translit'] = function(unit)
+	if (UnitIsPlayer(unit)) then
+		return Translit:Transliterate(GetGuildInfo(unit), translitMark) or nil
+	end
+end
+
+ElvUF.Tags.Events['guild:brackets:translit'] = 'PLAYER_GUILD_UPDATE'
+ElvUF.Tags.Methods['guild:brackets:translit'] = function(unit)
+	local guildName = Translit:Transliterate(GetGuildInfo(unit), translitMark)
 
 	return guildName and format("<%s>", guildName) or nil
 end
@@ -1158,5 +1232,35 @@ end
 ElvUF.Tags.Events['target'] = 'UNIT_TARGET'
 ElvUF.Tags.Methods['target'] = function(unit)
 	local targetName = UnitName(unit.."target")
+	return targetName or nil
+end
+
+ElvUF.Tags.Events['target:veryshort:translit'] = 'UNIT_TARGET'
+ElvUF.Tags.Methods['target:veryshort:translit'] = function(unit)
+	local targetName = Translit:Transliterate(UnitName(unit.."target"), translitMark)
+	return targetName ~= nil and E:ShortenString(targetName, 5) or nil
+end
+
+ElvUF.Tags.Events['target:short:translit'] = 'UNIT_TARGET'
+ElvUF.Tags.Methods['target:short:translit'] = function(unit)
+	local targetName = Translit:Transliterate(UnitName(unit.."target"), translitMark)
+	return targetName ~= nil and E:ShortenString(targetName, 10) or nil
+end
+
+ElvUF.Tags.Events['target:medium:translit'] = 'UNIT_TARGET'
+ElvUF.Tags.Methods['target:medium:translit'] = function(unit)
+	local targetName = Translit:Transliterate(UnitName(unit.."target"), translitMark)
+	return targetName ~= nil and E:ShortenString(targetName, 15) or nil
+end
+
+ElvUF.Tags.Events['target:long:translit'] = 'UNIT_TARGET'
+ElvUF.Tags.Methods['target:long:translit'] = function(unit)
+	local targetName = Translit:Transliterate(UnitName(unit.."target"), translitMark)
+	return targetName ~= nil and E:ShortenString(targetName, 20) or nil
+end
+
+ElvUF.Tags.Events['target:translit'] = 'UNIT_TARGET'
+ElvUF.Tags.Methods['target:translit'] = function(unit)
+	local targetName = Translit:Transliterate(UnitName(unit.."target"), translitMark)
 	return targetName or nil
 end

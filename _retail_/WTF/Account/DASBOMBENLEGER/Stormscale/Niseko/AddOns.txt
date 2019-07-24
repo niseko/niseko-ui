@@ -9,7 +9,7 @@ bdUnitframes: enabled
 RelicInspector: enabled
 TipTac: enabled
 bdCore: enabled
-VuhDoOptions: disabled
+VuhDoOptions: enabled
 ElvUI: enabled
 ElvUI_Config: enabled
 ElvUI_CustomTweaks: disabled
@@ -59,7 +59,7 @@ GottaGoFastHistory: enabled
 GottaGoFast: enabled
 PremadeGroupsFilter: enabled
 WorldQuestAssistant: disabled
-MoveAnything: enabled
+MoveAnything: disabled
 TipTacItemRef: enabled
 TipTacTalents: disabled
 Lime: disabled
@@ -100,7 +100,7 @@ AdvancedTooltips: enabled
 AdventureGuideLockouts: enabled
 Auctionator: enabled
 AzeriteTooltip: enabled
-BigWigs: enabled
+BigWigs: disabled
 BlizzMove: enabled
 !BugGrabber: enabled
 Clique: enabled
@@ -132,4 +132,12 @@ AAP-WoD: disabled
 AAP-Cata-MoP: disabled
 AAP-TBC-WotLK: disabled
 AAP-Vanilla: disabled
-AAP-Core: disabled
+Grid2Options: enabled
+LucyRaidFrames: disabled
+NameplateSCT: disabled
+FloatIndicators_Uldir: enabled
+FloatIndicators: disabled
+WeakAurasCompanion: enabled
+BigWigs_EternalPalace: enabled
+DBM-Core: enabled
+DBM-StatusBarTimers: enabled

@@ -1,8 +1,10 @@
 local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB
 
+--Lua functions
 local _G = _G
 local min, max, abs, floor = min, max, abs, floor
 local format, tonumber = format, tonumber
+--WoW API / Variables
 
 function E:IsEyefinity(width, height)
 	if E.global.general.eyefinity and width >= 3840 then
@@ -31,7 +33,7 @@ function E:UIScale(init)
 
 		E.mult = (bestScale / scale) - ((bestScale - pixelScale) / scale)
 		E.Spacing = (E.PixelMode and 0) or E.mult
-		E.Border = (E.PixelMode and E.mult) or E.mult*2
+		E.Border = ((not E.twoPixelsPlease) and E.PixelMode and E.mult) or E.mult*2
 	else --E.Initialize
 		local UIParent = _G.UIParent
 		UIParent:SetScale(scale)
@@ -47,7 +49,7 @@ function E:UIScale(init)
 			--Dragging moveable frames outside the box and reloading the UI ensures that they are saving position correctly.
 			local uiWidth, uiHeight = UIParent:GetSize()
 			width, height = uiWidth-250, uiHeight-250
-		elseif E.eyefinity and height > 1200 then
+		elseif E.eyefinity then
 			--find a new width value of E.UIParent for screen #1.
 			local uiHeight = UIParent:GetHeight()
 			width, height = E.eyefinity / (height / uiHeight), uiHeight
@@ -77,16 +79,22 @@ end
 function E:PixelScaleChanged(event, skip)
 	E:UIScale(true) -- repopulate variables
 	E:UIScale() -- setup the scale
-	skip = skip or E.suppressScalePopup
-	if skip then return end
+
+	if E.RefreshGUI then
+		E.Libs.AceConfigDialog:SetDefaultSize("ElvUI", E:GetConfigSize())
+		E:RefreshGUI()
+	end
+
+	if skip or E.global.general.ignoreScalePopup then return end
 
 	if event == 'UISCALE_CHANGE' then
-		E:Delay(0.5, function() E:StaticPopup_Show(event) end)
-	elseif E.StaticPopupFrames then
+		E:Delay(0.5, E.StaticPopup_Show, E, event)
+	else
 		E:StaticPopup_Show('UISCALE_CHANGE')
 	end
 end
 
 function E:Scale(x)
-	return E.mult * floor(x / E.mult + 0.5)
+	local mult = E.mult
+	return mult * floor(x / mult + 0.5)
 end

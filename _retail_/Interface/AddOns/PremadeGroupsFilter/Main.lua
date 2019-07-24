@@ -27,6 +27,7 @@ PGF.previousSearchExpression = ""
 PGF.currentSearchExpression = ""
 PGF.previousSearchLeaders = {}
 PGF.currentSearchLeaders = {}
+PGF.declinedGroups = {}
 
 function PGF.GetExpressionFromMinMaxModel(model, key)
     local exp = ""
@@ -237,6 +238,7 @@ function PGF.DoFilterSearchResults(results)
         env.groupid = avGroupID
         env.autoinv = searchResultInfo.autoAccept
         env.questid = searchResultInfo.questID
+        env.declined = PGF.IsDeclinedGroup(searchResultInfo)
 
         for i = 1, searchResultInfo.numMembers do
             local role, class = C_LFGList.GetSearchResultMemberInfo(resultID, i)
@@ -280,7 +282,9 @@ function PGF.DoFilterSearchResults(results)
         env.daz  = env.bod
         env.cs   = aID == 666 or aID == 667 or aID == 668  -- Crucible of Storms
         env.cru  = env.cs
-
+        env.ete  = aID == 670 or aID == 671 or aID == 672  -- The Eternal Palace
+        env.tep  = env.ete
+        
         -- dungeons    normal        heroic        mythic       mythic+
         env.eoa  = aID == 425 or aID == 435 or aID == 445 or aID == 459  -- Eye of Azshara
         env.dht  = aID == 426 or aID == 436 or aID == 446 or aID == 460  -- Darkheart Thicket
@@ -320,6 +324,8 @@ function PGF.DoFilterSearchResults(results)
                 or aID == 536
         env.sob  = aID == 532 or aID == 535 or aID == 533 or aID == 534  -- Siege of Boralus
                                             or aID == 658 or aID == 659
+        env.opm  =                             aID == 669                -- Operation: Mechagon
+        
         -- raider.io aliases
         env.ml = env.tml
         env.undr = env.tur
@@ -341,17 +347,43 @@ function PGF.DoFilterSearchResults(results)
     return true
 end
 
+function PGF.GetDeclinedGroupsKey(searchResultInfo)
+    return searchResultInfo.activityID .. searchResultInfo.leaderName
+end
+
+function PGF.IsDeclinedGroup(searchResultInfo)
+    if searchResultInfo.leaderName then -- leaderName is not available for brand new groups
+        local lastDeclined = PGF.declinedGroups[PGF.GetDeclinedGroupsKey(searchResultInfo)] or 0
+        if lastDeclined > time() - C.DECLINED_GROUPS_RESET then
+            return true
+        end
+    end
+    return false
+end
+
+function PGF.OnLFGListApplicationStatusUpdated(id, newStatus)
+    local searchResultInfo = C_LFGList.GetSearchResultInfo(id)
+    if newStatus == "declined" and searchResultInfo.leaderName then -- leaderName is not available for brand new groups
+        PGF.declinedGroups[PGF.GetDeclinedGroupsKey(searchResultInfo)] = time()
+    end
+end
+
 function PGF.OnLFGListSearchEntryUpdate(self)
     local searchResultInfo = C_LFGList.GetSearchResultInfo(self.resultID)
     -- try once again to update the leaderName (this information is not immediately available)
     if searchResultInfo.leaderName then PGF.currentSearchLeaders[searchResultInfo.leaderName] = true end
-    --self.ActivityName:SetText("[" .. activity .. "/" .. resultID .. "] " .. self.ActivityName:GetText()) -- DEBUG
+    -- self.ActivityName:SetText("[" .. searchResultInfo.activityID .. "/" .. self.resultID .. "] " .. self.ActivityName:GetText()) -- DEBUG
     if not searchResultInfo.isDelisted then
         -- color name if new
         if PGF.currentSearchExpression ~= "true"                        -- not trivial search
         and PGF.currentSearchExpression == PGF.previousSearchExpression -- and the same search
         and (searchResultInfo.leaderName and not PGF.previousSearchLeaders[searchResultInfo.leaderName]) then -- and leader is new
             local color = C.COLOR_ENTRY_NEW
+            self.Name:SetTextColor(color.R, color.G, color.B)
+        end
+        -- color name if declined
+        if PGF.IsDeclinedGroup(searchResultInfo) then
+            local color = C.COLOR_ENTRY_DECLINED
             self.Name:SetTextColor(color.R, color.G, color.B)
         end
         -- color activity if lockout

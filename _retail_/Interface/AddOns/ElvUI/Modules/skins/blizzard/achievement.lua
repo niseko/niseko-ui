@@ -17,10 +17,10 @@ local function SkinAchievement(Achievement, BiggerIcon)
 
 	Achievement:SetFrameLevel(Achievement:GetFrameLevel() + 2)
 	Achievement:StripTextures(true)
-	Achievement:CreateBackdrop("Default", true)
+	Achievement:CreateBackdrop(nil, true)
 	Achievement.backdrop:SetInside()
 	Achievement.icon:SetTemplate()
-	Achievement.icon:SetSize(BiggerIcon and 54 or 36, BiggerIcon and 54 or 36)
+	Achievement.icon:Size(BiggerIcon and 54 or 36, BiggerIcon and 54 or 36)
 	Achievement.icon:ClearAllPoints()
 	Achievement.icon:Point("TOPLEFT", 8, -8)
 	Achievement.icon.bling:Kill()
@@ -58,6 +58,7 @@ local function SkinAchievement(Achievement, BiggerIcon)
 	end
 
 	if Achievement.tracked then
+		Achievement.tracked:GetRegions():SetTextColor(1, 1, 1)
 		S:HandleCheckBox(Achievement.tracked, true)
 		Achievement.tracked:Size(14, 14)
 		Achievement.tracked:ClearAllPoints()
@@ -108,11 +109,11 @@ local function styleSearchPreview(preview, index)
 	local AchievementFrame = _G.AchievementFrame
 
 	if index == 1 then
-		preview:SetPoint("TOPLEFT", AchievementFrame.searchBox, "BOTTOMLEFT", 0, 1)
-		preview:SetPoint("TOPRIGHT", AchievementFrame.searchBox, "BOTTOMRIGHT", 80, 1)
+		preview:Point("TOPLEFT", AchievementFrame.searchBox, "BOTTOMLEFT", 0, 1)
+		preview:Point("TOPRIGHT", AchievementFrame.searchBox, "BOTTOMRIGHT", 80, 1)
 	else
-		preview:SetPoint("TOPLEFT", AchievementFrame.searchPreview[index - 1], "BOTTOMLEFT", 0, 1)
-		preview:SetPoint("TOPRIGHT", AchievementFrame.searchPreview[index - 1], "BOTTOMRIGHT", 0, 1)
+		preview:Point("TOPLEFT", AchievementFrame.searchPreview[index - 1], "BOTTOMLEFT", 0, 1)
+		preview:Point("TOPRIGHT", AchievementFrame.searchPreview[index - 1], "BOTTOMRIGHT", 0, 1)
 	end
 
 	preview:SetNormalTexture("")
@@ -218,6 +219,12 @@ local function LoadSkin(event)
 	_G.AchievementFrameComparisonDark:SetAlpha(0)
 	_G.AchievementFrameComparisonSummaryPlayerBackground:Hide()
 	_G.AchievementFrameComparisonSummaryFriendBackground:Hide()
+
+	local summaries = {_G.AchievementFrameComparisonSummaryPlayer, _G.AchievementFrameComparisonSummaryFriend}
+	for _, frame in pairs(summaries) do
+		frame:SetBackdrop(nil)
+	end
+
 	_G.AchievementFrameMetalBorderTopLeft:Hide()
 	_G.AchievementFrameWoodBorderTopLeft:Hide()
 	_G.AchievementFrameMetalBorderTopRight:Hide()

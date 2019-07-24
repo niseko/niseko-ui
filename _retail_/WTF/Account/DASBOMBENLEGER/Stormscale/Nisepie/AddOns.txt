@@ -20,8 +20,8 @@ SuppressRightClick: disabled
 OmniBar: enabled
 Gladius: enabled
 GladiatorlosSA2: enabled
-MoveAnything: enabled
-VuhDoOptions: disabled
+MoveAnything: disabled
+VuhDoOptions: enabled
 BagSync: enabled
 BigWigs_Core: enabled
 BigWigs_Options: enabled
@@ -34,7 +34,7 @@ AdvancedTooltips: enabled
 AdventureGuideLockouts: enabled
 Auctionator: enabled
 AzeriteTooltip: enabled
-BigWigs: enabled
+BigWigs: disabled
 BlizzMove: enabled
 !BugGrabber: enabled
 Clique: enabled
@@ -63,4 +63,10 @@ AAP-WoD: disabled
 AAP-Cata-MoP: disabled
 AAP-TBC-WotLK: disabled
 AAP-Vanilla: disabled
-AAP-Core: disabled
+Grid2Options: enabled
+LucyRaidFrames: disabled
+NameplateSCT: disabled
+FloatIndicators_Uldir: enabled
+FloatIndicators: disabled
+DBM-Core: enabled
+DBM-StatusBarTimers: enabled

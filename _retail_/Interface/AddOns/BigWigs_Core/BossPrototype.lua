@@ -37,6 +37,7 @@ local pName = UnitName("player")
 local cpName
 local hasVoice = BigWigsAPI:HasVoicePack()
 local bossUtilityFrame = CreateFrame("Frame")
+local petUtilityFrame = CreateFrame("Frame")
 local enabledModules, bossTargetScans, unitTargetScans = {}, {}, {}
 local allowedEvents = {}
 local difficulty = 0
@@ -182,7 +183,7 @@ boss.otherMenu = nil
 
 --- Check if a module option is enabled.
 -- This is a wrapper around the self.db.profile[key] table.
--- @return boolean
+-- @return boolean or number, depending on option type
 function boss:GetOption(key)
 	return self.db.profile[key]
 end
@@ -216,6 +217,10 @@ function boss:Enable(isWipe)
 			self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT", "CheckForEncounterEngage")
 			self:RegisterEvent("ENCOUNTER_END", "EncounterEnd")
 		end
+		local _, class = UnitClass("player")
+		if class == "WARLOCK" or class == "HUNTER" then
+			petUtilityFrame:RegisterUnitEvent("UNIT_PET", "player")
+		end
 
 		if self.SetupOptions then self:SetupOptions() end
 		if type(self.OnBossEnable) == "function" then self:OnBossEnable() end
@@ -247,6 +252,7 @@ function boss:Disable(isWipe)
 		-- No enabled modules? Unregister the combat log!
 		if #enabledModules == 0 then
 			bossUtilityFrame:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+			petUtilityFrame:UnregisterEvent("UNIT_PET")
 			bossTargetScans, unitTargetScans = {}, {}
 		else
 			for i = #bossTargetScans, 1, -1 do
@@ -578,7 +584,7 @@ do
 	local noID = "Module '%s' tried to register/unregister a widget event without specifying a widget id."
 	local noFunc = "Module '%s' tried to register a widget event with the function '%s' which doesn't exist in the module."
 
-	local GetIconAndTextWidgetVisualizationInfo = C_UIWidgetManager and C_UIWidgetManager.GetIconAndTextWidgetVisualizationInfo
+	local GetIconAndTextWidgetVisualizationInfo = C_UIWidgetManager.GetIconAndTextWidgetVisualizationInfo
 	function boss:UPDATE_UI_WIDGET(_, tbl)
 		local id = tbl.widgetID
 		local func = widgetEventMap[self][id]
@@ -612,7 +618,6 @@ end
 
 -------------------------------------------------------------------------------
 -- Engage / wipe checking + unit scanning
--- @section engage_status
 --
 
 do
@@ -623,13 +628,13 @@ do
 		end
 	end
 
-	--- Start checking for a wipe.
+	-- Start checking for a wipe.
 	-- Starts a repeating timer checking IsEncounterInProgress() and reboots the module if false.
 	function boss:StartWipeCheck()
 		self:StopWipeCheck()
 		self.isWiping = self:ScheduleRepeatingTimer(wipeCheck, 1, self)
 	end
-	--- Stop checking for a wipe.
+	-- Stop checking for a wipe.
 	-- Stops the repeating timer checking IsEncounterInProgress() if it is running.
 	function boss:StopWipeCheck()
 		if self.isWiping then
@@ -638,10 +643,10 @@ do
 		end
 	end
 
-	--- Update module engage status from querying boss units.
+	-- Update module engage status from querying boss units.
 	-- Engages modules if boss1-boss5 matches an registered enabled mob,
 	-- disables the module if set as engaged but has no boss match.
-	-- @string noEngage if set to "NoEngage", the module is prevented from engaging if enabling during a boss fight (after a DC)
+	-- noEngage if set to "NoEngage", the module is prevented from engaging if enabling during a boss fight (after a DC)
 	function boss:CheckForEncounterEngage(noEngage)
 		local hasBoss = UnitHealth("boss1") > 0 or UnitHealth("boss2") > 0 or UnitHealth("boss3") > 0 or UnitHealth("boss4") > 0 or UnitHealth("boss5") > 0
 		if not self.isEngaged and hasBoss then
@@ -666,8 +671,7 @@ do
 		end
 	end
 
-	--- Query boss units to update engage status.
-	-- @see CheckForEncounterEngage
+	-- Query boss units to update engage status.
 	function boss:CheckBossStatus()
 		local hasBoss = UnitHealth("boss1") > 0 or UnitHealth("boss2") > 0 or UnitHealth("boss3") > 0 or UnitHealth("boss4") > 0 or UnitHealth("boss5") > 0
 		if not hasBoss and self.isEngaged then
@@ -723,15 +727,22 @@ do
 	-- @return unit id if found, nil otherwise
 	function boss:GetUnitIdByGUID(id) return findTargetByGUID(id) end
 
-	--- Fetches a unit id by scanning boss units only.
-	-- @param guid GUID of the boss to find
+	--- Fetches a unit id by scanning boss units 1 to 5 only.
+	-- @param guid Either the GUID or the mob/npc id of the boss unit to find
 	-- @return unit id if found, nil otherwise
-	function boss:GetBossIdByGUID(guid)
+	-- @return guid if found, nil otherwise
+	function boss:GetBossId(id)
+		local isNumber = type(id) == "number"
 		for i = 1, 5 do
 			local unit = unitTable[i]
-			local id = UnitGUID(unit)
-			if guid == id then
-				return unit
+			local guid = UnitGUID(unit)
+			if id == guid then
+				return unit, guid
+			elseif guid and isNumber then
+				local _, _, _, _, _, mobId = strsplit("-", guid)
+				if id == tonumber(mobId) then
+					return unit, guid
+				end
 			end
 		end
 	end
@@ -1028,7 +1039,7 @@ end
 
 --- Get the mob/npc id from a GUID.
 -- @string guid GUID of a mob/npc
--- @return mob id
+-- @return mob/npc id
 function boss:MobId(guid)
 	if not guid then return 1 end
 	local _, _, _, _, _, id = strsplit("-", guid)
@@ -1236,6 +1247,11 @@ function boss:Damager(unit)
 	end
 end
 
+petUtilityFrame:SetScript("OnEvent", function()
+	UpdateDispelStatus()
+	UpdateInterruptStatus()
+end)
+
 do
 	local offDispel, defDispel = {}, {}
 	local _, class = UnitClass("player")
@@ -1253,8 +1269,8 @@ do
 	end
 	function UpdateDispelStatus()
 		offDispel, defDispel = {}, {}
-		if IsSpellKnown(32375) or IsSpellKnown(528) or IsSpellKnown(370) or IsSpellKnown(30449) or IsSpellKnown(278326) or petCanDispel() then
-			-- Mass Dispel (Priest), Dispel Magic (Priest), Purge (Shaman), Spellsteal (Mage), Consume Magic (Demon Hunter), Hunter pet
+		if IsSpellKnown(32375) or IsSpellKnown(528) or IsSpellKnown(370) or IsSpellKnown(30449) or IsSpellKnown(278326) or IsSpellKnown(19505, true) or petCanDispel() then
+			-- Mass Dispel (Priest), Dispel Magic (Priest), Purge (Shaman), Spellsteal (Mage), Consume Magic (Demon Hunter), Devour Magic (Warlock Felhunter), Hunter pet
 			offDispel.magic = true
 		end
 		if IsSpellKnown(2908) or petCanDispel() then
@@ -1289,7 +1305,8 @@ do
 			if not o then core:Print(format("Module %s uses %q as a dispel lookup, but it doesn't exist in the module options.", self.name, key)) return end
 			if band(o, C.DISPEL) ~= C.DISPEL then return true end
 		end
-		return isOffensive and offDispel[dispelType] or defDispel[dispelType]
+		local dispelTable = isOffensive and offDispel or defDispel
+		return dispelTable[dispelType]
 	end
 end
 
@@ -1312,10 +1329,10 @@ do
 		183752, -- Disrupt (Demon Hunter)
 	}
 	function UpdateInterruptStatus()
-		-- if IsSpellKnown(19647, true) then -- Spell Lock (Warlock Felhunter)
-		-- 	canInterrupt = 19647
-		-- 	return
-		-- end
+		if IsSpellKnown(19647, true) then -- Spell Lock (Warlock Felhunter)
+			canInterrupt = 19647
+			return
+		end
 		canInterrupt = false
 		for i = 1, #spellList do
 			local spell = spellList[i]
@@ -1327,7 +1344,8 @@ do
 	end
 	--- Check if you can interrupt.
 	-- @string[opt] guid if not nil, will only return true if the GUID matches your target or focus.
-	-- @return boolean
+	-- @return boolean, if the unit can interrupt
+	-- @return boolean, if the interrupt is off cooldown and ready to use
 	function boss:Interrupter(guid)
 		if canInterrupt then
 			local ready = true
@@ -1421,6 +1439,7 @@ do
 	--- Check if an option has a flag set.
 	-- @param key the option key
 	-- @string flag the option flag
+	-- @return boolean
 	function boss:CheckOption(key, flag)
 		return checkFlag(self, key, C[flag])
 	end
@@ -1471,9 +1490,9 @@ end
 --- Set the "Info Box" display to show a list of players and their assigned values in ascending order.
 -- @param key the option key to check
 -- @param[type=table] tbl a table in the format of {player = number}
-function boss:SetInfoByTable(key, tbl)
+function boss:SetInfoByTable(key, tbl, reverseOrder)
 	if checkFlag(self, key, C.INFOBOX) then
-		self:SendMessage("BigWigs_SetInfoBoxTable", self, tbl)
+		self:SendMessage("BigWigs_SetInfoBoxTable", self, tbl, reverseOrder)
 	end
 end
 
@@ -1650,6 +1669,11 @@ function boss:Message2(key, color, text, icon)
 	end
 end
 
+--- Display a personal message in blue.
+-- @param key the option key
+-- @string localeString if nil then the "%s on YOU" string will be used, otherwise the common locale will be referenced via CL[localeString]
+-- @param[opt] text the message text (if nil, key is used)
+-- @param[opt] icon the message icon (spell id or texture name)
 function boss:PersonalMessage(key, localeString, text, icon)
 	if checkFlag(self, key, C.MESSAGE) then
 		local str = localeString and L[localeString] or L.you
@@ -1901,7 +1925,7 @@ do
 	-- @param[opt] text the message text (if nil, key is used)
 	-- @param[opt] icon the message icon (spell id or texture name, key is used if nil)
 	-- @number[opt] customTime how long to wait to reach the max players in the table. If the max is not reached, it will print after this value (0.3s is used if nil)
-	-- @param[opt] markers a table containing the markers that should be attached next to the player names
+	-- @param[opt] markers a table containing the markers that should be attached next to the player names e.g. {1, 2, 3}
 	function boss:TargetsMessage(key, color, playerTable, playerCount, text, icon, customTime, markers)
 		local playersInTable = #playerTable
 		if playersInTable == playerCount then
@@ -2355,6 +2379,9 @@ do
 			end
 		end
 	else
+		--- Return a string as a formatted abbreviated number.
+		-- @number amount the number you wish to abbreviate
+		-- @return string the formatted string e.g. 10M or 10K
 		function boss:AbbreviateNumber(amount)
 			if amount >= 1000000000 then -- 1,000,000,000
 				return format(L.amount_one, amount/1000000000)

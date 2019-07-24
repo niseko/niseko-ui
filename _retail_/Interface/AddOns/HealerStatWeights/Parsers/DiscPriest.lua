@@ -65,6 +65,10 @@ local function _Mastery(ev,spellInfo,heal,destUnit,M,ME)
 		end
 		
 		if (ME == 1) then
+			--DISCIPLINE PRIEST MASTERY SNAPSHOT BUG
+			--if hotfixed, remove the next line!!!!!
+			M = addon.DiscPriest.AtonementTracker:TryGetUnitMasterySnapshot(destUnit)
+			
 			return heal / (1+M) / addon.MasteryConv;
 		end
 	end
@@ -103,6 +107,8 @@ local function _DamageEvent(spellInfo,amount,critFlag)
 		
 		local data = copy(spellInfo);
 		data.chainCast = nextDamageCastIsChainCast or (spellInfo.spellID == addon.DiscPriest.PenanceCast2);
+		data.intScalar = addon.AzeriteAugmentations:GetAugmentationFactor(spellInfo.spellID,nil);
+		
 		--data.critFlag = critFlag; --this isnt needed since the atonement healing event also includes the critflag
 		nextDamageCastIsChainCast = false;
 		atonementQueue:Enqueue(numAtonement,data);
@@ -148,7 +154,7 @@ local function _HealEvent(ev,spellInfo,heal,overhealing,destUnit,f)
 			end
 			
 			--Normal stat allocation
-			addon.StatParser:Allocate(ev,event.data,heal,overhealing,destUnit,f,event.SP,event.C,addon.ply_crtbonus,event.H,event.V,event.M,1.0,event.L);
+			addon.StatParser:Allocate(ev,event.data,heal,overhealing,destUnit,f,event.SP,event.C,addon.ply_crtbonus,event.H,event.V,event.M,1.0,event.L,event.intScalar);
 		end
 		return true; --skip normal computation of healing event
 	elseif ( spellInfo.spellID == addon.DiscPriest.ContritionHeal1 or spellInfo.spellID == addon.DiscPriest.ContritionHeal2 ) then
@@ -285,6 +291,7 @@ function PWSTracker:ApplyOrRefresh(destGUID,amount)
 		if ( addon.DiscPriest.AtonementTracker:UnitHasAtonement(u) ) then
 			self[u].masteryFlag = true;
 		end
+		self[u].intScalar = addon.AzeriteAugmentations:GetAugmentationFactor(addon.DiscPriest.PowerWordShield,u);
 		self[u].SP = addon.ply_sp;
 		self[u].C = addon.ply_crt;
 		self[u].CB = addon.ply_crtbonus;
@@ -319,7 +326,7 @@ function PWSTracker:Remove(destGUID,amount)
 					local ME = t.masteryFlag and 1 or 0;
 					
 					if ( spellInfo and originalHeal and originalHeal>0 and f ) then
-						addon.StatParser:Allocate("SPELL_ABSORBED",spellInfo,originalHeal,0,u,f,t.SP,t.C,t.CB,t.H,t.V,t.M,ME,0);
+						addon.StatParser:Allocate("SPELL_ABSORBED",spellInfo,originalHeal,0,u,f,t.SP,t.C,t.CB,t.H,t.V,t.M,ME,0,t.intScalar);
 					end
 				end
 			end
@@ -362,6 +369,7 @@ addon.DiscPriest.PWSTracker = PWSTracker;
 local AtonementTracker = {
 	count=0,
 	chainCastApplications = {},
+	mastery = {},
 };
 
 function AtonementTracker:ApplyOrRefresh(destGUID)
@@ -371,6 +379,7 @@ function AtonementTracker:ApplyOrRefresh(destGUID)
 			self.count = self.count + 1;
 		end
 		self[u] = GetTime();
+		self.mastery[u] = addon.ply_mst; --store mastery at time of application
 		self.chainCastApplications[u] = nextAtonementApplicatorIsChainCast and addon.ply_hst or nil; --store haste at time of application
 		nextAtonementApplicatorIsChainCast = false;
 	end
@@ -389,6 +398,7 @@ function AtonementTracker:Remove(destGUID)
 		end
 		self[u] = nil
 		self.chainCastApplications[u] = nil;
+		self.mastery[u] = nil;
 	end
 end
 
@@ -419,6 +429,14 @@ function AtonementTracker:UnitHasAtonement(unit)
 		return true;
 	else
 		return false;
+	end
+end
+
+function AtonementTracker:TryGetUnitMasterySnapshot(unit)
+	if ( self.mastery[unit] ) then
+		return self.mastery[unit];
+	else
+		return addon.ply_mst;
 	end
 end
 

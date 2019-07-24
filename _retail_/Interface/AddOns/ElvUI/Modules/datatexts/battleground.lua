@@ -2,13 +2,14 @@ local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, Private
 local DT = E:GetModule('DataTexts')
 
 --Lua functions
+local _G = _G
 local select = select
-local join = string.join
+local strjoin = strjoin
 --WoW API / Variables
+local C_PvP_GetMatchPVPStatIDs = C_PvP.GetMatchPVPStatIDs
+local C_PvP_GetMatchPVPStatColumn = C_PvP.GetMatchPVPStatColumn
 local GetBattlefieldScore = GetBattlefieldScore
-local GetNumBattlefieldStats = GetNumBattlefieldStats
 local GetNumBattlefieldScores = GetNumBattlefieldScores
-local GetBattlefieldStatInfo = GetBattlefieldStatInfo
 local GetBattlefieldStatData = GetBattlefieldStatData
 
 local lastPanel
@@ -27,12 +28,12 @@ local dataLayout = {
 }
 
 local dataStrings = {
-	[10] = DAMAGE,
-	[5] = HONOR,
-	[2] = KILLING_BLOWS,
-	[4] = DEATHS,
-	[3] = KILLS,
-	[11] = SHOW_COMBAT_HEALING,
+	[10] = _G.DAMAGE,
+	[5] = _G.HONOR,
+	[2] = _G.KILLING_BLOWS,
+	[4] = _G.DEATHS,
+	[3] = _G.KILLS,
+	[11] = _G.SHOW_COMBAT_HEALING,
 }
 
 function DT:UPDATE_BATTLEFIELD_SCORE()
@@ -50,9 +51,9 @@ end
 function DT:BattlegroundStats()
 	DT:SetupTooltip(self)
 
-	local classColor = (CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[E.myclass]) or RAID_CLASS_COLORS[E.myclass]
-	local numStatInfo = GetNumBattlefieldStats()
-	if numStatInfo then
+	local classColor = (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[E.myclass]) or _G.RAID_CLASS_COLORS[E.myclass]
+	local pvpStatIDs = C_PvP_GetMatchPVPStatIDs()
+	if pvpStatIDs then
 		for index = 1, GetNumBattlefieldScores() do
 			local name = GetBattlefieldScore(index)
 			if name and name == E.myname then
@@ -60,8 +61,8 @@ function DT:BattlegroundStats()
 				DT.tooltip:AddLine(" ")
 
 				-- Add extra statistics to watch based on what BG you are in.
-				for x = 1, numStatInfo do
-					DT.tooltip:AddDoubleLine(GetBattlefieldStatInfo(x), GetBattlefieldStatData(index, x), 1,1,1)
+				for x = 1, #pvpStatIDs do
+					DT.tooltip:AddDoubleLine(C_PvP_GetMatchPVPStatColumn(pvpStatIDs[x]), GetBattlefieldStatData(index, x), 1,1,1)
 				end
 
 				break
@@ -79,7 +80,7 @@ function DT:HideBattlegroundTexts()
 end
 
 local function ValueColorUpdate(hex)
-	displayString = join("", "%s: ", hex, "%s|r")
+	displayString = strjoin("", "%s: ", hex, "%s|r")
 
 	if lastPanel ~= nil then
 		DT.UPDATE_BATTLEFIELD_SCORE(lastPanel)

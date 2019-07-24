@@ -20,6 +20,7 @@ local defaults = {
 	global = {
 		excludeRaidHealingCooldowns=false,
 		useHPMoverHPCT=true,
+		autoAssignHasteSetting=true,
 		useVersDR=false,
 		useCritResurg=false,
 		fontSize=12,
@@ -61,6 +62,11 @@ local cls_label = "Class/Spec";
 local num_pattern = "%.3f";
 local sgmt_label = "Segment";
 local dur_label = "Duration";
+local name_label = "Name";
+local region_label = "Region";
+local realm_label = "Realm";
+local specid_label = "SpecID";
+
 local spec_labels = {
 	[105] = "Restoration Druid",
 	[264] = "Restoration Shaman",
@@ -419,6 +425,12 @@ local options = {
 					type = "execute",
 					order = 13,
 					func = function() addon:CreatePawnStringFromHistory() end
+				},
+				createQEStringFromHistory = {
+					name = "Export to QE Live",
+					type = "execute",
+					order = 13,
+					func = function() addon:CreateQEStringFromHistory() end
 				}
 			}
 		}
@@ -514,11 +526,22 @@ function addon:AddHistoricalSegment(segment)
 	local resurg_add = self:IsRestoShaman() and (segment:GetManaRestoreValue()/self.CritConv) or 0;
     local i = GetSpecialization();
 	local specId = GetSpecializationInfo(i);
-	
+	local name, realm = UnitFullName("player");
+	local regionID = GetCurrentRegion();
+
+	local regions = {
+		[1]="US",
+		[2]="KR",
+		[3]="EU",
+		[4]="TW",
+		[5]="CN"
+	};
+
 	local tab_str = "    ";
 	h.tab = info.bossFight and "" or tab_str;
 	h.tab = self.MythicPlusActive and h.tab..tab_str or h.tab;
 	
+	h.isDungeon = not self:InRaidInstance();
 	h[sgmt_label] = segment.id;
 	h[dur_label] = t_str;
 	h[cls_label] = spec_labels[specId] or "Unknown";
@@ -533,12 +556,17 @@ function addon:AddHistoricalSegment(segment)
 	h[mst_label] = segment.t.mast / segment.t.int;
 	h[lee_label] = segment.t.leech / segment.t.int;
 	h[mp5_label] = segment:GetMP5();
-	
+	h[specid_label]=specId;
+	h[name_label]=name or "Unknown";
+	h[realm_label]=realm or "Unknown";
+	h[region_label]=regions[regionID] or "Unknown";
+
 	self.History:Enqueue(h,segment);
 end
 
 
 local pawnOptionsFrame;
+local qeOptionsFrame;
 local pawnOptionsWidth = 220;
 function addon:GetPawnStringFromHistory()
 	local h = addon.History:Get(historySelected);
@@ -557,6 +585,116 @@ function addon:GetPawnStringFromHistory()
 	local lee_key = lee_label;
 	
 	return self:GetPawnStringRaw(h[sgmt_label],class,specId,h[int_key],h[crt_key],h[hst_key],h[vrs_key],h[mst_key],h[lee_key]);
+end
+
+function addon:GetQELiveStringFromHistory() 	
+	local h = addon.History:Get(historySelected);
+	if not qeOptionsFrame or not h then
+		return "";
+	end
+	
+	local specid = 0;
+	for k,v in pairs(spec_labels) do
+		if ( v == h[cls_label] ) then
+			specid = k;
+			break;
+		end
+	end
+	
+	local hstHPC_key = hst_label;
+	local hstHPCT_key = hst2_label;
+	local crt_key = qeOptionsFrame.crit_dropdown.selectedLabel;
+	local vrs_key = qeOptionsFrame.vers_dropdown.selectedLabel;
+	local mst_key = mst_label;
+	local lee_key = lee_label;
+
+	local isDungeonOrTrash = string.find(h[sgmt_label] or ""," %+") or h.isDungeon;
+
+	return self:GetQELiveStringRaw(specid,h[name_label],h[realm_label],h[region_label],h[crt_key],h[hstHPCT_key],h[hstHPC_key],h[mst_key],h[vrs_key],h[lee_key],isDungeonOrTrash);
+end
+
+function addon:CreateQEStringFromHistory()
+	if not qeOptionsFrame then
+		qeOptionsFrame = CreateFrame("Frame","HSW_CQSFW",UIParent);
+		qeOptionsFrame:SetWidth(pawnOptionsWidth);
+		qeOptionsFrame:SetHeight(128);
+		qeOptionsFrame:SetPoint("CENTER",0,0);
+		qeOptionsFrame:SetFrameStrata("DIALOG");
+		qeOptionsFrame:SetMovable(true);
+		qeOptionsFrame:EnableMouse(true);
+		qeOptionsFrame:RegisterForDrag("LeftButton");
+		qeOptionsFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", 
+												edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
+												tile = true, tileSize = 16, edgeSize = 16, 
+												insets = { left = 4, right = 4, top = 4, bottom = 4 }});
+		qeOptionsFrame:SetBackdropColor(0,0,0,1);
+
+		local function addMenuButton(frame,label)
+			local info = UIDropDownMenu_CreateInfo();
+			info.checked = (label == frame.selectedLabel);
+			info.func = function() frame.selectedLabel = label; UIDropDownMenu_SetText(frame,label); CloseDropDownMenus(); end
+			info.text = label;
+			UIDropDownMenu_AddButton(info,1);
+		end
+		local function SetupDropdownMenu(labels)	
+			local dropdown = CreateFrame("Frame", "HSW_CQSFH_"..labels[1], qeOptionsFrame, "UIDropDownMenuTemplate");
+			local function init(self,level)
+				if ( level == 1 ) then
+					for i,v in ipairs(labels) do
+						addMenuButton(dropdown,v);
+					end		
+				end	
+			end
+			
+			dropdown.selectedLabel = labels[1];
+			UIDropDownMenu_SetText(dropdown,labels[1]);
+			UIDropDownMenu_SetWidth(dropdown, pawnOptionsWidth-50, 8);
+			UIDropDownMenu_Initialize(dropdown,init);
+			return dropdown;
+		end;
+		
+		-- local haste_labels = {hst_label,hst2_label};
+		local crit_labels = {crt_label,crt2_label};
+		local vers_labels = {vrs_label,vrs2_label};
+		-- local haste_dropdown = SetupDropdownMenu(haste_labels);
+		-- haste_dropdown:ClearAllPoints();
+		-- haste_dropdown:SetPoint("TOPLEFT",0,-8);
+		-- qeOptionsFrame.haste_dropdown = haste_dropdown;
+		
+		local crit_dropdown = SetupDropdownMenu(crit_labels);
+		crit_dropdown:ClearAllPoints();
+		crit_dropdown:SetPoint("TOPLEFT",0,-32);
+		qeOptionsFrame.crit_dropdown = crit_dropdown;
+		
+		local vers_dropdown = SetupDropdownMenu(vers_labels);
+		vers_dropdown:ClearAllPoints();
+		vers_dropdown:SetPoint("TOPLEFT",0,-56);
+		qeOptionsFrame.vers_dropdown = vers_dropdown;
+		
+		
+		local btn_cancel = CreateFrame("Button","HSW_CQSFH_Cancel",qeOptionsFrame,"UIPanelButtonTemplate");
+		btn_cancel:SetPoint("BOTTOMRIGHT",-8,8);
+		btn_cancel:SetHeight(24);
+		btn_cancel:SetWidth(pawnOptionsWidth/2-16);
+		btn_cancel:SetNormalFontObject("GameFontNormalSmall");
+		btn_cancel:SetText("Cancel");
+		btn_cancel:SetScript("OnClick",function() 
+			qeOptionsFrame:Hide();
+		end);
+		
+		local btn_accept = CreateFrame("Button","HSW_CQSFH_Accept",qeOptionsFrame,"UIPanelButtonTemplate");
+		btn_accept:SetPoint("BOTTOMLEFT",8,8);
+		btn_accept:SetHeight(24);
+		btn_accept:SetWidth(pawnOptionsWidth/2-16);
+		btn_accept:SetNormalFontObject("GameFontNormalSmall");
+		btn_accept:SetText("Create!");
+		btn_accept:SetScript("OnClick",function()
+			qeOptionsFrame:Hide();
+			StaticPopup_Show(addon.QELiveDialogName);
+		end);
+	end
+	
+	qeOptionsFrame:Show();
 end
 
 function addon:CreatePawnStringFromHistory()

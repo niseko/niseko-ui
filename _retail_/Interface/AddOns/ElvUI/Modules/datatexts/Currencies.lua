@@ -2,6 +2,7 @@ local E, L, V, P, G = unpack(select(2, ...)); --Import: Engine, Locales, Private
 local DT = E:GetModule('DataTexts')
 
 --Lua functions
+local _G = _G
 local select, pairs = select, pairs
 local format = string.format
 --WoW API / Variables
@@ -10,9 +11,6 @@ local GetMoney = GetMoney
 local BONUS_ROLL_REWARD_MONEY = BONUS_ROLL_REWARD_MONEY
 local EXPANSION_NAME7 = EXPANSION_NAME7
 local OTHER = OTHER
-
---Global variables that we don't cache, list them here for mikk's FindGlobals script
--- GLOBALS: ToggleCharacter
 
 -- Currencies we care about
 local iconString = "|T%s:16:16:0:0:64:64:4:60:4:60|t"
@@ -26,6 +24,7 @@ local Currencies = {
 	["HONORBOUND_SERVICE_MEDAL"] = {ID = 1716, NAME = GetCurrencyInfo(1716), ICON = format(iconString, select(3, GetCurrencyInfo(1716)))},
 	["7TH_LEGION_SERVICE_MEDAL"] = {ID = 1717, NAME = GetCurrencyInfo(1717), ICON = format(iconString, select(3, GetCurrencyInfo(1717)))},
 	["TITAN_RESIDUUM"] = {ID = 1718, NAME = GetCurrencyInfo(1718), ICON = format(iconString, select(3, GetCurrencyInfo(1718)))},
+	["PRISMATIC_MANAPEARL"] = {ID = 1721, NAME = GetCurrencyInfo(1721), ICON = format(iconString, select(3, GetCurrencyInfo(1721)))},
 	-- Other
 	["DARKMOON_PRIZE_TICKET"] = {ID = 515, NAME = GetCurrencyInfo(515), ICON = format(iconString, select(3, GetCurrencyInfo(515)))},
 }
@@ -39,7 +38,7 @@ currencyList.GOLD = BONUS_ROLL_REWARD_MONEY
 DT.CurrencyList = currencyList
 
 local function OnClick()
-	ToggleCharacter("TokenFrame")
+	_G.ToggleCharacter("TokenFrame")
 end
 
 local goldText
@@ -67,21 +66,22 @@ local function OnEnter(self)
 	DT.tooltip:AddLine(' ')
 
 	DT.tooltip:AddLine(EXPANSION_NAME7) --"BfA"
-	DT.tooltip:AddDoubleLine(Currencies["RICH_AZERITE_FRAGMENT"].NAME, select(2, GetCurrencyInfo(Currencies["RICH_AZERITE_FRAGMENT"].ID)), 1, 1, 1)
-	DT.tooltip:AddDoubleLine(Currencies["SEAFARERS_DUBLOON"].NAME, select(2, GetCurrencyInfo(Currencies["SEAFARERS_DUBLOON"].ID)), 1, 1, 1)
-	DT.tooltip:AddDoubleLine(Currencies["SEAL_OF_WARTORN_FATE"].NAME, select(2, GetCurrencyInfo(Currencies["SEAL_OF_WARTORN_FATE"].ID)), 1, 1, 1)
-	DT.tooltip:AddDoubleLine(Currencies["WAR_RESOURCES"].NAME, select(2, GetCurrencyInfo(Currencies["WAR_RESOURCES"].ID)), 1, 1, 1)
-	DT.tooltip:AddDoubleLine(Currencies["WAR_SUPPLIES"].NAME, select(2, GetCurrencyInfo(Currencies["WAR_SUPPLIES"].ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.RICH_AZERITE_FRAGMENT.NAME, select(2, GetCurrencyInfo(Currencies.RICH_AZERITE_FRAGMENT.ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.SEAFARERS_DUBLOON.NAME, select(2, GetCurrencyInfo(Currencies.SEAFARERS_DUBLOON.ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.SEAL_OF_WARTORN_FATE.NAME, select(2, GetCurrencyInfo(Currencies.SEAL_OF_WARTORN_FATE.ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.WAR_RESOURCES.NAME, select(2, GetCurrencyInfo(Currencies.WAR_RESOURCES.ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.WAR_SUPPLIES.NAME, select(2, GetCurrencyInfo(Currencies.WAR_SUPPLIES.ID)), 1, 1, 1)
 	if E.myfaction == "Alliance" then
-		DT.tooltip:AddDoubleLine(Currencies["7TH_LEGION_SERVICE_MEDAL"].NAME, select(2, GetCurrencyInfo(Currencies["7TH_LEGION_SERVICE_MEDAL"].ID)), 1, 1, 1)
+		DT.tooltip:AddDoubleLine(Currencies['7TH_LEGION_SERVICE_MEDAL'].NAME, select(2, GetCurrencyInfo(Currencies['7TH_LEGION_SERVICE_MEDAL'].ID)), 1, 1, 1)
 	else
-		DT.tooltip:AddDoubleLine(Currencies["HONORBOUND_SERVICE_MEDAL"].NAME, select(2, GetCurrencyInfo(Currencies["HONORBOUND_SERVICE_MEDAL"].ID)), 1, 1, 1)
+		DT.tooltip:AddDoubleLine(Currencies.HONORBOUND_SERVICE_MEDAL.NAME, select(2, GetCurrencyInfo(Currencies.HONORBOUND_SERVICE_MEDAL.ID)), 1, 1, 1)
 	end
-	DT.tooltip:AddDoubleLine(Currencies["TITAN_RESIDUUM"].NAME, select(2, GetCurrencyInfo(Currencies["TITAN_RESIDUUM"].ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.TITAN_RESIDUUM.NAME, select(2, GetCurrencyInfo(Currencies.TITAN_RESIDUUM.ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.PRISMATIC_MANAPEARL.NAME, select(2, GetCurrencyInfo(Currencies.PRISMATIC_MANAPEARL.ID)), 1, 1, 1)
 	DT.tooltip:AddLine(' ')
 
 	DT.tooltip:AddLine(OTHER)
-	DT.tooltip:AddDoubleLine(Currencies["DARKMOON_PRIZE_TICKET"].NAME, select(2, GetCurrencyInfo(Currencies["DARKMOON_PRIZE_TICKET"].ID)), 1, 1, 1)
+	DT.tooltip:AddDoubleLine(Currencies.DARKMOON_PRIZE_TICKET.NAME, select(2, GetCurrencyInfo(Currencies.DARKMOON_PRIZE_TICKET.ID)), 1, 1, 1)
 
 	--[[
 		If the "Display In Tooltip" box is checked (on by default), then also display custom

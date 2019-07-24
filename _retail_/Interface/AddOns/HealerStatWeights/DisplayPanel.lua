@@ -29,6 +29,9 @@ local pawn_title = "Pawn String (Ctrl+A to select all, Ctrl+C to copy):";
 local pawn_dialog_name = "HSW_GETPAWNSTRING";
 local clearsegments_dialog_name = "HSW_CLEARALLSEGMENTS";
 local clearsegments_title = "Clear all segments?";
+local qelive_title = "QE Live Website (Ctrl+A to select all, Ctrl+C to copy):";
+local qelive_pattern = "https://questionablyepic.com/live/?import=HSW&spec=%s&pname=%s&realm=%s&region=%s&CriticalStrike=%.2f&HasteHPCT=%.2f&HasteHPM=%.2f&Mastery=%.2f&Versatility=%.2f&Leech=%.2f&content=%s";
+local qelive_noname_pattern = "https://questionablyepic.com/live/?import=HSW&spec=%s&CriticalStrike=%.2f&HasteHPCT=%.2f&HasteHPM=%.2f&Mastery=%.2f&Versatility=%.2f&Leech=%.2f&content=%s";
 
 
 
@@ -330,6 +333,44 @@ StaticPopupDialogs[pawn_dialog_name] = {
 
 
 --[[----------------------------------------------------------------------------
+    QE Live String - Dialog to display link to questionably epic website for current segment
+------------------------------------------------------------------------------]]
+function addon:GetQELiveStringRaw(specid,name,realm,regionLetters,crt,hstHPCT,hstHPM,mst,vrs,lee,isDungeon)	
+    local s;
+    local contentStr = isDungeon and "dungeon" or "raid";
+    
+    if ( name and realm and regionLetters ) then
+        s = string.format(qelive_pattern,specid,name,realm,regionLetters,crt,hstHPCT,hstHPM,mst,vrs,lee,contentStr);
+    else
+        s = string.format(qelive_noname_pattern,specid,crt,hstHPCT,hstHPM,mst,vrs,lee,contentStr);
+    end
+    s = string.gsub(s,"%'","%%27");
+    s = string.gsub(s," ","%%20");
+    return s;
+end
+
+addon.QELiveDialogName = pawn_dialog_name.."_QELIVE";
+StaticPopupDialogs[addon.QELiveDialogName] = {
+    text = qelive_title,
+    button1 = OKAY,
+    button2 = CANCEL,
+    hasEditBox = true,
+	editBoxWidth = 600,
+	maxLetters = 9999,
+    OnShow = function (self, data)
+		local s = addon:GetQELiveStringFromHistory();
+        print(s);
+        self.editBox:SetText(s)
+    end,
+    timeout = 0,
+    exclusive = 1,
+    hideOnEscape = 1,
+    whileDead = 1
+}
+
+
+
+--[[----------------------------------------------------------------------------
     Clear All Segments - Dialog to clear segments
 ------------------------------------------------------------------------------]]
 StaticPopupDialogs[clearsegments_dialog_name] = {
@@ -354,8 +395,9 @@ StaticPopupDialogs[clearsegments_dialog_name] = {
 function addon:StartFight(id)
     if ( self:Enabled() ) then
         if ( not self.inCombat ) then
-            self:UpdatePlayerStats()
-            self.UnitManager:Cache()
+            self:UpdatePlayerStats();
+			self:UpdateAzeriteEquipment();
+            self.UnitManager:Cache();
 			if ( self:IsHolyPaladin() ) then
 				self:CountBeaconsAtStartOfFight();
 			elseif ( self:IsDiscPriest() ) then

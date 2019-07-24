@@ -326,7 +326,7 @@ function Grid2Options:GetAvailableStatusValues(indicator, statusAvailable, statu
 	statusAvailable = statusAvailable or {}
 	wipe(statusAvailable)
 	for statusKey, status in Grid2:IterateStatuses() do
-		if (self:IsCompatiblePair(indicator, status) and status.name~="test") then
+		if self:IsCompatiblePair(indicator, status) and status.name~="test" and not status:IsSuspended() then
 			statusAvailable[statusKey] = self.LocalizeStatus(status)
 		end
 	end
@@ -431,6 +431,11 @@ function Grid2Options:CopyOptionsTable(src, dst)
 		end
 	end
 	return dst
+end
+
+-- Goto the specified options section.
+function Grid2Options:SelectGroup( ... )
+	LibStub("AceConfigDialog-3.0"):SelectGroup( "Grid2", ... )
 end
 
 -- Grid2Options.MEDIA_FONT_DEFAULT

@@ -1,21 +1,20 @@
-local MAJOR, MINOR = 'LibElvUIPlugin-1.0', 22
-local lib, oldminor = LibStub:NewLibrary(MAJOR, MINOR)
+local MAJOR, MINOR = 'LibElvUIPlugin-1.0', 27
+local lib = LibStub:NewLibrary(MAJOR, MINOR)
 if not lib then return end
 
 --Lua functions
 local pairs, tonumber, strmatch, strsub = pairs, tonumber, strmatch, strsub
-local format, strsplit, strlen, gsub, ceil = format, strsplit, strlen, gsub, ceil
+local format, gmatch, strlen, gsub, ceil = format, gmatch, strlen, gsub, ceil
 --WoW API / Variables
 local GetNumGroupMembers = GetNumGroupMembers
 local GetLocale, IsInGuild = GetLocale, IsInGuild
 local CreateFrame, IsAddOnLoaded = CreateFrame, IsAddOnLoaded
-local GetAddOnMetadata, GetChannelName = GetAddOnMetadata, GetChannelName
+local GetAddOnMetadata = GetAddOnMetadata
 local IsInRaid, IsInGroup = IsInRaid, IsInGroup
 local LE_PARTY_CATEGORY_HOME = LE_PARTY_CATEGORY_HOME
 local LE_PARTY_CATEGORY_INSTANCE = LE_PARTY_CATEGORY_INSTANCE
 local C_ChatInfo_RegisterAddonMessagePrefix = C_ChatInfo.RegisterAddonMessagePrefix
 local C_ChatInfo_SendAddonMessage = C_ChatInfo.SendAddonMessage
---Global variables that we don't cache, list them here for the mikk's Find Globals script
 -- GLOBALS: ElvUI
 
 lib.plugins = {}
@@ -31,7 +30,8 @@ local INFO_VERSION = "Version:"
 local INFO_NEW = "Newest:"
 local LIBRARY = "Library"
 
-if GetLocale() == "deDE" then
+local locale = GetLocale()
+if locale == "deDE" then
 	MSG_OUTDATED = "Deine Version von %s %s ist veraltet (akutelle Version ist %s). Du kannst die aktuelle Version von http://www.tukui.org herunterrladen."
 	HDR_CONFIG = "Plugins"
 	HDR_INFORMATION = "LibElvUIPlugin-1.0.%d - Plugins geladen (Grün bedeutet du hast die aktuelle Version, Rot bedeutet es ist veraltet)"
@@ -39,9 +39,7 @@ if GetLocale() == "deDE" then
 	INFO_VERSION = "Version:"
 	INFO_NEW = "Neuste:"
 	LIBRARY = "Bibliothek"
-end
-
-if GetLocale() == "ruRU" then
+elseif locale == "ruRU" then
 	MSG_OUTDATED = "Ваша версия %s %s устарела (последняя версия %s). Вы можете скачать последнюю версию на http://www.tukui.org"
 	HDR_CONFIG = "Плагины"
 	HDR_INFORMATION = "LibElvUIPlugin-1.0.%d - загруженные плагины (зеленый означает, что у вас последняя версия, красный - устаревшая)"
@@ -49,13 +47,30 @@ if GetLocale() == "ruRU" then
 	INFO_VERSION = "Версия:"
 	INFO_NEW = "Последняя:"
 	LIBRARY = "Библиотека"
+elseif locale == "zhCN" then
+	MSG_OUTDATED = "你的 %s %s 版本已经过期 (最新版本是 %s)。你可以从 http://www.tukui.org 下载最新版本"
+	HDR_CONFIG = "插件"
+	HDR_INFORMATION = "LibElvUIPlugin-1.0.%d - 载入的插件 (绿色表示拥有当前版本, 红色表示版本已经过期)"
+	INFO_BY = "作者"
+	INFO_VERSION = "版本:"
+	INFO_NEW = "最新:"
+	LIBRARY = "库"
+elseif locale == "zhTW" then
+	MSG_OUTDATED = "你的 %s %s 版本已經過期 (最新版本為 %s)。你可以透過 http://www.tukui.org 下載最新的版本"
+	HDR_CONFIG = "插件"
+	HDR_INFORMATION = "LibElvUIPlugin-1.0.%d - 載入的插件 (綠色表示擁有當前版本, 紅色表示版本已經過期)"
+	INFO_BY = "作者"
+	INFO_VERSION = "版本:"
+	INFO_NEW = "最新:"
+	LIBRARY = "庫"
 end
+
 ------------------------------
 --
 -- Plugin table format:
 --   { name (string) - The name of the plugin,
 --     version (string) - The version of the plugin,
---     optionCallback (string) - The callback to call when ElvUI_Config is loaded
+--     optionCallback (string) - The callback to call when ElvUI_OptionsUI is loaded
 --   }
 --
 --
@@ -64,7 +79,7 @@ end
 --
 ------------------------------
 function lib:RegisterPlugin(name, callback, isLib)
-    local plugin = {
+	local plugin = {
 		name = name,
 		callback = callback,
 		version = name == MAJOR and MINOR or GetAddOnMetadata(name, 'Version')
@@ -85,7 +100,7 @@ function lib:RegisterPlugin(name, callback, isLib)
 		lib.registeredPrefix = true
 	end
 
-	local loaded = IsAddOnLoaded('ElvUI_Config')
+	local loaded = IsAddOnLoaded('ElvUI_OptionsUI')
 	if not loaded then
 		lib.CFFrame:RegisterEvent('ADDON_LOADED')
 	elseif loaded then
@@ -116,8 +131,9 @@ function lib:DelayedSendVersionCheck(delay)
 	end
 end
 
-function lib:ConfigLoaded(_, addon)
-	if addon == 'ElvUI_Config' then
+function lib:OptionsUILoaded(_, addon)
+	if addon == 'ElvUI_OptionsUI' then
+		lib:GetPluginOptions()
 		for _, plugin in pairs(lib.plugins) do
 			if plugin.callback then
 				plugin.callback()
@@ -138,23 +154,23 @@ end
 
 function lib:GetPluginOptions()
 	ElvUI[1].Options.args.plugins = {
-        order = -10,
-        type = 'group',
-        name = HDR_CONFIG,
-        guiInline = false,
-        args = {
-            pluginheader = {
-                order = 1,
-                type = 'header',
-                name = format(HDR_INFORMATION, MINOR),
-            },
-            plugins = {
-                order = 2,
-                type = 'description',
-                name = lib:GeneratePluginList(),
-            },
-        }
-    }
+		order = -10,
+		type = 'group',
+		name = HDR_CONFIG,
+		guiInline = false,
+		args = {
+			pluginheader = {
+				order = 1,
+				type = 'header',
+				name = format(HDR_INFORMATION, MINOR),
+			},
+			plugins = {
+				order = 2,
+				type = 'description',
+				name = lib:GeneratePluginList(),
+			},
+		}
+	}
 end
 
 function lib:VersionCheck(event, prefix, message, _, sender)
@@ -164,22 +180,15 @@ function lib:VersionCheck(event, prefix, message, _, sender)
 		if sender == lib.myName then return end
 
 		if not E.pluginRecievedOutOfDateMessage then
-			local name, version, plugin, Pname, Pver, ver
-			for _, p in pairs({strsplit(';',message)}) do
-				if not strmatch(p, '^%s-$') then
-					name, version = strmatch(p, '([%w_]+)=([%d%p]+)')
-					plugin = name and lib.plugins[name]
-
-					if version and plugin and plugin.version and (plugin.version ~= 'BETA') then
-						Pver, ver = tonumber(plugin.version), tonumber(version)
-						if (ver and Pver) and (ver > Pver) then
-							plugin.old, plugin.newversion = true, ver
-							Pname = GetAddOnMetadata(plugin.name, 'Title')
-							E:Print(format(MSG_OUTDATED,Pname,plugin.version,plugin.newversion))
-							ElvUI[1].pluginRecievedOutOfDateMessage = true
-						elseif (ver and Pver) and (ver < Pver) then
-							lib:DelayedSendVersionCheck()
-						end
+			for name, version in gmatch(message, '([^=]+)=([%d%p]+);') do
+				local plugin = name and lib.plugins[name]
+				if version and plugin and plugin.version and (plugin.version ~= 'BETA') then
+					local Pver, ver = tonumber(plugin.version), tonumber(version)
+					if (ver and Pver) and (ver > Pver) then
+						plugin.old, plugin.newversion = true, ver
+						local Pname = GetAddOnMetadata(plugin.name, 'Title')
+						E:Print(format(MSG_OUTDATED,Pname,plugin.version,plugin.newversion))
+						ElvUI[1].pluginRecievedOutOfDateMessage = true
 					end
 				end
 			end
@@ -225,18 +234,13 @@ function lib:SendPluginVersionCheck(message)
 		return
 	end
 
-	local ChatType, Channel
+	local ChatType
 	if IsInRaid() then
 		ChatType = (not IsInRaid(LE_PARTY_CATEGORY_HOME) and IsInRaid(LE_PARTY_CATEGORY_INSTANCE)) and 'INSTANCE_CHAT' or 'RAID'
 	elseif IsInGroup() then
 		ChatType = (not IsInGroup(LE_PARTY_CATEGORY_HOME) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE)) and 'INSTANCE_CHAT' or 'PARTY'
-	else
-		local ElvUIGVC = GetChannelName('ElvUIGVC')
-		if ElvUIGVC and ElvUIGVC > 0 then
-			ChatType, Channel = 'CHANNEL', ElvUIGVC
-		elseif IsInGuild() then
-			ChatType = 'GUILD'
-		end
+	elseif IsInGuild() then
+		ChatType = 'GUILD'
 	end
 
 	if not ChatType then
@@ -251,14 +255,14 @@ function lib:SendPluginVersionCheck(message)
 			splitMessage = strmatch(strsub(message, 1, maxChar), '.+;')
 			if splitMessage then -- incase the string is over 250 but doesnt contain `;`
 				message = gsub(message, '^'..gsub(splitMessage, '([%(%)%.%%%+%-%*%?%[%^%$])','%%%1'), '')
-				E:Delay(delay, C_ChatInfo_SendAddonMessage, lib.prefix, splitMessage, ChatType, Channel)
+				E:Delay(delay, C_ChatInfo_SendAddonMessage, lib.prefix, splitMessage, ChatType)
 				delay = delay + 1
 			end
 		end
 
 		E:Delay(delay, lib.ClearSendMessageWait)
 	else
-		C_ChatInfo_SendAddonMessage(lib.prefix, message, ChatType, Channel)
+		C_ChatInfo_SendAddonMessage(lib.prefix, message, ChatType)
 		lib.ClearSendMessageWait()
 	end
 end
@@ -267,6 +271,4 @@ lib.VCFrame = CreateFrame('Frame')
 lib.VCFrame:SetScript('OnEvent', lib.VersionCheck)
 
 lib.CFFrame = CreateFrame('Frame')
-lib.CFFrame:SetScript('OnEvent', lib.ConfigLoaded)
-
-lib:RegisterPlugin(MAJOR, lib.GetPluginOptions)
+lib.CFFrame:SetScript('OnEvent', lib.OptionsUILoaded)

@@ -10,8 +10,6 @@ local CLASS_ICON_TCOORDS = CLASS_ICON_TCOORDS
 local CreateFrame = CreateFrame
 local hooksecurefunc = hooksecurefunc
 
---GLOBALS: NORMAL_FONT_COLOR
-
 local function LoadSkin()
 	if E.private.skins.blizzard.enable ~= true or E.private.skins.blizzard.calendar ~= true then return end
 
@@ -20,24 +18,6 @@ local function LoadSkin()
 	CalendarFrame:CreateBackdrop("Transparent")
 	S:HandleCloseButton(_G.CalendarCloseButton)
 	_G.CalendarCloseButton:Point("TOPRIGHT", CalendarFrame, "TOPRIGHT", -4, -4)
-
-	for i = 1, 9 do
-		select(i, _G.CalendarViewEventFrame:GetRegions()):Hide()
-	end
-	select(15, _G.CalendarViewEventFrame:GetRegions()):Hide()
-
-	for i = 1, 9 do
-		select(i, _G.CalendarViewHolidayFrame:GetRegions()):Hide()
-		select(i, _G.CalendarViewRaidFrame:GetRegions()):Hide()
-	end
-
-	for i = 1, 3 do
-		select(i, _G.CalendarCreateEventTitleFrame:GetRegions()):Hide()
-		select(i, _G.CalendarViewEventTitleFrame:GetRegions()):Hide()
-		select(i, _G.CalendarViewHolidayTitleFrame:GetRegions()):Hide()
-		select(i, _G.CalendarViewRaidTitleFrame:GetRegions()):Hide()
-		select(i, _G.CalendarMassInviteTitleFrame:GetRegions()):Hide()
-	end
 
 	for i = 1, 7 do
 		_G["CalendarWeekday"..i.."Background"]:SetAlpha(0)
@@ -52,7 +32,7 @@ local function LoadSkin()
 	select(5, _G.CalendarViewHolidayCloseButton:GetRegions()):Hide()
 	select(5, _G.CalendarViewRaidCloseButton:GetRegions()):Hide()
 	select(5, _G.CalendarMassInviteCloseButton:GetRegions()):Hide()
-	_G.CalendarCreateEventBackground:Hide()
+	--_G.CalendarCreateEventBackground:Hide()
 	_G.CalendarCreateEventFrameButtonBackground:Hide()
 	_G.CalendarCreateEventMassInviteButtonBorder:Hide()
 	_G.CalendarCreateEventCreateButtonBorder:Hide()
@@ -120,8 +100,8 @@ local function LoadSkin()
 		local hl = bu:GetHighlightTexture()
 		hl:SetVertexColor(1, 1, 1, 0.3)
 		hl.SetAlpha = E.noop
-		hl:SetPoint("TOPLEFT", -1, 1)
-		hl:SetPoint("BOTTOMRIGHT")
+		hl:Point("TOPLEFT", -1, 1)
+		hl:Point("BOTTOMRIGHT")
 	end
 
 	_G.CalendarWeekdaySelectedTexture:SetDesaturated(true)
@@ -129,17 +109,17 @@ local function LoadSkin()
 
 	for i = 1, 6 do
 		local vline = CreateFrame("Frame", nil, _G["CalendarDayButton"..i])
-		vline:SetHeight(548)
-		vline:SetWidth(1)
-		vline:SetPoint("TOP", _G["CalendarDayButton"..i], "TOPRIGHT")
+		vline:Height(548)
+		vline:Width(1)
+		vline:Point("TOP", _G["CalendarDayButton"..i], "TOPRIGHT")
 		vline:CreateBackdrop()
 	end
 
 	for i = 1, 36, 7 do
 		local hline = CreateFrame("Frame", nil, _G["CalendarDayButton"..i])
-		hline:SetWidth(637)
-		hline:SetHeight(1)
-		hline:SetPoint("LEFT", _G["CalendarDayButton"..i], "TOPLEFT")
+		hline:Width(637)
+		hline:Height(1)
+		hline:Point("LEFT", _G["CalendarDayButton"..i], "TOPLEFT")
 		hline:CreateBackdrop()
 	end
 
@@ -155,7 +135,7 @@ local function LoadSkin()
 		edgeFile = E.media.blankTex,
 		edgeSize = 2,
 	})
-	_G.CalendarTodayFrame:SetBackdropBorderColor(NORMAL_FONT_COLOR:GetRGB())
+	_G.CalendarTodayFrame:SetBackdropBorderColor(_G.NORMAL_FONT_COLOR:GetRGB())
 
 	--CreateEventFrame
 	_G.CalendarCreateEventFrame:StripTextures()

@@ -13,102 +13,103 @@ local format = string.format
 local upper  = string.upper
 
 
-ns.PTR = GetBuildInfo() == "8.1.5"
+ns.PTR = GetBuildInfo() == "8.2.5"
 
 
 ns.Patrons = {
+    -- Expecto
+	"Akh270",
+	"Brugrabud",
+	"Elmner",
+	"Rusah",
+	"Spaten",
+	"Spy",
+	"SuperRsk",
+
     -- Supreme
-    "akh270",
-    "Alarius",
-    "Annddyypandy",
-    "Ash",
-    "av8ordoc",
-    "Belatar",
-    "Borelia",
-    "Bsirk",
-    "cortland",
-    "DarkosKiLLz",    
-    "Dez",
-    "Garumako",
-    "Goobkill",
-    "GSMarketing",
-    "Harkun",
-    "Hollaputt",
-    "Janko",
-    "Kyatastrophe",
-    "lorgalis76",
-    "Manni",
-    "Mojodisu中国",
-    "mrJones2k",
-    "Myx",
-    "ODB/Tilt",
-    "Rivertam",
-    "skrrskrr",
-    "Spaten",
-    "Spy",
-    "Supervas",
-    "The Casual TryHard",
-    "Timescape",
-    "Torsti",
-    "tossley",
-    "Trogonko",
-    "Ulti",
-    "unlaern",
-    "zvda",
-    "Zyon",
-    -- Patron
-    "Abra",
-    "Aern",
-    "Alvi",
-    "ApexPlatypus",
-    "Bömber (Vagos)",
-    "Cadd/Tic - Salamandre",
-    "chckxy",
-    "djthomp",
-    "Ghaaniz",
-    "Grayscale",
-    "Guycrush Fleetwood",
-    "Harla",
-    "Ingrathis",
-    "jawj",
-    "Jingeroo",
-    "Kingreboot",
-    "Kretol",    
-    "Leorus",
-    "Loraniden",
-    "MooNinja",
-    "Mr_Hunter",
-    "mrminus",
-    "muze",
-    "neurolol",
-    "Opie",
-    "Penvrane",
-    "Roodie",
-    "sarrge",
-    "Sarthol",
-    "Sebstar",
-    "Seniroth",
-    "Shakeykev",
-    "Shoe",
-    "Stratta",
-    "Sym",
-    "TaifnKnaifn",
-    "Ted",
-    "Tekfire",
-    "Tohr",
-    "vanitea",
-    "Wargus (Shagus)",
-    "Weedwalker",
-    "Yeitzo",
-    "zenpox / fastbrek",
-    "zeus",
+	"Annddyypandy",
+	"Ash",
+	"av8ordoc",
+	"Belatar",
+	"Borelia",
+	"Bsirk",
+	"cortland",
+	"DarkosKiLLz",
+	"Dele",
+	"Dez",
+	"Garumako",
+	"Goobkill",
+	"GSMarketing",
+	"Harkun",
+	"Hollaputt",
+	"Kyatastrophe",
+	"Manni",
+	"marcusawereally",
+	"Meeat",
+	"mojodisu.",
+	"ODB/Tilt",
+	"PJ",
+	"Ramen",
+	"Rivertam",
+	"skrrskrr",
+	"Stalorirn",
+	"Torsti",
+	"unlaern",
+	"zvda",
+	"Zyon",
+
+	-- Patron
+	"Abra",
+	"Aern",
+	"Alarius",
+	"Alvi",
+	"ApexPlatypus",
+	"cafasdon",
+	"chckxy",
+	"djthomp",
+	"doboro",
+	"Electricfury (Vagos)",
+	"Fastobreiko",
+	"Grayscale",
+	"Guycrush Fleetwood",
+	"Hexel",
+	"Ingrathis",
+	"jawj",
+	"Kretol",
+	"Leorus",
+	"Loraniden",
+	"MrBean73",
+	"muze",
+	"neurolol",
+	"Opie",
+	"Sarthol",
+	"Sebstar",
+	"Seniroth",
+	"Sym",
+	"Ted",
+	"Tekfire",
+	"Tic",
+	"Tohr",
+	"twiggs",
+	"Twiss",
+	"Wargus (Just 'Gus)",
+	"Weedwalker",
+	"Yeitzo",
+	"zeus",
 }
 table.sort( ns.Patrons, function( a, b ) return upper( a ) < upper( b ) end  )
 
 
 
+do
+    local cpuProfileDB = {}
 
-ns.cpuProfile = {}
+    function Hekili:ProfileCPU( name, func )
+        cpuProfileDB[ name ] = func
+    end
+
+    ns.cpuProfile = cpuProfileDB
+end
 
 
 ns.lib = {
@@ -137,15 +138,19 @@ Hekili.Class = {
 	resources = {},
     talents = {},
     pvptalents = {},
-    auras = {},
+	auras = {},
+	auraList = {},
     powers = {},
-    gear = {},
+	gear = {},
+	
+	knownAuraAttributes = {},
 
     stateExprs = {},
     stateFuncs = {},
     stateTables = {},
 
-    abilities = {},
+	abilities = {},
+	abilityByName = {},
     abilityList = {},
     itemList = {},
     itemMap = {},
@@ -179,13 +184,9 @@ Hekili.Scripts = {
 Hekili.State = {}
 
 ns.hotkeys = {}
-
 ns.keys = {}
-
 ns.queue = {}
-
 ns.targets = {}
-
 ns.TTD = {}
 
 ns.UI = {
@@ -194,7 +195,6 @@ ns.UI = {
 }
 
 ns.debug = {}
-
 ns.snapshots = {}
 
 

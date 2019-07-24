@@ -7,6 +7,7 @@ local mod, CL = BigWigs:NewBoss("Harlan Sweete", 1754, 2095)
 if not mod then return end
 mod:RegisterEnableMob(126983)
 mod.engageId = 2096
+mod.respawnTime = 15
 
 --------------------------------------------------------------------------------
 -- Initialization
@@ -94,10 +95,12 @@ function mod:Avastye(args)
 end
 
 function mod:BlackPowderBomb(args)
-	self:TargetMessage2(args.spellId, "yellow", args.destName, self:SpellName(244657), args.spellId) -- Fixate
-	if self:Me(args.destGUID) then
-		self:PlaySound(args.spellId, "warning", "fixate")
-		self:Say(args.spellId, self:SpellName(244657)) -- Fixate
-		self:Flash(args.spellId)
+	if args.sourceGUID ~= args.destGUID then
+		self:TargetMessage2(args.spellId, "yellow", args.destName, self:SpellName(244657), args.spellId) -- Fixate
+		if self:Me(args.destGUID) then -- The add buffs itself with the same spell id
+			self:PlaySound(args.spellId, "warning", "fixate")
+			self:Say(args.spellId, self:SpellName(244657)) -- Fixate
+			self:Flash(args.spellId)
+		end
 	end
 end

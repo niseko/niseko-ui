@@ -87,11 +87,11 @@ function mod:GetOptions()
 		{288212, "SAY", "SAY_COUNTDOWN"}, -- Broadside
 		broadsideMarker,
 		{288374, "ICON", "SAY", "SAY_COUNTDOWN"}, -- Siegebreaker Blast
-		288345, -- Glacial Ray
+		{288345, "EMPHASIZE"}, -- Glacial Ray
 		288441, -- Icefall
 		288221, -- Burning Explosion
 		-- Intermission
-		289220, -- Heart of Frost
+		{289220, "FLASH"}, -- Heart of Frost
 		289219, -- Frost Nova
 		290084, -- Water Bolt Volley
 		-- Stage 3
@@ -206,6 +206,11 @@ function mod:OnEngage()
 	self:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", nil, "boss1")
 
 	self:Berserk(self:Mythic() and 720 or 900)
+end
+
+function mod:VerifyEnable(unit)
+	local hp = UnitHealthMax(unit)
+	return hp > 0 and (UnitHealth(unit) / hp) > 0.1 -- 10%
 end
 
 --------------------------------------------------------------------------------
@@ -483,7 +488,7 @@ function mod:SiegebreakerBlastRemoved(args)
 	if self:Me(args.destGUID) then
 		self:CancelSayCountdown(args.spellId)
 	end
-	self:PrimaryIcon(args.spellId, args.destName)
+	self:PrimaryIcon(args.spellId)
 	self:StopBar(args.spellId, args.destName)
 end
 
@@ -554,6 +559,9 @@ do
 		self:PlaySound(args.spellId, "alert", nil, playerList)
 		self:TargetsMessage(args.spellId, "yellow", playerList)
 		self:CDBar(args.spellId, 8)
+		if self:Me(args.destGUID) then
+			self:Flash(args.spellId)
+		end
 	end
 end
 

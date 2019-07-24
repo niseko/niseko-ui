@@ -7,6 +7,7 @@ local defaults = {
 	profile = {
 		zones = {},
 		prompt = true,
+		partial = true,
 		chat = false,
 		minimap = {
 			hide = false,
@@ -14,7 +15,7 @@ local defaults = {
 	}
 }
 
-local function print(msg)
+local function sysprint(msg)
 	local info = ChatTypeInfo["SYSTEM"]
 	DEFAULT_CHAT_FRAME:AddMessage(msg, info.r, info.g, info.b, info.id)
 end
@@ -32,9 +33,6 @@ local function ShowPrompt(zone, diff)
 		}
 	end
 	StaticPopup_Show("LoggerHeadLiteLogConfirm", ("%s %s"):format(diff, zone))
-	if diff == 8 then -- catch the m+ start event
-		LoggingCombat(true)
-	end
 end
 
 function addon:OnInitialize()
@@ -73,8 +71,11 @@ function addon:CheckInstance(override)
 		end
 
 		if db.zones[areaID][difficulty] == nil then
-			if db.prompt then
+			if db.prompt and (not db.partial or GetNumGroupMembers() > 4) then
 				ShowPrompt(zoneName, difficultyName)
+				if difficulty == 8 then -- catch the m+ start event
+					LoggingCombat(true)
+				end
 				return
 			else
 				db.zones[areaID][difficulty] = false
@@ -93,24 +94,24 @@ end
 function addon:EnableLogging(auto)
 	if not LoggingCombat() then
 		LoggingCombat(true)
-		print(COMBATLOGENABLED)
+		sysprint(COMBATLOGENABLED)
 	end
 
 	if self.db.profile.chat and not LoggingChat() then
 		LoggingChat(true)
-		print(CHATLOGENABLED)
+		sysprint(CHATLOGENABLED)
 	end
 end
 
 function addon:DisableLogging(auto)
 	if LoggingCombat() then
 		LoggingCombat(false)
-		print(COMBATLOGDISABLED)
+		sysprint(COMBATLOGDISABLED)
 	end
 
 	if self.db.profile.chat and LoggingChat() then
 		LoggingChat(false)
-		print(CHATLOGDISABLED)
+		sysprint(CHATLOGDISABLED)
 	end
 end
 
