@@ -1,6 +1,7 @@
 # LittleWigs
 
-## [v8.2.5](https://github.com/BigWigsMods/LittleWigs/tree/v8.2.5) (2019-07-21)
-[Full Changelog](https://github.com/BigWigsMods/LittleWigs/compare/v8.2.4...v8.2.5)
+## [v8.2.6](https://github.com/BigWigsMods/LittleWigs/tree/v8.2.6) (2019-07-24)
+[Full Changelog](https://github.com/BigWigsMods/LittleWigs/compare/v8.2.5...v8.2.6)
 
-- BfA/Mechagon/KingMechagon: Add Stage 2 Recalibrate timer (#467)  
+- BfA/ShrineOfTheStorm/Trash: Add debug message for Void Seed (#468)  
+- BfA/TolDagor/Korgus: Update infobox usage.  

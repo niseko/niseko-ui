@@ -34,7 +34,7 @@ AdvancedTooltips: enabled
 AdventureGuideLockouts: enabled
 Auctionator: enabled
 AzeriteTooltip: enabled
-BigWigs: disabled
+BigWigs: enabled
 BlizzMove: enabled
 !BugGrabber: enabled
 Clique: enabled
@@ -68,5 +68,6 @@ LucyRaidFrames: disabled
 NameplateSCT: disabled
 FloatIndicators_Uldir: enabled
 FloatIndicators: disabled
-DBM-Core: enabled
-DBM-StatusBarTimers: enabled
+DBM-Core: disabled
+DBM-StatusBarTimers: disabled
+DBM-GUI: enabled

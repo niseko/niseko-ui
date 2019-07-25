@@ -59,7 +59,7 @@ AdvancedTooltips: enabled
 AdventureGuideLockouts: enabled
 Auctionator: enabled
 AzeriteTooltip: enabled
-BigWigs: disabled
+BigWigs: enabled
 BlizzMove: enabled
 !BugGrabber: enabled
 Clique: enabled
@@ -101,5 +101,6 @@ BigWigs_BattleOfDazaralor: enabled
 BigWigs_CrucibleOfStorms: enabled
 WeakAurasCompanion: enabled
 BigWigs_EternalPalace: enabled
-DBM-Core: enabled
-DBM-StatusBarTimers: enabled
+DBM-Core: disabled
+DBM-StatusBarTimers: disabled
+DBM-GUI: enabled

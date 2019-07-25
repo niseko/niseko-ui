@@ -8,15 +8,15 @@ AzeriteTooltipDB = {
 		["Donnerbock - Ysera"] = "Default",
 		["Valdurawr - Stormscale"] = "Default",
 		["Se - Stormscale"] = "Default",
-		["Awfrsdg - Stormscale"] = "Default",
 		["Niseko - Stormscale"] = "Default",
+		["Awfrsdg - Stormscale"] = "Default",
 	},
 	["Compact"] = true,
-	["RemoveBlizzard"] = true,
-	["Bags"] = true,
-	["Flyout"] = true,
 	["profiles"] = {
 		["Default"] = {
 		},
 	},
+	["Bags"] = true,
+	["Flyout"] = true,
+	["RemoveBlizzard"] = true,
 }

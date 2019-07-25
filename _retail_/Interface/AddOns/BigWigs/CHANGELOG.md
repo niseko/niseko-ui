@@ -1,11 +1,12 @@
 # BigWigs
 
-## [v158](https://github.com/BigWigsMods/BigWigs/tree/v158) (2019-07-19)
-[Full Changelog](https://github.com/BigWigsMods/BigWigs/compare/v157.1...v158)
+## [v159](https://github.com/BigWigsMods/BigWigs/tree/v159) (2019-07-24)
+[Full Changelog](https://github.com/BigWigsMods/BigWigs/compare/v158...v159)
 
 - bump version  
-- EternalPalace/QueenAzshara: Remove stray commas  
-- EternalPalace/QueenAzshara: Fix option key  
-- EternalPalace/QueenAzshara: Clarify the decrees and add a yell for stand together.  
-- EternalPalace/QueenAzshara: Sort the InfoBox in reverse.  
-- Plugins/InfoBox: Add reverse order functionality for setting the list via a table.  
+- Options: Tweak  
+- EternalPalace: Add Berserks  
+- EternalPalace/QueenAzshara: Swap to using bars in the infobox and block out tanks unless they gain a stack.  
+- Add support for sorting the infobox with bars in reverse.  
+- EternalPalace/LadyAshvane: Re-write the Arcing Azerite warning to show the raid icon of the person you're linked with and print it in say chat.  
+- EternalPalace/Zaqul: Minor updates for Mythic  

@@ -1,7 +1,7 @@
 
 BugGrabberDB = {
+	["session"] = 4198,
 	["lastSanitation"] = 3,
-	["session"] = 4183,
 	["errors"] = {
 		{
 			["message"] = "[ADDON_ACTION_BLOCKED] AddOn 'Clique' tried to call the protected function 'CompactRaidGroup3Member4:Show()'.",
@@ -43,36 +43,68 @@ BugGrabberDB = {
 			["counter"] = 3,
 		}, -- [5]
 		{
-			["message"] = "Interface\\AddOns\\BigWigs_Voice\\Core.lua:19: PlaySoundFile Error - Invalid fileDataID for sound.",
-			["time"] = "2019/07/21 21:18:54",
+			["message"] = "[ADDON_ACTION_BLOCKED] AddOn 'GottaGoFast' tried to call the protected function 'ObjectiveTrackerFrame:SetParent()'.",
+			["time"] = "2019/07/24 18:37:50",
 			["locals"] = "InCombatSkipped",
-			["stack"] = "[C]: in function `PlaySoundFile'\nInterface\\AddOns\\BigWigs_Voice\\Core.lua:19: in function `v'\nInterface\\AddOns\\BigWigs\\Loader.lua:938: in function `SendMessage'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:2331: in function `PlaySound'\nInterface\\AddOns\\BigWigs_EternalPalace\\Orgozoa.lua:123: in function `?'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:456: in function <Interface\\AddOns\\BigWigs_Core\\BossPrototype.lua:422>",
-			["session"] = 4157,
-			["counter"] = 701,
+			["stack"] = "Interface\\AddOns\\!BugGrabber\\BugGrabber.lua:519: in function <Interface\\AddOns\\!BugGrabber\\BugGrabber.lua:519>\n[C]: in function `SetParent'\nInterface\\AddOns\\GottaGoFast\\Timer/Utility.lua:114: in function `ShowObjectiveTracker'\nInterface\\AddOns\\GottaGoFast\\Core.lua:177: in function `ResetState'\nInterface\\AddOns\\GottaGoFast\\Core.lua:187: in function `WhereAmI'\nInterface\\AddOns\\GottaGoFast\\Core.lua:110: in function `?'\n...Ons\\Ace3\\CallbackHandler-1.0\\CallbackHandler-1.0-7.lua:119: in function <...Ons\\Ace3\\CallbackHandler-1.0\\CallbackHandler-1.0.lua:119>\n[C]: ?\n...Ons\\Ace3\\CallbackHandler-1.0\\CallbackHandler-1.0-7.lua:29: in function <...Ons\\Ace3\\CallbackHandler-1.0\\CallbackHandler-1.0.lua:25>\n...Ons\\Ace3\\CallbackHandler-1.0\\CallbackHandler-1.0-7.lua:64: in function `Fire'\nInterface\\AddOns\\Ace3\\AceEvent-3.0\\AceEvent-3.0-4.lua:120: in function <Interface\\AddOns\\Ace3\\AceEvent-3.0\\AceEvent-3.0.lua:119>",
+			["session"] = 4190,
+			["counter"] = 1,
 		}, -- [6]
 		{
-			["message"] = "[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:197: Action[SetPoint] failed because[SetPoint would result in anchor family connection]: attempted from: <unnamed>:SetPoint.",
-			["time"] = "2019/07/23 20:18:21",
+			["message"] = "...terface\\AddOns\\BigWigs_EternalPalace\\LadyAshvane.lua:312: attempt to compare two nil values",
+			["time"] = "2019/07/24 20:37:10",
 			["locals"] = "InCombatSkipped",
-			["stack"] = "[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:197: in function `addFontToNameplate'\n[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:138: in function <[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:1>\n[C]: in function `xpcall'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:525: in function <Interface\\AddOns\\WeakAuras\\GenericTrigger.lua:519>\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:672: in function `ScanEventsInternal'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:632: in function `ScanEvents'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:721: in function <Interface\\AddOns\\WeakAuras\\GenericTrigger.lua:712>",
-			["session"] = 4178,
-			["counter"] = 395,
+			["stack"] = "...terface\\AddOns\\BigWigs_EternalPalace\\LadyAshvane.lua:312: in function `?'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:456: in function <Interface\\AddOns\\BigWigs_Core\\BossPrototype.lua:422>",
+			["session"] = 4192,
+			["counter"] = 1,
 		}, -- [7]
+		{
+			["message"] = "...terface\\AddOns\\BigWigs_EternalPalace\\LadyAshvane.lua:326: attempt to compare two nil values",
+			["time"] = "2019/07/24 20:37:10",
+			["locals"] = "InCombatSkipped",
+			["stack"] = "...terface\\AddOns\\BigWigs_EternalPalace\\LadyAshvane.lua:326: in function `?'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:456: in function <Interface\\AddOns\\BigWigs_Core\\BossPrototype.lua:422>",
+			["session"] = 4192,
+			["counter"] = 1,
+		}, -- [8]
+		{
+			["message"] = "...terface\\AddOns\\BigWigs_EternalPalace\\LadyAshvane.lua:340: attempt to compare two nil values",
+			["time"] = "2019/07/24 20:37:10",
+			["locals"] = "InCombatSkipped",
+			["stack"] = "...terface\\AddOns\\BigWigs_EternalPalace\\LadyAshvane.lua:340: in function `?'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:456: in function <Interface\\AddOns\\BigWigs_Core\\BossPrototype.lua:422>",
+			["session"] = 4192,
+			["counter"] = 1,
+		}, -- [9]
 		{
 			["message"] = "[string \"--[[ Error in '08 Massive Energy Spike' ]] ...\"]:34: attempt to perform arithmetic on field 'name' (a nil value)",
 			["time"] = "2019/07/23 23:36:07",
 			["locals"] = "InCombatSkipped",
 			["stack"] = "[C]: in function `xpcall'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:525: in function <Interface\\AddOns\\WeakAuras\\GenericTrigger.lua:519>\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:672: in function `ScanEventsInternal'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:632: in function `ScanEvents'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:721: in function <Interface\\AddOns\\WeakAuras\\GenericTrigger.lua:712>",
-			["session"] = 4178,
-			["counter"] = 1,
-		}, -- [8]
+			["session"] = 4192,
+			["counter"] = 2,
+		}, -- [10]
+		{
+			["message"] = "[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:197: Action[SetPoint] failed because[SetPoint would result in anchor family connection]: attempted from: <unnamed>:SetPoint.",
+			["time"] = "2019/07/23 20:18:21",
+			["locals"] = "InCombatSkipped",
+			["stack"] = "[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:197: in function `addFontToNameplate'\n[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:138: in function <[string \"--[[ Error in 'Targeted Spells' ]] return f...\"]:1>\n[C]: in function `xpcall'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:525: in function <Interface\\AddOns\\WeakAuras\\GenericTrigger.lua:519>\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:672: in function `ScanEventsInternal'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:632: in function `ScanEvents'\nInterface\\AddOns\\WeakAuras\\GenericTrigger.lua:721: in function <Interface\\AddOns\\WeakAuras\\GenericTrigger.lua:712>",
+			["session"] = 4193,
+			["counter"] = 764,
+		}, -- [11]
+		{
+			["message"] = "Interface\\AddOns\\BigWigs_Voice\\Core.lua:19: PlaySoundFile Error - Invalid fileDataID for sound.",
+			["time"] = "2019/07/21 21:18:54",
+			["locals"] = "InCombatSkipped",
+			["stack"] = "[C]: in function `PlaySoundFile'\nInterface\\AddOns\\BigWigs_Voice\\Core.lua:19: in function `v'\nInterface\\AddOns\\BigWigs\\Loader.lua:938: in function `SendMessage'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:2331: in function `PlaySound'\nInterface\\AddOns\\BigWigs_EternalPalace\\Orgozoa.lua:123: in function `?'\nInterface\\AddOns\\BigWigs_Core\\BossPrototype.lua:456: in function <Interface\\AddOns\\BigWigs_Core\\BossPrototype.lua:422>",
+			["session"] = 4193,
+			["counter"] = 1135,
+		}, -- [12]
 		{
 			["message"] = "Interface\\FrameXML\\GameTooltip.lua:154: Action[SetPoint] failed because[SetPoint would result in anchor family connection]: attempted from: GameTooltip:SetPoint.",
 			["time"] = "2019/07/21 20:08:48",
 			["locals"] = "(*temporary) = GameTooltip {\n 0 = <userdata>\n SetCurrencyByID = <function> defined =[C]:-1\n ItemTooltip = <unnamed> {\n }\n SetHyperlink = <function> defined =[C]:-1\n SetGuildBankItem = <function> defined =[C]:-1\n SetVoidItem = <function> defined =[C]:-1\n SetVoidDepositItem = <function> defined =[C]:-1\n SetVoidWithdrawalItem = <function> defined =[C]:-1\n comparing = false\n isModified = false\n TopOverlay = <unnamed> {\n }\n default = 1\n SetUnitDebuff = <function> defined =[C]:-1\n SetLootItem = <function> defined =[C]:-1\n SetQuestItem = <function> defined =[C]:-1\n FadeOut = <function> defined @Interface\\AddOns\\TipTac\\ttCore.lua:853\n PixelSnapDisabled = true\n SetInboxItem = <function> defined =[C]:-1\n SetBuybackItem = <function> defined =[C]:-1\n shoppingTooltips = <table> {\n }\n SetMerchantItem = <function> defined =[C]:-1\n SetQuestLogItem = <function> defined =[C]:-1\n SetBackpackToken = <function> defined =[C]:-1\n BottomOverlay = <unnamed> {\n }\n SetTradePlayerItem = <function> defined =[C]:-1\n Hide = <function> defined =[C]:-1\n SetSendMailItem = <function> defined =[C]:-1\n SetCurrencyToken = <function> defined =[C]:-1\n updateTooltip = 0.150000\n SetInventoryItem = <function> defined =[C]:-1\n SetUnitBuff = <function> defined =[C]:-1\n ttCount = <unnamed> {\n }\n SetLootRollItem = <function> defined =[C]:-1\n SetUnitAura = <function> defined =[C]:-1\n SetRecipeReagentItem = <function> defined =[C]:-1\n SetAuctionSellItem = <function> defined =[C]:-1\n SetBagItem = <function> defined =[C]:-1\n needsReset = true\n SetTradeTargetItem = <function> defined =[C]:-1\n ttIcon = <unnamed> {\n }\n SetRecipeResultItem = <function> defined =[C]:-1\n SetAuctionItem = <function> defined =[C]:-1\n}\n(*temporary) = \"BOTTOMRIGHT\"\n(*temporary) = \"UIParent\"\n(*temporary) = \"BOTTOMRIGHT\"\n(*temporary) = -97.000046\n(*temporary) = 130\n",
 			["stack"] = "[C]: in function `SetPoint'\nInterface\\FrameXML\\GameTooltip.lua:154: in function <Interface\\FrameXML\\GameTooltip.lua:152>\n[C]: in function `GameTooltip_SetDefaultAnchor'\nInterface\\AddOns\\Grid2\\modules\\IndicatorTooltip.lua:53: in function `Display'\nInterface\\AddOns\\Grid2\\modules\\IndicatorTooltip.lua:27: in function `func'\nInterface\\AddOns\\Grid2\\GridFrame.lua:94: in function <Interface\\AddOns\\Grid2\\GridFrame.lua:92>\n[C]: ?",
-			["session"] = 4183,
-			["counter"] = 7503,
-		}, -- [9]
+			["session"] = 4198,
+			["counter"] = 9236,
+		}, -- [13]
 	},
 }
