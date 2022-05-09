@@ -1,18 +1,25 @@
 
 PlaterDBChr = {
-	["first_run2"] = {
-		["Player-2073-06067728"] = true,
+	["spellRangeCheckRangeFriendly"] = {
+		[263] = 40,
+		[264] = 40,
+		[262] = 40,
 	},
 	["buffsBanned"] = {
 	},
 	["first_run3"] = {
-		["Player-2073-06067728"] = true,
+		["Player-2073-0968A574"] = true,
 	},
-	["spellRangeCheck"] = {
-		[263] = "Hex",
-		[264] = "Lightning Bolt",
-		[262] = "Lightning Bolt",
+	["minimap"] = {
+		["minimapPos"] = 194.9586408228232,
+		["hide"] = true,
 	},
+	["resources_on_target"] = false,
 	["debuffsBanned"] = {
+	},
+	["spellRangeCheckRangeEnemy"] = {
+		[263] = 40,
+		[264] = 40,
+		[262] = 40,
 	},
 }

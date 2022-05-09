@@ -1,6 +1,20 @@
-VER 3 0100000000000001 "VuhDoDCShieldData" "Ability_Repair"
-P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+VER 3 0100000000000002 "a" "INV_MISC_QUESTIONMARK"
+#showtooltip Shining Force
+/use [@Twisekin] Shining Force
 END
-VER 3 0100000000000002 "VuhDoDCShieldNames" "Ability_Repair"
-N[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Nis[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+VER 3 0100000000000004 "feather" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [@player] Angelic Feather
+END
+VER 3 0100000000000003 "fs" "INV_MISC_QUESTIONMARK"
+/cast [@Twisekin] Renew
+END
+VER 3 0100000000000001 "gs" "INV_MISC_QUESTIONMARK"
+#showtooltip Guardian Spirit
+END
+VER 3 0100000000000005 "VuhDoDCShieldData" "Ability_Repair"
+R4IH1EM2SR3OH3DR[x]5DR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]4IH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+END
+VER 3 0100000000000006 "VuhDoDCShieldNames" "Ability_Repair"
+NSpaCauKraValPen[x]Jam[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Nis[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
 END

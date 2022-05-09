@@ -1,75 +1,16 @@
 
 Details_StreamerDB = {
 	["characters"] = {
-		["Nisko - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisefy - Stormscale"] = "Niseko - Twisting Nether",
-		["Nideko - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Noskeaos - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Thedab - Blackrock"] = "Niseko - Twisting Nether",
-		["Tattoos - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Noskaos - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Niseko - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Vodel - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Purrmeow - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Poyana - Moonglade"] = "Niseko - Twisting Nether",
-		["Nyanporo - Blackmoore"] = "Niseko - Twisting Nether",
-		["Niseniseko - Stormscale"] = "Niseko - Twisting Nether",
-		["Nise - Stormscale"] = "Niseko - Twisting Nether",
-		["Nadero - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisepeg - Stormscale"] = "Niseko - Twisting Nether",
-		["Manacats - Blackmoore"] = "Niseko - Twisting Nether",
-		["Weebseko - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Awfrsdg - Stormscale"] = "Niseko - Twisting Nether",
-		["Nekado - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisecakes - Stormscale"] = "Niseko - Twisting Nether",
-		["Nadeko - Moonglade"] = "Niseko - Twisting Nether",
-		["Donnerbock - Ysera"] = "Niseko - Twisting Nether",
-		["Weebsiko - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisepie - Stormscale"] = "Niseko - Twisting Nether",
-		["Gronkgronk - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Mondeko - Blackmoore"] = "Niseko - Twisting Nether",
-		["Afwfes - Stormscale"] = "Niseko - Twisting Nether",
-		["Grönk - Draenor"] = "Niseko - Twisting Nether",
-		["Zelda - Mal'Ganis"] = "Niseko - Twisting Nether",
-		["Netsu - Antonidas"] = "Niseko - Twisting Nether",
-		["Valdurawr - Stormscale"] = "Niseko - Twisting Nether",
-		["Se - Stormscale"] = "Niseko - Twisting Nether",
-		["Yvera - Moonglade"] = "Niseko - Twisting Nether",
-		["Mondeko - Mal'Ganis"] = "Niseko - Twisting Nether",
-		["Nisekobabe - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Pixelfehler - Ysera"] = "Niseko - Twisting Nether",
-		["Yoshicakes - Stormscale"] = "Niseko - Twisting Nether",
-		["Nisedog - Stormscale"] = "Niseko - Twisting Nether",
-		["Nisemon - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Anothertest - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Felvordt - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisekoi - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisekobaby - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Testvordt - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Illidarling - Blackmoore"] = "Niseko - Twisting Nether",
-		["Nodeko - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Illidarling - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisetest - Stormscale"] = "Niseko - Twisting Nether",
-		["Grönk - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Nisko - Blackmoore"] = "Niseko - Twisting Nether",
-		["Nedoka - Antonidas"] = "Niseko - Twisting Nether",
-		["Nisegob - Stormscale"] = "Niseko - Twisting Nether",
-		["Seyana - Moonglade"] = "Niseko - Twisting Nether",
-		["Nisearw - Stormscale"] = "Niseko - Twisting Nether",
-		["Vordt - Twisting Nether"] = "Niseko - Twisting Nether",
-		["Sherlock - Mal'Ganis"] = "Niseko - Twisting Nether",
-		["Niseko - Stormscale"] = "Niseko - Twisting Nether",
-		["Seko - Stormscale"] = "Niseko - Twisting Nether",
+		["Niseko - Stormscale"] = "Niseko - Stormscale",
+		["Nise - Stormscale"] = "Niseko - Stormscale",
+		["Donnerbock - Stormscale"] = "Niseko - Stormscale",
+		["Nisedumb - Stormscale"] = "Niseko - Stormscale",
 	},
 	["profiles"] = {
-		["Niseko - Twisting Nether"] = {
-			["font_color"] = {
-				1, -- [1]
-				1, -- [2]
-				1, -- [3]
-				1, -- [4]
-			},
+		["Niseko - Stormscale"] = {
+			["use_square_mode"] = false,
 			["is_first_run"] = false,
+			["grow_direction"] = "right",
 			["arrow_color"] = {
 				1, -- [1]
 				1, -- [2]
@@ -77,53 +18,61 @@ Details_StreamerDB = {
 				0.5, -- [4]
 			},
 			["main_frame_size"] = {
-				310.666656494141, -- [1]
-				129.889083862305, -- [2]
+				299.9999389648438, -- [1]
+				499.9999084472656, -- [2]
 			},
 			["minimap"] = {
 				["minimapPos"] = 160,
 				["radius"] = 160,
 				["hide"] = true,
 			},
-			["arrow_anchor_x"] = 0,
-			["row_texture"] = "VuhDo - Plain White",
 			["arrow_anchor_y"] = 0,
-			["main_frame_locked"] = true,
+			["arrow_anchor_x"] = 0,
+			["main_frame_locked"] = false,
+			["row_texture"] = "Details Serenity",
 			["row_color"] = {
-				0.101960784313725, -- [1]
-				0.101960784313725, -- [2]
-				0.101960784313725, -- [3]
-				0.400000035762787, -- [4]
+				0.1, -- [1]
+				0.1, -- [2]
+				0.1, -- [3]
+				0.4, -- [4]
 			},
+			["use_spark"] = true,
+			["author"] = "Terciob",
+			["square_amount"] = 5,
 			["enabled"] = false,
 			["arrow_size"] = 10,
-			["author"] = "Details! Team",
-			["row_spacement"] = 20,
+			["y"] = -4.57763671875e-05,
+			["row_spacement"] = 21,
 			["main_frame_color"] = {
 				0, -- [1]
 				0, -- [2]
 				0, -- [3]
-				0, -- [4]
+				0.2, -- [4]
 			},
 			["main_frame_strata"] = "LOW",
 			["arrow_texture"] = "Interface\\CHATFRAME\\ChatFrameExpandArrow",
+			["font_size"] = 10,
 			["per_second"] = {
-				["enabled"] = true,
+				["enabled"] = false,
 				["point"] = "CENTER",
 				["scale"] = 1,
 				["font_shadow"] = true,
-				["y"] = -191.110321044922,
-				["x"] = 181.110778808594,
-				["attribute_type"] = 2,
+				["y"] = 6.103515625e-05,
+				["x"] = -6.103515625e-05,
+				["attribute_type"] = 1,
 				["update_speed"] = 0.05,
 				["size"] = 32,
 			},
-			["use_spark"] = true,
-			["x"] = 50.0000419616699,
+			["x"] = 0,
 			["font_face"] = "Friz Quadrata TT",
-			["y"] = 207.334197998047,
-			["font_size"] = 10,
-			["point"] = "LEFT",
+			["square_size"] = 32,
+			["point"] = "CENTER",
+			["font_color"] = {
+				1, -- [1]
+				1, -- [2]
+				1, -- [3]
+				1, -- [4]
+			},
 			["row_height"] = 20,
 			["scale"] = 1,
 		},

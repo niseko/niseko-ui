@@ -30,9 +30,10 @@ VER 3 0100000000000011 "canceljump" "INV_MISC_QUESTIONMARK"
 END
 VER 3 0100000000000019 "earth elemental" "INV_MISC_QUESTIONMARK"
 #showtooltip
-/use Earth Elemental
+/cast Earth Elemental
 /target Greater Earth Elemental
-/focus
+/stopmacro [harm]
+/focus [help]
 /targetlasttarget
 END
 VER 3 010000000000001A "est" "INV_MISC_QUESTIONMARK"
@@ -46,15 +47,14 @@ VER 3 0100000000000007 "HTT" "INV_MISC_QUESTIONMARK"
 /use Healing Tide Totem
 END
 VER 3 010000000000001D "mount" "INV_MISC_QUESTIONMARK"
-#showtooltip Vulpine Familiar
-/cast [nomounted,nocombat] Water Walking
-/cast Vulpine Familiar
+#showtooltip Snowstorm
+/dismount [mounted]
+/use [nomounted,nocombat] Water Walking
+/use [nomounted,nocombat] Snowstorm
 END
-VER 3 0100000000000017 "Mystch" "136048"
-/whisper Mystch innervate
-END
-VER 3 010000000000001B "primal" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover,help][@target,help][@targettarget,help][] Chain Heal
+VER 3 0100000000000017 "Mystch" "INV_MISC_QUESTIONMARK"
+#showtooltip Purify Spirit
+/use [@mouseover,help] Purify Spirit
 END
 VER 3 010000000000001C "SE" "INV_MISC_QUESTIONMARK"
 #showtooltip Fire Elemental
@@ -66,7 +66,7 @@ VER 3 010000000000001C "SE" "INV_MISC_QUESTIONMARK"
 /cast [talent:6/2] Eye of the Storm
 END
 VER 3 010000000000001F "test" "INV_MISC_QUESTIONMARK"
-/wm 4
+/cast [@mouseover] Riptide
 END
 VER 3 0100000000000009 "tier100" "INV_MISC_QUESTIONMARK"
 #showtooltip
@@ -78,5 +78,10 @@ VER 3 0100000000000008 "tier75" "INV_MISC_QUESTIONMARK"
 END
 VER 3 010000000000001E "trinket" "INV_MISC_QUESTIONMARK"
 #showtooltip 13
-/use [@mouseover] 13
+/use [@mouseover,harm][] 13
+/use 14
+END
+VER 3 010000000000001B "ws" "INV_MISC_QUESTIONMARK"
+#showtooltip Wind Shear
+/use [@mouseover,harm][harm] Wind Shear
 END

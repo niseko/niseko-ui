@@ -1,46 +1,57 @@
 
 SimulationCraftDB = {
 	["profileKeys"] = {
-		["Afwfes - Stormscale"] = "Afwfes - Stormscale",
-		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
-		["Se - Stormscale"] = "Se - Stormscale",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
-		["Nisepie - Stormscale"] = "Nisepie - Stormscale",
-		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
-		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
-		["Awfrsdg - Stormscale"] = "Awfrsdg - Stormscale",
-		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
-		["Seko - Stormscale"] = "Seko - Stormscale",
+		["Nise - Stormscale"] = "Nise - Stormscale",
+		["Donnerbock - Stormscale"] = "Donnerbock - Stormscale",
+		["Nisedumb - Stormscale"] = "Nisedumb - Stormscale",
 	},
 	["profiles"] = {
-		["Afwfes - Stormscale"] = {
-		},
-		["Nisefy - Stormscale"] = {
-		},
-		["Valdurawr - Stormscale"] = {
-		},
-		["Se - Stormscale"] = {
-			["minimap"] = {
-				["minimapPos"] = 171.285256549401,
-			},
-		},
 		["Niseko - Stormscale"] = {
 			["minimap"] = {
+				["minimapPos"] = 205.2879346260764,
+				["hide"] = true,
+			},
+			["frame"] = {
+				["ofsx"] = 5.000125408172607,
+				["ofsy"] = 4.376783181214705e-05,
+			},
+		},
+		["Nise - Stormscale"] = {
+			["frame"] = {
+				["ofsx"] = 1.000095129013062,
+				["ofsy"] = -0.9998762607574463,
+			},
+			["minimap"] = {
+				["minimapPos"] = 176.2787016656282,
 				["hide"] = true,
 			},
 		},
-		["Nisepie - Stormscale"] = {
+		["Donnerbock - Stormscale"] = {
+			["frame"] = {
+				["ofsx"] = 0,
+				["point"] = "CENTER",
+				["relativePoint"] = "CENTER",
+				["height"] = 400,
+				["ofsy"] = 0,
+				["width"] = 750,
+			},
+			["minimap"] = {
+				["hide"] = false,
+			},
 		},
-		["Yoshicakes - Stormscale"] = {
-		},
-		["Nisearw - Stormscale"] = {
-		},
-		["Awfrsdg - Stormscale"] = {
-		},
-		["Nyanporo - Blackmoore"] = {
-		},
-		["Seko - Stormscale"] = {
+		["Nisedumb - Stormscale"] = {
+			["frame"] = {
+				["ofsx"] = 0,
+				["point"] = "CENTER",
+				["relativePoint"] = "CENTER",
+				["height"] = 400,
+				["ofsy"] = 0,
+				["width"] = 750,
+			},
+			["minimap"] = {
+				["hide"] = false,
+			},
 		},
 	},
 }

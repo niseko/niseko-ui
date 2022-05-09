@@ -1,10 +1,26 @@
 
 AddonCpuUsageDB = {
 	["profileKeys"] = {
+		["Nisedumb - Stormscale"] = "Default",
+		["Nise - Stormscale"] = "Default",
+		["Donnerbock - Stormscale"] = "Default",
 		["Niseko - Stormscale"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
+			["first_run"] = false,
+			["data_pool"] = {
+			},
+			["sample_size"] = 300,
+			["start_delay"] = 0,
+			["auto_run_delay"] = 1,
+			["auto_run_time"] = 9999,
+			["auto_run"] = false,
+			["Minimap"] = {
+				["minimapPos"] = 208.4569733525846,
+				["radius"] = 160,
+				["hide"] = false,
+			},
 		},
 	},
 }

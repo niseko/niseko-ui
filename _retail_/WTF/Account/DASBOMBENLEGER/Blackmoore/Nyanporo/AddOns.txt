@@ -1,6 +1,0 @@
-VuhDo: disabled
-bigdumblootcouncil: disabled
-BigWigs_Core: enabled
-BigWigs_Options: enabled
-BigWigs_Plugins: enabled
-ElvUI_EverySecondCounts: disabled

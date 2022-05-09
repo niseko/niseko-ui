@@ -1,2 +1,0 @@
-
-limeCharDB = nil

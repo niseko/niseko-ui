@@ -1,13 +1,15 @@
 VER 3 0000000000000037 "/script local _," "INV_MISC_QUESTIONMARK"
-/script local _,gcd=GetSpellCooldown("Soothing Mist"); print("Current global cooldown is "..gcd.." seconds.")
+#showtooltip Wind Shear
+/focus [@mouseover, exists, harm]
+/script if (UnitIsEnemy("player","target")) then DEFAULT_CHAT_FRAME:AddMessage( "target health ="..UnitHealth("target") ); end
 END
 VER 3 0000000000000035 "AAP_MACRO" "INV_MISC_QUESTIONMARK"
 #showtooltip
-/use Ranah's Watering Can
+/click ExtraActionButton1
 END
 VER 3 0000000000000021 "arena silence" "INV_MISC_QUESTIONMARK"
 #showtooltip
-/use [@focus,harm,nodead][harm]Silence
+/use [@focus,harm,nodead][harm] Silence
 END
 VER 3 0000000000000039 "calcellust" "136012"
 /cancelaura Primal Rage
@@ -30,12 +32,13 @@ END
 VER 3 0000000000000030 "chtestdelete" "INV_MISC_QUESTIONMARK"
 /use [@mouseover,help]Chain Heal
 END
-VER 3 000000000000002F "csomi" "136048"
-/whisper csomi-stormscale innervate
-END
 VER 3 000000000000002C "DK GRASP" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /cast [@player] Gorefiend's Grasp
+END
+VER 3 0000000000000046 "eef" "413580"
+/cast Earth Elemental
+/focus Earth Elemental
 END
 VER 3 0000000000000036 "ewt test" "INV_MISC_QUESTIONMARK"
 #showtooltip Earthen Wall Totem
@@ -46,11 +49,14 @@ END
 VER 3 0000000000000028 "ExtraAB" "132383"
 /click ExtraActionButton1
 END
-VER 3 0000000000000004 "Freya" "Ability_Creature_Poison_05"
-/tar Knall
+VER 3 000000000000003D "focus mouseover" "INV_MISC_QUESTIONMARK"
+/focus [@mouseover]
 END
 VER 3 0000000000000005 "Freya" "Ability_Creature_Disease_01"
 /tar Sturmpeitscher
+END
+VER 3 0000000000000004 "Freya" "Ability_Creature_Poison_05"
+/tar Knall
 END
 VER 3 0000000000000008 "Freya" "Ability_Creature_Poison_06"
 /tar Uralter Wassergeist
@@ -61,8 +67,25 @@ END
 VER 3 0000000000000019 "Freya HM" "Spell_Nature_NatureTouchDecay"
 /tar Verstärkte Eiserne Wurzeln
 END
+VER 3 000000000000003C "fsdf" "INV_MISC_QUESTIONMARK"
+#showtooltip Reincarnation
+END
+VER 3 000000000000004D "fucking wrt stop" "INV_MISC_QUESTIONMARK"
+#showtooltip Wind Rush Totem
+/use Wind Rush Totem
+END
 VER 3 0000000000000023 "Furnace Engie" "ACHIEVEMENT_GUILDPERK_MOUNTUP"
 /tar Furnace Engineer
+END
+VER 3 000000000000004E "halondrus" "4335642"
+/click ExtraActionButton1
+/wm 8
+END
+VER 3 0000000000000048 "hbCrashProt_0" "Spell_Holy_SealOfSacrifice"
+1:N
+END
+VER 3 0000000000000047 "hbCrashProt_1" "Spell_Holy_SealOfSacrifice"
+Nisek:p:ayer-1403-079E5047:1:
 END
 VER 3 0000000000000026 "ironmaidenpws2" "INV_MISC_QUESTIONMARK"
 #showtooltip 
@@ -93,6 +116,11 @@ END
 VER 3 0000000000000007 "Maly" "Spell_Holy_Persecution"
 /tar Energiefunke
 END
+VER 3 000000000000004B "manashit" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use Manabound Mirror
+/use Healing Surge
+END
 VER 3 0000000000000009 "Mimiron" "Ability_Creature_Cursed_04"
 /tar Bombe
 END
@@ -113,9 +141,26 @@ VER 3 000000000000002A "OpenArtifact" "INV_MISC_QUESTIONMARK"
 #showtooltip
 /run SocketInventoryItem(16);
 END
+VER 3 000000000000004C "ox" "Ability_Monk_ChargingOxWave."
+/target Black Ox Statue
+/focus
+END
+VER 3 000000000000002F "penthe" "136048"
+/whisper Penthexd innervate
+END
 VER 3 000000000000000C "podg" "INV_MISC_QUESTIONMARK"
 #showtooltip Potion of Deadly Grace
 /use Potion of Deadly Grace
+END
+VER 3 000000000000003E "potrac" "INV_MISC_QUESTIONMARK"
+#showtooltip Cosmic Healing Potion
+/use Cosmic Healing Potion
+/use [@player] Bag of Tricks(Racial)
+END
+VER 3 000000000000003F "potrachealth" "INV_MISC_QUESTIONMARK"
+#showtooltip Healthstone
+/use Healthstone
+/use [@player] Bag of Tricks(Racial)
 END
 VER 3 000000000000000E "Proto" "Ability_Hunter_BeastWithin"
 /cleartarget
@@ -168,11 +213,12 @@ VER 3 0000000000000016 "s" "Ability_BackStab"
 /cast Unsichtbarkeit
 /cancelaura Unsichtbarkeit
 END
+VER 3 0000000000000049 "slink" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [@cursor] Spirit Link Totem
+END
 VER 3 0000000000000034 "ss" "INV_MISC_QUESTIONMARK"
-#showtooltip Stormstrike
-/use Potion of Prolonged Power
-/use Stormstrike
-/use Bloodlust
+/afk
 END
 VER 3 0000000000000024 "temp tar" "SPELL_HOLY_SEALOFPROTECTION"
 /target Sýno
@@ -180,33 +226,10 @@ VER 3 0000000000000024 "temp tar" "SPELL_HOLY_SEALOFPROTECTION"
 /target Blackhand
 END
 VER 3 0000000000000032 "test" "INV_MISC_QUESTIONMARK"
-local currentSpec = GetSpecialization()
-local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or "None"
-print("Your current spec:", currentSpecName)
+/click TotemFrameTotem1 RightButton
+/click TotemFrameTotem2 RightButton
 END
-VER 3 000000000000001C "test" "INV_MISC_QUESTIONMARK"
-/cast [noform] !Shadowform
-/castsequence [nochanneling] reset=target mind blast, vampiric touch, mind flay, mind blast, shadow word: pain, mind flay, mind blast, devouring plague, mind flay
-/cast shadow word: death
-/script UIErrorsFrame:Hide()
-END
-VER 3 0000000000000033 "test" "INV_MISC_QUESTIONMARK"
-/cast [@mouseover, help][@target, help][@player] Chain Heal
-END
-VER 3 000000000000003B "test" "INV_MISC_QUESTIONMARK"
-#showtooltip
-/cast [@mouseover, exists, help, nodead][help] healing wave; lightning bolt
-END
-VER 3 0000000000000029 "Tier 6" "971076"
-#showtooltip
-/cast [talent:6/2] Divine Star; [talent:6/3] Halo; [spec:1,talent:6/1,@mouseover,exists,help][spec:1,talent:6/1] Clarity of Will
-END
-VER 3 000000000000002E "toggletest" "INV_MISC_QUESTIONMARK"
-/run if GetCVar("countdownForCooldowns")=="1" then SetCVar("countdownForCooldowns","0");else SetCVar("countdownForCooldowns","1");end
-END
-VER 3 0000000000000011 "XT-Hard" "Ability_Hunter_SniperTraining"
-/tar Herz
-END
-VER 3 000000000000000A "XT-Hard" "Ability_Druid_Dreamstate"
-/tar Lebensfunke
+VER 3 000000000000004A "trinket1" "INV_MISC_QUESTIONMARK"
+#showtooltip 13
+/use [@mouseover,exists][] 13
 END

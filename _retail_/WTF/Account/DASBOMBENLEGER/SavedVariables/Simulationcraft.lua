@@ -1,46 +1,57 @@
 
 SimulationCraftDB = {
 	["profileKeys"] = {
-		["Afwfes - Stormscale"] = "Afwfes - Stormscale",
-		["Nisefy - Stormscale"] = "Nisefy - Stormscale",
-		["Valdurawr - Stormscale"] = "Valdurawr - Stormscale",
-		["Se - Stormscale"] = "Se - Stormscale",
+		["Nisedumb - Stormscale"] = "Nisedumb - Stormscale",
+		["Nise - Stormscale"] = "Nise - Stormscale",
+		["Donnerbock - Stormscale"] = "Donnerbock - Stormscale",
 		["Niseko - Stormscale"] = "Niseko - Stormscale",
-		["Nisepie - Stormscale"] = "Nisepie - Stormscale",
-		["Yoshicakes - Stormscale"] = "Yoshicakes - Stormscale",
-		["Seko - Stormscale"] = "Seko - Stormscale",
-		["Awfrsdg - Stormscale"] = "Awfrsdg - Stormscale",
-		["Nyanporo - Blackmoore"] = "Nyanporo - Blackmoore",
-		["Nisearw - Stormscale"] = "Nisearw - Stormscale",
 	},
 	["profiles"] = {
-		["Afwfes - Stormscale"] = {
-		},
-		["Nisefy - Stormscale"] = {
-		},
-		["Valdurawr - Stormscale"] = {
-		},
-		["Se - Stormscale"] = {
+		["Nisedumb - Stormscale"] = {
 			["minimap"] = {
-				["minimapPos"] = 171.285256549401,
+				["hide"] = false,
+			},
+			["frame"] = {
+				["ofsx"] = 0,
+				["point"] = "CENTER",
+				["relativePoint"] = "CENTER",
+				["height"] = 400,
+				["ofsy"] = 0,
+				["width"] = 750,
+			},
+		},
+		["Nise - Stormscale"] = {
+			["minimap"] = {
+				["minimapPos"] = 176.2787016656282,
+				["hide"] = true,
+			},
+			["frame"] = {
+				["ofsx"] = 1.000095129013062,
+				["ofsy"] = -0.9998762607574463,
+			},
+		},
+		["Donnerbock - Stormscale"] = {
+			["minimap"] = {
+				["hide"] = false,
+			},
+			["frame"] = {
+				["ofsx"] = 0,
+				["point"] = "CENTER",
+				["relativePoint"] = "CENTER",
+				["height"] = 400,
+				["ofsy"] = 0,
+				["width"] = 750,
 			},
 		},
 		["Niseko - Stormscale"] = {
+			["frame"] = {
+				["ofsx"] = 5.000125408172607,
+				["ofsy"] = 4.376783181214705e-05,
+			},
 			["minimap"] = {
+				["minimapPos"] = 205.2879346260764,
 				["hide"] = true,
 			},
-		},
-		["Nisepie - Stormscale"] = {
-		},
-		["Yoshicakes - Stormscale"] = {
-		},
-		["Seko - Stormscale"] = {
-		},
-		["Awfrsdg - Stormscale"] = {
-		},
-		["Nyanporo - Blackmoore"] = {
-		},
-		["Nisearw - Stormscale"] = {
 		},
 	},
 }
